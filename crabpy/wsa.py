@@ -7,7 +7,7 @@ wsa = ('wsa', 'http://www.w3.org/2005/08/addressing')
 
 class Action(Object):
     def __init__(self, action):
-        super(Action, self).__init__()
+        Object.__init__(self)
         self.action = action
                     
     def xml(self):
@@ -23,7 +23,7 @@ class MessageID(Object):
                 
 class To(Object):
     def __init__(self, location):
-        super(To, self).__init__()
+        Object.__init__(self)
         self.location = location
                         
     def xml(self):
