@@ -3,7 +3,7 @@ from suds.sax.element import Element
 
 import uuid
 
-wsa = ('wsa', 'http://www.w3.org/2005/08/addressing')
+wsa = ('wsa', 'http://schemas.xmlsoap.org/ws/2004/08/addressing')
 
 class Action(Object):
     def __init__(self, action):
