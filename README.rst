@@ -56,6 +56,7 @@ We try to cover as much code as we can with unit tests. You can run them using
 tox_ or directly through nose:
 
 .. code-block:: bash
+
     $ tox
     # No coverage
     $ nosetests 
