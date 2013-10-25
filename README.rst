@@ -46,4 +46,21 @@ headers, a utility function has been provided to make life easier.
 
 See the examples folder for some more sample code.
 
+Development
+-----------
+
+Crabpy is still in alpha development. Currently we're just happy to have gotten
+a SOAP service working in python.
+
+We try to cover as much code as we can with unit tests. You can run them using
+tox_ or directly through nose:
+
+.. code-block:: bash
+    $ tox
+    # No coverage
+    $ nosetests 
+    # Coverage
+    $ nosetests --config nose_cover.cfg
+
 .. _agiv: http://www.agiv.be
+.. _tox: http://tox.testrun.org
