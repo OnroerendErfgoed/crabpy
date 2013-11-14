@@ -1,15 +1,36 @@
+# -*- coding: utf-8 -*-
+'''
+This module contains an opionated gateway for the capakey webservice.
+
+.. versionadded:: 0.2.0
+'''
+
 from crabpy.client import capakey_request
 
 class CapakeyGateway(object):
+    '''
+    A gateway to the capakey webservice.
+    '''
 
     def __init__(self, client):
         self.client = client
 
     def list_gemeenten(self, sort=1):
+        '''
+        List all `gemeenten` in Vlaanderen.
+
+        :param integer sort: What field to sort on.
+        :rtype: A :class:`list` of :class:`Gemeente`.
+        '''
         res = capakey_request(self.client, 'ListAdmGemeenten', sort)
         return [Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self) for r in res.AdmGemeenteItem]
 
     def get_gemeente_by_id(self, id):
+        '''
+        Retrieve a `gemeente` by id (the NIScode).
+
+        :rtype: :class:`Gemeente`
+        '''
         res = capakey_request(self.client, 'GetAdmGemeenteByNiscode', id)
         return Gemeente(
             res.Niscode,
@@ -20,6 +41,12 @@ class CapakeyGateway(object):
         )
 
     def list_kadastrale_afdelingen(self, sort=1):
+        '''
+        List all `kadastrale afdelingen` in Flanders.
+
+        :param integer sort: Field to sort on.
+        :rtype: A :class:`list` of `Afdeling`.
+        '''
         res = capakey_request(self.client, 'ListKadAfdelingen', sort)
         return [
             Afdeling(
@@ -30,6 +57,14 @@ class CapakeyGateway(object):
             ) for r in res.KadAfdelingItem]
 
     def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
+        '''
+        List all `kadastrale afdelingen` in a `gemeente`.
+
+        :param gemeente: The :class:`Gemeente` for which the \
+            `afdelingen` are wanted.
+        :param integer sort: Field to sort on.
+        :rtype: A :class:`list` of `Afdeling`.
+        '''
         try:
             gid = gemeente.id
         except AttributeError:
@@ -160,6 +195,9 @@ class GatewayObject(object):
 
 
 def check_lazy_load_gemeente(f):
+    '''
+    Decorator function to lazy load a :class:`Gemeente`.
+    '''
     def wrapper(*args):
         gemeente = args[0]
         if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None:
@@ -173,6 +211,9 @@ def check_lazy_load_gemeente(f):
 
 
 class Gemeente(GatewayObject):
+    '''
+    The smallest administrative unit in Belgium.
+    '''
 
     def __init__(
             self, id, naam=None, 
@@ -209,6 +250,9 @@ class Gemeente(GatewayObject):
 
 
 def check_lazy_load_afdeling(f):
+    '''
+    Decorator function to lazy load a :class:`Afdeling`.
+    '''
     def wrapper(*args):
         afdeling = args[0]
         if afdeling._naam is None or afdeling._gemeente is None or afdeling._centroid is None or afdeling._bounding_box is None:
@@ -223,6 +267,9 @@ def check_lazy_load_afdeling(f):
 
 
 class Afdeling(GatewayObject):
+    '''
+    A Cadastral Division of a :class:`Gemeente`.
+    '''
 
     def __init__(
         self, id, naam=None, gemeente=None,
@@ -267,6 +314,9 @@ class Afdeling(GatewayObject):
             return 'Afdeling %s' % (self.id)
 
 def check_lazy_load_sectie(f):
+    '''
+    Decorator function to lazy load a :class:`Sectie`.
+    '''
     def wrapper(*args):
         sectie = args[0]
         if sectie._centroid is None or sectie._bounding_box is None:
@@ -279,6 +329,9 @@ def check_lazy_load_sectie(f):
 
 
 class Sectie(GatewayObject):
+    '''
+    A subdivision of a :class:`Afdeling`.
+    '''
 
     def __init__(
         self, id, afdeling,
@@ -310,6 +363,9 @@ class Sectie(GatewayObject):
 
 
 def check_lazy_load_perceel(f):
+    '''
+    Decorator function to lazy load a :class:`Perceel`.
+    '''
     def wrapper(*args):
         perceel = args[0]
         if perceel._capatype is None or perceel._cashkey is None\
@@ -322,6 +378,9 @@ def check_lazy_load_perceel(f):
     return wrapper
 
 class Perceel(GatewayObject):
+    '''
+    A Cadastral Parcel.
+    '''
 
     def __init__(
         self, id, sectie, capakey, percid,
@@ -340,6 +399,11 @@ class Perceel(GatewayObject):
         self._split_capakey()
 
     def _split_capakey(self):
+        '''
+        Split a capakey into more readable elements.
+
+        Splits a capakey into it's grondnummer, bisnummer, exponent and macht.
+        '''
         import re
         match = re.match(
             r"^[0-9]{5}[A_Z]{1}([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
