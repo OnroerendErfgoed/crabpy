@@ -13,7 +13,7 @@ def run_crab_integration_tests():
     from testconfig import config
     try:
         return config['crab']['run_integration_tests']
-    except KeyError:
+    except KeyError: #pragma NO COVER
         return False
 
 class CrabClientTests(unittest.TestCase):
