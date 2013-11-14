@@ -199,6 +199,11 @@ class Gemeente(GatewayObject):
     def bounding_box(self):
         return self._bounding_box
 
+    @property
+    def afdelingen(self):
+        self.check_gateway()
+        return self.gateway.list_kadastrale_afdelingen_by_gemeente(self)
+
     def __str__(self):
         return '%s (%s)' % (self.naam, self.id)
 
@@ -250,6 +255,11 @@ class Afdeling(GatewayObject):
     def bounding_box(self):
         return self._bounding_box
 
+    @property
+    def secties(self):
+        self.check_gateway()
+        return self.gateway.list_secties_by_afdeling(self)
+
     def __str__(self):
         if self._naam is not None:
             return '%s (%s)' % (self._naam, self.id)
@@ -289,6 +299,11 @@ class Sectie(GatewayObject):
     @check_lazy_load_sectie
     def bounding_box(self):
         return self._bounding_box
+
+    @property
+    def percelen(self):
+        self.check_gateway()
+        return self.gateway.list_percelen_by_sectie(self)
 
     def __str__(self):
         return '%s, Sectie %s' % (self.afdeling, self.id)

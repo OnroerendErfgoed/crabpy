@@ -168,6 +168,22 @@ class GemeenteTests(unittest.TestCase):
         self.assertIsNotNone(g.centroid)
         self.assertIsNotNone(g.bounding_box)
 
+    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    def test_afdelingen(self):
+        from testconfig import config
+        capakey = CapakeyGateway(
+            capakey_factory(
+                user=config['capakey']['user'],
+                password=config['capakey']['password']
+            )
+        )
+        g = Gemeente (44021)
+        g.set_gateway(capakey)
+        afdelingen = g.afdelingen
+        self.assertIsInstance(afdelingen, list)
+        self.assertGreater(len(afdelingen), 0)
+        self.assertLess(len(afdelingen), 40)
+
 
 class AfdelingTests(unittest.TestCase):
 
@@ -211,6 +227,21 @@ class AfdelingTests(unittest.TestCase):
         self.assertIsNotNone(a.centroid)
         self.assertIsNotNone(a.bounding_box)
 
+    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    def test_secties(self):
+        from testconfig import config
+        capakey = CapakeyGateway(
+            capakey_factory(
+                user=config['capakey']['user'],
+                password=config['capakey']['password']
+            )
+        )
+        a = Afdeling(44021)
+        a.set_gateway(capakey)
+        secties = a.secties
+        self.assertIsInstance(secties, list)
+        self.assertEqual(len(secties), 1)
+
 
 class SectieTests(unittest.TestCase):
 
@@ -248,6 +279,25 @@ class SectieTests(unittest.TestCase):
         self.assertEqual(s.afdeling.id, 44021)
         self.assertIsNotNone(s.centroid)
         self.assertIsNotNone(s.bounding_box)
+
+    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    def test_percelen(self):
+        from testconfig import config
+        capakey = CapakeyGateway(
+            capakey_factory(
+                user=config['capakey']['user'],
+                password=config['capakey']['password']
+            )
+        )
+        s = Sectie(
+            'A',
+            Afdeling(44021)
+        )
+        s.set_gateway(capakey)
+        percelen = s.percelen
+        self.assertIsInstance(percelen, list)
+        self.assertGreater(len(percelen), 0)
+
 
 
 class PerceelTests(unittest.TestCase):
