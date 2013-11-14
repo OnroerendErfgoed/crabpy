@@ -19,8 +19,9 @@ from crabpy.gateway.capakey import (
 
 def run_capakey_integration_tests():
     from testconfig import config
+    from crabpy.tests import as_bool
     try:
-        return config['capakey']['run_integration_tests']
+        return as_bool(config['capakey']['run_integration_tests'])
     except KeyError: #pragma NO COVER
         return False
 
