@@ -46,11 +46,28 @@ class CapakeyGatewayTests(unittest.TestCase):
         res = self.capakey.list_gemeenten()
         self.assertIsInstance(res, list)
 
+    def test_list_gemeenten_invalid_auth(self):
+        self.capakey_client = capakey_factory(
+            user='USER',
+            password='PASSWORD'
+        )
+        self.capakey = CapakeyGateway(
+            self.capakey_client
+        )
+        from crabpy.gateway.exception import GatewayAuthenticationException
+        with self.assertRaises(GatewayAuthenticationException):
+            res = self.capakey.list_gemeenten()
+
     def test_get_gemeente_by_id(self):
         from crabpy.gateway.capakey import Gemeente
         res = self.capakey.get_gemeente_by_id(44021)
         self.assertIsInstance(res, Gemeente)
         self.assertEqual(res.id, 44021)
+
+    def test_get_gemeente_by_invalid_id(self):
+        from crabpy.gateway.exception import GatewayRuntimeException
+        with self.assertRaises(GatewayRuntimeException):
+            res = self.capakey.get_gemeente_by_id('gent')
 
     def test_list_afdelingen(self):
         res = self.capakey.list_kadastrale_afdelingen()
