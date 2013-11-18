@@ -16,7 +16,8 @@ packages = [
 
 requires = [
     'suds-jurko',
-    'suds-passworddigest'
+    'suds-passworddigest',
+    'dogpile.cache'
 ]
 
 setup(

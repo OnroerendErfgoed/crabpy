@@ -7,13 +7,23 @@ This module contains an opionated gateway for the capakey webservice.
 
 from crabpy.client import capakey_request
 
+from dogpile.cache import make_region
+
 class CapakeyGateway(object):
     '''
     A gateway to the capakey webservice.
     '''
 
-    def __init__(self, client):
+    caches = {}
+
+    def __init__(self, client, **kwargs):
         self.client = client
+        self.caches['permanent'] = make_region()
+        if 'cache_config' in kwargs:
+            self.caches['permanent'].configure_from_config(
+                kwargs['cache_config'], 
+                'permanent.'
+            )
 
     def list_gemeenten(self, sort=1):
         '''
@@ -22,8 +32,17 @@ class CapakeyGateway(object):
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
-        res = capakey_request(self.client, 'ListAdmGemeenten', sort)
-        return [Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self) for r in res.AdmGemeenteItem]
+        def creator():
+            res = capakey_request(self.client, 'ListAdmGemeenten', sort)
+            return [
+                Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self) 
+                for r in res.AdmGemeenteItem
+            ]
+        if self.caches['permanent'].is_configured:
+            key = 'ListAdmGemeenten#%s' % sort
+            return self.caches['permanent'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def get_gemeente_by_id(self, id):
         '''
@@ -47,14 +66,20 @@ class CapakeyGateway(object):
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of `Afdeling`.
         '''
-        res = capakey_request(self.client, 'ListKadAfdelingen', sort)
-        return [
-            Afdeling(
-                r.KadAfdelingcode,
-                r.KadAfdelingnaam,
-                Gemeente(r.Niscode, gateway=self),
-                gateway=self
-            ) for r in res.KadAfdelingItem]
+        def creator():
+            res = capakey_request(self.client, 'ListKadAfdelingen', sort)
+            return [
+                Afdeling(
+                    r.KadAfdelingcode,
+                    r.KadAfdelingnaam,
+                    Gemeente(r.Niscode, gateway=self),
+                    gateway=self
+                ) for r in res.KadAfdelingItem]
+        if self.caches['permanent'].is_configured:
+            key = 'ListKadAfdelingen#%s' % sort
+            return self.caches['permanent'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
         '''

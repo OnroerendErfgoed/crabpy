@@ -362,3 +362,60 @@ class PerceelTests(unittest.TestCase):
                 '40613A1154/02C000', 
             )
 
+
+@unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+class CapakeyCachedGatewayTests(unittest.TestCase):
+
+    def setUp(self):
+        from testconfig import config
+        self.capakey_client = capakey_factory(
+            user=config['capakey']['user'],
+            password=config['capakey']['password']
+        )
+        self.capakey = CapakeyGateway(
+            self.capakey_client,
+            cache_config = {
+                'permanent.backend': 'dogpile.cache.memory'
+            }
+        )
+
+    def tearDown(self):
+        self.capakey_client = None
+        self.capakey = None
+
+    def test_cache_is_configured(self):
+        from dogpile.cache.backends.memory import MemoryBackend
+        self.assertIsInstance(
+            self.capakey.caches['permanent'].backend, 
+            MemoryBackend
+        )
+        self.assertTrue(self.capakey.caches['permanent'].is_configured)
+
+    def test_list_gemeenten(self):
+        res = self.capakey.list_gemeenten()
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListAdmGemeenten#1'),
+            res
+        )
+
+    def test_list_gemeenten_different_sort(self):
+        res = self.capakey.list_gemeenten(2)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListAdmGemeenten#2'),
+            res
+        )
+        from dogpile.cache.api import NO_VALUE
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListAdmGemeenten#1'),
+            NO_VALUE
+        )
+
+    def test_list_kadastrale_afdelingen(self):
+        res = self.capakey.list_kadastrale_afdelingen()
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListKadAfdelingen#1'),
+            res
+        )
