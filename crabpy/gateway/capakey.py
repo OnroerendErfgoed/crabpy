@@ -7,6 +7,29 @@ This module contains an opionated gateway for the capakey webservice.
 
 from crabpy.client import capakey_request
 
+from suds import WebFault
+
+from crabpy.gateway.exception import (
+    GatewayRuntimeException, 
+    GatewayAuthenticationException
+)
+
+def capakey_gateway_request(client, method, *args):
+    try:
+        return capakey_request(client, method, *args)
+    except WebFault as wf:
+        if wf.fault['faultcode'] == 'q0:FailedAuthentication':
+            err = GatewayAuthenticationException(
+                'Could not authenticate with capakey service. Message from server:\n%s' % wf.fault['faultstring'],
+                wf
+            )
+        else:
+            err = GatewayRuntimeException(
+                'Could not execute request. Message from server:\n%s' % wf.fault['faultstring'],
+                wf
+            )
+        raise err
+
 class CapakeyGateway(object):
     '''
     A gateway to the capakey webservice.
@@ -22,7 +45,7 @@ class CapakeyGateway(object):
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
-        res = capakey_request(self.client, 'ListAdmGemeenten', sort)
+        res = capakey_gateway_request(self.client, 'ListAdmGemeenten', sort)
         return [Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self) for r in res.AdmGemeenteItem]
 
     def get_gemeente_by_id(self, id):
@@ -31,7 +54,7 @@ class CapakeyGateway(object):
 
         :rtype: :class:`Gemeente`
         '''
-        res = capakey_request(self.client, 'GetAdmGemeenteByNiscode', id)
+        res = capakey_gateway_request(self.client, 'GetAdmGemeenteByNiscode', id)
         return Gemeente(
             res.Niscode,
             res.AdmGemeentenaam,
@@ -47,7 +70,7 @@ class CapakeyGateway(object):
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Afdeling`.
         '''
-        res = capakey_request(self.client, 'ListKadAfdelingen', sort)
+        res = capakey_gateway_request(self.client, 'ListKadAfdelingen', sort)
         return [
             Afdeling(
                 r.KadAfdelingcode,
@@ -70,7 +93,7 @@ class CapakeyGateway(object):
         except AttributeError:
             gemeente = self.get_gemeente_by_id(gemeente)
             gid = gemeente.id
-        res = capakey_request(self.client, 'ListKadAfdelingenByNiscode', gid, sort)
+        res = capakey_gateway_request(self.client, 'ListKadAfdelingenByNiscode', gid, sort)
         return [
             Afdeling(
                 r.KadAfdelingcode,
@@ -86,7 +109,7 @@ class CapakeyGateway(object):
         :param id: An id of a `kadastrale afdeling`.
         :rtype: A :class:`Afdeling`.
         '''
-        res = capakey_request(self.client, 'GetKadAfdelingByKadAfdelingcode', id)
+        res = capakey_gateway_request(self.client, 'GetKadAfdelingByKadAfdelingcode', id)
         return Afdeling(
             id=res.KadAfdelingcode,
             naam=res.KadAfdelingnaam,
@@ -109,7 +132,7 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
-        res = capakey_request(self.client, 'ListKadSectiesByKadAfdelingcode', aid)
+        res = capakey_gateway_request(self.client, 'ListKadSectiesByKadAfdelingcode', aid)
         return [
             Sectie(
                 r.KadSectiecode,
@@ -132,7 +155,7 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
-        res = capakey_request(self.client, 'GetKadSectieByKadSectiecode', aid, id)
+        res = capakey_gateway_request(self.client, 'GetKadSectieByKadSectiecode', aid, id)
         return Sectie(
             res.KadSectiecode,
             afdeling,
@@ -149,7 +172,7 @@ class CapakeyGateway(object):
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Perceel`.
         '''
-        res = capakey_request(self.client, 'ListKadPerceelsnummersByKadSectiecode', sectie.afdeling.id, sectie.id, sort)
+        res = capakey_gateway_request(self.client, 'ListKadPerceelsnummersByKadSectiecode', sectie.afdeling.id, sectie.id, sort)
         return [
             Perceel(
                 r.KadPerceelsnummer,
@@ -167,7 +190,7 @@ class CapakeyGateway(object):
         :param sectie: The :class:`Sectie` that contains the perceel.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_request(self.client, 'GetKadPerceelsnummerByKadPerceelsnummer', sectie.afdeling.id, sectie.id, id)
+        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByKadPerceelsnummer', sectie.afdeling.id, sectie.id, id)
         return Perceel(
             res.KadPerceelsnummer,
             sectie,
@@ -187,7 +210,7 @@ class CapakeyGateway(object):
         :param capakey: An capakey for a `perceel`.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_request(self.client, 'GetKadPerceelsnummerByCaPaKey', capakey)
+        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByCaPaKey', capakey)
         afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
         sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
         return Perceel(
@@ -209,7 +232,7 @@ class CapakeyGateway(object):
         :param percid: A percid for a `perceel`.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_request(self.client, 'GetKadPerceelsnummerByPERCID', percid)
+        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByPERCID', percid)
         afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
         sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
         return Perceel(
