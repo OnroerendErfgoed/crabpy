@@ -8,8 +8,14 @@ Client module
 .. automodule:: crabpy.client
    :members:
 
-Gateway package
----------------
+Capakey gateway module
+----------------------
 
 .. automodule:: crabpy.gateway.capakey
+   :members:
+
+Gateway exception module
+------------------------
+
+.. automodule:: crabpy.gateway.exception
    :members:
