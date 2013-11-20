@@ -47,6 +47,7 @@ class CrabClientTests(unittest.TestCase):
         res = self.crab.service.ListGemeentenByGewestId(2)
 
 
+@unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
 class CapakeyClientTests(unittest.TestCase):
 
     def setUp(self):
@@ -62,7 +63,6 @@ class CapakeyClientTests(unittest.TestCase):
     def test_user_and_password_must_be_set(self):
         self.assertRaises(ValueError, capakey_factory)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
     def test_override_wsdl(self):
         from testconfig import config
         wsdl = "http://ws.agiv.be/capakeyws/nodataset.asmx?WSDL"
@@ -73,6 +73,5 @@ class CapakeyClientTests(unittest.TestCase):
         )
         self.assertEqual(self.capakey.wsdl.url, wsdl)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
     def test_list_gemeenten(self):
         res = capakey_request(self.capakey, 'ListAdmGemeenten', 1)
