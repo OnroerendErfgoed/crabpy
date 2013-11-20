@@ -44,6 +44,28 @@ headers, a utility function has been provided to make life easier.
 
     print res
 
+Using the CAPAKEY gateway
+-------------------------
+
+To make life easier and capakey more pythonic, we've also implemented a gateway
+that abstracts some more of the service and provides richer objects as responses.
+
+.. code-block:: python
+
+    from crabpy.client import capakey_factory
+    from crabpy.gateway.capakey import CapakeyGateway
+
+    capakey = capakey_factory(
+        user='USER',
+        password='PASSWORD'
+    )
+
+    g = CapakeyGateway(capakey)
+
+    res = g.list_gemeenten()
+
+    print res
+
 See the examples folder for some more sample code.
 
 Development
@@ -62,6 +84,16 @@ tox_ or directly through nose:
     $ nosetests 
     # Coverage
     $ nosetests --config nose_cover.cfg
+
+If you have access to the capakey service, you can enter your credentials in 
+the `nose_development.ini` file and use that as a test config.
+
+.. code-block:: bash
+
+    # Integration tests with nose but no coverage
+    $ nosetests --tc-file nose_development.ini
+    # Integration tests with nose and coverage
+    $ nosetests --tc-file nose_development.ini --config nose_cover.cfg
 
 .. _agiv: http://www.agiv.be
 .. _tox: http://tox.testrun.org
