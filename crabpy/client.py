@@ -18,9 +18,6 @@ def crab_factory(**kwargs):
         del kwargs['wsdl']
     else:
         wsdl = "http://crab.agiv.be/wscrab/wscrab.svc?wsdl"
-    if 'proxy' in kwargs:
-        proxy = kwargs['proxy']
-        del kwargs['proxy']
     c = Client(
         wsdl,
         **kwargs
@@ -48,9 +45,6 @@ def capakey_factory(**kwargs):
         raise ValueError(
             "You must specify a 'user' and a 'password'."
         )
-    if 'proxy' in kwargs:
-        proxy = kwargs['proxy']
-        del kwargs['proxy']
     c = Client(
         wsdl,
         **kwargs
