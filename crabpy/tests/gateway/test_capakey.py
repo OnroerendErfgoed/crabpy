@@ -165,6 +165,12 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual(g.centroid, (104154.2225, 197300.703))
         self.assertEqual(g.bounding_box, (94653.453, 185680.984, 113654.992, 208920.422))
         self.assertEqual('Gent (44021)', str(g))
+        self.assertEqual("Gemeente(44021, 'Gent')", repr(g))
+
+    def test_str_and_repr_dont_lazy_load(self):
+        g = Gemeente (44021)
+        self.assertEqual('Gemeente 44021', str(g))
+        self.assertEqual('Gemeente(44021)', repr(g))
 
     def test_check_gateway_not_set(self):
         g = Gemeente (44021)
@@ -218,6 +224,7 @@ class AfdelingTests(unittest.TestCase):
         self.assertEqual(a.centroid, (104893.06375, 196022.244094))
         self.assertEqual(a.bounding_box, (104002.076625, 194168.3415, 105784.050875, 197876.146688))
         self.assertEqual('GENT  1 AFD (44021)', str(a))
+        self.assertEqual("Afdeling(44021, 'GENT  1 AFD')", repr(a))
 
     def test_to_string_not_fully_initialised(self):
         a = Afdeling (
@@ -266,14 +273,15 @@ class SectieTests(unittest.TestCase):
     def test_fully_initialised(self):
         s = Sectie(
             'A',
-            Afdeling(44021, 'Gent   1 AFD'),
+            Afdeling(44021, 'Gent  1 AFD'),
             (104893.06375, 196022.244094),
             (104002.076625, 194168.3415, 105784.050875, 197876.146688)
         )
         self.assertEqual(s.id, 'A')
         self.assertEqual(s.centroid, (104893.06375, 196022.244094))
         self.assertEqual(s.bounding_box, (104002.076625, 194168.3415, 105784.050875, 197876.146688))
-        self.assertEqual('Gent   1 AFD (44021), Sectie A', str(s))
+        self.assertEqual('Gent  1 AFD (44021), Sectie A', str(s))
+        self.assertEqual("Sectie('A', Afdeling(44021, 'Gent  1 AFD'))", repr(s))
 
     def test_check_gateway_not_set(self):
         s = Sectie('A', Afdeling(44021))
@@ -333,6 +341,10 @@ class PerceelTests(unittest.TestCase):
         self.assertEqual(p.centroid, (104893.06375, 196022.244094))
         self.assertEqual(p.bounding_box, (104002.076625, 194168.3415, 105784.050875, 197876.146688))
         self.assertEqual(p.capakey, str(p))
+        self.assertEqual(
+            "Perceel('1154/02C000', Sectie('A', Afdeling(46013)), '40613A1154/02C000', '40613_A_1154_C_000_02')", 
+            repr(p)
+        )
 
     def test_check_gateway_not_set(self):
         p = Perceel(

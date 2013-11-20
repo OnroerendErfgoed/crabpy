@@ -316,10 +316,16 @@ class Gemeente(GatewayObject):
         return self.gateway.list_kadastrale_afdelingen_by_gemeente(self)
 
     def __str__(self):
-        return '%s (%s)' % (self.naam, self.id)
+        if self._naam is not None:
+            return '%s (%s)' % (self._naam, self.id)
+        else:
+            return 'Gemeente %s' % (self.id)
 
     def __repr__(self):
-        return 'Gemeente(%s, %s) % (self.id, self.naam)'
+        if self._naam is not None:
+            return "Gemeente(%s, '%s')" % (self.id, self._naam)
+        else:
+            return 'Gemeente(%s)' % (self.id)
 
 
 def check_lazy_load_afdeling(f):
@@ -387,7 +393,10 @@ class Afdeling(GatewayObject):
             return 'Afdeling %s' % (self.id)
 
     def __repr__(self):
-        return('Afdeling(%s, %s)' % (self.id, self.naam))
+        if self._naam is not None:
+            return "Afdeling(%s, '%s')" % (self.id, self._naam)
+        else:
+            return 'Afdeling(%s)' % (self.id)
 
 def check_lazy_load_sectie(f):
     '''
@@ -438,7 +447,7 @@ class Sectie(GatewayObject):
         return '%s, Sectie %s' % (self.afdeling, self.id)
 
     def __repr__(self):
-        return 'Sectie(%s, %s)' % (self.id, self.afdeling)
+        return "Sectie('%s', %s)" % (self.id, repr(self.afdeling))
 
 
 def check_lazy_load_perceel(f):
@@ -510,4 +519,4 @@ class Perceel(GatewayObject):
         return self.capakey
 
     def __repr__(self):
-        return 'Perceel(%s, %s, %s)' % (self.id, self.sectie, self.capakey)
+        return "Perceel('%s', %s, '%s', '%s')" % (self.id, repr(self.sectie), self.capakey, self.percid)
