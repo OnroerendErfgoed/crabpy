@@ -318,6 +318,9 @@ class Gemeente(GatewayObject):
     def __str__(self):
         return '%s (%s)' % (self.naam, self.id)
 
+    def __repr__(self):
+        return 'Gemeente(%s, %s) % (self.id, self.naam)'
+
 
 def check_lazy_load_afdeling(f):
     '''
@@ -383,6 +386,9 @@ class Afdeling(GatewayObject):
         else:
             return 'Afdeling %s' % (self.id)
 
+    def __repr__(self):
+        return('Afdeling(%s, %s)' % (self.id, self.naam))
+
 def check_lazy_load_sectie(f):
     '''
     Decorator function to lazy load a :class:`Sectie`.
@@ -430,6 +436,9 @@ class Sectie(GatewayObject):
 
     def __str__(self):
         return '%s, Sectie %s' % (self.afdeling, self.id)
+
+    def __repr__(self):
+        return 'Sectie(%s, %s)' % (self.id, self.afdeling)
 
 
 def check_lazy_load_perceel(f):
@@ -499,3 +508,6 @@ class Perceel(GatewayObject):
 
     def __str__(self):
         return self.capakey
+
+    def __repr__(self):
+        return 'Perceel(%s, %s, %s)' % (self.id, self.sectie, self.capakey)
