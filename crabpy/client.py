@@ -8,6 +8,11 @@ from crabpy.wsa import Action, MessageID, To
 
 
 def crab_factory(**kwargs):
+    '''
+    Factory that generates a CRAB client.
+
+    :rtype: :class:`suds.client.Client`
+    '''
     if 'wsdl' in kwargs:
         wsdl = kwargs['wsdl']
         del kwargs['wsdl']
@@ -24,6 +29,11 @@ def crab_factory(**kwargs):
 
 
 def capakey_factory(**kwargs):
+    '''
+    Factory that generates a CAPAKEY client.
+
+    :rtype: :class:`suds.client.Client`
+    '''
     if 'wsdl' in kwargs:
         wsdl = kwargs['wsdl']
         del kwargs['wsdl']
@@ -51,6 +61,13 @@ def capakey_factory(**kwargs):
 
 
 def capakey_request(client, action, *args):
+    '''
+    Utility function help making requests to the CAPAKEY service.
+
+    :param client: A :class:`suds.client.Client` for the CAPAKEY service.
+    :param string action: Which method to call, eg. `ListAdmGemeenten`.
+    :returns: Result of the SOAP call.
+    '''
     security = Security()
     token = UsernameDigestToken(client.capakey_user, client.capakey_password)
     # Service can't handle microseconds.
