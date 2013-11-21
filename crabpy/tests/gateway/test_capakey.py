@@ -17,13 +17,15 @@ from crabpy.gateway.capakey import (
     Perceel
 )
 
+
 def run_capakey_integration_tests():
     from testconfig import config
     from crabpy.tests import as_bool
     try:
         return as_bool(config['capakey']['run_integration_tests'])
-    except KeyError: #pragma NO COVER
+    except KeyError:  # pragma NO COVER
         return False
+
 
 @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
 class CapakeyGatewayTests(unittest.TestCase):
@@ -59,7 +61,6 @@ class CapakeyGatewayTests(unittest.TestCase):
             res = self.capakey.list_gemeenten()
 
     def test_get_gemeente_by_id(self):
-        from crabpy.gateway.capakey import Gemeente
         res = self.capakey.get_gemeente_by_id(44021)
         self.assertIsInstance(res, Gemeente)
         self.assertEqual(res.id, 44021)
@@ -88,7 +89,6 @@ class CapakeyGatewayTests(unittest.TestCase):
         self.assertLess(len(res), 40)
 
     def test_get_kadastrale_afdeling_by_id(self):
-        from crabpy.gateway.capakey import Gemeente, Afdeling
         res = self.capakey.get_kadastrale_afdeling_by_id(44021)
         self.assertIsInstance(res, Afdeling)
         self.assertEqual(res.id, 44021)
@@ -107,7 +107,6 @@ class CapakeyGatewayTests(unittest.TestCase):
         self.assertEqual(len(res), 1)
 
     def test_get_sectie_by_id_and_afdeling(self):
-        from crabpy.gateway.capakey import Afdeling, Sectie
         a = self.capakey.get_kadastrale_afdeling_by_id(44021)
         res = self.capakey.get_sectie_by_id_and_afdeling('A', a)
         self.assertIsInstance(res, Sectie)
@@ -121,7 +120,6 @@ class CapakeyGatewayTests(unittest.TestCase):
         self.assertGreater(len(res), 0)
 
     def test_get_perceel_by_id_and_sectie(self):
-        from crabpy.gateway.capakey import Perceel
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = self.capakey.list_percelen_by_sectie(s)
         perc = percelen[0]
@@ -131,7 +129,6 @@ class CapakeyGatewayTests(unittest.TestCase):
         self.assertEqual(res.sectie.afdeling.id, 44021)
 
     def test_get_perceel_by_capakey(self):
-        from crabpy.gateway.capakey import Perceel
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = self.capakey.list_percelen_by_sectie(s)
         perc = percelen[0]
@@ -141,7 +138,6 @@ class CapakeyGatewayTests(unittest.TestCase):
         self.assertEqual(res.sectie.afdeling.id, 44021)
 
     def test_get_perceel_by_percid(self):
-        from crabpy.gateway.capakey import Perceel
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = self.capakey.list_percelen_by_sectie(s)
         perc = percelen[0]
@@ -154,7 +150,7 @@ class CapakeyGatewayTests(unittest.TestCase):
 class GemeenteTests(unittest.TestCase):
 
     def test_fully_initialised(self):
-        g = Gemeente (
+        g = Gemeente(
             44021,
             'Gent',
             (104154.2225, 197300.703),
@@ -168,12 +164,12 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual("Gemeente(44021, 'Gent')", repr(g))
 
     def test_str_and_repr_dont_lazy_load(self):
-        g = Gemeente (44021)
+        g = Gemeente(44021)
         self.assertEqual('Gemeente 44021', str(g))
         self.assertEqual('Gemeente(44021)', repr(g))
 
     def test_check_gateway_not_set(self):
-        g = Gemeente (44021)
+        g = Gemeente(44021)
         self.assertRaises(RuntimeError, g.check_gateway)
 
     @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
@@ -185,7 +181,7 @@ class GemeenteTests(unittest.TestCase):
                 password=config['capakey']['password']
             )
         )
-        g = Gemeente (44021)
+        g = Gemeente(44021)
         g.set_gateway(capakey)
         self.assertEqual(g.id, 44021)
         self.assertEqual(g.naam, 'Gent')
@@ -201,7 +197,7 @@ class GemeenteTests(unittest.TestCase):
                 password=config['capakey']['password']
             )
         )
-        g = Gemeente (44021)
+        g = Gemeente(44021)
         g.set_gateway(capakey)
         afdelingen = g.afdelingen
         self.assertIsInstance(afdelingen, list)
@@ -338,11 +334,17 @@ class PerceelTests(unittest.TestCase):
         )
         self.assertEqual(p.id, ('1154/02C000'))
         self.assertEqual(p.sectie.id, 'A')
-        self.assertEqual(p.centroid, (104893.06375, 196022.244094))
-        self.assertEqual(p.bounding_box, (104002.076625, 194168.3415, 105784.050875, 197876.146688))
+        self.assertEqual(
+            p.centroid,
+            (104893.06375, 196022.244094)
+        )
+        self.assertEqual(
+            p.bounding_box,
+            (104002.076625, 194168.3415, 105784.050875, 197876.146688)
+        )
         self.assertEqual(p.capakey, str(p))
         self.assertEqual(
-            "Perceel('1154/02C000', Sectie('A', Afdeling(46013)), '40613A1154/02C000', '40613_A_1154_C_000_02')", 
+            "Perceel('1154/02C000', Sectie('A', Afdeling(46013)), '40613A1154/02C000', '40613_A_1154_C_000_02')",
             repr(p)
         )
 
@@ -388,6 +390,5 @@ class PerceelTests(unittest.TestCase):
             p = Perceel(
                 '1154/02C000', Sectie('A', Afdeling(46013)),
                 '40613_A_1154_C_000_02',
-                '40613A1154/02C000', 
+                '40613A1154/02C000',
             )
-
