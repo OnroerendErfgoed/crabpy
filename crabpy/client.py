@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+'''
+This module contains utiltiy functions for interacting with AGIV soap services.
+
+.. versionadded:: 0.1.0
+'''
+
 from suds.client import Client
 
 from suds.wsse import Security

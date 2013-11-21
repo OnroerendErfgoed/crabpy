@@ -8,6 +8,12 @@ Client module
 .. automodule:: crabpy.client
    :members:
 
+Wsa module
+----------
+
+.. automodule:: crabpy.wsa
+   :members:
+
 Capakey gateway module
 ----------------------
 
