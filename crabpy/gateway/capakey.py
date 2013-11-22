@@ -41,12 +41,16 @@ class CapakeyGateway(object):
 
     def __init__(self, client, **kwargs):
         self.client = client
-        self.caches['permanent'] = make_region()
+        cache_regions = ['permanent', 'long', 'short']
+        for cr in cache_regions:
+            self.caches[cr] = make_region()
         if 'cache_config' in kwargs:
-            self.caches['permanent'].configure_from_config(
-                kwargs['cache_config'], 
-                'permanent.'
-            )
+            for cr in cache_regions:
+                if ('%s.backend' % cr) in kwargs['cache_config']:
+                    self.caches[cr].configure_from_config(
+                        kwargs['cache_config'],
+                        '%s.' % cr
+                    )
 
     def list_gemeenten(self, sort=1):
         '''
@@ -73,14 +77,20 @@ class CapakeyGateway(object):
 
         :rtype: :class:`Gemeente`
         '''
-        res = capakey_gateway_request(self.client, 'GetAdmGemeenteByNiscode', id)
-        return Gemeente(
-            res.Niscode,
-            res.AdmGemeentenaam,
-            (res.CenterX, res.CenterY),
-            (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-            gateway=self
-        )
+        def creator():
+            res = capakey_gateway_request(self.client, 'GetAdmGemeenteByNiscode', id)
+            return Gemeente(
+                res.Niscode,
+                res.AdmGemeentenaam,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+                gateway=self
+            )
+        if self.caches['long'].is_configured:
+            key = 'GetAdmGemeenteByNiscode#%s' % id
+            return self.caches['long'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def list_kadastrale_afdelingen(self, sort=1):
         '''
@@ -118,14 +128,20 @@ class CapakeyGateway(object):
         except AttributeError:
             gemeente = self.get_gemeente_by_id(gemeente)
             gid = gemeente.id
-        res = capakey_gateway_request(self.client, 'ListKadAfdelingenByNiscode', gid, sort)
-        return [
-            Afdeling(
-                r.KadAfdelingcode,
-                r.KadAfdelingnaam,
-                gemeente,
-                gateway=self
-            ) for r in res.KadAfdelingItem]
+        def creator():
+            res = capakey_gateway_request(self.client, 'ListKadAfdelingenByNiscode', gid, sort)
+            return [
+                Afdeling(
+                    r.KadAfdelingcode,
+                    r.KadAfdelingnaam,
+                    gemeente,
+                    gateway=self
+                ) for r in res.KadAfdelingItem]
+        if self.caches['permanent'].is_configured:
+            key = 'ListKadAfdelingenByNiscode#%s#%s' % (gid, sort)
+            return self.caches['permanent'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def get_kadastrale_afdeling_by_id(self, id):
         '''
@@ -134,15 +150,21 @@ class CapakeyGateway(object):
         :param id: An id of a `kadastrale afdeling`.
         :rtype: A :class:`Afdeling`.
         '''
-        res = capakey_gateway_request(self.client, 'GetKadAfdelingByKadAfdelingcode', id)
-        return Afdeling(
-            id=res.KadAfdelingcode,
-            naam=res.KadAfdelingnaam,
-            gemeente=Gemeente(res.Niscode, res.AdmGemeentenaam, gateway=self),
-            centroid=(res.CenterX, res.CenterY),
-            bounding_box=(res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-            gateway=self
-        )
+        def creator():
+            res = capakey_gateway_request(self.client, 'GetKadAfdelingByKadAfdelingcode', id)
+            return Afdeling(
+                id=res.KadAfdelingcode,
+                naam=res.KadAfdelingnaam,
+                gemeente=Gemeente(res.Niscode, res.AdmGemeentenaam, gateway=self),
+                centroid=(res.CenterX, res.CenterY),
+                bounding_box=(res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+                gateway=self
+            )
+        if self.caches['long'].is_configured:
+            key = 'GetKadAfdelingByKadAfdelingcode#%s' % id
+            return self.caches['long'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def list_secties_by_afdeling(self, afdeling):
         '''
@@ -157,14 +179,20 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
-        res = capakey_gateway_request(self.client, 'ListKadSectiesByKadAfdelingcode', aid)
-        return [
-            Sectie(
-                r.KadSectiecode,
-                afdeling,
-                gateway=self
-            ) for r in res.KadSectieItem
-        ]
+        def creator():
+            res = capakey_gateway_request(self.client, 'ListKadSectiesByKadAfdelingcode', aid)
+            return [
+                Sectie(
+                    r.KadSectiecode,
+                    afdeling,
+                    gateway=self
+                ) for r in res.KadSectieItem
+            ]
+        if self.caches['long'].is_configured:
+            key = 'ListKadSectiesByKadAfdelingcode#%s' % aid
+            return self.caches['long'].get_or_create(key, creator)
+        else:
+            return creator()
     
     def get_sectie_by_id_and_afdeling(self, id, afdeling):
         '''
@@ -180,14 +208,20 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
-        res = capakey_gateway_request(self.client, 'GetKadSectieByKadSectiecode', aid, id)
-        return Sectie(
-            res.KadSectiecode,
-            afdeling,
-            (res.CenterX, res.CenterY),
-            (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-            gateway=self
-        )
+        def creator():
+            res = capakey_gateway_request(self.client, 'GetKadSectieByKadSectiecode', aid, id)
+            return Sectie(
+                res.KadSectiecode,
+                afdeling,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+                gateway=self
+            )
+        if self.caches['long'].is_configured:
+            key = 'GetKadSectieByKadSectiecode#%s#%s' % (aid, id)
+            return self.caches['long'].get_or_create(key, creator)
+        else: 
+            return creator() 
 
     def list_percelen_by_sectie(self, sectie, sort=1):
         '''
@@ -197,15 +231,21 @@ class CapakeyGateway(object):
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Perceel`.
         '''
-        res = capakey_gateway_request(self.client, 'ListKadPerceelsnummersByKadSectiecode', sectie.afdeling.id, sectie.id, sort)
-        return [
-            Perceel(
-                r.KadPerceelsnummer,
-                sectie,
-                r.CaPaKey,
-                r.PERCID,
-            ) for r in res.KadPerceelsnummerItem
-        ]
+        def creator():
+            res = capakey_gateway_request(self.client, 'ListKadPerceelsnummersByKadSectiecode', sectie.afdeling.id, sectie.id, sort)
+            return [
+                Perceel(
+                    r.KadPerceelsnummer,
+                    sectie,
+                    r.CaPaKey,
+                    r.PERCID,
+                ) for r in res.KadPerceelsnummerItem
+            ]
+        if self.caches['short'].is_configured:
+            key = 'ListKadPerceelsnummersByKadSectiecode#%s#%s#%s' % (sectie.afdeling.id, sectie.id, sort)
+            return self.caches['short'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def get_perceel_by_id_and_sectie(self, id, sectie):
         '''
@@ -215,18 +255,24 @@ class CapakeyGateway(object):
         :param sectie: The :class:`Sectie` that contains the perceel.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByKadPerceelsnummer', sectie.afdeling.id, sectie.id, id)
-        return Perceel(
-            res.KadPerceelsnummer,
-            sectie,
-            res.CaPaKey,
-            res.PERCID,
-            res.CaPaTy,
-            res.CaShKey,
-            (res.CenterX, res.CenterY),
-            (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-            gateway=self
-        )
+        def creator():
+            res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByKadPerceelsnummer', sectie.afdeling.id, sectie.id, id)
+            return Perceel(
+                res.KadPerceelsnummer,
+                sectie,
+                res.CaPaKey,
+                res.PERCID,
+                res.CaPaTy,
+                res.CaShKey,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+                gateway=self
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetKadPerceelsnummerByKadPerceelsnummer#%s#%s#%s' % (sectie.afdeling.id, sectie.id, id)
+            return self.caches['short'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def get_perceel_by_capakey(self, capakey):
         '''
@@ -235,20 +281,26 @@ class CapakeyGateway(object):
         :param capakey: An capakey for a `perceel`.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByCaPaKey', capakey)
-        afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
-        sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
-        return Perceel(
-            res.KadPerceelsnummer,
-            sectie,
-            res.CaPaKey,
-            res.PERCID,
-            res.CaPaTy,
-            res.CaShKey,
-            (res.CenterX, res.CenterY),
-            (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-            gateway=self
-        )
+        def creator():
+            res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByCaPaKey', capakey)
+            afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
+            sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
+            return Perceel(
+                res.KadPerceelsnummer,
+                sectie,
+                res.CaPaKey,
+                res.PERCID,
+                res.CaPaTy,
+                res.CaShKey,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+                gateway=self
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetKadPerceelsnummerByCaPaKey#%s' % capakey
+            return self.caches['short'].get_or_create(key, creator)
+        else:
+            return creator()
 
     def get_perceel_by_percid(self, percid):
         '''
@@ -257,20 +309,26 @@ class CapakeyGateway(object):
         :param percid: A percid for a `perceel`.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByPERCID', percid)
-        afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
-        sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
-        return Perceel(
-            res.KadPerceelsnummer,
-            sectie,
-            res.CaPaKey,
-            res.PERCID,
-            res.CaPaTy,
-            res.CaShKey,
-            (res.CenterX, res.CenterY),
-            (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-            gateway=self
-        )
+        def creator():
+            res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByPERCID', percid)
+            afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
+            sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
+            return Perceel(
+                res.KadPerceelsnummer,
+                sectie,
+                res.CaPaKey,
+                res.PERCID,
+                res.CaPaTy,
+                res.CaShKey,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+                gateway=self
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetKadPerceelsnummerByPERCID#%s' % percid
+            return self.caches['short'].get_or_create(key, creator)
+        else:
+            return creator()
 
 
 class GatewayObject(object):

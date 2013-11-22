@@ -406,7 +406,12 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.capakey = CapakeyGateway(
             self.capakey_client,
             cache_config = {
-                'permanent.backend': 'dogpile.cache.memory'
+                'permanent.backend': 'dogpile.cache.memory',
+                'permanent.expiration_time': 86400,
+                'long.backend': 'dogpile.cache.memory',
+                'long.expiration_time': 3600,
+                'short.backend': 'dogpile.cache.memory',
+                'short.expiration_time': 600,
             }
         )
 
@@ -441,6 +446,14 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertEqual(
             self.capakey.caches['permanent'].get('ListAdmGemeenten#1'),
             NO_VALUE
+        )
+
+    def test_get_gemeente_by_id(self):
+        res = self.capakey.get_gemeente_by_id(44021)
+        self.assertIsInstance(res, Gemeente)
+        self.assertEqual(
+            self.capakey.caches['long'].get('GetAdmGemeenteByNiscode#44021'),
+            res
         )
 
     def test_list_kadastrale_afdelingen(self):
