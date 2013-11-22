@@ -6,7 +6,8 @@ Crabpy is still in alpha development. Currently we're just happy to have gotten
 a SOAP service working in python.
 
 We try to cover as much code as we can with unit tests. You can run them using
-tox_ or directly through nose:
+tox_ or directly through nose. Currently tox_ and integration tests with the 
+service don't seem to get along, so we only run integration tests through nose.
 
 .. code-block:: bash
 

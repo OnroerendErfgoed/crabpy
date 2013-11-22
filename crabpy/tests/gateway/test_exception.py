@@ -5,6 +5,7 @@ try:
 except ImportError:  # pragma NO COVER
     import unittest  # noqa
 
+
 class ExceptionTests(unittest.TestCase):
 
     def test_inheritance(self):

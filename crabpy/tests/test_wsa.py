@@ -9,6 +9,7 @@ from suds.sax.element import Element
 
 from ..wsa import wsa
 
+
 class ElementTests(unittest.TestCase):
 
     def testAction(self):
