@@ -491,10 +491,23 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
             res
         )
 
-    def test_list_kadastrale_afdelingen(self):
+    def test_list_afdelingen(self):
         res = self.capakey.list_kadastrale_afdelingen()
         self.assertIsInstance(res, list)
         self.assertEqual(
             self.capakey.caches['permanent'].get('ListKadAfdelingen#1'),
+            res
+        )
+
+    def test_list_afdelingen_by_gemeente(self):
+        g = self.capakey.get_gemeente_by_id(44021)
+        self.assertEqual(
+            self.capakey.caches['long'].get('GetAdmGemeenteByNiscode#44021'),
+            g
+        )
+        res = self.capakey.list_kadastrale_afdelingen_by_gemeente(g)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListKadAfdelingenByNiscode#44021#1'),
             res
         )
