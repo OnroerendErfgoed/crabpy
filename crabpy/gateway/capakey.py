@@ -10,9 +10,10 @@ from crabpy.client import capakey_request
 from suds import WebFault
 
 from crabpy.gateway.exception import (
-    GatewayRuntimeException, 
+    GatewayRuntimeException,
     GatewayAuthenticationException
 )
+
 
 def capakey_gateway_request(client, method, *args):
     try:
@@ -30,6 +31,7 @@ def capakey_gateway_request(client, method, *args):
             )
         raise err
 
+
 class CapakeyGateway(object):
     '''
     A gateway to the capakey webservice.
@@ -46,7 +48,10 @@ class CapakeyGateway(object):
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
         res = capakey_gateway_request(self.client, 'ListAdmGemeenten', sort)
-        return [Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self) for r in res.AdmGemeenteItem]
+        return [
+            Gemeente(
+                r.Niscode, r.AdmGemeentenaam, gateway=self
+            ) for r in res.AdmGemeenteItem]
 
     def get_gemeente_by_id(self, id):
         '''
@@ -54,7 +59,11 @@ class CapakeyGateway(object):
 
         :rtype: :class:`Gemeente`
         '''
-        res = capakey_gateway_request(self.client, 'GetAdmGemeenteByNiscode', id)
+        res = capakey_gateway_request(
+            self.client,
+            'GetAdmGemeenteByNiscode',
+            id
+        )
         return Gemeente(
             res.Niscode,
             res.AdmGemeentenaam,
@@ -93,7 +102,12 @@ class CapakeyGateway(object):
         except AttributeError:
             gemeente = self.get_gemeente_by_id(gemeente)
             gid = gemeente.id
-        res = capakey_gateway_request(self.client, 'ListKadAfdelingenByNiscode', gid, sort)
+        res = capakey_gateway_request(
+            self.client,
+            'ListKadAfdelingenByNiscode',
+            gid,
+            sort
+        )
         return [
             Afdeling(
                 r.KadAfdelingcode,
@@ -109,13 +123,19 @@ class CapakeyGateway(object):
         :param id: An id of a `kadastrale afdeling`.
         :rtype: A :class:`Afdeling`.
         '''
-        res = capakey_gateway_request(self.client, 'GetKadAfdelingByKadAfdelingcode', id)
+        res = capakey_gateway_request(
+            self.client,
+            'GetKadAfdelingByKadAfdelingcode',
+            id
+        )
         return Afdeling(
             id=res.KadAfdelingcode,
             naam=res.KadAfdelingnaam,
             gemeente=Gemeente(res.Niscode, res.AdmGemeentenaam, gateway=self),
             centroid=(res.CenterX, res.CenterY),
-            bounding_box=(res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
+            bounding_box=(
+                res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY
+            ),
             gateway=self
         )
 
@@ -132,7 +152,11 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
-        res = capakey_gateway_request(self.client, 'ListKadSectiesByKadAfdelingcode', aid)
+        res = capakey_gateway_request(
+            self.client,
+            'ListKadSectiesByKadAfdelingcode',
+            aid
+        )
         return [
             Sectie(
                 r.KadSectiecode,
@@ -140,7 +164,7 @@ class CapakeyGateway(object):
                 gateway=self
             ) for r in res.KadSectieItem
         ]
-    
+
     def get_sectie_by_id_and_afdeling(self, id, afdeling):
         '''
         Get a `sectie`.
@@ -155,7 +179,12 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
-        res = capakey_gateway_request(self.client, 'GetKadSectieByKadSectiecode', aid, id)
+        res = capakey_gateway_request(
+            self.client,
+            'GetKadSectieByKadSectiecode',
+            aid,
+            id
+        )
         return Sectie(
             res.KadSectiecode,
             afdeling,
@@ -172,7 +201,13 @@ class CapakeyGateway(object):
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Perceel`.
         '''
-        res = capakey_gateway_request(self.client, 'ListKadPerceelsnummersByKadSectiecode', sectie.afdeling.id, sectie.id, sort)
+        res = capakey_gateway_request(
+            self.client,
+            'ListKadPerceelsnummersByKadSectiecode',
+            sectie.afdeling.id,
+            sectie.id,
+            sort
+        )
         return [
             Perceel(
                 r.KadPerceelsnummer,
@@ -190,7 +225,13 @@ class CapakeyGateway(object):
         :param sectie: The :class:`Sectie` that contains the perceel.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByKadPerceelsnummer', sectie.afdeling.id, sectie.id, id)
+        res = capakey_gateway_request(
+            self.client,
+            'GetKadPerceelsnummerByKadPerceelsnummer',
+            sectie.afdeling.id,
+            sectie.id,
+            id
+        )
         return Perceel(
             res.KadPerceelsnummer,
             sectie,
@@ -210,7 +251,11 @@ class CapakeyGateway(object):
         :param capakey: An capakey for a `perceel`.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByCaPaKey', capakey)
+        res = capakey_gateway_request(
+            self.client,
+            'GetKadPerceelsnummerByCaPaKey',
+            capakey
+        )
         afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
         sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
         return Perceel(
@@ -232,7 +277,11 @@ class CapakeyGateway(object):
         :param percid: A percid for a `perceel`.
         :rtype: :class:`Perceel`
         '''
-        res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByPERCID', percid)
+        res = capakey_gateway_request(
+            self.client,
+            'GetKadPerceelsnummerByPERCID',
+            percid
+        )
         afdeling = Afdeling(res.KadAfdelingcode, gateway=self)
         sectie = Sectie(res.KadSectiecode, afdeling, gateway=self)
         return Perceel(
@@ -286,9 +335,10 @@ class Gemeente(GatewayObject):
     '''
 
     def __init__(
-            self, id, naam=None, 
+            self, id, naam=None,
             centroid=None, bounding_box=None,
-            **kwargs):
+            **kwargs
+    ):
         self.id = int(id)
         self._naam = naam
         self._centroid = centroid
@@ -353,7 +403,8 @@ class Afdeling(GatewayObject):
     def __init__(
         self, id, naam=None, gemeente=None,
         centroid=None, bounding_box=None,
-        **kwargs):
+        **kwargs
+    ):
         self.id = int(id)
         self._naam = naam
         self._gemeente = gemeente
@@ -398,6 +449,7 @@ class Afdeling(GatewayObject):
         else:
             return 'Afdeling(%s)' % (self.id)
 
+
 def check_lazy_load_sectie(f):
     '''
     Decorator function to lazy load a :class:`Sectie`.
@@ -406,7 +458,9 @@ def check_lazy_load_sectie(f):
         sectie = args[0]
         if sectie._centroid is None or sectie._bounding_box is None:
             sectie.check_gateway()
-            s = sectie.gateway.get_sectie_by_id_and_afdeling(sectie.id, sectie.afdeling.id)
+            s = sectie.gateway.get_sectie_by_id_and_afdeling(
+                sectie.id, sectie.afdeling.id
+            )
             sectie._centroid = s._centroid
             sectie._bounding_box = s._bounding_box
         return f(*args)
@@ -421,7 +475,8 @@ class Sectie(GatewayObject):
     def __init__(
         self, id, afdeling,
         centroid=None, bounding_box=None,
-        **kwargs):
+        **kwargs
+    ):
         self.id = id
         self.afdeling = afdeling
         self._centroid = centroid
@@ -456,14 +511,17 @@ def check_lazy_load_perceel(f):
     '''
     def wrapper(*args):
         perceel = args[0]
-        if perceel._capatype is None or perceel._cashkey is None\
-        or perceel._centroid is None or perceel._bounding_box is None:
+        if perceel._capatype is None or perceel._cashkey is None or perceel._centroid is None or perceel._bounding_box is None:
             perceel.check_gateway()
-            p = perceel.gateway.get_perceel_by_id_and_sectie(perceel.id, perceel.sectie)
+            p = perceel.gateway.get_perceel_by_id_and_sectie(
+                perceel.id,
+                perceel.sectie
+            )
             perceel._centroid = p._centroid
             perceel._bounding_box = p._bounding_box
         return f(*args)
     return wrapper
+
 
 class Perceel(GatewayObject):
     '''
@@ -474,7 +532,8 @@ class Perceel(GatewayObject):
         self, id, sectie, capakey, percid,
         capatype=None, cashkey=None,
         centroid=None, bounding_box=None,
-        **kwargs):
+        **kwargs
+    ):
         self.id = id
         self.sectie = sectie
         self.capakey = capakey
@@ -503,7 +562,9 @@ class Perceel(GatewayObject):
             self.exponent = match.group(3)
             self.macht = match.group(4)
         else:
-            raise ValueError("Invalid Capakey %s can't be parsed" % self.capakey)
+            raise ValueError(
+                "Invalid Capakey %s can't be parsed" % self.capakey
+            )
 
     @property
     @check_lazy_load_perceel
@@ -519,4 +580,6 @@ class Perceel(GatewayObject):
         return self.capakey
 
     def __repr__(self):
-        return "Perceel('%s', %s, '%s', '%s')" % (self.id, repr(self.sectie), self.capakey, self.percid)
+        return "Perceel('%s', %s, '%s', '%s')" % (
+            self.id, repr(self.sectie), self.capakey, self.percid
+        )
