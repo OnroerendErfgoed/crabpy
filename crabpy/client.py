@@ -73,7 +73,11 @@ def capakey_request(client, action, *args):
     token = UsernameDigestToken(client.capakey_user, client.capakey_password)
     # Service can't handle microseconds.
     utc = datetime.utcnow()
-    utc = datetime(utc.year, utc.month, utc.day, utc.hour, utc.minute, utc.second, tzinfo=utc.tzinfo)
+    utc = datetime(
+        utc.year, utc.month, utc.day,
+        utc.hour, utc.minute, utc.second,
+        tzinfo=utc.tzinfo
+    )
     token.setcreated(utc)
     security.tokens.append(token)
     client.set_options(wsse=security)

@@ -27,7 +27,10 @@ def run_capakey_integration_tests():
         return False
 
 
-@unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+@unittest.skipUnless(
+    run_capakey_integration_tests(),
+    'No CAPAKEY Integration tests required'
+)
 class CapakeyGatewayTests(unittest.TestCase):
 
     def setUp(self):
@@ -58,7 +61,7 @@ class CapakeyGatewayTests(unittest.TestCase):
         )
         from crabpy.gateway.exception import GatewayAuthenticationException
         with self.assertRaises(GatewayAuthenticationException):
-            res = self.capakey.list_gemeenten()
+            self.capakey.list_gemeenten()
 
     def test_get_gemeente_by_id(self):
         res = self.capakey.get_gemeente_by_id(44021)
@@ -68,7 +71,7 @@ class CapakeyGatewayTests(unittest.TestCase):
     def test_get_gemeente_by_invalid_id(self):
         from crabpy.gateway.exception import GatewayRuntimeException
         with self.assertRaises(GatewayRuntimeException):
-            res = self.capakey.get_gemeente_by_id('gent')
+            self.capakey.get_gemeente_by_id('gent')
 
     def test_list_afdelingen(self):
         res = self.capakey.list_kadastrale_afdelingen()
@@ -159,7 +162,10 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual(g.id, 44021)
         self.assertEqual(g.naam, 'Gent')
         self.assertEqual(g.centroid, (104154.2225, 197300.703))
-        self.assertEqual(g.bounding_box, (94653.453, 185680.984, 113654.992, 208920.422))
+        self.assertEqual(
+            g.bounding_box,
+            (94653.453, 185680.984, 113654.992, 208920.422)
+        )
         self.assertEqual('Gent (44021)', str(g))
         self.assertEqual("Gemeente(44021, 'Gent')", repr(g))
 
@@ -172,7 +178,10 @@ class GemeenteTests(unittest.TestCase):
         g = Gemeente(44021)
         self.assertRaises(RuntimeError, g.check_gateway)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -188,7 +197,10 @@ class GemeenteTests(unittest.TestCase):
         self.assertIsNotNone(g.centroid)
         self.assertIsNotNone(g.bounding_box)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_afdelingen(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -208,7 +220,7 @@ class GemeenteTests(unittest.TestCase):
 class AfdelingTests(unittest.TestCase):
 
     def test_fully_initialised(self):
-        a = Afdeling (
+        a = Afdeling(
             44021,
             'GENT  1 AFD',
             Gemeente(44021, 'Gent'),
@@ -218,12 +230,15 @@ class AfdelingTests(unittest.TestCase):
         self.assertEqual(a.id, 44021)
         self.assertEqual(a.naam, 'GENT  1 AFD')
         self.assertEqual(a.centroid, (104893.06375, 196022.244094))
-        self.assertEqual(a.bounding_box, (104002.076625, 194168.3415, 105784.050875, 197876.146688))
+        self.assertEqual(
+            a.bounding_box,
+            (104002.076625, 194168.3415, 105784.050875, 197876.146688)
+        )
         self.assertEqual('GENT  1 AFD (44021)', str(a))
         self.assertEqual("Afdeling(44021, 'GENT  1 AFD')", repr(a))
 
     def test_to_string_not_fully_initialised(self):
-        a = Afdeling (
+        a = Afdeling(
             44021
         )
         self.assertEqual('Afdeling 44021', str(a))
@@ -232,7 +247,10 @@ class AfdelingTests(unittest.TestCase):
         a = Afdeling(44021)
         self.assertRaises(RuntimeError, a.check_gateway)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -248,7 +266,10 @@ class AfdelingTests(unittest.TestCase):
         self.assertIsNotNone(a.centroid)
         self.assertIsNotNone(a.bounding_box)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_secties(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -275,15 +296,24 @@ class SectieTests(unittest.TestCase):
         )
         self.assertEqual(s.id, 'A')
         self.assertEqual(s.centroid, (104893.06375, 196022.244094))
-        self.assertEqual(s.bounding_box, (104002.076625, 194168.3415, 105784.050875, 197876.146688))
+        self.assertEqual(
+            s.bounding_box,
+            (104002.076625, 194168.3415, 105784.050875, 197876.146688)
+        )
         self.assertEqual('Gent  1 AFD (44021), Sectie A', str(s))
-        self.assertEqual("Sectie('A', Afdeling(44021, 'Gent  1 AFD'))", repr(s))
+        self.assertEqual(
+            "Sectie('A', Afdeling(44021, 'Gent  1 AFD'))",
+            repr(s)
+        )
 
     def test_check_gateway_not_set(self):
         s = Sectie('A', Afdeling(44021))
         self.assertRaises(RuntimeError, s.check_gateway)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -302,7 +332,10 @@ class SectieTests(unittest.TestCase):
         self.assertIsNotNone(s.centroid)
         self.assertIsNotNone(s.bounding_box)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_percelen(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -319,7 +352,6 @@ class SectieTests(unittest.TestCase):
         percelen = s.percelen
         self.assertIsInstance(percelen, list)
         self.assertGreater(len(percelen), 0)
-
 
 
 class PerceelTests(unittest.TestCase):
@@ -355,7 +387,10 @@ class PerceelTests(unittest.TestCase):
         )
         self.assertRaises(RuntimeError, p.check_gateway)
 
-    @unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         capakey = CapakeyGateway(
@@ -387,7 +422,7 @@ class PerceelTests(unittest.TestCase):
 
     def test_parse_invalid_capakey(self):
         with self.assertRaises(ValueError):
-            p = Perceel(
+            Perceel(
                 '1154/02C000', Sectie('A', Afdeling(46013)),
                 '40613_A_1154_C_000_02',
                 '40613A1154/02C000',

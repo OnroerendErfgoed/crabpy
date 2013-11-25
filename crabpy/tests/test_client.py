@@ -11,20 +11,22 @@ from crabpy.client import (
     capakey_request
 )
 
+
 def run_crab_integration_tests():
     from testconfig import config
     from crabpy.tests import as_bool
     try:
         return as_bool(config['crab']['run_integration_tests'])
-    except KeyError: #pragma NO COVER
+    except KeyError:  # pragma NO COVER
         return False
+
 
 def run_capakey_integration_tests():
     from testconfig import config
     from crabpy.tests import as_bool
     try:
         return as_bool(config['capakey']['run_integration_tests'])
-    except KeyError: #pragma NO COVER
+    except KeyError:  # pragma NO COVER
         return False
 
 
@@ -36,7 +38,10 @@ class CrabClientTests(unittest.TestCase):
     def tearDown(self):
         self.crab = None
 
-    @unittest.skipUnless(run_crab_integration_tests(), 'No CRAB Integration tests required')
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_override_wsdl(self):
         wsdl = "http://crab.agiv.be/wscrab/wscrab.svc?wsdl"
         self.crab = crab_factory(
@@ -44,12 +49,18 @@ class CrabClientTests(unittest.TestCase):
         )
         self.assertEqual(self.crab.wsdl.url, wsdl)
 
-    @unittest.skipUnless(run_crab_integration_tests(), 'No CRAB Integration tests required')
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_list_gemeenten(self):
         res = self.crab.service.ListGemeentenByGewestId(2)
 
 
-@unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+@unittest.skipUnless(
+    run_capakey_integration_tests(),
+    'No CAPAKEY Integration tests required'
+)
 class CapakeyClientTests(unittest.TestCase):
 
     def setUp(self):

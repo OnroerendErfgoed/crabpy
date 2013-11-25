@@ -10,11 +10,12 @@ from crabpy.client import capakey_request
 from suds import WebFault
 
 from crabpy.gateway.exception import (
-    GatewayRuntimeException, 
+    GatewayRuntimeException,
     GatewayAuthenticationException
 )
 
 from dogpile.cache import make_region
+
 
 def capakey_gateway_request(client, method, *args):
     try:
@@ -31,6 +32,7 @@ def capakey_gateway_request(client, method, *args):
                 wf
             )
         raise err
+
 
 class CapakeyGateway(object):
     '''
@@ -369,9 +371,10 @@ class Gemeente(GatewayObject):
     '''
 
     def __init__(
-            self, id, naam=None, 
+            self, id, naam=None,
             centroid=None, bounding_box=None,
-            **kwargs):
+            **kwargs
+    ):
         self.id = int(id)
         self._naam = naam
         self._centroid = centroid
@@ -436,7 +439,8 @@ class Afdeling(GatewayObject):
     def __init__(
         self, id, naam=None, gemeente=None,
         centroid=None, bounding_box=None,
-        **kwargs):
+        **kwargs
+    ):
         self.id = int(id)
         self._naam = naam
         self._gemeente = gemeente
@@ -481,6 +485,7 @@ class Afdeling(GatewayObject):
         else:
             return 'Afdeling(%s)' % (self.id)
 
+
 def check_lazy_load_sectie(f):
     '''
     Decorator function to lazy load a :class:`Sectie`.
@@ -489,7 +494,9 @@ def check_lazy_load_sectie(f):
         sectie = args[0]
         if sectie._centroid is None or sectie._bounding_box is None:
             sectie.check_gateway()
-            s = sectie.gateway.get_sectie_by_id_and_afdeling(sectie.id, sectie.afdeling.id)
+            s = sectie.gateway.get_sectie_by_id_and_afdeling(
+                sectie.id, sectie.afdeling.id
+            )
             sectie._centroid = s._centroid
             sectie._bounding_box = s._bounding_box
         return f(*args)
@@ -504,7 +511,8 @@ class Sectie(GatewayObject):
     def __init__(
         self, id, afdeling,
         centroid=None, bounding_box=None,
-        **kwargs):
+        **kwargs
+    ):
         self.id = id
         self.afdeling = afdeling
         self._centroid = centroid
@@ -539,14 +547,17 @@ def check_lazy_load_perceel(f):
     '''
     def wrapper(*args):
         perceel = args[0]
-        if perceel._capatype is None or perceel._cashkey is None\
-        or perceel._centroid is None or perceel._bounding_box is None:
+        if perceel._capatype is None or perceel._cashkey is None or perceel._centroid is None or perceel._bounding_box is None:
             perceel.check_gateway()
-            p = perceel.gateway.get_perceel_by_id_and_sectie(perceel.id, perceel.sectie)
+            p = perceel.gateway.get_perceel_by_id_and_sectie(
+                perceel.id,
+                perceel.sectie
+            )
             perceel._centroid = p._centroid
             perceel._bounding_box = p._bounding_box
         return f(*args)
     return wrapper
+
 
 class Perceel(GatewayObject):
     '''
@@ -557,7 +568,8 @@ class Perceel(GatewayObject):
         self, id, sectie, capakey, percid,
         capatype=None, cashkey=None,
         centroid=None, bounding_box=None,
-        **kwargs):
+        **kwargs
+    ):
         self.id = id
         self.sectie = sectie
         self.capakey = capakey
@@ -586,7 +598,9 @@ class Perceel(GatewayObject):
             self.exponent = match.group(3)
             self.macht = match.group(4)
         else:
-            raise ValueError("Invalid Capakey %s can't be parsed" % self.capakey)
+            raise ValueError(
+                "Invalid Capakey %s can't be parsed" % self.capakey
+            )
 
     @property
     @check_lazy_load_perceel
@@ -602,4 +616,6 @@ class Perceel(GatewayObject):
         return self.capakey
 
     def __repr__(self):
-        return "Perceel('%s', %s, '%s', '%s')" % (self.id, repr(self.sectie), self.capakey, self.percid)
+        return "Perceel('%s', %s, '%s', '%s')" % (
+            self.id, repr(self.sectie), self.capakey, self.percid
+        )
