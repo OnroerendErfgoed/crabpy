@@ -44,22 +44,30 @@ Using the CAPAKEY gateway
 To make life easier and capakey more pythonic, we've also implemented a gateway
 that abstracts some more of the service and provides richer objects as responses.
 
-.. code-block:: python
+.. literalinclude:: /../examples/capakey_gateway.py
 
-    from crabpy.client import capakey_factory
-    from crabpy.gateway.capakey import CapakeyGateway
+The capakey supports caching through the dogpile_ caching library. Caching can
+be added by passing a configuration dictionary to the :class:`CapakeyGateway`.
 
-    capakey = capakey_factory(
-        user='USER',
-        password='PASSWORD'
-    )
+Three caching regions will be configured:
 
-    g = CapakeyGateway(capakey)
+- `permanent`: For requests that can be cached for a very long time,
+  eg. `list_gemeenten`.
+- `long`: For requests that can be cached for a fairly long time, 
+  eg. `list_secties_by_afdeling`.
+- `short`: For requests that will only be cached for a little while, 
+  eg. `get_perceel_by_capakey`.
 
-    res = g.list_gemeenten()
+Please bear in mind that in this case short can probably be fairly long. We 
+suspect that the database underlying the capakey service is not updated that
+regularly, so a short caching duration could easily be one hour or even a day.
 
-    print res
+.. literalinclude:: /../examples/capakey_gateway_caching.py
+
+
+
 
 See the examples folder for some more sample code.
 
 .. _agiv: http://www.agiv.be
+.. _dogpile: https://bitbucket.org/zzzeek/dogpile.cache
