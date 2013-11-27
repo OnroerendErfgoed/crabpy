@@ -511,3 +511,83 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
             self.capakey.caches['permanent'].get('ListKadAfdelingenByNiscode#44021#1'),
             res
         )
+
+    def test_get_kadastrale_afdeling_by_id(self):
+        res = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        self.assertIsInstance(res, Afdeling)
+        self.assertEqual(res.id, 44021)
+        self.assertIsInstance(res.gemeente, Gemeente)
+        self.assertEqual(res.gemeente.id, 44021)
+        self.assertEqual(
+            self.capakey.caches['long'].get('GetKadAfdelingByKadAfdelingcode#44021'),
+            res
+        )
+
+    def test_list_secties_by_afdeling_id(self):
+        res = self.capakey.list_secties_by_afdeling(44021)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 1)
+        self.assertEqual(
+            self.capakey.caches['long'].get('ListKadSectiesByKadAfdelingcode#44021'),
+            res
+        )
+
+    def test_get_sectie_by_id_and_afdeling(self):
+        a = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        res = self.capakey.get_sectie_by_id_and_afdeling('A', a)
+        self.assertIsInstance(res, Sectie)
+        self.assertEqual(res.id, 'A')
+        self.assertEqual(res.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey.caches['long'].get('GetKadSectieByKadSectiecode#44021#A'),
+            res
+        )
+
+    def test_list_percelen_by_sectie(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        res = self.capakey.list_percelen_by_sectie(s)
+        self.assertIsInstance(res, list)
+        self.assertGreater(len(res), 0)
+        self.assertEqual(
+            self.capakey.caches['short'].get('ListKadPerceelsnummersByKadSectiecode#44021#A#1'),
+            res
+        )
+
+    def test_get_perceel_by_id_and_sectie(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_id_and_sectie(perc.id, s)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey.caches['short'].get('GetKadPerceelsnummerByKadPerceelsnummer#44021#A#%s' % perc.id),
+            res
+        )
+
+    def test_get_perceel_by_capakey(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_capakey(perc.capakey)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey.caches['short'].get('GetKadPerceelsnummerByCaPaKey#%s' % perc.capakey),
+            res
+        )
+
+    def test_get_perceel_by_percid(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_percid(perc.percid)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey.caches['short'].get('GetKadPerceelsnummerByPERCID#%s' % perc.percid),
+            res
+        )
