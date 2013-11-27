@@ -28,3 +28,6 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+
+# Cache files
+dogpile_data
