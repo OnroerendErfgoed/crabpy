@@ -420,6 +420,16 @@ class PerceelTests(unittest.TestCase):
         self.assertEqual(p.exponent, 'C')
         self.assertEqual(p.macht, '000')
 
+    def test_parse_capakey_other_sectie(self):
+        p = Perceel(
+            '1154/02C000', Sectie('F', Afdeling(46013)),
+            '40613F1154/02C000', '40613_F_1154_C_000_02'
+        )
+        self.assertEqual(p.grondnummer, '1154')
+        self.assertEqual(p.bisnummer, '02')
+        self.assertEqual(p.exponent, 'C')
+        self.assertEqual(p.macht, '000')
+
     def test_parse_invalid_capakey(self):
         with self.assertRaises(ValueError):
             Perceel(

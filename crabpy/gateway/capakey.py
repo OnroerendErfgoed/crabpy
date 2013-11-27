@@ -610,7 +610,7 @@ class Perceel(GatewayObject):
         '''
         import re
         match = re.match(
-            r"^[0-9]{5}[A_Z]{1}([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
+            r"^[0-9]{5}[A-Z]{1}([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
             self.capakey
         )
         if match:
