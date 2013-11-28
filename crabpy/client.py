@@ -8,7 +8,7 @@ This module contains utiltiy functions for interacting with AGIV soap services.
 from suds.client import Client
 
 from suds.wsse import Security
-from suds_passworddigest.token import UsernameDigestToken
+from crabpy.wsse import UsernameDigestToken
 from datetime import datetime
 
 from crabpy.wsa import Action, MessageID, To
@@ -71,14 +71,6 @@ def capakey_request(client, action, *args):
     '''
     security = Security()
     token = UsernameDigestToken(client.capakey_user, client.capakey_password)
-    # Service can't handle microseconds.
-    utc = datetime.utcnow()
-    utc = datetime(
-        utc.year, utc.month, utc.day,
-        utc.hour, utc.minute, utc.second,
-        tzinfo=utc.tzinfo
-    )
-    token.setcreated(utc)
     security.tokens.append(token)
     client.set_options(wsse=security)
 
