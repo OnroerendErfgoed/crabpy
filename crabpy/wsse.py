@@ -54,8 +54,7 @@ class UsernameDigestToken(UsernameToken):
             s.append(str(datetime.utcnow()))
             m = hashlib.md5()
             m.update(':'.join(s))
-            self.raw_nonce = m.digest()
-            self.nonce = b64encode(self.raw_nonce)
+            self.nonce = m.digest()
         else:
             self.nonce = text
 
@@ -74,7 +73,7 @@ class UsernameDigestToken(UsernameToken):
 
         password = Element('Password', ns=wssens)
         s = hashlib.sha1()
-        s.update(self.raw_nonce)
+        s.update(self.nonce)
         s.update(self._print_datetime(self.created))
         s.update(self.password)
         password.setText(b64encode(s.digest()))
@@ -84,7 +83,7 @@ class UsernameDigestToken(UsernameToken):
         usernametoken.append(password)
         
         nonce = Element('Nonce', ns=wssens)
-        nonce.setText(self.nonce)
+        nonce.setText(b64encode(self.nonce))
         nonce.set('EncodingType', 'http://docs.oasis-open.org/wss/2004'
             '/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary')
         usernametoken.append(nonce)
@@ -94,5 +93,3 @@ class UsernameDigestToken(UsernameToken):
         usernametoken.append(created)
 
         return usernametoken
-
-
