@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+'''
+This module adds a :class:`UsernameDigestToken` for use with SOAP services.
+
+.. versionadded:: 0.2.0
+'''
 
 from __future__ import unicode_literals
 
@@ -15,20 +20,9 @@ from suds.sax.element import Element
 from suds.sax.date import DateTime
 
 
-
 class UsernameDigestToken(UsernameToken):
     """
-    Represents a basic I{UsernameToken} WS-Security token with password digest
-    @ivar username: A username.
-    @type username: str
-    @ivar password: A password.
-    @type password: str
-    @ivar nonce: A set of bytes to prevent reply attacks.
-    @type nonce: str
-    @ivar created: The token created.
-    @type created: L{datetime}
-
-    @doc: http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf
+    Represents a basic WS-Security token with password digest
     """
 
     def __init__(self, username=None, password=None):
