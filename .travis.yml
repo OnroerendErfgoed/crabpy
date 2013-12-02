@@ -1,6 +1,7 @@
 language: python
 python:
  - 2.7
+ - 3.2
 install:
  - easy_install -U setuptools
  - python setup.py install
