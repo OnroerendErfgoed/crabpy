@@ -49,12 +49,12 @@ class UsernameDigestToken(UsernameToken):
     def setnonce(self, text=None):
         if text is None:
             s = []
-            s.append(self.username)
-            s.append(self.password)
-            s.append(str(datetime.utcnow()))
+            s.append(self.username.encode('utf-8'))
+            s.append(self.password.encode('utf-8'))
+            s.append(str(datetime.utcnow()).encode('utf-8'))
             m = hashlib.md5()
-            m.update(':'.join(s))
-            self.nonce = m.digest()
+            m.update(':'.encode('utf-8').join(s))
+            self.nonce = m.hexdigest().encode('utf-8')
         else:
             self.nonce = text
 
@@ -74,16 +74,16 @@ class UsernameDigestToken(UsernameToken):
         password = Element('Password', ns=wssens)
         s = hashlib.sha1()
         s.update(self.nonce)
-        s.update(self._print_datetime(self.created))
-        s.update(self.password)
-        password.setText(b64encode(s.digest()))
+        s.update(self._print_datetime(self.created).encode('utf-8'))
+        s.update(self.password.encode('utf-8'))
+        password.setText(b64encode(s.digest()).decode('utf-8'))
         password.set('Type', 'http://docs.oasis-open.org/wss/2004/01/'
                              'oasis-200401-wss-username-token-profile-1.0'
                              '#PasswordDigest')
         usernametoken.append(password)
         
         nonce = Element('Nonce', ns=wssens)
-        nonce.setText(b64encode(self.nonce))
+        nonce.setText(b64encode(self.nonce).decode('utf-8'))
         nonce.set('EncodingType', 'http://docs.oasis-open.org/wss/2004'
             '/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary')
         usernametoken.append(nonce)

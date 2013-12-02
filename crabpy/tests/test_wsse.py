@@ -32,7 +32,7 @@ class UsernameDigestTokenTests(unittest.TestCase):
 
     def test_set_custom_nonce(self):
         self.assertIsInstance(self.token, UsernameDigestToken)
-        self.token.setnonce('NONCE')
+        self.token.setnonce('NONCE'.encode('utf-8'))
         xml = self.token.xml()
         self.assertIsInstance(xml, Element)
         self.assertIsInstance(xml.getChild('Username', ns=wssens), Element)
@@ -40,5 +40,5 @@ class UsernameDigestTokenTests(unittest.TestCase):
         self.assertIsInstance(xml.getChild('Nonce', ns=wssens), Element)
         self.assertEquals(
             xml.getChild('Nonce', ns=wssens).getText(),
-            b64encode('NONCE')
+            b64encode('NONCE'.encode('utf-8')).decode('utf-8')
         )
