@@ -7,6 +7,8 @@ complicated, this library makes it easier.
 
 .. image:: https://travis-ci.org/OnroerendErfgoed/crabpy.png?branch=master
         :target: https://travis-ci.org/OnroerendErfgoed/crabpy
+.. image:: https://badge.fury.io/py/crabpy.png
+        :target: http://badge.fury.io/py/crabpy
 
 Using the CRAB webservice
 -------------------------
