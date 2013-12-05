@@ -1,3 +1,8 @@
+0.2.1 (??-??-2013)
+------------------
+
+- Document how to connect to the services through a proxy.
+
 0.2.0 (03-12-2013)
 ------------------
 

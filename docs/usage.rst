@@ -38,6 +38,17 @@ headers, a utility function has been provided to make life easier.
 
     print res
 
+Using a client behing a proxy
+-----------------------------
+
+If you need to connect to CRAB or CAPAKEY through a proxy, you can do so 
+by passing the proxy parameter to the :func:`crabpy.client.crab_factory` or
+:func:`crabpy.client.capakey_factory`.
+
+
+.. literalinclude:: /../examples/crab_proxy.py
+
+
 Using the CAPAKEY gateway
 -------------------------
 
