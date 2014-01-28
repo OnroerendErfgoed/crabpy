@@ -23,15 +23,16 @@ class CrabGateway(object):
 				Gewest(
 					r.GewestId,
 					r.GewestNaam
-				)for r in res.'''GewestItem??'''
+				)for r in res.GewestItem
 			]
-		if self.caches['long'].is_configured:
+
+        if self.caches['long'].is_configured:
 			key='ListGewesten#%s' %sort
 			gewest=self.caches['long'].get_or_create(key,creator)
-		else:
+        else:
 			gewest=creator()
-		gewest.set_gateway(self)
-		return gewest
+			gewest.set_gateway(self)
+        return gewest
 
     def list_gemeenten(self, gewest=2, sort=1):
         '''
@@ -50,15 +51,15 @@ class CrabGateway(object):
 					r.GemeenteId,
 					r.GemeenteNaam,
 					r.NISGemeenteCode
-				)for r in res.'''Gemeente??'''
+				)for r in res.GemeenteItem
 			]
-		if self.caches['long'].is_configured:
+        if self.caches['long'].is_configured:
 			key='ListGemeentenByGewestId#%s%s'%(gewest, sort)
 			gemeente=self.caches['long'].get_or_create(key, creator)
-		else:
+        else:
 			gemeente=creator()
-		gemeente.set_gateway(self)
-		return gemeente
+        gemeente.set_gateway(self)
+        return gemeente
 
     def get_gemeente_by_id(self, id):
         '''
@@ -76,13 +77,13 @@ class CrabGateway(object):
 				(res.CenterX, res.CenterY),
 				(res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
 			)
-		if self.caches['long'].is_configured:
+        if self.caches['long'].is_configured:
 			key='GetGemeenteByGemeenteId#%s' %id
 			gemeente=self.caches['long'].get_or_create(key, creator)
-		else:
+        else:
 			gemeente= creator()
-		gemeente.set_gateway(self)
-		return gemeente
+        gemeente.set_gateway(self)
+        return gemeente
         
 
     def get_gemeente_by_niscode(self, niscode):
@@ -95,19 +96,19 @@ class CrabGateway(object):
         
         def creator():
 			res=crab_gateway_request(self.client, 'GetGemeenteByNISGemeenteCode', niscode)
-			return gemeente(
+			return Gemeente(
 				res.GemeenteId,
 				res.GemeenteNaam,
 				(res.CenterX, res.CenterY),
 				(res.MinimumX, res.MinumumY, res.MaximumX, res.MaximumY)
 			)
-		if self.caches['long'].is_configured:
+        if self.caches['long'].is_configured:
 			key='GetGemeenteByNISGemeenteCode#%s' %niscode
 			gemeente=self.caches['long'].get_or_create(key, creator)
-		else:
+        else:
 			gemeente=creator()
-		gemeente.set_gateway(self)
-		return gemeente
+        gemeente.set_gateway(self)
+        return gemeente
 
 
 class GatewayObject(object):
@@ -131,31 +132,98 @@ class Gewest(GatewayObject):
     The smallest administrative unit in Belgium.
     '''
     
-   def __init__(
+    def __init__(
 		self,id,naam=None,
-		centroid=None, bounding_box=None,
 		**kwargs
-   ):
+    ):
 	   self.id=id
 	   self.naam=naam
-	   self.centroid=centroid
-	   self.bounding_box=bounding_box
 	   super(Gewest,self).__init__(**kwargs)
 	
+		
+    def __str__(self):
+		if self.name is not None:
+			return "%s (%s)" %(self._naam, self.id)
+		else:
+			return "Gewest %s " % (self.id)
+			
+    def __repr__(self):
+		if self._naam is not None:
+			return"Gewest(%s, '%s')" % (self.id, self._naam)
+		else:
+			return "Gewest(%s)" %(self.id)
+
+
+def check_lazy_load_gemeente(f):
+	'''
+	Decorator function to lazy load a :class: `Gemeente`.
+	'''
+	def wrapper(*args):
+		gemeente=args[0]
+		if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest is None:
+			gemeente.check_gateway()
+			g=gemeente.gateway.get_gemeente_by_id(gemeente.id)
+			gemeente._naam=g._naam
+			gemeente._niscode=g._niscode
+			gemeente._gewest=g._gewest
+			gemeente._centroid=g._centroid
+			gemeente._bounding_box=g._bounding_box
+		return f(*args)
+	return wrapper
+
 
 class Gemeente(GatewayObject):
     '''
     The smallest administrative unit in Belgium.
     '''
     
-     def __init__(
-			self, id, naam=None,gewest=None
+    def __init__(
+			self, id, naam,niscode=None,gewest=None,
 			centroid=None, bounding_box=None,
 			**kwargs
 	):
-		self.id=int(id)
-		self.naam=naam
-		self.gewest=gewest
-		self.centroid=centroid
-		self.bounding_box=bounding_box
+		self._id=int(id)
+		self._naam=naam
+		self._niscode=int(niscode)
+		self._gewest=int(gewest)
+		self._centroid=centroid
+		self._bounding_box=bounding_box
 		super(Gemeente,self).__init__(**kwargs)
+	
+    @property
+    @check_lazy_load_gemeente
+    def naam(self):
+		return self._naam
+		
+    @property
+    @check_lazy_load_gemeente
+    def niscode(self):
+		return self._niscode
+		
+    @property
+    @check_lazy_load_gemeente
+    def gewest(self):
+		return self._gewest
+		
+    @property
+    @check_lazy_load_gemeente
+    def centroid(self):
+		return self._centroid
+		
+    @property
+    @check_lazy_load_gemeente
+    def bounding_box(self):
+		return self._bounding_box
+		
+	
+    def __str__(self):
+		if self.name is not None:
+			return "%s (%s)" %(self._naam,self.id)
+		else:
+			return "Gemeente %s" %(self.id)
+			
+    def __repr__(self):
+		if self._naam is not None:
+			return "Gemeente(%s, '%s')" %(self.id, self._naam)
+		else:
+			return "Gewest(%s)" %(self.id)
