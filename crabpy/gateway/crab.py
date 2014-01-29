@@ -286,7 +286,74 @@ class CrabGateway(object):
         straat.set_gateway(self)
         return straat
         
+
+    def list_huisnummers_by_straat(self, straat, sort):
+        '''
+        List all `huisnummers` in a `straat`
+        param object straat: An object of :class: `Straat`
+        :rtype: A :class: `list` of :class: `Huisnummer`
+        '''
         
+        def creator():
+            res=crab_gateway_request(self.client, 'ListHuisnummersWithStatusByStraatnaamId', straat, sort)
+            return [
+                Huisnummer(
+                    r.HuisnummerId,
+                    r.Huisnummer,
+                    r.StatusHuisnummer
+                ) for r in res.HuisnummerWithStatusItem
+            ]
+            
+        if self.caches['long'].is_configured:
+            key='ListHuisnummersWithStatusByStraatnaamId#%s%s' %(straat, sort)
+            huisnummer=self.caches['long'].get_or_create(key, creator)
+        else:
+            huisnummer=creator()
+        huisnummer.set_gateway(self)
+        return huisnummer
+
+
+    def get_huisnummer_by_id(self,id):
+        '''
+        Retrieve a `huisnummer` by the Id.
+        param integer id: the Id of the `huisnummer`
+        :rtype :class: `Huisnummer`
+        '''
+        def creator():
+            res=crab_gateway_request(self.client, 'GetHuisnummerWithStatusByHuisnummerId', id)
+            return(
+                res.StraatnaamId,
+                res.Huinummer,
+                res.StatusHuisnummer
+            )
+        if self.caches['long'].is_configured:
+            key='GetHuisnummerWithStatusByHuisnummerId#%s'%(id)
+            huisnummer=self.caches['long'].get_or_create(key, creator)
+        else: 
+            huisnummer=creator()
+        huisnummer.set_gateway()
+        return huisnummer
+
+
+    def get_huisnummer_by_nummer_and_straat(self, nummer, straat):
+        '''
+        Retrieve a `huisnummer` by the `nummer` and `straat`
+        :rtype A :class: 'Huisnummer'
+        '''
+        def creator():
+            res=crab_gateway_request(self.client, 'GetHuisnummerWithStatusByHuisnummer',nummer, straat)
+            return(
+                res.HuisnummerId,
+                res.StatusHuisnummer
+            )
+        if self.caches['long'].is_configured:
+            key='getHuisnummerWithStatusByHuisnummer#%s%s'%(nummer, straat)
+            huisnummer=self.caches['long'].get_or_create(key, creator)
+        else:
+            huisnummer=creator()
+        huisnummer.set_gateway()
+        return huisnummer
+    
 
 class GatewayObject(object):
 
@@ -552,6 +619,49 @@ class Straat(GatewayObject):
 		else:
 			return "Straat(%s)" %(self.id)
         
+def check_lazy_load_huisnummer(f):
+    '''
+	Decorator function to lazy load a :class: `Huisnummer`.
+	'''
+    
+    def wrapper(*args):
+        huisnummer=args[0]
+        if self._straat is None or self._huisnummer is None or self._status is None:
+            huisnummer.check_gateway()
+            h=huisnummer.gateway.get_huisnummer_by_id(huisnummer.id)
+            huisnummer._straat=h._straat
+            huisnummer._huisnummer=h._huisnummer
+            huisnummer._status=h._status
+        return f(*args)
+    return wrapper
+
+class Huisnummer(GatewayObject):
+    
+    def __init__(
+            self, id, straat=None, huisnummer=None,
+            status=None, **kwargs
+    ):
+        self.id=int(id)
+        self._straat=straat
+        self._huisnummer=huisnummer
+        self._status=status
+        super(Huisnummer, self).__init__(**kwargs)
+    
+    @property
+    @check_lazy_load_huisnummer
+    def straat(self):
+        return self._straat
         
+    @property
+    @check_lazy_load_huisnummer
+    def huisnummer(self):
+        return self._huisnummer
+        
+    @property
+    @check_lazy_load_huisnummer
+    def status(self):
+        return self._status
+        
+    
 
         
