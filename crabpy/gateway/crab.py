@@ -7,6 +7,16 @@ class CrabGateway(object):
 
     def __init__(self, client, **kwargs):
         self.client = client
+        cache_regions = ['permanent', 'long', 'short']
+        for cr in cache_regions:
+            self.caches[cr] = make_region(key_mangler=str)
+        if 'cache_config' in kwargs:
+            for cr in cache_regions:
+                if ('%s.backend' % cr) in kwargs['cache_config']:
+                    self.caches[cr].configure_from_config(
+                        kwargs['cache_config'],
+                        '%s.' % cr
+                    )
 
     def list_gewesten(self, sort=1):
         '''
@@ -375,12 +385,12 @@ class CrabGateway(object):
     def get_postkanton_by_huisnummer(self, huisnummer):
         
         def creator():
-            res=crab_gateway_request(self.client, '', huisnummer)
+            res=crab_gateway_request(self.client, 'GetPostkantonByHuisnummerId', huisnummer.id)
             return(
                 res.PostkantonCode
             )
         if self.caches['long'].is_configured:
-            key=''%(huisnummer)
+            key='GetPostkantonByHuisnummerId'%(huisnummer.id)
             huisnummer=self.caches['long'].get_or_create(key, creator)
         else:
             huisnummer=creator()

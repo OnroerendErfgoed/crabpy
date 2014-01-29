@@ -211,7 +211,7 @@ class GewestTests(unittest.TestCase):
             2,
         )
         self.assertEqual(g.id,2)
-        
+        '''Nog verder uitbreiden met naam'''
     def test_str_and_repr_dont_lazy_load(self):
         g=Gewest(2)
         self.assertEqual('Gewest 2', str(g))
@@ -224,7 +224,7 @@ class GewestTests(unittest.TestCase):
 class TaalTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
-        
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         t=Taal(1)
         self.assertRaises(RuntimeError, t.check_gateway)
@@ -232,7 +232,7 @@ class TaalTests(unittest.TestCase):
 class BewerkingTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
-        
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         b=Bewerking(1)
         self.assertRaises(RuntimeError, b.check_gateway)
@@ -240,7 +240,7 @@ class BewerkingTests(unittest.TestCase):
 class OrganisatieTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
-        
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         o=Organisatie(1)
         self.assertRaises(RuntimeError, o.check_gateway)
@@ -248,7 +248,7 @@ class OrganisatieTests(unittest.TestCase):
 class AardsubadresTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
-        
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         a=Aardsubadres(1)
         self.assertRaises(RuntimeError, a.check_gateway)
@@ -256,7 +256,7 @@ class AardsubadresTests(unittest.TestCase):
 class AardadresTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
-        
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         a=Aardadres(1)
         self.assertRaises(RuntimeError, a.check_gateway)
@@ -264,7 +264,7 @@ class AardadresTests(unittest.TestCase):
 class AardgebouwTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
-        
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         a=Aardgebouw(1)
         self.assertRaises(RuntimeError, a.check_gateway)
@@ -272,6 +272,7 @@ class AardgebouwTests(unittest.TestCase):
 class AardwegobjectTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     
     def test_check_gateway_not_set(self):
         a=Aardwegobject(1)
@@ -284,8 +285,9 @@ class AardwegobjectTests(unittest.TestCase):
 
 class HuisnummerTests(unittest.TestCase):
     def test_fully_initialised(self):
-        pass
-        
+        h=Huisnummer(1)
+        self.assertEqual(h.id, 1)
+        '''Nog verder uitbreiden als ik de juiste gegevens heb'''
     def test_check_gateway_not_set(self):
         h=Huisnummer(1)
         self.assertRaises(RuntimeError, h.check_gateway)
