@@ -6,7 +6,7 @@ except ImportError:  # pragma NO COVER
     import unittest  # noqa
 
 from crabpy.client import (
-    capakey_factory
+    crab_factory
 )
 
 from crabpy.gateway.crab import (
@@ -141,8 +141,6 @@ class CrabGatewayTests(unittest.TestCase):
 
 class GemeenteTests(unittest.TestCase):
     
-
-    
     def test_fully_initialised(self):
         g = Gemeente(
             1,
@@ -196,11 +194,71 @@ class GewestTests(unittest.TestCase):
 class TaalTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
+        
+    def test_check_gateway_not_set(self):
+        pass
+        t=Taal()
+        self.assertRaises(RuntimeError, t.check_gateway)
+        
+class BewerkingTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        pass
+        
+    def test_check_gateway_not_set(self):
+        pass
+        b=Bewerking()
+        self.assertRaises(RuntimeError, b.check_gateway)
+        
+class OrganisatieTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        pass
+        
+    def test_check_gateway_not_set(self):
+        pass
+        o=Organisatie()
+        self.assertRaises(RuntimeError, o.check_gateway)
+        
+class AardsubadresTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        pass
+        
+    def test_check_gateway_not_set(self):
+        pass
+        a=Aardsubadres()
+        self.assertRaises(RuntimeError, a.check_gateway)
+        
+class AardadresTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        pass
+        
+    def test_check_gateway_not_set(self):
+        pass
+        a=Aardadres()
+        self.assertRaises(RuntimeError, a.check_gateway)
+        
+class AardgebouwTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        pass
+        
+    def test_check_gateway_not_set(self):
+        pass
+        a=Aardgebouw()
+        self.assertRaises(RuntimeError, a.check_gateway)
 
-class StraatTests(unittest.TestCase):
+class AardwegobjectTests(unittest.TestCase):
     def test_fully_initialised(self):
         pass
     
+    def test_check_gateway_not_set(self):
+        pass
+        a=Aardwegobject()
+        self.assertRaises(RuntimeError,a.check_gateway)
+        
+    def test_str_and_repr_dont_lazy_load(self):
+        pass
+        s=Straat()
+        self.assertEqual('Straat 2', str(g))
+        self.assertEqual('Straat(2)', repr(g))
 
     
     

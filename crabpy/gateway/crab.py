@@ -403,7 +403,7 @@ class Gemeente(GatewayObject):
 		if self._naam is not None:
 			return "Gemeente(%s, '%s')" %(self.id, self._naam)
 		else:
-			return "Gewest(%s)" %(self.id)
+			return "Gemeente(%s)" %(self.id)
 
 
 def check_lazy_load_codelijst(f):
@@ -504,26 +504,37 @@ class Straat(GatewayObject):
         self._status=status
         super(Straat, self).__init__(**kwargs)
         
-        @property
-        @check_lazy_load_Straat
-        def label(self):
-            return self._label
+    @property
+    @check_lazy_load_Straat
+    def label(self):
+        return self._label
             
-        @property
-        @check_lazy_load_Straat
-        def namen(self):
-            return self._namen
+    @property
+    @check_lazy_load_Straat
+    def namen(self):
+        return self._namen
             
-        @property
-        @check_lazy_load_Straat
-        def taal_code(self):
-            return self._taal_code
+    @property
+    @check_lazy_load_Straat
+    def taal_code(self):
+        return self._taal_code
             
-        @property
-        @check_lazy_load_Straat
-        def status(self):
-            return self._status
-            
+    @property
+    @check_lazy_load_Straat
+    def status(self):
+        return self._status
+          
+    def __str__(self):
+		if self._label is not None:
+			return "%s (%s)" %(self._label,self.id)
+		else:
+			return "Straat %s" %(self.id)
+			
+    def __repr__(self):
+		if self._label is not None:
+			return "Straat(%s, '%s')" %(self.id, self._label)
+		else:
+			return "Straat(%s)" %(self.id)
         
         
 def check_lazy_load_Straat(f):
