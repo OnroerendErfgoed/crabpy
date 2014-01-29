@@ -17,20 +17,20 @@ class CrabGateway(object):
         '''
         
         def creator():
-			res=crab_gateway_request(self.client,'ListGewesten',sort)
-			return[
-				Gewest(
-					r.GewestId,
-					r.GewestNaam
-				)for r in res.GewestItem
-			]
+            res=crab_gateway_request(self.client,'ListGewesten',sort)
+            return[
+                Gewest(
+                    r.GewestId,
+                    r.GewestNaam
+                )for r in res.GewestItem
+            ]
 
         if self.caches['long'].is_configured:
-			key='ListGewesten#%s' %sort
-			gewest=self.caches['long'].get_or_create(key,creator)
+            key='ListGewesten#%s' %sort
+            gewest=self.caches['long'].get_or_create(key,creator)
         else:
-			gewest=creator()
-			gewest.set_gateway(self)
+            gewest=creator()
+            gewest.set_gateway(self)
         return gewest
 
     def list_gemeenten(self, gewest=2, sort=1):
@@ -43,19 +43,19 @@ class CrabGateway(object):
         '''
         
         def creator():
-			res= crab_gateway_request(self.client,'ListGemeentenByGewestId', gewest ,sort)
-			return[ 
-				Gemeente(
-					r.GemeenteId,
-					r.GemeenteNaam,
-					r.NISGemeenteCode
-				)for r in res.GemeenteItem
-			]
+            res= crab_gateway_request(self.client,'ListGemeentenByGewestId', gewest ,sort)
+            return[ 
+                Gemeente(
+                    r.GemeenteId,
+                    r.GemeenteNaam,
+                    r.NISGemeenteCode
+                )for r in res.GemeenteItem
+            ]
         if self.caches['long'].is_configured:
-			key='ListGemeentenByGewestId#%s%s'%(gewest, sort)
-			gemeente=self.caches['long'].get_or_create(key, creator)
+            key='ListGemeentenByGewestId#%s%s'%(gewest, sort)
+            gemeente=self.caches['long'].get_or_create(key, creator)
         else:
-			gemeente=creator()
+            gemeente=creator()
         gemeente.set_gateway(self)
         return gemeente
 
@@ -68,18 +68,18 @@ class CrabGateway(object):
         '''
         
         def creator():
-			res=crab_gateway_request(self.client, 'GetGemeenteByGemeenteId', id)
-			return Gemeente(
-				res.NISGemeenteCode,
-				res.GemeenteNaam,
-				(res.CenterX, res.CenterY),
-				(res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
-			)
+            res=crab_gateway_request(self.client, 'GetGemeenteByGemeenteId', id)
+            return Gemeente(
+                res.NISGemeenteCode,
+                res.GemeenteNaam,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+            )
         if self.caches['long'].is_configured:
-			key='GetGemeenteByGemeenteId#%s' %id
-			gemeente=self.caches['long'].get_or_create(key, creator)
+            key='GetGemeenteByGemeenteId#%s' %id
+            gemeente=self.caches['long'].get_or_create(key, creator)
         else:
-			gemeente= creator()
+            gemeente= creator()
         gemeente.set_gateway(self)
         return gemeente
         
@@ -93,18 +93,18 @@ class CrabGateway(object):
         '''
         
         def creator():
-			res=crab_gateway_request(self.client, 'GetGemeenteByNISGemeenteCode', niscode)
-			return Gemeente(
-				res.GemeenteId,
-				res.GemeenteNaam,
-				(res.CenterX, res.CenterY),
-				(res.MinimumX, res.MinumumY, res.MaximumX, res.MaximumY)
-			)
+            res=crab_gateway_request(self.client, 'GetGemeenteByNISGemeenteCode', niscode)
+            return Gemeente(
+                res.GemeenteId,
+                res.GemeenteNaam,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinumumY, res.MaximumX, res.MaximumY)
+            )
         if self.caches['long'].is_configured:
-			key='GetGemeenteByNISGemeenteCode#%s' %niscode
-			gemeente=self.caches['long'].get_or_create(key, creator)
+            key='GetGemeenteByNISGemeenteCode#%s' %niscode
+            gemeente=self.caches['long'].get_or_create(key, creator)
         else:
-			gemeente=creator()
+            gemeente=creator()
         gemeente.set_gateway(self)
         return gemeente
         
@@ -250,17 +250,17 @@ class CrabGateway(object):
         def creator():
             res=crab_gateway_request(self.client, 'ListStraatnamenWithStatusByGemeente', gemeente, sort)
             return[ 
-				Straat(
+                Straat(
                     r.StraatnaamId,
-					r.straatnaamLabel,
-					r.StatusStraatnaam
-				)for r in res.StraatnaamWithStatusItem
-			]
+                    r.straatnaamLabel,
+                    r.StatusStraatnaam
+                )for r in res.StraatnaamWithStatusItem
+            ]
         if self.caches['long'].is_configured:
-			key='ListStraatnamenWithStatusByGemeente#%s%s'%(gemeente, sort)
-			straat=self.caches['long'].get_or_create(key, creator)
+            key='ListStraatnamenWithStatusByGemeente#%s%s'%(gemeente, sort)
+            straat=self.caches['long'].get_or_create(key, creator)
         else:
-			straat=creator()
+            straat=creator()
         straat.set_gateway(self)
         return straat
         
@@ -274,15 +274,15 @@ class CrabGateway(object):
         def creator():
             res=crab_gateway_request(self.client, 'GetStraatnaamWIthStatusByStraatnaamId', id)
             return Straat(
-					res.StraatnaamLabel,
-					res.StatusStraatnaam
+                    res.StraatnaamLabel,
+                    res.StatusStraatnaam
             )
 
         if self.caches['long'].is_configured:
-			key='GetStraatnaamWIthStatusByStraatnaamId#%s'%(id)
-			straat=self.caches['long'].get_or_create(key, creator)
+            key='GetStraatnaamWIthStatusByStraatnaamId#%s'%(id)
+            straat=self.caches['long'].get_or_create(key, creator)
         else:
-			straat=creator()
+            straat=creator()
         straat.set_gateway(self)
         return straat
         
@@ -377,43 +377,43 @@ class Gewest(GatewayObject):
     '''
     
     def __init__(
-		self,id,naam=None,
-		**kwargs
+        self,id,naam=None,
+        **kwargs
     ):
-	   self.id=id
-	   self.naam=naam
-	   super(Gewest,self).__init__(**kwargs)
-	
-		
+       self.id=id
+       self.naam=naam
+       super(Gewest,self).__init__(**kwargs)
+    
+        
     def __str__(self):
-		if self.naam is not None:
-			return "%s (%s)" %(self._naam, self.id)
-		else:
-			return "Gewest %s" % (self.id)
-			
+        if self.naam is not None:
+            return "%s (%s)" %(self._naam, self.id)
+        else:
+            return "Gewest %s" % (self.id)
+            
     def __repr__(self):
-		if self.naam is not None:
-			return"Gewest(%s, '%s')" % (self.id, self._naam)
-		else:
-			return "Gewest(%s)" %(self.id)
+        if self.naam is not None:
+            return"Gewest(%s, '%s')" % (self.id, self._naam)
+        else:
+            return "Gewest(%s)" %(self.id)
 
 
 def check_lazy_load_gemeente(f):
-	'''
-	Decorator function to lazy load a :class: `Gemeente`.
-	'''
-	def wrapper(*args):
-		gemeente=args[0]
-		if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest is None:
-			gemeente.check_gateway()
-			g=gemeente.gateway.get_gemeente_by_id(gemeente.id)
-			gemeente._naam=g._naam
-			gemeente._niscode=g._niscode
-			gemeente._gewest=g._gewest
-			gemeente._centroid=g._centroid
-			gemeente._bounding_box=g._bounding_box
-		return f(*args)
-	return wrapper
+    '''
+    Decorator function to lazy load a :class: `Gemeente`.
+    '''
+    def wrapper(*args):
+        gemeente=args[0]
+        if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest is None:
+            gemeente.check_gateway()
+            g=gemeente.gateway.get_gemeente_by_id(gemeente.id)
+            gemeente._naam=g._naam
+            gemeente._niscode=g._niscode
+            gemeente._gewest=g._gewest
+            gemeente._centroid=g._centroid
+            gemeente._bounding_box=g._bounding_box
+        return f(*args)
+    return wrapper
 
 
 class Gemeente(GatewayObject):
@@ -422,70 +422,75 @@ class Gemeente(GatewayObject):
     '''
     
     def __init__(
-			self, id, naam=None, niscode=None, gewest=None,
-			centroid=None, bounding_box=None,
-			**kwargs
-	):
-		self.id=int(id)
-		self._naam=naam
-		self._niscode=int(niscode)
-		self._gewest=int(gewest)
-		self._centroid=centroid
-		self._bounding_box=bounding_box
-		super(Gemeente,self).__init__(**kwargs)
-	
+            self, id, naam=None, niscode=None, gewest=None,
+            centroid=None, bounding_box=None,
+            **kwargs
+    ):
+        self.id=int(id)
+        self._naam=naam
+        self._niscode=int(niscode)
+        self._gewest=int(gewest)
+        self._centroid=centroid
+        self._bounding_box=bounding_box
+        super(Gemeente,self).__init__(**kwargs)
+    
     @property
     @check_lazy_load_gemeente
     def naam(self):
-		return self._naam
-		
+        return self._naam
+        
     @property
     @check_lazy_load_gemeente
     def niscode(self):
-		return self._niscode
-		
+        return self._niscode
+        
     @property
     @check_lazy_load_gemeente
     def gewest(self):
-		return self._gewest
-		
+        return self._gewest
+        
     @property
     @check_lazy_load_gemeente
     def centroid(self):
-		return self._centroid
-		
+        return self._centroid
+        
     @property
     @check_lazy_load_gemeente
     def bounding_box(self):
-		return self._bounding_box
-		
-	
+        return self._bounding_box
+        
+    @property
+    def straten(self):
+        self.check_gateway()
+        return self.gateway.list_straten(self)
+        
+    
     def __str__(self):
-		if self._naam is not None:
-			return "%s (%s)" %(self._naam,self.id)
-		else:
-			return "Gemeente %s" %(self.id)
-			
+        if self._naam is not None:
+            return "%s (%s)" %(self._naam,self.id)
+        else:
+            return "Gemeente %s" %(self.id)
+            
     def __repr__(self):
-		if self._naam is not None:
-			return "Gemeente(%s, '%s')" %(self.id, self._naam)
-		else:
-			return "Gemeente(%s)" %(self.id)
+        if self._naam is not None:
+            return "Gemeente(%s, '%s')" %(self.id, self._naam)
+        else:
+            return "Gemeente(%s)" %(self.id)
 
 
 def check_lazy_load_codelijst(f):
-    	'''
-	Decorator function to lazy load a :class: `Codelijst`.
-	'''
-	def wrapper(*args):
-		codelijst=args[0]
-		if codelijst._naam is None or codelijst._definitie is None:
-			codelijst.check_gateway()
-			c=codelijst.gateway.get_codelijst()
-			codelijst._naam=c._naam
-			codelijst._definitie=c._definitie
-		return f(*args)
-	return wrapper
+    '''
+    Decorator function to lazy load a :class: `Codelijst`.
+    '''
+    def wrapper(*args):
+        codelijst=args[0]
+        if codelijst._naam is None or codelijst._definitie is None:
+            codelijst.check_gateway()
+            c=codelijst.gateway.get_codelijst()
+            codelijst._naam=c._naam
+            codelijst._definitie=c._definitie
+        return f(*args)
+    return wrapper
 
 
 class Codelijst(GatewayObject):
@@ -496,7 +501,7 @@ class Codelijst(GatewayObject):
         self._naam=naam
         self._definitie=definitie
         super(Codelijst, self).__init__(**kwargs)
-		   
+           
     @property
     @check_lazy_load_codelijst
     def naam(self):
@@ -558,8 +563,8 @@ class Herkomstadrespositie(Codelijst):
 
 def check_lazy_load_straat(f):
     '''
-	Decorator function to lazy load a :class: `Straat`.
-	'''
+    Decorator function to lazy load a :class: `Straat`.
+    '''
     def wrapper(*args):
         straat=args[0]
         if straat._label is None or straat._namen is None or straat._taal_code is None or straat._status is None:
@@ -606,23 +611,28 @@ class Straat(GatewayObject):
     @check_lazy_load_straat
     def status(self):
         return self._status
+        
+    @property
+    def huisnummers(self):
+        self.check_gateway()
+        return self.gateway.list_huisnummers_by_straat(self)
           
     def __str__(self):
-		if self._label is not None:
-			return "%s (%s)" %(self._label,self.id)
-		else:
-			return "Straat %s" %(self.id)
-			
+        if self._label is not None:
+            return "%s (%s)" %(self._label,self.id)
+        else:
+            return "Straat %s" %(self.id)
+            
     def __repr__(self):
-		if self._label is not None:
-			return "Straat(%s, '%s')" %(self.id, self._label)
-		else:
-			return "Straat(%s)" %(self.id)
+        if self._label is not None:
+            return "Straat(%s, '%s')" %(self.id, self._label)
+        else:
+            return "Straat(%s)" %(self.id)
         
 def check_lazy_load_huisnummer(f):
     '''
-	Decorator function to lazy load a :class: `Huisnummer`.
-	'''
+    Decorator function to lazy load a :class: `Huisnummer`.
+    '''
     
     def wrapper(*args):
         huisnummer=args[0]
