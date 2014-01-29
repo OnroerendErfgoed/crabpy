@@ -20,7 +20,7 @@ from crabpy.gateway.crab import (
     Statuswegsegment, Geometriemethodewegsegment,
     Statusgebouw, Geometriemethodegebouw,
     Herkomstadrespositie,Straat,
-    Huisnummer
+    Huisnummer, Postkanton
 )
 
 
@@ -160,6 +160,14 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsEqual(res.huisnummer, 1)
         self.assertIsEqual(res.straat, 1)
         
+    def test_list_postkantons_by_gemeente(self):
+        res=self.crab.list_postkantons_by_gemeente(1)
+        self.assertIsInstance(res, list)
+        self.assertIsEqual(res.id,1)
+        
+    def test_get_postkanton_by_huisnummer(self):
+        res=self.crab.get_postkanton_by_huisnummer(1)
+        self.assertIsInstance(res, list)
 
 class GemeenteTests(unittest.TestCase):
     
@@ -281,5 +289,10 @@ class HuisnummerTests(unittest.TestCase):
     def test_check_gateway_not_set(self):
         h=Huisnummer(1)
         self.assertRaises(RuntimeError, h.check_gateway)
+        
+class PostkantonTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        p = Postkanton( 1)
+        self.assertEqual(p.id, 1)
         
     

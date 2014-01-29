@@ -354,6 +354,38 @@ class CrabGateway(object):
         huisnummer.set_gateway()
         return huisnummer
     
+    def list_postkantons_by_gemeente(gemeente):
+        
+        def creator():
+            res=crab_gateway_request(self.client, 'ListPostkantonByGemeenteId', gemeente)
+            return[
+                Postkanton(
+                    r.PostkantonCode
+                )for r in res.PostkantonItem
+            ] 
+        if self.caches['long'].is_configured:
+            key='ListPostkantonsByGemeenteId#%s'%(gemeente)
+            postkanton=self.caches['long'].get_or_create(key, creator)
+        else:
+            postkanton=creator()
+        postkanton.set_gateway()
+        return postkanton
+
+
+    def get_postkanton_by_huisnummer(self, huisnummer):
+        
+        def creator():
+            res=crab_gateway_request(self.client, '', huisnummer)
+            return(
+                res.PostkantonCode
+            )
+        if self.caches['long'].is_configured:
+            key=''%(huisnummer)
+            huisnummer=self.caches['long'].get_or_create(key, creator)
+        else:
+            huisnummer=creator()
+        huisnummer.set_gateway()
+        return huisnummer
 
 class GatewayObject(object):
 
@@ -464,6 +496,11 @@ class Gemeente(GatewayObject):
         self.check_gateway()
         return self.gateway.list_straten(self)
         
+        
+    @property
+    def postkantons(self):
+        self.check_gateway()
+        return self.gateway.list_postkantons_by_gemeente(self)
     
     def __str__(self):
         if self._naam is not None:
@@ -671,6 +708,17 @@ class Huisnummer(GatewayObject):
     @check_lazy_load_huisnummer
     def status(self):
         return self._status
+       
+    @property
+    def postkanton(self):
+        self.check_gateway()
+        return self.gateway.get_postkanton_by_huisnummer(self)
+        
+        
+class Postkanton(GatewayObject):
+    
+    def __init__(self, id):
+        self.id=int(id)
         
     
 
