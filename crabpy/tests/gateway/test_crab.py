@@ -10,9 +10,16 @@ from crabpy.client import (
 )
 
 from crabpy.gateway.crab import (
-    CrabGateway,
-    Gewest,
-    Gemeente
+    CrabGateway, Gewest,
+    Gemeente, Taal,
+    Bewerking, Organisatie,
+    Aardsubadres, Aardadres,
+    Aardgebouw, Aardwegobject,
+    Aardterreinobject, Statushuisnummer,
+    Statussubadres, Statustraatnaam,
+    Statuswegsegment, Geometriemethodewegsegment,
+    Statusgebouw, Geometriemethodegebouw,
+    Herkomstadrespositie,Straat
 )
 
 
@@ -196,8 +203,7 @@ class TaalTests(unittest.TestCase):
         pass
         
     def test_check_gateway_not_set(self):
-        pass
-        t=Taal()
+        t=Taal(1)
         self.assertRaises(RuntimeError, t.check_gateway)
         
 class BewerkingTests(unittest.TestCase):
@@ -206,7 +212,7 @@ class BewerkingTests(unittest.TestCase):
         
     def test_check_gateway_not_set(self):
         pass
-        b=Bewerking()
+        b=Bewerking(1)
         self.assertRaises(RuntimeError, b.check_gateway)
         
 class OrganisatieTests(unittest.TestCase):
@@ -215,7 +221,7 @@ class OrganisatieTests(unittest.TestCase):
         
     def test_check_gateway_not_set(self):
         pass
-        o=Organisatie()
+        o=Organisatie(1)
         self.assertRaises(RuntimeError, o.check_gateway)
         
 class AardsubadresTests(unittest.TestCase):
@@ -224,7 +230,7 @@ class AardsubadresTests(unittest.TestCase):
         
     def test_check_gateway_not_set(self):
         pass
-        a=Aardsubadres()
+        a=Aardsubadres(1)
         self.assertRaises(RuntimeError, a.check_gateway)
         
 class AardadresTests(unittest.TestCase):
@@ -233,7 +239,7 @@ class AardadresTests(unittest.TestCase):
         
     def test_check_gateway_not_set(self):
         pass
-        a=Aardadres()
+        a=Aardadres(1)
         self.assertRaises(RuntimeError, a.check_gateway)
         
 class AardgebouwTests(unittest.TestCase):
@@ -242,7 +248,7 @@ class AardgebouwTests(unittest.TestCase):
         
     def test_check_gateway_not_set(self):
         pass
-        a=Aardgebouw()
+        a=Aardgebouw(1)
         self.assertRaises(RuntimeError, a.check_gateway)
 
 class AardwegobjectTests(unittest.TestCase):
@@ -251,14 +257,14 @@ class AardwegobjectTests(unittest.TestCase):
     
     def test_check_gateway_not_set(self):
         pass
-        a=Aardwegobject()
+        a=Aardwegobject(1)
         self.assertRaises(RuntimeError,a.check_gateway)
         
     def test_str_and_repr_dont_lazy_load(self):
         pass
-        s=Straat()
-        self.assertEqual('Straat 2', str(g))
-        self.assertEqual('Straat(2)', repr(g))
+        s=Straat(1)
+        self.assertEqual('Straat 1', str(s))
+        self.assertEqual('Straat(1)', repr(s))
 
     
     

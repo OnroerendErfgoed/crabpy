@@ -473,10 +473,10 @@ class Statussubadres(Codelijst):
 class Statustraatnaam(Codelijst):
     pass
     
-class Statussegment(Codelijst):
+class Statuswegsegment(Codelijst):
     pass
     
-class Geometriemethodesegment(Codelijst):
+class Geometriemethodewegsegment(Codelijst):
     pass 
     
 class Statusgebouw(Codelijst):
@@ -485,10 +485,26 @@ class Statusgebouw(Codelijst):
 class Geometriemethodegebouw(Codelijst):
     pass 
     
-class Herkomstaderspositie(Codelijst):
+class Herkomstadrespositie(Codelijst):
     pass 
 
-        
+
+def check_lazy_load_straat(f):
+    '''
+	Decorator function to lazy load a :class: `Straat`.
+	'''
+    def wrapper(*args):
+        straat=args[0]
+        if straat._label is None or straat._namen is None or straat._taal_code is None or straat._status is None:
+            straat.check_gateway()
+            s=straat.gateway.get_straat_by_id(straat.id)
+            straat._label=s._label
+            straat._namen=s._namen
+            straat._taal_code=s._taal_code
+            straat._status=s._status
+        return f(*args)
+    return wrapper
+
 class Straat(GatewayObject):
     '''
     '''
@@ -505,22 +521,22 @@ class Straat(GatewayObject):
         super(Straat, self).__init__(**kwargs)
         
     @property
-    @check_lazy_load_Straat
+    @check_lazy_load_straat
     def label(self):
         return self._label
             
     @property
-    @check_lazy_load_Straat
+    @check_lazy_load_straat
     def namen(self):
         return self._namen
             
     @property
-    @check_lazy_load_Straat
+    @check_lazy_load_straat
     def taal_code(self):
         return self._taal_code
             
     @property
-    @check_lazy_load_Straat
+    @check_lazy_load_straat
     def status(self):
         return self._status
           
@@ -537,19 +553,5 @@ class Straat(GatewayObject):
 			return "Straat(%s)" %(self.id)
         
         
-def check_lazy_load_Straat(f):
-    '''
-	Decorator function to lazy load a :class: `Straat`.
-	'''
-    def wrapper(*args):
-        straat=args[0]
-        if straat._label is None or straat._namen is None or straat._taal_code is None or straat._status is None:
-            straat.check_gateway()
-            s=straat.gateway.get_straat_by_id(straat.id)
-            straat._label=s._label
-            straat._namen=s._namen
-            straat._taal_code=s._taal_code
-            straat._status=s._status
-        return f(*args)
-    return wrapper
+
         
