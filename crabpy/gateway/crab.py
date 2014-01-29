@@ -9,7 +9,6 @@ class CrabGateway(object):
         self.client = client
 
     def list_gewesten(self, sort=1):
-        pass
         '''
         List all `gewesten`
         
@@ -42,7 +41,6 @@ class CrabGateway(object):
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
-        pass
         
         def creator():
 			res= crab_gateway_request(self.client,'ListGemeentenByGewestId', gewest ,sort)
@@ -109,7 +107,186 @@ class CrabGateway(object):
 			gemeente=creator()
         gemeente.set_gateway(self)
         return gemeente
+        
+    def _list_codeobject(self, function, sort, returnclass):
+        
+        def creator():
+            res=crab_gateway_request(self.client, function, sort)
+            return[
+                getattr('crabpy.gateway.crab',returnclass)(
+                    r.Code,
+                    r.Naam,
+                    r.Definitie
+                ) for r in res.CodeItem
+            ]
+        if self.caches['long'].is_configured:
+            key=function+'#%s'%(sort)
+            codeobject=self.caches['long'].get_or_create(key, creator)
+        else:
+            codeobject=creator()
+        codeobject.set_gateway(self)
+        return codeobject
+        
+    def list_talen(self, sort=1):
+        '''
+        List all `talen`.
+        :rtype: A :class:`list` of :class: `Taal`
+        '''
+        return self._list_codeobject('ListTalen',sort,'Taal')
+    
+    def list_bewerkingen(self, sort=1):
+        '''
+        List all `bewerkingen`.
+        :rtype: A :class:`list` of :class: `Bewerking`
+        '''
+        return self._list_codeobject('ListBewerkingen',sort,'Bewerking')
+        
+    def list_organisaties(self, sort=1):
+        '''
+        List all `organisaties`.
+        :rtype: A :class:`list` of :class: `Organisatie`
+        '''
+        return self._list_codeobject('ListOrganisaties',sort,'Organisatie')
 
+    def list_aardsubadressen(self, sort=1):
+        '''
+        List all `aardsubadressen`.
+        :rtype: A :class:`list` of :class: `Aardsubadres`
+        '''
+        return self._list_codeobject('ListAardSubadressn',sort,'Aardsubadres')
+        
+    def list_aardadressen(self, sort=1):
+        '''
+        List all `aardadressen`.
+        :rtype: A :class:`list` of :class: `Aardadres`
+        '''
+        return self._list_codeobject('ListAardAdressen',sort,'Aardadres')
+        
+        
+    def list_aardgebouwen(self, sort=1):
+        '''
+        List all `aardgebouwen`.
+        :rtype: A :class:`list` of :class: `Aardgebouw`
+        '''
+        return self._list_codeobject('ListAardGebouwen',sort,'Aardgebouw')
+        
+    def list_aardwegobjecten(self, sort=1):
+        '''
+        List all `aardwegobjecten`.
+        :rtype: A :class:`list` of :class: `Aardwegobject`
+        '''
+        return self._list_codeobject('ListAardWegobjecten',sort,'Aardwegobject')
+        
+    def list_aardterreinobjecten(self, sort=1):
+        '''
+        List all `aardterreinobjecten`.
+        :rtype: A :class:`list` of :class: `Aardterreinobject`
+        '''
+        return self._list_codeobject('ListAardTerreinobjecten',sort,'Aardterreinobject')
+        
+    def list_statushuisnummers(self, sort=1):
+        '''
+        List all `statushuisnummers`.
+        :rtype: A :class:`list` of :class: `Statushuisnummer`
+        '''
+        return self._list_codeobject('ListStatusHuisnummers',sort,'Statushuisnummer')
+        
+    def list_statussubadressen(self, sort=1):
+        '''
+        List all `statussubadressen`.
+        :rtype: A :class:`list` of :class: `Statussubadres`
+        '''
+        return self._list_codeobject('ListStatusSubadressen',sort,'Statussubadres')
+       
+    def list_statusstraatnamen(self, sort=1):
+        '''
+        List all `statusstraatnamen`.
+        :rtype: A :class:`list` of :class: `Statusstraatnaam`
+        '''
+        return self._list_codeobject('ListStatusStraatnamen ',sort,'Statusstraatnaam')
+        
+    def list_statuswegsegmenten(self, sort=1):
+        '''
+        List all `statuswegsegmenten`.
+        :rtype: A :class:`list` of :class: `Statuswegsegment`
+        '''
+        return self._list_codeobject('ListStatusWegsegmenten',sort,'Statuswegsegment')
+        
+    def list_geometriemethodewegsegmenten(self, sort=1):
+        '''
+        List all `geometriemethodewegsegmenten`.
+        :rtype: A :class:`list` of :class: `Geometriemethodewegsegment`
+        '''
+        return self._list_codeobject('ListGeometriemethodeWegsegmenten',sort,'Geometriemethodewegsegment')
+        
+    def list_statusgebouwen(self, sort=1):
+        '''
+        List all `statusgebouwen`.
+        :rtype: A :class:`list` of :class: `Statusgebouwen`
+        '''
+        return self._list_codeobject('ListStatusGebouwen',sort,'Statusgebouw')
+        
+    def list_geometriemethodegebouwen(self, sort=1):
+        '''
+        List all `geometriegebouwen`.
+        :rtype: A :class:`list` of :class: `Geometriegebouw`
+        '''
+        return self._list_codeobject('ListGeometriemethodeGebouwen',sort,'Geometriemethodegebouw')
+        
+    def list_herkomstadresposities(self, sort=1):
+        '''
+        List all `herkomstadresposities`.
+        :rtype: A :class:`list` of :class: `Herkomstadrespositie`
+        '''
+        return self._list_codeobject('ListHerkomstAdresposities',sort,'Herkomstadrespositie')
+        
+    def list_straten(self, gemeente, sort=1):
+        '''
+        List all `straten` in a `Gemeente`.
+
+        :param object gemeente: An object of :class: `Gemeente`
+        :rtype: A :class:`list` of :class: `Straat`
+        '''
+        def creator():
+            res=crab_gateway_request(self.client, 'ListStraatnamenWithStatusByGemeente', gemeente, sort)
+            return[ 
+				Straat(
+                    r.StraatnaamId,
+					r.straatnaamLabel,
+					r.StatusStraatnaam
+				)for r in res.StraatnaamWithStatusItem
+			]
+        if self.caches['long'].is_configured:
+			key='ListStraatnamenWithStatusByGemeente#%s%s'%(gemeente, sort)
+			straat=self.caches['long'].get_or_create(key, creator)
+        else:
+			straat=creator()
+        straat.set_gateway(self)
+        return straat
+        
+    def get_straat_by_id(self,id):
+        '''
+        Retrieve a `straat`by the Id.
+         
+        :param integer id: The id of the `straat`.
+        :rtype: :class:`Straat`
+        '''
+        def creator():
+            res=crab_gateway_request(self.client, 'GetStraatnaamWIthStatusByStraatnaamId', id)
+            return Straat(
+					res.StraatnaamLabel,
+					res.StatusStraatnaam
+            )
+
+        if self.caches['long'].is_configured:
+			key='GetStraatnaamWIthStatusByStraatnaamId#%s'%(id)
+			straat=self.caches['long'].get_or_create(key, creator)
+        else:
+			straat=creator()
+        straat.set_gateway(self)
+        return straat
+        
+        
 
 class GatewayObject(object):
 
@@ -142,13 +319,13 @@ class Gewest(GatewayObject):
 	
 		
     def __str__(self):
-		if self.name is not None:
+		if self.naam is not None:
 			return "%s (%s)" %(self._naam, self.id)
 		else:
-			return "Gewest %s " % (self.id)
+			return "Gewest %s" % (self.id)
 			
     def __repr__(self):
-		if self._naam is not None:
+		if self.naam is not None:
 			return"Gewest(%s, '%s')" % (self.id, self._naam)
 		else:
 			return "Gewest(%s)" %(self.id)
@@ -178,11 +355,11 @@ class Gemeente(GatewayObject):
     '''
     
     def __init__(
-			self, id, naam,niscode=None,gewest=None,
+			self, id, naam=None, niscode=None, gewest=None,
 			centroid=None, bounding_box=None,
 			**kwargs
 	):
-		self._id=int(id)
+		self.id=int(id)
 		self._naam=naam
 		self._niscode=int(niscode)
 		self._gewest=int(gewest)
@@ -217,7 +394,7 @@ class Gemeente(GatewayObject):
 		
 	
     def __str__(self):
-		if self.name is not None:
+		if self._naam is not None:
 			return "%s (%s)" %(self._naam,self.id)
 		else:
 			return "Gemeente %s" %(self.id)
@@ -227,3 +404,141 @@ class Gemeente(GatewayObject):
 			return "Gemeente(%s, '%s')" %(self.id, self._naam)
 		else:
 			return "Gewest(%s)" %(self.id)
+
+
+def check_lazy_load_codelijst(f):
+    	'''
+	Decorator function to lazy load a :class: `Codelijst`.
+	'''
+	def wrapper(*args):
+		codelijst=args[0]
+		if codelijst._naam is None or codelijst._definitie is None:
+			codelijst.check_gateway()
+			c=codelijst.gateway.get_codelijst()
+			codelijst._naam=c._naam
+			codelijst._definitie=c._definitie
+		return f(*args)
+	return wrapper
+
+
+class Codelijst(GatewayObject):
+    def __init__(
+            self, code, naam=None , definitie=None, **kwargs
+    ):
+        self._code=code
+        self._naam=naam
+        self._definitie=definitie
+        super(Codelijst, self).__init__(**kwargs)
+		   
+    @property
+    @check_lazy_load_codelijst
+    def naam(self):
+        return self._naam
+        
+    @property
+    @check_lazy_load_codelijst
+    def definitie(self):
+        return self._definitie
+
+class Taal(Codelijst):
+    pass
+ 
+class Bewerking(Codelijst):
+    pass
+    
+class Organisatie(Codelijst):
+    pass
+    
+class Aardsubadres(Codelijst):
+    pass
+    
+class Aardadres(Codelijst):
+    pass 
+
+class Aardgebouw(Codelijst):
+    pass
+    
+class Aardwegobject(Codelijst):
+    pass
+    
+class Aardterreinobject(Codelijst):
+    pass
+    
+class Statushuisnummer(Codelijst):
+    pass
+    
+class Statussubadres(Codelijst):
+    pass
+    
+class Statustraatnaam(Codelijst):
+    pass
+    
+class Statussegment(Codelijst):
+    pass
+    
+class Geometriemethodesegment(Codelijst):
+    pass 
+    
+class Statusgebouw(Codelijst):
+    pass 
+    
+class Geometriemethodegebouw(Codelijst):
+    pass 
+    
+class Herkomstaderspositie(Codelijst):
+    pass 
+
+        
+class Straat(GatewayObject):
+    '''
+    '''
+    def __init__(
+            self,id, label=None, namen=None,
+            taal_code=None, status=None, **kwargs
+    ):
+        
+        self.id=int(id)
+        self._label=label
+        self._namen=namen
+        self._taal_code=taal_code
+        self._status=status
+        super(Straat, self).__init__(**kwargs)
+        
+        @property
+        @check_lazy_load_Straat
+        def label(self):
+            return self._label
+            
+        @property
+        @check_lazy_load_Straat
+        def namen(self):
+            return self._namen
+            
+        @property
+        @check_lazy_load_Straat
+        def taal_code(self):
+            return self._taal_code
+            
+        @property
+        @check_lazy_load_Straat
+        def status(self):
+            return self._status
+            
+        
+        
+def check_lazy_load_Straat(f):
+    '''
+	Decorator function to lazy load a :class: `Straat`.
+	'''
+    def wrapper(*args):
+        straat=args[0]
+        if straat._label is None or straat._namen is None or straat._taal_code is None or straat._status is None:
+            straat.check_gateway()
+            s=straat.gateway.get_straat_by_id(straat.id)
+            straat._label=s._label
+            straat._namen=s._namen
+            straat._taal_code=s._taal_code
+            straat._status=s._status
+        return f(*args)
+    return wrapper
+        
