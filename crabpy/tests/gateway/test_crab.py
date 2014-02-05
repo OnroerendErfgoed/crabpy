@@ -16,7 +16,7 @@ from crabpy.gateway.crab import (
     Aardsubadres, Aardadres,
     Aardgebouw, Aardwegobject,
     Aardterreinobject, Statushuisnummer,
-    Statussubadres, Statustraatnaam,
+    Statussubadres, Statusstraatnaam,
     Statuswegsegment, Geometriemethodewegsegment,
     Statusgebouw, Geometriemethodegebouw,
     Herkomstadrespositie,Straat,
@@ -59,20 +59,23 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         
     def test_get_gemeente_by_id(self):
-        res=self.crab.get_gemeente_by_id(272)
+        res=self.crab.get_gemeente_by_id(1)
         self.assertIsInstance(res, Gemeente)
-        self.assertIsEqual(res.id, 272)
+        self.assertEqual(res.id, 1)
         
-    def test_get_gemeente_by_invalid_id(self):
-        pass
+    '''def test_get_gemeente_by_invalid_id(self):
+        from crabpy.gateway.exception import GatewayRuntimeException
+        res=self.crab.get_gemeente_by_id('gent')
+        self.assertRaises(WebFault)'''
+            
         
     def test_get_gemeente_by_niscode(self):
         res=self.crab.get_gemeente_by_niscode(11001)
         self.assertIsInstance(res, Gemeente)
-        self.assertsEqual(res.niscode, 11001)
+        self.assertEqual(res.niscode, 11001)
     
     def test_list_talen(self):
-        res=self.crab.list_talen(self)
+        res=self.crab.list_talen()
         self.assertIsInstance(res, list)
         
     def test_list_bewerkingen(self):
@@ -108,7 +111,7 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         
     def test_list_statussubadressen(self):
-        res=self.crab.list_statussubadressen
+        res=self.crab.list_statussubadressen()
         self.assertIsInstance(res, list)
         
     def test_list_statusstraatnamen(self):
@@ -138,36 +141,34 @@ class CrabGatewayTests(unittest.TestCase):
     def test_list_straten(self):
         res=self.crab.list_straten(1)
         self.assertIsInstance(res, list)
-        self.assertIsEqual(res.GemeenteId, 1)
     
     def test_get_straat_by_id(self):
         res=self.crab.get_straat_by_id(1)
         self.assertIsInstance(res, Straat)
-        self.assertIsEqual(res.i, 1)
+        self.assertEqual(res.id, 1)
         
     def test_list_huisnummers_by_straat(self):
         res=self.crab.list_huisnummers_by_straat(1)
         self.assertIsInstance(res, list)
         
     def test_get_huisnummer_by_id(self):
-        res.self.crab.get_huisnummer_by_id(1)
+        res=self.crab.get_huisnummer_by_id(1)
         self.assertIsInstance(res, Huisnummer)
-        self.assertIsEqual(res.id, 1)
+        self.assertEqual(res.id, 1)
         
     def test_get_huisnummer_by_nummer_and_straat(self):
         res=self.crab.get_huisnummer_by_nummer_and_straat(1,1)
         self.assertIsInstance(res, Huisnummer)
-        self.assertIsEqual(res.huisnummer, 1)
-        self.assertIsEqual(res.straat, 1)
+        self.assertEqual(res.huisnummer, '1')
+        self.assertEqual(res.straat, 1)
         
     def test_list_postkantons_by_gemeente(self):
         res=self.crab.list_postkantons_by_gemeente(1)
         self.assertIsInstance(res, list)
-        self.assertIsEqual(res.id,1)
         
     def test_get_postkanton_by_huisnummer(self):
         res=self.crab.get_postkanton_by_huisnummer(1)
-        self.assertIsInstance(res, list)
+        self.assertIsInstance(res, Postkanton)
 
 class GemeenteTests(unittest.TestCase):
     
@@ -194,12 +195,12 @@ class GemeenteTests(unittest.TestCase):
         
         
         def test_str_and_repr_dont_lazy_load(self):
-            g=Gemeente(11001)
+            g=Gemeente(1)
             self.assertEqual('Gemeente 1', str(g))
             self.assertEqual('Gemeente(1)', repr(g))
             
         def test_check_gateway_not_set(self):
-            g=Gemeente(11001)
+            g=Gemeente(1)
             self.assertRaises(RuntimeError, g.check_gateway)
             
 
@@ -298,3 +299,78 @@ class PostkantonTests(unittest.TestCase):
         self.assertEqual(p.id, 1)
         
     
+@unittest.skipUnless(run_crab_integration_tests(), 'No CRAB Integration tests required')
+class CrabCachedGatewayTests(unittest.TestCase):
+
+    def setUp(self):
+        self.crab_client=crab_factory()
+        self.crab = CrabGateway(
+            self.crab_client,
+            cache_config = {
+                'permanent.backend': 'dogpile.cache.memory',
+                'permanent.expiration_time': 86400,
+                'long.backend': 'dogpile.cache.memory',
+                'long.expiration_time': 3600,
+                'short.backend': 'dogpile.cache.memory',
+                'short.expiration_time': 600,
+            }
+        )
+
+    def tearDown(self):
+        self.crab_client = None
+        self.crab = None
+
+    def test_cache_is_configured(self):
+        from dogpile.cache.backends.memory import MemoryBackend
+        self.assertIsInstance(
+            self.crab.caches['permanent'].backend, 
+            MemoryBackend
+        )
+        self.assertTrue(self.crab.caches['permanent'].is_configured)
+        
+    
+    def test_list_gewesten(self):
+        res = self.crab.list_gewesten()
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['permanent'].get('ListGewesten#1'),
+            res
+        )
+
+    def test_list_gewesten_different_sort(self):
+        res = self.crab.list_gewesten(2)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['permanent'].get('ListGewesten#2'),
+            res
+        )
+        from dogpile.cache.api import NO_VALUE
+        self.assertEqual(
+            self.crab.caches['permanent'].get('ListGewesten#1'),
+            NO_VALUE
+        )
+
+    def test_list_gemeenten(self):
+        res = self.crab.list_gemeenten()
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListGemeentenByGewestId#21'),
+            res
+        )
+
+    def test_list_gemeenten_different_sort_and_gewest(self):
+        res = self.crab.list_gemeenten(1,2)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListGemeentenByGewestId#12'),
+            res
+        )
+        from dogpile.cache.api import NO_VALUE
+        self.assertEqual(
+            self.crab.caches['long'].get('ListGemeentenByGewestId#21'),
+            NO_VALUE
+        )
+        
+
+        
+
