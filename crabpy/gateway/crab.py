@@ -16,11 +16,11 @@ def crab_gateway_request(client, method, *args):
     try:
         return crab_request(client, method, *args)
     except WebFault as wf:
-        GatewayRuntimeException(
+        err=GatewayRuntimeException(
             'Could not execute request. Message from server:\n%s' % wf.fault['faultstring'],
             wf
         )
-        raise
+        raise err
 
 class CrabGateway(object):
     '''
@@ -99,12 +99,14 @@ class CrabGateway(object):
         :rtype: :class:`Gemeente`
         '''
         
-        def creator():
+        def creator():  
             res=crab_gateway_request(self.client, 'GetGemeenteByGemeenteId', id)
             return Gemeente(
                 res.GemeenteId,
                 res.GemeenteNaam,
                 res.NisGemeenteCode,
+                res.GewestId,
+                res.TaalCode,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
             )
@@ -150,7 +152,8 @@ class CrabGateway(object):
                 globals()[returnclass](
                     r.Code,
                     r.Naam,
-                    r.Definitie
+                    r.Definitie,
+                    gateway=self
                 )for r in res.CodeItem
             ]
         if self.caches['permanent'].is_configured:
@@ -185,7 +188,7 @@ class CrabGateway(object):
         List all `aardsubadressen`.
         :rtype: A :class:`list` of :class: `Aardsubadres`
         '''
-        return self._list_codeobject('ListAardSubadressen',sort, 'Aardsubadres')
+        return self._list_codeobject('ListOrganisaties',sort, 'Aardsubadres')
         
     def list_aardadressen(self, sort=1):
         '''
@@ -290,7 +293,7 @@ class CrabGateway(object):
                 )for r in res.StraatnaamWithStatusItem
             ]
         if self.caches['long'].is_configured:
-            key='ListStraatnamenWithStatusByGemeente#%s%s'%(gemeente, sort)
+            key='ListStraatnamenWithStatusByGemeenteId#%s%s'%(gemeente, sort)
             return self.caches['long'].get_or_create(key, creator)
         else:
             return creator()
@@ -307,11 +310,16 @@ class CrabGateway(object):
             return Straat(
                     res.StraatnaamId,
                     res.StraatnaamLabel,
-                    res.StatusStraatnaam
+                    res.StatusStraatnaam,
+                    res.Straatnaam,
+                    res.TaalCode,
+                    res.StraatnaamTweedeTaal,
+                    res.TaalCodeTweedeTaal,
+                    res.GemeenteId,
             )
 
         if self.caches['long'].is_configured:
-            key='GetStraatnaamWIthStatusByStraatnaamId#%s'%(id)
+            key='GetStraatnaamWithStatusByStraatnaamId#%s'%(id)
             straat=self.caches['long'].get_or_create(key, creator)
         else:
             straat=creator()
@@ -381,7 +389,7 @@ class CrabGateway(object):
                 res.StraatnaamId
             )
         if self.caches['long'].is_configured:
-            key='getHuisnummerWithStatusByHuisnummer#%s%s'%(nummer, straat)
+            key='GetHuisnummerWithStatusByHuisnummer#%s%s'%(nummer, straat)
             huisnummer=self.caches['long'].get_or_create(key, creator)
         else:
             huisnummer=creator()
@@ -413,7 +421,7 @@ class CrabGateway(object):
                 res.PostkantonCode
             )
         if self.caches['long'].is_configured:
-            key='GetPostkantonByHuisnummerId'%(huisnummer)
+            key='GetPostkantonByHuisnummerId#%s'%(huisnummer)
             postkanton=self.caches['long'].get_or_create(key, creator)
         else:
             postkanton=creator()
@@ -436,6 +444,7 @@ class GatewayObject(object):
             raise RuntimeError("There's no Gateway I can use")
 
 
+
 class Gewest(GatewayObject):
     '''
     The smallest administrative unit in Belgium.
@@ -446,9 +455,12 @@ class Gewest(GatewayObject):
         **kwargs
     ):
        self.id=id
-       self.naam=naam
+       self._naam=naam
        super(Gewest,self).__init__(**kwargs)
     
+    @property
+    def naam(self):
+        return self._naam
         
     def __str__(self):
         if self.naam is not None:
@@ -469,12 +481,13 @@ def check_lazy_load_gemeente(f):
     '''
     def wrapper(*args):
         gemeente=args[0]
-        if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest is None:
+        if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest is None or gemeente._taal is None:
             gemeente.check_gateway()
             g=gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._naam=g._naam
             gemeente._niscode=g._niscode
             gemeente._gewest=g._gewest
+            gemeente._taal=g._taal
             gemeente._centroid=g._centroid
             gemeente._bounding_box=g._bounding_box
         return f(*args)
@@ -487,7 +500,7 @@ class Gemeente(GatewayObject):
     '''
     
     def __init__(
-            self, id, naam=None, niscode=None, gewest=None,
+            self, id, naam=None, niscode=None, gewest=None, taal=None,
             centroid=None, bounding_box=None,
             **kwargs
     ):
@@ -495,6 +508,7 @@ class Gemeente(GatewayObject):
         self._naam=naam
         self._niscode=niscode
         self._gewest=gewest
+        self._taal=taal
         self._centroid=centroid
         self._bounding_box=bounding_box
         super(Gemeente,self).__init__(**kwargs)
@@ -516,6 +530,11 @@ class Gemeente(GatewayObject):
         
     @property
     @check_lazy_load_gemeente
+    def taal(self):
+        return self._taal
+        
+    @property
+    @check_lazy_load_gemeente
     def centroid(self):
         return self._centroid
         
@@ -527,13 +546,13 @@ class Gemeente(GatewayObject):
     @property
     def straten(self):
         self.check_gateway()
-        return self.gateway.list_straten(self)
+        return self.gateway.list_straten(self.id)
         
         
     @property
     def postkantons(self):
         self.check_gateway()
-        return self.gateway.list_postkantons_by_gemeente(self)
+        return self.gateway.list_postkantons_by_gemeente(self.id)
     
     def __str__(self):
         if self._naam is not None:
@@ -548,37 +567,21 @@ class Gemeente(GatewayObject):
             return "Gemeente(%s)" %(self.id)
 
 
-def check_lazy_load_codelijst(f):
-    '''
-    Decorator function to lazy load a :class: `Codelijst`.
-    '''
-    def wrapper(*args):
-        codelijst=args[0]
-        if codelijst._naam is None or codelijst._definitie is None:
-            codelijst.check_gateway()
-            c=codelijst.gateway.get_codelijst()
-            codelijst._naam=c._naam
-            codelijst._definitie=c._definitie
-        return f(*args)
-    return wrapper
-
 
 class Codelijst(GatewayObject):
     def __init__(
-            self, code, naam=None , definitie=None, **kwargs
+            self, id, naam, definitie=None, **kwargs
     ):
-        self._code=code
+        self.id=id
         self._naam=naam
         self._definitie=definitie
         super(Codelijst, self).__init__(**kwargs)
            
     @property
-    @check_lazy_load_codelijst
     def naam(self):
         return self._naam
         
     @property
-    @check_lazy_load_codelijst
     def definitie(self):
         return self._definitie
 
@@ -637,13 +640,13 @@ def check_lazy_load_straat(f):
     '''
     def wrapper(*args):
         straat=args[0]
-        if straat._label is None or straat._namen is None or straat._taal_code is None or straat._status is None:
+        if straat._label is None or straat._namen is None or straat._status_id is None or straat._gemeente_id is None:
             straat.check_gateway()
             s=straat.gateway.get_straat_by_id(straat.id)
             straat._label=s._label
+            straat._gemeente_id=s._gemeente_id
             straat._namen=s._namen
-            straat._taal_code=s._taal_code
-            straat._status=s._status
+            straat._status_id=s._status_id
         return f(*args)
     return wrapper
 
@@ -651,15 +654,16 @@ class Straat(GatewayObject):
     '''
     '''
     def __init__(
-            self,id, label=None, namen=None,
-            taal_code=None, status=None, **kwargs
+            self,id, label=None, status_id=None, straatnaam=None,taalcode=None,
+            straatnaam2=None, taalcode2=None,
+            gemeente_id=None,  **kwargs
     ):
         
         self.id=id
         self._label=label
-        self._namen=namen
-        self._taal_code=taal_code
-        self._status=status
+        self._status_id=status_id
+        self._namen=((straatnaam, taalcode), (straatnaam2,taalcode2))
+        self._gemeente_id=gemeente_id
         super(Straat, self).__init__(**kwargs)
         
     @property
@@ -671,21 +675,32 @@ class Straat(GatewayObject):
     @check_lazy_load_straat
     def namen(self):
         return self._namen
-            
+        
     @property
     @check_lazy_load_straat
-    def taal_code(self):
-        return self._taal_code
+    def gemeente(self):
+        res=self.gateway.get_gemeente_by_id(self._gemeente_id)
+        return res
             
     @property
     @check_lazy_load_straat
     def status(self):
-        return self._status
+        res= self.gateway.list_statusstraatnamen()
+        for r in res:
+            if int(r.id)==int(self._status_id):
+                return r
+            
         
     @property
     def huisnummers(self):
         self.check_gateway()
-        return self.gateway.list_huisnummers_by_straat(self)
+        return self.gateway.list_huisnummers_by_straat(self.id)
+        
+    @property
+    @check_lazy_load_straat
+    def taal_id(self):
+        return self.gemeente.taal
+        
           
     def __str__(self):
         if self._label is not None:
@@ -706,31 +721,32 @@ def check_lazy_load_huisnummer(f):
     
     def wrapper(*args):
         huisnummer=args[0]
-        if huisnummer._straat is None or huisnummer._huisnummer is None or huisnummer._status is None:
+        if huisnummer._straat_id is None or huisnummer._huisnummer is None or huisnummer._status_id is None:
             huisnummer.check_gateway()
             h=huisnummer.gateway.get_huisnummer_by_id(huisnummer.id)
-            huisnummer._straat=h._straat
+            huisnummer._straat_id=h._straat_id
             huisnummer._huisnummer=h._huisnummer
-            huisnummer._status=h._status
+            huisnummer._status_id=h._status_id
         return f(*args)
     return wrapper
 
 class Huisnummer(GatewayObject):
     
     def __init__(
-            self, id, status=None, huisnummer=None,
-             straat=None, **kwargs
+            self, id, status_id=None, huisnummer=None,
+            straat_id=None, **kwargs
     ):
         self.id=int(id)
-        self._status=status
+        self._status_id=status_id
         self._huisnummer=huisnummer
-        self._straat=straat
+        self._straat_id=straat_id
         super(Huisnummer, self).__init__(**kwargs)
     
     @property
     @check_lazy_load_huisnummer
     def straat(self):
-        return self._straat
+        res=self.gateway.get_straat_by_id(self._straat_id)
+        return res
         
     @property
     @check_lazy_load_huisnummer
@@ -740,12 +756,15 @@ class Huisnummer(GatewayObject):
     @property
     @check_lazy_load_huisnummer
     def status(self):
-        return self._status
+        res= self.gateway.list_statushuisnummers()
+        for r in res:
+            if int(r.id) == int(self._status_id):
+                return r
        
     @property
     def postkanton(self):
         self.check_gateway()
-        return self.gateway.get_postkanton_by_huisnummer(self)
+        return self.gateway.get_postkanton_by_huisnummer(self.id)
         
         
 class Postkanton(GatewayObject):
