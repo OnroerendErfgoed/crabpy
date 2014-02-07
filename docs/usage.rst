@@ -15,8 +15,20 @@ removed, making it a whole lot easier to connect.
     crab = crab_factory()
 
     res = crab.service.ListGemeentenByGewestId(1)
-
     print res
+
+    res = crab.service.ListPostkantonsByGemeenteId(71)
+    print res
+
+    res = crab.service.ListStraatnamenWithStatusByGemeenteId(71)
+    print res 
+
+    res = crab.service.ListHuisnummersWithStatusByStraatnaamId(18618)
+    print res
+
+    res = crab.service.GetStraatnaamWithStatusByStraatnaamId(18618)
+    print res
+    
 
 Using the CAPAKEY webservice
 ----------------------------

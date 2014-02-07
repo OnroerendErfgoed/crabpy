@@ -286,13 +286,13 @@ class GemeenteTests(unittest.TestCase):
 class TaalTests(unittest.TestCase):
     def test_fully_initialised(self):
         t=Taal(
-            1,
+            "nl",
             'Nederlands',
-            'definitie'
+            'Nederlands.'
         )
-        self.assertEqual(t.id, 1)
+        self.assertEqual(t.id,"nl")
         self.assertEqual(t.naam, 'Nederlands')
-        self.assertEqual(t.definitie, 'definitie')
+        self.assertEqual(t.definitie, 'Nederlands.')
 
         
 class StraatTests(unittest.TestCase):
