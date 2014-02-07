@@ -141,6 +141,10 @@ class CrabGatewayTests(unittest.TestCase):
     def test_list_straten(self):
         res=self.crab.list_straten(1)
         self.assertIsInstance(res, list)
+        gemeente= self.crab.get_gemeente_by_id(1)
+        self.assertIsInstance(gemeente, Gemeente)
+        res=self.crab.list_straten(gemeente)
+        self.assertIsInstance(res,list)
     
     def test_get_straat_by_id(self):
         res=self.crab.get_straat_by_id(1)
@@ -193,6 +197,16 @@ class GewestTests(unittest.TestCase):
     def test_check_gateway_not_set(self):
         g=Gewest(2)
         self.assertRaises(RuntimeError, g.check_gateway)
+        
+    def test_gemeenten(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g=Gewest(2)
+        g.set_gateway(crab) 
+        gemeenten = g.gemeenten
+        self.assertIsInstance(gemeenten, list)
         
 
 class GemeenteTests(unittest.TestCase):
@@ -264,7 +278,7 @@ class GemeenteTests(unittest.TestCase):
             crab_factory()
         )
         g=Gemeente(1)
-        g.set_gateway(crab)
+        g.set_gateway(crab) 
         postkanton = g.postkantons
         self.assertIsInstance(postkanton, list)
             
@@ -798,19 +812,34 @@ class CrabCachedGatewayTests(unittest.TestCase):
         )
         
     def test_list_straten(self):
-        res = self.crab.list_straten(1)
+        res = self.crab.list_straten(1) 
         self.assertIsInstance(res, list)
         self.assertEqual(
             self.crab.caches['long'].get('ListStraatnamenWithStatusByGemeenteId#11'),
             res
         )
+        
+        gem = self.crab.get_gemeente_by_id(2)
+        r = self.crab.list_straten(gem)
+        self.assertIsInstance(r, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListStraatnamenWithStatusByGemeenteId#21'),
+            r
+        )
 
-    def test_list_straten_different_sort_and_gemeente(self):
-        res = self.crab.list_straten(2,2)
+    def test_list_straten_different_sort(self):
+        res = self.crab.list_straten(1,2)
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['long'].get('ListStraatnamenWithStatusByGemeenteId#22'),
+            self.crab.caches['long'].get('ListStraatnamenWithStatusByGemeenteId#12'),
             res
+        )
+        gem = self.crab.get_gemeente_by_id(2)
+        r = self.crab.list_straten(gem, 2)
+        self.assertIsInstance(r, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListStraatnamenWithStatusByGemeenteId#22'),
+            r
         )
         from dogpile.cache.api import NO_VALUE
         self.assertEqual(
@@ -835,13 +864,27 @@ class CrabCachedGatewayTests(unittest.TestCase):
             self.crab.caches['long'].get('ListHuisnummersWithStatusByStraatnaamId#11'),
             res
         )
+        straat = self.crab.get_straat_by_id(2)
+        r = self.crab.list_huisnummers_by_straat(straat)
+        self.assertIsInstance(r,list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListHuisnummersWithStatusByStraatnaamId#21'),
+            r
+        )
 
-    def test_list_huisnummers_by_straat_different_sort_and_gemeente(self):
-        res = self.crab.list_huisnummers_by_straat(2,2)
+    def test_list_huisnummers_by_straat_different_sort(self):
+        res = self.crab.list_huisnummers_by_straat(1,2)
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['long'].get('ListHuisnummersWithStatusByStraatnaamId#22'),
+            self.crab.caches['long'].get('ListHuisnummersWithStatusByStraatnaamId#12'),
             res
+        )
+        straat = self.crab.get_straat_by_id(2)
+        r=self.crab.list_huisnummers_by_straat(straat, 2)
+        self.assertIsInstance(r, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListHuisnummersWithStatusByStraatnaamId#22'),
+            r
         )
         from dogpile.cache.api import NO_VALUE
         self.assertEqual(

@@ -279,11 +279,16 @@ class CrabGateway(object):
         '''
         List all `straten` in a `Gemeente`.
 
-        :param object gemeente: An object of :class: `Gemeente`
+        :param object gemeente: An object of :class: `Gemeente` or
+        :param integer gemeente: The Id of the Gemeente
         :rtype: A :class:`list` of :class: `Straat`
         '''
+        try:
+            id=gemeente.id
+        except AttributeError:
+            id=gemeente
         def creator():
-            res=crab_gateway_request(self.client, 'ListStraatnamenWithStatusByGemeenteId', gemeente, sort)
+            res=crab_gateway_request(self.client, 'ListStraatnamenWithStatusByGemeenteId', id, sort)
             return[ 
                 Straat(
                     r.StraatnaamId,
@@ -293,7 +298,7 @@ class CrabGateway(object):
                 )for r in res.StraatnaamWithStatusItem
             ]
         if self.caches['long'].is_configured:
-            key='ListStraatnamenWithStatusByGemeenteId#%s%s'%(gemeente, sort)
+            key='ListStraatnamenWithStatusByGemeenteId#%s%s'%(id, sort)
             return self.caches['long'].get_or_create(key, creator)
         else:
             return creator()
@@ -330,12 +335,16 @@ class CrabGateway(object):
     def list_huisnummers_by_straat(self, straat, sort=1):
         '''
         List all `huisnummers` in a `straat`
-        param object straat: An object of :class: `Straat`
+        param object straat: An object of :class: `Straat` 
+        OR param integer straat: The Id of the Straat
         :rtype: A :class: `list` of :class: `Huisnummer`
         '''
-        
+        try:
+            id=straat.id
+        except AttributeError:
+            id=straat
         def creator():
-            res=crab_gateway_request(self.client, 'ListHuisnummersWithStatusByStraatnaamId', straat, sort)
+            res=crab_gateway_request(self.client, 'ListHuisnummersWithStatusByStraatnaamId', id, sort)
             return [
                 Huisnummer(
                     r.HuisnummerId,
@@ -346,7 +355,7 @@ class CrabGateway(object):
             ]
             
         if self.caches['long'].is_configured:
-            key='ListHuisnummersWithStatusByStraatnaamId#%s%s' %(straat, sort)
+            key='ListHuisnummersWithStatusByStraatnaamId#%s%s' %(id, sort)
             return self.caches['long'].get_or_create(key, creator)
         else:
             return creator()
@@ -461,7 +470,11 @@ class Gewest(GatewayObject):
     @property
     def naam(self):
         return self._naam
-        
+    
+    @property
+    def gemeenten(self):
+        return self.gateway.list_gemeenten(self.id)
+    
     def __str__(self):
         if self.naam is not None:
             return "%s (%s)" %(self._naam, self.id)
@@ -546,7 +559,7 @@ class Gemeente(GatewayObject):
     @property
     def straten(self):
         self.check_gateway()
-        return self.gateway.list_straten(self.id)
+        return self.gateway.list_straten(self)
         
         
     @property
@@ -694,7 +707,7 @@ class Straat(GatewayObject):
     @property
     def huisnummers(self):
         self.check_gateway()
-        return self.gateway.list_huisnummers_by_straat(self.id)
+        return self.gateway.list_huisnummers_by_straat(self)
         
     @property
     @check_lazy_load_straat
