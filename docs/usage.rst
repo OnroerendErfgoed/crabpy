@@ -8,6 +8,8 @@ Using the CRAB webservice
 Recently, the CRAB service has become public. The need to authenticate has been
 removed, making it a whole lot easier to connect.
 
+.. literalinclude:: /../examples/crab_gateway.py
+
 .. code-block:: python
 
     from crabpy.client import crab_factory
@@ -29,6 +31,7 @@ removed, making it a whole lot easier to connect.
     res = crab.service.GetStraatnaamWithStatusByStraatnaamId(18618)
     print res
     
+
 
 Using the CAPAKEY webservice
 ----------------------------
