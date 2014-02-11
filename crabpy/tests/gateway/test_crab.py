@@ -25,7 +25,9 @@ from crabpy.gateway.crab import (
     Statusgebouw, Geometriemethodegebouw,
     Herkomstadrespositie,Straat,
     Huisnummer, Postkanton,
-    Wegobject, Wegsegment
+    Wegobject, Wegsegment,
+    Terreinobject, Perceel,
+    Gebouw
 )
 
 
@@ -58,13 +60,16 @@ class CrabGatewayTests(unittest.TestCase):
     def test_list_gewesten(self):
         res=self.crab.list_gewesten()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gewest)
         
     def test_list_gemeenten(self):
         res=self.crab.list_gemeenten()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gemeente)
         gewest=Gewest(2)
-        r=self.crab.list_gemeenten(gewest)
-        self.assertIsInstance(r, list)
+        res=self.crab.list_gemeenten(gewest)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gemeente)
         
     def test_get_gemeente_by_id(self):
         res=self.crab.get_gemeente_by_id(1)
@@ -81,74 +86,92 @@ class CrabGatewayTests(unittest.TestCase):
     def test_list_talen(self):
         res=self.crab.list_talen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Taal)
         
     def test_list_bewerkingen(self):
         res=self.crab.list_bewerkingen()
         self.assertIsInstance(res,list)
+        self.assertIsInstance(res[0], Bewerking)
     
     def test_list_organisaties(self):
         res=self.crab.list_organisaties()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Organisatie)
         
     def test_list_aardsubadressen(self):
         res=self.crab.list_aardsubadressen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Aardsubadres)
         
     def test_list_aardadressen(self):
         res=self.crab.list_aardadressen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Aardadres)
         
     def test_list_aardgebouwen(self):
         res=self.crab.list_aardgebouwen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Aardgebouw)
         
     def test_list_aarwegobjecten(self):
         res=self.crab.list_aardwegobjecten()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Aardwegobject)
         
     def test_list_aardterreinobjecten(self):
         res=self.crab.list_aardterreinobjecten()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Aardterreinobject)
         
     def test_list_statushuisnummers(self):
         res=self.crab.list_statushuisnummers()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Statushuisnummer)
         
     def test_list_statussubadressen(self):
         res=self.crab.list_statussubadressen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Statussubadres)
         
     def test_list_statusstraatnamen(self):
         res=self.crab.list_statusstraatnamen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Statusstraatnaam)
         
     def test_list_statuswegsegmenten(self):
         res=self.crab.list_statuswegsegmenten()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Statuswegsegment)
         
     def test_list_geometriemethodewegsegmenten(self):
         res=self.crab.list_geometriemethodewegsegmenten()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Geometriemethodewegsegment)
         
     def test_list_statusgebouwen(self):
         res=self.crab.list_statusgebouwen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Statusgebouw)
         
     def test_list_gemetriemethodegebouwen(self):
         res=self.crab.list_geometriemethodegebouwen()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Geometriemethodegebouw)
         
     def test_list_herkomstadrespositie(self):
         res=self.crab.list_herkomstadresposities()
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Herkomstadrespositie)
         
     def test_list_straten(self):
         res=self.crab.list_straten(1)
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Straat)
         gemeente= self.crab.get_gemeente_by_id(1)
         self.assertIsInstance(gemeente, Gemeente)
-        r=self.crab.list_straten(gemeente)
-        self.assertIsInstance(r,list)
+        res=self.crab.list_straten(gemeente)
+        self.assertIsInstance(res,list)
+        self.assertIsInstance(res[0], Straat)
     
     def test_get_straat_by_id(self):
         res=self.crab.get_straat_by_id(1)
@@ -158,9 +181,11 @@ class CrabGatewayTests(unittest.TestCase):
     def test_list_huisnummers_by_straat(self):
         res=self.crab.list_huisnummers_by_straat(1)
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Huisnummer)
         straat=self.crab.get_straat_by_id(1)
-        r=self.crab.list_huisnummers_by_straat(straat)
-        self.assertIsInstance(r, list)
+        res=self.crab.list_huisnummers_by_straat(straat)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Huisnummer)
         
     def test_get_huisnummer_by_id(self):
         res=self.crab.get_huisnummer_by_id(1)
@@ -173,31 +198,34 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertEqual(res.huisnummer, '1') 
         self.assertEqual(res.straat.id, 1)
         straat=self.crab.get_straat_by_id(1)
-        r=self.crab.get_huisnummer_by_nummer_and_straat(1, straat)
-        self.assertIsInstance(r, Huisnummer)
-        self.assertEqual(r.huisnummer, '1')
+        res=self.crab.get_huisnummer_by_nummer_and_straat(1, straat)
+        self.assertIsInstance(res, Huisnummer)
+        self.assertEqual(res.huisnummer, '1')
         
     def test_list_postkantons_by_gemeente(self):
         res=self.crab.list_postkantons_by_gemeente(1)
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Postkanton)
         gemeente=self.crab.get_gemeente_by_id(1)
-        r=self.crab.list_postkantons_by_gemeente(gemeente)
-        self.assertIsInstance(r, list)
+        res=self.crab.list_postkantons_by_gemeente(gemeente)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Postkanton)
         
     def test_get_postkanton_by_huisnummer(self):
         res=self.crab.get_postkanton_by_huisnummer(1)
         self.assertIsInstance(res, Postkanton)
         huisnummer=self.crab.get_huisnummer_by_id(1)
-        r=self.crab.get_postkanton_by_huisnummer(huisnummer)
-        self.assertIsInstance(r, Postkanton)
+        res=self.crab.get_postkanton_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, Postkanton)
 
     def test_list_wegobjecten_by_straat(self):
         res=self.crab.list_wegobjecten_by_straat(1)
         self.assertIsInstance(res,list)
-        self.assertIsInstance(res[1], Wegobject)
+        self.assertIsInstance(res[0], Wegobject)
         straat=self.crab.get_straat_by_id(1)
-        r=self.crab.list_wegobjecten_by_straat(straat)
-        self.assertIsInstance(r, list)
+        res=self.crab.list_wegobjecten_by_straat(straat)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Wegobject)
         
     def test_get_wegobject_by_id(self):
         res=self.crab.get_wegobject_by_id("53839893")
@@ -207,17 +235,61 @@ class CrabGatewayTests(unittest.TestCase):
     def test_list_wegsegmenten_by_straat(self):
         res=self.crab.list_wegsegmenten_by_straat(1)
         self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Wegsegment)
         straat=self.crab.get_straat_by_id(1)
-        r=self.crab.list_wegsegmenten_by_straat(straat)
-        self.assertIsInstance(r, list)
+        res=self.crab.list_wegsegmenten_by_straat(straat)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Wegsegment)
         
     def test_get_wegsegment_by_id(self):
         res=self.crab.get_wegsegment_by_id("108724")
         self.assertIsInstance(res, Wegsegment)
         self.assertEqual(res.id, "108724")
+        
+    def test_list_terreinobjecten_by_huisnummer(self):
+        res=self.crab.list_terreinobjecten_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Terreinobject)
+        huisnummer=self.crab.get_huisnummer_by_id(1)
+        res=self.crab.list_terreinobjecten_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Terreinobject)
+        
+    def test_get_terreinobject_by_id(self):
+        res=self.crab.get_terreinobject_by_id("13040_C_1747_G_002_00")
+        self.assertIsInstance(res, Terreinobject)
+        self.assertEqual(res.id, "13040_C_1747_G_002_00")
+        
+    def test_list_percelen_by_huisnummer(self):
+        res=self.crab.list_percelen_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Perceel)
+        huisnummer=self.crab.get_huisnummer_by_id(1)
+        res=self.crab.list_percelen_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Perceel)
+
+    def test_get_perceel_by_id(self):
+        res=self.crab.get_perceel_by_id("13040C1747/00G002")
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.id, "13040C1747/00G002")
+
+    def test_list_gebouwen_by_huisnummer(self):
+        res=self.crab.list_gebouwen_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gebouw)
+        huisnummer=self.crab.get_huisnummer_by_id(1)
+        res=self.crab.list_gebouwen_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gebouw)
+        
+        
+    def test_get_gebouw_by_id(self):
+        res=self.crab.get_gebouw_by_id("1538575")
+        self.assertIsInstance(res, Gebouw)
+        self.assertEqual(res.id, 1538575)
 
 class GewestTests(unittest.TestCase):
-    
 
     def test_fully_initialised(self):
         g = Gewest(
@@ -262,11 +334,16 @@ class GemeenteTests(unittest.TestCase):
             (150881.07, 202256.84),
             (148950.36, 199938.28, 152811.77, 204575.39)
         )
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g.set_gateway(crab)
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
         self.assertEqual(g.niscode, 11001)
-        self.assertEqual(g.gewest, 2)
-        self.assertEqual(g.taal, 'nl')
+        self.assertEqual(int(g.gewest.id), 2)
+        self.assertEqual(g.taal.id, 'nl')
         self.assertEqual(g.centroid, (150881.07, 202256.84))
         self.assertEqual(
             g.bounding_box,
@@ -295,8 +372,8 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
         self.assertEqual(g.niscode, 11001)
-        self.assertEqual(g.gewest, 2)
-        self.assertEqual(g.taal, 'nl')
+        self.assertEqual(int(g.gewest.id), 2)
+        self.assertEqual(g.taal.id, 'nl')
         self.assertEqual(g.centroid, (150881.07, 202256.84))
         self.assertEqual(
             g.bounding_box,
@@ -345,9 +422,16 @@ class StraatTests(unittest.TestCase):
             'Acacialaan','nl',None,None,
             1
         )
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        s.set_gateway(crab)
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
+        self.assertEqual(int(s.status.id), 3)
         self.assertEqual(s.namen, (('Acacialaan', 'nl'),(None,None)))
+        self.assertEqual(int(s.gemeente.id), 1)
         self.assertEqual('Acacialaan (1)', str(s))
         self.assertEqual("Straat(1, 'Acacialaan')", repr(s))
     
@@ -360,7 +444,9 @@ class StraatTests(unittest.TestCase):
         s.set_gateway(crab)
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
-        self.assertEqual(s.namen, (('Acacialaan','nl'),(None,None)))
+        self.assertEqual(int(s.status.id), 3)
+        self.assertEqual(s.namen, (('Acacialaan', 'nl'),(None,None)))
+        self.assertEqual(int(s.gemeente.id), 1)
     
     def test_str_and_repr_dont_lazy_load(self):
         s =Straat(1)
@@ -381,15 +467,15 @@ class StraatTests(unittest.TestCase):
         huisnummers=s.huisnummers
         self.assertIsInstance(huisnummers, list)
         
-    def test_taal_id(self):
+    def test_taal(self):
         from testconfig import config
         crab = CrabGateway(
             crab_factory()
         )
         s=Straat(1)
         s.set_gateway(crab)
-        taal_id=s.taal_id
-        self.assertEqual(taal_id, 'nl')
+        taal=s.taal
+        self.assertEqual(s.taal.id, 'nl')
         
     def test_gemeente(self):
         from testconfig import config
@@ -414,8 +500,39 @@ class StraatTests(unittest.TestCase):
     
 class HuisnummerTests(unittest.TestCase):
     def test_fully_initialised(self):
-        h = Huisnummer(1)
+        h = Huisnummer(
+        1,
+        3,
+        "51",
+        17718
+        )
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h.set_gateway(crab)
         self.assertEqual(h.id, 1)
+        self.assertEqual(int(h.status.id), 3)
+        self.assertEqual(h.huisnummer, "51")
+        self.assertEqual(int(h.straat.id), 17718)
+        self.assertEqual('Steenweg op Oosthoven 51', str(h))
+        self.assertEqual('Huisnummer(1)', repr(h))
+        
+    def test_str_dont_lazy_load(self):
+        h =Huisnummer(1)
+        self.assertEqual('Huisnummer 1', str(h))
+
+    def test_lazy_load(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h = Huisnummer(1)
+        h.set_gateway(crab)
+        self.assertEqual(h.id, 1)
+        self.assertEqual(int(h.status.id), 3)
+        self.assertEqual(h.huisnummer, "51")
+        self.assertEqual(int(h.straat.id), 17718)
 
     def test_postkanton(self):
         from testconfig import config
@@ -426,6 +543,36 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         postkanton=h.postkanton
         self.assertIsInstance(postkanton, Postkanton)
+        
+    def test_terreinobjecten(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h=Huisnummer(1)
+        h.set_gateway(crab)
+        terreinobjecten=h.terreinobjecten
+        self.assertIsInstance(terreinobjecten, list)
+        
+    def test_percelen(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h=Huisnummer(1)
+        h.set_gateway(crab)
+        percelen=h.percelen
+        self.assertIsInstance(percelen, list)
+        
+    def test_gebouwen(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h=Huisnummer(1)
+        h.set_gateway(crab)
+        gebouwen=h.gebouwen
+        self.assertIsInstance(gebouwen, list)
         
     def test_status(self):
         from testconfig import config
@@ -447,6 +594,8 @@ class PostkantonTests(unittest.TestCase):
             1
         )
         self.assertEqual(p.id, 1)
+        self.assertEqual('Postkanton 1', str(p))
+        self.assertEqual('Postkanton(1)', repr(p))
 
 class WegobjectTests(unittest.TestCase):
     def test_fully_initialised(self):
@@ -456,9 +605,17 @@ class WegobjectTests(unittest.TestCase):
             (150753.46,200148.41),
             (150693.58,200080.56,150813.35,200216.27)
         )
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        w.set_gateway(crab)
         self.assertEqual(w.id,"53839893" )  
+        self.assertEqual(int(w.aard.id), 4)
         self.assertEqual(w.centroid,(150753.46,200148.41))
         self.assertEqual(w.bounding_box, (150693.58,200080.56,150813.35,200216.27))
+        self.assertEqual('Wegobject 53839893', str(w))
+        self.assertEqual('Wegobject(53839893)', repr(w))
         
     def test_check_gateway_not_set(self):
         w =Wegobject(1)
@@ -482,6 +639,7 @@ class WegobjectTests(unittest.TestCase):
         w = Wegobject("53839893")
         w.set_gateway(crab)
         self.assertEqual(w.id,"53839893" )
+        self.assertEqual(int(w.aard.id), 4)
         self.assertEqual(w.centroid,(150753.46,200148.41))
         self.assertEqual(w.bounding_box, (150693.58,200080.56,150813.35,200216.27))
         
@@ -493,8 +651,17 @@ class WegsegmentTests(unittest.TestCase):
             3,
             "LINESTRING (150339.255243488 201166.401677653, 150342.836939491 201165.832525652, 150345.139531493 201165.466573652, 150349.791371495 201164.769421652, 150352.512459494 201164.36161365, 150358.512331501 201163.46241365, 150375.039179511 201156.606669646, 150386.901963517 201150.194893643, 150397.470027529 201142.865485638, 150403.464011535 201135.266637631, 150407.825739533 201127.481037624, 150414.301515542 201109.016653612, 150431.792971551 201057.519821577, 150442.85677956 201026.858701557, 150454.530123569 200999.312717538, 150472.404939577 200955.342029508, 150483.516619585 200927.052237488, 150500.807755597 200883.890765458, 150516.94650761 200844.146253429, 150543.214411631 200773.35943738, 150546.079307631 200764.489805374, 150548.592075631 200754.511565369)"
         )
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        w.set_gateway(crab)
         self.assertEqual(w.id, "108724")
+        self.assertEqual(int(w.status.id), 4)
+        self.assertEqual(int(w.methode.id), 3)
         self.assertEqual(w.geometrie, "LINESTRING (150339.255243488 201166.401677653, 150342.836939491 201165.832525652, 150345.139531493 201165.466573652, 150349.791371495 201164.769421652, 150352.512459494 201164.36161365, 150358.512331501 201163.46241365, 150375.039179511 201156.606669646, 150386.901963517 201150.194893643, 150397.470027529 201142.865485638, 150403.464011535 201135.266637631, 150407.825739533 201127.481037624, 150414.301515542 201109.016653612, 150431.792971551 201057.519821577, 150442.85677956 201026.858701557, 150454.530123569 200999.312717538, 150472.404939577 200955.342029508, 150483.516619585 200927.052237488, 150500.807755597 200883.890765458, 150516.94650761 200844.146253429, 150543.214411631 200773.35943738, 150546.079307631 200764.489805374, 150548.592075631 200754.511565369)")
+        self.assertEqual('Wegsegment 108724', str(w))
+        self.assertEqual('Wegsegment(108724)', repr(w))
 
     def test_check_gateway_not_set(self):
         w = Wegsegment(1)
@@ -528,9 +695,142 @@ class WegsegmentTests(unittest.TestCase):
         w = Wegsegment('108724')
         w.set_gateway(crab)
         self.assertEqual(w.id, "108724")
+        self.assertEqual(int(w.status.id), 4)
+        self.assertEqual(int(w.methode.id), 3)
         self.assertEqual(w.geometrie, "LINESTRING (150339.255243488 201166.401677653, 150342.836939491 201165.832525652, 150345.139531493 201165.466573652, 150349.791371495 201164.769421652, 150352.512459494 201164.36161365, 150358.512331501 201163.46241365, 150375.039179511 201156.606669646, 150386.901963517 201150.194893643, 150397.470027529 201142.865485638, 150403.464011535 201135.266637631, 150407.825739533 201127.481037624, 150414.301515542 201109.016653612, 150431.792971551 201057.519821577, 150442.85677956 201026.858701557, 150454.530123569 200999.312717538, 150472.404939577 200955.342029508, 150483.516619585 200927.052237488, 150500.807755597 200883.890765458, 150516.94650761 200844.146253429, 150543.214411631 200773.35943738, 150546.079307631 200764.489805374, 150548.592075631 200754.511565369)")
         
+class TerreinobjectTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        t=Terreinobject(
+            "13040_C_1747_G_002_00",
+            1,
+            (190708.59,224667.59),
+            (190700.24,224649.87,190716.95,224701.7)
+        )    
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        t.set_gateway(crab)
+        self.assertEqual(t.id, "13040_C_1747_G_002_00")  
+        self.assertEqual(int(t.aard.id), 1)  
+        self.assertEqual(t.centroid, (190708.59,224667.59))
+        self.assertEqual(t.bounding_box, (190700.24,224649.87,190716.95,224701.7))
+        self.assertEqual('Terreinobject 13040_C_1747_G_002_00', str(t))
+        self.assertEqual('Terreinobject(13040_C_1747_G_002_00)', repr(t))
         
+    def test_lazy_load(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        t=Terreinobject("13040_C_1747_G_002_00")
+        t.set_gateway(crab)
+        self.assertEqual(t.id, "13040_C_1747_G_002_00")   
+        self.assertEqual(int(t.aard.id), 1) 
+        self.assertEqual(t.centroid, (190708.59,224667.59))
+        self.assertEqual(t.bounding_box, (190700.24,224649.87,190716.95,224701.7))
+
+    def test_aard(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        t = Terreinobject("13040_C_1747_G_002_00")
+        t.set_gateway(crab)
+        aard = t.aard
+        self.assertIsInstance(aard, Aardterreinobject)
+
+class PerceelTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        p=Perceel(
+            "13040C1747/00G002",
+            (190708.59,224667.59)
+        )
+        self.assertEqual(p.id, "13040C1747/00G002")
+        self.assertEqual(p.centroid, (190708.59,224667.59))
+        self.assertEqual('Perceel 13040C1747/00G002', str(p))
+        self.assertEqual('Perceel(13040C1747/00G002)', repr(p))
+        
+    def test_lazy_load(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        p = Perceel("13040C1747/00G002")
+        p.set_gateway(crab)
+        self.assertEqual(p.id, "13040C1747/00G002")    
+        self.assertEqual(p.centroid, (190708.59,224667.59))
+
+
+class GebouwTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        g = Gebouw(
+            "1538575",
+            1,
+            4,
+            3,
+            "POLYGON ((190712.36432739347 224668.5216938965, 190706.26007138938 224667.54428589717, 190706.03594338894 224668.89276589826, 190704.89699938893 224668.66159789637, 190705.350887388 224666.14575789496, 190708.31754338741 224649.70287788659, 190717.16349539906 224653.81065388769, 190713.40490339696 224663.38582189381, 190712.36432739347 224668.5216938965))"
+        )
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )   
+        g.set_gateway(crab)
+        self.assertEqual(g.id, 1538575)
+        self.assertEqual(int(g.aard.id), 1)
+        self.assertEqual(int(g.status.id), 4)
+        self.assertEqual(int(g.methode.id), 3)
+        self.assertEqual(g.geometrie, "POLYGON ((190712.36432739347 224668.5216938965, 190706.26007138938 224667.54428589717, 190706.03594338894 224668.89276589826, 190704.89699938893 224668.66159789637, 190705.350887388 224666.14575789496, 190708.31754338741 224649.70287788659, 190717.16349539906 224653.81065388769, 190713.40490339696 224663.38582189381, 190712.36432739347 224668.5216938965))")
+        self.assertEqual('Gebouw 1538575', str(g))
+        self.assertEqual('Gebouw(1538575)', repr(g))
+
+
+    def test_lazy_load(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gebouw("1538575")
+        g.set_gateway(crab)
+        self.assertEqual(g.id, 1538575)
+        self.assertEqual(int(g.aard.id), 1)
+        self.assertEqual(int(g.status.id), 4)
+        self.assertEqual(int(g.methode.id), 3)
+        self.assertEqual(g.geometrie, "POLYGON ((190712.36432739347 224668.5216938965, 190706.26007138938 224667.54428589717, 190706.03594338894 224668.89276589826, 190704.89699938893 224668.66159789637, 190705.350887388 224666.14575789496, 190708.31754338741 224649.70287788659, 190717.16349539906 224653.81065388769, 190713.40490339696 224663.38582189381, 190712.36432739347 224668.5216938965))")
+        
+    
+    def test_aard(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gebouw("1538575")
+        g.set_gateway(crab)
+        aard = g.aard
+        self.assertIsInstance(aard, Aardgebouw)
+        
+    def test_status(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gebouw("1538575")
+        g.set_gateway(crab)
+        status = g.status
+        self.assertIsInstance(status, Statusgebouw)
+        
+    def test_methode(self):
+        from testconfig import config
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gebouw("1538575")
+        g.set_gateway(crab)
+        methode = g.methode
+        self.assertIsInstance(methode, Geometriemethodegebouw)
+    
+
 @unittest.skipUnless(run_crab_integration_tests(), 'No CRAB Integration tests required')
 class CrabCachedGatewayTests(unittest.TestCase):
 
@@ -1120,5 +1420,74 @@ class CrabCachedGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, Wegsegment)
         self.assertEqual(
             self.crab.caches['long'].get('GetWegsegmentByIdentificatorWegsegment#108724'),
+            res
+        )
+    
+    def test_list_terreinobjecten_by_huisnummer(self):
+        res=self.crab.list_terreinobjecten_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListTerreinobjectenByHuisnummerId#1'),
+            res
+        )
+        huisnummer=self.crab.get_huisnummer_by_id(1)
+        res=self.crab.list_terreinobjecten_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListTerreinobjectenByHuisnummerId#1'),
+            res
+        )
+        
+    def test_get_terreinobject_by_id(self):
+        res=self.crab.get_terreinobject_by_id("13040_C_1747_G_002_00")
+        self.assertIsInstance(res, Terreinobject)
+        self.assertEqual(
+            self.crab.caches['long'].get('GetTerreinobjectByIdentificatorTerreinobject#13040_C_1747_G_002_00'),
+            res 
+        )
+        
+    def test_list_percelen_by_huisnummer(self):
+        res=self.crab.list_percelen_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListPercelenByHuisnummerId#1'),
+            res
+        )
+        huisnummer=self.crab.get_huisnummer_by_id(1)
+        res=self.crab.list_percelen_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListPercelenByHuisnummerId#1'),
+            res
+        )
+        
+    def test_get_perceel_by_id(self):
+        res=self.crab.get_perceel_by_id("13040C1747/00G002")
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(
+            self.crab.caches['long'].get('GetPerceelByIdentificatorPerceel#13040C1747/00G002'),
+            res
+        )
+        
+    def test_list_gebouwen_by_huisnummer(self):
+        res=self.crab.list_gebouwen_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListGebouwenByHuisnummerId#1'),
+            res
+        )
+        huisnummer=self.crab.get_huisnummer_by_id(1)
+        res=self.crab.list_gebouwen_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListGebouwenByHuisnummerId#1'),
+            res
+        )
+        
+    def test_get_gebouw_by_id(self):
+        res=self.crab.get_gebouw_by_id("1538575")
+        self.assertIsInstance(res, Gebouw)
+        self.assertEqual(
+            self.crab.caches['long'].get('GetGebouwByIdentificatorGebouw#1538575'),
             res
         )

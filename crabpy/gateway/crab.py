@@ -148,6 +148,7 @@ class CrabGateway(object):
         gemeente.set_gateway(self)
         return gemeente
     
+    
     def _list_codeobject(self, function, sort, returnclass):
         
         def creator():
@@ -283,8 +284,8 @@ class CrabGateway(object):
         '''
         List all `straten` in a `Gemeente`.
 
-        :param object gemeente: An object of :class: `Gemeente` or
-        :param integer gemeente: The Id of the Gemeente
+        :param object gemeente: An object of :class: `Gemeente` 
+        OR :param integer gemeente: The Id of the Gemeente
         :rtype: A :class:`list` of :class: `Straat`
         '''
         try:
@@ -338,7 +339,7 @@ class CrabGateway(object):
 
     def list_huisnummers_by_straat(self, straat, sort=1):
         '''
-        List all `huisnummers` in a `straat`
+        List all `huisnummers` in a `Straat`
         :param object straat: An object of :class: `Straat` 
         OR :param integer straat: The Id of the Straat
         :rtype: A :class: `list` of :class: `Huisnummer`
@@ -368,7 +369,7 @@ class CrabGateway(object):
     def get_huisnummer_by_id(self,id):
         '''
         Retrieve a `huisnummer` by the Id.
-        param integer id: the Id of the `huisnummer`
+        :param integer id: the Id of the `huisnummer`
         :rtype :class: `Huisnummer`
         '''
         def creator():
@@ -391,6 +392,9 @@ class CrabGateway(object):
     def get_huisnummer_by_nummer_and_straat(self, nummer, straat):
         '''
         Retrieve a `huisnummer` by the `nummer` and `straat`
+        :param integer nummer: The huisnummer of the 'huisnummer`
+        :param integer straat: The Id of the `straat`
+        :param object straat: An object of :class: `Straat`
         :rtype A :class: 'Huisnummer'
         '''
         try:
@@ -414,6 +418,12 @@ class CrabGateway(object):
         return huisnummer
     
     def list_postkantons_by_gemeente(self, gemeente):
+        '''
+        List all `postkantons` in a :class: `Gemeente`
+        :param integer gemeente: The Id of the Gemeente
+        OR :param object gemeente: An object of :class: `Gemeente`
+        :rtype: A :class:`list` of :class: `Postkanton`
+        '''
         
         try:
             id=gemeente.id
@@ -436,6 +446,12 @@ class CrabGateway(object):
 
 
     def get_postkanton_by_huisnummer(self, huisnummer):
+        '''
+        Retrieve a `postkanton` by the Huisnummer.
+        :param integer id: the Id of the `huisnummer`
+        :param object huisnummer: An object of :class: 'Huisnummer'
+        :rtype :class: `Postkanton`
+        '''
         
         try:
             id= huisnummer.id
@@ -456,6 +472,11 @@ class CrabGateway(object):
         return postkanton
         
     def get_wegobject_by_id(self, id):
+        '''
+        Retrieve a `Wegobject` by the Id.
+        :param integer id: the Id of the `Wegobject`
+        :rtype :class: `Wegobject`
+        '''
         def creator():
             res=crab_gateway_request(self.client, 'GetWegobjectByIdentificatorWegobject', id)
             return Wegobject(
@@ -474,6 +495,13 @@ class CrabGateway(object):
         
         
     def list_wegobjecten_by_straat(self, straat):
+        '''
+        List all `wegobjecten` in a :class: `Straat`
+        :param integer straat: The Id of the Straat
+        OR :param object straat: An object of :class: `Straat`
+        :rtype: A :class:`list` of :class: `Wegobject`
+        '''
+        
         try:
             id=straat.id
         except AttributeError:
@@ -497,6 +525,11 @@ class CrabGateway(object):
             
             
     def get_wegsegment_by_id(self, id):
+        '''
+        Retrieve a `wegsegment` by the Id.
+        :param integer id: the Id of the `wegsegment`
+        :rtype :class: `Wegsegment`
+        '''
         def creator():
             res=crab_gateway_request(self.client, 'GetWegsegmentByIdentificatorWegsegment', id)
             return Wegsegment(
@@ -515,7 +548,12 @@ class CrabGateway(object):
         
         
     def list_wegsegmenten_by_straat(self, straat):
-        
+        '''
+        List all `wegsegmenten` in a :class: `Straat`
+        :param integer straat: The Id of the Straat
+        OR :param object straat: An object of :class: `Straat`
+        :rtype: A :class:`list` of :class: `Wegsegment`
+        '''
         try:
             id=straat.id
         except AttributeError:
@@ -539,6 +577,163 @@ class CrabGateway(object):
             gateway=self
         return wegsegment
 
+
+    def list_terreinobjecten_by_huisnummer(self, huisnummer):
+        '''
+        List all `terreinobjecten` for a :class: `Huisnummer`
+        :param integer huisnummer: The Id of the Huisnummer
+        OR :param object huisnummer: An object of :class: `Huisnummer`
+        :rtype: A :class:`list` of :class: `Terreinobject`
+        '''
+        try:
+            id=huisnummer.id
+        except AttributeError:
+            id=huisnummer
+            
+        def creator():
+            res=crab_gateway_request(self.client, 'ListTerreinobjectenByHuisnummerId', id)
+            return[
+                Terreinobject(
+                    r.IdentificatorTerreinobject,
+                    r.AardTerreinobject 
+                )for r in res.TerreinobjectItem
+            ]
+        if self.caches['long'].is_configured:
+            key='ListTerreinobjectenByHuisnummerId#%s'%(id)
+            terreinobject=self.caches['long'].get_or_create(key, creator)
+        else:
+            terreinobject=creator()
+        for r in terreinobject:
+            r.set_gateway(self)
+        return terreinobject
+        
+        
+    def get_terreinobject_by_id(self, id):
+        '''
+        Retrieve a `Terreinobject` by the Id.
+        :param integer id: the Id of the `Terreinobject`
+        :rtype :class: `Terreinobject`
+        '''
+        def creator(): 
+            res=crab_gateway_request(self.client, 'GetTerreinobjectByIdentificatorTerreinobject', id)
+            return Terreinobject(
+                res.IdentificatorTerreinobject,
+                res.AardTerreinobject,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+            )
+        if self.caches['long'].is_configured:
+            key='GetTerreinobjectByIdentificatorTerreinobject#%s'%(id)
+            terreinobject=self.caches['long'].get_or_create(key, creator)
+        else:
+            terreinobject=creator()
+        terreinobject.set_gateway(self)
+        return terreinobject
+        
+        
+    def list_percelen_by_huisnummer(self, huisnummer):
+        '''
+        List all `percelen` for a :class: `Huisnummer`
+        :param integer huisnummer: The Id of the Huisnummer
+        OR :param object huisnummer: An object of :class: `Huisnummer`
+        :rtype: A :class:`list` of :class: `Perceel`
+        '''
+        try:
+            id=huisnummer.id
+        except AttributeError:
+            id=huisnummer
+        
+        def creator():
+            res=crab_gateway_request(self.client, 'ListPercelenByHuisnummerId', id)
+            return [
+                Perceel(
+                    r.IdentificatorPerceel
+                )for r in res.PerceelItem
+            ]
+            
+        if self.caches['long'].is_configured:
+            key='ListPercelenByHuisnummerId#%s'%(id)
+            perceel=self.caches['long'].get_or_create(key, creator)
+        else:
+            perceel=creator()
+        for r in perceel:
+            r.set_gateway(self)
+        return perceel
+        
+        
+    def get_perceel_by_id(self,id):
+        '''
+        Retrieve a `Perceel` by the Id.
+        :param integer id: the Id of the `Perceel`
+        :rtype :class: `Perceel`
+        '''
+        def creator():
+            res=crab_gateway_request(self.client, 'GetPerceelByIdentificatorPerceel', id)
+            return Perceel(
+                res.IdentificatorPerceel,
+                (res.CenterX, res.CenterY)
+            )
+        if self.caches['long'].is_configured:
+            key='GetPerceelByIdentificatorPerceel#%s'%(id)
+            perceel=self.caches['long'].get_or_create(key, creator)
+        else:
+            perceel=creator()
+        perceel.set_gateway(self)
+        return perceel
+                
+                
+    def list_gebouwen_by_huisnummer(self, huisnummer):
+        '''
+        List all `gebouwen` for a :class: `Huisnummer`
+        :param integer huisnummer: The Id of the Huisnummer
+        OR :param object huisnummer: An object of :class: `Huisnummer`
+        :rtype: A :class:`list` of :class: `Gebouw`
+        '''
+        try:
+            id=huisnummer.id
+        except AttributeError:
+            id=huisnummer
+        
+        def creator():
+            res=crab_gateway_request(self.client, 'ListGebouwenByHuisnummerId', id)
+            return [
+                Gebouw(
+                    r.IdentificatorGebouw,
+                    r.AardGebouw,
+                    r.StatusGebouw
+                )for r in res.GebouwItem
+            ]
+        if self.caches['long'].is_configured:
+            key='ListGebouwenByHuisnummerId#%s'%(id)
+            gebouw=self.caches['long'].get_or_create(key, creator)
+        else:
+            gebouw=creator()
+        for r in gebouw:
+            r.set_gateway(self)
+        return gebouw
+            
+    def get_gebouw_by_id(self, id ):
+        '''
+        Retrieve a `Gebouw` by the Id.
+        :param integer id: the Id of the `Gebouw`
+        :rtype :class: `Gebouw`
+        '''
+        def creator():
+            res=crab_gateway_request(self.client, 'GetGebouwByIdentificatorGebouw', id)
+            return Gebouw(
+                res.IdentificatorGebouw,
+                res.AardGebouw,
+                res.StatusGebouw,
+                res.GeometriemethodeGebouw,
+                res.Geometrie
+            )
+        if self.caches['long'].is_configured:
+            key='GetGebouwByIdentificatorGebouw#%s' %(id)
+            gebouw=self.caches['long'].get_or_create(key, creator)
+        else: 
+            gebouw=creator()
+        return gebouw
+            
 class GatewayObject(object):
 
     gateway = None
@@ -565,7 +760,7 @@ class Gewest(GatewayObject):
         self,id,naam=None,
         **kwargs
     ):
-       self.id=id
+       self.id=int(id)
        self._naam=naam
        super(Gewest,self).__init__(**kwargs)
     
@@ -596,13 +791,13 @@ def check_lazy_load_gemeente(f):
     '''
     def wrapper(*args):
         gemeente=args[0]
-        if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest is None or gemeente._taal is None:
+        if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None or gemeente._niscode is None or gemeente._gewest_id is None or gemeente._taal_id is None:
             gemeente.check_gateway()
             g=gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._naam=g._naam
             gemeente._niscode=g._niscode
-            gemeente._gewest=g._gewest
-            gemeente._taal=g._taal
+            gemeente._gewest_id=g._gewest_id
+            gemeente._taal_id=g._taal_id
             gemeente._centroid=g._centroid
             gemeente._bounding_box=g._bounding_box
         return f(*args)
@@ -615,15 +810,15 @@ class Gemeente(GatewayObject):
     '''
     
     def __init__(
-            self, id, naam=None, niscode=None, gewest=None, taal=None,
+            self, id, naam=None, niscode=None, gewest_id=None, taal_id=None,
             centroid=None, bounding_box=None,
             **kwargs
     ):
         self.id=int(id)
         self._naam=naam
         self._niscode=niscode
-        self._gewest=gewest
-        self._taal=taal
+        self._gewest_id=gewest_id
+        self._taal_id=taal_id
         self._centroid=centroid
         self._bounding_box=bounding_box
         super(Gemeente,self).__init__(**kwargs)
@@ -641,12 +836,18 @@ class Gemeente(GatewayObject):
     @property
     @check_lazy_load_gemeente
     def gewest(self):
-        return self._gewest
+        res=self.gateway.list_gewesten()
+        for r in res:
+            if int(r.id) == int(self._gewest_id):
+                return r
         
     @property
     @check_lazy_load_gemeente
     def taal(self):
-        return self._taal
+        res=self.gateway.list_talen()
+        for r in res:
+            if  r.id == self._taal_id:
+                return r
         
     @property
     @check_lazy_load_gemeente
@@ -794,15 +995,14 @@ class Straat(GatewayObject):
     @property
     @check_lazy_load_straat
     def gemeente(self):
-        res=self.gateway.get_gemeente_by_id(self._gemeente_id)
-        return res
+        return self.gateway.get_gemeente_by_id(self._gemeente_id)
             
     @property
     @check_lazy_load_straat
     def status(self):
         res= self.gateway.list_statusstraatnamen()
         for r in res:
-            if int(r.id)==int(self._status_id):
+            if  int(r.id) == int(self._status_id):
                 return r
             
         
@@ -813,7 +1013,7 @@ class Straat(GatewayObject):
         
     @property
     @check_lazy_load_straat
-    def taal_id(self):
+    def taal(self):
         return self.gemeente.taal
         
           
@@ -881,13 +1081,41 @@ class Huisnummer(GatewayObject):
         self.check_gateway()
         return self.gateway.get_postkanton_by_huisnummer(self.id)
         
+    @property
+    def terreinobjecten(self):
+        return self.gateway.list_terreinobjecten_by_huisnummer(self.id)
+        
+    @property
+    def percelen(self):
+        return self.gateway.list_percelen_by_huisnummer(self.id) 
+    
+    @property
+    def gebouwen(self):
+        return self.gateway.list_gebouwen_by_huisnummer(self.id)
+        
+    def __str__(self):
+        if self._huisnummer is not None and self.straat is not None:
+            return "%s %s" %(self.straat.label, self._huisnummer)
+        else:
+            return "Huisnummer %s" %(self.id)
+            
+    def __repr__(self):
+            return "Huisnummer(%s)" %(self.id)
+        
         
 class Postkanton(GatewayObject):
     
     def __init__(self, id, **kwargs):
         self.id=int(id)
         super(Postkanton, self).__init__(**kwargs)
-    
+        
+    def __str__(self):
+        return "Postkanton %s" %(self.id)
+            
+    def __repr__(self):
+        return "Postkanton(%s)" %(self.id)
+        
+        
 def check_lazy_load_wegobject(f):
     
             def wrapper(*args):
@@ -905,19 +1133,20 @@ class Wegobject(GatewayObject):
     
     def __init__(
         self,id, aard_id=None, centroid=None,
-        bounding_box=None
+        bounding_box=None, **kwargs
     ):
         self.id=id
         self._aard_id=aard_id
         self._centroid=centroid
         self._bounding_box=bounding_box
+        super(Wegobject, self).__init__(**kwargs)
         
     @property
     @check_lazy_load_wegobject
     def aard(self):
         res=self.gateway.list_aardwegobjecten() 
         for r in res:
-            if int(r.id)== int(self._aard_id):
+            if int(r.id) == int(self._aard_id):
                 return r
         
     @property
@@ -929,6 +1158,13 @@ class Wegobject(GatewayObject):
     @check_lazy_load_wegobject
     def bounding_box(self):
         return self._bounding_box
+        
+        
+    def __str__(self):
+        return "Wegobject %s" %(self.id)
+            
+    def __repr__(self):
+        return "Wegobject(%s)" %(self.id)        
         
 def check_lazy_load_wegsegment(f):
     def wrapper(*args):
@@ -946,12 +1182,13 @@ def check_lazy_load_wegsegment(f):
 class Wegsegment(GatewayObject):
     def __init__(
         self, id, status_id=None, methode_id=None,
-        geometrie=None
+        geometrie=None, **kwargs
     ):
         self.id=id
         self._status_id=status_id
         self._methode_id=methode_id
         self._geometrie=geometrie
+        super(Wegsegment, self).__init__(**kwargs)
     
     @property
     @check_lazy_load_wegsegment    
@@ -972,3 +1209,153 @@ class Wegsegment(GatewayObject):
     @check_lazy_load_wegsegment
     def geometrie(self):
         return self._geometrie
+
+
+    def __str__(self):
+        return "Wegsegment %s" %(self.id)
+            
+    def __repr__(self):
+        return "Wegsegment(%s)" %(self.id)
+
+
+def check_lazy_load_terreinobject(f):
+    def wrapper(*args):
+        terreinobject=args[0]
+        if terreinobject._aard_id is None or terreinobject._centroid is None or terreinobject._bounding_box is None:
+            terreinobject.check_gateway()
+            t=terreinobject.gateway.get_terreinobject_by_id(terreinobject.id)
+            terreinobject._aard_id=t._aard_id
+            terreinobject._centroid=t._centroid
+            terreinobject._bounding_box=t._bounding_box
+        return f(*args)
+    return wrapper
+
+class Terreinobject(GatewayObject):
+    
+    def __init__(
+        self, id, aard_id=None,centroid=None,
+        bounding_box=None, **kwargs
+    ):
+        self.id=id
+        self._aard_id=aard_id
+        self._centroid=centroid
+        self._bounding_box=bounding_box
+    
+    @property
+    @check_lazy_load_terreinobject    
+    def aard(self):
+        res=self.gateway.list_aardterreinobjecten() 
+        for r in res:
+            if int(r.id) == int(self._aard_id):
+                return r
+    @property
+    @check_lazy_load_terreinobject
+    def centroid(self):
+        return self._centroid
+    
+    @property
+    @check_lazy_load_terreinobject    
+    def bounding_box(self):
+        return self._bounding_box
+        
+        
+    def __str__(self):
+        return "Terreinobject %s" %(self.id)
+            
+    def __repr__(self):
+        return "Terreinobject(%s)" %(self.id)
+        
+    
+def check_lazy_load_perceel(f):
+    def wrapper(*args):
+        perceel=args[0]
+        if perceel._centroid is None:
+            perceel.check_gateway()
+            p=perceel.gateway.get_perceel_by_id(perceel.id)
+            perceel._centroid=p._centroid
+        return f(*args)
+    return wrapper
+            
+    
+class Perceel(GatewayObject):
+    
+    def __init__(
+        self, id, centroid=None, **kwargs
+    ):
+        self.id=id
+        self._centroid=centroid
+        super(Perceel, self).__init__(**kwargs)
+    
+    @property
+    @check_lazy_load_perceel    
+    def centroid(self):
+        return self._centroid
+
+    def __str__(self):
+        return "Perceel %s" %(self.id)
+            
+    def __repr__(self):
+        return "Perceel(%s)" %(self.id)
+
+def check_lazy_load_gebouw(f):
+    def wrapper(*args):
+        gebouw=args[0]
+        if gebouw._aard_id is None or gebouw._status_id is None or gebouw._methode_id is None or gebouw._geometrie is None:
+            gebouw.check_gateway()
+            g=gebouw.gateway.get_gebouw_by_id(gebouw.id)
+            gebouw._aard_id=g._aard_id
+            gebouw._status_id=g._status_id
+            gebouw._methode_id=g._methode_id
+            gebouw._geometrie=g._geometrie
+        return f(*args)
+    return wrapper
+        
+
+
+class Gebouw(GatewayObject):
+    def __init__(
+        self, id , aard_id=None, status_id=None,
+        methode_id=None, geometrie=None,**kwargs
+    ):
+        self.id=int(id)
+        self._aard_id=aard_id
+        self._status_id=status_id
+        self._methode_id=methode_id
+        self._geometrie=geometrie
+        super(Gebouw, self).__init__(**kwargs)
+        
+    @property
+    @check_lazy_load_gebouw    
+    def aard(self):
+        self.check_gateway()
+        res=self.gateway.list_aardgebouwen()    
+        for r in res:
+            if int(r.id) == int(self._aard_id):
+                return r
+    @property
+    @check_lazy_load_gebouw            
+    def status(self):
+        res=self.gateway.list_statusgebouwen() 
+        for r in res:
+            if int(r.id) == int(self._status_id):
+                return r
+    @property
+    @check_lazy_load_gebouw            
+    def methode(self):
+        res=self.gateway.list_geometriemethodegebouwen() 
+        for r in res:
+            if int(r.id) == int(self._methode_id):
+                return r
+    @property
+    @check_lazy_load_gebouw            
+    def geometrie(self):
+        return self._geometrie
+        
+
+    def __str__(self):
+        return "Gebouw %s" %(self.id)
+            
+    def __repr__(self):
+        return "Gebouw(%s)" %(self.id)
+        
+
