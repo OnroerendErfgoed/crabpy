@@ -17,6 +17,7 @@ develop-eggs
 .installed.cfg
 lib
 lib64
+env
 
 # Sphinx
 docs/_build
@@ -28,6 +29,7 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+
 
 # Cache files
 dogpile_data
