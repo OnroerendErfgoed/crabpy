@@ -60,7 +60,7 @@ class CrabGateway(object):
                 )for r in res.GewestItem
             ]
 
-        if self.caches['long'].is_configured:
+        if self.caches['permanent'].is_configured:
             key='ListGewesten#%s' %sort
             return self.caches['permanent'].get_or_create(key,creator)
         else:
@@ -1504,7 +1504,7 @@ class Gebouw(GatewayObject):
         self._geometrie=geometrie
         if datum is not None and tijd is not None and bewerking_id is not None and organisatie_id is not None:
             self._metadata=Metadata(datum, tijd, bewerking_id, organisatie_id)
-        else:
+        else:   
             self._metadata=None
         super(Gebouw, self).__init__(**kwargs)
         

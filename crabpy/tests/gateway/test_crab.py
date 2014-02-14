@@ -312,7 +312,11 @@ class GewestTests(unittest.TestCase):
     def test_check_gateway_not_set(self):
         g=Gewest(2)
         self.assertRaises(RuntimeError, g.check_gateway)
-        
+     
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )   
     def test_gemeenten(self):
         from testconfig import config
         crab = CrabGateway(
@@ -348,20 +352,25 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
         self.assertEqual(g.niscode, 11001)
-        self.assertEqual(int(g.gewest.id), 2)
-        self.assertEqual(g.taal.id, 'nl')
         self.assertEqual(g.centroid, (150881.07, 202256.84))
         self.assertEqual(
             g.bounding_box,
             (148950.36, 199938.28, 152811.77, 204575.39)
         )
-        self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(g.metadata.begin_tijd, '2002-08-13 17:32:32')
-        g.metadata.set_gateway(crab)
-        self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
-        self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
-        self.assertEqual('Aartselaar (1)', str(g))
-        self.assertEqual("Gemeente(1, 'Aartselaar')", repr(g))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(g.gewest.id), 2)
+            self.assertEqual(g.taal.id, 'nl')
+            self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(g.metadata.begin_tijd, '2002-08-13 17:32:32')
+            g.metadata.set_gateway(crab)
+            self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+            self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
+            self.assertEqual('Aartselaar (1)', str(g))
+            self.assertEqual("Gemeente(1, 'Aartselaar')", repr(g))
         
         
     def test_str_and_repr_dont_lazy_load(self):
@@ -372,7 +381,11 @@ class GemeenteTests(unittest.TestCase):
     def test_check_gateway_not_set(self):
         g=Gemeente(1)
         self.assertRaises(RuntimeError, g.check_gateway)
-        
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )    
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -395,7 +408,11 @@ class GemeenteTests(unittest.TestCase):
         g.metadata.set_gateway(crab)
         self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
         self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
-            
+      
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_straten(self):
         from testconfig import config
         crab = CrabGateway(
@@ -405,7 +422,11 @@ class GemeenteTests(unittest.TestCase):
         g.set_gateway(crab)
         straten=g.straten
         self.assertIsInstance(straten, list)
-        
+      
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_postkantons(self):
         from testconfig import config
         crab = CrabGateway(
@@ -449,17 +470,26 @@ class StraatTests(unittest.TestCase):
         s.set_gateway(crab)
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
-        self.assertEqual(int(s.status.id), 3)
         self.assertEqual(s.namen, (('Acacialaan', 'nl'),(None,None)))
-        self.assertEqual(int(s.gemeente.id), 1)
-        self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(s.metadata.begin_tijd, '2013-04-12 20:07:25.960000')
-        s.metadata.set_gateway(crab)
-        self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
-        self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
-        self.assertEqual('Acacialaan (1)', str(s))
-        self.assertEqual("Straat(1, 'Acacialaan')", repr(s))
-    
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(s.status.id), 3)
+            self.assertEqual(int(s.gemeente.id), 1)
+            self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(s.metadata.begin_tijd, '2013-04-12 20:07:25.960000')
+            s.metadata.set_gateway(crab)
+            self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
+            self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
+            self.assertEqual('Acacialaan (1)', str(s))
+            self.assertEqual("Straat(1, 'Acacialaan')", repr(s))
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -487,6 +517,10 @@ class StraatTests(unittest.TestCase):
         s =Straat(1)
         self.assertRaises(RuntimeError, s.check_gateway)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_huisnummers(self):
         from testconfig import config
         crab = CrabGateway(
@@ -497,6 +531,10 @@ class StraatTests(unittest.TestCase):
         huisnummers=s.huisnummers
         self.assertIsInstance(huisnummers, list)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_taal(self):
         from testconfig import config
         crab = CrabGateway(
@@ -507,6 +545,10 @@ class StraatTests(unittest.TestCase):
         taal=s.taal
         self.assertEqual(s.taal.id, 'nl')
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_gemeente(self):
         from testconfig import config
         crab = CrabGateway(
@@ -516,6 +558,10 @@ class StraatTests(unittest.TestCase):
         s.set_gateway(crab)
         gemeente=s.gemeente
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_status(self):
         from testconfig import config
         crab = CrabGateway(
@@ -546,21 +592,30 @@ class HuisnummerTests(unittest.TestCase):
         )
         h.set_gateway(crab)
         self.assertEqual(h.id, 1)
-        self.assertEqual(int(h.status.id), 3)
         self.assertEqual(h.huisnummer, "51")
-        self.assertEqual(int(h.straat.id), 17718)
-        self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(h.metadata.begin_tijd, '2011-04-29 13:27:40.230000')
-        h.metadata.set_gateway(crab)
-        self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
-        self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
-        self.assertEqual('Steenweg op Oosthoven 51', str(h))
-        self.assertEqual('Huisnummer(1)', repr(h))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(h.status.id), 3)
+            self.assertEqual(int(h.straat.id), 17718)
+            self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(h.metadata.begin_tijd, '2011-04-29 13:27:40.230000')
+            h.metadata.set_gateway(crab)
+            self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
+            self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
+            self.assertEqual('Steenweg op Oosthoven 51', str(h))
+            self.assertEqual('Huisnummer(1)', repr(h))
         
     def test_str_dont_lazy_load(self):
         h =Huisnummer(1)
         self.assertEqual('Huisnummer 1', str(h))
-
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -577,7 +632,11 @@ class HuisnummerTests(unittest.TestCase):
         h.metadata.set_gateway(crab)
         self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
         self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
-
+        
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_postkanton(self):
         from testconfig import config
         crab = CrabGateway(
@@ -588,6 +647,10 @@ class HuisnummerTests(unittest.TestCase):
         postkanton=h.postkanton
         self.assertIsInstance(postkanton, Postkanton)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_terreinobjecten(self):
         from testconfig import config
         crab = CrabGateway(
@@ -598,6 +661,10 @@ class HuisnummerTests(unittest.TestCase):
         terreinobjecten=h.terreinobjecten
         self.assertIsInstance(terreinobjecten, list)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_percelen(self):
         from testconfig import config
         crab = CrabGateway(
@@ -607,7 +674,11 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         percelen=h.percelen
         self.assertIsInstance(percelen, list)
-        
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_gebouwen(self):
         from testconfig import config
         crab = CrabGateway(
@@ -617,7 +688,11 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         gebouwen=h.gebouwen
         self.assertIsInstance(gebouwen, list)
-        
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_status(self):
         from testconfig import config
         crab = CrabGateway(
@@ -646,16 +721,24 @@ class PostkantonTests(unittest.TestCase):
         )
         p.set_gateway(crab)
         self.assertEqual(p.id, 2630)
-        self.assertEqual(p.gemeente.id, 1)
-        self.assertEqual(p.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(p.metadata.begin_tijd, '2002-08-13 16:37:33')
-        p.metadata.set_gateway(crab)
-        self.assertEqual(int(p.metadata.begin_bewerking.id), 1)
-        self.assertEqual(int(p.metadata.begin_organisatie.id), 7)
-        self.assertEqual('Postkanton 2630', str(p))
-        self.assertEqual('Postkanton(2630)', repr(p))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(p.gemeente.id, 1)
+            self.assertEqual(p.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(p.metadata.begin_tijd, '2002-08-13 16:37:33')
+            p.metadata.set_gateway(crab)
+            self.assertEqual(int(p.metadata.begin_bewerking.id), 1)
+            self.assertEqual(int(p.metadata.begin_organisatie.id), 7)   
+            self.assertEqual('Postkanton 2630', str(p))
+            self.assertEqual('Postkanton(2630)', repr(p))
         
-        
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -691,21 +774,30 @@ class WegobjectTests(unittest.TestCase):
         )
         w.set_gateway(crab)
         self.assertEqual(w.id,"53839893" )  
-        self.assertEqual(int(w.aard.id), 4)
         self.assertEqual(w.centroid,(150753.46,200148.41))
         self.assertEqual(w.bounding_box, (150693.58,200080.56,150813.35,200216.27))
-        self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(w.metadata.begin_tijd, '2008-04-17 16:32:11.753000')
-        w.metadata.set_gateway(crab)
-        self.assertEqual(int(w.metadata.begin_bewerking.id), 1)
-        self.assertEqual(int(w.metadata.begin_organisatie.id),8)
-        self.assertEqual('Wegobject 53839893', str(w))
-        self.assertEqual('Wegobject(53839893)', repr(w))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(w.aard.id), 4)
+            self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(w.metadata.begin_tijd, '2008-04-17 16:32:11.753000')
+            w.metadata.set_gateway(crab)
+            self.assertEqual(int(w.metadata.begin_bewerking.id), 1)
+            self.assertEqual(int(w.metadata.begin_organisatie.id),8)
+            self.assertEqual('Wegobject 53839893', str(w))
+            self.assertEqual('Wegobject(53839893)', repr(w))
         
     def test_check_gateway_not_set(self):
         w =Wegobject(1)
         self.assertRaises(RuntimeError, w.check_gateway)
-        
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )        
     def test_aard(self):
         from testconfig import config
         crab = CrabGateway(
@@ -715,7 +807,11 @@ class WegobjectTests(unittest.TestCase):
         w.set_gateway(crab)
         aard=w.aard
         self.assertIsInstance(aard, Aardwegobject)
-        
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -751,21 +847,30 @@ class WegsegmentTests(unittest.TestCase):
         )
         w.set_gateway(crab)
         self.assertEqual(w.id, "108724")
-        self.assertEqual(int(w.status.id), 4)
-        self.assertEqual(int(w.methode.id), 3)
         self.assertEqual(w.geometrie, "LINESTRING (150339.255243488 201166.401677653, 150342.836939491 201165.832525652, 150345.139531493 201165.466573652, 150349.791371495 201164.769421652, 150352.512459494 201164.36161365, 150358.512331501 201163.46241365, 150375.039179511 201156.606669646, 150386.901963517 201150.194893643, 150397.470027529 201142.865485638, 150403.464011535 201135.266637631, 150407.825739533 201127.481037624, 150414.301515542 201109.016653612, 150431.792971551 201057.519821577, 150442.85677956 201026.858701557, 150454.530123569 200999.312717538, 150472.404939577 200955.342029508, 150483.516619585 200927.052237488, 150500.807755597 200883.890765458, 150516.94650761 200844.146253429, 150543.214411631 200773.35943738, 150546.079307631 200764.489805374, 150548.592075631 200754.511565369)")
-        self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(w.metadata.begin_tijd, '2013-04-12 20:12:12.687000')
-        w.metadata.set_gateway(crab)
-        self.assertEqual(int(w.metadata.begin_bewerking.id), 3)
-        self.assertEqual(int(w.metadata.begin_organisatie.id),1)
-        self.assertEqual('Wegsegment 108724', str(w))
-        self.assertEqual('Wegsegment(108724)', repr(w))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(w.status.id), 4)
+            self.assertEqual(int(w.methode.id), 3)
+            self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(w.metadata.begin_tijd, '2013-04-12 20:12:12.687000')
+            w.metadata.set_gateway(crab)
+            self.assertEqual(int(w.metadata.begin_bewerking.id), 3)
+            self.assertEqual(int(w.metadata.begin_organisatie.id),1)
+            self.assertEqual('Wegsegment 108724', str(w))
+            self.assertEqual('Wegsegment(108724)', repr(w))
 
     def test_check_gateway_not_set(self):
         w = Wegsegment(1)
         self.assertRaises(RuntimeError, w.check_gateway)
-
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_status(self):
         from testconfig import config
         crab = CrabGateway(
@@ -776,6 +881,10 @@ class WegsegmentTests(unittest.TestCase):
         status=w.status
         self.assertIsInstance(status, Statuswegsegment)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_methode(self):
         from testconfig import config
         crab = CrabGateway(
@@ -785,7 +894,11 @@ class WegsegmentTests(unittest.TestCase):
         w.set_gateway(crab)
         methode=w.methode
         self.assertIsInstance(methode, Geometriemethodewegsegment)
-        
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -816,17 +929,26 @@ class TerreinobjectTests(unittest.TestCase):
         )
         t.set_gateway(crab)
         self.assertEqual(t.id, "13040_C_1747_G_002_00")  
-        self.assertEqual(int(t.aard.id), 1)  
         self.assertEqual(t.centroid, (190708.59,224667.59))
         self.assertEqual(t.bounding_box, (190700.24,224649.87,190716.95,224701.7))
-        self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
-        self.assertEqual(t.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
-        t.metadata.set_gateway(crab)
-        self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
-        self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
-        self.assertEqual('Terreinobject 13040_C_1747_G_002_00', str(t))
-        self.assertEqual('Terreinobject(13040_C_1747_G_002_00)', repr(t))
-        
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(t.aard.id), 1)  
+            self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
+            self.assertEqual(t.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
+            t.metadata.set_gateway(crab)
+            self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
+            self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
+            self.assertEqual('Terreinobject 13040_C_1747_G_002_00', str(t))
+            self.assertEqual('Terreinobject(13040_C_1747_G_002_00)', repr(t))
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -835,15 +957,20 @@ class TerreinobjectTests(unittest.TestCase):
         t=Terreinobject("13040_C_1747_G_002_00")
         t.set_gateway(crab)
         self.assertEqual(t.id, "13040_C_1747_G_002_00")   
-        self.assertEqual(int(t.aard.id), 1) 
         self.assertEqual(t.centroid, (190708.59,224667.59))
         self.assertEqual(t.bounding_box, (190700.24,224649.87,190716.95,224701.7))
+    
+        self.assertEqual(int(t.aard.id), 1) 
         self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
         self.assertEqual(t.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
         t.metadata.set_gateway(crab)
         self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
         self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
 
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_aard(self):
         from testconfig import config
         crab = CrabGateway(
@@ -871,14 +998,23 @@ class PerceelTests(unittest.TestCase):
         p.set_gateway(crab)
         self.assertEqual(p.id, "13040C1747/00G002")
         self.assertEqual(p.centroid, (190708.59,224667.59))
-        self.assertEqual(p.metadata.begin_datum, '1998-01-01 00:00:00')
-        self.assertEqual(p.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
-        p.metadata.set_gateway(crab)
-        self.assertEqual(int(p.metadata.begin_bewerking.id), 3)
-        self.assertEqual(int(p.metadata.begin_organisatie.id), 3)
-        self.assertEqual('Perceel 13040C1747/00G002', str(p))
-        self.assertEqual('Perceel(13040C1747/00G002)', repr(p))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(p.metadata.begin_datum, '1998-01-01 00:00:00')
+            self.assertEqual(p.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
+            p.metadata.set_gateway(crab)
+            self.assertEqual(int(p.metadata.begin_bewerking.id), 3)
+            self.assertEqual(int(p.metadata.begin_organisatie.id), 3)
+            self.assertEqual('Perceel 13040C1747/00G002', str(p))
+            self.assertEqual('Perceel(13040C1747/00G002)', repr(p))
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -914,19 +1050,27 @@ class GebouwTests(unittest.TestCase):
         )   
         g.set_gateway(crab)
         self.assertEqual(g.id, 1538575)
-        self.assertEqual(int(g.aard.id), 1)
-        self.assertEqual(int(g.status.id), 4)
-        self.assertEqual(int(g.methode.id), 3)
-        self.assertEqual(g.geometrie, "POLYGON ((190712.36432739347 224668.5216938965, 190706.26007138938 224667.54428589717, 190706.03594338894 224668.89276589826, 190704.89699938893 224668.66159789637, 190705.350887388 224666.14575789496, 190708.31754338741 224649.70287788659, 190717.16349539906 224653.81065388769, 190713.40490339696 224663.38582189381, 190712.36432739347 224668.5216938965))")
-        self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(g.metadata.begin_tijd, '2011-05-19 10:51:09.483000')
-        g.metadata.set_gateway(crab)
-        self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
-        self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
-        self.assertEqual('Gebouw 1538575', str(g))
-        self.assertEqual('Gebouw(1538575)', repr(g))
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(g.aard.id), 1)
+            self.assertEqual(int(g.status.id), 4)
+            self.assertEqual(int(g.methode.id), 3)
+            self.assertEqual(g.geometrie, "POLYGON ((190712.36432739347 224668.5216938965, 190706.26007138938 224667.54428589717, 190706.03594338894 224668.89276589826, 190704.89699938893 224668.66159789637, 190705.350887388 224666.14575789496, 190708.31754338741 224649.70287788659, 190717.16349539906 224653.81065388769, 190713.40490339696 224663.38582189381, 190712.36432739347 224668.5216938965))")
+            self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
+            self.assertEqual(g.metadata.begin_tijd, '2011-05-19 10:51:09.483000')
+            g.metadata.set_gateway(crab)
+            self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+            self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
+            self.assertEqual('Gebouw 1538575', str(g))
+            self.assertEqual('Gebouw(1538575)', repr(g))
 
-
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         from testconfig import config
         crab = CrabGateway(
@@ -945,7 +1089,10 @@ class GebouwTests(unittest.TestCase):
         self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
         self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
         
-    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_aard(self):
         from testconfig import config
         crab = CrabGateway(
@@ -955,7 +1102,11 @@ class GebouwTests(unittest.TestCase):
         g.set_gateway(crab)
         aard = g.aard
         self.assertIsInstance(aard, Aardgebouw)
-        
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_status(self):
         from testconfig import config
         crab = CrabGateway(
@@ -965,7 +1116,11 @@ class GebouwTests(unittest.TestCase):
         g.set_gateway(crab)
         status = g.status
         self.assertIsInstance(status, Statusgebouw)
-        
+   
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_methode(self):
         from testconfig import config
         crab = CrabGateway(
@@ -991,8 +1146,13 @@ class MetadataTests(unittest.TestCase):
         m.set_gateway(crab)
         self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
-        self.assertEqual(int(m.begin_bewerking.id), 1)
-        self.assertEqual(int(m.begin_organisatie.id), 6)
+        @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+        )
+        def test_fully_initialised2(self):
+            self.assertEqual(int(m.begin_bewerking.id), 1)
+            self.assertEqual(int(m.begin_organisatie.id), 6)
         
         
 @unittest.skipUnless(run_crab_integration_tests(), 'No CRAB Integration tests required')
