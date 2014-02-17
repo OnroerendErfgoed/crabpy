@@ -62,9 +62,11 @@ class CapakeyGateway(object):
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'ListAdmGemeenten', sort)
+            res = capakey_gateway_request(
+                self.client, 'ListAdmGemeenten', sort
+            )
             return [
-                Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self) 
+                Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self)
                 for r in res.AdmGemeenteItem
             ]
         if self.caches['permanent'].is_configured:
@@ -80,7 +82,9 @@ class CapakeyGateway(object):
         :rtype: :class:`Gemeente`
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'GetAdmGemeenteByNiscode', id)
+            res = capakey_gateway_request(
+                self.client, 'GetAdmGemeenteByNiscode', id
+            )
             return Gemeente(
                 res.Niscode,
                 res.AdmGemeentenaam,
@@ -103,7 +107,9 @@ class CapakeyGateway(object):
         :rtype: A :class:`list` of :class:`Afdeling`.
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'ListKadAfdelingen', sort)
+            res = capakey_gateway_request(
+                self.client, 'ListKadAfdelingen', sort
+            )
             return [
                 Afdeling(
                     r.KadAfdelingcode,
@@ -133,8 +139,11 @@ class CapakeyGateway(object):
         except AttributeError:
             gemeente = self.get_gemeente_by_id(gemeente)
             gid = gemeente.id
+
         def creator():
-            res = capakey_gateway_request(self.client, 'ListKadAfdelingenByNiscode', gid, sort)
+            res = capakey_gateway_request(
+                self.client, 'ListKadAfdelingenByNiscode', gid, sort
+            )
             return [
                 Afdeling(
                     r.KadAfdelingcode,
@@ -157,13 +166,17 @@ class CapakeyGateway(object):
         :rtype: A :class:`Afdeling`.
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'GetKadAfdelingByKadAfdelingcode', id)
+            res = capakey_gateway_request(
+                self.client, 'GetKadAfdelingByKadAfdelingcode', id
+            )
             return Afdeling(
                 id=res.KadAfdelingcode,
                 naam=res.KadAfdelingnaam,
                 gemeente=Gemeente(res.Niscode, res.AdmGemeentenaam),
                 centroid=(res.CenterX, res.CenterY),
-                bounding_box=(res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+                bounding_box=(
+                    res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY
+                )
             )
         if self.caches['long'].is_configured:
             key = 'GetKadAfdelingByKadAfdelingcode#%s' % id
@@ -187,8 +200,11 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
+
         def creator():
-            res = capakey_gateway_request(self.client, 'ListKadSectiesByKadAfdelingcode', aid)
+            res = capakey_gateway_request(
+                self.client, 'ListKadSectiesByKadAfdelingcode', aid
+            )
             return [
                 Sectie(
                     r.KadSectiecode,
@@ -204,7 +220,7 @@ class CapakeyGateway(object):
             s.set_gateway(self)
             s.afdeling.set_gateway(self)
         return secties
-    
+
     def get_sectie_by_id_and_afdeling(self, id, afdeling):
         '''
         Get a `sectie`.
@@ -219,8 +235,11 @@ class CapakeyGateway(object):
         except AttributeError:
             afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
             aid = afdeling.id
+
         def creator():
-            res = capakey_gateway_request(self.client, 'GetKadSectieByKadSectiecode', aid, id)
+            res = capakey_gateway_request(
+                self.client, 'GetKadSectieByKadSectiecode', aid, id
+            )
             return Sectie(
                 res.KadSectiecode,
                 Afdeling(aid),
@@ -230,7 +249,7 @@ class CapakeyGateway(object):
         if self.caches['long'].is_configured:
             key = 'GetKadSectieByKadSectiecode#%s#%s' % (aid, id)
             sectie = self.caches['long'].get_or_create(key, creator)
-        else: 
+        else:
             sectie = creator()
         sectie.set_gateway(self)
         sectie.afdeling.set_gateway(self)
@@ -245,7 +264,10 @@ class CapakeyGateway(object):
         :rtype: A :class:`list` of :class:`Perceel`.
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'ListKadPerceelsnummersByKadSectiecode', sectie.afdeling.id, sectie.id, sort)
+            res = capakey_gateway_request(
+                self.client, 'ListKadPerceelsnummersByKadSectiecode',
+                sectie.afdeling.id, sectie.id, sort
+            )
             return [
                 Perceel(
                     r.KadPerceelsnummer,
@@ -274,7 +296,10 @@ class CapakeyGateway(object):
         :rtype: :class:`Perceel`
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByKadPerceelsnummer', sectie.afdeling.id, sectie.id, id)
+            res = capakey_gateway_request(
+                self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
+                sectie.afdeling.id, sectie.id, id
+            )
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(sectie.id, Afdeling(sectie.afdeling.id)),
@@ -303,7 +328,9 @@ class CapakeyGateway(object):
         :rtype: :class:`Perceel`
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByCaPaKey', capakey)
+            res = capakey_gateway_request(
+                self.client, 'GetKadPerceelsnummerByCaPaKey', capakey
+            )
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
@@ -332,7 +359,9 @@ class CapakeyGateway(object):
         :rtype: :class:`Perceel`
         '''
         def creator():
-            res = capakey_gateway_request(self.client, 'GetKadPerceelsnummerByPERCID', percid)
+            res = capakey_gateway_request(
+                self.client, 'GetKadPerceelsnummerByPERCID', percid
+            )
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
@@ -376,7 +405,10 @@ def check_lazy_load_gemeente(f):
     '''
     def wrapper(*args):
         gemeente = args[0]
-        if gemeente._naam is None or gemeente._centroid is None or gemeente._bounding_box is None:
+        if (
+            gemeente._naam is None or gemeente._centroid is None or
+            gemeente._bounding_box is None
+        ):
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._naam = g._naam
@@ -441,7 +473,10 @@ def check_lazy_load_afdeling(f):
     '''
     def wrapper(*args):
         afdeling = args[0]
-        if afdeling._naam is None or afdeling._gemeente is None or afdeling._centroid is None or afdeling._bounding_box is None:
+        if (
+            afdeling._naam is None or afdeling._gemeente is None or
+            afdeling._centroid is None or afdeling._bounding_box is None
+        ):
             afdeling.check_gateway()
             a = afdeling.gateway.get_kadastrale_afdeling_by_id(afdeling.id)
             afdeling._naam = a._naam
@@ -568,7 +603,10 @@ def check_lazy_load_perceel(f):
     '''
     def wrapper(*args):
         perceel = args[0]
-        if perceel._capatype is None or perceel._cashkey is None or perceel._centroid is None or perceel._bounding_box is None:
+        if (
+            perceel._capatype is None or perceel._cashkey is None or
+            perceel._centroid is None or perceel._bounding_box is None
+        ):
             perceel.check_gateway()
             p = perceel.gateway.get_perceel_by_id_and_sectie(
                 perceel.id,
