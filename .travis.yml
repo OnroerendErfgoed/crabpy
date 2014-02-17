@@ -14,5 +14,5 @@ install:
 
 
 script:
- - "if [[$TRAVIS_PYTHON_VERSION == 2.7]]; then nosetests --nologcapture --tc-file nose_travis.ini;else nosetests --tc-file nose_travis.ini;fi"
+ - "if [[$TRAVIS_PYTHON_VERSION == "2.7"]]; then nosetests --nologcapture --tc-file nose_travis.ini;else nosetests --tc-file nose_travis.ini;fi"
 
