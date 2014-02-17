@@ -1,10 +1,5 @@
 language: python
-python:
- - 2.7:
-       script:
-           nosetest --nologcapture --tc-file nose_travis.ini
- - 3.2
- - 3.3
+python: 2.7
 #before_install:
 # - sudo apt-get update
 # - sudo apt-get --reinstall install -qq language-pack-en language-pack-fr language-pack-nl
@@ -12,8 +7,10 @@ install:
  - easy_install -U setuptools
  - python setup.py install
  - pip install nose nose-testconfig
-script: 
-    python 2.7:
-        nosetests --nologcapture --tc-file nose_travis.ini
-    python 3.2:
-        nosetests --tc-file nose_travis.ini
+env:
+ - TOX_ENV=py27
+ - TOX_ENV=py32
+ - TOX_ENV=cover
+
+script:
+ - tox -e $TOX_ENV
