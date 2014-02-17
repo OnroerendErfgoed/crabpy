@@ -1,5 +1,8 @@
 language: python
-python: 2.7
+python: 
+ - "2.7"
+ - "3.2"
+ - "3.3"
 #before_install:
 # - sudo apt-get update
 # - sudo apt-get --reinstall install -qq language-pack-en language-pack-fr language-pack-nl
@@ -10,7 +13,8 @@ install:
 env:
  - TOX_ENV=py27
  - TOX_ENV=py32
- - TOX_ENV=cover
+ - TOX_ENV=py33
 
 script:
- - tox -e $TOX_ENV
+ - "if ['$TOX_ENV' = 'py27']; then nosetest --nologcapture --tc-file nose_travis.ini"
+
