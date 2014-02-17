@@ -9,11 +9,8 @@ install:
  - easy_install -U setuptools
  - python setup.py install
  - pip install nose nose-testconfig
-env:
- - ENV=py27
- - ENV=py32
- - ENV=py33
+
 
 script:
- - "if ['$ENV' = 'py27']; then 'nosetest --nologcapture --tc-file nose_travis.ini';fi"
+ - "if [python = '2.7']; then 'nosetest --nologcapture --tc-file nose_travis.ini';else 'nosetest --tc-file nose_travis.ini'"
 
