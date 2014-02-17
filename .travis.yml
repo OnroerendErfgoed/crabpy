@@ -13,6 +13,6 @@ install:
  - pip install nose nose-testconfig
 
 
-script:
- - "if ['python' = '2.7']; then 'nosetests --nologcapture --tc-file nose_travis.ini';else 'nosetests --tc-file nose_travis.ini';fi"
+
+"if ['python --version' = "2.7"]; then script: nosetests --nologcapture --tc-file nose_travis.ini;else script: nosetests --tc-file nose_travis.ini;fi"
 
