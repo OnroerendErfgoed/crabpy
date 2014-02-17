@@ -11,7 +11,7 @@ install:
  - python setup.py install
  - pip install nose nose-testconfig
 script: 
- - if python == 2.7:
-       nosetests --nologcapture --tc-file nose_travis.ini
- - else:
-       nosetests --tc-file nose_travis.ini
+    python 2.7:
+        nosetests --nologcapture --tc-file nose_travis.ini
+    python 3.2:
+        nosetests --tc-file nose_travis.ini
