@@ -12,5 +12,5 @@ install:
 
 
 script:
- - "if [python = '2.7']; then 'nosetest --nologcapture --tc-file nose_travis.ini';else 'nosetest --tc-file nose_travis.ini'"
+ - "if [python = '2.7']; then 'nosetest --nologcapture --tc-file nose_travis.ini';else 'nosetest --tc-file nose_travis.ini';fi"
 
