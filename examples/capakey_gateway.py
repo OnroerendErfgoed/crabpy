@@ -4,7 +4,7 @@ This script demonstrates using the capakey gateway to walk the entire
 cadastral tree of a `gemeente`.
 '''
 
-from crabpy.client import capakey_factory, capakey_request
+from crabpy.client import capakey_factory
 
 capakey = capakey_factory(
     user = 'USER',
