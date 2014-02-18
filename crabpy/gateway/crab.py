@@ -1258,6 +1258,11 @@ def check_lazy_load_huisnummer(f):
 
 
 class Huisnummer(GatewayObject):
+    '''
+    A house number.
+
+    This is mainly a combination of a street and a house number.
+    '''
     def __init__(
             self, id, status_id=None, huisnummer=None,
             straat_id=None, datum=None, tijd=None,
@@ -1344,6 +1349,11 @@ def check_lazy_load_postkanton(f):
 
 
 class Postkanton(GatewayObject):
+    '''
+    A postal code.
+
+    Eg. postal code `9000` for the city of Ghent.
+    '''
     def __init__(
         self, id, gemeente_id, datum=None, tijd=None,
         bewerking_id=None, organisatie_id=None, **kwargs
@@ -1628,6 +1638,11 @@ def check_lazy_load_perceel(f):
 class Perceel(GatewayObject):
     '''
     A cadastral Parcel.
+
+    A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
+    in the source of the data and the information provided. eg. A 
+    `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
+    also has the centroid, but not the `bounding box`.
     '''
     def __init__(
         self, id, centroid=None, datum=None, tijd=None,
