@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+'''
+This script demonstrates using the crab client directly or through the
+:func:`crabpy.client.crab_request` function.
+'''
+
 from crabpy.client import crab_factory, crab_request
 
 crab = crab_factory()
@@ -8,14 +14,5 @@ print res
 res = crab.service.ListPostkantonsByGemeenteId(71)
 print res
 
-res=crab_request(crab, 'ListGemeentenByGewestId', 1)
+res = crab_request(crab, 'ListGemeentenByGewestId', 1)
 print res
-
-
-
-
-    
-
-
-
-

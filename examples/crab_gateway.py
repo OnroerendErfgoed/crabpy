@@ -18,4 +18,4 @@ print str(gemeente)
 for s in gemeente.straten:
     print "* %s" % s
     for h in s.huisnummers:
-        print "** %s" %h
+        print "** %s" % h
