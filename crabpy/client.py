@@ -64,18 +64,20 @@ def capakey_factory(**kwargs):
 
 def crab_request(client, action, *args):
     '''
-    Utility function help making requests tot the CRAB service.
-    
+    Utility function that helps making requests tot the CRAB service.
+
     :param client: A :class: `suds.client.Client` for the CRAB service.
     :param string action: Which method to call, eg. 'ListGewesten'
     :returns: Result of the SOAP call.
+
+    .. versionadded:: 0.3.0
     '''
     
     return getattr(client.service, action)(*args)
 
 def capakey_request(client, action, *args):
     '''
-    Utility function help making requests to the CAPAKEY service.
+    Utility function that helps making requests to the CAPAKEY service.
 
     :param client: A :class:`suds.client.Client` for the CAPAKEY service.
     :param string action: Which method to call, eg. `ListAdmGemeenten`.

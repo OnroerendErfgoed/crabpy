@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+'''
+This module contains an opionated gateway for the crab webservice.
+
+.. versionadded:: 0.3.0
+'''
 
 from __future__ import unicode_literals
 
@@ -68,8 +73,8 @@ class CrabGateway(object):
         '''
         List all `gemeenten` in a `gewest`.
 
-        :param object gewest: An object of :class: `Gewest`
-        OR :param integer gewest: What gewest to list the `gemeenten` for.
+        :param gewest: The :class:`Gewest` for which the \
+            `gemeenten` are wanted.
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
