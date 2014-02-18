@@ -6,6 +6,8 @@ from crabpy.client import crab_factory, crab_request
 
 from crabpy.gateway.crab import CrabGateway
 
+crab = crab_factory()
+
 g = CrabGateway(crab)
 
 gemeente = g.get_gemeente_by_id(1)
