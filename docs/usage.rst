@@ -8,8 +8,6 @@ Using the CRAB webservice
 Recently, the CRAB service has become public. The need to authenticate has been
 removed, making it a whole lot easier to connect.
 
-.. literalinclude:: /../examples/crab_gateway.py
-
 .. code-block:: python
 
     from crabpy.client import crab_factory
@@ -62,6 +60,29 @@ by passing the proxy parameter to the :func:`crabpy.client.crab_factory` or
 
 
 .. literalinclude:: /../examples/crab_proxy.py
+
+
+Using the CRAB gateway
+-----------------------
+
+To make life easier and carab more pythonic, we've also implemented a gateway
+that abstracts some more of the service and provides richer objects as responses.
+
+.. literalinclude:: /../examples/crab_gateway.py
+
+The crab supports caching through the dogpile_ caching library. Caching can
+be added by passing a configuration dictionary to the :class:`CrabGateway`.
+
+Two caching regions will be configured:
+
+- `permanent`: For requests that can be cached for a very long time,
+  eg. `list_gewesten`.
+- `long`: For requests that can be cached for a fairly long time, 
+  eg. `list_gemeenten`.
+
+.. literalinclude:: /../examples/crab_gateway_caching.py
+
+
 
 
 Using the CAPAKEY gateway
