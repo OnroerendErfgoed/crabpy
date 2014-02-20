@@ -343,10 +343,6 @@ class GemeenteTests(unittest.TestCase):
             1,
             6
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        g.set_gateway(crab)
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
         self.assertEqual(g.niscode, 11001)
@@ -458,10 +454,6 @@ class StraatTests(unittest.TestCase):
             3,
             1,
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        s.set_gateway(crab)
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
         self.assertEqual(s.namen, (('Acacialaan', 'nl'), (None, None)))
@@ -580,10 +572,6 @@ class HuisnummerTests(unittest.TestCase):
             1,
             5
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        h.set_gateway(crab)
         self.assertEqual(h.id, 1)
         self.assertEqual(h.huisnummer, "51")
 
@@ -707,10 +695,6 @@ class PostkantonTests(unittest.TestCase):
             '1830-01-01 00:00:00',
 
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        p.set_gateway(crab)
         self.assertEqual(p.id, 2630)
 
         @unittest.skipUnless(
@@ -758,10 +742,6 @@ class WegobjectTests(unittest.TestCase):
             1,
             8
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        w.set_gateway(crab)
         self.assertEqual(w.id, "53839893")
         self.assertEqual(w.centroid, (150753.46, 200148.41))
         self.assertEqual(
@@ -860,10 +840,6 @@ class WegsegmentTests(unittest.TestCase):
             3,
             1
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        w.set_gateway(crab)
         self.assertEqual(w.id, "108724")
         self.assertEqual(
             w.geometrie,
@@ -991,10 +967,6 @@ class TerreinobjectTests(unittest.TestCase):
             3,
             3
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        t.set_gateway(crab)
         self.assertEqual(t.id, "13040_C_1747_G_002_00")
         self.assertEqual(t.centroid, (190708.59, 224667.59))
         self.assertEqual(
@@ -1067,10 +1039,6 @@ class PerceelTests(unittest.TestCase):
             3,
             3
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        p.set_gateway(crab)
         self.assertEqual(p.id, "13040C1747/00G002")
         self.assertEqual(p.centroid, (190708.59, 224667.59))
 
@@ -1133,10 +1101,6 @@ class GebouwTests(unittest.TestCase):
             1,
             5
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        g.set_gateway(crab)
         self.assertEqual(g.id, 1538575)
 
         @unittest.skipUnless(
@@ -1253,10 +1217,6 @@ class MetadataTests(unittest.TestCase):
             1,
             6
         )
-        crab = CrabGateway(
-            crab_factory()
-        )
-        m.set_gateway(crab)
         self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
 
