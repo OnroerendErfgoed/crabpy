@@ -5,13 +5,20 @@ This script demonstrates querying the crab gateway while maintaining a cache.
 
 import os
 
+<<<<<<< HEAD
 from crabpy.client import crab_request, crab_factory
+=======
+from crabpy.client import crab_factory
+
+>>>>>>> 694c0bb397d3ba917cd1e92632ee696a42f632db
 from crabpy.gateway.crab import CrabGateway
 
 root = "./dogpile_data/"
 
 if not os.path.exists(root):
     os.makedirs(root)
+
+crab = crab_factory()
 
 g = CrabGateway(
     crab_factory(),
@@ -24,6 +31,7 @@ g = CrabGateway(
         'long.arguments.filename': os.path.join(root, 'crab_long.dbm')
     }
 )
+
 
 aartselaar = g.get_gemeente_by_id(1)
 

@@ -5,7 +5,7 @@ This script demonstrates querying the capakey gateway while maintaining a cache.
 
 import os
 
-from crabpy.client import capakey_factory, capakey_request
+from crabpy.client import capakey_factory
 
 capakey = capakey_factory(
     user = 'USER',

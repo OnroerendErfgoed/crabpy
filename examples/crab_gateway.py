@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 '''
+This script demonstrates using the crab gateway to walk the entire
+address tree (street and number) of a `gemeente`.
 '''
+
 from crabpy.client import crab_request, crab_factory
 from crabpy.gateway.crab import CrabGateway
 
@@ -13,3 +16,4 @@ for i in range(0,10):
     print "* Straat:  %s" % s
     for j in range(0, 10):
         print "  ** Huisnummer: %s" % s.huisnummers[j]
+

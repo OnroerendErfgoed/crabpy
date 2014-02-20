@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+'''
+This module contains an opionated gateway for the crab webservice.
+
+.. versionadded:: 0.3.0
+'''
 
 from __future__ import unicode_literals
 
@@ -45,7 +50,8 @@ class CrabGateway(object):
 
     def list_gewesten(self, sort=1):
         '''
-        List all `gewesten`
+        List all `gewesten` in Belgium.
+
         :param integer sort: What field to sort on.
         :rtype: A :class`list` of class: `Gewest`.
         '''
@@ -68,8 +74,8 @@ class CrabGateway(object):
         '''
         List all `gemeenten` in a `gewest`.
 
-        :param object gewest: An object of :class: `Gewest`
-        OR :param integer gewest: What gewest to list the `gemeenten` for.
+        :param gewest: The :class:`Gewest` for which the \
+            `gemeenten` are wanted.
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
@@ -131,7 +137,8 @@ class CrabGateway(object):
     def get_gemeente_by_niscode(self, niscode):
         '''
         Retrieve a `gemeente` by the NIScode.
-        :param integer id: The NIScode of the gemeente.
+
+        :param integer niscode: The NIScode of the gemeente.
         :rtype: :class:`Gemeente`
         '''
 
@@ -178,14 +185,16 @@ class CrabGateway(object):
     def list_talen(self, sort=1):
         '''
         List all `talen`.
-        :rtype: A :class:`list` of :class: `Taal`
+
+        :rtype: A :class:`list` of :class:`Taal`
         '''
         return self._list_codeobject('ListTalen', sort, 'Taal')
 
     def list_bewerkingen(self, sort=1):
         '''
         List all `bewerkingen`.
-        :rtype: A :class:`list` of :class: `Bewerking`
+
+        :rtype: A :class:`list` of :class:`Bewerking`
         '''
         return self._list_codeobject(
             'ListBewerkingen', sort, 'Bewerking'
@@ -194,7 +203,8 @@ class CrabGateway(object):
     def list_organisaties(self, sort=1):
         '''
         List all `organisaties`.
-        :rtype: A :class:`list` of :class: `Organisatie`
+
+        :rtype: A :class:`list` of :class:`Organisatie`
         '''
         return self._list_codeobject(
             'ListOrganisaties', sort, 'Organisatie'
@@ -203,7 +213,8 @@ class CrabGateway(object):
     def list_aardsubadressen(self, sort=1):
         '''
         List all `aardsubadressen`.
-        :rtype: A :class:`list` of :class: `Aardsubadres`
+
+        :rtype: A :class:`list` of :class:`Aardsubadres`
         '''
         return self._list_codeobject(
             'ListOrganisaties', sort, 'Aardsubadres'
@@ -212,7 +223,8 @@ class CrabGateway(object):
     def list_aardadressen(self, sort=1):
         '''
         List all `aardadressen`.
-        :rtype: A :class:`list` of :class: `Aardadres`
+
+        :rtype: A :class:`list` of :class:`Aardadres`
         '''
         return self._list_codeobject(
             'ListAardAdressen', sort, 'Aardadres'
@@ -221,7 +233,8 @@ class CrabGateway(object):
     def list_aardgebouwen(self, sort=1):
         '''
         List all `aardgebouwen`.
-        :rtype: A :class:`list` of :class: `Aardgebouw`
+
+        :rtype: A :class:`list` of :class:`Aardgebouw`
         '''
         return self._list_codeobject(
             'ListAardGebouwen', sort, 'Aardgebouw'
@@ -230,7 +243,8 @@ class CrabGateway(object):
     def list_aardwegobjecten(self, sort=1):
         '''
         List all `aardwegobjecten`.
-        :rtype: A :class:`list` of :class: `Aardwegobject`
+
+        :rtype: A :class:`list` of :class:`Aardwegobject`
         '''
         return self._list_codeobject(
             'ListAardWegobjecten', sort, 'Aardwegobject'
@@ -239,7 +253,8 @@ class CrabGateway(object):
     def list_aardterreinobjecten(self, sort=1):
         '''
         List all `aardterreinobjecten`.
-        :rtype: A :class:`list` of :class: `Aardterreinobject`
+
+        :rtype: A :class:`list` of :class:`Aardterreinobject`
         '''
         return self._list_codeobject(
             'ListAardTerreinobjecten', sort, 'Aardterreinobject'
@@ -248,7 +263,8 @@ class CrabGateway(object):
     def list_statushuisnummers(self, sort=1):
         '''
         List all `statushuisnummers`.
-        :rtype: A :class:`list` of :class: `Statushuisnummer`
+
+        :rtype: A :class:`list` of :class:`Statushuisnummer`
         '''
         return self._list_codeobject(
             'ListStatusHuisnummers', sort, 'Statushuisnummer'
@@ -257,7 +273,8 @@ class CrabGateway(object):
     def list_statussubadressen(self, sort=1):
         '''
         List all `statussubadressen`.
-        :rtype: A :class:`list` of :class: `Statussubadres`
+
+        :rtype: A :class:`list` of :class:`Statussubadres`
         '''
         return self._list_codeobject(
             'ListStatusSubadressen', sort, 'Statussubadres'
@@ -266,7 +283,8 @@ class CrabGateway(object):
     def list_statusstraatnamen(self, sort=1):
         '''
         List all `statusstraatnamen`.
-        :rtype: A :class:`list` of :class: `Statusstraatnaam`
+
+        :rtype: A :class:`list` of :class:`Statusstraatnaam`
         '''
         return self._list_codeobject(
             'ListStatusStraatnamen', sort, 'Statusstraatnaam'
@@ -275,6 +293,7 @@ class CrabGateway(object):
     def list_statuswegsegmenten(self, sort=1):
         '''
         List all `statuswegsegmenten`.
+
         :rtype: A :class:`list` of :class: `Statuswegsegment`
         '''
         return self._list_codeobject(
@@ -284,7 +303,8 @@ class CrabGateway(object):
     def list_geometriemethodewegsegmenten(self, sort=1):
         '''
         List all `geometriemethodewegsegmenten`.
-        :rtype: A :class:`list` of :class: `Geometriemethodewegsegment`
+
+        :rtype: A :class:`list` of :class:`Geometriemethodewegsegment`
         '''
         return self._list_codeobject(
             'ListGeometriemethodeWegsegmenten', sort,
@@ -294,7 +314,8 @@ class CrabGateway(object):
     def list_statusgebouwen(self, sort=1):
         '''
         List all `statusgebouwen`.
-        :rtype: A :class:`list` of :class: `Statusgebouwen`
+
+        :rtype: A :class:`list` of :class:`Statusgebouwen`
         '''
         return self._list_codeobject(
             'ListStatusGebouwen', sort, 'Statusgebouw'
@@ -303,7 +324,8 @@ class CrabGateway(object):
     def list_geometriemethodegebouwen(self, sort=1):
         '''
         List all `geometriegebouwen`.
-        :rtype: A :class:`list` of :class: `Geometriegebouw`
+
+        :rtype: A :class:`list` of :class:`Geometriegebouw`
         '''
         return self._list_codeobject(
             'ListGeometriemethodeGebouwen', sort, 'Geometriemethodegebouw'
@@ -312,7 +334,8 @@ class CrabGateway(object):
     def list_herkomstadresposities(self, sort=1):
         '''
         List all `herkomstadresposities`.
-        :rtype: A :class:`list` of :class: `Herkomstadrespositie`
+
+        :rtype: A :class:`list` of :class:`Herkomstadrespositie`
         '''
         return self._list_codeobject(
             'ListHerkomstAdresposities', sort, 'Herkomstadrespositie'
@@ -321,8 +344,9 @@ class CrabGateway(object):
     def list_straten(self, gemeente, sort=1):
         '''
         List all `straten` in a `Gemeente`.
-        :param object gemeente: An object of :class: `Gemeente`
-        OR :param integer gemeente: The Id of the Gemeente
+
+        :param gewest: The :class:`Gemeente` for which the \
+            `straten` are wanted.
         :rtype: A :class:`list` of :class: `Straat`
         '''
         try:
@@ -351,7 +375,8 @@ class CrabGateway(object):
 
     def get_straat_by_id(self, id):
         '''
-        Retrieve a `straat`by the Id.
+        Retrieve a `straat` by the Id.
+
         :param integer id: The id of the `straat`.
         :rtype: :class:`Straat`
         '''
@@ -384,9 +409,10 @@ class CrabGateway(object):
 
     def list_huisnummers_by_straat(self, straat, sort=1):
         '''
-        List all `huisnummers` in a `Straat`
-        :param object straat: An object of :class: `Straat`
-        OR :param integer straat: The Id of the Straat
+        List all `huisnummers` in a `Straat`.
+
+        :param straat: The :class:`Straat` for which the \
+            `huisnummers` are wanted.
         :rtype: A :class: `list` of :class: `Huisnummer`
         '''
         try:
@@ -416,8 +442,9 @@ class CrabGateway(object):
     def get_huisnummer_by_id(self, id):
         '''
         Retrieve a `huisnummer` by the Id.
+
         :param integer id: the Id of the `huisnummer`
-        :rtype :class: `Huisnummer`
+        :rtype: :class:`Huisnummer`
         '''
         def creator():
             res = crab_gateway_request(
@@ -444,10 +471,11 @@ class CrabGateway(object):
     def get_huisnummer_by_nummer_and_straat(self, nummer, straat):
         '''
         Retrieve a `huisnummer` by the `nummer` and `straat`
+
         :param integer nummer: The huisnummer of the 'huisnummer`
-        :param integer straat: The Id of the `straat`
-        :param object straat: An object of :class: `Straat`
-        :rtype A :class: 'Huisnummer'
+        :param straat: The :class:`Straat` in which the `huisnummer` \
+            is situated.
+        :rtype: A :class:`Huisnummer`
         '''
         try:
             straat_id = straat.id
@@ -476,9 +504,10 @@ class CrabGateway(object):
     def list_postkantons_by_gemeente(self, gemeente):
         '''
         List all `postkantons` in a :class: `Gemeente`
-        :param integer gemeente: The Id of the Gemeente
-        OR :param object gemeente: An object of :class: `Gemeente`
-        :rtype: A :class:`list` of :class: `Postkanton`
+
+        :param straat: The :class:`Gemeente` for which the \
+            `potkantons` are wanted.
+        :rtype: A :class:`list` of :class:`Postkanton`
         '''
         try:
             id = gemeente.id
@@ -507,9 +536,10 @@ class CrabGateway(object):
     def get_postkanton_by_huisnummer(self, huisnummer):
         '''
         Retrieve a `postkanton` by the Huisnummer.
-        :param integer id: the Id of the `huisnummer`
-        :param object huisnummer: An object of :class: 'Huisnummer'
-        :rtype :class: `Postkanton`
+
+        :param huisnummer: The :class:`Huisnummer` for which the `postkanton` \
+                is wanted.
+        :rtype: :class:`Postkanton`
         '''
         try:
             id = huisnummer.id
@@ -542,8 +572,9 @@ class CrabGateway(object):
     def get_wegobject_by_id(self, id):
         '''
         Retrieve a `Wegobject` by the Id.
+
         :param integer id: the Id of the `Wegobject`
-        :rtype :class: `Wegobject`
+        :rtype: :class:`Wegobject`
         '''
         def creator():
             res = crab_gateway_request(
@@ -601,8 +632,9 @@ class CrabGateway(object):
     def get_wegsegment_by_id(self, id):
         '''
         Retrieve a `wegsegment` by the Id.
+
         :param integer id: the Id of the `wegsegment`
-        :rtype :class: `Wegsegment`
+        :rtype: :class:`Wegsegment`
         '''
         def creator():
             res = crab_gateway_request(
@@ -692,8 +724,9 @@ class CrabGateway(object):
     def get_terreinobject_by_id(self, id):
         '''
         Retrieve a `Terreinobject` by the Id.
+
         :param integer id: the Id of the `Terreinobject`
-        :rtype :class: `Terreinobject`
+        :rtype: :class: `Terreinobject`
         '''
         def creator():
             res = crab_gateway_request(
@@ -720,10 +753,11 @@ class CrabGateway(object):
 
     def list_percelen_by_huisnummer(self, huisnummer):
         '''
-        List all `percelen` for a :class: `Huisnummer`
-        :param integer huisnummer: The Id of the Huisnummer
-        OR :param object huisnummer: An object of :class: `Huisnummer`
-        :rtype: A :class:`list` of :class: `Perceel`
+        List all `percelen` for a :class:`Huisnummer`
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `percelen` are wanted.
+        :rtype: A :class:`list` of :class:`Perceel`
         '''
         try:
             id = huisnummer.id
@@ -751,8 +785,9 @@ class CrabGateway(object):
     def get_perceel_by_id(self, id):
         '''
         Retrieve a `Perceel` by the Id.
-        :param integer id: the Id of the `Perceel`
-        :rtype :class: `Perceel`
+
+        :param string id: the Id of the `Perceel`
+        :rtype: :class:`Perceel`
         '''
         def creator():
             res = crab_gateway_request(
@@ -776,10 +811,11 @@ class CrabGateway(object):
 
     def list_gebouwen_by_huisnummer(self, huisnummer):
         '''
-        List all `gebouwen` for a :class: `Huisnummer`
-        :param integer huisnummer: The Id of the Huisnummer
-        OR :param object huisnummer: An object of :class: `Huisnummer`
-        :rtype: A :class:`list` of :class: `Gebouw`
+        List all `gebouwen` for a :class:`Huisnummer`.
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `gebouwen` are wanted.
+        :rtype: A :class:`list` of :class:`Gebouw`
         '''
         try:
             id = huisnummer.id
@@ -809,8 +845,9 @@ class CrabGateway(object):
     def get_gebouw_by_id(self, id):
         '''
         Retrieve a `Gebouw` by the Id.
+
         :param integer id: the Id of the `Gebouw`
-        :rtype :class: `Gebouw`
+        :rtype: :class:`Gebouw`
         '''
         def creator():
             res = crab_gateway_request(
@@ -836,6 +873,10 @@ class CrabGateway(object):
 
 
 class GatewayObject(object):
+    '''
+    Abstract class for objects that are able to use a 
+    :class:`crabpy.Gateway.CrabGateway` to find further information.
+    '''
 
     gateway = None
 
@@ -853,7 +894,10 @@ class GatewayObject(object):
 
 class Gewest(GatewayObject):
     '''
-    The smallest administrative unit in Belgium.
+    A large administrative unit in Belgium.
+
+    Belgium consists of 3 `gewesten`. Together they form the entire territory
+    of the country.
     '''
     def __init__(
         self, id, naam=None,
@@ -1020,6 +1064,9 @@ class Codelijst(GatewayObject):
 
 
 class Taal(Codelijst):
+    '''
+    A language.
+    '''
     pass
 
 
@@ -1028,6 +1075,9 @@ class Bewerking(Codelijst):
 
 
 class Organisatie(Codelijst):
+    '''
+    An organisation that played a role in the genessis of an object.
+    '''
     pass
 
 
@@ -1085,7 +1135,7 @@ class Herkomstadrespositie(Codelijst):
 
 def check_lazy_load_straat(f):
     '''
-    Decorator function to lazy load a :class: `Straat`.
+    Decorator function to lazy load a :class:`Straat`.
     '''
     def wrapper(*args):
         straat = args[0]
@@ -1107,6 +1157,9 @@ def check_lazy_load_straat(f):
 
 class Straat(GatewayObject):
     '''
+    A street.
+
+    A street object is always located in one and exactly one :class:`Gemeente`.
     '''
     def __init__(
             self, id, label=None, status_id=None, straatnaam=None,
@@ -1205,6 +1258,11 @@ def check_lazy_load_huisnummer(f):
 
 
 class Huisnummer(GatewayObject):
+    '''
+    A house number.
+
+    This is mainly a combination of a street and a house number.
+    '''
     def __init__(
             self, id, status_id=None, huisnummer=None,
             straat_id=None, datum=None, tijd=None,
@@ -1291,6 +1349,11 @@ def check_lazy_load_postkanton(f):
 
 
 class Postkanton(GatewayObject):
+    '''
+    A postal code.
+
+    Eg. postal code `9000` for the city of Ghent.
+    '''
     def __init__(
         self, id, gemeente_id, datum=None, tijd=None,
         bewerking_id=None, organisatie_id=None, **kwargs
@@ -1500,6 +1563,14 @@ def check_lazy_load_terreinobject(f):
 
 
 class Terreinobject(GatewayObject):
+    '''
+    A cadastral parcel.
+
+    A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
+    in the source of the data and the information provided. eg. A 
+    `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
+    also has the centroid, but not the `bounding box`.
+    '''
     def __init__(
         self, id, aard_id=None, centroid=None,
         bounding_box=None, datum=None, tijd=None,
@@ -1551,7 +1622,7 @@ class Terreinobject(GatewayObject):
 
 def check_lazy_load_perceel(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Perceel`.
     '''
     def wrapper(*args):
         perceel = args[0]
@@ -1565,6 +1636,14 @@ def check_lazy_load_perceel(f):
 
 
 class Perceel(GatewayObject):
+    '''
+    A cadastral Parcel.
+
+    A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
+    in the source of the data and the information provided. eg. A 
+    `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
+    also has the centroid, but not the `bounding box`.
+    '''
     def __init__(
         self, id, centroid=None, datum=None, tijd=None,
         bewerking_id=None, organisatie_id=None, **kwargs
@@ -1601,7 +1680,7 @@ class Perceel(GatewayObject):
 
 def check_lazy_load_gebouw(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Gebouw`.
     '''
     def wrapper(*args):
         gebouw = args[0]
@@ -1622,6 +1701,9 @@ def check_lazy_load_gebouw(f):
 
 
 class Gebouw(GatewayObject):
+    '''
+    A building.
+    '''
     def __init__(
         self, id, aard_id=None, status_id=None,
         methode_id=None, geometrie=None, datum=None,
