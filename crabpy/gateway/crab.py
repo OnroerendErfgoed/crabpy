@@ -1819,6 +1819,12 @@ class Gebouw(GatewayObject):
 
 
 class Metadata(GatewayObject):
+    '''
+    Metadata about a `straat`, `huisnummer`, ...
+
+    Some of the metadata available is the datum the object was created, the
+    organisation that created it and the type of creation.
+    '''
     def __init__(
         self, begin_datum, begin_tijd,
         begin_bewerking_id, begin_organisatie_id
