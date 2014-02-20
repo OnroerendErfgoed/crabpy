@@ -1057,58 +1057,79 @@ class Gemeente(GatewayObject):
 
 class Codelijst(GatewayObject):
     def __init__(
-            self, id, naam, definitie=None, **kwargs
+            self, id, naam, definitie, **kwargs
     ):
         self.id = id
-        self._naam = naam
-        self._definitie = definitie
+        self.naam = naam
+        self.definitie = definitie
         super(Codelijst, self).__init__(**kwargs)
 
-    @property
-    def naam(self):
-        return self._naam
-
-    @property
-    def definitie(self):
-        return self._definitie
+    def __str__(self):
+        return self.naam
 
 
 class Taal(Codelijst):
     '''
     A language.
     '''
-    pass
+    def __repr__(self):
+        return "Taal(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Bewerking(Codelijst):
-    pass
+    '''
+    An edit.
+    '''
+    def __repr__(self):
+        return "Bewerking(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Organisatie(Codelijst):
     '''
     An organisation that played a role in the genessis of an object.
     '''
-    pass
+    def __repr__(self):
+        return "Organisatie(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Aardsubadres(Codelijst):
-    pass
+    '''
+    The nature of a subaddress.
+    '''
+    def __repr__(self):
+        return "Aardsubadres(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Aardadres(Codelijst):
-    pass
+    '''
+    The nature of an address.
+    '''
+    def __repr__(self):
+        return "Aardadres(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Aardgebouw(Codelijst):
-    pass
+    '''
+    The nature of a building.
+    '''
+    def __repr__(self):
+        return "Aardgebouw(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Aardwegobject(Codelijst):
-    pass
+    '''
+    The nature of a `wegobject`.
+    '''
+    def __repr__(self):
+        return "Aardwegobject(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Aardterreinobject(Codelijst):
-    pass
+    '''
+    The nature of a `terreinobject`.
+    '''
+    def __repr__(self):
+        return "Aardterreinobject(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Statushuisnummer(Codelijst):
