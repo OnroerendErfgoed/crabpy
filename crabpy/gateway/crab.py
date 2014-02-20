@@ -1165,11 +1165,14 @@ class Statuswegsegment(Codelijst):
     '''
     def __repr__(self):
         return "Statuswegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
-    pass
 
 
 class Geometriemethodewegsegment(Codelijst):
-    pass
+    '''
+    The current state of a building.
+    '''
+    def __repr__(self):
+        return "Statuswegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Statusgebouw(Codelijst):
@@ -1181,7 +1184,11 @@ class Geometriemethodegebouw(Codelijst):
 
 
 class Herkomstadrespositie(Codelijst):
-    pass
+    '''
+    The origin of an Adressposition.
+    '''
+    def __repr__(self):
+        return "Herkomstadrespositie(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 def check_lazy_load_straat(f):
