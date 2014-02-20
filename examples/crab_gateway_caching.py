@@ -5,20 +5,14 @@ This script demonstrates querying the crab gateway while maintaining a cache.
 
 import os
 
-<<<<<<< HEAD
-from crabpy.client import crab_request, crab_factory
-=======
 from crabpy.client import crab_factory
 
->>>>>>> 694c0bb397d3ba917cd1e92632ee696a42f632db
 from crabpy.gateway.crab import CrabGateway
 
 root = "./dogpile_data/"
 
 if not os.path.exists(root):
     os.makedirs(root)
-
-crab = crab_factory()
 
 g = CrabGateway(
     crab_factory(),
@@ -37,23 +31,18 @@ aartselaar = g.get_gemeente_by_id(1)
 
 print 'Straten in AARTSELAAR'
 print '---------------------'
-s = g.list_straten(aartselaar)
-for i in range(0, 10):
-    print str(s[i])
+print [str(s) for s in g.list_straten(aartselaar)]
     
 print 'Huisnummers in AARTSELAAR Straat1'
 print '---------------------------------'
-h = g.list_huisnummers_by_straat(s[0])
-for i in range(0,10)
-    print str(h[i])
+print [str(h) for h in g.list_huisnummers_by_straat(s)]
 
-
-p = g.get_gemeente_by_niscode(11001)
+p = g.get_gemeente_by_niscode(33021)
 
 print 'gemeente: %s' % p.id
 print 'naam: %s' % p.naam
 print 'niscode: %s' % p.niscode
 print 'gewest: %s' % p.gewest
 print 'taal: %s' % p.taal
-print 'centroid: %s' % p.centroid
-print 'bounding_box: %s' % p.bounding_box
+print 'centroid: %s' % str(p.centroid)
+print 'bounding_box: %s' % str(p.bounding_box)

@@ -60,15 +60,17 @@ class CrabGateway(object):
             return[
                 Gewest(
                     r.GewestId,
-                    r.GewestNaam,
-                    gateway=self
+                    r.GewestNaam
                 )for r in res.GewestItem
             ]
         if self.caches['permanent'].is_configured:
             key = 'ListGewesten#%s' % sort
-            return self.caches['permanent'].get_or_create(key, creator)
+            gewesten = self.caches['permanent'].get_or_create(key, creator)
         else:
-            return creator()
+            gewesten = creator()
+        for g in gewesten:
+            g.set_gateway(self)
+        return gewesten
 
     def list_gemeenten(self, gewest=2, sort=1):
         '''
@@ -98,9 +100,12 @@ class CrabGateway(object):
             ]
         if self.caches['long'].is_configured:
             key = 'ListGemeentenByGewestId#%s%s' % (id, sort)
-            return self.caches['long'].get_or_create(key, creator)
+            gemeenten = self.caches['long'].get_or_create(key, creator)
         else:
-            return creator()
+            gemeenten = creator()
+        for g in gemeenten:
+            g.set_gateway(self)
+        return gemeenten
 
     def get_gemeente_by_id(self, id):
         '''
@@ -150,6 +155,8 @@ class CrabGateway(object):
                 res.GemeenteId,
                 res.GemeenteNaam,
                 res.NisGemeenteCode,
+                res.GewestId,
+                res.TaalCode,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
                 res.BeginDatum,
@@ -172,8 +179,7 @@ class CrabGateway(object):
                 globals()[returnclass](
                     r.Code,
                     r.Naam,
-                    r.Definitie,
-                    gateway=self
+                    r.Definitie
                 )for r in res.CodeItem
             ]
         if self.caches['permanent'].is_configured:
@@ -363,15 +369,17 @@ class CrabGateway(object):
                 Straat(
                     r.StraatnaamId,
                     r.StraatnaamLabel,
-                    r.StatusStraatnaam,
-                    gateway=self
+                    r.StatusStraatnaam
                 )for r in res.StraatnaamWithStatusItem
             ]
         if self.caches['long'].is_configured:
             key = 'ListStraatnamenWithStatusByGemeenteId#%s%s' % (id, sort)
-            return self.caches['long'].get_or_create(key, creator)
+            straten = self.caches['long'].get_or_create(key, creator)
         else:
-            return creator()
+            straten = creator()
+        for s in straten:
+            s.set_gateway(self)
+        return straten
 
     def get_straat_by_id(self, id):
         '''
@@ -429,15 +437,17 @@ class CrabGateway(object):
                 Huisnummer(
                     r.HuisnummerId,
                     r.StatusHuisnummer,
-                    r.Huisnummer,
-                    gateway=self
+                    r.Huisnummer
                 ) for r in res.HuisnummerWithStatusItem
             ]
         if self.caches['long'].is_configured:
             key = 'ListHuisnummersWithStatusByStraatnaamId#%s%s' % (id, sort)
-            return self.caches['long'].get_or_create(key, creator)
+            huisnummers = self.caches['long'].get_or_create(key, creator)
         else:
-            return creator()
+            huisnummers = creator()
+        for h in huisnummers:
+            h.set_gateway(self)
+        return huisnummers
 
     def get_huisnummer_by_id(self, id):
         '''
