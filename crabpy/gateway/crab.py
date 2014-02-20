@@ -300,7 +300,7 @@ class CrabGateway(object):
         '''
         List all `statuswegsegmenten`.
 
-        :rtype: A :class:`list` of :class: `Statuswegsegment`
+        :rtype: A :class:`list` of :class:`Statuswegsegment`
         '''
         return self._list_codeobject(
             'ListStatusWegsegmenten', sort, 'Statuswegsegment'
@@ -351,9 +351,9 @@ class CrabGateway(object):
         '''
         List all `straten` in a `Gemeente`.
 
-        :param gewest: The :class:`Gemeente` for which the \
+        :param gemeente: The :class:`Gemeente` for which the \
             `straten` are wanted.
-        :rtype: A :class:`list` of :class: `Straat`
+        :rtype: A :class:`list` of :class:`Straat`
         '''
         try:
             id = gemeente.id
@@ -421,7 +421,7 @@ class CrabGateway(object):
 
         :param straat: The :class:`Straat` for which the \
             `huisnummers` are wanted.
-        :rtype: A :class: `list` of :class: `Huisnummer`
+        :rtype: A :class: `list` of :class:`Huisnummer`
         '''
         try:
             id = straat.id
@@ -513,9 +513,9 @@ class CrabGateway(object):
 
     def list_postkantons_by_gemeente(self, gemeente):
         '''
-        List all `postkantons` in a :class: `Gemeente`
+        List all `postkantons` in a :class:`Gemeente`
 
-        :param straat: The :class:`Gemeente` for which the \
+        :param gemeente: The :class:`Gemeente` for which the \
             `potkantons` are wanted.
         :rtype: A :class:`list` of :class:`Postkanton`
         '''
@@ -610,10 +610,11 @@ class CrabGateway(object):
 
     def list_wegobjecten_by_straat(self, straat):
         '''
-        List all `wegobjecten` in a :class: `Straat`
-        :param integer straat: The Id of the Straat
-        OR :param object straat: An object of :class: `Straat`
-        :rtype: A :class:`list` of :class: `Wegobject`
+        List all `wegobjecten` in a :class:`Straat`
+ 
+        :param straat: The :class:`Straat` for which the `wegobjecten` \
+                are wanted.
+        :rtype: A :class:`list` of :class:`Wegobject`
         '''
         try:
             id = straat.id
@@ -671,10 +672,11 @@ class CrabGateway(object):
 
     def list_wegsegmenten_by_straat(self, straat):
         '''
-        List all `wegsegmenten` in a :class: `Straat`
-        :param integer straat: The Id of the Straat
-        OR :param object straat: An object of :class: `Straat`
-        :rtype: A :class:`list` of :class: `Wegsegment`
+        List all `wegsegmenten` in a :class:`Straat`
+
+        :param straat: The :class:`Straat` for which the `wegsegmenten` \
+                are wanted.
+        :rtype: A :class:`list` of :class:`Wegsegment`
         '''
         try:
             id = straat.id
@@ -702,10 +704,11 @@ class CrabGateway(object):
 
     def list_terreinobjecten_by_huisnummer(self, huisnummer):
         '''
-        List all `terreinobjecten` for a :class: `Huisnummer`
-        :param integer huisnummer: The Id of the Huisnummer
-        OR :param object huisnummer: An object of :class: `Huisnummer`
-        :rtype: A :class:`list` of :class: `Terreinobject`
+        List all `terreinobjecten` for a :class:`Huisnummer`
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `terreinobjecten` are wanted.
+        :rtype: A :class:`list` of :class:`Terreinobject`
         '''
         try:
             id = huisnummer.id
@@ -736,7 +739,7 @@ class CrabGateway(object):
         Retrieve a `Terreinobject` by the Id.
 
         :param integer id: the Id of the `Terreinobject`
-        :rtype: :class: `Terreinobject`
+        :rtype: :class:`Terreinobject`
         '''
         def creator():
             res = crab_gateway_request(
@@ -1133,18 +1136,35 @@ class Aardterreinobject(Codelijst):
 
 
 class Statushuisnummer(Codelijst):
-    pass
+    '''
+    The current state of a `huisnummer`.
+    '''
+    def __repr__(self):
+        return "Statushuisnummer(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Statussubadres(Codelijst):
-    pass
+    '''
+    The current state of a `subadres`.
+    '''
+    def __repr__(self):
+        return "Statussubadres(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Statusstraatnaam(Codelijst):
-    pass
+    '''
+    The current state of a `straatnaam`.
+    '''
+    def __repr__(self):
+        return "Statusstraatnaam(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Statuswegsegment(Codelijst):
+    '''
+    The current state of a `wegsegment`.
+    '''
+    def __repr__(self):
+        return "Statuswegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
     pass
 
 
@@ -1190,7 +1210,7 @@ class Straat(GatewayObject):
     '''
     A street.
 
-    A street object is always located in one and exactly one :class:`Gemeente`.
+    A street object is always located in one and exactly one :class:`Straat`.
     '''
     def __init__(
             self, id, label=None, status_id=None, straatnaam=None,
@@ -1269,7 +1289,7 @@ class Straat(GatewayObject):
 
 def check_lazy_load_huisnummer(f):
     '''
-    Decorator function to lazy load a :class: `Huisnummer`.
+    Decorator function to lazy load a :class:`Huisnummer`.
     '''
     def wrapper(*args):
         huisnummer = args[0]
@@ -1367,7 +1387,7 @@ class Huisnummer(GatewayObject):
 
 def check_lazy_load_postkanton(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Postkanton`.
     '''
     def wrapper(*args):
         postkanton = args[0]
@@ -1427,7 +1447,7 @@ class Postkanton(GatewayObject):
 
 def check_lazy_load_wegobject(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Wegobject`.
     '''
     def wrapper(*args):
         wegobject = args[0]
@@ -1499,7 +1519,7 @@ class Wegobject(GatewayObject):
 
 def check_lazy_load_wegsegment(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Wegsegment`.
     '''
     def wrapper(*args):
         wegsegment = args[0]
@@ -1574,7 +1594,7 @@ class Wegsegment(GatewayObject):
 
 def check_lazy_load_terreinobject(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Terreinobject`.
     '''
     def wrapper(*args):
         terreinobject = args[0]
