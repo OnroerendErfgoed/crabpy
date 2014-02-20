@@ -8,14 +8,6 @@ print res
 res = crab.service.ListPostkantonsByGemeenteId(71)
 print res
 
-res=crab_request(crab, 'ListGemeentenByGewestId', 1)
+res = crab_request(crab, 'ListGemeentenByGewestId', 1)
 print res
-
-
-
-
-    
-
-
-
 

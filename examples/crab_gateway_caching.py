@@ -5,9 +5,7 @@ This script demonstrates querying the crab gateway while maintaining a cache.
 
 import os
 
-from crabpy.client import crab_factory, crab_request
-
-
+from crabpy.client import crab_request, crab_factory
 from crabpy.gateway.crab import CrabGateway
 
 root = "./dogpile_data/"
@@ -16,28 +14,30 @@ if not os.path.exists(root):
     os.makedirs(root)
 
 g = CrabGateway(
-    crab,
-    cache_config = {
+    crab_factory(),
+    cache_config={
         'permanent.backend': 'dogpile.cache.dbm',
         'permanent.expiration_time': 604800,
-        'permanent.arguments.filename': os.path.join(root, 'capakey_permanent.dbm'),
+        'permanent.arguments.filename': os.path.join(root, 'crab_permanent.dbm'),
         'long.backend': 'dogpile.cache.dbm',
         'long.expiration_time': 86400,
-        'long.arguments.filename': os.path.join(root, 'capakey_long.dbm'),
+        'long.arguments.filename': os.path.join(root, 'crab_long.dbm')
     }
 )
 
-gent = g.get_gemeente_by_id(44021)
+aartselaar = g.get_gemeente_by_id(1)
 
-print 'Straten in Gent'
-print '------------------'
-
-print [str(a) for a in g.list_straten(gent)]
-
-print 'Huisnummers in GENT Straat1'
+print 'Straten in AARTSELAAR'
 print '---------------------'
-
-print [str(s) for s in g.list_huisnummers_by_straat(a)]
+s = g.list_straten(aartselaar)
+for i in range(0, 10):
+    print str(s[i])
+    
+print 'Huisnummers in AARTSELAAR Straat1'
+print '---------------------------------'
+h = g.list_huisnummers_by_straat(s[0])
+for i in range(0,10)
+    print str(h[i])
 
 
 p = g.get_gemeente_by_niscode(11001)
