@@ -104,7 +104,8 @@ class CrabGateway(object):
                 Gemeente(
                     r.GemeenteId,
                     r.GemeenteNaam,
-                    r.NISGemeenteCode
+                    r.NISGemeenteCode,
+                    Gewest(id)
                 )for r in res.GemeenteItem
             ]
         if self.caches['long'].is_configured:
@@ -114,6 +115,7 @@ class CrabGateway(object):
             gemeenten = creator()
         for g in gemeenten:
             g.set_gateway(self)
+            g.gewest.set_gateway(self)
         return gemeenten
 
     def get_gemeente_by_id(self, id):
@@ -952,7 +954,7 @@ class Gewest(GatewayObject):
 
 def check_lazy_load_gemeente(f):
     '''
-    Decorator function to lazy load a :class: `Gemeente`.
+    Decorator function to lazy load a :class:`Gemeente`.
     '''
     def wrapper(*args):
         gemeente = args[0]
