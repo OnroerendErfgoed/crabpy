@@ -1,7 +1,8 @@
-0.2.1 (??-??-2013)
+0.2.1 (21-02-2014)
 ------------------
 
 - Document how to connect to the services through a proxy.
+- Fix an incomplete release.
 
 0.2.0 (03-12-2013)
 ------------------
