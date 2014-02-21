@@ -104,8 +104,7 @@ class CrabGateway(object):
                 Gemeente(
                     r.GemeenteId,
                     r.GemeenteNaam,
-                    r.NISGemeenteCode,
-                    gateway=self
+                    r.NISGemeenteCode
                 )for r in res.GemeenteItem
             ]
         if self.caches['long'].is_configured:
