@@ -19,6 +19,16 @@ from dogpile.cache import make_region
 
 
 def crab_gateway_request(client, method, *args):
+    '''
+    Utility function that helps making requests to the CRAB service.
+
+    This is a specialised version of :func:`crabpy.client.crab_request` that
+    allows adding extra functionality for the calls made by the gateway.
+
+    :param client: A :class:`suds.client.Client` for the CRAB service.
+    :param string action: Which method to call, eg. `ListGewesten`
+    :returns: Result of the SOAP call.
+    '''
     try:
         return crab_request(client, method, *args)
     except WebFault as wf:
@@ -1169,18 +1179,26 @@ class Statuswegsegment(Codelijst):
 
 class Geometriemethodewegsegment(Codelijst):
     '''
-    The current state of a building.
+    The geometry method of a :class:`Wegsegment`.
     '''
     def __repr__(self):
-        return "Statuswegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return "Geometriemethodewegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Statusgebouw(Codelijst):
-    pass
+    '''
+    The current state of a :class:`Gebouw`.
+    '''
+    def __repr__(self):
+        return "Statusgebouw(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Geometriemethodegebouw(Codelijst):
-    pass
+    '''
+    The geometry method of a :class:`Gebouw`.
+    '''
+    def __repr__(self):
+        return "Geometriemethodegebouw(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Herkomstadrespositie(Codelijst):

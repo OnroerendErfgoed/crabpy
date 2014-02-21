@@ -18,6 +18,17 @@ from dogpile.cache import make_region
 
 
 def capakey_gateway_request(client, method, *args):
+    '''
+    Utility function that helps making requests to the CAPAKEY service.
+
+    This is a specialised version of :func:`crabpy.client.capakey_request` that
+    allows adding extra functionality like general error handling for the 
+    calls made by the gateway.
+
+    :param client: A :class:`suds.client.Client` for the CAPAKEY service.
+    :param string action: Which method to call, eg. `ListAdmGemeenten`.
+    :returns: Result of the SOAP call.
+    '''
     try:
         return capakey_request(client, method, *args)
     except WebFault as wf:

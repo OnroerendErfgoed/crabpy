@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
-This module contains utiltiy functions for interacting with AGIV SOAP services.
+This module contains utility functions for interacting with AGIV SOAP services.
 
 .. versionadded:: 0.1.0
 '''
@@ -64,7 +64,7 @@ def capakey_factory(**kwargs):
 
 def crab_request(client, action, *args):
     '''
-    Utility function that helps making requests tot the CRAB service.
+    Utility function that helps making requests to the CRAB service.
 
     :param client: A :class:`suds.client.Client` for the CRAB service.
     :param string action: Which method to call, eg. `ListGewesten`
