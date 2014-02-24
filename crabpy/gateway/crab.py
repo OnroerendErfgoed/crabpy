@@ -82,6 +82,25 @@ class CrabGateway(object):
             g.set_gateway(self)
         return gewesten
 
+    def get_gewest_by_id(self, id):
+        def creator():
+            nl = crab_gateway_request(
+                self.client, 'GetGewestByGewestIdAndTaalCode', id, 'nl'
+            )
+            return Gewest(
+                nl.GewestId,
+                nl.GewestNaam,
+                (nl.CenterX, nl.CenterY),
+                (nl.MinimumX, nl.MinimumY, nl.MaximumX, nl.MaximumY),
+            )
+        if self.caches['permanent'].is_configured:
+            key = 'GetGewestByGewestId#%s' % id
+            gewest = self.caches['long'].get_or_create(key, creator)
+        else:
+            gewest = creator()
+        gewest.set_gateway(self)
+        return gewest
+
     def list_gemeenten(self, gewest=2, sort=1):
         '''
         List all `gemeenten` in a `gewest`.
@@ -916,6 +935,23 @@ class GatewayObject(object):
             raise RuntimeError("There's no Gateway I can use")
 
 
+def check_lazy_load_gewest(f):
+    '''
+    Decorator function to lazy load a :class:`Gewest`.
+    '''
+    def wrapper(*args):
+        gewest = args[0]
+        if (
+            gewest._centroid is None or gewest._bounding_box is None 
+        ):
+            gewest.check_gateway()
+            g = gewest.gateway.get_gewest_by_id(gewest.id)
+            gewest._centroid = g._centroid
+            gewest._bounding_box = g._bounding_box
+        return f(*args)
+    return wrapper
+
+
 class Gewest(GatewayObject):
     '''
     A large administrative unit in Belgium.
@@ -924,16 +960,32 @@ class Gewest(GatewayObject):
     of the country.
     '''
     def __init__(
-        self, id, naam=None,
+        self,
+        id,
+        naam=None,
+        centroid=None,
+        bounding_box=None,
         **kwargs
     ):
         self.id = int(id)
         self._naam = naam
+        self._centroid = centroid
+        self._bounding_box = bounding_box
         super(Gewest, self).__init__(**kwargs)
 
     @property
     def naam(self):
         return self._naam
+
+    @property
+    @check_lazy_load_gewest
+    def centroid(self):
+        return self._centroid
+
+    @property
+    @check_lazy_load_gewest
+    def bounding_box(self):
+        return self._bounding_box
 
     @property
     def gemeenten(self):

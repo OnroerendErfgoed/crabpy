@@ -63,6 +63,13 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gewest)
 
+    def test_get_gewest_by_id(self):
+        res = self.crab.get_gewest_by_id(2)
+        self.assertIsInstance(res, Gewest)
+        self.assertEqual(res.id, 2)
+        self.assertIsInstance(res.centroid, tuple)
+        self.assertIsInstance(res.bounding_box, tuple)
+
     def test_list_gemeenten(self):
         res = self.crab.list_gemeenten()
         self.assertIsInstance(res, list)
