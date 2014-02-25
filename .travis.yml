@@ -7,4 +7,4 @@ install:
  - easy_install -U setuptools
  - python setup.py install
  - pip install nose nose-testconfig
-script: nosetests --tc-file nose_travis.ini
+script: nosetests --nologcapture --tc-file nose_travis.ini
