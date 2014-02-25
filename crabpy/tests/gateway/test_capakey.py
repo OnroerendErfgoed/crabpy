@@ -443,7 +443,10 @@ class PerceelTests(unittest.TestCase):
             )
 
 
-@unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+@unittest.skipUnless(
+    run_capakey_integration_tests(),
+    'No CAPAKEY Integration tests required'
+)
 class CapakeyCachedGatewayTests(unittest.TestCase):
 
     def setUp(self):
@@ -471,7 +474,7 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
     def test_cache_is_configured(self):
         from dogpile.cache.backends.memory import MemoryBackend
         self.assertIsInstance(
-            self.capakey.caches['permanent'].backend, 
+            self.capakey.caches['permanent'].backend,
             MemoryBackend
         )
         self.assertTrue(self.capakey.caches['permanent'].is_configured)

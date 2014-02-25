@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
-try:
-    import unittest2 as unittest
-except ImportError:  # pragma NO COVER
-    import unittest  # noqa
+import unittest
 
 from crabpy.client import (
     crab_factory,
