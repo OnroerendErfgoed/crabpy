@@ -77,14 +77,17 @@ class CapakeyGateway(object):
                 self.client, 'ListAdmGemeenten', sort
             )
             return [
-                Gemeente(r.Niscode, r.AdmGemeentenaam, gateway=self)
+                Gemeente(r.Niscode, r.AdmGemeentenaam)
                 for r in res.AdmGemeenteItem
             ]
         if self.caches['permanent'].is_configured:
             key = 'ListAdmGemeenten#%s' % sort
-            return self.caches['permanent'].get_or_create(key, creator)
+            gemeente = self.caches['permanent'].get_or_create(key, creator)
         else:
-            return creator()
+            gemeente = creator()
+        for g in gemeente:
+            g.set_gateway(self)
+        return gemeente
 
     def get_gemeente_by_id(self, id):
         '''
@@ -125,7 +128,7 @@ class CapakeyGateway(object):
                 Afdeling(
                     r.KadAfdelingcode,
                     r.KadAfdelingnaam,
-                    Gemeente(r.Niscode, gateway=self)
+                    Gemeente(r.Niscode)
                 ) for r in res.KadAfdelingItem]
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingen#%s' % sort
@@ -134,6 +137,7 @@ class CapakeyGateway(object):
             afdelingen = creator()
         for a in afdelingen:
             a.set_gateway(self)
+            a.gemeente.set_gateway(self)
         return afdelingen
 
     def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
@@ -681,6 +685,16 @@ class Perceel(GatewayObject):
     @check_lazy_load_perceel
     def bounding_box(self):
         return self._bounding_box
+        
+    @property
+    @check_lazy_load_perceel
+    def capatype(self):
+        return self._capatype
+        
+    @property
+    @check_lazy_load_perceel
+    def cashkey(self):
+        return self._cashkey
 
     def __str__(self):
         return self.capakey

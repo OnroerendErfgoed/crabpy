@@ -366,6 +366,8 @@ class PerceelTests(unittest.TestCase):
         )
         self.assertEqual(p.id, ('1154/02C000'))
         self.assertEqual(p.sectie.id, 'A')
+        self.assertEqual(p.capatype, 'capaty')
+        self.assertEqual(p.cashkey, 'cashkey')
         self.assertEqual(
             p.centroid,
             (104893.06375, 196022.244094)
@@ -407,6 +409,8 @@ class PerceelTests(unittest.TestCase):
         self.assertEqual(p.id, '1154/02C000')
         self.assertEqual(p.sectie.id, 'A')
         self.assertEqual(p.sectie.afdeling.id, 46013)
+        self.assertIsNotNone(p.capatype)
+        self.assertIsNotNone(p.cashkey)
         self.assertIsNotNone(p.centroid)
         self.assertIsNotNone(p.bounding_box)
 
@@ -439,7 +443,10 @@ class PerceelTests(unittest.TestCase):
             )
 
 
-@unittest.skipUnless(run_capakey_integration_tests(), 'No CAPAKEY Integration tests required')
+@unittest.skipUnless(
+    run_capakey_integration_tests(),
+    'No CAPAKEY Integration tests required'
+)
 class CapakeyCachedGatewayTests(unittest.TestCase):
 
     def setUp(self):

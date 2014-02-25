@@ -3,7 +3,6 @@ python:
  - "2.7"
  - "3.2"
  - "3.3"
-
 #before_install:
 # - sudo apt-get update
 # - sudo apt-get --reinstall install -qq language-pack-en language-pack-fr language-pack-nl
@@ -11,8 +10,4 @@ install:
  - easy_install -U setuptools
  - python setup.py install
  - pip install nose nose-testconfig
-
-
-script:
- - nosetests --nologcapture --tc-file nose_travis.ini
-
+script: nosetests --nologcapture --tc-file nose_travis.ini

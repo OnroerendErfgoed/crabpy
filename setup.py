@@ -5,17 +5,14 @@ import sys
 
 import crabpy
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 packages = [
     'crabpy',
 ]
 
 requires = [
-    'suds-jurko>=0.5.0',
+    'suds-jurko>=0.6.0',
     'dogpile.cache'
 ]
 
@@ -28,7 +25,7 @@ setup(
     author='Onroerend Erfgoed',
     author_email='ict@onroerenderfgoed.be',
     url='http://github.com/onroerenderfgoed/crabpy',
-    packages=packages,
+    packages=find_packages(),
     package_data={'': ['LICENSE']},
     package_dir={'crabpy': 'crabpy'},
     include_package_data=True,
