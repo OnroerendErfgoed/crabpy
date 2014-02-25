@@ -574,6 +574,8 @@ def check_lazy_load_perceel(f):
                 perceel.id,
                 perceel.sectie
             )
+            perceel._capatype = p._capatype
+            perceel._cashkey = p._cashkey
             perceel._centroid = p._centroid
             perceel._bounding_box = p._bounding_box
         return f(*args)
@@ -632,6 +634,16 @@ class Perceel(GatewayObject):
     @check_lazy_load_perceel
     def bounding_box(self):
         return self._bounding_box
+
+    @property
+    @check_lazy_load_perceel
+    def capatype(self):
+        return self._capatype
+
+    @property
+    @check_lazy_load_perceel
+    def cashkey(self):
+        return self._cashkey
 
     def __str__(self):
         return self.capakey
