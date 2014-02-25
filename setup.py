@@ -12,7 +12,7 @@ packages = [
 ]
 
 requires = [
-    'suds-jurko>=0.5.0',
+    'suds-jurko>=0.6.0',
     'dogpile.cache'
 ]
 
