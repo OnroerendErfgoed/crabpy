@@ -1236,16 +1236,13 @@ def check_lazy_load_straat(f):
     def wrapper(*args):
         straat = args[0]
         if (
-            straat._label is None or straat._namen is None or
-            straat._status_id is None or straat._gemeente_id is None or
-            straat._metadata is None
+            straat._namen is None or straat._gemeente_id 
+            is None or straat._metadata is None
         ):
             straat.check_gateway()
             s = straat.gateway.get_straat_by_id(straat.id)
-            straat._label = s._label
             straat._gemeente_id = s._gemeente_id
             straat._namen = s._namen
-            straat._status_id = s._status_id
             straat._metadata = s._metadata
         return f(*args)
     return wrapper

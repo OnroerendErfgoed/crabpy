@@ -507,7 +507,7 @@ class StraatTests(unittest.TestCase):
         self.assertEqual("Straat(1, 'Acacialaan', 3)", repr(s))
 
     def test_check_gateway_not_set(self):
-        s = Straat(1)
+        s = Straat(1, 'Acacialaan', 3)
         self.assertRaises(RuntimeError, s.check_gateway)
 
     @unittest.skipUnless(
