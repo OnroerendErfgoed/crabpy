@@ -560,8 +560,7 @@ class CrabGateway(object):
             )
             return[
                 Postkanton(
-                    r.PostkantonCode,
-                    id
+                    r.PostkantonCode
                 )for r in res.PostkantonItem
             ]
         if self.caches['long'].is_configured:
@@ -594,12 +593,7 @@ class CrabGateway(object):
                 self.client, 'GetPostkantonByHuisnummerId', id
             )
             return Postkanton(
-                res.PostkantonCode,
-                gemeente_id,
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                res.PostkantonCode
             )
         if self.caches['short'].is_configured:
             key = 'GetPostkantonByHuisnummerId#%s' % (id)
@@ -1463,58 +1457,15 @@ class Huisnummer(GatewayObject):
             return "Huisnummer(%s)" % (self.id)
 
 
-def check_lazy_load_postkanton(f):
-    '''
-    Decorator function to lazy load a :class:`Postkanton`.
-    '''
-    def wrapper(*args):
-        postkanton = args[0]
-        if postkanton._metadata is None:
-            postkanton.check_gateway()
-            p = postkanton.gateway.get_postkanton_by_huisnummer(postkanton.huisnummer)
-            postkanton._metadata = p._metadata
-        return f(*args)
-    return wrapper
-
-
 class Postkanton(GatewayObject):
     '''
     A postal code.
 
     Eg. postal code `9000` for the city of Ghent.
     '''
-    def __init__(
-        self, id, gemeente_id, datum=None, tijd=None,
-        bewerking_id=None, organisatie_id=None, **kwargs
-    ):
+    def __init__(self, id, **kwargs):
         self.id = int(id)
-        self._gemeente = Gemeente(gemeente_id)
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
         super(Postkanton, self).__init__(**kwargs)
-
-    @property
-    @check_lazy_load_postkanton
-    def metadata(self):
-        return self._metadata
-
-    @property
-    def gemeente(self):
-        return self._gemeente
-
-    @property
-    def huisnummer(self):
-        gemeente = self._gemeente
-        straat = self.gateway.list_straten(gemeente)[0]
-        huisnummer = self.gateway.list_huisnummers_by_straat(straat)[0]
-        return huisnummer
 
     def __str__(self):
         return "Postkanton %s" % (self.id)

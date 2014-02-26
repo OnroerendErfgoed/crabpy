@@ -70,14 +70,18 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res.centroid, tuple)
         self.assertIsInstance(res.bounding_box, tuple)
 
-    def test_list_gemeenten(self):
+    def test_list_gemeenten_default(self):
         res = self.crab.list_gemeenten()
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(res[0].gewest.id, 2)
+
+    def test_list_gemeenten_Vlaanderen(self):
         gewest = Gewest(2)
         res = self.crab.list_gemeenten(gewest)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(res[0].gewest.id, 2)
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
@@ -697,44 +701,9 @@ class HuisnummerTests(unittest.TestCase):
 class PostkantonTests(unittest.TestCase):
     def test_fully_initialised(self):
         p = Postkanton(
-            2630,
-            1,
-            '1830-01-01 00:00:00',
-
+            2630
         )
         self.assertEqual(p.id, 2630)
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
-        )
-        def test_fully_initialised2(self):
-            self.assertEqual(p.gemeente.id, 1)
-            self.assertEqual(p.metadata.begin_datum, '1830-01-01 00:00:00')
-            self.assertEqual(p.metadata.begin_tijd, '2002-08-13 16:37:33')
-            p.metadata.set_gateway(crab)
-            self.assertEqual(int(p.metadata.begin_bewerking.id), 1)
-            self.assertEqual(int(p.metadata.begin_organisatie.id), 7)
-            self.assertEqual('Postkanton 2630', str(p))
-            self.assertEqual('Postkanton(2630)', repr(p))
-
-    @unittest.skipUnless(
-        run_crab_integration_tests(),
-        'No CRAB Integration tests required'
-    )
-    def test_lazy_load(self):
-        crab = CrabGateway(
-            crab_factory()
-        )
-        p = Postkanton(2630, 1)
-        p.set_gateway(crab)
-        self.assertEqual(p.id, 2630)
-        self.assertEqual(p.gemeente.id, 1)
-        self.assertEqual(p.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual(p.metadata.begin_tijd, '2002-08-13 16:37:33')
-        p.metadata.set_gateway(crab)
-        self.assertEqual(int(p.metadata.begin_bewerking.id), 1)
-        self.assertEqual(int(p.metadata.begin_organisatie.id), 7)
 
 
 class WegobjectTests(unittest.TestCase):
@@ -1289,13 +1258,16 @@ class CrabCachedGatewayTests(unittest.TestCase):
             NO_VALUE
         )
 
-    def test_list_gemeenten(self):
+    def test_list_gemeenten_default_is_Vlaanderen(self):
         res = self.crab.list_gemeenten()
         self.assertIsInstance(res, list)
         self.assertEqual(
             self.crab.caches['permanent'].get('ListGemeentenByGewestId#21'),
             res
         )
+        self.assertEqual(res[0].gewest.id, 2)
+
+    def test_list_gemeenten_gewest_1(self):
         gewest = Gewest(1)
         r = self.crab.list_gemeenten(gewest)
         self.assertIsInstance(r, list)
@@ -1303,6 +1275,7 @@ class CrabCachedGatewayTests(unittest.TestCase):
             self.crab.caches['permanent'].get('ListGemeentenByGewestId#11'),
             r
         )
+        self.assertEqual(r[0].gewest.id, 1)
 
     def test_list_gemeenten_different_sort(self):
         res = self.crab.list_gemeenten(2, 1)
@@ -1318,6 +1291,7 @@ class CrabCachedGatewayTests(unittest.TestCase):
             self.crab.caches['permanent'].get('ListGemeentenByGewestId#22'),
             r
         )
+        self.assertNotEqual(res, r)
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
