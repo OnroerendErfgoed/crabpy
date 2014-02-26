@@ -127,9 +127,9 @@ class CrabGateway(object):
                     Gewest(id)
                 )for r in res.GemeenteItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['permanent'].is_configured:
             key = 'ListGemeentenByGewestId#%s%s' % (id, sort)
-            gemeenten = self.caches['long'].get_or_create(key, creator)
+            gemeenten = self.caches['permanent'].get_or_create(key, creator)
         else:
             gemeenten = creator()
         for g in gemeenten:
@@ -470,9 +470,9 @@ class CrabGateway(object):
                     r.Huisnummer
                 ) for r in res.HuisnummerWithStatusItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'ListHuisnummersWithStatusByStraatnaamId#%s%s' % (id, sort)
-            huisnummers = self.caches['long'].get_or_create(key, creator)
+            huisnummers = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummers = creator()
         for h in huisnummers:
@@ -500,9 +500,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetHuisnummerWithStatusByHuisnummerId#%s' % (id)
-            huisnummer = self.caches['long'].get_or_create(key, creator)
+            huisnummer = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummer = creator()
         huisnummer.set_gateway(self)
@@ -533,9 +533,9 @@ class CrabGateway(object):
                 res.Huisnummer,
                 res.StraatnaamId
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetHuisnummerWithStatusByHuisnummer#%s%s' % (nummer, straat_id)
-            huisnummer = self.caches['long'].get_or_create(key, creator)
+            huisnummer = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummer = creator()
         huisnummer.set_gateway(self)
@@ -601,9 +601,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetPostkantonByHuisnummerId#%s' % (id)
-            postkanton = self.caches['long'].get_or_create(key, creator)
+            postkanton = self.caches['short'].get_or_create(key, creator)
         else:
             postkanton = creator()
         postkanton.set_gateway(self)
@@ -630,9 +630,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetWegobjectByIdentificatorWegobject#%s' % (id)
-            wegobject = self.caches['long'].get_or_create(key, creator)
+            wegobject = self.caches['short'].get_or_create(key, creator)
         else:
             wegobject = creator()
         wegobject.set_gateway(self)
@@ -661,9 +661,9 @@ class CrabGateway(object):
                     r.AardWegobject
                 )for r in res.WegobjectItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'ListWegobjectenByStraatnaamId#%s' % (id)
-            wegobjecten = self.caches['long'].get_or_create(key, creator)
+            wegobjecten = self.caches['short'].get_or_create(key, creator)
         else:
             wegobjecten = creator()
         for r in wegobjecten:
@@ -692,9 +692,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetWegsegmentByIdentificatorWegsegment#%s' % (id)
-            wegsegment = self.caches['long'].get_or_create(key, creator)
+            wegsegment = self.caches['short'].get_or_create(key, creator)
         else:
             wegsegment = creator()
         wegsegment.set_gateway(self)
@@ -723,9 +723,9 @@ class CrabGateway(object):
                     r.StatusWegsegment
                 )for r in res.WegsegmentItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'ListWegsegmentenByStraatnaamId#%s' % (id)
-            wegsegmenten = self.caches['long'].get_or_create(key, creator)
+            wegsegmenten = self.caches['short'].get_or_create(key, creator)
         else:
             wegsegmenten = creator()
         for r in wegsegmenten:
@@ -755,9 +755,9 @@ class CrabGateway(object):
                     r.AardTerreinobject
                 )for r in res.TerreinobjectItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'ListTerreinobjectenByHuisnummerId#%s' % (id)
-            terreinobjecten = self.caches['long'].get_or_create(key, creator)
+            terreinobjecten = self.caches['short'].get_or_create(key, creator)
         else:
             terreinobjecten = creator()
         for r in terreinobjecten:
@@ -786,9 +786,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetTerreinobjectByIdentificatorTerreinobject#%s' % (id)
-            terreinobject = self.caches['long'].get_or_create(key, creator)
+            terreinobject = self.caches['short'].get_or_create(key, creator)
         else:
             terreinobject = creator()
         terreinobject.set_gateway(self)
@@ -816,9 +816,9 @@ class CrabGateway(object):
                     r.IdentificatorPerceel
                 )for r in res.PerceelItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'ListPercelenByHuisnummerId#%s' % (id)
-            percelen = self.caches['long'].get_or_create(key, creator)
+            percelen = self.caches['short'].get_or_create(key, creator)
         else:
             percelen = creator()
         for r in percelen:
@@ -844,9 +844,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetPerceelByIdentificatorPerceel#%s' % (id)
-            perceel = self.caches['long'].get_or_create(key, creator)
+            perceel = self.caches['short'].get_or_create(key, creator)
         else:
             perceel = creator()
         perceel.set_gateway(self)
@@ -876,9 +876,9 @@ class CrabGateway(object):
                     r.StatusGebouw
                 )for r in res.GebouwItem
             ]
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'ListGebouwenByHuisnummerId#%s' % (id)
-            gebouwen = self.caches['long'].get_or_create(key, creator)
+            gebouwen = self.caches['short'].get_or_create(key, creator)
         else:
             gebouwen = creator()
         for r in gebouwen:
@@ -907,9 +907,9 @@ class CrabGateway(object):
                 res.BeginBewerking,
                 res.BeginOrganisatie
             )
-        if self.caches['long'].is_configured:
+        if self.caches['short'].is_configured:
             key = 'GetGebouwByIdentificatorGebouw#%s' % (id)
-            gebouw = self.caches['long'].get_or_create(key, creator)
+            gebouw = self.caches['short'].get_or_create(key, creator)
         else:
             gebouw = creator()
         return gebouw
