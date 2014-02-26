@@ -1005,16 +1005,11 @@ def check_lazy_load_gemeente(f):
     def wrapper(*args):
         gemeente = args[0]
         if (
-            gemeente._naam is None or gemeente._centroid is None or
-            gemeente._bounding_box is None or gemeente._niscode is None or
-            gemeente._gewest_id is None or gemeente._taal_id is None or
-            gemeente._metadata is None
+            gemeente._centroid is None or gemeente._bounding_box is None 
+            or gemeente._taal_id is None or gemeente._metadata is None
         ):
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
-            gemeente._naam = g._naam
-            gemeente._niscode = g._niscode
-            gemeente._gewest_id = g._gewest_id
             gemeente._taal_id = g._taal_id
             gemeente._centroid = g._centroid
             gemeente._bounding_box = g._bounding_box
@@ -1028,15 +1023,15 @@ class Gemeente(GatewayObject):
     The smallest administrative unit in Belgium.
     '''
     def __init__(
-            self, id, naam=None, niscode=None,
-            gewest_id=None, taal_id=None, centroid=None,
+            self, id, naam, niscode, gewest,
+            taal_id=None, centroid=None,
             bounding_box=None, datum=None, tijd=None,
             bewerking_id=None, organisatie_id=None, **kwargs
     ):
         self.id = int(id)
-        self._naam = naam
-        self._niscode = niscode
-        self._gewest_id = gewest_id
+        self.naam = naam
+        self.niscode = niscode
+        self.gewest  = gewest
         self._taal_id = taal_id
         self._centroid = centroid
         self._bounding_box = bounding_box
@@ -1053,29 +1048,13 @@ class Gemeente(GatewayObject):
 
     @property
     @check_lazy_load_gemeente
-    def naam(self):
-        return self._naam
-
-    @property
-    @check_lazy_load_gemeente
-    def niscode(self):
-        return self._niscode
-
-    @property
-    @check_lazy_load_gemeente
-    def gewest(self):
-        res = self.gateway.list_gewesten()
-        for r in res:
-            if int(r.id) == int(self._gewest_id):
-                return r
-
-    @property
-    @check_lazy_load_gemeente
     def taal(self):
-        res = self.gateway.list_talen()
-        for r in res:
-            if r.id == self._taal_id:
-                return r
+        if self._taal is None:
+            talen = self.gateway.list_talen()
+            for taal in talen:
+                if taal.id == self._taal_id:
+                    self._taal = taal
+        return self._taal
 
     @property
     @check_lazy_load_gemeente
@@ -1103,16 +1082,10 @@ class Gemeente(GatewayObject):
         return self.gateway.list_postkantons_by_gemeente(self.id)
 
     def __str__(self):
-        if self._naam is not None:
-            return "%s (%s)" % (self._naam, self.id)
-        else:
-            return "Gemeente %s" % (self.id)
+        return "%s (%s)" % (self.naam, self.id)
 
     def __repr__(self):
-        if self._naam is not None:
-            return "Gemeente(%s, '%s')" % (self.id, self._naam)
-        else:
-            return "Gemeente(%s)" % (self.id)
+        return "Gemeente(%s, '%s', %s)" % (self.id, self.naam, self.niscode)
 
 
 class Codelijst(GatewayObject):
@@ -1285,14 +1258,14 @@ class Straat(GatewayObject):
     A street object is always located in one and exactly one :class:`Straat`.
     '''
     def __init__(
-            self, id, label=None, status_id=None, straatnaam=None,
+            self, id, label, status, straatnaam=None,
             taalcode=None, straatnaam2=None, taalcode2=None,
             gemeente_id=None, begin_datum=None, begin_tijd=None,
             begin_bewerking_id=None, begin_organisatie_id=None, **kwargs
     ):
         self.id = id
-        self._label = label
-        self._status_id = status_id
+        self.label = label
+        self._status_id = status
         self._namen = ((straatnaam, taalcode), (straatnaam2, taalcode2))
         self._gemeente_id = gemeente_id
         if (
@@ -1310,11 +1283,6 @@ class Straat(GatewayObject):
 
     @property
     @check_lazy_load_straat
-    def label(self):
-        return self._label
-
-    @property
-    @check_lazy_load_straat
     def namen(self):
         return self._namen
 
@@ -1326,10 +1294,12 @@ class Straat(GatewayObject):
     @property
     @check_lazy_load_straat
     def status(self):
-        res = self.gateway.list_statusstraatnamen()
-        for r in res:
-            if int(r.id) == int(self._status_id):
-                return r
+        if self._status is None:
+            res = self.gateway.list_statusstraatnamen()
+            for status in res:
+                if int(status.id) == int(self._status_id):
+                    self._status = status
+        return self._status
 
     @property
     @check_lazy_load_straat
@@ -1347,16 +1317,10 @@ class Straat(GatewayObject):
         return self.gemeente.taal
 
     def __str__(self):
-        if self._label is not None:
-            return "%s (%s)" % (self._label, self.id)
-        else:
-            return "Straat %s" % (self.id)
+        return "%s (%s)" % (self.label, self.id)
 
     def __repr__(self):
-        if self._label is not None:
-            return "Straat(%s, '%s')" % (self.id, self._label)
-        else:
-            return "Straat(%s)" % (self.id)
+        return "Straat(%s, '%s', %s)" % (self.id, self.label, self._status_id)
 
 
 def check_lazy_load_huisnummer(f):
@@ -1387,12 +1351,17 @@ class Huisnummer(GatewayObject):
     This is mainly a combination of a street and a house number.
     '''
     def __init__(
-            self, id, status_id=None, huisnummer=None,
+            self, id, status=None, huisnummer=None,
             straat_id=None, datum=None, tijd=None,
             bewerking_id=None, organisatie_id=None, **kwargs
     ):
         self.id = int(id)
-        self._status_id = status_id
+        try:
+            self._status_id = status.id
+            self._status = status
+        except:
+            self._status_id = status
+            self._status = None
         self._huisnummer = huisnummer
         self._straat_id = straat_id
         if (
@@ -1425,10 +1394,12 @@ class Huisnummer(GatewayObject):
     @property
     @check_lazy_load_huisnummer
     def status(self):
-        res = self.gateway.list_statushuisnummers()
-        for r in res:
-            if int(r.id) == int(self._status_id):
-                return r
+        if self._status is None:
+            res = self.gateway.list_statushuisnummers()
+            for status in res:
+                if int(status.id) == int(self._status_id):
+                    self._status = status
+        return self._status
 
     @property
     def postkanton(self):
@@ -1856,24 +1827,40 @@ class Metadata(GatewayObject):
     '''
     def __init__(
         self, begin_datum, begin_tijd,
-        begin_bewerking_id, begin_organisatie_id
+        begin_bewerking, begin_organisatie
     ):
         self.begin_datum = str(begin_datum)
         self.begin_tijd = str(begin_tijd)
-        self._begin_bewerking_id = begin_bewerking_id
-        self._begin_organisatie_id = begin_organisatie_id
+        try:
+            self._begin_bewerking_id = begin_bewerking.id
+            self._begin_bewerking = begin_bewerking
+        except AttributeError:
+            self._begin_bewerking_id = begin_bewerking
+            self._begin_bewerking = None
+        try:
+            self._begin_organisatie_id = begin_organisatie.id
+            self._begin_organisatie = begin_organisatie
+        except AttributeError:
+            self._begin_organisatie_id = begin_organisatie
+            self._begin_organisatie = None
+
 
     @property
     def begin_bewerking(self):
-        self.check_gateway()
-        res = self.gateway.list_bewerkingen()
-        for r in res:
-            if int(r.id) == int(self._begin_bewerking_id):
-                return r
+        if self._begin_bewerking is None:
+            self.check_gateway()
+            bewerkingen = self.gateway.list_bewerkingen()
+            for bewerking in bewerkingen:
+                if int(bewerking.id) == int(self._begin_bewerking_id):
+                    self._begin_bewerking = bewerking
+        return self._begin_bewerking
 
     @property
     def begin_organisatie(self):
-        res = self.gateway.list_organisaties()
-        for r in res:
-            if int(r.id) == int(self._begin_organisatie_id):
-                return r
+        if self._begin_organisatie is None:
+            self.check_gateway()
+            organisaties = self.gateway.list_organisaties()
+            for organisatie in organisaties:
+                if int(organisatie.id) == int(self._begin_organisatie_id):
+                    self._begin_organisatie = organisatie
+        return self._begin_organisatie

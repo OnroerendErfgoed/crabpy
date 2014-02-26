@@ -345,14 +345,14 @@ class GemeenteTests(unittest.TestCase):
             1,
             'Aartselaar',
             11001,
-            2,
+            Gewest(2),
             'nl',
             (150881.07, 202256.84),
             (148950.36, 199938.28, 152811.77, 204575.39),
             '1830-01-01 00:00:00',
             '2002-08-13 17:32:32',
-            1,
-            6
+            Bewerking(1,'',''),
+            Organisatie(6,'','')
         )
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
@@ -362,29 +362,22 @@ class GemeenteTests(unittest.TestCase):
             g.bounding_box,
             (148950.36, 199938.28, 152811.77, 204575.39)
         )
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
-        )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(g.gewest.id), 2)
-            self.assertEqual(g.taal.id, 'nl')
-            self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
-            self.assertEqual(g.metadata.begin_tijd, '2002-08-13 17:32:32')
-            g.metadata.set_gateway(crab)
-            self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
-            self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
-            self.assertEqual('Aartselaar (1)', str(g))
-            self.assertEqual("Gemeente(1, 'Aartselaar')", repr(g))
+        self.assertEqual(int(g.gewest.id), 2)
+        self.assertEqual(g._taal_id, 'nl')
+        self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(g.metadata.begin_tijd, '2002-08-13 17:32:32')
+        self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+        self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
+        self.assertEqual('Aartselaar (1)', str(g))
+        self.assertEqual("Gemeente(1, 'Aartselaar', 11001)", repr(g))
 
     def test_str_and_repr_dont_lazy_load(self):
-        g = Gemeente(1)
-        self.assertEqual('Gemeente 1', str(g))
-        self.assertEqual('Gemeente(1)', repr(g))
+        g = Gemeente(1, 'Aartselaar', 11001, Gewest(2))
+        self.assertEqual('Aartselaar (1)', str(g))
+        self.assertEqual("Gemeente(1, 'Aartselaar', 11001)", repr(g))
 
     def test_check_gateway_not_set(self):
-        g = Gemeente(1)
+        g = Gemeente(1, 'Aartselaar', 11001, Gewest(2))
         self.assertRaises(RuntimeError, g.check_gateway)
 
     @unittest.skipUnless(
@@ -509,9 +502,9 @@ class StraatTests(unittest.TestCase):
         self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
 
     def test_str_and_repr_dont_lazy_load(self):
-        s = Straat(1)
-        self.assertEqual('Straat 1', str(s))
-        self.assertEqual('Straat(1)', repr(s))
+        s = Straat(1, 'Acacialaan', 3)
+        self.assertEqual('Acacialaan (1)', str(s))
+        self.assertEqual("Straat(1, 'Acacialaan', 3)", repr(s))
 
     def test_check_gateway_not_set(self):
         s = Straat(1)
