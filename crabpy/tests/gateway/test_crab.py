@@ -388,7 +388,7 @@ class GemeenteTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gemeente(1)
+        g = Gemeente(1, 'Aartselaar', 11001, Gewest(2))
         g.set_gateway(crab)
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
@@ -414,7 +414,7 @@ class GemeenteTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gemeente(1)
+        g = Gemeente(1, 'Aartselaar', 11001, 3)
         g.set_gateway(crab)
         straten = g.straten
         self.assertIsInstance(straten, list)
@@ -427,7 +427,7 @@ class GemeenteTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gemeente(1)
+        g = Gemeente(1, 'Aartselaar', 11001, 3)
         g.set_gateway(crab)
         postkanton = g.postkantons
         self.assertIsInstance(postkanton, list)
@@ -450,35 +450,28 @@ class StraatTests(unittest.TestCase):
         s = Straat(
             1,
             'Acacialaan',
+            1,
             3,
             'Acacialaan', 'nl', None, None,
-            1,
             '1830-01-01 00:00:00',
             '2013-04-12 20:07:25.960000',
-            3,
-            1,
+            Bewerking(3,'',''),
+            Organisatie(1,'','')
         )
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
         self.assertEqual(s.namen, (('Acacialaan', 'nl'), (None, None)))
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+        self.assertEqual(int(s.status_id), 3)
+        self.assertEqual(int(s.gemeente_id), 1)
+        self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(
+            s.metadata.begin_tijd,
+            '2013-04-12 20:07:25.960000'
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(s.status.id), 3)
-            self.assertEqual(int(s.gemeente.id), 1)
-            self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
-            self.assertEqual(
-                s.metadata.begin_tijd,
-                '2013-04-12 20:07:25.960000'
-            )
-            s.metadata.set_gateway(crab)
-            self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
-            self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
-            self.assertEqual('Acacialaan (1)', str(s))
-            self.assertEqual("Straat(1, 'Acacialaan')", repr(s))
+        self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
+        self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
+        self.assertEqual('Acacialaan (1)', str(s))
+        self.assertEqual("Straat(1, 'Acacialaan', 1, 3)", repr(s))
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
@@ -488,7 +481,7 @@ class StraatTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        s = Straat(1)
+        s = Straat(1, 'Acacialaan', 1, 3)
         s.set_gateway(crab)
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
@@ -502,12 +495,12 @@ class StraatTests(unittest.TestCase):
         self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
 
     def test_str_and_repr_dont_lazy_load(self):
-        s = Straat(1, 'Acacialaan', 3)
+        s = Straat(1, 'Acacialaan', 1, 3)
         self.assertEqual('Acacialaan (1)', str(s))
-        self.assertEqual("Straat(1, 'Acacialaan', 3)", repr(s))
+        self.assertEqual("Straat(1, 'Acacialaan', 1, 3)", repr(s))
 
     def test_check_gateway_not_set(self):
-        s = Straat(1, 'Acacialaan', 3)
+        s = Straat(1, 'Acacialaan', 1, 3)
         self.assertRaises(RuntimeError, s.check_gateway)
 
     @unittest.skipUnless(
@@ -518,7 +511,7 @@ class StraatTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        s = Straat(1)
+        s = Straat(1, 'Acacialaan', 1, 3)
         s.set_gateway(crab)
         huisnummers = s.huisnummers
         self.assertIsInstance(huisnummers, list)
@@ -531,7 +524,7 @@ class StraatTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        s = Straat(1)
+        s = Straat(1, 'Acacialaan', 1, 3)
         s.set_gateway(crab)
         taal = s.taal
         self.assertIsInstance(taal, Taal)
@@ -545,7 +538,7 @@ class StraatTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        s = Straat(1)
+        s = Straat(1, 'Acacialaan', 1, 3)
         s.set_gateway(crab)
         gemeente = s.gemeente
         self.assertIsInstance(gemeente, Gemeente)
@@ -558,7 +551,7 @@ class StraatTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        s = Straat(1)
+        s = Straat(1, 'Acacialaan', 1, 3)
         s.set_gateway(crab)
         status = s.status
         self.assertIsInstance(status, Statusstraatnaam)

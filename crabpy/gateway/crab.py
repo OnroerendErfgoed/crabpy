@@ -399,6 +399,7 @@ class CrabGateway(object):
                 Straat(
                     r.StraatnaamId,
                     r.StraatnaamLabel,
+                    id,
                     r.StatusStraatnaam
                 )for r in res.StraatnaamWithStatusItem
             ]
@@ -425,12 +426,12 @@ class CrabGateway(object):
             return Straat(
                 res.StraatnaamId,
                 res.StraatnaamLabel,
+                res.GemeenteId,
                 res.StatusStraatnaam,
                 res.Straatnaam,
                 res.TaalCode,
                 res.StraatnaamTweedeTaal,
                 res.TaalCodeTweedeTaal,
-                res.GemeenteId,
                 res.BeginDatum,
                 res.BeginTijd,
                 res.BeginBewerking,
@@ -1024,7 +1025,7 @@ class Gemeente(GatewayObject):
     '''
     def __init__(
             self, id, naam, niscode, gewest,
-            taal_id=None, centroid=None,
+            taal=None, centroid=None,
             bounding_box=None, datum=None, tijd=None,
             bewerking_id=None, organisatie_id=None, **kwargs
     ):
@@ -1032,7 +1033,12 @@ class Gemeente(GatewayObject):
         self.naam = naam
         self.niscode = niscode
         self.gewest  = gewest
-        self._taal_id = taal_id
+        try:
+            self._taal_id = taal.id
+            self._taal = taal
+        except AttributeError:
+            self._taal_id = taal
+            self._taal = None
         self._centroid = centroid
         self._bounding_box = bounding_box
         if (
@@ -1236,12 +1242,10 @@ def check_lazy_load_straat(f):
     def wrapper(*args):
         straat = args[0]
         if (
-            straat._namen is None or straat._gemeente_id 
-            is None or straat._metadata is None
+            straat._namen is None or straat._metadata is None
         ):
             straat.check_gateway()
             s = straat.gateway.get_straat_by_id(straat.id)
-            straat._gemeente_id = s._gemeente_id
             straat._namen = s._namen
             straat._metadata = s._metadata
         return f(*args)
@@ -1252,19 +1256,25 @@ class Straat(GatewayObject):
     '''
     A street.
 
-    A street object is always located in one and exactly one :class:`Straat`.
+    A street object is always located in one and exactly one :class:`Gemeente`.
     '''
     def __init__(
-            self, id, label, status, straatnaam=None,
-            taalcode=None, straatnaam2=None, taalcode2=None,
-            gemeente_id=None, begin_datum=None, begin_tijd=None,
+            self, id, label, gemeente_id, status,
+            straatnaam=None, taalcode=None, 
+            straatnaam2=None, taalcode2=None,
+            begin_datum=None, begin_tijd=None,
             begin_bewerking_id=None, begin_organisatie_id=None, **kwargs
     ):
         self.id = id
         self.label = label
-        self._status_id = status
+        try:
+            self.status_id = status.id
+            self._status = status
+        except:
+            self.status_id = status
+            self._status = None
         self._namen = ((straatnaam, taalcode), (straatnaam2, taalcode2))
-        self._gemeente_id = gemeente_id
+        self.gemeente_id = gemeente_id
         if (
             begin_datum is not None and begin_tijd is not None and
             begin_bewerking_id is not None and
@@ -1286,7 +1296,7 @@ class Straat(GatewayObject):
     @property
     @check_lazy_load_straat
     def gemeente(self):
-        return self.gateway.get_gemeente_by_id(self._gemeente_id)
+        return self.gateway.get_gemeente_by_id(self.gemeente_id)
 
     @property
     @check_lazy_load_straat
@@ -1294,7 +1304,7 @@ class Straat(GatewayObject):
         if self._status is None:
             res = self.gateway.list_statusstraatnamen()
             for status in res:
-                if int(status.id) == int(self._status_id):
+                if int(status.id) == int(self.status_id):
                     self._status = status
         return self._status
 
@@ -1317,7 +1327,7 @@ class Straat(GatewayObject):
         return "%s (%s)" % (self.label, self.id)
 
     def __repr__(self):
-        return "Straat(%s, '%s', %s)" % (self.id, self.label, self._status_id)
+        return "Straat(%s, '%s', %s, %s)" % (self.id, self.label, self.gemeente_id, self.status_id)
 
 
 def check_lazy_load_huisnummer(f):
