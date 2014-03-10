@@ -1,6 +1,13 @@
+0.3.0 (??-??-2014)
+------------------
+
 0.2.1 (21-02-2014)
 ------------------
 
+- Added a :class:`Gateway <crabpy.gateway.crab.CrabGateway>` for the 
+  Crab webservice.
+- Added caching to the Crab Gateway using 
+  `Dogpile <https://bitbucket.org/zzzeek/dogpile.cache>`_
 - Document how to connect to the services through a proxy.
 - Fix an incomplete release.
 

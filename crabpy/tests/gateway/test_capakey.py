@@ -457,7 +457,7 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         )
         self.capakey = CapakeyGateway(
             self.capakey_client,
-            cache_config = {
+            cache_config={
                 'permanent.backend': 'dogpile.cache.memory',
                 'permanent.expiration_time': 86400,
                 'long.backend': 'dogpile.cache.memory',
