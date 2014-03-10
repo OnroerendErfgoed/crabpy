@@ -1440,13 +1440,12 @@ def check_lazy_load_wegobject(f):
     def wrapper(*args):
         wegobject = args[0]
         if (
-            wegobject._aard_id is None or wegobject._centroid is None or
+            wegobject._centroid is None or
             wegobject._bounding_box is None or
             wegobject._metadata is None
         ):
             wegobject.check_gateway()
             w = wegobject.gateway.get_wegobject_by_id(wegobject.id)
-            wegobject._aard_id = w._aard_id
             wegobject._centroid = w._centroid
             wegobject._bounding_box = w._bounding_box
             wegobject._metadata = w._metadata
@@ -1456,12 +1455,17 @@ def check_lazy_load_wegobject(f):
 
 class Wegobject(GatewayObject):
     def __init__(
-        self, id, aard_id=None, centroid=None,
+        self, id, aard, centroid=None,
         bounding_box=None, datum=None, tijd=None,
         bewerking_id=None, organisatie_id=None,  **kwargs
     ):
         self.id = id
-        self._aard_id = aard_id
+        try:
+            self.aard_id = aard.id
+            self._aard = aard
+        except AttributeError:
+            self.aard_id = aard
+            self._aard = None
         self._centroid = centroid
         self._bounding_box = bounding_box
         if (
@@ -1478,10 +1482,12 @@ class Wegobject(GatewayObject):
     @property
     @check_lazy_load_wegobject
     def aard(self):
-        res = self.gateway.list_aardwegobjecten()
-        for r in res:
-            if int(r.id) == int(self._aard_id):
-                return r
+        if self._aard is None:
+            res = self.gateway.list_aardwegobjecten()
+            for aard in res:
+                if int(aard.id) == int(self.aard_id):
+                    self._aard = aard
+        return self._aard
 
     @property
     @check_lazy_load_wegobject
