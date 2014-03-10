@@ -587,9 +587,6 @@ class CrabGateway(object):
             id = huisnummer
 
         def creator():
-            huisnummer = Huisnummer(id)
-            huisnummer.set_gateway(self)
-            gemeente_id = huisnummer.straat.gemeente.id
             res = crab_gateway_request(
                 self.client, 'GetPostkantonByHuisnummerId', id
             )
@@ -1294,7 +1291,6 @@ class Straat(GatewayObject):
         return self._namen
 
     @property
-    @check_lazy_load_straat
     def gemeente(self):
         return self.gateway.get_gemeente_by_id(self.gemeente_id)
 
