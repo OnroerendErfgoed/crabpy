@@ -348,8 +348,8 @@ class GemeenteTests(unittest.TestCase):
             (148950.36, 199938.28, 152811.77, 204575.39),
             '1830-01-01 00:00:00',
             '2002-08-13 17:32:32',
-            Bewerking(1,'',''),
-            Organisatie(6,'','')
+            Bewerking(1, '', ''),
+            Organisatie(6, '', '')
         )
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
@@ -452,8 +452,8 @@ class StraatTests(unittest.TestCase):
             'Acacialaan', 'nl', None, None,
             '1830-01-01 00:00:00',
             '2013-04-12 20:07:25.960000',
-            Bewerking(3,'',''),
-            Organisatie(1,'','')
+            Bewerking(3, '', ''),
+            Organisatie(1, '', '')
         )
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
@@ -563,8 +563,8 @@ class HuisnummerTests(unittest.TestCase):
             17718,
             '1830-01-01 00:00:00',
             '2011-04-29 13:27:40.230000',
-            Bewerking(1,'',''),
-            Organisatie(5,'','')
+            Bewerking(1, '', ''),
+            Organisatie(5, '', '')
         )
         self.assertEqual(h.id, 1)
         self.assertEqual(h.huisnummer, "51")
@@ -691,8 +691,8 @@ class WegobjectTests(unittest.TestCase):
             (150693.58, 200080.56, 150813.35, 200216.27),
             '1830-01-01 00:00:00',
             '2008-04-17 16:32:11.753000',
-            Bewerking(1,'',''),
-            Organisatie(8,'','')
+            Bewerking(1, '', ''),
+            Organisatie(8, '', '')
         )
         self.assertEqual(w.id, "53839893")
         self.assertEqual(w.centroid, (150753.46, 200148.41))
@@ -782,8 +782,8 @@ class WegsegmentTests(unittest.TestCase):
  150548.592075631 200754.511565369)""",
             '1830-01-01 00:00:00',
             '2013-04-12 20:12:12.687000',
-            Bewerking(3,'',''),
-            Organisatie(1,'','')
+            Bewerking(3, '', ''),
+            Organisatie(1, '', '')
         )
         self.assertEqual(w.id, "108724")
         self.assertEqual(
@@ -810,7 +810,7 @@ class WegsegmentTests(unittest.TestCase):
  150543.214411631 200773.35943738,\
  150546.079307631 200764.489805374,\
  150548.592075631 200754.511565369)"""
-            )
+        )
         self.assertEqual(int(w.status_id), 4)
         self.assertEqual(int(w._methode_id), 3)
         self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
@@ -902,8 +902,8 @@ class TerreinobjectTests(unittest.TestCase):
             (190700.24, 224649.87, 190716.95, 224701.7),
             '1998-01-01 00:00:00',
             '2009-09-11 12:46:55.693000',
-            Bewerking(3,'',''),
-            Organisatie(3,'','')
+            Bewerking(3, '', ''),
+            Organisatie(3, '', '')
         )
         self.assertEqual(t.id, "13040_C_1747_G_002_00")
         self.assertEqual(t.centroid, (190708.59, 224667.59))
@@ -930,7 +930,7 @@ class TerreinobjectTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        t = Terreinobject("13040_C_1747_G_002_00",1)
+        t = Terreinobject("13040_C_1747_G_002_00", 1)
         t.set_gateway(crab)
         self.assertEqual(t.id, "13040_C_1747_G_002_00")
         self.assertEqual(t.centroid, (190708.59, 224667.59))
@@ -966,8 +966,8 @@ class PerceelTests(unittest.TestCase):
             (190708.59, 224667.59),
             '1998-01-01 00:00:00',
             '2009-09-11 12:46:55.693000',
-            Bewerking(3,'',''),
-            Organisatie(3,'','')
+            Bewerking(3, '', ''),
+            Organisatie(3, '', '')
         )
         self.assertEqual(p.id, "13040C1747/00G002")
         self.assertEqual(p.centroid, (190708.59, 224667.59))
@@ -1130,8 +1130,8 @@ class MetadataTests(unittest.TestCase):
         m = Metadata(
             '1830-01-01 00:00:00',
             '2003-12-06 21:42:11.117000',
-            Bewerking(1,'',''),
-            Organisatie(6,'','')
+            Bewerking(1, '', ''),
+            Organisatie(6, '', '')
         )
         self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
@@ -1498,7 +1498,9 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_geometriemethodewegsegmenten()
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGeometriemethodeWegsegmenten#1'),
+            self.crab
+                .caches['permanent']
+                .get('ListGeometriemethodeWegsegmenten#1'),
             res
         )
 
@@ -1506,12 +1508,16 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_geometriemethodewegsegmenten(2)
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGeometriemethodeWegsegmenten#2'),
+            self.crab
+                .caches['permanent']
+                .get('ListGeometriemethodeWegsegmenten#2'),
             res
         )
         from dogpile.cache.api import NO_VALUE
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGeometriemethodeWegsegmenten#1'),
+            self.crab
+                .caches['permanent']
+                .get('ListGeometriemethodeWegsegmenten#1'),
             NO_VALUE
         )
 
@@ -1519,7 +1525,9 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_statusgebouwen()
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListStatusGebouwen#1'),
+            self.crab
+                .caches['permanent']
+                .get('ListStatusGebouwen#1'),
             res
         )
 
@@ -1540,7 +1548,9 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_geometriemethodegebouwen()
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGeometriemethodeGebouwen#1'),
+            self.crab
+                .caches['permanent']
+                .get('ListGeometriemethodeGebouwen#1'),
             res
         )
 
@@ -1548,12 +1558,16 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_geometriemethodegebouwen(2)
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGeometriemethodeGebouwen#2'),
+            self.crab
+                .caches['permanent']
+                .get('ListGeometriemethodeGebouwen#2'),
             res
         )
         from dogpile.cache.api import NO_VALUE
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGeometriemethodeGebouwen#1'),
+            self.crab
+                .caches['permanent']
+                .get('ListGeometriemethodeGebouwen#1'),
             NO_VALUE
         )
 
