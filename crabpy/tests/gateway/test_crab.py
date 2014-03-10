@@ -1130,19 +1130,33 @@ class MetadataTests(unittest.TestCase):
         m = Metadata(
             '1830-01-01 00:00:00',
             '2003-12-06 21:42:11.117000',
-            1,
-            6
+            Bewerking(1,'',''),
+            Organisatie(6,'','')
         )
         self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
+        self.assertEqual(int(m.begin_bewerking.id), 1)
+        self.assertEqual(int(m.begin_organisatie.id), 6)
 
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_lazy_load(self):
+        crab = CrabGateway(
+            crab_factory()
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(m.begin_bewerking.id), 1)
-            self.assertEqual(int(m.begin_organisatie.id), 6)
+        m = Metadata(
+            '1830-01-01 00:00:00',
+            '2003-12-06 21:42:11.117000',
+            1,
+            6,
+            gateway=crab
+        )
+        self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
+        self.assertEqual(int(m.begin_bewerking.id), 1)
+        self.assertEqual(int(m.begin_organisatie.id), 6)
 
 
 @unittest.skipUnless(

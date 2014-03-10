@@ -1629,7 +1629,7 @@ class Terreinobject(GatewayObject):
     def __init__(
         self, id, aard, centroid=None,
         bounding_box=None, datum=None, tijd=None,
-        bewerking_id=None, organisatie_id=None,  **kwargs
+        bewerking_id=None, organisatie_id=None, **kwargs
     ):
         self.id = id
         try:
@@ -1649,6 +1649,7 @@ class Terreinobject(GatewayObject):
         else:
             self._metadata = None
         self._bounding_box = bounding_box
+        super(Terreinobject, self).__init__(**kwargs)
 
     @property
     def aard(self):
@@ -1854,7 +1855,8 @@ class Metadata(GatewayObject):
     '''
     def __init__(
         self, begin_datum, begin_tijd,
-        begin_bewerking, begin_organisatie
+        begin_bewerking, begin_organisatie,
+        **kwargs
     ):
         self.begin_datum = str(begin_datum)
         self.begin_tijd = str(begin_tijd)
@@ -1870,6 +1872,7 @@ class Metadata(GatewayObject):
         except AttributeError:
             self._begin_organisatie_id = begin_organisatie
             self._begin_organisatie = None
+        super(Metadata, self).__init__(**kwargs)
 
 
     @property
