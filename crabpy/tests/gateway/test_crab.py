@@ -1036,22 +1036,16 @@ class GebouwTests(unittest.TestCase):
  190712.36432739347 224668.5216938965))""",
             '1830-01-01 00:00:00',
             '2011-05-19 10:51:09.483000',
-            1,
-            5
+            Bewerking(1, '', ''),
+            Organisatie(5, '', '')
         )
         self.assertEqual(g.id, 1538575)
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
-        )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(g.aard.id), 1)
-            self.assertEqual(int(g.status.id), 4)
-            self.assertEqual(int(g.methode.id), 3)
-            self.assertEqual(
-                g.geometrie,
-                """POLYGON ((190712.36432739347 224668.5216938965,\
+        self.assertEqual(int(g.aard_id), 1)
+        self.assertEqual(int(g.status_id), 4)
+        self.assertEqual(int(g._methode_id), 3)
+        self.assertEqual(
+            g.geometrie,
+            """POLYGON ((190712.36432739347 224668.5216938965,\
  190706.26007138938 224667.54428589717,\
  190706.03594338894 224668.89276589826,\
  190704.89699938893 224668.66159789637,\
@@ -1060,20 +1054,19 @@ class GebouwTests(unittest.TestCase):
  190717.16349539906 224653.81065388769,\
  190713.40490339696 224663.38582189381,\
  190712.36432739347 224668.5216938965))"""
-            )
-            self.assertEqual(
-                g.metadata.begin_datum,
-                '1830-01-01 00:00:00'
-            )
-            self.assertEqual(
-                g.metadata.begin_tijd,
-                '2011-05-19 10:51:09.483000'
-            )
-            g.metadata.set_gateway(crab)
-            self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
-            self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
-            self.assertEqual('Gebouw 1538575', str(g))
-            self.assertEqual('Gebouw(1538575)', repr(g))
+        )
+        self.assertEqual(
+            g.metadata.begin_datum,
+            '1830-01-01 00:00:00'
+        )
+        self.assertEqual(
+            g.metadata.begin_tijd,
+            '2011-05-19 10:51:09.483000'
+        )
+        self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+        self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
+        self.assertEqual('Gebouw 1538575', str(g))
+        self.assertEqual('Gebouw(1538575)', repr(g))
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
@@ -1083,7 +1076,7 @@ class GebouwTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gebouw("1538575")
+        g = Gebouw("1538575", 1, 4)
         g.set_gateway(crab)
         self.assertEqual(g.id, 1538575)
         self.assertEqual(int(g.aard.id), 1)
@@ -1115,7 +1108,7 @@ class GebouwTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gebouw("1538575")
+        g = Gebouw("1538575", 1, 4)
         g.set_gateway(crab)
         aard = g.aard
         self.assertIsInstance(aard, Aardgebouw)
@@ -1128,7 +1121,7 @@ class GebouwTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gebouw("1538575")
+        g = Gebouw("1538575", 1, 4)
         g.set_gateway(crab)
         status = g.status
         self.assertIsInstance(status, Statusgebouw)
@@ -1141,7 +1134,7 @@ class GebouwTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gebouw("1538575")
+        g = Gebouw("1538575", 1, 4)
         g.set_gateway(crab)
         methode = g.methode
         self.assertIsInstance(methode, Geometriemethodegebouw)

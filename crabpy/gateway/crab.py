@@ -1742,14 +1742,11 @@ def check_lazy_load_gebouw(f):
     def wrapper(*args):
         gebouw = args[0]
         if (
-            gebouw._aard_id is None or gebouw._status_id is None or
             gebouw._methode_id is None or gebouw._geometrie is None or
             gebouw._metadata is None
         ):
             gebouw.check_gateway()
             g = gebouw.gateway.get_gebouw_by_id(gebouw.id)
-            gebouw._aard_id = g._aard_id
-            gebouw._status_id = g._status_id
             gebouw._methode_id = g._methode_id
             gebouw._geometrie = g._geometrie
             gebouw._metadata = g._metadata
@@ -1762,14 +1759,29 @@ class Gebouw(GatewayObject):
     A building.
     '''
     def __init__(
-        self, id, aard_id=None, status_id=None,
-        methode_id=None, geometrie=None, datum=None,
+        self, id, aard, status,
+        methode=None, geometrie=None, datum=None,
         tijd=None, bewerking_id=None, organisatie_id=None, **kwargs
     ):
         self.id = int(id)
-        self._aard_id = aard_id
-        self._status_id = status_id
-        self._methode_id = methode_id
+        try:
+            self.aard_id = aard.id
+            self._aard = aard
+        except:
+            self.aard_id = aard
+            self._aard = None
+        try:
+            self.status_id = status.id
+            self._status = status
+        except:
+            self.status_id = status
+            self._status = None
+        try:
+            self._methode_id = methode.id
+            self._methode = methode
+        except:
+            self._methode_id = methode
+            self._methode = None
         self._geometrie = geometrie
         if (
             datum is not None and tijd is not None and bewerking_id
@@ -1783,29 +1795,34 @@ class Gebouw(GatewayObject):
         super(Gebouw, self).__init__(**kwargs)
 
     @property
-    @check_lazy_load_gebouw
     def aard(self):
-        self.check_gateway()
-        res = self.gateway.list_aardgebouwen()
-        for r in res:
-            if int(r.id) == int(self._aard_id):
-                return r
+        if self._aard is None:
+            self.check_gateway()
+            res = self.gateway.list_aardgebouwen()
+            for aard in res:
+                if int(aard.id) == int(self.aard_id):
+                    self._aard = aard
+        return self._aard
 
     @property
-    @check_lazy_load_gebouw
     def status(self):
-        res = self.gateway.list_statusgebouwen()
-        for r in res:
-            if int(r.id) == int(self._status_id):
-                return r
+        if self._status is None:
+            self.check_gateway()
+            res = self.gateway.list_statusgebouwen()
+            for status in res:
+                if int(status.id) == int(self.status_id):
+                    self._status = status
+        return self._status
 
     @property
     @check_lazy_load_gebouw
     def methode(self):
-        res = self.gateway.list_geometriemethodegebouwen()
-        for r in res:
-            if int(r.id) == int(self._methode_id):
-                return r
+        if self._methode is None:
+            res = self.gateway.list_geometriemethodegebouwen()
+            for methode in res:
+                if int(methode.id) == int(self._methode_id):
+                    self._methode = methode
+        return self._methode
 
     @property
     @check_lazy_load_gebouw
