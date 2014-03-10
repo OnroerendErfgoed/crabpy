@@ -305,7 +305,7 @@ class GewestTests(unittest.TestCase):
 
     def test_fully_initialised(self):
         g = Gewest(
-            2, 
+            2,
             {'nl': 'Vlaams gewest', 'fr': 'Région Flamande'},
             (138165.09, 189297.53),
             (22279.17, 153050.23, 258873.3, 244022.31)

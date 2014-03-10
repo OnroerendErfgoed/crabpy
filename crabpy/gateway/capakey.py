@@ -22,7 +22,7 @@ def capakey_gateway_request(client, method, *args):
     Utility function that helps making requests to the CAPAKEY service.
 
     This is a specialised version of :func:`crabpy.client.capakey_request` that
-    allows adding extra functionality like general error handling for the 
+    allows adding extra functionality like general error handling for the
     calls made by the gateway.
 
     :param client: A :class:`suds.client.Client` for the CAPAKEY service.
@@ -685,12 +685,12 @@ class Perceel(GatewayObject):
     @check_lazy_load_perceel
     def bounding_box(self):
         return self._bounding_box
-        
+
     @property
     @check_lazy_load_perceel
     def capatype(self):
         return self._capatype
-        
+
     @property
     @check_lazy_load_perceel
     def cashkey(self):

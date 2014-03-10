@@ -17,8 +17,6 @@ from suds.wsse import UsernameToken, wssens, wsuns
 
 from suds.sax.element import Element
 
-from suds.sax.date import DateTime
-
 
 class UsernameDigestToken(UsernameToken):
     """
@@ -28,7 +26,7 @@ class UsernameDigestToken(UsernameToken):
     def __init__(self, username=None, password=None):
         UsernameToken.__init__(
             self,
-            username, 
+            username,
             password
         )
         utc = UsernameToken.utc()
@@ -75,11 +73,14 @@ class UsernameDigestToken(UsernameToken):
                              'oasis-200401-wss-username-token-profile-1.0'
                              '#PasswordDigest')
         usernametoken.append(password)
-        
+
         nonce = Element('Nonce', ns=wssens)
         nonce.setText(b64encode(self.nonce).decode('utf-8'))
-        nonce.set('EncodingType', 'http://docs.oasis-open.org/wss/2004'
-            '/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary')
+        nonce.set(
+            'EncodingType',
+            'http://docs.oasis-open.org/wss/2004'
+            '/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary'
+        )
         usernametoken.append(nonce)
 
         created = Element('Created', ns=wsuns)

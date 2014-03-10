@@ -10,7 +10,7 @@ class GatewayException(Exception):
     '''
     A base exception.
     '''
-    
+
     def __init__(self, message):
         self.message = message
 

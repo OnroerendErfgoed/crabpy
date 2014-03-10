@@ -6,7 +6,7 @@ from crabpy.wsse import UsernameDigestToken
 
 from base64 import b64encode
 
-from suds.wsse import wssens, wsuns
+from suds.wsse import wssens
 
 from suds.sax.element import Element
 

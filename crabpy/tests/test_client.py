@@ -54,6 +54,7 @@ class CrabClientTests(unittest.TestCase):
     )
     def test_list_gemeenten(self):
         res = self.crab.service.ListGemeentenByGewestId(2)
+        self.assertGreater(0, len(res))
 
 
 @unittest.skipUnless(
@@ -87,3 +88,4 @@ class CapakeyClientTests(unittest.TestCase):
 
     def test_list_gemeenten(self):
         res = capakey_request(self.capakey, 'ListAdmGemeenten', 1)
+        self.assertGreater(0, len(res))

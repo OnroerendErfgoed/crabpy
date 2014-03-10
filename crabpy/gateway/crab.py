@@ -1886,7 +1886,6 @@ class Metadata(GatewayObject):
             self._begin_organisatie = None
         super(Metadata, self).__init__(**kwargs)
 
-
     @property
     def begin_bewerking(self):
         if self._begin_bewerking is None:
