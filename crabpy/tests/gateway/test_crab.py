@@ -966,30 +966,23 @@ class PerceelTests(unittest.TestCase):
             (190708.59, 224667.59),
             '1998-01-01 00:00:00',
             '2009-09-11 12:46:55.693000',
-            3,
-            3
+            Bewerking(3,'',''),
+            Organisatie(3,'','')
         )
         self.assertEqual(p.id, "13040C1747/00G002")
         self.assertEqual(p.centroid, (190708.59, 224667.59))
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+        self.assertEqual(
+            p.metadata.begin_datum,
+            '1998-01-01 00:00:00'
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(
-                p.metadata.begin_datum,
-                '1998-01-01 00:00:00'
-            )
-            self.assertEqual(
-                p.metadata.begin_tijd,
-                '2009-09-11 12:46:55.693000'
-            )
-            p.metadata.set_gateway(crab)
-            self.assertEqual(int(p.metadata.begin_bewerking.id), 3)
-            self.assertEqual(int(p.metadata.begin_organisatie.id), 3)
-            self.assertEqual('Perceel 13040C1747/00G002', str(p))
-            self.assertEqual('Perceel(13040C1747/00G002)', repr(p))
+        self.assertEqual(
+            p.metadata.begin_tijd,
+            '2009-09-11 12:46:55.693000'
+        )
+        self.assertEqual(int(p.metadata.begin_bewerking.id), 3)
+        self.assertEqual(int(p.metadata.begin_organisatie.id), 3)
+        self.assertEqual('Perceel 13040C1747/00G002', str(p))
+        self.assertEqual('Perceel(13040C1747/00G002)', repr(p))
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
