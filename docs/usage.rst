@@ -60,6 +60,7 @@ by passing the proxy parameter to the :func:`crabpy.client.crab_factory` or
 
 
 .. literalinclude:: /../examples/crab_proxy.py
+   :language: python
 
 
 Using the CRAB gateway
@@ -69,6 +70,7 @@ To make life easier and carab more pythonic, we've also implemented a gateway
 that abstracts some more of the service and provides richer objects as responses.
 
 .. literalinclude:: /../examples/crab_gateway.py
+   :language: python
 
 The crab supports caching through the dogpile_ caching library. Caching can
 be added by passing a configuration dictionary to the :class:`CrabGateway`.
@@ -81,7 +83,7 @@ Two caching regions will be configured:
   eg. `list_gemeenten`.
 
 .. literalinclude:: /../examples/crab_gateway_caching.py
-
+   :language: python
 
 
 
@@ -92,6 +94,7 @@ To make life easier and capakey more pythonic, we've also implemented a gateway
 that abstracts some more of the service and provides richer objects as responses.
 
 .. literalinclude:: /../examples/capakey_gateway.py
+   :language: python
 
 The capakey supports caching through the dogpile_ caching library. Caching can
 be added by passing a configuration dictionary to the :class:`CapakeyGateway`.
@@ -110,7 +113,7 @@ suspect that the database underlying the capakey service is not updated that
 regularly, so a short caching duration could easily be one hour or even a day.
 
 .. literalinclude:: /../examples/capakey_gateway_caching.py
-
+   :language: python
 
 
 
