@@ -67,11 +67,16 @@ class CrabGateway(object):
         '''
         def creator():
             res = crab_gateway_request(self.client, 'ListGewesten', sort)
+            tmp = {}
+            for r in res.GewestItem:
+                if r.GewestId not in tmp:
+                    tmp[r.GewestId] = {}
+                tmp[r.GewestId][r.TaalCodeGewestNaam] = r.GewestNaam
             return[
                 Gewest(
-                    r.GewestId,
-                    r.GewestNaam
-                )for r in res.GewestItem
+                    k,
+                    v
+                )for k, v in tmp.items()
             ]
         if self.caches['permanent'].is_configured:
             key = 'ListGewesten#%s' % sort
@@ -87,9 +92,15 @@ class CrabGateway(object):
             nl = crab_gateway_request(
                 self.client, 'GetGewestByGewestIdAndTaalCode', id, 'nl'
             )
+            fr = crab_gateway_request(
+                self.client, 'GetGewestByGewestIdAndTaalCode', id, 'fr'
+            )
+            de = crab_gateway_request(
+                self.client, 'GetGewestByGewestIdAndTaalCode', id, 'de'
+            )
             return Gewest(
                 nl.GewestId,
-                nl.GewestNaam,
+                {'nl': nl.GewestNaam, 'fr': fr.GewestNaam, 'de': de.GewestNaam},
                 (nl.CenterX, nl.CenterY),
                 (nl.MinimumX, nl.MinimumY, nl.MaximumX, nl.MaximumY),
             )
@@ -935,10 +946,13 @@ def check_lazy_load_gewest(f):
     def wrapper(*args):
         gewest = args[0]
         if (
-            gewest._centroid is None or gewest._bounding_box is None 
+            gewest._namen is None or
+            gewest._centroid is None or 
+            gewest._bounding_box is None 
         ):
             gewest.check_gateway()
             g = gewest.gateway.get_gewest_by_id(gewest.id)
+            gewest._namen = g._namen
             gewest._centroid = g._centroid
             gewest._bounding_box = g._bounding_box
         return f(*args)
@@ -955,20 +969,21 @@ class Gewest(GatewayObject):
     def __init__(
         self,
         id,
-        naam=None,
+        namen=None,
         centroid=None,
         bounding_box=None,
         **kwargs
     ):
         self.id = int(id)
-        self._naam = naam
+        self._namen = namen
         self._centroid = centroid
         self._bounding_box = bounding_box
         super(Gewest, self).__init__(**kwargs)
 
     @property
+    @check_lazy_load_gewest
     def naam(self):
-        return self._naam
+        return self._namen['nl']
 
     @property
     @check_lazy_load_gewest
@@ -985,16 +1000,13 @@ class Gewest(GatewayObject):
         return self.gateway.list_gemeenten(self.id)
 
     def __str__(self):
-        if self.naam is not None:
-            return "%s (%s)" % (self._naam, self.id)
+        if self._namen is not None:
+            return "%s (%s)" % (self.naam, self.id)
         else:
             return "Gewest %s" % (self.id)
 
     def __repr__(self):
-        if self.naam is not None:
-            return"Gewest(%s, '%s')" % (self.id, self._naam)
-        else:
-            return "Gewest(%s)" % (self.id)
+        return "Gewest(%s)" % (self.id)
 
 
 def check_lazy_load_gemeente(f):

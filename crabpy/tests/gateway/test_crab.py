@@ -305,12 +305,15 @@ class GewestTests(unittest.TestCase):
 
     def test_fully_initialised(self):
         g = Gewest(
-            2, 'Vlaams'
+            2, 
+            {'nl': 'Vlaams gewest', 'fr': 'Région Flamande'},
+            (138165.09, 189297.53),
+            (22279.17, 153050.23, 258873.3, 244022.31)
         )
         self.assertEqual(g.id, 2)
-        self.assertEqual(g.naam, 'Vlaams')
-        self.assertEqual('Vlaams (2)', str(g))
-        self.assertEqual("Gewest(2, 'Vlaams')", repr(g))
+        self.assertEqual(g.naam, 'Vlaams gewest')
+        self.assertEqual('Vlaams gewest (2)', str(g))
+        self.assertEqual("Gewest(2)", repr(g))
 
     def test_str_and_repr_dont_lazy_load(self):
         g = Gewest(2)
