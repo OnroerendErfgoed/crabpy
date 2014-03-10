@@ -691,8 +691,8 @@ class WegobjectTests(unittest.TestCase):
             (150693.58, 200080.56, 150813.35, 200216.27),
             '1830-01-01 00:00:00',
             '2008-04-17 16:32:11.753000',
-            1,
-            8
+            Bewerking(1,'',''),
+            Organisatie(8,'','')
         )
         self.assertEqual(w.id, "53839893")
         self.assertEqual(w.centroid, (150753.46, 200148.41))
@@ -700,26 +700,19 @@ class WegobjectTests(unittest.TestCase):
             w.bounding_box,
             (150693.58, 200080.56, 150813.35, 200216.27)
         )
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+        self.assertEqual(int(w.aard_id), 4)
+        self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(
+            w.metadata.begin_tijd,
+            '2008-04-17 16:32:11.753000'
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(w.aard.id), 4)
-            self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
-            self.assertEqual(
-                w.metadata.begin_tijd,
-                '2008-04-17 16:32:11.753000'
-            )
-            w.metadata.set_gateway(crab)
-            self.assertEqual(int(w.metadata.begin_bewerking.id), 1)
-            self.assertEqual(int(w.metadata.begin_organisatie.id), 8)
-            self.assertEqual('Wegobject 53839893', str(w))
-            self.assertEqual('Wegobject(53839893)', repr(w))
+        self.assertEqual(int(w.metadata.begin_bewerking.id), 1)
+        self.assertEqual(int(w.metadata.begin_organisatie.id), 8)
+        self.assertEqual('Wegobject 53839893', str(w))
+        self.assertEqual('Wegobject(53839893)', repr(w))
 
     def test_check_gateway_not_set(self):
-        w = Wegobject(1)
+        w = Wegobject(1, 4)
         self.assertRaises(RuntimeError, w.check_gateway)
 
     @unittest.skipUnless(
@@ -730,7 +723,7 @@ class WegobjectTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        w = Wegobject("53839893")
+        w = Wegobject("53839893", 4)
         w.set_gateway(crab)
         aard = w.aard
         self.assertIsInstance(aard, Aardwegobject)
@@ -743,7 +736,7 @@ class WegobjectTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        w = Wegobject("53839893")
+        w = Wegobject("53839893", 4)
         w.set_gateway(crab)
         self.assertEqual(w.id, "53839893")
         self.assertEqual(int(w.aard.id), 4)
