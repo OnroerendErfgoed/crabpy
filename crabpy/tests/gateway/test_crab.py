@@ -2,10 +2,7 @@
 
 from __future__ import unicode_literals
 
-try:
-    import unittest2 as unittest
-except ImportError:  # pragma NO COVER
-    import unittest  # noqa
+import unittest
 
 from crabpy.client import (
     crab_factory
@@ -799,8 +796,8 @@ class WegsegmentTests(unittest.TestCase):
  150548.592075631 200754.511565369)""",
             '1830-01-01 00:00:00',
             '2013-04-12 20:12:12.687000',
-            3,
-            1
+            Bewerking(3,'',''),
+            Organisatie(1,'','')
         )
         self.assertEqual(w.id, "108724")
         self.assertEqual(
@@ -828,27 +825,20 @@ class WegsegmentTests(unittest.TestCase):
  150546.079307631 200764.489805374,\
  150548.592075631 200754.511565369)"""
             )
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+        self.assertEqual(int(w.status_id), 4)
+        self.assertEqual(int(w._methode_id), 3)
+        self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(
+            w.metadata.begin_tijd,
+            '2013-04-12 20:12:12.687000'
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(w.status.id), 4)
-            self.assertEqual(int(w.methode.id), 3)
-            self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
-            self.assertEqual(
-                w.metadata.begin_tijd,
-                '2013-04-12 20:12:12.687000'
-            )
-            w.metadata.set_gateway(crab)
-            self.assertEqual(int(w.metadata.begin_bewerking.id), 3)
-            self.assertEqual(int(w.metadata.begin_organisatie.id), 1)
-            self.assertEqual('Wegsegment 108724', str(w))
-            self.assertEqual('Wegsegment(108724)', repr(w))
+        self.assertEqual(int(w.metadata.begin_bewerking.id), 3)
+        self.assertEqual(int(w.metadata.begin_organisatie.id), 1)
+        self.assertEqual('Wegsegment 108724', str(w))
+        self.assertEqual('Wegsegment(108724)', repr(w))
 
     def test_check_gateway_not_set(self):
-        w = Wegsegment(1)
+        w = Wegsegment(1, 4)
         self.assertRaises(RuntimeError, w.check_gateway)
 
     @unittest.skipUnless(
@@ -859,7 +849,7 @@ class WegsegmentTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        w = Wegsegment('108724')
+        w = Wegsegment('108724', 4)
         w.set_gateway(crab)
         status = w.status
         self.assertIsInstance(status, Statuswegsegment)
@@ -872,7 +862,7 @@ class WegsegmentTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        w = Wegsegment('108724')
+        w = Wegsegment('108724', 4)
         w.set_gateway(crab)
         methode = w.methode
         self.assertIsInstance(methode, Geometriemethodewegsegment)
@@ -885,7 +875,7 @@ class WegsegmentTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        w = Wegsegment('108724')
+        w = Wegsegment('108724', 4)
         w.set_gateway(crab)
         self.assertEqual(w.id, "108724")
         self.assertEqual(int(w.status.id), 4)

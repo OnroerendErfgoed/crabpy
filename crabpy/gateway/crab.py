@@ -1299,7 +1299,6 @@ class Straat(GatewayObject):
         return self.gateway.get_gemeente_by_id(self.gemeente_id)
 
     @property
-    @check_lazy_load_straat
     def status(self):
         if self._status is None:
             res = self.gateway.list_statusstraatnamen()
@@ -1531,13 +1530,12 @@ def check_lazy_load_wegsegment(f):
     def wrapper(*args):
         wegsegment = args[0]
         if (
-            wegsegment._status_id is None or wegsegment._methode_id
-            is None or wegsegment._geometrie is None or
+            wegsegment._methode_id is None or 
+            wegsegment._geometrie is None or
             wegsegment._metadata is None
         ):
             wegsegment.check_gateway()
             w = wegsegment.gateway.get_wegsegment_by_id(wegsegment.id)
-            wegsegment._status_id = w._status_id
             wegsegment._methode_id = w._methode_id
             wegsegment._geometrie = w._geometrie
             wegsegment._metadata = w._metadata
@@ -1547,13 +1545,23 @@ def check_lazy_load_wegsegment(f):
 
 class Wegsegment(GatewayObject):
     def __init__(
-        self, id, status_id=None, methode_id=None,
+        self, id, status, methode=None,
         geometrie=None, datum=None, tijd=None,
         bewerking_id=None, organisatie_id=None, **kwargs
     ):
         self.id = id
-        self._status_id = status_id
-        self._methode_id = methode_id
+        try:
+            self.status_id = status.id
+            self._status = status
+        except:
+            self.status_id = status
+            self._status = None
+        try:
+            self._methode_id = methode.id
+            self._methode = methode
+        except:
+            self._methode_id = methode
+            self._methode = None
         self._geometrie = geometrie
         if (
             datum is not None and tijd is not None and
@@ -1567,20 +1575,23 @@ class Wegsegment(GatewayObject):
         super(Wegsegment, self).__init__(**kwargs)
 
     @property
-    @check_lazy_load_wegsegment
     def status(self):
-        res = self.gateway.list_statuswegsegmenten()
-        for r in res:
-            if int(r.id) == int(self._status_id):
-                return r
+        if self._status is None:
+            res = self.gateway.list_statuswegsegmenten()
+            for status in res:
+                if int(status.id) == int(self.status_id):
+                    self._status = status
+        return self._status
 
     @property
     @check_lazy_load_wegsegment
     def methode(self):
-        res = self.gateway.list_geometriemethodewegsegmenten()
-        for r in res:
-            if int(r.id) == int(self._methode_id):
-                return r
+        if self._methode is None:
+            res = self.gateway.list_geometriemethodewegsegmenten()
+            for methode in res:
+                if int(methode.id) == int(self._methode_id):
+                    self._methode = methode
+        return self._methode
 
     @property
     @check_lazy_load_wegsegment
