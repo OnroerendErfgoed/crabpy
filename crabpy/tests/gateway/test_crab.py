@@ -563,33 +563,26 @@ class HuisnummerTests(unittest.TestCase):
             17718,
             '1830-01-01 00:00:00',
             '2011-04-29 13:27:40.230000',
-            1,
-            5
+            Bewerking(1,'',''),
+            Organisatie(5,'','')
         )
         self.assertEqual(h.id, 1)
         self.assertEqual(h.huisnummer, "51")
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+        self.assertEqual(int(h.status_id), 3)
+        self.assertEqual(int(h.straat_id), 17718)
+        self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(
+            h.metadata.begin_tijd,
+            '2011-04-29 13:27:40.230000'
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(h.status.id), 3)
-            self.assertEqual(int(h.straat.id), 17718)
-            self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
-            self.assertEqual(
-                h.metadata.begin_tijd,
-                '2011-04-29 13:27:40.230000'
-            )
-            h.metadata.set_gateway(crab)
-            self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
-            self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
-            self.assertEqual('Steenweg op Oosthoven 51', str(h))
-            self.assertEqual('Huisnummer(1)', repr(h))
+        self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
+        self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
+        self.assertEqual('51 (1)', str(h))
+        self.assertEqual("Huisnummer(1, 3, '51', 17718)", repr(h))
 
     def test_str_dont_lazy_load(self):
-        h = Huisnummer(1)
-        self.assertEqual('Huisnummer 1', str(h))
+        h = Huisnummer(1, 3, '51', 17718)
+        self.assertEqual('51 (1)', str(h))
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
@@ -599,7 +592,7 @@ class HuisnummerTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         h.set_gateway(crab)
         self.assertEqual(h.id, 1)
         self.assertEqual(int(h.status.id), 3)
@@ -619,7 +612,7 @@ class HuisnummerTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         h.set_gateway(crab)
         postkanton = h.postkanton
         self.assertIsInstance(postkanton, Postkanton)
@@ -632,7 +625,7 @@ class HuisnummerTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         h.set_gateway(crab)
         terreinobjecten = h.terreinobjecten
         self.assertIsInstance(terreinobjecten, list)
@@ -645,7 +638,7 @@ class HuisnummerTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         h.set_gateway(crab)
         percelen = h.percelen
         self.assertIsInstance(percelen, list)
@@ -658,7 +651,7 @@ class HuisnummerTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         h.set_gateway(crab)
         gebouwen = h.gebouwen
         self.assertIsInstance(gebouwen, list)
@@ -671,13 +664,13 @@ class HuisnummerTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         h.set_gateway(crab)
         status = h.status
         self.assertIsInstance(status, Statushuisnummer)
 
     def test_check_gateway_not_set(self):
-        h = Huisnummer(1)
+        h = Huisnummer(1, 3, '51', 17718)
         self.assertRaises(RuntimeError, h.check_gateway)
 
 

@@ -468,7 +468,8 @@ class CrabGateway(object):
                 Huisnummer(
                     r.HuisnummerId,
                     r.StatusHuisnummer,
-                    r.Huisnummer
+                    r.Huisnummer,
+                    id
                 ) for r in res.HuisnummerWithStatusItem
             ]
         if self.caches['short'].is_configured:
@@ -1332,15 +1333,10 @@ def check_lazy_load_huisnummer(f):
     def wrapper(*args):
         huisnummer = args[0]
         if (
-            huisnummer._straat_id is None or huisnummer._huisnummer
-            is None or huisnummer._status_id is None or
             huisnummer._metadata is None
         ):
             huisnummer.check_gateway()
             h = huisnummer.gateway.get_huisnummer_by_id(huisnummer.id)
-            huisnummer._straat_id = h._straat_id
-            huisnummer._huisnummer = h._huisnummer
-            huisnummer._status_id = h._status_id
             huisnummer._metadata = h._metadata
         return f(*args)
     return wrapper
@@ -1353,19 +1349,19 @@ class Huisnummer(GatewayObject):
     This is mainly a combination of a street and a house number.
     '''
     def __init__(
-            self, id, status=None, huisnummer=None,
-            straat_id=None, datum=None, tijd=None,
+            self, id, status, huisnummer, straat_id, 
+            datum=None, tijd=None,
             bewerking_id=None, organisatie_id=None, **kwargs
     ):
         self.id = int(id)
         try:
-            self._status_id = status.id
+            self.status_id = status.id
             self._status = status
-        except:
-            self._status_id = status
+        except AttributeError:
+            self.status_id = status
             self._status = None
-        self._huisnummer = huisnummer
-        self._straat_id = straat_id
+        self.huisnummer = huisnummer
+        self.straat_id = straat_id
         if (
             datum is not None and tijd is not None and
             bewerking_id is not None and organisatie_id is not None
@@ -1378,15 +1374,9 @@ class Huisnummer(GatewayObject):
         super(Huisnummer, self).__init__(**kwargs)
 
     @property
-    @check_lazy_load_huisnummer
     def straat(self):
-        res = self.gateway.get_straat_by_id(self._straat_id)
-        return res
-
-    @property
-    @check_lazy_load_huisnummer
-    def huisnummer(self):
-        return self._huisnummer
+        self.check_gateway()
+        return self.gateway.get_straat_by_id(self.straat_id)
 
     @property
     @check_lazy_load_huisnummer
@@ -1394,12 +1384,11 @@ class Huisnummer(GatewayObject):
         return self._metadata
 
     @property
-    @check_lazy_load_huisnummer
     def status(self):
         if self._status is None:
             res = self.gateway.list_statushuisnummers()
             for status in res:
-                if int(status.id) == int(self._status_id):
+                if int(status.id) == int(self.status_id):
                     self._status = status
         return self._status
 
@@ -1421,13 +1410,10 @@ class Huisnummer(GatewayObject):
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
 
     def __str__(self):
-        if self._huisnummer is not None and self.straat is not None:
-            return "%s %s" % (self.straat.label, self._huisnummer)
-        else:
-            return "Huisnummer %s" % (self.id)
+        return "%s (%s)" % (self.huisnummer, self.id)
 
     def __repr__(self):
-            return "Huisnummer(%s)" % (self.id)
+        return "Huisnummer(%s, %s, '%s', %s)" % (self.id, self.status_id, self.huisnummer, self.straat_id)
 
 
 class Postkanton(GatewayObject):
