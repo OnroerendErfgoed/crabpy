@@ -902,8 +902,8 @@ class TerreinobjectTests(unittest.TestCase):
             (190700.24, 224649.87, 190716.95, 224701.7),
             '1998-01-01 00:00:00',
             '2009-09-11 12:46:55.693000',
-            3,
-            3
+            Bewerking(3,'',''),
+            Organisatie(3,'','')
         )
         self.assertEqual(t.id, "13040_C_1747_G_002_00")
         self.assertEqual(t.centroid, (190708.59, 224667.59))
@@ -911,23 +911,16 @@ class TerreinobjectTests(unittest.TestCase):
             t.bounding_box,
             (190700.24, 224649.87, 190716.95, 224701.7)
         )
-
-        @unittest.skipUnless(
-            run_crab_integration_tests(),
-            'No CRAB Integration tests required'
+        self.assertEqual(int(t.aard_id), 1)
+        self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
+        self.assertEqual(
+            t.metadata.begin_tijd,
+            '2009-09-11 12:46:55.693000'
         )
-        def test_fully_initialised2(self):
-            self.assertEqual(int(t.aard.id), 1)
-            self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
-            self.assertEqual(
-                t.metadata.begin_tijd,
-                '2009-09-11 12:46:55.693000'
-            )
-            t.metadata.set_gateway(crab)
-            self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
-            self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
-            self.assertEqual('Terreinobject 13040_C_1747_G_002_00', str(t))
-            self.assertEqual('Terreinobject(13040_C_1747_G_002_00)', repr(t))
+        self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
+        self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
+        self.assertEqual('Terreinobject 13040_C_1747_G_002_00', str(t))
+        self.assertEqual('Terreinobject(13040_C_1747_G_002_00)', repr(t))
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
@@ -937,7 +930,7 @@ class TerreinobjectTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        t = Terreinobject("13040_C_1747_G_002_00")
+        t = Terreinobject("13040_C_1747_G_002_00",1)
         t.set_gateway(crab)
         self.assertEqual(t.id, "13040_C_1747_G_002_00")
         self.assertEqual(t.centroid, (190708.59, 224667.59))
@@ -961,10 +954,9 @@ class TerreinobjectTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        t = Terreinobject("13040_C_1747_G_002_00")
+        t = Terreinobject("13040_C_1747_G_002_00", 1)
         t.set_gateway(crab)
-        aard = t.aard
-        self.assertIsInstance(aard, Aardterreinobject)
+        self.assertIsInstance(t.aard, Aardterreinobject)
 
 
 class PerceelTests(unittest.TestCase):

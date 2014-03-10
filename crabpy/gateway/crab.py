@@ -1480,7 +1480,6 @@ class Wegobject(GatewayObject):
         super(Wegobject, self).__init__(**kwargs)
 
     @property
-    @check_lazy_load_wegobject
     def aard(self):
         if self._aard is None:
             res = self.gateway.list_aardwegobjecten()
@@ -1605,13 +1604,12 @@ def check_lazy_load_terreinobject(f):
     def wrapper(*args):
         terreinobject = args[0]
         if (
-            terreinobject._aard_id is None or terreinobject._centroid
-            is None or terreinobject._bounding_box is None or
+            terreinobject._centroid is None or 
+            terreinobject._bounding_box is None or
             terreinobject._metadata is None
         ):
             terreinobject.check_gateway()
             t = terreinobject.gateway.get_terreinobject_by_id(terreinobject.id)
-            terreinobject._aard_id = t._aard_id
             terreinobject._centroid = t._centroid
             terreinobject._bounding_box = t._bounding_box
             terreinobject._metadata = t._metadata
@@ -1629,12 +1627,17 @@ class Terreinobject(GatewayObject):
     also has the centroid, but not the `bounding box`.
     '''
     def __init__(
-        self, id, aard_id=None, centroid=None,
+        self, id, aard, centroid=None,
         bounding_box=None, datum=None, tijd=None,
         bewerking_id=None, organisatie_id=None,  **kwargs
     ):
         self.id = id
-        self._aard_id = aard_id
+        try:
+            self.aard_id = aard.id
+            self._aard = aard
+        except AttributeError:
+            self.aard_id = aard
+            self._aard = None
         self._centroid = centroid
         if (
             datum is not None and tijd is not None and
@@ -1648,12 +1651,13 @@ class Terreinobject(GatewayObject):
         self._bounding_box = bounding_box
 
     @property
-    @check_lazy_load_terreinobject
     def aard(self):
-        res = self.gateway.list_aardterreinobjecten()
-        for r in res:
-            if int(r.id) == int(self._aard_id):
-                return r
+        if self._aard is None:
+            res = self.gateway.list_aardterreinobjecten()
+            for aard in res:
+                if int(aard.id) == int(self.aard_id):
+                    self._aard = aard
+        return self._aard
 
     @property
     @check_lazy_load_terreinobject
