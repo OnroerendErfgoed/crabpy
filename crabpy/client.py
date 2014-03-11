@@ -20,6 +20,12 @@ def crab_factory(**kwargs):
     '''
     Factory that generates a CRAB client.
 
+    A few parameters will be handled by the factory, other parameters will
+    be passed on to the client.
+
+    :param wsdl: `Optional.` Allows overriding the default CRAB wsdl url.
+    :param proxy: `Optional.` A dictionary of proxy information that is passed
+        to the underlying :class:`suds.client.Client`
     :rtype: :class:`suds.client.Client`
     '''
     if 'wsdl' in kwargs:
@@ -38,6 +44,16 @@ def capakey_factory(**kwargs):
     '''
     Factory that generates a CAPAKEY client.
 
+    A few parameters will be handled by the factory, other parameters will
+    be passed on to the client.
+
+    :param user: `Required.` Username for authenticating with the CAPAKEY 
+        service.
+    :param password: `Required.` Password for authenticating with the CAPAKEY
+        service.
+    :param wsdl: `Optional.` Allows overriding the default CAPAKEY wsdl url.
+    :param proxy: `Optional.` A dictionary of proxy information that is passed
+        to the underlying :class:`suds.client.Client`
     :rtype: :class:`suds.client.Client`
     '''
     if 'wsdl' in kwargs:
