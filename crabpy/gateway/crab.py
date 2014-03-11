@@ -1137,7 +1137,7 @@ class Taal(Codelijst):
     A language.
     '''
     def __repr__(self):
-        return "Taal(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return "Taal('%s', '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Bewerking(Codelijst):
@@ -1687,8 +1687,7 @@ class Perceel(GatewayObject):
     also has the centroid, but not the `bounding box`.
     '''
     def __init__(
-        self, id, centroid=None, datum=None, tijd=None,
-        bewerking_id=None, organisatie_id=None, **kwargs
+        self, id, centroid=None, metadata=None, **kwargs
     ):
         self.id = id
         self._centroid = centroid

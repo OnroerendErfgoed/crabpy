@@ -468,14 +468,8 @@ class TaalTests(unittest.TestCase):
         self.assertEqual(t.id, "nl")
         self.assertEqual(t.naam, 'Nederlands')
         self.assertEqual(t.definitie, 'Nederlands.')
-        self.assertEqual('Nederlands)', str(s))
-        self.assertEqual("Taal('nl', 'Nederlands', 'Nederlands.')", repr(s))
-
-class BewerkingTests(unittest.TestCase):
-    def test_repr(self):
-        b = Bewerking(
-            
-        )
+        self.assertEqual('Nederlands', str(t))
+        self.assertEqual("Taal('nl', 'Nederlands', 'Nederlands.')", repr(t))
 
 
 class StraatTests(unittest.TestCase):
