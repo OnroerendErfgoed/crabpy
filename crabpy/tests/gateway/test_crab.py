@@ -312,6 +312,8 @@ class GewestTests(unittest.TestCase):
         )
         self.assertEqual(g.id, 2)
         self.assertEqual(g.naam, 'Vlaams gewest')
+        self.assertEqual(g.centroid, (138165.09, 189297.53))
+        self.assertEqual(g.bounding_box, (22279.17, 153050.23, 258873.3, 244022.31))
         self.assertEqual('Vlaams gewest (2)', str(g))
         self.assertEqual("Gewest(2)", repr(g))
 
@@ -336,6 +338,17 @@ class GewestTests(unittest.TestCase):
         g.set_gateway(crab)
         gemeenten = g.gemeenten
         self.assertIsInstance(gemeenten, list)
+        
+    def test_lazy_load(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gewest(2)
+        g.set_gateway(crab)
+        self.assertEqual(g.id, 2)
+        self.assertEqual(str(g.naam), 'Vlaams Gewest')
+        self.assertEqual(g.centroid, (138165.09, 189297.53))
+        self.assertEqual(g.bounding_box, (22279.17, 153050.23, 258873.3, 244022.31))
 
 
 class GemeenteTests(unittest.TestCase):
@@ -346,27 +359,35 @@ class GemeenteTests(unittest.TestCase):
             'Aartselaar',
             11001,
             Gewest(2),
-            'nl',
+            Taal('nl', 'Nederlands', 'Nederlands.'),
             (150881.07, 202256.84),
             (148950.36, 199938.28, 152811.77, 204575.39),
-            '1830-01-01 00:00:00',
-            '2002-08-13 17:32:32',
-            Bewerking(1, '', ''),
-            Organisatie(6, '', '')
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2002-08-13 17:32:32',
+                Bewerking(1, '', ''),
+                Organisatie(6, '', '')
+            )
         )
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
         self.assertEqual(g.niscode, 11001)
+        self.assertIsInstance(g.gewest, Gewest)
+        self.assertEqual(g.gewest.id, 2)
         self.assertEqual(g.centroid, (150881.07, 202256.84))
         self.assertEqual(
             g.bounding_box,
             (148950.36, 199938.28, 152811.77, 204575.39)
         )
         self.assertEqual(int(g.gewest.id), 2)
+        self.assertIsInstance(g._taal, Taal)
         self.assertEqual(g._taal_id, 'nl')
+        self.assertIsInstance(g.metadata, Metadata)
         self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(g.metadata.begin_tijd, '2002-08-13 17:32:32')
+        self.assertIsInstance(g.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(g.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
         self.assertEqual('Aartselaar (1)', str(g))
         self.assertEqual("Gemeente(1, 'Aartselaar', 11001)", repr(g))
@@ -393,6 +414,7 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual(g.id, 1)
         self.assertEqual(g.naam, 'Aartselaar')
         self.assertEqual(g.niscode, 11001)
+        self.assertIsInstance(g.gewest, Gewest)
         self.assertEqual(int(g.gewest.id), 2)
         self.assertEqual(g.taal.id, 'nl')
         self.assertEqual(g.centroid, (150881.07, 202256.84))
@@ -400,10 +422,13 @@ class GemeenteTests(unittest.TestCase):
             g.bounding_box,
             (148950.36, 199938.28, 152811.77, 204575.39)
         )
+        g.metadata.set_gateway(crab)
+        self.assertIsInstance(g.metadata, Metadata)
         self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(g.metadata.begin_tijd, '2002-08-13 17:32:32')
-        g.metadata.set_gateway(crab)
+        self.assertIsInstance(g.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(g.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
 
     @unittest.skipUnless(
@@ -443,6 +468,14 @@ class TaalTests(unittest.TestCase):
         self.assertEqual(t.id, "nl")
         self.assertEqual(t.naam, 'Nederlands')
         self.assertEqual(t.definitie, 'Nederlands.')
+        self.assertEqual('Nederlands)', str(s))
+        self.assertEqual("Taal('nl', 'Nederlands', 'Nederlands.')", repr(s))
+
+class BewerkingTests(unittest.TestCase):
+    def test_repr(self):
+        b = Bewerking(
+            
+        )
 
 
 class StraatTests(unittest.TestCase):
@@ -453,22 +486,27 @@ class StraatTests(unittest.TestCase):
             1,
             3,
             'Acacialaan', 'nl', None, None,
-            '1830-01-01 00:00:00',
-            '2013-04-12 20:07:25.960000',
-            Bewerking(3, '', ''),
-            Organisatie(1, '', '')
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2013-04-12 20:07:25.960000',
+                Bewerking(3, '', ''),
+                Organisatie(1, '', '')
+            )
         )
         self.assertEqual(s.id, 1)
         self.assertEqual(s.label, 'Acacialaan')
         self.assertEqual(s.namen, (('Acacialaan', 'nl'), (None, None)))
         self.assertEqual(int(s.status_id), 3)
         self.assertEqual(int(s.gemeente_id), 1)
+        self.assertIsInstance(s.metadata, Metadata)
         self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(
             s.metadata.begin_tijd,
             '2013-04-12 20:07:25.960000'
         )
+        self.assertIsInstance(s.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(s.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
         self.assertEqual('Acacialaan (1)', str(s))
         self.assertEqual("Straat(1, 'Acacialaan', 1, 3)", repr(s))
@@ -488,10 +526,13 @@ class StraatTests(unittest.TestCase):
         self.assertEqual(int(s.status.id), 3)
         self.assertEqual(s.namen, (('Acacialaan', 'nl'), (None, None)))
         self.assertEqual(int(s.gemeente.id), 1)
+        s.metadata.set_gateway(crab)
+        self.assertIsInstance(s.metadata, Metadata)
         self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(s.metadata.begin_tijd, '2013-04-12 20:07:25.960000')
-        s.metadata.set_gateway(crab)
+        self.assertIsInstance(s.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(s.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
 
     def test_str_and_repr_dont_lazy_load(self):
@@ -564,21 +605,26 @@ class HuisnummerTests(unittest.TestCase):
             3,
             "51",
             17718,
-            '1830-01-01 00:00:00',
-            '2011-04-29 13:27:40.230000',
-            Bewerking(1, '', ''),
-            Organisatie(5, '', '')
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2011-04-29 13:27:40.230000',
+                Bewerking(1, '', ''),
+                Organisatie(5, '', '')
+            )
         )
         self.assertEqual(h.id, 1)
         self.assertEqual(h.huisnummer, "51")
         self.assertEqual(int(h.status_id), 3)
         self.assertEqual(int(h.straat_id), 17718)
+        self.assertIsInstance(h.metadata, Metadata)
         self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(
             h.metadata.begin_tijd,
             '2011-04-29 13:27:40.230000'
         )
+        self.assertIsInstance(h.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(h.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
         self.assertEqual('51 (1)', str(h))
         self.assertEqual("Huisnummer(1, 3, '51', 17718)", repr(h))
@@ -601,10 +647,13 @@ class HuisnummerTests(unittest.TestCase):
         self.assertEqual(int(h.status.id), 3)
         self.assertEqual(h.huisnummer, "51")
         self.assertEqual(int(h.straat.id), 17718)
+        h.metadata.set_gateway(crab)
+        self.assertIsInstance(h.metadata, Metadata)
         self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(h.metadata.begin_tijd, '2011-04-29 13:27:40.230000')
-        h.metadata.set_gateway(crab)
+        self.assertIsInstance(h.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(h.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(h.metadata.begin_organisatie, Organisatie )
         self.assertEqual(int(h.metadata.begin_organisatie.id), 5)
 
     @unittest.skipUnless(
@@ -692,10 +741,12 @@ class WegobjectTests(unittest.TestCase):
             4,
             (150753.46, 200148.41),
             (150693.58, 200080.56, 150813.35, 200216.27),
-            '1830-01-01 00:00:00',
-            '2008-04-17 16:32:11.753000',
-            Bewerking(1, '', ''),
-            Organisatie(8, '', '')
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2008-04-17 16:32:11.753000',
+                Bewerking(1, '', ''),
+                Organisatie(8, '', '')
+            )
         )
         self.assertEqual(w.id, "53839893")
         self.assertEqual(w.centroid, (150753.46, 200148.41))
@@ -704,12 +755,15 @@ class WegobjectTests(unittest.TestCase):
             (150693.58, 200080.56, 150813.35, 200216.27)
         )
         self.assertEqual(int(w.aard_id), 4)
+        self.assertIsInstance(w.metadata, Metadata)
         self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(
             w.metadata.begin_tijd,
             '2008-04-17 16:32:11.753000'
         )
+        self.assertIsInstance(w.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(w.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(w.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(w.metadata.begin_organisatie.id), 8)
         self.assertEqual('Wegobject 53839893', str(w))
         self.assertEqual('Wegobject(53839893)', repr(w))
@@ -748,10 +802,13 @@ class WegobjectTests(unittest.TestCase):
             w.bounding_box,
             (150693.58, 200080.56, 150813.35, 200216.27)
         )
+        w.metadata.set_gateway(crab)
+        self.assertIsInstance(w.metadata, Metadata)
         self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(w.metadata.begin_tijd, '2008-04-17 16:32:11.753000')
-        w.metadata.set_gateway(crab)
+        self.assertIsInstance(w.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(w.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(w.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(w.metadata.begin_organisatie.id), 8)
 
 
@@ -783,10 +840,12 @@ class WegsegmentTests(unittest.TestCase):
  150543.214411631 200773.35943738,\
  150546.079307631 200764.489805374,\
  150548.592075631 200754.511565369)""",
-            '1830-01-01 00:00:00',
-            '2013-04-12 20:12:12.687000',
-            Bewerking(3, '', ''),
-            Organisatie(1, '', '')
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2013-04-12 20:12:12.687000',
+                Bewerking(3, '', ''),
+                Organisatie(1, '', '')
+            )
         )
         self.assertEqual(w.id, "108724")
         self.assertEqual(
@@ -816,12 +875,15 @@ class WegsegmentTests(unittest.TestCase):
         )
         self.assertEqual(int(w.status_id), 4)
         self.assertEqual(int(w._methode_id), 3)
+        self.assertIsInstance(w.metadata, Metadata)
         self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(
             w.metadata.begin_tijd,
             '2013-04-12 20:12:12.687000'
         )
+        self.assertIsInstance(w.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(w.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(w.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(w.metadata.begin_organisatie.id), 1)
         self.assertEqual('Wegsegment 108724', str(w))
         self.assertEqual('Wegsegment(108724)', repr(w))
@@ -894,7 +956,17 @@ class WegsegmentTests(unittest.TestCase):
  150546.079307631 200764.489805374,\
  150548.592075631 200754.511565369)"""
         )
-
+        w.metadata.set_gateway(crab)
+        self.assertIsInstance(w.metadata, Metadata)
+        self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(
+            w.metadata.begin_tijd,
+            '2013-04-12 20:12:12.687000'
+        )
+        self.assertIsInstance(w.metadata.begin_bewerking, Bewerking)
+        self.assertEqual(int(w.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(w.metadata.begin_organisatie, Organisatie)
+        self.assertEqual(int(w.metadata.begin_organisatie.id), 1)
 
 class TerreinobjectTests(unittest.TestCase):
     def test_fully_initialised(self):
@@ -903,10 +975,12 @@ class TerreinobjectTests(unittest.TestCase):
             1,
             (190708.59, 224667.59),
             (190700.24, 224649.87, 190716.95, 224701.7),
-            '1998-01-01 00:00:00',
-            '2009-09-11 12:46:55.693000',
-            Bewerking(3, '', ''),
-            Organisatie(3, '', '')
+            Metadata(
+                '1998-01-01 00:00:00',
+                '2009-09-11 12:46:55.693000',
+                Bewerking(3, '', ''),
+                Organisatie(3, '', '')
+            )
         )
         self.assertEqual(t.id, "13040_C_1747_G_002_00")
         self.assertEqual(t.centroid, (190708.59, 224667.59))
@@ -915,12 +989,15 @@ class TerreinobjectTests(unittest.TestCase):
             (190700.24, 224649.87, 190716.95, 224701.7)
         )
         self.assertEqual(int(t.aard_id), 1)
+        self.assertIsInstance(t.metadata, Metadata)
         self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
         self.assertEqual(
             t.metadata.begin_tijd,
             '2009-09-11 12:46:55.693000'
         )
+        self.assertIsInstance(t.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(t.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
         self.assertEqual('Terreinobject 13040_C_1747_G_002_00', str(t))
         self.assertEqual('Terreinobject(13040_C_1747_G_002_00)', repr(t))
@@ -943,10 +1020,13 @@ class TerreinobjectTests(unittest.TestCase):
         )
 
         self.assertEqual(int(t.aard.id), 1)
+        t.metadata.set_gateway(crab)
+        self.assertIsInstance(t.metadata, Metadata)
         self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
         self.assertEqual(t.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
-        t.metadata.set_gateway(crab)
+        self.assertIsInstance(t.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(t.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(t.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(t.metadata.begin_organisatie.id), 3)
 
     @unittest.skipUnless(
@@ -967,13 +1047,16 @@ class PerceelTests(unittest.TestCase):
         p = Perceel(
             "13040C1747/00G002",
             (190708.59, 224667.59),
-            '1998-01-01 00:00:00',
-            '2009-09-11 12:46:55.693000',
-            Bewerking(3, '', ''),
-            Organisatie(3, '', '')
+            Metadata(
+                '1998-01-01 00:00:00',
+                '2009-09-11 12:46:55.693000',
+                Bewerking(3, '', ''),
+                Organisatie(3, '', '')
+            )
         )
         self.assertEqual(p.id, "13040C1747/00G002")
         self.assertEqual(p.centroid, (190708.59, 224667.59))
+        self.assertIsInstance(p.metadata, Metadata)
         self.assertEqual(
             p.metadata.begin_datum,
             '1998-01-01 00:00:00'
@@ -982,7 +1065,9 @@ class PerceelTests(unittest.TestCase):
             p.metadata.begin_tijd,
             '2009-09-11 12:46:55.693000'
         )
+        self.assertIsInstance(p.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(p.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(p.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(p.metadata.begin_organisatie.id), 3)
         self.assertEqual('Perceel 13040C1747/00G002', str(p))
         self.assertEqual('Perceel(13040C1747/00G002)', repr(p))
@@ -999,10 +1084,13 @@ class PerceelTests(unittest.TestCase):
         p.set_gateway(crab)
         self.assertEqual(p.id, "13040C1747/00G002")
         self.assertEqual(p.centroid, (190708.59, 224667.59))
+        p.metadata.set_gateway(crab)
+        self.assertIsInstance(p.metadata, Metadata)
         self.assertEqual(p.metadata.begin_datum, '1998-01-01 00:00:00')
         self.assertEqual(p.metadata.begin_tijd, '2009-09-11 12:46:55.693000')
-        p.metadata.set_gateway(crab)
+        self.assertIsInstance(p.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(p.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(p.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(p.metadata.begin_organisatie.id), 3)
 
 
@@ -1022,10 +1110,12 @@ class GebouwTests(unittest.TestCase):
  190717.16349539906 224653.81065388769,\
  190713.40490339696 224663.38582189381,\
  190712.36432739347 224668.5216938965))""",
-            '1830-01-01 00:00:00',
-            '2011-05-19 10:51:09.483000',
-            Bewerking(1, '', ''),
-            Organisatie(5, '', '')
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2011-05-19 10:51:09.483000',
+                Bewerking(1, '', ''),
+                Organisatie(5, '', '')
+            )
         )
         self.assertEqual(g.id, 1538575)
         self.assertEqual(int(g.aard_id), 1)
@@ -1043,6 +1133,7 @@ class GebouwTests(unittest.TestCase):
  190713.40490339696 224663.38582189381,\
  190712.36432739347 224668.5216938965))"""
         )
+        self.assertIsInstance(g.metadata, Metadata)
         self.assertEqual(
             g.metadata.begin_datum,
             '1830-01-01 00:00:00'
@@ -1051,7 +1142,9 @@ class GebouwTests(unittest.TestCase):
             g.metadata.begin_tijd,
             '2011-05-19 10:51:09.483000'
         )
+        self.assertIsInstance(g.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(g.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
         self.assertEqual('Gebouw 1538575', str(g))
         self.assertEqual('Gebouw(1538575)', repr(g))
@@ -1082,10 +1175,13 @@ class GebouwTests(unittest.TestCase):
  190713.40490339696 224663.38582189381,\
  190712.36432739347 224668.5216938965))"""
         )
+        g.metadata.set_gateway(crab)
+        self.assertIsInstance(g.metadata, Metadata)
         self.assertEqual(g.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(g.metadata.begin_tijd, '2011-05-19 10:51:09.483000')
-        g.metadata.set_gateway(crab)
+        self.assertIsInstance(g.metadata.begin_bewerking, Bewerking)
         self.assertEqual(int(g.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(g.metadata.begin_organisatie, Organisatie)
         self.assertEqual(int(g.metadata.begin_organisatie.id), 5)
 
     @unittest.skipUnless(
@@ -1138,7 +1234,9 @@ class MetadataTests(unittest.TestCase):
         )
         self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
+        self.assertIsInstance(m.begin_bewerking, Bewerking)
         self.assertEqual(int(m.begin_bewerking.id), 1)
+        self.assertIsInstance(m.begin_organisatie, Organisatie)
         self.assertEqual(int(m.begin_organisatie.id), 6)
 
     @unittest.skipUnless(
@@ -1158,7 +1256,9 @@ class MetadataTests(unittest.TestCase):
         )
         self.assertEqual(m.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(m.begin_tijd, '2003-12-06 21:42:11.117000')
+        self.assertIsInstance(m.begin_bewerking, Bewerking)
         self.assertEqual(int(m.begin_bewerking.id), 1)
+        self.assertIsInstance(m.begin_organisatie, Organisatie)
         self.assertEqual(int(m.begin_organisatie.id), 6)
 
 
