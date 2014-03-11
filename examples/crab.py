@@ -17,3 +17,8 @@ print res
 res = crab_request(crab, 'ListGemeentenByGewestId', 1)
 print res
 
+res = crab_request(crab, 'ListHuisnummersWithStatusByStraatnaamId', 18618)
+print res
+
+res = crab_request(crab, 'GetStraatnaamWithStatusByStraatnaamId', 18618)
+print res

@@ -6,29 +6,14 @@ Using the CRAB webservice
 -------------------------
 
 Recently, the CRAB service has become public. The need to authenticate has been
-removed, making it a whole lot easier to connect.
+removed, making it a whole lot easier to connect. A utility function 
+:func:`crabpy.client.crab_request` has been provided, similar to 
+:func:`crabpy.client.capakey_request`. This allows for a slightly different way 
+of calling methods on the service.
 
-.. code-block:: python
 
-    from crabpy.client import crab_factory
-
-    crab = crab_factory()
-
-    res = crab.service.ListGemeentenByGewestId(1)
-    print res
-
-    res = crab.service.ListPostkantonsByGemeenteId(71)
-    print res
-
-    res = crab.service.ListStraatnamenWithStatusByGemeenteId(71)
-    print res 
-
-    res = crab.service.ListHuisnummersWithStatusByStraatnaamId(18618)
-    print res
-
-    res = crab.service.GetStraatnaamWithStatusByStraatnaamId(18618)
-    print res
-    
+.. literalinclude:: /../examples/crab.py
+   :language: python
 
 
 Using the CAPAKEY webservice
@@ -36,20 +21,12 @@ Using the CAPAKEY webservice
 
 This service does still require authentication. This requires a valid account 
 from agiv_. Because the authentication also requires some extra WS-Addressing 
-headers, a utility function has been provided to make life easier.
+headers, a utility function :func:`crabpy.client.capakey_request` has been 
+provided to make life easier.
 
-.. code-block:: python
+.. literalinclude:: /../examples/capakey.py
+   :language: python
 
-    from crabpy.client import capakey_factory, capakey_request
-
-    capakey = capakey_factory(
-        user='USER',
-        password='PASSWORD'
-    )
-
-    res = capakey_request(capakey, 'ListAdmGemeenten', 1)
-
-    print res
 
 Using a client behing a proxy
 -----------------------------
@@ -72,19 +49,20 @@ that abstracts some more of the service and provides richer objects as responses
 .. literalinclude:: /../examples/crab_gateway.py
    :language: python
 
-The crab supports caching through the dogpile_ caching library. Caching can
+The CRAB gateway supports caching through the dogpile_ caching library. Caching can
 be added by passing a configuration dictionary to the :class:`CrabGateway`.
 
-Two caching regions will be configured:
+Three caching regions will be configured:
 
 - `permanent`: For requests that can be cached for a very long time,
-  eg. `list_gewesten`.
+  eg. `list_gewesten` or `list_gemeenten`.
 - `long`: For requests that can be cached for a fairly long time, 
-  eg. `list_gemeenten`.
+  eg. `list_straten`.
+- `short`: For requests that will only be cached for a little while, 
+  eg. `get_huisnummer_by_id`.
 
 .. literalinclude:: /../examples/crab_gateway_caching.py
    :language: python
-
 
 
 Using the CAPAKEY gateway
@@ -96,7 +74,7 @@ that abstracts some more of the service and provides richer objects as responses
 .. literalinclude:: /../examples/capakey_gateway.py
    :language: python
 
-The capakey supports caching through the dogpile_ caching library. Caching can
+The CAPAKEY gateway supports caching through the dogpile_ caching library. Caching can
 be added by passing a configuration dictionary to the :class:`CapakeyGateway`.
 
 Three caching regions will be configured:
@@ -114,7 +92,6 @@ regularly, so a short caching duration could easily be one hour or even a day.
 
 .. literalinclude:: /../examples/capakey_gateway_caching.py
    :language: python
-
 
 
 See the examples folder for some more sample code.
