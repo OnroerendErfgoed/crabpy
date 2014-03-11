@@ -167,10 +167,12 @@ class CrabGateway(object):
                 res.TaalCode,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['long'].is_configured:
             key = 'GetGemeenteByGemeenteId#%s' % id
@@ -200,10 +202,12 @@ class CrabGateway(object):
                 res.TaalCode,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['long'].is_configured:
             key = 'GetGemeenteByNISGemeenteCode#%s' % niscode
@@ -443,10 +447,12 @@ class CrabGateway(object):
                 res.TaalCode,
                 res.StraatnaamTweedeTaal,
                 res.TaalCodeTweedeTaal,
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
 
         if self.caches['long'].is_configured:
@@ -508,10 +514,12 @@ class CrabGateway(object):
                 res.StatusHuisnummer,
                 res.Huisnummer,
                 res.StraatnaamId,
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetHuisnummerWithStatusByHuisnummerId#%s' % (id)
@@ -629,10 +637,12 @@ class CrabGateway(object):
                 res.AardWegobject,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetWegobjectByIdentificatorWegobject#%s' % (id)
@@ -691,10 +701,12 @@ class CrabGateway(object):
                 res.StatusWegsegment,
                 res.GeometriemethodeWegsegment,
                 res.Geometrie,
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetWegsegmentByIdentificatorWegsegment#%s' % (id)
@@ -785,10 +797,12 @@ class CrabGateway(object):
                 res.AardTerreinobject,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetTerreinobjectByIdentificatorTerreinobject#%s' % (id)
@@ -843,10 +857,12 @@ class CrabGateway(object):
             return Perceel(
                 res.IdentificatorPerceel,
                 (res.CenterX, res.CenterY),
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetPerceelByIdentificatorPerceel#%s' % (id)
@@ -906,10 +922,12 @@ class CrabGateway(object):
                 res.StatusGebouw,
                 res.GeometriemethodeGebouw,
                 res.Geometrie,
-                res.BeginDatum,
-                res.BeginTijd,
-                res.BeginBewerking,
-                res.BeginOrganisatie
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    res.BeginBewerking,
+                    res.BeginOrganisatie
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetGebouwByIdentificatorGebouw#%s' % (id)
@@ -1036,8 +1054,7 @@ class Gemeente(GatewayObject):
     def __init__(
             self, id, naam, niscode, gewest,
             taal=None, centroid=None,
-            bounding_box=None, datum=None, tijd=None,
-            bewerking_id=None, organisatie_id=None, **kwargs
+            bounding_box=None, metadata=None, **kwargs
     ):
         self.id = int(id)
         self.naam = naam
@@ -1051,15 +1068,7 @@ class Gemeente(GatewayObject):
             self._taal = None
         self._centroid = centroid
         self._bounding_box = bounding_box
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Gemeente, self).__init__(**kwargs)
 
     @property
@@ -1272,8 +1281,7 @@ class Straat(GatewayObject):
             self, id, label, gemeente_id, status,
             straatnaam=None, taalcode=None, 
             straatnaam2=None, taalcode2=None,
-            begin_datum=None, begin_tijd=None,
-            begin_bewerking_id=None, begin_organisatie_id=None, **kwargs
+            metadata=None, **kwargs
     ):
         self.id = id
         self.label = label
@@ -1285,17 +1293,7 @@ class Straat(GatewayObject):
             self._status = None
         self._namen = ((straatnaam, taalcode), (straatnaam2, taalcode2))
         self.gemeente_id = gemeente_id
-        if (
-            begin_datum is not None and begin_tijd is not None and
-            begin_bewerking_id is not None and
-            begin_organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                begin_datum, begin_tijd, begin_bewerking_id,
-                begin_organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Straat, self).__init__(**kwargs)
 
     @property
@@ -1362,8 +1360,7 @@ class Huisnummer(GatewayObject):
     '''
     def __init__(
             self, id, status, huisnummer, straat_id, 
-            datum=None, tijd=None,
-            bewerking_id=None, organisatie_id=None, **kwargs
+            metadata=None, **kwargs
     ):
         self.id = int(id)
         try:
@@ -1374,15 +1371,7 @@ class Huisnummer(GatewayObject):
             self._status = None
         self.huisnummer = huisnummer
         self.straat_id = straat_id
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Huisnummer, self).__init__(**kwargs)
 
     @property
@@ -1468,8 +1457,7 @@ def check_lazy_load_wegobject(f):
 class Wegobject(GatewayObject):
     def __init__(
         self, id, aard, centroid=None,
-        bounding_box=None, datum=None, tijd=None,
-        bewerking_id=None, organisatie_id=None,  **kwargs
+        bounding_box=None, metadata=None,  **kwargs
     ):
         self.id = id
         try:
@@ -1480,15 +1468,7 @@ class Wegobject(GatewayObject):
             self._aard = None
         self._centroid = centroid
         self._bounding_box = bounding_box
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Wegobject, self).__init__(**kwargs)
 
     @property
@@ -1545,8 +1525,7 @@ def check_lazy_load_wegsegment(f):
 class Wegsegment(GatewayObject):
     def __init__(
         self, id, status, methode=None,
-        geometrie=None, datum=None, tijd=None,
-        bewerking_id=None, organisatie_id=None, **kwargs
+        geometrie=None, metadata=None, **kwargs
     ):
         self.id = id
         try:
@@ -1562,15 +1541,7 @@ class Wegsegment(GatewayObject):
             self._methode_id = methode
             self._methode = None
         self._geometrie = geometrie
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Wegsegment, self).__init__(**kwargs)
 
     @property
@@ -1640,8 +1611,7 @@ class Terreinobject(GatewayObject):
     '''
     def __init__(
         self, id, aard, centroid=None,
-        bounding_box=None, datum=None, tijd=None,
-        bewerking_id=None, organisatie_id=None, **kwargs
+        bounding_box=None, metadata=None, **kwargs
     ):
         self.id = id
         try:
@@ -1651,15 +1621,7 @@ class Terreinobject(GatewayObject):
             self.aard_id = aard
             self._aard = None
         self._centroid = centroid
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         self._bounding_box = bounding_box
         super(Terreinobject, self).__init__(**kwargs)
 
@@ -1724,15 +1686,7 @@ class Perceel(GatewayObject):
     ):
         self.id = id
         self._centroid = centroid
-        if (
-            datum is not None and tijd is not None and
-            bewerking_id is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Perceel, self).__init__(**kwargs)
 
     @property
@@ -1777,8 +1731,7 @@ class Gebouw(GatewayObject):
     '''
     def __init__(
         self, id, aard, status,
-        methode=None, geometrie=None, datum=None,
-        tijd=None, bewerking_id=None, organisatie_id=None, **kwargs
+        methode=None, geometrie=None, metadata=None, **kwargs
     ):
         self.id = int(id)
         try:
@@ -1800,15 +1753,7 @@ class Gebouw(GatewayObject):
             self._methode_id = methode
             self._methode = None
         self._geometrie = geometrie
-        if (
-            datum is not None and tijd is not None and bewerking_id
-            is not None and organisatie_id is not None
-        ):
-            self._metadata = Metadata(
-                datum, tijd, bewerking_id, organisatie_id
-            )
-        else:
-            self._metadata = None
+        self._metadata = metadata
         super(Gebouw, self).__init__(**kwargs)
 
     @property
