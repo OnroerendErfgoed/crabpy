@@ -1,3 +1,11 @@
+0.3.1 (??-??-2014)
+------------------
+
+- Fixed a bug with lazy loading a Perceel's capatype or cashkey. (#8)
+- Removed loading a Gemeente with an afdeling to speed up certain queries. (#7)
+- Removed a few unneeded requests in the capakey gateway when working with 
+  Gemeente.id or Afdeling.id.  
+
 0.3.0 (12-03-2014)
 ------------------
 
