@@ -403,7 +403,7 @@ class PerceelTests(unittest.TestCase):
         )
         p = Perceel(
             '1154/02C000', Sectie('A', Afdeling(46013)),
-            '40613A1154/02C000', '40613_A_1154_C_000_02',
+            '46013A1154/02C000', '46013_A_1154_C_000_02',
             gateway=capakey
         )
         self.assertEqual(p.id, '1154/02C000')
@@ -417,7 +417,7 @@ class PerceelTests(unittest.TestCase):
     def test_parse_capakey(self):
         p = Perceel(
             '1154/02C000', Sectie('A', Afdeling(46013)),
-            '40613A1154/02C000', '40613_A_1154_C_000_02'
+            '46013A1154/02C000', '46013_A_1154_C_000_02'
         )
         self.assertEqual(p.grondnummer, '1154')
         self.assertEqual(p.bisnummer, '02')
@@ -427,7 +427,7 @@ class PerceelTests(unittest.TestCase):
     def test_parse_capakey_other_sectie(self):
         p = Perceel(
             '1154/02C000', Sectie('F', Afdeling(46013)),
-            '40613F1154/02C000', '40613_F_1154_C_000_02'
+            '46013F1154/02C000', '46013_F_1154_C_000_02'
         )
         self.assertEqual(p.grondnummer, '1154')
         self.assertEqual(p.bisnummer, '02')
@@ -438,8 +438,8 @@ class PerceelTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             Perceel(
                 '1154/02C000', Sectie('A', Afdeling(46013)),
-                '40613_A_1154_C_000_02',
-                '40613A1154/02C000',
+                '46013_A_1154_C_000_02',
+                '46013A1154/02C000',
             )
 
 

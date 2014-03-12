@@ -624,6 +624,8 @@ def check_lazy_load_perceel(f):
             )
             perceel._centroid = p._centroid
             perceel._bounding_box = p._bounding_box
+            perceel._capatype = p._capatype
+            perceel._cashkey = p._cashkey
         return f(*args)
     return wrapper
 
