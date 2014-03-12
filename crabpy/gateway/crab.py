@@ -88,6 +88,12 @@ class CrabGateway(object):
         return gewesten
 
     def get_gewest_by_id(self, id):
+        '''
+        Get a `gewest` by id.
+
+        :param integer id: The id of a `gewest`.
+        :rtype: A :class:`Gewest`.
+        '''
         def creator():
             nl = crab_gateway_request(
                 self.client, 'GetGewestByGewestIdAndTaalCode', id, 'nl'
@@ -1131,7 +1137,7 @@ class Taal(Codelijst):
     A language.
     '''
     def __repr__(self):
-        return "Taal(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return "Taal('%s', '%s', '%s')" % (self.id, self.naam, self.definitie)
 
 
 class Bewerking(Codelijst):

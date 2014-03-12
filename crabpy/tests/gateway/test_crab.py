@@ -339,6 +339,10 @@ class GewestTests(unittest.TestCase):
         gemeenten = g.gemeenten
         self.assertIsInstance(gemeenten, list)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_lazy_load(self):
         crab = CrabGateway(
             crab_factory()
