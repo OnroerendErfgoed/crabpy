@@ -152,8 +152,7 @@ class CapakeyGateway(object):
         try:
             gid = gemeente.id
         except AttributeError:
-            gemeente = self.get_gemeente_by_id(gemeente)
-            gid = gemeente.id
+            gid = gemeente
 
         def creator():
             res = capakey_gateway_request(
@@ -213,8 +212,7 @@ class CapakeyGateway(object):
         try:
             aid = afdeling.id
         except AttributeError:
-            afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
-            aid = afdeling.id
+            aid = afdeling
 
         def creator():
             res = capakey_gateway_request(
@@ -248,8 +246,7 @@ class CapakeyGateway(object):
         try:
             aid = afdeling.id
         except AttributeError:
-            afdeling = self.get_kadastrale_afdeling_by_id(afdeling)
-            aid = afdeling.id
+            aid = afdeling
 
         def creator():
             res = capakey_gateway_request(
