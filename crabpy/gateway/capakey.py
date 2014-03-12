@@ -127,8 +127,7 @@ class CapakeyGateway(object):
             return [
                 Afdeling(
                     r.KadAfdelingcode,
-                    r.KadAfdelingnaam,
-                    Gemeente(r.Niscode)
+                    r.KadAfdelingnaam
                 ) for r in res.KadAfdelingItem]
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingen#%s' % sort
@@ -137,7 +136,6 @@ class CapakeyGateway(object):
             afdelingen = creator()
         for a in afdelingen:
             a.set_gateway(self)
-            a.gemeente.set_gateway(self)
         return afdelingen
 
     def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
