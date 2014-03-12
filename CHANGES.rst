@@ -1,4 +1,4 @@
-0.3.0 (??-03-2014)
+0.3.0 (12-03-2014)
 ------------------
 
 - Added a :class:`Gateway <crabpy.gateway.crab.CrabGateway>` for the 
