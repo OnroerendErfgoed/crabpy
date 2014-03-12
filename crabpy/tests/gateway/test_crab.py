@@ -468,14 +468,157 @@ class TaalTests(unittest.TestCase):
         self.assertEqual(t.id, "nl")
         self.assertEqual(t.naam, 'Nederlands')
         self.assertEqual(t.definitie, 'Nederlands.')
-        self.assertEqual('Nederlands)', str(s))
-        self.assertEqual("Taal('nl', 'Nederlands', 'Nederlands.')", repr(s))
+        self.assertEqual('Nederlands', str(t))
+        self.assertEqual("Taal(nl, 'Nederlands', 'Nederlands.')", repr(t))
 
 class BewerkingTests(unittest.TestCase):
     def test_repr(self):
         b = Bewerking(
-            
+            '3',
+            'correctie',
+            'Correctie van de attributen.'
         )
+        self.assertEqual("Bewerking(3, 'correctie', 'Correctie van de attributen.')", repr(b))
+
+
+class OrganisatieTests(unittest.TestCase):
+    def test_repr(self):
+        o = Organisatie(
+            '6',
+            'NGI',
+            'Nationaal Geografisch Instituut.'
+        )
+        self.assertEqual("Organisatie(6, 'NGI', 'Nationaal Geografisch Instituut.')", repr(o))
+
+
+class AardsubadresTests(unittest.TestCase):
+    def test_repr(self):
+        a = Aardsubadres(
+            '1',
+            'appartementNummer',
+            'Nummer van het appartement.'
+        )
+        self.assertEqual("Aardsubadres(1, 'appartementNummer', 'Nummer van het appartement.')", repr(a))
+
+
+class AardadresTests(unittest.TestCase):
+    def test_repr(self):
+        a = Aardadres(
+            '1',
+            'subAdres',
+            'Aanduiding van een plaats op een huisnummer'
+        )
+        self.assertEqual("Aardadres(1, 'subAdres', 'Aanduiding van een plaats op een huisnummer')", repr(a))
+
+
+class AardgebouwTests(unittest.TestCase):
+    def test_repr(self):
+        a = Aardgebouw(
+            '3',
+            'virtueel gebouw',
+            'gbg afgezoomd met virtuele gvl'
+        )
+        self.assertEqual("Aardgebouw(3, 'virtueel gebouw', 'gbg afgezoomd met virtuele gvl')", repr(a))
+
+
+class AardwegobjectTests(unittest.TestCase):
+    def test_repr(self):
+        a = Aardwegobject(
+            '1',
+            'taTEL',
+            'Wegverbinding volgens TeleAtlas.'
+        )
+        self.assertEqual("Aardwegobject(1, 'taTEL', 'Wegverbinding volgens TeleAtlas.')", repr(a))
+
+
+class AardterreinobjectTests(unittest.TestCase):
+    def test_repr(self):
+        a = Aardterreinobject(
+            '1',
+            'kadPerceel',
+            'Perceel volgens het Kadaster.'
+        )
+        self.assertEqual("Aardterreinobject(1, 'kadPerceel', 'Perceel volgens het Kadaster.')", repr(a))
+
+
+class StatushuisnummerTests(unittest.TestCase):
+    def test_repr(self):
+        s = Statushuisnummer(
+            '1',
+            'voorgesteld',
+            None
+        )
+        self.assertEqual("Statushuisnummer(1, 'voorgesteld', 'None')", repr(s))
+        
+        
+class StatussubadresTests(unittest.TestCase):
+    def test_repr(self):
+        s = Statussubadres(
+            '1',
+            'voorgesteld',
+            None
+        )
+        self.assertEqual("Statussubadres(1, 'voorgesteld', 'None')", repr(s))
+
+
+class StatusstraatnaamTests(unittest.TestCase):
+    def test_repr(self):
+        s = Statusstraatnaam(
+            '1',
+            'voorgesteld',
+            None
+        )
+        self.assertEqual("Statusstraatnaam(1, 'voorgesteld', 'None')", repr(s))
+
+
+class StatuswegsegmentTests(unittest.TestCase):
+    def test_repr(self):
+        s = Statuswegsegment(
+            '1',
+            'vergunningAangevraagd',
+            None
+        )
+        self.assertEqual("Statuswegsegment(1, 'vergunningAangevraagd', 'None')", repr(s))
+
+
+class GeometriemethodewegsegmentTests(unittest.TestCase):
+    def test_repr(self):
+        g = Geometriemethodewegsegment(
+            '2',
+            'opmeting',
+            None
+        )
+        self.assertEqual("Geometriemethodewegsegment(2, 'opmeting', 'None')",repr(g))
+
+
+class StatusgebouwTests(unittest.TestCase):
+    def test_repr(self):
+        s = Statusgebouw(
+            '1',
+            'vergunningAangevraagd',
+            None
+        )
+        self.assertEqual("Statusgebouw(1, 'vergunningAangevraagd', 'None')", repr(s))
+
+
+class GeometriemethodegebouwTests(unittest.TestCase):
+    def test_repr(self):
+        g = Geometriemethodegebouw(
+            '2',
+            'opmeting',
+            None
+        )
+        self.assertEqual("Geometriemethodegebouw(2, 'opmeting', 'None')",repr(g))
+
+
+class HerkomstadrespositieTests(unittest.TestCase):
+    def test_repr(self):
+        h = Herkomstadrespositie(
+            '6',
+            'manueleAanduidingVanToegangTotDeWeg',
+            None
+        )
+        self.assertEqual("Herkomstadrespositie(6, 'manueleAanduidingVanToegangTotDeWeg', 'None')", repr(h))
 
 
 class StraatTests(unittest.TestCase):
@@ -484,7 +627,7 @@ class StraatTests(unittest.TestCase):
             1,
             'Acacialaan',
             1,
-            3,
+            Statusstraatnaam(3, 'inGebruik', None),
             'Acacialaan', 'nl', None, None,
             Metadata(
                 '1830-01-01 00:00:00',
@@ -497,6 +640,7 @@ class StraatTests(unittest.TestCase):
         self.assertEqual(s.label, 'Acacialaan')
         self.assertEqual(s.namen, (('Acacialaan', 'nl'), (None, None)))
         self.assertEqual(int(s.status_id), 3)
+        self.assertIsInstance(s.status, Statusstraatnaam)
         self.assertEqual(int(s.gemeente_id), 1)
         self.assertIsInstance(s.metadata, Metadata)
         self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
@@ -602,7 +746,7 @@ class HuisnummerTests(unittest.TestCase):
     def test_fully_initialised(self):
         h = Huisnummer(
             1,
-            3,
+            Statushuisnummer(3, 'inGebruik', None),
             "51",
             17718,
             Metadata(
@@ -615,6 +759,7 @@ class HuisnummerTests(unittest.TestCase):
         self.assertEqual(h.id, 1)
         self.assertEqual(h.huisnummer, "51")
         self.assertEqual(int(h.status_id), 3)
+        self.assertIsInstance(h.status, Statushuisnummer)
         self.assertEqual(int(h.straat_id), 17718)
         self.assertIsInstance(h.metadata, Metadata)
         self.assertEqual(h.metadata.begin_datum, '1830-01-01 00:00:00')
@@ -732,13 +877,15 @@ class PostkantonTests(unittest.TestCase):
             2630
         )
         self.assertEqual(p.id, 2630)
+        self.assertEqual('Postkanton 2630', str(p))
+        self.assertEqual('Postkanton(2630)', repr(p))
 
 
 class WegobjectTests(unittest.TestCase):
     def test_fully_initialised(self):
         w = Wegobject(
             "53839893",
-            4,
+            Aardwegobject(4, 'ntLink', 'Wegverbinding volgens NavTeq.'),
             (150753.46, 200148.41),
             (150693.58, 200080.56, 150813.35, 200216.27),
             Metadata(
@@ -755,6 +902,7 @@ class WegobjectTests(unittest.TestCase):
             (150693.58, 200080.56, 150813.35, 200216.27)
         )
         self.assertEqual(int(w.aard_id), 4)
+        self.assertIsInstance(w.aard, Aardwegobject)
         self.assertIsInstance(w.metadata, Metadata)
         self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(
@@ -816,8 +964,8 @@ class WegsegmentTests(unittest.TestCase):
     def test_fully_initialised(self):
         w = Wegsegment(
             "108724",
-            4,
-            3,
+            Statuswegsegment(4,'inGebruik', None),
+            Geometriemethodewegsegment(3, 'grb', None),
             """LINESTRING (150339.255243488 201166.401677653,\
  150342.836939491 201165.832525652,\
  150345.139531493 201165.466573652,\
@@ -874,7 +1022,9 @@ class WegsegmentTests(unittest.TestCase):
  150548.592075631 200754.511565369)"""
         )
         self.assertEqual(int(w.status_id), 4)
+        self.assertIsInstance(w.status, Statuswegsegment)
         self.assertEqual(int(w._methode_id), 3)
+        self.assertIsInstance(w.methode, Geometriemethodewegsegment)
         self.assertIsInstance(w.metadata, Metadata)
         self.assertEqual(w.metadata.begin_datum, '1830-01-01 00:00:00')
         self.assertEqual(
@@ -972,7 +1122,7 @@ class TerreinobjectTests(unittest.TestCase):
     def test_fully_initialised(self):
         t = Terreinobject(
             "13040_C_1747_G_002_00",
-            1,
+            Aardterreinobject(1, 'kadPerceel', 'Perceel volgens het Kadaster.'),
             (190708.59, 224667.59),
             (190700.24, 224649.87, 190716.95, 224701.7),
             Metadata(
@@ -989,6 +1139,7 @@ class TerreinobjectTests(unittest.TestCase):
             (190700.24, 224649.87, 190716.95, 224701.7)
         )
         self.assertEqual(int(t.aard_id), 1)
+        self.assertIsInstance(t.aard, Aardterreinobject)
         self.assertIsInstance(t.metadata, Metadata)
         self.assertEqual(t.metadata.begin_datum, '1998-01-01 00:00:00')
         self.assertEqual(
@@ -1098,9 +1249,9 @@ class GebouwTests(unittest.TestCase):
     def test_fully_initialised(self):
         g = Gebouw(
             "1538575",
-            1,
-            4,
-            3,
+            Aardgebouw(1, 'hoofdgebouw', 'hoofdgebouw volgens het GRB'),
+            Statusgebouw(4, 'inGebruik', None),
+            Geometriemethodegebouw(3, 'grb', None),
             """POLYGON ((190712.36432739347 224668.5216938965,\
  190706.26007138938 224667.54428589717,\
  190706.03594338894 224668.89276589826,\
@@ -1119,8 +1270,11 @@ class GebouwTests(unittest.TestCase):
         )
         self.assertEqual(g.id, 1538575)
         self.assertEqual(int(g.aard_id), 1)
+        self.assertIsInstance(g.aard, Aardgebouw)
         self.assertEqual(int(g.status_id), 4)
+        self.assertIsInstance(g.status, Statusgebouw)
         self.assertEqual(int(g._methode_id), 3)
+        self.assertIsInstance(g.methode, Geometriemethodegebouw)
         self.assertEqual(
             g.geometrie,
             """POLYGON ((190712.36432739347 224668.5216938965,\
