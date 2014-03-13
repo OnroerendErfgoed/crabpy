@@ -662,7 +662,7 @@ class CrabGateway(object):
     def list_wegobjecten_by_straat(self, straat):
         '''
         List all `wegobjecten` in a :class:`Straat`
- 
+
         :param straat: The :class:`Straat` for which the `wegobjecten` \
                 are wanted.
         :rtype: A :class:`list` of :class:`Wegobject`
@@ -946,7 +946,7 @@ class CrabGateway(object):
 
 class GatewayObject(object):
     '''
-    Abstract class for objects that are able to use a 
+    Abstract class for objects that are able to use a
     :class:`crabpy.Gateway.CrabGateway` to find further information.
     '''
 
@@ -979,8 +979,8 @@ def check_lazy_load_gewest(f):
         gewest = args[0]
         if (
             gewest._namen is None or
-            gewest._centroid is None or 
-            gewest._bounding_box is None 
+            gewest._centroid is None or
+            gewest._bounding_box is None
         ):
             gewest.check_gateway()
             g = gewest.gateway.get_gewest_by_id(gewest.id)
@@ -1014,7 +1014,7 @@ class Gewest(GatewayObject):
 
     @property
     @check_lazy_load_gewest
-    def naam(self): 
+    def naam(self):
         return self._namen['nl']
 
     @property
@@ -1048,7 +1048,7 @@ def check_lazy_load_gemeente(f):
     def wrapper(*args):
         gemeente = args[0]
         if (
-            gemeente._centroid is None or gemeente._bounding_box is None 
+            gemeente._centroid is None or gemeente._bounding_box is None
             or gemeente._taal_id is None or gemeente._metadata is None
         ):
             gemeente.check_gateway()
@@ -1073,7 +1073,7 @@ class Gemeente(GatewayObject):
         self.id = int(id)
         self.naam = naam
         self.niscode = niscode
-        self.gewest  = gewest
+        self.gewest = gewest
         try:
             self._taal_id = taal.id
             self._taal = taal
@@ -1523,7 +1523,7 @@ def check_lazy_load_wegsegment(f):
     def wrapper(*args):
         wegsegment = args[0]
         if (
-            wegsegment._methode_id is None or 
+            wegsegment._methode_id is None or
             wegsegment._geometrie is None or
             wegsegment._metadata is None
         ):
@@ -1601,7 +1601,7 @@ def check_lazy_load_terreinobject(f):
     def wrapper(*args):
         terreinobject = args[0]
         if (
-            terreinobject._centroid is None or 
+            terreinobject._centroid is None or
             terreinobject._bounding_box is None or
             terreinobject._metadata is None
         ):
@@ -1619,7 +1619,7 @@ class Terreinobject(GatewayObject):
     A cadastral parcel.
 
     A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
-    in the source of the data and the information provided. eg. A 
+    in the source of the data and the information provided. eg. A
     `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
     also has the centroid, but not the `bounding box`.
     '''
@@ -1690,7 +1690,7 @@ class Perceel(GatewayObject):
     A cadastral Parcel.
 
     A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
-    in the source of the data and the information provided. eg. A 
+    in the source of the data and the information provided. eg. A
     `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
     also has the centroid, but not the `bounding box`.
     '''

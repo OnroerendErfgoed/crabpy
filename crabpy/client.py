@@ -11,7 +11,6 @@ from suds.client import Client
 
 from suds.wsse import Security
 from crabpy.wsse import UsernameDigestToken
-from datetime import datetime
 
 from crabpy.wsa import Action, MessageID, To
 
@@ -47,7 +46,7 @@ def capakey_factory(**kwargs):
     A few parameters will be handled by the factory, other parameters will
     be passed on to the client.
 
-    :param user: `Required.` Username for authenticating with the CAPAKEY 
+    :param user: `Required.` Username for authenticating with the CAPAKEY
         service.
     :param password: `Required.` Password for authenticating with the CAPAKEY
         service.
@@ -78,6 +77,7 @@ def capakey_factory(**kwargs):
     c.capakey_password = password
     return c
 
+
 def crab_request(client, action, *args):
     '''
     Utility function that helps making requests to the CRAB service.
@@ -88,8 +88,8 @@ def crab_request(client, action, *args):
 
     .. versionadded:: 0.3.0
     '''
-    
     return getattr(client.service, action)(*args)
+
 
 def capakey_request(client, action, *args):
     '''

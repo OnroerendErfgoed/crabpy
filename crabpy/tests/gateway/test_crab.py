@@ -339,7 +339,7 @@ class GewestTests(unittest.TestCase):
         g.set_gateway(crab)
         gemeenten = g.gemeenten
         self.assertIsInstance(gemeenten, list)
-        
+
     @unittest.skipUnless(
         run_crab_integration_tests(),
         'No CRAB Integration tests required'
@@ -492,6 +492,7 @@ class TaalTests(unittest.TestCase):
         self.assertEqual('Nederlands', str(t))
         self.assertEqual("Taal('nl', 'Nederlands', 'Nederlands.')", repr(t))
 
+
 class BewerkingTests(unittest.TestCase):
     def test_repr(self):
         b = Bewerking(
@@ -626,7 +627,6 @@ class GeometriemethodewegsegmentTests(unittest.TestCase):
             repr(g))
 
 
-
 class StatusgebouwTests(unittest.TestCase):
     def test_repr(self):
         s = Statusgebouw(
@@ -647,7 +647,7 @@ class GeometriemethodegebouwTests(unittest.TestCase):
             'opmeting',
             None
         )
-        self.assertEqual("Geometriemethodegebouw(2, 'opmeting', 'None')",repr(g))
+        self.assertEqual("Geometriemethodegebouw(2, 'opmeting', 'None')", repr(g))
 
 
 class HerkomstadrespositieTests(unittest.TestCase):
