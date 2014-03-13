@@ -1293,7 +1293,7 @@ class Straat(GatewayObject):
     '''
     def __init__(
             self, id, label, gemeente_id, status,
-            straatnaam=None, taalcode=None, 
+            straatnaam=None, taalcode=None,
             straatnaam2=None, taalcode2=None,
             metadata=None, **kwargs
     ):
@@ -1373,7 +1373,7 @@ class Huisnummer(GatewayObject):
     This is mainly a combination of a street and a house number.
     '''
     def __init__(
-            self, id, status, huisnummer, straat_id, 
+            self, id, status, huisnummer, straat_id,
             metadata=None, **kwargs
     ):
         self.id = int(id)

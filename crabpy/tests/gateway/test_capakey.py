@@ -525,7 +525,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         res = self.capakey.list_kadastrale_afdelingen_by_gemeente(g)
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.capakey.caches['permanent'].get('ListKadAfdelingenByNiscode#44021#1'),
+            self.capakey
+                .caches['permanent']
+                .get('ListKadAfdelingenByNiscode#44021#1'),
             res
         )
 
@@ -536,7 +538,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertIsInstance(res.gemeente, Gemeente)
         self.assertEqual(res.gemeente.id, 44021)
         self.assertEqual(
-            self.capakey.caches['long'].get('GetKadAfdelingByKadAfdelingcode#44021'),
+            self.capakey
+                .caches['long']
+                .get('GetKadAfdelingByKadAfdelingcode#44021'),
             res
         )
 
@@ -545,7 +549,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertEqual(len(res), 1)
         self.assertEqual(
-            self.capakey.caches['long'].get('ListKadSectiesByKadAfdelingcode#44021'),
+            self.capakey
+                .caches['long']
+                .get('ListKadSectiesByKadAfdelingcode#44021'),
             res
         )
 
@@ -556,7 +562,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertEqual(res.id, 'A')
         self.assertEqual(res.afdeling.id, 44021)
         self.assertEqual(
-            self.capakey.caches['long'].get('GetKadSectieByKadSectiecode#44021#A'),
+            self.capakey
+                .caches['long']
+                .get('GetKadSectieByKadSectiecode#44021#A'),
             res
         )
 
@@ -566,7 +574,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertGreater(len(res), 0)
         self.assertEqual(
-            self.capakey.caches['short'].get('ListKadPerceelsnummersByKadSectiecode#44021#A#1'),
+            self.capakey
+                .caches['short']
+                .get('ListKadPerceelsnummersByKadSectiecode#44021#A#1'),
             res
         )
 
@@ -579,7 +589,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertEqual(res.sectie.id, 'A')
         self.assertEqual(res.sectie.afdeling.id, 44021)
         self.assertEqual(
-            self.capakey.caches['short'].get('GetKadPerceelsnummerByKadPerceelsnummer#44021#A#%s' % perc.id),
+            self.capakey
+                .caches['short']
+                .get('GetKadPerceelsnummerByKadPerceelsnummer#44021#A#%s' % perc.id),
             res
         )
 
@@ -592,7 +604,9 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertEqual(res.sectie.id, 'A')
         self.assertEqual(res.sectie.afdeling.id, 44021)
         self.assertEqual(
-            self.capakey.caches['short'].get('GetKadPerceelsnummerByCaPaKey#%s' % perc.capakey),
+            self.capakey
+                .caches['short']
+                .get('GetKadPerceelsnummerByCaPaKey#%s' % perc.capakey),
             res
         )
 
@@ -605,6 +619,8 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
         self.assertEqual(res.sectie.id, 'A')
         self.assertEqual(res.sectie.afdeling.id, 44021)
         self.assertEqual(
-            self.capakey.caches['short'].get('GetKadPerceelsnummerByPERCID#%s' % perc.percid),
+            self.capakey
+                .caches['short']
+                .get('GetKadPerceelsnummerByPERCID#%s' % perc.percid),
             res
         )
