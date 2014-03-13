@@ -9,16 +9,16 @@ from crabpy.client import crab_factory, crab_request
 crab = crab_factory()
 
 res = crab.service.ListGemeentenByGewestId(1)
-print res
+print(res)
 
 res = crab.service.ListPostkantonsByGemeenteId(71)
-print res
+print(res)
 
 res = crab_request(crab, 'ListGemeentenByGewestId', 1)
-print res
+print(res)
 
 res = crab_request(crab, 'ListHuisnummersWithStatusByStraatnaamId', 18618)
-print res
+print(res)
 
 res = crab_request(crab, 'GetStraatnaamWithStatusByStraatnaamId', 18618)
-print res
+print(res)
