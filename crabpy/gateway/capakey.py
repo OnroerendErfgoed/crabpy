@@ -5,6 +5,9 @@ This module contains an opionated gateway for the capakey webservice.
 .. versionadded:: 0.2.0
 '''
 
+from __future__ import unicode_literals
+import six
+
 from crabpy.client import capakey_request
 
 from suds import WebFault
@@ -408,6 +411,13 @@ class GatewayObject(object):
         if not self.gateway:
             raise RuntimeError("There's no Gateway I can use")
 
+    if six.PY2:
+        def __str__(self):
+            return self.__unicode__().encode('utf-8')
+    else:
+        def __str__(self):
+            return self.__unicode__()
+
 
 def check_lazy_load_gemeente(f):
     '''
@@ -464,7 +474,7 @@ class Gemeente(GatewayObject):
         self.check_gateway()
         return self.gateway.list_kadastrale_afdelingen_by_gemeente(self)
 
-    def __str__(self):
+    def __unicode__(self):
         if self._naam is not None:
             return '%s (%s)' % (self._naam, self.id)
         else:
@@ -539,7 +549,7 @@ class Afdeling(GatewayObject):
         self.check_gateway()
         return self.gateway.list_secties_by_afdeling(self)
 
-    def __str__(self):
+    def __unicode__(self):
         if self._naam is not None:
             return '%s (%s)' % (self._naam, self.id)
         else:
@@ -600,7 +610,7 @@ class Sectie(GatewayObject):
         self.check_gateway()
         return self.gateway.list_percelen_by_sectie(self)
 
-    def __str__(self):
+    def __unicode__(self):
         return '%s, Sectie %s' % (self.afdeling, self.id)
 
     def __repr__(self):
@@ -693,7 +703,7 @@ class Perceel(GatewayObject):
     def cashkey(self):
         return self._cashkey
 
-    def __str__(self):
+    def __unicode__(self):
         return self.capakey
 
     def __repr__(self):
