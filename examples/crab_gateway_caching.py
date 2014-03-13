@@ -29,20 +29,20 @@ g = CrabGateway(
 
 aartselaar = g.get_gemeente_by_id(1)
 
-print 'Straten in AARTSELAAR'
-print '---------------------'
-print [str(s) for s in g.list_straten(aartselaar)]
+print('Straten in AARTSELAAR')
+print('---------------------')
+print([str(s) for s in g.list_straten(aartselaar)])
     
-print 'Huisnummers in AARTSELAAR Straat1'
-print '---------------------------------'
-print [str(h) for h in g.list_huisnummers_by_straat(s)]
+print('Huisnummers in AARTSELAAR Straat1')
+print('---------------------------------')
+print([str(h) for h in g.list_huisnummers_by_straat(s)])
 
 p = g.get_gemeente_by_niscode(33021)
 
-print 'gemeente: %s' % p.id
-print 'naam: %s' % p.naam
-print 'niscode: %s' % p.niscode
-print 'gewest: %s' % p.gewest
-print 'taal: %s' % p.taal
-print 'centroid: %s' % str(p.centroid)
-print 'bounding_box: %s' % str(p.bounding_box)
+print('gemeente: %s' % p.id)
+print('naam: %s' % p.naam)
+print('niscode: %s' % p.niscode)
+print('gewest: %s' % p.gewest)
+print('taal: %s' % p.taal)
+print('centroid: %s' % str(p.centroid))
+print('bounding_box: %s' % str(p.bounding_box))

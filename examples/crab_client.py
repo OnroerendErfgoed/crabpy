@@ -7,4 +7,4 @@ from crabpy.client import crab_factory
 
 crab = crab_factory()
 
-print crab
+print(crab)

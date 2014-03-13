@@ -143,7 +143,7 @@ class CrabGateway(object):
                     r.GemeenteNaam,
                     r.NISGemeenteCode,
                     Gewest(id)
-                )for r in res.GemeenteItem
+                )for r in res.GemeenteItem if r.TaalCode==r.TaalCodeGemeenteNaam
             ]
         if self.caches['permanent'].is_configured:
             key = 'ListGemeentenByGewestId#%s%s' % (id, sort)

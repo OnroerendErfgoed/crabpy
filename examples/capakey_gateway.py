@@ -17,10 +17,10 @@ g = CapakeyGateway(capakey)
 
 gemeente = g.get_gemeente_by_id(45062)
 
-print str(gemeente)
+print(str(gemeente))
 for a in gemeente.afdelingen:
-    print "* %s" % a
+    print("* %s" % a)
     for s in a.secties:
-        print "\t* %s" % s
+        print("\t* %s" % s)
         for p in s.percelen:
-            print "\t\t* %s" % p
+            print("\t\t* %s" % p)

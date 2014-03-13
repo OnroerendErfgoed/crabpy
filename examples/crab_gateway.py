@@ -11,8 +11,8 @@ g = CrabGateway(crab_factory())
 
 gemeente = g.get_gemeente_by_id(1)
 
-print str(gemeente)
+print(str(gemeente))
 for s in gemeente.straten:
-    print "* %s" % s
+    print("* %s" % s)
     for h in s.huisnummers:
-        print "\t* %s" % h
+        print("\t* %s" % h)
