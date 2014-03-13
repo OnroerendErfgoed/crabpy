@@ -396,6 +396,10 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual('Aartselaar (1)', str(g))
         self.assertEqual("Gemeente(1, 'Aartselaar', 11001)", repr(g))
 
+    def test_unicode(self):
+        g = Gemeente(92, 'Biévène', 23009, Gewest(2))
+        self.assertEqual('Biévène (92)'.encode('utf-8'), str(g))
+
     def test_str_and_repr_dont_lazy_load(self):
         g = Gemeente(1, 'Aartselaar', 11001, Gewest(2))
         self.assertEqual('Aartselaar (1)', str(g))
