@@ -6,6 +6,7 @@ This module contains an opionated gateway for the crab webservice.
 '''
 
 from __future__ import unicode_literals
+import six
 
 from crabpy.client import crab_request
 
@@ -962,6 +963,13 @@ class GatewayObject(object):
         if not self.gateway:
             raise RuntimeError("There's no Gateway I can use")
 
+    if six.PY2:
+        def __str__(self):
+            return self.__unicode__().encode('utf-8')
+    else:
+        def __str__(self):
+            return self.__unicode__()
+
 
 def check_lazy_load_gewest(f):
     '''
@@ -1023,7 +1031,7 @@ class Gewest(GatewayObject):
     def gemeenten(self):
         return self.gateway.list_gemeenten(self.id)
 
-    def __str__(self):
+    def __unicode__(self):
         if self._namen is not None:
             return "%s (%s)" % (self.naam, self.id)
         else:
@@ -1112,7 +1120,7 @@ class Gemeente(GatewayObject):
         self.check_gateway()
         return self.gateway.list_postkantons_by_gemeente(self.id)
 
-    def __str__(self):
+    def __unicode__(self):
         return "%s (%s)" % (self.naam, self.id)
 
     def __repr__(self):
@@ -1128,7 +1136,7 @@ class Codelijst(GatewayObject):
         self.definitie = definitie
         super(Codelijst, self).__init__(**kwargs)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.naam
 
 
@@ -1335,7 +1343,7 @@ class Straat(GatewayObject):
     def taal(self):
         return self.gemeente.taal
 
-    def __str__(self):
+    def __unicode__(self):
         return "%s (%s)" % (self.label, self.id)
 
     def __repr__(self):
@@ -1416,7 +1424,7 @@ class Huisnummer(GatewayObject):
     def gebouwen(self):
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
 
-    def __str__(self):
+    def __unicode__(self):
         return "%s (%s)" % (self.huisnummer, self.id)
 
     def __repr__(self):
@@ -1433,7 +1441,7 @@ class Postkanton(GatewayObject):
         self.id = int(id)
         super(Postkanton, self).__init__(**kwargs)
 
-    def __str__(self):
+    def __unicode__(self):
         return "Postkanton %s" % (self.id)
 
     def __repr__(self):
@@ -1501,7 +1509,7 @@ class Wegobject(GatewayObject):
     def metadata(self):
         return self._metadata
 
-    def __str__(self):
+    def __unicode__(self):
         return "Wegobject %s" % (self.id)
 
     def __repr__(self):
@@ -1579,7 +1587,7 @@ class Wegsegment(GatewayObject):
     def metadata(self):
         return self._metadata
 
-    def __str__(self):
+    def __unicode__(self):
         return "Wegsegment %s" % (self.id)
 
     def __repr__(self):
@@ -1655,7 +1663,7 @@ class Terreinobject(GatewayObject):
     def metadata(self):
         return self._metadata
 
-    def __str__(self):
+    def __unicode__(self):
         return "Terreinobject %s" % (self.id)
 
     def __repr__(self):
@@ -1704,7 +1712,7 @@ class Perceel(GatewayObject):
     def metadata(self):
         return self._metadata
 
-    def __str__(self):
+    def __unicode__(self):
         return "Perceel %s" % (self.id)
 
     def __repr__(self):
@@ -1801,7 +1809,7 @@ class Gebouw(GatewayObject):
     def metadata(self):
         return self._metadata
 
-    def __str__(self):
+    def __unicode__(self):
         return "Gebouw %s" % (self.id)
 
     def __repr__(self):
@@ -1855,3 +1863,6 @@ class Metadata(GatewayObject):
                 if int(organisatie.id) == int(self._begin_organisatie_id):
                     self._begin_organisatie = organisatie
         return self._begin_organisatie
+
+    def __unicode__(self):
+        return "Begin datum: %s" % (self.begin_datum)

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import six
 
 import unittest
 
@@ -395,6 +396,22 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual(int(g.metadata.begin_organisatie.id), 6)
         self.assertEqual('Aartselaar (1)', str(g))
         self.assertEqual("Gemeente(1, 'Aartselaar', 11001)", repr(g))
+
+    @unittest.skipUnless(
+        six.PY2,
+        'This test only works on python 2.x'
+    )
+    def test_unicode(self):
+        g = Gemeente(92, 'Biévène', 23009, Gewest(2))
+        self.assertEqual('Biévène (92)'.encode('utf-8'), str(g))
+
+    @unittest.skipUnless(
+        six.PY3,
+        'This test only works on python 3.x'
+    )
+    def test_unicode(self):
+        g = Gemeente(92, 'Biévène', 23009, Gewest(2))
+        self.assertEqual('Biévène (92)', str(g))
 
     def test_str_and_repr_dont_lazy_load(self):
         g = Gemeente(1, 'Aartselaar', 11001, Gewest(2))
