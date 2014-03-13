@@ -2,9 +2,12 @@
 ------------------
 
 - Fixed a bug with lazy loading a Perceel's capatype or cashkey. (#8)
+- Removes duplicates from a list of gemeentes as returned by CRAB. (#10)
 - Removed loading a Gemeente with an afdeling to speed up certain queries. (#7)
 - Removed a few unneeded requests in the capakey gateway when working with 
-  Gemeente.id or Afdeling.id.  
+  Gemeente.id or Afdeling.id.
+- Fixed printing of objects through the __str__ method on python 2.7. (#9)
+- Adapted examples for python 3 print. (#11)
 
 0.3.0 (12-03-2014)
 ------------------
