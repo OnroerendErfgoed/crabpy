@@ -13,7 +13,8 @@ packages = [
 
 requires = [
     'suds-jurko>=0.6.0',
-    'dogpile.cache'
+    'dogpile.cache',
+    'six'
 ]
 
 setup(
