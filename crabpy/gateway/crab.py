@@ -107,7 +107,11 @@ class CrabGateway(object):
             )
             return Gewest(
                 nl.GewestId,
-                {'nl': nl.GewestNaam, 'fr': fr.GewestNaam, 'de': de.GewestNaam},
+                {
+                    'nl': nl.GewestNaam,
+                    'fr': fr.GewestNaam,
+                    'de': de.GewestNaam
+                },
                 (nl.CenterX, nl.CenterY),
                 (nl.MinimumX, nl.MinimumY, nl.MaximumX, nl.MaximumY),
             )
@@ -143,7 +147,7 @@ class CrabGateway(object):
                     r.GemeenteNaam,
                     r.NISGemeenteCode,
                     Gewest(id)
-                )for r in res.GemeenteItem if r.TaalCode==r.TaalCodeGemeenteNaam
+                )for r in res.GemeenteItem if r.TaalCode == r.TaalCodeGemeenteNaam
             ]
         if self.caches['permanent'].is_configured:
             key = 'ListGemeentenByGewestId#%s%s' % (id, sort)
