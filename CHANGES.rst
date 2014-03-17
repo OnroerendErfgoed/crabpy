@@ -1,4 +1,4 @@
-0.3.1 (??-??-2014)
+0.3.1 (17-03-2014)
 ------------------
 
 - Fixed a bug with lazy loading a Perceel's capatype or cashkey. (#8)
