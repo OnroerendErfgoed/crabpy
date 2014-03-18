@@ -181,8 +181,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['long'].is_configured:
@@ -216,8 +216,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['long'].is_configured:
@@ -461,8 +461,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
 
@@ -528,8 +528,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['short'].is_configured:
@@ -651,8 +651,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['short'].is_configured:
@@ -715,8 +715,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['short'].is_configured:
@@ -811,8 +811,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['short'].is_configured:
@@ -871,8 +871,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['short'].is_configured:
@@ -936,8 +936,8 @@ class CrabGateway(object):
                 Metadata(
                     res.BeginDatum,
                     res.BeginTijd,
-                    res.BeginBewerking,
-                    res.BeginOrganisatie
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
                 )
             )
         if self.caches['short'].is_configured:
@@ -947,7 +947,18 @@ class CrabGateway(object):
             gebouw = creator()
         gebouw.set_gateway(self)
         return gebouw
-
+        
+    def get_bewerking(self, res):
+        r = self.list_bewerkingen()
+        for item in r:
+            if int(item.id) == int(res):
+                return item
+        
+    def get_organisatie(self, res):
+        r = self.list_organisaties()
+        for item in r:
+            if int(item.id) == int(res):
+                return item
 
 class GatewayObject(object):
     '''
