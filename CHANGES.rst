@@ -1,3 +1,10 @@
+0.3.2 (??-??-2014)
+------------------
+
+- A :class:`crabpy.gateway.crab.Gebouw` loaded through the 
+  :meth:`crabpy.gateway.crab.CrabGateway.get_gebouw_by_id` was not passed a 
+  :meth:`crabpy.gateway.crab.CrabGateway`. (#15)
+
 0.3.1 (17-03-2014)
 ------------------
 
