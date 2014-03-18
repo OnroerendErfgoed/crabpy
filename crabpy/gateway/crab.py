@@ -945,6 +945,7 @@ class CrabGateway(object):
             gebouw = self.caches['short'].get_or_create(key, creator)
         else:
             gebouw = creator()
+        gebouw.set_gateway(self)
         return gebouw
 
 
