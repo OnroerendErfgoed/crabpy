@@ -563,7 +563,13 @@ class CrabGateway(object):
                 res.HuisnummerId,
                 res.StatusHuisnummer,
                 res.Huisnummer,
-                res.StraatnaamId
+                res.StraatnaamId,
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
+                )
             )
         if self.caches['short'].is_configured:
             key = 'GetHuisnummerWithStatusByHuisnummer#%s%s' % (nummer, straat_id)
