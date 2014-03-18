@@ -4,6 +4,8 @@
 - A :class:`crabpy.gateway.crab.Gebouw` loaded through the 
   :meth:`crabpy.gateway.crab.CrabGateway.get_gebouw_by_id` was not passed a 
   :meth:`crabpy.gateway.crab.CrabGateway`. (#15)
+- Always load a full :class:`crabpy.gateway.crab.Metadata` object when returning
+  from a get*_by_id method. (#13)
 
 0.3.1 (17-03-2014)
 ------------------
