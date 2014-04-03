@@ -788,8 +788,8 @@ class StraatTests(unittest.TestCase):
             crab_factory
         )
         s = (1, 'Acacialaan', 1, 3)
-        s.set_gateway(self)
-        weobjecten = s.wegobjecten
+        s.set_gateway(crab)
+        wegobjecten = s.wegobjecten
         self.assertIsInstance(wegobjecten, list)
         self.assertIsInstance(wegobjecten[0], Wegobject)
 
