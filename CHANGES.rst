@@ -7,6 +7,7 @@
 - Always load a full :class:`crabpy.gateway.crab.Metadata` object when returning
   from a get*_by_id method. (#13)
 - Add a `wegobjecten` property to a :class:`crabpy.gateway.crab.Straat`. (#17)
+- Added support for `Coveralls <https://coveralls.io>`_. (#16)
 
 0.3.1 (17-03-2014)
 ------------------
