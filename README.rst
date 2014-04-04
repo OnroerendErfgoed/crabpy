@@ -9,8 +9,8 @@ complicated, this library makes it easier.
         :target: https://travis-ci.org/OnroerendErfgoed/crabpy
 .. image:: https://badge.fury.io/py/crabpy.png
         :target: http://badge.fury.io/py/crabpy
-.. image:: https://coveralls.io/repos/OnroerendErfgoed/crabpy_pyramid/badge.png?branch=master 
-        :target: https://coveralls.io/r/OnroerendErfgoed/crabpy_pyramid?branch=master 
+.. image:: https://coveralls.io/repos/OnroerendErfgoed/crabpy/badge.png?branch=master 
+        :target: https://coveralls.io/r/OnroerendErfgoed/crabpy?branch=master 
 
 Using the CRAB webservice
 -------------------------
