@@ -9,7 +9,7 @@ python:
 install:
  - easy_install -U setuptools
  - python setup.py install
- - pip install nose nose-testconfig
+ - pip install nose coverage nose-testconfig
  - pip install coveralls
 script: nosetests --nologcapture --config nose_cover.cfg --tc-file nose_travis.ini
 after_success:
