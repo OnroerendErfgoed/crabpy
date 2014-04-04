@@ -785,7 +785,7 @@ class StraatTests(unittest.TestCase):
         
     def test_wegobjecten(self):
         crab = CrabGateway(
-            crab_factory
+            crab_factory()
         )
         s = Straat(1, 'Acacialaan', 1, 3)
         s.set_gateway(crab)
