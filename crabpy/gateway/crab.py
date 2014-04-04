@@ -1369,6 +1369,12 @@ class Straat(GatewayObject):
     def wegobjecten(self):
         self.check_gateway()
         return self.gateway.list_wegobjecten_by_straat(self)
+       
+    @property
+    def wegsegmenten(self):
+        self.check_gateway()
+        return self.gateway.list_wegsegmenten_by_straat(self)
+    
 
     def __unicode__(self):
         return "%s (%s)" % (self.label, self.id)
