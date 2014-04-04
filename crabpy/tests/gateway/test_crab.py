@@ -792,6 +792,16 @@ class StraatTests(unittest.TestCase):
         wegobjecten = s.wegobjecten
         self.assertIsInstance(wegobjecten, list)
         self.assertIsInstance(wegobjecten[0], Wegobject)
+        
+    def test_wegsegmenten(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        s = Straat(1, 'Acacialaan', 1, 3)
+        s.set_gateway(crab)
+        wegsegmenten = s.wegsegmenten
+        self.assertIsInstance(wegsegmenten, list)
+        self.assertIsInstance(wegsegmenten[0], Wegsegment)
 
 
 class HuisnummerTests(unittest.TestCase):
