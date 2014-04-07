@@ -1,4 +1,4 @@
-0.3.2 (??-??-2014)
+0.3.2 (07-04-2014)
 ------------------
 
 - A :class:`crabpy.gateway.crab.Gebouw` loaded through the 
@@ -7,6 +7,7 @@
 - Always load a full :class:`crabpy.gateway.crab.Metadata` object when returning
   from a get*_by_id method. (#13)
 - Add a `wegobjecten` property to a :class:`crabpy.gateway.crab.Straat`. (#17)
+- Add a `wegsegmenten` property to a :class:`crabpy.gateway.crab.Straat`. (#18)
 - Added support for `Coveralls <https://coveralls.io>`_. (#16)
 
 0.3.1 (17-03-2014)
