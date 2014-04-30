@@ -783,6 +783,10 @@ class StraatTests(unittest.TestCase):
         status = s.status
         self.assertIsInstance(status, Statusstraatnaam)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_wegobjecten(self):
         crab = CrabGateway(
             crab_factory()
@@ -793,6 +797,10 @@ class StraatTests(unittest.TestCase):
         self.assertIsInstance(wegobjecten, list)
         self.assertIsInstance(wegobjecten[0], Wegobject)
         
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
     def test_wegsegmenten(self):
         crab = CrabGateway(
             crab_factory()
