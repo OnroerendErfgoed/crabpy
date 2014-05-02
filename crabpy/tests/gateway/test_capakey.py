@@ -170,12 +170,12 @@ class GemeenteTests(unittest.TestCase):
         self.assertEqual("Gemeente(44021, 'Gent')", repr(g))
 
     def test_str_and_repr_dont_lazy_load(self):
-        g = Gemeente(44021)
-        self.assertEqual('Gemeente 44021', str(g))
-        self.assertEqual('Gemeente(44021)', repr(g))
+        g = Gemeente(44021, 'Gent')
+        self.assertEqual('Gent (44021)', str(g))
+        self.assertEqual("Gemeente(44021, 'Gent')", repr(g))
 
     def test_check_gateway_not_set(self):
-        g = Gemeente(44021)
+        g = Gemeente(44021, 'Gent')
         self.assertRaises(RuntimeError, g.check_gateway)
 
     @unittest.skipUnless(
@@ -190,7 +190,7 @@ class GemeenteTests(unittest.TestCase):
                 password=config['capakey']['password']
             )
         )
-        g = Gemeente(44021)
+        g = Gemeente(44021, 'Gent')
         g.set_gateway(capakey)
         self.assertEqual(g.id, 44021)
         self.assertEqual(g.naam, 'Gent')
@@ -209,7 +209,7 @@ class GemeenteTests(unittest.TestCase):
                 password=config['capakey']['password']
             )
         )
-        g = Gemeente(44021)
+        g = Gemeente(44021, 'Gent')
         g.set_gateway(capakey)
         afdelingen = g.afdelingen
         self.assertIsInstance(afdelingen, list)
