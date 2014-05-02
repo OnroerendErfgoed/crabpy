@@ -1,3 +1,9 @@
+0.3.3 (02-05-2014)
+------------------
+
+- Added some debugging calls to allow an implementing application to track what
+  calls are being made.
+
 0.3.2 (07-04-2014)
 ------------------
 
