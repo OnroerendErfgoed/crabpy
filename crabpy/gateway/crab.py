@@ -8,6 +8,9 @@ This module contains an opionated gateway for the crab webservice.
 from __future__ import unicode_literals
 import six
 
+import logging
+log = logging.getLogger(__name__)
+
 from crabpy.client import crab_request
 
 from suds import WebFault
@@ -54,6 +57,7 @@ class CrabGateway(object):
         if 'cache_config' in kwargs:
             for cr in cache_regions:
                 if ('%s.backend' % cr) in kwargs['cache_config']:
+                    log.debug('Configuring %s region on CrabGateway', cr)
                     self.caches[cr].configure_from_config(
                         kwargs['cache_config'],
                         '%s.' % cr
@@ -1004,6 +1008,7 @@ def check_lazy_load_gewest(f):
             gewest._centroid is None or
             gewest._bounding_box is None
         ):
+            log.debug('Lazy loading Gewest %d', gewest.id)
             gewest.check_gateway()
             g = gewest.gateway.get_gewest_by_id(gewest.id)
             gewest._namen = g._namen
@@ -1073,6 +1078,7 @@ def check_lazy_load_gemeente(f):
             gemeente._centroid is None or gemeente._bounding_box is None
             or gemeente._taal_id is None or gemeente._metadata is None
         ):
+            log.debug('Lazy loading Gemeente %d', gemeente.id)
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._taal_id = g._taal_id
@@ -1299,6 +1305,7 @@ def check_lazy_load_straat(f):
         if (
             straat._namen is None or straat._metadata is None
         ):
+            log.debug('Lazy loading Straat %d', straat.id)
             straat.check_gateway()
             s = straat.gateway.get_straat_by_id(straat.id)
             straat._namen = s._namen
@@ -1392,6 +1399,7 @@ def check_lazy_load_huisnummer(f):
         if (
             huisnummer._metadata is None
         ):
+            log.debug('Lazy loading Huisnummer %d', huisnummer.id)
             huisnummer.check_gateway()
             h = huisnummer.gateway.get_huisnummer_by_id(huisnummer.id)
             huisnummer._metadata = h._metadata
@@ -1492,6 +1500,7 @@ def check_lazy_load_wegobject(f):
             wegobject._bounding_box is None or
             wegobject._metadata is None
         ):
+            log.debug('Lazy loading Wegobject %d', wegobject.id)
             wegobject.check_gateway()
             w = wegobject.gateway.get_wegobject_by_id(wegobject.id)
             wegobject._centroid = w._centroid
@@ -1560,6 +1569,7 @@ def check_lazy_load_wegsegment(f):
             wegsegment._geometrie is None or
             wegsegment._metadata is None
         ):
+            log.debug('Lazy loading Wegsegment %d', wegsegment.id)
             wegsegment.check_gateway()
             w = wegsegment.gateway.get_wegsegment_by_id(wegsegment.id)
             wegsegment._methode_id = w._methode_id
@@ -1638,6 +1648,7 @@ def check_lazy_load_terreinobject(f):
             terreinobject._bounding_box is None or
             terreinobject._metadata is None
         ):
+            log.debug('Lazy loading Terreinobject %s', terreinobject.id)
             terreinobject.check_gateway()
             t = terreinobject.gateway.get_terreinobject_by_id(terreinobject.id)
             terreinobject._centroid = t._centroid
@@ -1710,6 +1721,7 @@ def check_lazy_load_perceel(f):
     def wrapper(*args):
         perceel = args[0]
         if perceel._centroid is None or perceel._metadata is None:
+            log.debug('Lazy loading Perceel %s', perceel.id)
             perceel.check_gateway()
             p = perceel.gateway.get_perceel_by_id(perceel.id)
             perceel._centroid = p._centroid
@@ -1762,6 +1774,7 @@ def check_lazy_load_gebouw(f):
             gebouw._methode_id is None or gebouw._geometrie is None or
             gebouw._metadata is None
         ):
+            log.debug('Lazy loading Gebouw %d', gebouw.id)
             gebouw.check_gateway()
             g = gebouw.gateway.get_gebouw_by_id(gebouw.id)
             gebouw._methode_id = g._methode_id

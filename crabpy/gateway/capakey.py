@@ -8,6 +8,9 @@ This module contains an opionated gateway for the capakey webservice.
 from __future__ import unicode_literals
 import six
 
+import logging
+log = logging.getLogger(__name__)
+
 from crabpy.client import capakey_request
 
 from suds import WebFault
@@ -63,6 +66,7 @@ class CapakeyGateway(object):
         if 'cache_config' in kwargs:
             for cr in cache_regions:
                 if ('%s.backend' % cr) in kwargs['cache_config']:
+                    log.debug('Configuring %s region on CapakeyGateway', cr)
                     self.caches[cr].configure_from_config(
                         kwargs['cache_config'],
                         '%s.' % cr
@@ -429,6 +433,7 @@ def check_lazy_load_gemeente(f):
             gemeente._naam is None or gemeente._centroid is None or
             gemeente._bounding_box is None
         ):
+            log.debug('Lazy loading Gemeente %d', gemeente.id)
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._naam = g._naam
@@ -497,6 +502,7 @@ def check_lazy_load_afdeling(f):
             afdeling._naam is None or afdeling._gemeente is None or
             afdeling._centroid is None or afdeling._bounding_box is None
         ):
+            log.debug('Lazy loading Afdeling %d', afdeling.id)
             afdeling.check_gateway()
             a = afdeling.gateway.get_kadastrale_afdeling_by_id(afdeling.id)
             afdeling._naam = a._naam
@@ -569,6 +575,7 @@ def check_lazy_load_sectie(f):
     def wrapper(*args):
         sectie = args[0]
         if sectie._centroid is None or sectie._bounding_box is None:
+            log.debug('Lazy loading Sectie %d in Afdeling', sectie.id, sectie.afdeling.id)
             sectie.check_gateway()
             s = sectie.gateway.get_sectie_by_id_and_afdeling(
                 sectie.id, sectie.afdeling.id
@@ -627,6 +634,12 @@ def check_lazy_load_perceel(f):
             perceel._capatype is None or perceel._cashkey is None or
             perceel._centroid is None or perceel._bounding_box is None
         ):
+            log.debug(
+                'Lazy loading Perceel %d in Sectie %d in Afdeling %d',
+                perceel.id,
+                perceel.sectie.id,
+                perceel.sectie.afdeling.id
+            )
             perceel.check_gateway()
             p = perceel.gateway.get_perceel_by_id_and_sectie(
                 perceel.id,

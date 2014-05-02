@@ -7,6 +7,9 @@ This module contains utility functions for interacting with AGIV SOAP services.
 
 from __future__ import unicode_literals
 
+import logging
+log = logging.getLogger(__name__)
+
 from suds.client import Client
 
 from suds.wsse import Security
@@ -32,6 +35,7 @@ def crab_factory(**kwargs):
         del kwargs['wsdl']
     else:
         wsdl = "http://crab.agiv.be/wscrab/wscrab.svc?wsdl"
+    log.info('Creating CRAB client with wsdl: %s', wsdl)
     c = Client(
         wsdl,
         **kwargs
@@ -69,6 +73,7 @@ def capakey_factory(**kwargs):
         raise ValueError(
             "You must specify a 'user' and a 'password'."
         )
+    log.info('Creating CAPAKEY client with wsdl: %s', wsdl)
     c = Client(
         wsdl,
         **kwargs
@@ -88,6 +93,7 @@ def crab_request(client, action, *args):
 
     .. versionadded:: 0.3.0
     '''
+    log.debug('Calling %s on CRAB service.', action)
     return getattr(client.service, action)(*args)
 
 
@@ -110,4 +116,5 @@ def capakey_request(client, action, *args):
     t = To('http://ws.agiv.be/capakeyws/nodataset.asmx')
     client.set_options(soapheaders=[a.xml(), t.xml(), mid.xml()])
 
+    log.debug('Calling %s on CAPAKEY service.', action)
     return getattr(client.service, action)(*args)
