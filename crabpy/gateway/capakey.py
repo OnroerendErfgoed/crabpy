@@ -596,7 +596,7 @@ def check_lazy_load_sectie(f):
     def wrapper(self):
         sectie = self
         if (getattr(sectie, '_%s' % f.__name__, None) is None):
-            log.debug('Lazy loading Sectie %d in Afdeling', sectie.id, sectie.afdeling.id)
+            log.debug('Lazy loading Sectie %s in Afdeling %d', sectie.id, sectie.afdeling.id)
             sectie.check_gateway()
             s = sectie.gateway.get_sectie_by_id_and_afdeling(
                 sectie.id, sectie.afdeling.id
@@ -667,7 +667,7 @@ def check_lazy_load_perceel(f):
         perceel = self
         if (getattr(perceel, '_%s' % f.__name__, None) is None):
             log.debug(
-                'Lazy loading Perceel %d in Sectie %d in Afdeling %d',
+                'Lazy loading Perceel %s in Sectie %s in Afdeling %d',
                 perceel.id,
                 perceel.sectie.id,
                 perceel.sectie.afdeling.id
