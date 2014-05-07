@@ -133,8 +133,9 @@ class CapakeyGateway(object):
             )
             return [
                 Afdeling(
-                    r.KadAfdelingcode,
-                    r.KadAfdelingnaam
+                    id=r.KadAfdelingcode,
+                    naam=r.KadAfdelingnaam,
+                    gemeente=Gemeente(r.Niscode)
                 ) for r in res.KadAfdelingItem]
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingen#%s' % sort
@@ -462,15 +463,20 @@ class Gemeente(GatewayObject):
     '''
 
     def __init__(
-            self, id, naam,
+            self, id, naam=None,
             centroid=None, bounding_box=None,
             **kwargs
     ):
         self.id = int(id)
-        self.naam = naam
+        self._naam = naam
         self._centroid = centroid
         self._bounding_box = bounding_box
         super(Gemeente, self).__init__(**kwargs)
+
+    @property
+    @check_lazy_load_gemeente
+    def naam(self):
+        return self._naam
 
     @property
     @check_lazy_load_gemeente
