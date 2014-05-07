@@ -158,6 +158,8 @@ class CapakeyGateway(object):
             gid = gemeente.id
         except AttributeError:
             gid = gemeente
+            gemeente = self.get_gemeente_by_id(gid)
+        gemeente.clear_gateway()
 
         def creator():
             res = capakey_gateway_request(
@@ -166,7 +168,8 @@ class CapakeyGateway(object):
             return [
                 Afdeling(
                     id=r.KadAfdelingcode,
-                    naam=r.KadAfdelingnaam
+                    naam=r.KadAfdelingnaam,
+                    gemeente=gemeente
                 ) for r in res.KadAfdelingItem]
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingenByNiscode#%s#%s' % (gid, sort)
@@ -217,6 +220,8 @@ class CapakeyGateway(object):
             aid = afdeling.id
         except AttributeError:
             aid = afdeling
+            afdeling = self.get_kadastrale_afdeling_by_id(aid)
+        afdeling.clear_gateway()
 
         def creator():
             res = capakey_gateway_request(
@@ -225,7 +230,7 @@ class CapakeyGateway(object):
             return [
                 Sectie(
                     r.KadSectiecode,
-                    Afdeling(aid)
+                    afdeling
                 ) for r in res.KadSectieItem
             ]
         if self.caches['long'].is_configured:
@@ -250,6 +255,8 @@ class CapakeyGateway(object):
             aid = afdeling.id
         except AttributeError:
             aid = afdeling
+            afdeling = self.get_kadastrale_afdeling_by_id(aid)
+        afdeling.clear_gateway()
 
         def creator():
             res = capakey_gateway_request(
@@ -257,7 +264,7 @@ class CapakeyGateway(object):
             )
             return Sectie(
                 res.KadSectiecode,
-                Afdeling(aid),
+                afdeling,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
             )
@@ -277,6 +284,7 @@ class CapakeyGateway(object):
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Perceel`.
         '''
+        sectie.clear_gateway()
         def creator():
             res = capakey_gateway_request(
                 self.client, 'ListKadPerceelsnummersByKadSectiecode',
@@ -285,7 +293,7 @@ class CapakeyGateway(object):
             return [
                 Perceel(
                     r.KadPerceelsnummer,
-                    Sectie(sectie.id, Afdeling(sectie.afdeling.id)),
+                    sectie,
                     r.CaPaKey,
                     r.PERCID,
                 ) for r in res.KadPerceelsnummerItem
@@ -307,6 +315,7 @@ class CapakeyGateway(object):
         :param sectie: The :class:`Sectie` that contains the perceel.
         :rtype: :class:`Perceel`
         '''
+        sectie.clear_gateway()
         def creator():
             res = capakey_gateway_request(
                 self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
@@ -314,7 +323,7 @@ class CapakeyGateway(object):
             )
             return Perceel(
                 res.KadPerceelsnummer,
-                Sectie(sectie.id, Afdeling(sectie.afdeling.id)),
+                sectie,
                 res.CaPaKey,
                 res.PERCID,
                 res.CaPaTy,
@@ -534,7 +543,7 @@ class Afdeling(GatewayObject):
         '''
         self.gateway = None
         if (self._gemeente is not None):
-            self._gemeente.clear_gateway(gateway)
+            self._gemeente.clear_gateway()
 
     @property
     @check_lazy_load_afdeling
@@ -620,7 +629,7 @@ class Sectie(GatewayObject):
         Clear the currently set CapakeyGateway.
         '''
         self.gateway = None
-        self.afdeling.clear_gateway(gateway)
+        self.afdeling.clear_gateway()
 
     @property
     @check_lazy_load_sectie
@@ -704,7 +713,7 @@ class Perceel(GatewayObject):
         Clear the currently set CapakeyGateway.
         '''
         self.gateway = None
-        self.sectie.clear_gateway(gateway)
+        self.sectie.clear_gateway()
 
     def _split_capakey(self):
         '''
