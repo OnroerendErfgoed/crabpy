@@ -203,7 +203,6 @@ class CapakeyGateway(object):
         else:
             afdeling = creator()
         afdeling.set_gateway(self)
-        afdeling.gemeente.set_gateway(self)
         return afdeling
 
     def list_secties_by_afdeling(self, afdeling):
@@ -236,7 +235,6 @@ class CapakeyGateway(object):
             secties = creator()
         for s in secties:
             s.set_gateway(self)
-            s.afdeling.set_gateway(self)
         return secties
 
     def get_sectie_by_id_and_afdeling(self, id, afdeling):
@@ -269,7 +267,6 @@ class CapakeyGateway(object):
         else:
             sectie = creator()
         sectie.set_gateway(self)
-        sectie.afdeling.set_gateway(self)
         return sectie
 
     def list_percelen_by_sectie(self, sectie, sort=1):
@@ -300,8 +297,6 @@ class CapakeyGateway(object):
             percelen = creator()
         for p in percelen:
             p.set_gateway(self)
-            p.sectie.set_gateway(self)
-            p.sectie.afdeling.set_gateway(self)
         return percelen
 
     def get_perceel_by_id_and_sectie(self, id, sectie):
@@ -333,8 +328,6 @@ class CapakeyGateway(object):
         else:
             perceel = creator()
         perceel.set_gateway(self)
-        perceel.sectie.set_gateway(self)
-        perceel.sectie.afdeling.set_gateway(self)
         return perceel
 
     def get_perceel_by_capakey(self, capakey):
@@ -364,8 +357,6 @@ class CapakeyGateway(object):
         else:
             perceel = creator()
         perceel.set_gateway(self)
-        perceel.sectie.set_gateway(self)
-        perceel.sectie.afdeling.set_gateway(self)
         return perceel
 
     def get_perceel_by_percid(self, percid):
@@ -395,23 +386,34 @@ class CapakeyGateway(object):
         else:
             perceel = creator()
         perceel.set_gateway(self)
-        perceel.sectie.set_gateway(self)
-        perceel.sectie.afdeling.set_gateway(self)
         return perceel
 
 
 class GatewayObject(object):
+    '''
+    Abstract class for all objects being returned from the Gateway.
+    '''
 
     gateway = None
+    '''
+    The :class:`crabpy.gateway.capakey.CapakeyGateway` to use when making
+    further calls to the Capakey service.
+    '''
 
     def __init__(self, **kwargs):
         if 'gateway' in kwargs:
             self.set_gateway(kwargs['gateway'])
 
     def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
+        '''
         self.gateway = gateway
 
     def check_gateway(self):
+        '''
+        Check to see if a gateway was set on this object.
+        '''
         if not self.gateway:
             raise RuntimeError("There's no Gateway I can use")
 
@@ -512,6 +514,14 @@ class Afdeling(GatewayObject):
         self._bounding_box = bounding_box
         super(Afdeling, self).__init__(**kwargs)
 
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+        if (self._gemeente is not None):
+            self._gemeente.set_gateway(gateway)
+
     @property
     @check_lazy_load_afdeling
     def naam(self):
@@ -584,6 +594,13 @@ class Sectie(GatewayObject):
         self._bounding_box = bounding_box
         super(Sectie, self).__init__(**kwargs)
 
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+        self.afdeling.set_gateway(gateway)
+
     @property
     @check_lazy_load_sectie
     def centroid(self):
@@ -653,6 +670,13 @@ class Perceel(GatewayObject):
         self._bounding_box = bounding_box
         super(Perceel, self).__init__(**kwargs)
         self._split_capakey()
+
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+        self.sectie.set_gateway(gateway)
 
     def _split_capakey(self):
         '''
