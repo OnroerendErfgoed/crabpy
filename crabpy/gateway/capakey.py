@@ -166,7 +166,7 @@ class CapakeyGateway(object):
             return [
                 Afdeling(
                     id=r.KadAfdelingcode,
-                    naam=r.KadAfdelingnaam,
+                    naam=r.KadAfdelingnaam
                 ) for r in res.KadAfdelingItem]
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingenByNiscode#%s#%s' % (gid, sort)
@@ -410,6 +410,12 @@ class GatewayObject(object):
         '''
         self.gateway = gateway
 
+    def clear_gateway(self):
+        '''
+        Clear the currently set CapakeyGateway.
+        '''
+        self.gateway = None
+
     def check_gateway(self):
         '''
         Check to see if a gateway was set on this object.
@@ -522,6 +528,14 @@ class Afdeling(GatewayObject):
         if (self._gemeente is not None):
             self._gemeente.set_gateway(gateway)
 
+    def clear_gateway(self):
+        '''
+        Clear the currently set CapakeyGateway.
+        '''
+        self.gateway = None
+        if (self._gemeente is not None):
+            self._gemeente.clear_gateway(gateway)
+
     @property
     @check_lazy_load_afdeling
     def naam(self):
@@ -601,6 +615,13 @@ class Sectie(GatewayObject):
         self.gateway = gateway
         self.afdeling.set_gateway(gateway)
 
+    def clear_gateway(self):
+        '''
+        Clear the currently set CapakeyGateway.
+        '''
+        self.gateway = None
+        self.afdeling.clear_gateway(gateway)
+
     @property
     @check_lazy_load_sectie
     def centroid(self):
@@ -677,6 +698,13 @@ class Perceel(GatewayObject):
         '''
         self.gateway = gateway
         self.sectie.set_gateway(gateway)
+
+    def clear_gateway(self):
+        '''
+        Clear the currently set CapakeyGateway.
+        '''
+        self.gateway = None
+        self.sectie.clear_gateway(gateway)
 
     def _split_capakey(self):
         '''

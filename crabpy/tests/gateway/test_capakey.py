@@ -190,6 +190,22 @@ class GemeenteTests(unittest.TestCase):
                 password=config['capakey']['password']
             )
         )
+        g = Gemeente(44021, 'Gent', gateway=capakey)
+        g.clear_gateway()
+        self.assertRaises(RuntimeError, g.check_gateway)
+
+    @unittest.skipUnless(
+        run_capakey_integration_tests(),
+        'No CAPAKEY Integration tests required'
+    )
+    def test_lazy_load(self):
+        from testconfig import config
+        capakey = CapakeyGateway(
+            capakey_factory(
+                user=config['capakey']['user'],
+                password=config['capakey']['password']
+            )
+        )
         g = Gemeente(44021, 'Gent')
         g.set_gateway(capakey)
         self.assertEqual(g.id, 44021)
