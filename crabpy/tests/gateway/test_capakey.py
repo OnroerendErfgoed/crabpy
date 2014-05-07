@@ -237,6 +237,17 @@ class AfdelingTests(unittest.TestCase):
         self.assertEqual('GENT  1 AFD (44021)', str(a))
         self.assertEqual("Afdeling(44021, 'GENT  1 AFD')", repr(a))
 
+    def test_partially_initialised(self):
+        a = Afdeling(
+            44021,
+            'GENT  1 AFD',
+            Gemeente(44021, 'Gent'),
+        )
+        self.assertEqual(a.id, 44021)
+        self.assertEqual(a.naam, 'GENT  1 AFD')
+        self.assertEqual('GENT  1 AFD (44021)', str(a))
+        self.assertEqual("Afdeling(44021, 'GENT  1 AFD')", repr(a))
+
     def test_to_string_not_fully_initialised(self):
         a = Afdeling(
             44021

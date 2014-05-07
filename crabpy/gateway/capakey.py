@@ -165,8 +165,8 @@ class CapakeyGateway(object):
             )
             return [
                 Afdeling(
-                    r.KadAfdelingcode,
-                    r.KadAfdelingnaam
+                    id=r.KadAfdelingcode,
+                    naam=r.KadAfdelingnaam,
                 ) for r in res.KadAfdelingItem]
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingenByNiscode#%s#%s' % (gid, sort)
@@ -427,17 +427,15 @@ def check_lazy_load_gemeente(f):
     '''
     Decorator function to lazy load a :class:`Gemeente`.
     '''
-    def wrapper(*args):
-        gemeente = args[0]
-        if (
-            gemeente._centroid is None or gemeente._bounding_box is None
-        ):
+    def wrapper(self):
+        gemeente = self
+        if (getattr(gemeente, '_%s' % f.__name__, None) is None):
             log.debug('Lazy loading Gemeente %d', gemeente.id)
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._centroid = g._centroid
             gemeente._bounding_box = g._bounding_box
-        return f(*args)
+        return f(self)
     return wrapper
 
 
@@ -483,12 +481,9 @@ def check_lazy_load_afdeling(f):
     '''
     Decorator function to lazy load a :class:`Afdeling`.
     '''
-    def wrapper(*args):
-        afdeling = args[0]
-        if (
-            afdeling._naam is None or afdeling._gemeente is None or
-            afdeling._centroid is None or afdeling._bounding_box is None
-        ):
+    def wrapper(self):
+        afdeling = self
+        if (getattr(afdeling, '_%s' % f.__name__, None) is None):
             log.debug('Lazy loading Afdeling %d', afdeling.id)
             afdeling.check_gateway()
             a = afdeling.gateway.get_kadastrale_afdeling_by_id(afdeling.id)
@@ -496,7 +491,7 @@ def check_lazy_load_afdeling(f):
             afdeling._gemeente = a._gemeente
             afdeling._centroid = a._centroid
             afdeling._bounding_box = a._bounding_box
-        return f(*args)
+        return f(self)
     return wrapper
 
 
@@ -559,9 +554,9 @@ def check_lazy_load_sectie(f):
     '''
     Decorator function to lazy load a :class:`Sectie`.
     '''
-    def wrapper(*args):
-        sectie = args[0]
-        if sectie._centroid is None or sectie._bounding_box is None:
+    def wrapper(self):
+        sectie = self
+        if (getattr(sectie, '_%s' % f.__name__, None) is None):
             log.debug('Lazy loading Sectie %d in Afdeling', sectie.id, sectie.afdeling.id)
             sectie.check_gateway()
             s = sectie.gateway.get_sectie_by_id_and_afdeling(
@@ -569,7 +564,7 @@ def check_lazy_load_sectie(f):
             )
             sectie._centroid = s._centroid
             sectie._bounding_box = s._bounding_box
-        return f(*args)
+        return f(self)
     return wrapper
 
 
@@ -615,12 +610,9 @@ def check_lazy_load_perceel(f):
     '''
     Decorator function to lazy load a :class:`Perceel`.
     '''
-    def wrapper(*args):
-        perceel = args[0]
-        if (
-            perceel._capatype is None or perceel._cashkey is None or
-            perceel._centroid is None or perceel._bounding_box is None
-        ):
+    def wrapper(self):
+        perceel = self
+        if (getattr(perceel, '_%s' % f.__name__, None) is None):
             log.debug(
                 'Lazy loading Perceel %d in Sectie %d in Afdeling %d',
                 perceel.id,
@@ -636,7 +628,7 @@ def check_lazy_load_perceel(f):
             perceel._bounding_box = p._bounding_box
             perceel._capatype = p._capatype
             perceel._cashkey = p._cashkey
-        return f(*args)
+        return f(self)
     return wrapper
 
 
