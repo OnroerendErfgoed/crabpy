@@ -1,7 +1,10 @@
-0.3.4 (??-05-2014)
+0.3.4 (07-05-2014)
 ------------------
 
-- Optimise lazy loading of Gemeente. (#21)
+- Optimise lazy loading of capakey Gemeente. (#21)
+- Optimise lazy loading of capakey Afdeling. (#22)
+- General lazy loading optimisations.
+- Some slight changes to CRAB lazy loading. (#24)
 
 0.3.3 (02-05-2014)
 ------------------
