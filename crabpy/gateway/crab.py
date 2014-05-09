@@ -137,30 +137,31 @@ class CrabGateway(object):
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
         try:
-            id = gewest.id
+            gewest_id = gewest.id
         except AttributeError:
-            id = gewest
+            gewest_id = gewest
+            gewest = self.get_gewest_by_id(gewest_id)
+        gewest.clear_gateway()
 
         def creator():
             res = crab_gateway_request(
-                self.client, 'ListGemeentenByGewestId', id, sort
+                self.client, 'ListGemeentenByGewestId', gewest_id, sort
             )
             return[
                 Gemeente(
                     r.GemeenteId,
                     r.GemeenteNaam,
                     r.NISGemeenteCode,
-                    Gewest(id)
+                    gewest
                 )for r in res.GemeenteItem if r.TaalCode == r.TaalCodeGemeenteNaam
             ]
         if self.caches['permanent'].is_configured:
-            key = 'ListGemeentenByGewestId#%s%s' % (id, sort)
+            key = 'ListGemeentenByGewestId#%s#%s' % (gewest_id, sort)
             gemeenten = self.caches['permanent'].get_or_create(key, creator)
         else:
             gemeenten = creator()
         for g in gemeenten:
             g.set_gateway(self)
-            g.gewest.set_gateway(self)
         return gemeenten
 
     def get_gemeente_by_id(self, id):
@@ -178,7 +179,7 @@ class CrabGateway(object):
                 res.GemeenteId,
                 res.GemeenteNaam,
                 res.NisGemeenteCode,
-                res.GewestId,
+                Gewest(res.GewestId),
                 res.TaalCode,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
@@ -213,7 +214,7 @@ class CrabGateway(object):
                 res.GemeenteId,
                 res.GemeenteNaam,
                 res.NisGemeenteCode,
-                res.GewestId,
+                Gewest(res.GewestId),
                 res.TaalCode,
                 (res.CenterX, res.CenterY),
                 (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY),
@@ -977,15 +978,31 @@ class GatewayObject(object):
     '''
 
     gateway = None
+    '''
+    The :class:`crabpy.gateway.crab.CrabGateway` to use when making
+    further calls to the CRAB service.
+    '''
 
     def __init__(self, **kwargs):
         if 'gateway' in kwargs:
             self.set_gateway(kwargs['gateway'])
 
     def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
+        '''
         self.gateway = gateway
 
+    def clear_gateway(self):
+        '''
+        Clear the currently set CrabGateway.
+        '''
+        self.gateway = None
+
     def check_gateway(self):
+        '''
+        Check to see if a gateway was set on this object.
+        '''
         if not self.gateway:
             raise RuntimeError("There's no Gateway I can use")
 
@@ -1112,6 +1129,20 @@ class Gemeente(GatewayObject):
         self._bounding_box = bounding_box
         self._metadata = metadata
         super(Gemeente, self).__init__(**kwargs)
+
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+        self.gewest.set_gateway(gateway)
+
+    def clear_gateway(self):
+        '''
+        Clear the currently set CrabGateway.
+        '''
+        self.gateway = None
+        self.gewest.clear_gateway()
 
     @property
     @check_lazy_load_gemeente

@@ -460,7 +460,7 @@ class GemeenteTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gemeente(1, 'Aartselaar', 11001, 3)
+        g = Gemeente(1, 'Aartselaar', 11001, Gewest(3))
         g.set_gateway(crab)
         straten = g.straten
         self.assertIsInstance(straten, list)
@@ -473,7 +473,7 @@ class GemeenteTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        g = Gemeente(1, 'Aartselaar', 11001, 3)
+        g = Gemeente(1, 'Aartselaar', 11001, Gewest(3))
         g.set_gateway(crab)
         postkanton = g.postkantons
         self.assertIsInstance(postkanton, list)
@@ -1545,7 +1545,7 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_gemeenten()
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGemeentenByGewestId#21'),
+            self.crab.caches['permanent'].get('ListGemeentenByGewestId#2#1'),
             res
         )
         self.assertEqual(res[0].gewest.id, 2)
@@ -1555,7 +1555,7 @@ class CrabCachedGatewayTests(unittest.TestCase):
         r = self.crab.list_gemeenten(gewest)
         self.assertIsInstance(r, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGemeentenByGewestId#11'),
+            self.crab.caches['permanent'].get('ListGemeentenByGewestId#1#1'),
             r
         )
         self.assertEqual(r[0].gewest.id, 1)
@@ -1564,14 +1564,14 @@ class CrabCachedGatewayTests(unittest.TestCase):
         res = self.crab.list_gemeenten(2, 1)
         self.assertIsInstance(res, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGemeentenByGewestId#21'),
+            self.crab.caches['permanent'].get('ListGemeentenByGewestId#2#1'),
             res
         )
         gewest = Gewest(2)
         r = self.crab.list_gemeenten(gewest, 2)
         self.assertIsInstance(r, list)
         self.assertEqual(
-            self.crab.caches['permanent'].get('ListGemeentenByGewestId#22'),
+            self.crab.caches['permanent'].get('ListGemeentenByGewestId#2#2'),
             r
         )
         self.assertNotEqual(res, r)
