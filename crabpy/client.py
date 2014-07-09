@@ -113,7 +113,7 @@ def capakey_request(client, action, *args):
     cm = getattr(client.service, action)
     a = Action(cm.method.soap.action)
     mid = MessageID()
-    t = To('http://ws.agiv.be/capakeyws/nodataset.asmx')
+    t = To(client.wsdl  )
     client.set_options(soapheaders=[a.xml(), t.xml(), mid.xml()])
 
     log.debug('Calling %s on CAPAKEY service.', action)
