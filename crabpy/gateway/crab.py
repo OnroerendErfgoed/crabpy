@@ -1488,6 +1488,16 @@ class Huisnummer(GatewayObject):
     @property
     def percelen(self):
         return self.gateway.list_percelen_by_huisnummer(self.id)
+        
+    @property
+    def bounding_box(self):
+        per = [x.bounding_box for x in self.terreinobjecten]
+        if len(per) == 1:
+            return per[0]
+        else:
+            mini = min(per)
+            maxi = max(per)
+            return (mini[0], mini[1], maxi[0], maxi[1])
 
     @property
     def gebouwen(self):
