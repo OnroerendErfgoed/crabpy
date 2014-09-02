@@ -947,6 +947,18 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         status = h.status
         self.assertIsInstance(status, Statushuisnummer)
+        
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_bounding_box(self):
+        crab = CrabGateway(crab_factory())
+        h = Huisnummer(1, 3, '51', 17718)
+        h.set_gateway(crab)
+        bounding = h.bounding_box
+        self.assertIsInstance(bounding, list)
+        self.assertEqual(len(bounding), 4)
 
     def test_check_gateway_not_set(self):
         h = Huisnummer(1, 3, '51', 17718)
