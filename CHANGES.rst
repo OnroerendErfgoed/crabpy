@@ -2,6 +2,7 @@
 ------------------
 
 - Added a bounding box to a CRAB Straat. (#26)
+- Added a bounding box to a CRAB Huisnummer. (#27)
 
 0.3.5 (02-09-2014)
 ------------------
