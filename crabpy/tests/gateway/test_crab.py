@@ -810,6 +810,18 @@ class StraatTests(unittest.TestCase):
         wegsegmenten = s.wegsegmenten
         self.assertIsInstance(wegsegmenten, list)
         self.assertIsInstance(wegsegmenten[0], Wegsegment)
+    
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_bounding_box(self):
+        crab = CrabGateway(crab_factory())
+        s = Straat(1, 'Acacialaan', 1, 3)
+        s.set_gateway(crab)
+        bounding = s.bounding_box
+        self.assertIsInstance(bounding, list)
+        self.assertEqual(len(bounding), 4)
 
 
 class HuisnummerTests(unittest.TestCase):
