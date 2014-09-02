@@ -1409,6 +1409,20 @@ class Straat(GatewayObject):
     def wegsegmenten(self):
         self.check_gateway()
         return self.gateway.list_wegsegmenten_by_straat(self)
+        
+    @property
+    def bounding_box(self):
+        weg = [x.geometrie for x in self.wegsegmenten]
+        x = []
+        y = []
+        for a in weg:
+            a = a.replace("LINESTRING (", "").replace(")", "")
+            list = a.split(',')
+            for z in list:
+                temp = z.split()
+                x.append(temp[0])
+                y.append(temp[1])
+        return [min(x), min(y), max(x), max(y)]
     
 
     def __unicode__(self):
