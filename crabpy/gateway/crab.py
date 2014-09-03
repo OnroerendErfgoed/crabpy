@@ -165,10 +165,48 @@ class CrabGateway(object):
             p.set_gateway(self)
         return provincies
 
+    def get_provincie_by_id(self, niscode):
+        '''
+        Retrieve a `provincie` by the niscode.
+
+        :param integer niscode: The niscode of the provincie.
+        :rtype: :class:`Provincie`
+        '''
+        def creator():
+            if niscode == 10000:
+                return  Provincie(10000, 'Antwerpen', 2)
+            elif niscode == 20001:
+                return Provincie(20001, 'Vlaams-Brabant', 2)
+            elif niscode == 20002:
+                return Provincie(20002, 'Waals-Brabant', 3)
+            elif niscode == 30000:
+                return Provincie(30000, 'West-Vlaanderen', 2)
+            elif niscode == 40000:
+                return Provincie(40000, 'Oost-Vlaanderen', 2)
+            elif niscode == 50000:
+                return Provincie(50000, 'Henegouwen', 3)
+            elif niscode == 60000:
+                return Provincie(60000, 'Luik', 3)
+            elif niscode == 70000:
+                return Provincie(70000, 'Limburg', 2)
+            elif niscode == 80000:
+                return Provincie(80000, 'Luxemburg', 3)
+            elif niscode == 90000:
+                return Provincie(90000, 'Namen', 3)
+
+        if self.caches['permanent'].is_configured:
+            key = 'GetProvincieByProvincieNiscode#%s' % niscode
+            provincie = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            provincie = creator()
+        provincie.set_gateway(self)
+        return provincie
+
     def list_gemeenten(self, gewest=2, sort=1):
         '''
         List all `gemeenten` in a `gewest`.
 
+        :param gewest: The :class:`Gewest` for which the 
         :param gewest: The :class:`Gewest` for which the \
             `gemeenten` are wanted.
         :param integer sort: What field to sort on.
