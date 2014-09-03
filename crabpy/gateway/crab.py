@@ -127,7 +127,7 @@ class CrabGateway(object):
         gewest.set_gateway(self)
         return gewest
         
-        def list_provincies(self, gewest=2):
+    def list_provincies(self, gewest=2):
         '''
         List all `provincies` in a `gewest`.
 
