@@ -1166,6 +1166,10 @@ class Gewest(GatewayObject):
         return self._bounding_box
 
     @property
+    def provincies(self):
+        return self.gateway.list_provincies(self.id)
+
+    @property
     def gemeenten(self):
         return self.gateway.list_gemeenten(self.id)
 

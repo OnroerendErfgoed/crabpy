@@ -402,6 +402,16 @@ class GewestTests(unittest.TestCase):
         gemeenten = g.gemeenten
         self.assertIsInstance(gemeenten, list)
 
+    def test_provincies(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gewest(2)
+        g.set_gateway(crab)
+        provincies = g.provincies
+        self.assertIsInstance(provincies, list)
+        self.assertEqual(5, len(provincies))
+
     @unittest.skipUnless(
         run_crab_integration_tests(),
         'No CRAB Integration tests required'
