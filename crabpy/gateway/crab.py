@@ -1226,9 +1226,6 @@ class Provincie(GatewayObject):
         self.gateway = None
         self.gewest.clear_gateway()
 
-    def gewest(self):
-        return self.gewest
-
     @property
     def gemeenten(self):
         self.check_gateway()
