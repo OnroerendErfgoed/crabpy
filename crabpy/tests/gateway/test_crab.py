@@ -97,6 +97,18 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.get_provincie_by_id(10000)
         self.assertIsInstance(res, Provincie)
         self.assertEqual(res.niscode, 10000)
+        
+    def test_list_gemeenten_by_provincie(self):
+        provincie = Provincie(10000, 'Antwerpen', 2)
+        res = self.crab.list_gemeenten_by_provincie(provincie)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(str(res[0].niscode)[0], '1')
+        provincie = 10000
+        res = self.crab.list_gemeenten_by_provincie(provincie)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(str(res[0].niscode)[0], '1')
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
