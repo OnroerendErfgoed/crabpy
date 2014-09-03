@@ -27,7 +27,7 @@ from crabpy.gateway.crab import (
     Huisnummer, Postkanton,
     Wegobject, Wegsegment,
     Terreinobject, Perceel,
-    Gebouw, Metadata
+    Gebouw, Metadata, Provincie
 )
 
 
@@ -79,6 +79,18 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.list_gemeenten(gewest)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(res[0].gewest.id, 2)
+
+    def test_list_provincies(self):
+        gewest = Gewest(2)
+        res = self.crab.list_provincies(gewest)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Provincie)
+        self.assertEqual(res[0].gewest.id, 2)
+        gewest = 2
+        res = self.crab.list_provincies(gewest)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Provincie)
         self.assertEqual(res[0].gewest.id, 2)
 
     def test_get_gemeente_by_id(self):
