@@ -140,7 +140,7 @@ class CrabGateway(object):
             gewest = creator()
         gewest.set_gateway(self)
         return gewest
-        
+
     def list_provincies(self, gewest=2):
         '''
         List all `provincies` in a `gewest`.
@@ -186,7 +186,7 @@ class CrabGateway(object):
             provincie = creator()
         provincie.set_gateway(self)
         return provincie
-        
+
     def list_gemeenten_by_provincie(self, provincie, sort=2):
         '''
         List all `gemeenten` in a `provincie`.
@@ -202,7 +202,7 @@ class CrabGateway(object):
             pass
         provincie.set_gateway(self)
         gewest = provincie.gewest
-        
+
         def creator():
             gewest_gemeenten = self.list_gemeenten(gewest.id)
             return[
@@ -213,7 +213,7 @@ class CrabGateway(object):
                     gewest
                 )for r in gewest_gemeenten if str(r.niscode)[0] == str(provincie.niscode)[0]
             ]
-        
+
         if self.caches['permanent'].is_configured:
             key = 'GetGemeenteByProvincieId#%s' % provincie.id
             gemeente = self.caches['long'].get_or_create(key, creator)
@@ -227,7 +227,6 @@ class CrabGateway(object):
         '''
         List all `gemeenten` in a `gewest`.
 
-        :param gewest: The :class:`Gewest` for which the 
         :param gewest: The :class:`Gewest` for which the \
             `gemeenten` are wanted.
         :param integer sort: What field to sort on.
@@ -341,7 +340,7 @@ class CrabGateway(object):
                 )for r in res.CodeItem
             ]
         if self.caches['permanent'].is_configured:
-            key = function+'#%s' % (sort)
+            key = function + '#%s' % (sort)
             return self.caches['permanent'].get_or_create(key, creator)
         else:
             return creator()
@@ -1055,18 +1054,19 @@ class CrabGateway(object):
             gebouw = creator()
         gebouw.set_gateway(self)
         return gebouw
-        
+
     def get_bewerking(self, res):
         r = self.list_bewerkingen()
         for item in r:
             if int(item.id) == int(res):
                 return item
-        
+
     def get_organisatie(self, res):
         r = self.list_organisaties()
         for item in r:
             if int(item.id) == int(res):
                 return item
+
 
 class GatewayObject(object):
     '''
@@ -1178,7 +1178,7 @@ class Gewest(GatewayObject):
     def __repr__(self):
         return "Gewest(%s)" % (self.id)
 
-        
+
 class Provincie(GatewayObject):
     '''
     The largest administrative unit within a :class:`Gewest`.
@@ -1210,7 +1210,7 @@ class Provincie(GatewayObject):
     def gemeenten(self):
         self.check_gateway()
         return self.gateway.list_gemeenten_by_provincie(self.niscode)
-        
+
     def __unicode__(self):
         return "%s (%s)" % (self.naam, self.niscode)
 
@@ -1316,10 +1316,8 @@ class Gemeente(GatewayObject):
     def provincie(self):
         self.check_gateway()
         provincies = self.gateway.list_provincies(self.gewest)
-        log.debug(math.floor(self.niscode/10000))
         for p in provincies:
-            log.debug(math.floor(p.niscode/10000))
-            if math.floor(self.niscode/10000) == math.floor(p.niscode/10000):
+            if math.floor(self.niscode / 10000) == math.floor(p.niscode / 10000):
                 return p
 
     def __unicode__(self):
@@ -1545,17 +1543,17 @@ class Straat(GatewayObject):
     @check_lazy_load_straat
     def taal(self):
         return self.gemeente.taal
-        
+
     @property
     def wegobjecten(self):
         self.check_gateway()
         return self.gateway.list_wegobjecten_by_straat(self)
-       
+
     @property
     def wegsegmenten(self):
         self.check_gateway()
         return self.gateway.list_wegsegmenten_by_straat(self)
-        
+
     @property
     def bounding_box(self):
         weg = [x.geometrie for x in self.wegsegmenten]
@@ -1569,7 +1567,6 @@ class Straat(GatewayObject):
                 x.append(temp[0])
                 y.append(temp[1])
         return [min(x), min(y), max(x), max(y)]
-    
 
     def __unicode__(self):
         return "%s (%s)" % (self.label, self.id)
@@ -1648,7 +1645,7 @@ class Huisnummer(GatewayObject):
     @property
     def percelen(self):
         return self.gateway.list_percelen_by_huisnummer(self.id)
-        
+
     @property
     def bounding_box(self):
         per = [x.bounding_box for x in self.terreinobjecten]
@@ -1708,7 +1705,7 @@ def check_lazy_load_wegobject(f):
 class Wegobject(GatewayObject):
     def __init__(
         self, id, aard, centroid=None,
-        bounding_box=None, metadata=None,  **kwargs
+        bounding_box=None, metadata=None, **kwargs
     ):
         self.id = id
         try:

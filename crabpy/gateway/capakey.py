@@ -286,6 +286,7 @@ class CapakeyGateway(object):
         :rtype: A :class:`list` of :class:`Perceel`.
         '''
         sectie.clear_gateway()
+
         def creator():
             res = capakey_gateway_request(
                 self.client, 'ListKadPerceelsnummersByKadSectiecode',
@@ -317,6 +318,7 @@ class CapakeyGateway(object):
         :rtype: :class:`Perceel`
         '''
         sectie.clear_gateway()
+
         def creator():
             res = capakey_gateway_request(
                 self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',

@@ -98,7 +98,7 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Provincie)
         self.assertEqual(res[0].gewest.id, 2)
-        
+
     def test_get_provincie_by_id(self):
         res = self.crab.get_provincie_by_id(10000)
         self.assertIsInstance(res, Provincie)
@@ -130,7 +130,7 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.get_provincie_by_id(90000)
         self.assertIsInstance(res, Provincie)
         self.assertEqual(res.niscode, 90000)
-        
+
     def test_list_gemeenten_by_provincie(self):
         provincie = Provincie(10000, 'Antwerpen', Gewest(2))
         res = self.crab.list_gemeenten_by_provincie(provincie)
@@ -414,8 +414,14 @@ class GewestTests(unittest.TestCase):
         g.set_gateway(crab)
         self.assertEqual(g.id, 2)
         self.assertEqual(str(g.naam), 'Vlaams Gewest')
-        self.assertEqual(g.centroid, (138165.09, 189297.53))
-        self.assertEqual(g.bounding_box, (22279.17, 153050.23, 258873.3, 244022.31))
+        self.assertEqual(
+            g.centroid,
+            (138165.09, 189297.53)
+        )
+        self.assertEqual(
+            g.bounding_box,
+            (22279.17, 153050.23, 258873.3, 244022.31)
+        )
 
 
 class ProvincieTests(unittest.TestCase):
@@ -426,7 +432,6 @@ class ProvincieTests(unittest.TestCase):
         self.assertEqual(p.naam, 'Vlaams-Brabant')
         self.assertEqual('Vlaams-Brabant (20001)', str(p))
         self.assertEqual("Provincie(20001, 'Vlaams-Brabant', Gewest(2))", repr(p))
-
 
     def test_check_gateway_not_set(self):
         p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
@@ -886,7 +891,7 @@ class StraatTests(unittest.TestCase):
         s.set_gateway(crab)
         status = s.status
         self.assertIsInstance(status, Statusstraatnaam)
-        
+
     @unittest.skipUnless(
         run_crab_integration_tests(),
         'No CRAB Integration tests required'
@@ -900,7 +905,7 @@ class StraatTests(unittest.TestCase):
         wegobjecten = s.wegobjecten
         self.assertIsInstance(wegobjecten, list)
         self.assertIsInstance(wegobjecten[0], Wegobject)
-        
+
     @unittest.skipUnless(
         run_crab_integration_tests(),
         'No CRAB Integration tests required'
@@ -914,7 +919,7 @@ class StraatTests(unittest.TestCase):
         wegsegmenten = s.wegsegmenten
         self.assertIsInstance(wegsegmenten, list)
         self.assertIsInstance(wegsegmenten[0], Wegsegment)
-    
+
     @unittest.skipUnless(
         run_crab_integration_tests(),
         'No CRAB Integration tests required'
@@ -1051,7 +1056,7 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         status = h.status
         self.assertIsInstance(status, Statushuisnummer)
-        
+
     @unittest.skipUnless(
         run_crab_integration_tests(),
         'No CRAB Integration tests required'
