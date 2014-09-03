@@ -27,7 +27,7 @@ from crabpy.gateway.crab import (
     Huisnummer, Postkanton,
     Wegobject, Wegsegment,
     Terreinobject, Perceel,
-    Gebouw, Metadata
+    Gebouw, Metadata, Provincie
 )
 
 
@@ -80,6 +80,68 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gemeente)
         self.assertEqual(res[0].gewest.id, 2)
+
+    def test_list_provincies(self):
+        gewest = Gewest(1)
+        res = self.crab.list_provincies(gewest)
+        self.assertIsInstance(res, list)
+        gewest = Gewest(3)
+        res = self.crab.list_provincies(gewest)
+        self.assertIsInstance(res, list)
+        gewest = Gewest(2)
+        res = self.crab.list_provincies(gewest)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Provincie)
+        self.assertEqual(res[0].gewest.id, 2)
+        gewest = 2
+        res = self.crab.list_provincies(gewest)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Provincie)
+        self.assertEqual(res[0].gewest.id, 2)
+        
+    def test_get_provincie_by_id(self):
+        res = self.crab.get_provincie_by_id(10000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 10000)
+        res = self.crab.get_provincie_by_id(20001)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 20001)
+        res = self.crab.get_provincie_by_id(20002)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 20002)
+        res = self.crab.get_provincie_by_id(30000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 30000)
+        res = self.crab.get_provincie_by_id(40000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 40000)
+        res = self.crab.get_provincie_by_id(50000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 50000)
+        res = self.crab.get_provincie_by_id(60000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 60000)
+        res = self.crab.get_provincie_by_id(70000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 70000)
+        res = self.crab.get_provincie_by_id(80000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 80000)
+        res = self.crab.get_provincie_by_id(90000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 90000)
+        
+    def test_list_gemeenten_by_provincie(self):
+        provincie = Provincie(10000, 'Antwerpen', Gewest(2))
+        res = self.crab.list_gemeenten_by_provincie(provincie)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(str(res[0].niscode)[0], '1')
+        provincie = 10000
+        res = self.crab.list_gemeenten_by_provincie(provincie)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Gemeente)
+        self.assertEqual(str(res[0].niscode)[0], '1')
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
@@ -354,6 +416,34 @@ class GewestTests(unittest.TestCase):
         self.assertEqual(str(g.naam), 'Vlaams Gewest')
         self.assertEqual(g.centroid, (138165.09, 189297.53))
         self.assertEqual(g.bounding_box, (22279.17, 153050.23, 258873.3, 244022.31))
+
+
+class ProvincieTests(unittest.TestCase):
+
+    def test_fully_initialised(self):
+        p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
+        self.assertEqual(p.niscode, 20001)
+        self.assertEqual(p.naam, 'Vlaams-Brabant')
+        self.assertEqual('Vlaams-Brabant (20001)', str(p))
+        self.assertEqual("Provincie(20001, 'Vlaams-Brabant', Gewest(2))", repr(p))
+
+
+    def test_check_gateway_not_set(self):
+        p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
+        self.assertRaises(RuntimeError, p.check_gateway)
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_gemeenten(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
+        p.set_gateway(crab)
+        gemeenten = p.gemeenten
+        self.assertIsInstance(gemeenten, list)
 
 
 class GemeenteTests(unittest.TestCase):

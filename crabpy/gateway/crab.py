@@ -49,6 +49,19 @@ class CrabGateway(object):
     '''
     caches = {}
 
+    provincies = [
+        (10000, 'Antwerpen', 2),
+        (20001, 'Vlaams-Brabant', 2),
+        (30000, 'West-Vlaanderen', 2),
+        (40000, 'Oost-Vlaanderen', 2),
+        (70000, 'Limburg', 2),
+        (20002, 'Waals-Brabant', 3),
+        (50000, 'Henegouwen', 3),
+        (60000, 'Luik', 3),
+        (80000, 'Luxemburg', 3),
+        (90000, 'Namen', 3)
+    ]
+
     def __init__(self, client, **kwargs):
         self.client = client
         cache_regions = ['permanent', 'long', 'short']
@@ -126,11 +139,94 @@ class CrabGateway(object):
             gewest = creator()
         gewest.set_gateway(self)
         return gewest
+        
+    def list_provincies(self, gewest=2):
+        '''
+        List all `provincies` in a `gewest`.
+
+        :param gewest: The :class:`Gewest` for which the \
+            `provincies` are wanted.
+        :param integer sort: What field to sort on.
+        :rtype: A :class:`list` of :class:`Provincie`.
+        '''
+        try:
+            gewest_id = gewest.id
+        except AttributeError:
+            gewest_id = gewest
+
+        def creator():
+            return [Provincie(p[0], p[1], Gewest(p[2])) for p in self.provincies if p[2] == gewest_id]
+
+        if self.caches['permanent'].is_configured:
+            key = 'ListProvinciesByGewestId#%s' % gewest
+            provincies = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            provincies = creator()
+        for p in provincies:
+            p.set_gateway(self)
+        return provincies
+
+    def get_provincie_by_id(self, niscode):
+        '''
+        Retrieve a `provincie` by the niscode.
+
+        :param integer niscode: The niscode of the provincie.
+        :rtype: :class:`Provincie`
+        '''
+        def creator():
+            for p in self.provincies:
+                if p[0] == niscode:
+                    return Provincie(p[0], p[1], Gewest(p[2]))
+
+        if self.caches['permanent'].is_configured:
+            key = 'GetProvincieByProvincieNiscode#%s' % niscode
+            provincie = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            provincie = creator()
+        provincie.set_gateway(self)
+        return provincie
+        
+    def list_gemeenten_by_provincie(self, provincie, sort=2):
+        '''
+        List all `gemeenten` in a `provincie`.
+
+        :param provincie: The :class:`Provincie` for which the \
+            `gemeenten` are wanted.
+        :param integer sort: What field to sort on.
+        :rtype: A :class:`list` of :class:`Gemeente`.
+        '''
+        try:
+            provincie = self.get_provincie_by_id(provincie)
+        except AttributeError:
+            pass
+        provincie.set_gateway(self)
+        gewest = provincie.gewest
+        
+        def creator():
+            gewest_gemeenten = self.list_gemeenten(gewest.id)
+            return[
+                Gemeente(
+                    r.id,
+                    r.naam,
+                    r.niscode,
+                    gewest
+                )for r in gewest_gemeenten if str(r.niscode)[0] == str(provincie.niscode)[0]
+            ]
+        
+        if self.caches['permanent'].is_configured:
+            key = 'GetGemeenteByProvincieId#%s' % provincie.id
+            gemeente = self.caches['long'].get_or_create(key, creator)
+        else:
+            gemeente = creator()
+        for g in gemeente:
+            g.set_gateway(self)
+        return gemeente
 
     def list_gemeenten(self, gewest=2, sort=1):
         '''
         List all `gemeenten` in a `gewest`.
 
+        :param gewest: The :class:`Gewest` for which the 
         :param gewest: The :class:`Gewest` for which the \
             `gemeenten` are wanted.
         :param integer sort: What field to sort on.
@@ -1101,6 +1197,45 @@ def check_lazy_load_gemeente(f):
             gemeente._metadata = g._metadata
         return f(*args)
     return wrapper
+
+        
+class Provincie(GatewayObject):
+    '''
+    The largest administrative unit within a :class:`Gewest`.
+
+    .. versionadded:: 0.4.0
+    '''
+    def __init__(
+        self, niscode, naam, gewest, **kwargs
+    ):
+        self.id = self.niscode = int(niscode)
+        self.naam = naam
+        self.gewest = gewest
+
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+        self.gewest.gateway = gateway
+
+    def clear_gateway(self):
+        '''
+        Clear the currently set CrabGateway.
+        '''
+        self.gateway = None
+        self.gewest.clear_gateway()
+
+    @property
+    def gemeenten(self):
+        self.check_gateway()
+        return self.gateway.list_gemeenten_by_provincie(self.niscode)
+        
+    def __unicode__(self):
+        return "%s (%s)" % (self.naam, self.niscode)
+
+    def __repr__(self):
+        return "Provincie(%s, '%s', Gewest(%s))" % (self.niscode, self.naam, self.gewest.id)
 
 
 class Gemeente(GatewayObject):
