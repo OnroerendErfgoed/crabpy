@@ -201,6 +201,41 @@ class CrabGateway(object):
             provincie = creator()
         provincie.set_gateway(self)
         return provincie
+        
+   def list_gemeenten_by_provincie(self, provincie, sort=2):
+        '''
+        List all `gemeenten` in a `provincie`.
+
+        :param provincie: The :class:`Provincie` for which the \
+            `gemeenten` are wanted.
+        :param integer sort: What field to sort on.
+        :rtype: A :class:`list` of :class:`Gemeente`.
+        '''
+        try:
+            provincie = self.get_provincie_by_id(provincie)
+        except AttributeError:
+            pass
+        gewest = provincie.gewest
+        
+        def creator():
+            gewest_gemeenten = self.list_gemeenten(gewest.id)
+            return[
+                Gemeente(
+                    r.id,
+                    r.naam,
+                    r.niscode,
+                    gewest
+                )for r in gewest_gemeenten if str(r.niscode)[0] == str(provincie.niscode)[0]
+            ]
+        
+        if self.caches['long'].is_configured:
+            key = 'GetGemeenteByProvincieId#%s' % provincie.id
+            gemeente = self.caches['long'].get_or_create(key, creator)
+        else:
+            gemeente = creator()
+        for g in gemeente:
+            g.set_gateway(self)
+        return gemeente
 
     def list_gemeenten(self, gewest=2, sort=1):
         '''
