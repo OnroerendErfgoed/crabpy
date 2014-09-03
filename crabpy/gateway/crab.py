@@ -202,7 +202,7 @@ class CrabGateway(object):
         provincie.set_gateway(self)
         return provincie
         
-   def list_gemeenten_by_provincie(self, provincie, sort=2):
+    def list_gemeenten_by_provincie(self, provincie, sort=2):
         '''
         List all `gemeenten` in a `provincie`.
 
@@ -1250,7 +1250,7 @@ class Provincie(GatewayObject):
         return "%s (%s)" % (self.naam, self.niscode)
 
     def __repr__(self):
-        return "Provincie(%s, '%s')" % (self.niscode, self.naam)]
+        return "Provincie(%s, '%s')" % (self.niscode, self.naam)
 
 
 class Gemeente(GatewayObject):
