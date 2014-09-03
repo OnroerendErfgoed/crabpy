@@ -142,7 +142,7 @@ class CrabGateway(object):
             gewest_id = gewest
 
         def creator():
-            if gewest == 2:
+            if gewest_id == 2:
                 return [
                     Provincie(10000, 'Antwerpen', 2),
                     Provincie(20001, 'Vlaams-Brabant', 2),
@@ -150,7 +150,7 @@ class CrabGateway(object):
                     Provincie(40000, 'Oost-Vlaanderen', 2),
                     Provincie(70000, 'Limburg', 2)
                 ]
-            elif gewest == 3:
+            elif gewest_id == 3:
                 return [
                     Provincie(20002, 'Waals-Brabant', 3),
                     Provincie(50000, 'Henegouwen', 3),
@@ -158,7 +158,7 @@ class CrabGateway(object):
                     Provincie(80000, 'Luxemburg', 3),
                     Provincie(90000, 'Namen', 3)
                 ]
-            elif gewest == 1:
+            elif gewest_id == 1:
                 return []
 
         if self.caches['permanent'].is_configured:
