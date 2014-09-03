@@ -7,6 +7,7 @@ This module contains an opionated gateway for the crab webservice.
 
 from __future__ import unicode_literals
 import six
+import math
 
 import logging
 log = logging.getLogger(__name__)
@@ -158,7 +159,7 @@ class CrabGateway(object):
             return [Provincie(p[0], p[1], Gewest(p[2])) for p in self.provincies if p[2] == gewest_id]
 
         if self.caches['permanent'].is_configured:
-            key = 'ListProvinciesByGewestId#%s' % gewest
+            key = 'ListProvinciesByGewestId#%s' % gewest_id
             provincies = self.caches['permanent'].get_or_create(key, creator)
         else:
             provincies = creator()
@@ -1177,27 +1178,6 @@ class Gewest(GatewayObject):
     def __repr__(self):
         return "Gewest(%s)" % (self.id)
 
-
-def check_lazy_load_gemeente(f):
-    '''
-    Decorator function to lazy load a :class:`Gemeente`.
-    '''
-    def wrapper(*args):
-        gemeente = args[0]
-        if (
-            gemeente._centroid is None or gemeente._bounding_box is None
-            or gemeente._taal_id is None or gemeente._metadata is None
-        ):
-            log.debug('Lazy loading Gemeente %d', gemeente.id)
-            gemeente.check_gateway()
-            g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
-            gemeente._taal_id = g._taal_id
-            gemeente._centroid = g._centroid
-            gemeente._bounding_box = g._bounding_box
-            gemeente._metadata = g._metadata
-        return f(*args)
-    return wrapper
-
         
 class Provincie(GatewayObject):
     '''
@@ -1236,6 +1216,27 @@ class Provincie(GatewayObject):
 
     def __repr__(self):
         return "Provincie(%s, '%s', Gewest(%s))" % (self.niscode, self.naam, self.gewest.id)
+
+
+def check_lazy_load_gemeente(f):
+    '''
+    Decorator function to lazy load a :class:`Gemeente`.
+    '''
+    def wrapper(*args):
+        gemeente = args[0]
+        if (
+            gemeente._centroid is None or gemeente._bounding_box is None
+            or gemeente._taal_id is None or gemeente._metadata is None
+        ):
+            log.debug('Lazy loading Gemeente %d', gemeente.id)
+            gemeente.check_gateway()
+            g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
+            gemeente._taal_id = g._taal_id
+            gemeente._centroid = g._centroid
+            gemeente._bounding_box = g._bounding_box
+            gemeente._metadata = g._metadata
+        return f(*args)
+    return wrapper
 
 
 class Gemeente(GatewayObject):
@@ -1310,6 +1311,16 @@ class Gemeente(GatewayObject):
     def postkantons(self):
         self.check_gateway()
         return self.gateway.list_postkantons_by_gemeente(self.id)
+
+    @property
+    def provincie(self):
+        self.check_gateway()
+        provincies = self.gateway.list_provincies(self.gewest)
+        log.debug(math.floor(self.niscode/10000))
+        for p in provincies:
+            log.debug(math.floor(p.niscode/10000))
+            if math.floor(self.niscode/10000) == math.floor(p.niscode/10000):
+                return p
 
     def __unicode__(self):
         return "%s (%s)" % (self.naam, self.id)

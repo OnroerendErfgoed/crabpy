@@ -568,6 +568,20 @@ class GemeenteTests(unittest.TestCase):
         postkanton = g.postkantons
         self.assertIsInstance(postkanton, list)
 
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_provincie(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        g = Gemeente(1, 'Aartselaar', 11001, Gewest(2))
+        g.set_gateway(crab)
+        provincie = g.provincie
+        self.assertIsInstance(provincie, Provincie)
+        self.assertEqual(10000, provincie.id)
+
 
 class TaalTests(unittest.TestCase):
     def test_fully_initialised(self):
