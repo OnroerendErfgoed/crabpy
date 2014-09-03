@@ -92,6 +92,11 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Provincie)
         self.assertEqual(res[0].gewest.id, 2)
+        
+    def test_get_provincie_by_id(self):
+        res = self.crab.get_provincie_by_id(10000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(res.niscode, 10000)
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
