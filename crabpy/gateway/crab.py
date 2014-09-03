@@ -220,6 +220,7 @@ class CrabGateway(object):
             provincie = self.get_provincie_by_id(provincie)
         except AttributeError:
             pass
+        provincie.set_gateway(self)
         gewest = provincie.gewest
         
         def creator():
