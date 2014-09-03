@@ -126,6 +126,44 @@ class CrabGateway(object):
             gewest = creator()
         gewest.set_gateway(self)
         return gewest
+        
+        def list_provincies(self, gewest=2):
+        '''
+        List all `provincies` in a `gewest`.
+
+        :param gewest: The :class:`Gewest` for which the \
+            `provincies` are wanted.
+        :param integer sort: What field to sort on.
+        :rtype: A :class:`list` of :class:`Provincie`.
+        '''
+        def creator():
+            if gewest == 2:
+                return [
+                    Provincie(10000, 'Antwerpen', 2),
+                    Provincie(20001, 'Vlaams-Brabant', 2),
+                    Provincie(30000, 'West-Vlaanderen', 2),
+                    Provincie(40000, 'Oost-Vlaanderen', 2),
+                    Provincie(70000, 'Limburg', 2)
+                ]
+            elif gewest == 3:
+                return [
+                    Provincie(20002, 'Waals-Brabant', 3),
+                    Provincie(50000, 'Henegouwen', 3),
+                    Provincie(60000, 'Luik', 3),
+                    Provincie(80000, 'Luxemburg', 3),
+                    Provincie(90000, 'Namen', 3)
+                ]
+            elif gewest == 1:
+                return []
+
+        if self.caches['permanent'].is_configured:
+            key = 'ListProvinciesByGewestId#%s' % gewest
+            provincies = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            provincies = creator()
+        for p in provincies:
+            p.set_gateway(self)
+        return provincies
 
     def list_gemeenten(self, gewest=2, sort=1):
         '''
