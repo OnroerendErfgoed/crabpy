@@ -132,7 +132,7 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertEqual(res.niscode, 90000)
         
     def test_list_gemeenten_by_provincie(self):
-        provincie = Provincie(10000, 'Antwerpen', 2)
+        provincie = Provincie(10000, 'Antwerpen', Gewest(2))
         res = self.crab.list_gemeenten_by_provincie(provincie)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gemeente)
@@ -421,15 +421,15 @@ class GewestTests(unittest.TestCase):
 class ProvincieTests(unittest.TestCase):
 
     def test_fully_initialised(self):
-        p = Provincie(20001, 'Vlaams-Brabant', 2)
+        p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
         self.assertEqual(p.niscode, 20001)
         self.assertEqual(p.naam, 'Vlaams-Brabant')
         self.assertEqual('Vlaams-Brabant (20001)', str(p))
-        self.assertEqual("Provincie(20001, 'Vlaams-Brabant')", repr(p))
+        self.assertEqual("Provincie(20001, 'Vlaams-Brabant', Gewest(2))", repr(p))
 
 
     def test_check_gateway_not_set(self):
-        p = Provincie(20001, 'Vlaams-Brabant', 2)
+        p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
         self.assertRaises(RuntimeError, p.check_gateway)
 
     @unittest.skipUnless(
@@ -440,7 +440,7 @@ class ProvincieTests(unittest.TestCase):
         crab = CrabGateway(
             crab_factory()
         )
-        p = Provincie(20001, 'Vlaams-Brabant', 2)
+        p = Provincie(20001, 'Vlaams-Brabant', Gewest(2))
         p.set_gateway(crab)
         gemeenten = p.gemeenten
         self.assertIsInstance(gemeenten, list)

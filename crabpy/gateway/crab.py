@@ -49,6 +49,19 @@ class CrabGateway(object):
     '''
     caches = {}
 
+    provincies = [
+        (10000, 'Antwerpen', 2),
+        (20001, 'Vlaams-Brabant', 2),
+        (30000, 'West-Vlaanderen', 2),
+        (40000, 'Oost-Vlaanderen', 2),
+        (70000, 'Limburg', 2),
+        (20002, 'Waals-Brabant', 3),
+        (50000, 'Henegouwen', 3),
+        (60000, 'Luik', 3),
+        (80000, 'Luxemburg', 3),
+        (90000, 'Namen', 3)
+    ]
+
     def __init__(self, client, **kwargs):
         self.client = client
         cache_regions = ['permanent', 'long', 'short']
@@ -142,24 +155,7 @@ class CrabGateway(object):
             gewest_id = gewest
 
         def creator():
-            if gewest_id == 2:
-                return [
-                    Provincie(10000, 'Antwerpen', 2),
-                    Provincie(20001, 'Vlaams-Brabant', 2),
-                    Provincie(30000, 'West-Vlaanderen', 2),
-                    Provincie(40000, 'Oost-Vlaanderen', 2),
-                    Provincie(70000, 'Limburg', 2)
-                ]
-            elif gewest_id == 3:
-                return [
-                    Provincie(20002, 'Waals-Brabant', 3),
-                    Provincie(50000, 'Henegouwen', 3),
-                    Provincie(60000, 'Luik', 3),
-                    Provincie(80000, 'Luxemburg', 3),
-                    Provincie(90000, 'Namen', 3)
-                ]
-            elif gewest_id == 1:
-                return []
+            return [Provincie(p[0], p[1], Gewest(p[2])) for p in self.provincies if p[2] == gewest_id]
 
         if self.caches['permanent'].is_configured:
             key = 'ListProvinciesByGewestId#%s' % gewest
@@ -178,26 +174,9 @@ class CrabGateway(object):
         :rtype: :class:`Provincie`
         '''
         def creator():
-            if niscode == 10000:
-                return  Provincie(10000, 'Antwerpen', 2)
-            elif niscode == 20001:
-                return Provincie(20001, 'Vlaams-Brabant', 2)
-            elif niscode == 20002:
-                return Provincie(20002, 'Waals-Brabant', 3)
-            elif niscode == 30000:
-                return Provincie(30000, 'West-Vlaanderen', 2)
-            elif niscode == 40000:
-                return Provincie(40000, 'Oost-Vlaanderen', 2)
-            elif niscode == 50000:
-                return Provincie(50000, 'Henegouwen', 3)
-            elif niscode == 60000:
-                return Provincie(60000, 'Luik', 3)
-            elif niscode == 70000:
-                return Provincie(70000, 'Limburg', 2)
-            elif niscode == 80000:
-                return Provincie(80000, 'Luxemburg', 3)
-            elif niscode == 90000:
-                return Provincie(90000, 'Namen', 3)
+            for p in self.provincies:
+                if p[0] == niscode:
+                    return Provincie(p[0], p[1], Gewest(p[2]))
 
         if self.caches['permanent'].is_configured:
             key = 'GetProvincieByProvincieNiscode#%s' % niscode
@@ -234,7 +213,7 @@ class CrabGateway(object):
                 )for r in gewest_gemeenten if str(r.niscode)[0] == str(provincie.niscode)[0]
             ]
         
-        if self.caches['long'].is_configured:
+        if self.caches['permanent'].is_configured:
             key = 'GetGemeenteByProvincieId#%s' % provincie.id
             gemeente = self.caches['long'].get_or_create(key, creator)
         else:
@@ -1221,31 +1200,34 @@ def check_lazy_load_gemeente(f):
 
         
 class Provincie(GatewayObject):
+    '''
+    The largest administrative unit within a :class:`Gewest`.
+
+    .. versionadded:: 0.4.0
+    '''
     def __init__(
         self, niscode, naam, gewest, **kwargs
     ):
-        self.niscode = int(niscode)
+        self.id = self.niscode = int(niscode)
         self.naam = naam
-        self._gewest_id = int(gewest)
+        self.gewest = gewest
 
     def set_gateway(self, gateway):
         '''
         :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
         '''
         self.gateway = gateway
+        self.gewest.gateway = gateway
 
     def clear_gateway(self):
         '''
         Clear the currently set CrabGateway.
         '''
         self.gateway = None
+        self.gewest.clear_gateway()
 
-    @property
     def gewest(self):
-        self.check_gateway()
-        gewest = self.gateway.get_gewest_by_id(self._gewest_id)
-        gewest.set_gateway(self)
-        return gewest
+        return self.gewest
 
     @property
     def gemeenten(self):
@@ -1256,7 +1238,7 @@ class Provincie(GatewayObject):
         return "%s (%s)" % (self.naam, self.niscode)
 
     def __repr__(self):
-        return "Provincie(%s, '%s')" % (self.niscode, self.naam)
+        return "Provincie(%s, '%s', Gewest(%s))" % (self.niscode, self.naam, self.gewest.id)
 
 
 class Gemeente(GatewayObject):
