@@ -1,8 +1,9 @@
-0.4.0 (??-09-2014)
+0.4.0 (03-09-2014)
 ------------------
 
 - Added a bounding box to a CRAB Straat. (#26)
 - Added a bounding box to a CRAB Huisnummer. (#27)
+- Added a Provincie object. (#31)
 
 0.3.5 (02-09-2014)
 ------------------
