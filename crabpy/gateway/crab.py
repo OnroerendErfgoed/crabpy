@@ -136,6 +136,11 @@ class CrabGateway(object):
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Provincie`.
         '''
+        try:
+            gewest_id = gewest.id
+        except AttributeError:
+            gewest_id = gewest
+
         def creator():
             if gewest == 2:
                 return [
