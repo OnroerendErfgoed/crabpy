@@ -385,6 +385,34 @@ class GewestTests(unittest.TestCase):
         self.assertEqual(g.bounding_box, (22279.17, 153050.23, 258873.3, 244022.31))
 
 
+class ProvincieTests(unittest.TestCase):
+
+    def test_fully_initialised(self):
+        p = Provincie(20001, 'Vlaams-Brabant', 2)
+        self.assertEqual(p.niscode, 20001)
+        self.assertEqual(p.naam, 'Vlaams-Brabant')
+        self.assertEqual('Vlaams-Brabant (20001)', str(p))
+        self.assertEqual("Provincie(20001, 'Vlaams-Brabant')", repr(p))
+
+
+    def test_check_gateway_not_set(self):
+        p = Provincie(20001, 'Vlaams-Brabant', 2)
+        self.assertRaises(RuntimeError, p.check_gateway)
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_gemeenten(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        p = Provincie(20001, 'Vlaams-Brabant', 2)
+        p.set_gateway(crab)
+        gemeenten = p.gemeenten
+        self.assertIsInstance(gemeenten, list)
+
+
 class GemeenteTests(unittest.TestCase):
 
     def test_fully_initialised(self):
