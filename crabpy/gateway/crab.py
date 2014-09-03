@@ -1102,6 +1102,45 @@ def check_lazy_load_gemeente(f):
         return f(*args)
     return wrapper
 
+        
+class Provincie(GatewayObject):
+    def __init__(
+        self, niscode, naam, gewest, **kwargs
+    ):
+        self.niscode = int(niscode)
+        self.naam = naam
+        self._gewest_id = int(gewest)
+
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+
+    def clear_gateway(self):
+        '''
+        Clear the currently set CrabGateway.
+        '''
+        self.gateway = None
+
+    @property
+    def gewest(self):
+        self.check_gateway()
+        gewest = self.gateway.get_gewest_by_id(self._gewest_id)
+        gewest.set_gateway(self)
+        return gewest
+
+    @property
+    def gemeenten(self):
+        self.check_gateway()
+        return self.gateway.list_gemeenten_by_provincie(self.niscode)
+        
+    def __unicode__(self):
+        return "%s (%s)" % (self.naam, self.niscode)
+
+    def __repr__(self):
+        return "Provincie(%s, '%s')" % (self.niscode, self.naam)]
+
 
 class Gemeente(GatewayObject):
     '''
