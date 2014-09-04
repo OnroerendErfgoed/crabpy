@@ -202,6 +202,7 @@ class CrabGateway(object):
             pass
         provincie.set_gateway(self)
         gewest = provincie.gewest
+        gewest.clear_gateway()
 
         def creator():
             gewest_gemeenten = self.list_gemeenten(gewest.id)
