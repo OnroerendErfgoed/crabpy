@@ -215,7 +215,7 @@ class CrabGateway(object):
             ]
 
         if self.caches['permanent'].is_configured:
-            key = 'GetGemeenteByProvincieId#%s' % provincie.id
+            key = 'ListGemeentenByProvincieId#%s' % provincie.id
             gemeente = self.caches['long'].get_or_create(key, creator)
         else:
             gemeente = creator()
