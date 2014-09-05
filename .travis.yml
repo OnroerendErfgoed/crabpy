@@ -4,10 +4,6 @@ python:
  - 3.2
  - 3.3
  - 3.4
-
-#before_install:
-# - sudo apt-get update
-# - sudo apt-get --reinstall install -qq language-pack-en language-pack-fr language-pack-nl
 install:
  - easy_install -U setuptools
  - python setup.py install
