@@ -187,13 +187,12 @@ class CrabGateway(object):
         provincie.set_gateway(self)
         return provincie
 
-    def list_gemeenten_by_provincie(self, provincie, sort=2):
+    def list_gemeenten_by_provincie(self, provincie):
         '''
         List all `gemeenten` in a `provincie`.
 
         :param provincie: The :class:`Provincie` for which the \
             `gemeenten` are wanted.
-        :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
         try:
