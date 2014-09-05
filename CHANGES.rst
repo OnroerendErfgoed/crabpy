@@ -1,3 +1,10 @@
+0.4.1 (05-09-2014)
+------------------
+
+- Fix an issues with pickling in list_gemeente_by_provincie.
+- Removed the sort parameter from list_gemeenten_by_provincie since it didn't
+  work anyway.
+
 0.4.0 (03-09-2014)
 ------------------
 
