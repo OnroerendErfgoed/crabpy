@@ -593,7 +593,7 @@ class CrabGateway(object):
                 self.client, 'ListHuisnummersWithStatusByStraatnaamId',
                 id, sort
             )
-            if res != '':
+            try:
                 return[
                     Huisnummer(
                         r.HuisnummerId,
@@ -602,7 +602,7 @@ class CrabGateway(object):
                         id
                     ) for r in res.HuisnummerWithStatusItem
                 ]
-            else:
+            except AttributeError:
                 return []
         if self.caches['short'].is_configured:
             key = 'ListHuisnummersWithStatusByStraatnaamId#%s%s' % (id, sort)
