@@ -522,14 +522,17 @@ class CrabGateway(object):
                 self.client, 'ListStraatnamenWithStatusByGemeenteId',
                 id, sort
             )
-            return[
-                Straat(
-                    r.StraatnaamId,
-                    r.StraatnaamLabel,
-                    id,
-                    r.StatusStraatnaam
-                )for r in res.StraatnaamWithStatusItem
-            ]
+            try:
+                return[
+                    Straat(
+                        r.StraatnaamId,
+                        r.StraatnaamLabel,
+                        id,
+                        r.StatusStraatnaam
+                    )for r in res.StraatnaamWithStatusItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['long'].is_configured:
             key = 'ListStraatnamenWithStatusByGemeenteId#%s%s' % (id, sort)
             straten = self.caches['long'].get_or_create(key, creator)
