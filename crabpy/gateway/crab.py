@@ -593,14 +593,17 @@ class CrabGateway(object):
                 self.client, 'ListHuisnummersWithStatusByStraatnaamId',
                 id, sort
             )
-            return[
-                Huisnummer(
-                    r.HuisnummerId,
-                    r.StatusHuisnummer,
-                    r.Huisnummer,
-                    id
-                ) for r in res.HuisnummerWithStatusItem
-            ]
+            if res != '':
+                return[
+                    Huisnummer(
+                        r.HuisnummerId,
+                        r.StatusHuisnummer,
+                        r.Huisnummer,
+                        id
+                    ) for r in res.HuisnummerWithStatusItem
+                ]
+            else:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListHuisnummersWithStatusByStraatnaamId#%s%s' % (id, sort)
             huisnummers = self.caches['short'].get_or_create(key, creator)
