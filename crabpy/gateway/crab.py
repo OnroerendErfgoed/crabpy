@@ -703,11 +703,14 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListPostkantonsByGemeenteId', id
             )
-            return[
-                Postkanton(
-                    r.PostkantonCode
-                )for r in res.PostkantonItem
-            ]
+            try:
+                return[
+                    Postkanton(
+                        r.PostkantonCode
+                    )for r in res.PostkantonItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['long'].is_configured:
             key = 'ListPostkantonsByGemeenteId#%s' % (id)
             postkantons = self.caches['long'].get_or_create(key, creator)
