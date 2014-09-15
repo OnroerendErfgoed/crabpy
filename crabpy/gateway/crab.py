@@ -796,12 +796,15 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListWegobjectenByStraatnaamId', id
             )
-            return [
-                Wegobject(
-                    r.IdentificatorWegobject,
-                    r.AardWegobject
-                )for r in res.WegobjectItem
-            ]
+            try:
+                return [
+                    Wegobject(
+                        r.IdentificatorWegobject,
+                        r.AardWegobject
+                    )for r in res.WegobjectItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListWegobjectenByStraatnaamId#%s' % (id)
             wegobjecten = self.caches['short'].get_or_create(key, creator)
@@ -860,12 +863,15 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListWegsegmentenByStraatnaamId', id
             )
-            return[
-                Wegsegment(
-                    r.IdentificatorWegsegment,
-                    r.StatusWegsegment
-                )for r in res.WegsegmentItem
-            ]
+            try:
+                return[
+                    Wegsegment(
+                        r.IdentificatorWegsegment,
+                        r.StatusWegsegment
+                    )for r in res.WegsegmentItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListWegsegmentenByStraatnaamId#%s' % (id)
             wegsegmenten = self.caches['short'].get_or_create(key, creator)
