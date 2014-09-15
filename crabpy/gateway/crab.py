@@ -965,11 +965,14 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListPercelenByHuisnummerId', id
             )
-            return [
-                Perceel(
-                    r.IdentificatorPerceel
-                )for r in res.PerceelItem
-            ]
+            try:
+                return [
+                    Perceel(
+                        r.IdentificatorPerceel
+                    )for r in res.PerceelItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListPercelenByHuisnummerId#%s' % (id)
             percelen = self.caches['short'].get_or_create(key, creator)
