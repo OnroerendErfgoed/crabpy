@@ -1028,13 +1028,16 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListGebouwenByHuisnummerId', id
             )
-            return [
-                Gebouw(
-                    r.IdentificatorGebouw,
-                    r.AardGebouw,
-                    r.StatusGebouw
-                )for r in res.GebouwItem
-            ]
+            try:
+                return [
+                    Gebouw(
+                        r.IdentificatorGebouw,
+                        r.AardGebouw,
+                        r.StatusGebouw
+                    )for r in res.GebouwItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListGebouwenByHuisnummerId#%s' % (id)
             gebouwen = self.caches['short'].get_or_create(key, creator)
