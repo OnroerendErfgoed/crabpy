@@ -898,12 +898,15 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListTerreinobjectenByHuisnummerId', id
             )
-            return[
-                Terreinobject(
-                    r.IdentificatorTerreinobject,
-                    r.AardTerreinobject
-                )for r in res.TerreinobjectItem
-            ]
+            try:
+                return[
+                    Terreinobject(
+                        r.IdentificatorTerreinobject,
+                        r.AardTerreinobject
+                    )for r in res.TerreinobjectItem
+                ]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListTerreinobjectenByHuisnummerId#%s' % (id)
             terreinobjecten = self.caches['short'].get_or_create(key, creator)
