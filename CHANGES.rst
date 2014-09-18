@@ -1,3 +1,10 @@
+0.4.2 (18-09-2014)
+------------------
+
+- Fix an issue with CRAB Gateway list operations that contain no results. 
+  Previously these triggered an error, now they return an empty list. (#33)
+- Clean up CHANGES.rst so it works on pypi again.
+
 0.4.1 (05-09-2014)
 ------------------
 
@@ -34,13 +41,13 @@
 0.3.2 (07-04-2014)
 ------------------
 
-- A :class:`crabpy.gateway.crab.Gebouw` loaded through the 
-  :meth:`crabpy.gateway.crab.CrabGateway.get_gebouw_by_id` was not passed a 
-  :class:`crabpy.gateway.crab.CrabGateway`. (#15)
-- Always load a full :class:`crabpy.gateway.crab.Metadata` object when returning
+- A `Gebouw` loaded through the 
+  `crabpy.gateway.crab.CrabGateway.get_gebouw_by_id` was not passed a 
+  `crabpy.gateway.crab.CrabGateway`. (#15)
+- Always load a full `crabpy.gateway.crab.Metadata` object when returning
   from a get*_by_id method. (#13)
-- Add a `wegobjecten` property to a :class:`crabpy.gateway.crab.Straat`. (#17)
-- Add a `wegsegmenten` property to a :class:`crabpy.gateway.crab.Straat`. (#18)
+- Add a `wegobjecten` property to a `crabpy.gateway.crab.Straat`. (#17)
+- Add a `wegsegmenten` property to a `crabpy.gateway.crab.Straat`. (#18)
 - Added support for `Coveralls <https://coveralls.io>`_. (#16)
 
 0.3.1 (17-03-2014)
@@ -57,7 +64,7 @@
 0.3.0 (12-03-2014)
 ------------------
 
-- Added a :class:`Gateway <crabpy.gateway.crab.CrabGateway>` for the 
+- Added a `Gateway <crabpy.gateway.crab.CrabGateway>` for the 
   Crab webservice.
 - Added caching to the Crab Gateway using 
   `Dogpile <https://bitbucket.org/zzzeek/dogpile.cache>`_
@@ -71,7 +78,7 @@
 0.2.0 (03-12-2013)
 ------------------
 
-- Added a :class:`Gateway <crabpy.gateway.capakey.CapakeyGateway>` for the 
+- Added a `Gateway <crabpy.gateway.capakey.CapakeyGateway>` for the 
   Capakey webservice.
 - Added caching to the Capakey Gateway using 
   `Dogpile <https://bitbucket.org/zzzeek/dogpile.cache>`_
