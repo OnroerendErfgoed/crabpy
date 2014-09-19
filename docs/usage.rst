@@ -43,7 +43,7 @@ by passing the proxy parameter to the :func:`crabpy.client.crab_factory` or
 Using the CRAB gateway
 -----------------------
 
-To make life easier and carab more pythonic, we've also implemented a gateway
+To make life easier and crab more pythonic, we've also implemented a gateway
 that abstracts some more of the service and provides richer objects as responses.
 
 .. literalinclude:: /../examples/crab_gateway.py
