@@ -2227,7 +2227,9 @@ def check_lazy_load_subadres(f):
 
 class Subadres(GatewayObject):
     '''
-    
+    An address within a certain :class:`Huisnummer`.
+
+    These can eg. be postboxes within an appartment complex.
     '''
     def __init__(
             self, id, subadres, status, huisnummer_id=None, aard=None,
