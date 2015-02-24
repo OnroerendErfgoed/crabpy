@@ -2150,58 +2150,6 @@ class Gebouw(GatewayObject):
 
     def __repr__(self):
         return "Gebouw(%s)" % (self.id)
-
-
-class Metadata(GatewayObject):
-    '''
-    Metadata about a `straat`, `huisnummer`, ...
-
-    Some of the metadata available is the datum the object was created, the
-    organisation that created it and the type of creation.
-    '''
-    def __init__(
-        self, begin_datum, begin_tijd,
-        begin_bewerking, begin_organisatie,
-        **kwargs
-    ):
-        self.begin_datum = str(begin_datum)
-        self.begin_tijd = str(begin_tijd)
-        try:
-            self._begin_bewerking_id = begin_bewerking.id
-            self._begin_bewerking = begin_bewerking
-        except AttributeError:
-            self._begin_bewerking_id = begin_bewerking
-            self._begin_bewerking = None
-        try:
-            self._begin_organisatie_id = begin_organisatie.id
-            self._begin_organisatie = begin_organisatie
-        except AttributeError:
-            self._begin_organisatie_id = begin_organisatie
-            self._begin_organisatie = None
-        super(Metadata, self).__init__(**kwargs)
-
-    @property
-    def begin_bewerking(self):
-        if self._begin_bewerking is None:
-            self.check_gateway()
-            bewerkingen = self.gateway.list_bewerkingen()
-            for bewerking in bewerkingen:
-                if int(bewerking.id) == int(self._begin_bewerking_id):
-                    self._begin_bewerking = bewerking
-        return self._begin_bewerking
-
-    @property
-    def begin_organisatie(self):
-        if self._begin_organisatie is None:
-            self.check_gateway()
-            organisaties = self.gateway.list_organisaties()
-            for organisatie in organisaties:
-                if int(organisatie.id) == int(self._begin_organisatie_id):
-                    self._begin_organisatie = organisatie
-        return self._begin_organisatie
-
-    def __unicode__(self):
-        return "Begin datum: %s" % (self.begin_datum)
     
 
 def check_lazy_load_subadres(f):
@@ -2289,3 +2237,54 @@ class Subadres(GatewayObject):
     def __repr__(self):
         return "Subadres(%s, %s, '%s', %s)" % (self.id, self.status_id, self.subadres, self.huisnummer_id)
 
+
+class Metadata(GatewayObject):
+    '''
+    Metadata about a `straat`, `huisnummer`, ...
+
+    Some of the metadata available is the datum the object was created, the
+    organisation that created it and the type of creation.
+    '''
+    def __init__(
+        self, begin_datum, begin_tijd,
+        begin_bewerking, begin_organisatie,
+        **kwargs
+    ):
+        self.begin_datum = str(begin_datum)
+        self.begin_tijd = str(begin_tijd)
+        try:
+            self._begin_bewerking_id = begin_bewerking.id
+            self._begin_bewerking = begin_bewerking
+        except AttributeError:
+            self._begin_bewerking_id = begin_bewerking
+            self._begin_bewerking = None
+        try:
+            self._begin_organisatie_id = begin_organisatie.id
+            self._begin_organisatie = begin_organisatie
+        except AttributeError:
+            self._begin_organisatie_id = begin_organisatie
+            self._begin_organisatie = None
+        super(Metadata, self).__init__(**kwargs)
+
+    @property
+    def begin_bewerking(self):
+        if self._begin_bewerking is None:
+            self.check_gateway()
+            bewerkingen = self.gateway.list_bewerkingen()
+            for bewerking in bewerkingen:
+                if int(bewerking.id) == int(self._begin_bewerking_id):
+                    self._begin_bewerking = bewerking
+        return self._begin_bewerking
+
+    @property
+    def begin_organisatie(self):
+        if self._begin_organisatie is None:
+            self.check_gateway()
+            organisaties = self.gateway.list_organisaties()
+            for organisatie in organisaties:
+                if int(organisatie.id) == int(self._begin_organisatie_id):
+                    self._begin_organisatie = organisatie
+        return self._begin_organisatie
+
+    def __unicode__(self):
+        return "Begin datum: %s" % (self.begin_datum)
