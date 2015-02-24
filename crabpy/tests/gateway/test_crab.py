@@ -27,7 +27,7 @@ from crabpy.gateway.crab import (
     Huisnummer, Postkanton,
     Wegobject, Wegsegment,
     Terreinobject, Perceel,
-    Gebouw, Metadata, Provincie
+    Gebouw, Metadata, Provincie, Subadres
 )
 
 
@@ -362,6 +362,20 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.get_gebouw_by_id("1538575")
         self.assertIsInstance(res, Gebouw)
         self.assertEqual(res.id, 1538575)
+        
+    def test_list_subadressen_by_huisnummer(self):
+        res = self.crab.list_subadressen_by_huisnummer(129462)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Subadres)
+        huisnummer = self.crab.get_huisnummer_by_id(129462)
+        res = self.crab.list_subadressen_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Subadres)
+        
+    def test_get_subadres_by_id(self):
+        res = self.crab.get_subadres_by_id(1120936)
+        self.assertIsInstance(res, Subadres)
+        self.assertEqual(res.id, 1120936)
 
 
 class GewestTests(unittest.TestCase):
@@ -1053,6 +1067,19 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         gebouwen = h.gebouwen
         self.assertIsInstance(gebouwen, list)
+        
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_subadressen(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h = Huisnummer(1, 3, '51', 17718)
+        h.set_gateway(crab)
+        subadressen = h.subadressen
+        self.assertIsInstance(subadressen, list)
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
@@ -1629,6 +1656,72 @@ class MetadataTests(unittest.TestCase):
         self.assertEqual(int(m.begin_bewerking.id), 1)
         self.assertIsInstance(m.begin_organisatie, Organisatie)
         self.assertEqual(int(m.begin_organisatie.id), 6)
+        
+        
+class SubadresTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        s = Subadres(
+            1120936,
+            "A",
+            Statussubadres(3, 'inGebruik', 'None'),
+            38020,
+            Aardsubadres(1, 'gemeente', 'Gemeente.'),
+            Metadata(
+                '1830-01-01 00:00:00',
+                '2011-04-29 13:27:40.230000',
+                Bewerking(1, '', ''),
+                Organisatie(5, '', '')
+            )
+        )
+        self.assertEqual(s.id, 1120936)
+        self.assertEqual(s.subadres, "A")
+        self.assertEqual(int(s.status_id), 3)
+        self.assertIsInstance(s.status, Statussubadres)
+        self.assertEqual(int(s.huisnummer_id), 38020)
+        self.assertIsInstance(s.metadata, Metadata)
+        self.assertEqual(s.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual(
+            s.metadata.begin_tijd,
+            '2011-04-29 13:27:40.230000'
+        )
+        self.assertIsInstance(s.metadata.begin_bewerking, Bewerking)
+        self.assertEqual(int(s.metadata.begin_bewerking.id), 1)
+        self.assertIsInstance(s.metadata.begin_organisatie, Organisatie)
+        self.assertEqual(int(s.metadata.begin_organisatie.id), 5)
+        self.assertEqual('A (1120936)', str(s))
+        self.assertEqual("Subadres(1120936, 3, 'A', 38020)", repr(s))
+
+    def test_str_dont_lazy_load(self):
+        s = Subadres(1120936, 'A', 3)
+        self.assertEqual('A (1120936)', str(s))
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_lazy_load(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        s = Subadres(1120936, 'A', 3)
+        s.set_gateway(crab)
+        self.assertEqual(s.id, 1120936)
+        self.assertEqual(int(s.status.id), 3)
+        self.assertEqual(s.subadres, "A")
+        self.assertIsInstance(s.aard, Aardsubadres)
+        self.assertEqual(int(s.huisnummer.id), 38020)
+        s.metadata.set_gateway(crab)
+        self.assertIsInstance(s.metadata, Metadata)
+        self.assertIsNotNone(s.metadata.begin_datum)
+        self.assertIsNotNone(s.metadata.begin_tijd)
+        self.assertIsInstance(s.metadata.begin_bewerking, Bewerking)
+        self.assertEqual(int(s.metadata.begin_bewerking.id), 3)
+        self.assertIsInstance(s.metadata.begin_organisatie, Organisatie)
+        self.assertEqual(int(s.metadata.begin_organisatie.id), 1)
+        
+    def test_check_gateway_not_set(self):
+        s = Subadres(1, 3, 'A', 129462)
+        self.assertRaises(RuntimeError, s.check_gateway)
 
 
 @unittest.skipUnless(
@@ -2371,5 +2464,34 @@ class CrabCachedGatewayTests(unittest.TestCase):
             self.crab
                 .caches['short']
                 .get('GetGebouwByIdentificatorGebouw#1538575'),
+            res
+        )
+    
+    def test_list_subadressen_by_huisnummer(self):
+        res = self.crab.list_subadressen_by_huisnummer(129462)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListSubadressenWithStatusByHuisnummerId#129462'),
+            res
+        )
+        huisnummer = self.crab.get_huisnummer_by_id(129462)
+        res = self.crab.list_subadressen_by_huisnummer(huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListSubadressenWithStatusByHuisnummerId#129462'),
+            res
+        )
+
+    def test_get_subadres_by_id(self):
+        res = self.crab.get_subadres_by_id(1120934)
+        self.assertIsInstance(res, Subadres)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('GetSubadresWithStatusBySubadresId#1120934'),
             res
         )
