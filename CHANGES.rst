@@ -1,3 +1,9 @@
+0.5.0 (??-??-2015)
+------------------
+
+- Implement operations dealing with Subadres. This deals with things like
+  postboxes in appartment complexes. (#34)
+
 0.4.2 (18-09-2014)
 ------------------
 
