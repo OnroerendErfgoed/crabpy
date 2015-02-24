@@ -1090,6 +1090,69 @@ class CrabGateway(object):
         for item in r:
             if int(item.id) == int(res):
                 return item
+                
+    def list_subadressen_by_huisnummer(self, huisnummer):
+        '''
+        List all `subadressen` for a :class:`Huisnummer`.
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `subadressen` are wanted. OR A huisnummer id.
+        :rtype: A :class:`list` of :class:`Gebouw`
+        '''
+        try:
+            id = huisnummer.id
+        except AttributeError:
+            id = huisnummer
+            
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListSubadressenWithStatusByHuisnummerId', id
+            )
+            return [ Subadres(
+                r.SubadresId,
+                r.Subadres,
+                r.StatusSubadres
+            )for r in res.SubadresWithStatusItem ]
+        if self.caches['short'].is_configured:
+            key = 'ListSubadressenWithStatusByHuisnummerId#%s' % (id)
+            subadressen = self.caches['short'].get_or_create(key, creator)
+        else:
+            subadressen = creator()
+        for s in subadressen:
+            s.set_gateway(self)
+        return subadressen
+        
+    def get_subadres_by_id(self, id):
+        '''
+        Retrieve a `Subadres` by the Id.
+
+        :param integer id: the Id of the `Subadres`
+        :rtype: :class:`Subadres`
+        '''
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'GetSubadresWithStatusBySubadresId', id
+            )
+            return Subadres(
+                res.SubadresId,
+                res.Subadres,
+                res.StatusSubadres,
+                res.HuisnummerId,
+                res.AardSubadres,
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
+                )
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetSubadresWithStatusBySubadresId#%s' % (id)
+            subadres = self.caches['short'].get_or_create(key, creator)
+        else:
+            subadres = creator()
+        subadres.set_gateway(self)
+        return subadres
 
 
 class GatewayObject(object):
@@ -1684,6 +1747,13 @@ class Huisnummer(GatewayObject):
     @property
     def gebouwen(self):
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
+        
+    @property
+    def subadressen(self):
+        try:
+            return self.gateway.list_subadressen_by_huisnummer(self.id)
+        except AttributeError:
+            return []
 
     def __unicode__(self):
         return "%s (%s)" % (self.huisnummer, self.id)
@@ -2132,3 +2202,88 @@ class Metadata(GatewayObject):
 
     def __unicode__(self):
         return "Begin datum: %s" % (self.begin_datum)
+    
+
+def check_lazy_load_subadres(f):
+    '''
+    Decorator function to lazy load a :class:`Subadres`.
+    '''
+    def wrapper(*args):
+        subadres = args[0]
+        if (
+            subadres._metadata is None or
+            subadres.aard_id is None or
+            subadres.huisnummer_id is None
+        ):
+            log.debug('Lazy loading Subadres %d', subadres.id)
+            subadres.check_gateway()
+            s = subadres.gateway.get_subadres_by_id(subadres.id)
+            subadres._metadata = s._metadata
+            subadres.aard_id = s.aard_id
+            subadres.huisnummer_id = s.huisnummer_id
+        return f(*args)
+    return wrapper
+
+
+class Subadres(GatewayObject):
+    '''
+    
+    '''
+    def __init__(
+            self, id, subadres, status, huisnummer_id=None, aard=None,
+            metadata=None, **kwargs
+    ):
+        self.id = int(id)
+        self.subadres = subadres
+        try:
+            self.status_id = status.id
+            self._status = status
+        except AttributeError:
+            self.status_id = status
+            self._status = None
+        self.huisnummer_id = huisnummer_id
+        try:
+            self.aard_id = aard.id
+            self._aard = aard
+        except AttributeError:
+            self.aard_id = aard
+            self._aard = None
+        self._metadata = metadata
+        super(Subadres, self).__init__(**kwargs)
+        
+    @property
+    def huisnummer(self):
+        self.check_gateway()
+        return self.gateway.get_huisnummer_by_id(self.huisnummer_id)
+
+    @property
+    @check_lazy_load_subadres
+    def metadata(self):
+        return self._metadata
+
+    @property
+    def status(self):
+        if self._status is None:
+            res = self.gateway.list_statushuisnummers()
+            for status in res:
+                if int(status.id) == int(self.status_id):
+                    self._status = status
+        return self._status
+        
+    @property
+    @check_lazy_load_subadres
+    def aard(self):
+        if self._aard is None:
+            res = self.gateway.list_aardsubadressen()
+            for aard in res:
+                if int(aard.id) == int(self.aard_id):
+                    self._aard = aard
+        return self._aard
+
+
+    def __unicode__(self):
+        return "%s (%s)" % (self.subadres, self.id)
+
+    def __repr__(self):
+        return "Subadres(%s, %s, '%s', %s)" % (self.id, self.status_id, self.subadres, self.huisnummer_id)
+
