@@ -16,3 +16,5 @@ for s in gemeente.straten:
     print("* %s" % s)
     for h in s.huisnummers:
         print("\t* %s" % h)
+        for sa in h.subadressen:
+            print("\t\t* %s" % sa)
