@@ -380,7 +380,7 @@ class CrabGateway(object):
         :rtype: A :class:`list` of :class:`Aardsubadres`
         '''
         return self._list_codeobject(
-            'ListOrganisaties', sort, 'Aardsubadres'
+            'ListAardSubadressen', sort, 'Aardsubadres'
         )
 
     def list_aardadressen(self, sort=1):
