@@ -4,6 +4,7 @@
 - Implement operations dealing with Subadres. This deals with things like
   postboxes in appartment complexes. (#34)
 - Drop support for python 3.2 (#36)
+- Fix a bug with crab.list_aardsubadressen. (#38)
 
 0.4.2 (18-09-2014)
 ------------------
