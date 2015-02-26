@@ -1788,8 +1788,7 @@ class AdrespositieTests(unittest.TestCase):
                 '',
                 None,
                 None
-            ),
-            ''
+            )
         )
         self.assertEqual(a.id, 4087928)
         self.assertEqual(a.herkomst_id, 2)
