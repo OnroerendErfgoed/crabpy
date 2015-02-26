@@ -1203,10 +1203,13 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListAdrespositiesByHuisnummer', nummer, sid
             )
-            return [Adrespositie(
-                r.AdrespositieId,
-                r.HerkomstAdrespositie
-            )for r in res.AdrespositieItem]
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                )for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListAdrespositiesByHuisnummer#%s%s' % (nummer, sid)
             adresposities = self.caches['short'].get_or_create(key, creator)
@@ -1232,10 +1235,13 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListAdrespositiesBySubadresId', id
             )
-            return [Adrespositie(
-                r.AdrespositieId,
-                r.HerkomstAdrespositie
-            )for r in res.AdrespositieItem]
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                )for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListAdrespositiesBySubadresId#%s' % (id)
             adresposities = self.caches['short'].get_or_create(key, creator)
@@ -1262,10 +1268,13 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListAdrespositiesBySubadres', subadres, hid
             )
-            return [Adrespositie(
-                r.AdrespositieId,
-                r.HerkomstAdrespositie
-            )for r in res.AdrespositieItem]
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                )for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListAdrespositiesBySubadres#%s%s' % (subadres, hid)
             adresposities = self.caches['short'].get_or_create(key, creator)
