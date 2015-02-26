@@ -4,6 +4,7 @@
 - Implement operations dealing with Subadres. This deals with things like
   postboxes in appartment complexes. (#34)
 - Implement operations dealing with Adrespositie. (#37)
+- Drop support for python 3.2 (#36)
 
 0.4.2 (18-09-2014)
 ------------------
