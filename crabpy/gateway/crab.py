@@ -2409,7 +2409,7 @@ class Subadres(GatewayObject):
         
 def check_lazy_load_adrespositie(f):
     '''
-    Decorator function to lazy load a :class:`Subadres`.
+    Decorator function to lazy load a :class:`Adrespositie`.
     '''
     def wrapper(*args):
         adrespositie = args[0]
@@ -2418,7 +2418,7 @@ def check_lazy_load_adrespositie(f):
             adrespositie._aard is None or
             adrespositie._metadata is None
         ):
-            log.debug('Lazy loading Subadres %d', adrespositie.id)
+            log.debug('Lazy loading Adrespositie %d', adrespositie.id)
             adrespositie.check_gateway()
             a = adrespositie.gateway.get_adrespositie_by_id(adrespositie.id)
             adrespositie._geometrie = a._geometrie
@@ -2430,6 +2430,14 @@ def check_lazy_load_adrespositie(f):
         
 class Adrespositie(GatewayObject):
     '''
+    The position of an `Adres`.
+
+    This can be used for the position of both :class:`Huisnummer` and
+    :class:`Subadres`.
+
+    A `Huisnummer` or `Subadres`, can have more than one `Adrespositie`, each
+    offering a different interpretation of the position of the `Adres`. See
+    the `herkomst` and `aard` of each `Adrespositie` to know which one to pick.
     '''
     def __init__(
         self, id, herkomst, geometrie=None, aard=None,
