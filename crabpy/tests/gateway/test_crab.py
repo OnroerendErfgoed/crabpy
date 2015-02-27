@@ -373,6 +373,11 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Subadres)
         
+    def test_list_subadressen_by_huisnummer_empty(self):
+        res = self.crab.list_subadressen_by_huisnummer(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+        
     def test_get_subadres_by_id(self):
         res = self.crab.get_subadres_by_id(1120936)
         self.assertIsInstance(res, Subadres)

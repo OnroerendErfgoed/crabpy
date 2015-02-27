@@ -5,6 +5,7 @@
   postboxes in appartment complexes. (#34)
 - Implement operations dealing with Adrespositie. (#37)
 - Drop support for python 3.2 (#36)
+- Fix a bug with crab.list_aardsubadressen. (#38)
 
 0.4.2 (18-09-2014)
 ------------------

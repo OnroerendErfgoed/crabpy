@@ -380,7 +380,7 @@ class CrabGateway(object):
         :rtype: A :class:`list` of :class:`Aardsubadres`
         '''
         return self._list_codeobject(
-            'ListOrganisaties', sort, 'Aardsubadres'
+            'ListAardSubadressen', sort, 'Aardsubadres'
         )
 
     def list_aardadressen(self, sort=1):
@@ -1108,11 +1108,14 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'ListSubadressenWithStatusByHuisnummerId', id
             )
-            return [ Subadres(
-                r.SubadresId,
-                r.Subadres,
-                r.StatusSubadres
-            )for r in res.SubadresWithStatusItem ]
+            try:
+                return [ Subadres(
+                    r.SubadresId,
+                    r.Subadres,
+                    r.StatusSubadres
+                )for r in res.SubadresWithStatusItem ]
+            except AttributeError:
+                return []
         if self.caches['short'].is_configured:
             key = 'ListSubadressenWithStatusByHuisnummerId#%s' % (id)
             subadressen = self.caches['short'].get_or_create(key, creator)
@@ -1911,10 +1914,7 @@ class Huisnummer(GatewayObject):
         
     @property
     def subadressen(self):
-        try:
-            return self.gateway.list_subadressen_by_huisnummer(self.id)
-        except AttributeError:
-            return []
+        return self.gateway.list_subadressen_by_huisnummer(self.id)
     
     @property
     def adresposities(self):
