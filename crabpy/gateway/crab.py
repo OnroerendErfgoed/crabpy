@@ -1651,6 +1651,8 @@ class Straat(GatewayObject):
     @property
     def bounding_box(self):
         weg = [x.geometrie for x in self.wegsegmenten]
+        if weg == []:
+            return None
         x = []
         y = []
         for a in weg:
@@ -1743,6 +1745,8 @@ class Huisnummer(GatewayObject):
     @property
     def bounding_box(self):
         per = [x.bounding_box for x in self.terreinobjecten]
+        if per == []:
+            return None
         mini = min(per)
         maxi = max(per)
         return [mini[0], mini[1], maxi[0], maxi[1]]
