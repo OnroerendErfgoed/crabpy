@@ -123,6 +123,8 @@ class CrabGateway(object):
             de = crab_gateway_request(
                 self.client, 'GetGewestByGewestIdAndTaalCode', id, 'de'
             )
+            if nl == None:
+                return None
             return Gewest(
                 nl.GewestId,
                 {
@@ -138,7 +140,8 @@ class CrabGateway(object):
             gewest = self.caches['long'].get_or_create(key, creator)
         else:
             gewest = creator()
-        gewest.set_gateway(self)
+        if gewest != None:
+            gewest.set_gateway(self)
         return gewest
 
     def list_provincies(self, gewest=2):
@@ -184,7 +187,8 @@ class CrabGateway(object):
             provincie = self.caches['permanent'].get_or_create(key, creator)
         else:
             provincie = creator()
-        provincie.set_gateway(self)
+        if provincie != None:
+            provincie.set_gateway(self)
         return provincie
 
     def list_gemeenten_by_provincie(self, provincie):
@@ -195,12 +199,11 @@ class CrabGateway(object):
             `gemeenten` are wanted.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
-        try:
-            provincie = self.get_provincie_by_id(provincie)
-        except AttributeError:
-            pass
-        provincie.set_gateway(self)
-        gewest = provincie.gewest
+        prov = self.get_provincie_by_id(provincie)
+        if prov == None:
+            prov = provincie
+        prov.set_gateway(self)
+        gewest = prov.gewest
         gewest.clear_gateway()
 
         def creator():
@@ -211,11 +214,11 @@ class CrabGateway(object):
                     r.naam,
                     r.niscode,
                     gewest
-                )for r in gewest_gemeenten if str(r.niscode)[0] == str(provincie.niscode)[0]
+                )for r in gewest_gemeenten if str(r.niscode)[0] == str(prov.niscode)[0]
             ]
 
         if self.caches['permanent'].is_configured:
-            key = 'ListGemeentenByProvincieId#%s' % provincie.id
+            key = 'ListGemeentenByProvincieId#%s' % prov.id
             gemeente = self.caches['long'].get_or_create(key, creator)
         else:
             gemeente = creator()
@@ -237,6 +240,8 @@ class CrabGateway(object):
         except AttributeError:
             gewest_id = gewest
             gewest = self.get_gewest_by_id(gewest_id)
+        if gewest == None:
+            return []
         gewest.clear_gateway()
 
         def creator():
@@ -271,6 +276,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetGemeenteByGemeenteId', id
             )
+            if res == None:
+                return None
             return Gemeente(
                 res.GemeenteId,
                 res.GemeenteNaam,
@@ -291,7 +298,8 @@ class CrabGateway(object):
             gemeente = self.caches['long'].get_or_create(key, creator)
         else:
             gemeente = creator()
-        gemeente.set_gateway(self)
+        if gemeente != None:
+            gemeente.set_gateway(self)
         return gemeente
 
     def get_gemeente_by_niscode(self, niscode):
@@ -306,6 +314,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetGemeenteByNISGemeenteCode', niscode
             )
+            if res == None:
+                return None
             return Gemeente(
                 res.GemeenteId,
                 res.GemeenteNaam,
@@ -326,7 +336,8 @@ class CrabGateway(object):
             gemeente = self.caches['long'].get_or_create(key, creator)
         else:
             gemeente = creator()
-        gemeente.set_gateway(self)
+        if gemeente != None:
+            gemeente.set_gateway(self)
         return gemeente
 
     def _list_codeobject(self, function, sort, returnclass):
@@ -553,6 +564,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetStraatnaamWithStatusByStraatnaamId', id
             )
+            if res == None:
+                return None
             return Straat(
                 res.StraatnaamId,
                 res.StraatnaamLabel,
@@ -575,7 +588,8 @@ class CrabGateway(object):
             straat = self.caches['long'].get_or_create(key, creator)
         else:
             straat = creator()
-        straat.set_gateway(self)
+        if straat != None:
+            straat.set_gateway(self)
         return straat
 
     def list_huisnummers_by_straat(self, straat, sort=1):
@@ -627,6 +641,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetHuisnummerWithStatusByHuisnummerId', id
             )
+            if res == None:
+                return None
             return Huisnummer(
                 res.HuisnummerId,
                 res.StatusHuisnummer,
@@ -644,7 +660,8 @@ class CrabGateway(object):
             huisnummer = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummer = creator()
-        huisnummer.set_gateway(self)
+        if huisnummer != None:
+            huisnummer.set_gateway(self)
         return huisnummer
 
     def get_huisnummer_by_nummer_and_straat(self, nummer, straat):
@@ -666,6 +683,8 @@ class CrabGateway(object):
                 self.client, 'GetHuisnummerWithStatusByHuisnummer',
                 nummer, straat_id
             )
+            if res == None:
+                return None
             return Huisnummer(
                 res.HuisnummerId,
                 res.StatusHuisnummer,
@@ -683,7 +702,8 @@ class CrabGateway(object):
             huisnummer = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummer = creator()
-        huisnummer.set_gateway(self)
+        if huisnummer != None:
+            huisnummer.set_gateway(self)
         return huisnummer
 
     def list_postkantons_by_gemeente(self, gemeente):
@@ -737,6 +757,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetPostkantonByHuisnummerId', id
             )
+            if res == None:
+                return None
             return Postkanton(
                 res.PostkantonCode
             )
@@ -745,7 +767,8 @@ class CrabGateway(object):
             postkanton = self.caches['short'].get_or_create(key, creator)
         else:
             postkanton = creator()
-        postkanton.set_gateway(self)
+        if postkanton != None:
+            postkanton.set_gateway(self)
         return postkanton
 
     def get_wegobject_by_id(self, id):
@@ -759,6 +782,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetWegobjectByIdentificatorWegobject', id
             )
+            if res == None:
+                return None
             return Wegobject(
                 res.IdentificatorWegobject,
                 res.AardWegobject,
@@ -776,7 +801,8 @@ class CrabGateway(object):
             wegobject = self.caches['short'].get_or_create(key, creator)
         else:
             wegobject = creator()
-        wegobject.set_gateway(self)
+        if wegobject != None:
+            wegobject.set_gateway(self)
         return wegobject
 
     def list_wegobjecten_by_straat(self, straat):
@@ -826,6 +852,8 @@ class CrabGateway(object):
                 self.client,
                 'GetWegsegmentByIdentificatorWegsegment', id
             )
+            if res == None:
+                return None
             return Wegsegment(
                 res.IdentificatorWegsegment,
                 res.StatusWegsegment,
@@ -843,7 +871,8 @@ class CrabGateway(object):
             wegsegment = self.caches['short'].get_or_create(key, creator)
         else:
             wegsegment = creator()
-        wegsegment.set_gateway(self)
+        if wegsegment != None:
+            wegsegment.set_gateway(self)
         return wegsegment
 
     def list_wegsegmenten_by_straat(self, straat):
@@ -928,6 +957,8 @@ class CrabGateway(object):
                 self.client,
                 'GetTerreinobjectByIdentificatorTerreinobject', id
             )
+            if res == None:
+                return None
             return Terreinobject(
                 res.IdentificatorTerreinobject,
                 res.AardTerreinobject,
@@ -945,7 +976,8 @@ class CrabGateway(object):
             terreinobject = self.caches['short'].get_or_create(key, creator)
         else:
             terreinobject = creator()
-        terreinobject.set_gateway(self)
+        if terreinobject != None:
+            terreinobject.set_gateway(self)
         return terreinobject
 
     def list_percelen_by_huisnummer(self, huisnummer):
@@ -993,6 +1025,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetPerceelByIdentificatorPerceel', id
             )
+            if res == None:
+                return None
             return Perceel(
                 res.IdentificatorPerceel,
                 (res.CenterX, res.CenterY),
@@ -1008,7 +1042,8 @@ class CrabGateway(object):
             perceel = self.caches['short'].get_or_create(key, creator)
         else:
             perceel = creator()
-        perceel.set_gateway(self)
+        if perceel != None:
+            perceel.set_gateway(self)
         return perceel
 
     def list_gebouwen_by_huisnummer(self, huisnummer):
@@ -1058,6 +1093,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetGebouwByIdentificatorGebouw', id
             )
+            if res == None:
+                return None
             return Gebouw(
                 res.IdentificatorGebouw,
                 res.AardGebouw,
@@ -1076,7 +1113,8 @@ class CrabGateway(object):
             gebouw = self.caches['short'].get_or_create(key, creator)
         else:
             gebouw = creator()
-        gebouw.set_gateway(self)
+        if gebouw != None:
+            gebouw.set_gateway(self)
         return gebouw
 
     def get_bewerking(self, res):
@@ -1136,6 +1174,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetSubadresWithStatusBySubadresId', id
             )
+            if res == None:
+                return None
             return Subadres(
                 res.SubadresId,
                 res.Subadres,
@@ -1154,7 +1194,8 @@ class CrabGateway(object):
             subadres = self.caches['short'].get_or_create(key, creator)
         else:
             subadres = creator()
-        subadres.set_gateway(self)
+        if subadres != None:
+            subadres.set_gateway(self)
         return subadres
 
 
@@ -1651,6 +1692,8 @@ class Straat(GatewayObject):
     @property
     def bounding_box(self):
         weg = [x.geometrie for x in self.wegsegmenten]
+        if weg == []:
+            return None
         x = []
         y = []
         for a in weg:
@@ -1743,6 +1786,8 @@ class Huisnummer(GatewayObject):
     @property
     def bounding_box(self):
         per = [x.bounding_box for x in self.terreinobjecten]
+        if per == []:
+            return None
         mini = min(per)
         maxi = max(per)
         return [mini[0], mini[1], maxi[0], maxi[1]]
