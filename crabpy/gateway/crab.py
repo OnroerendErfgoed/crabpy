@@ -1090,7 +1090,7 @@ class CrabGateway(object):
         for item in r:
             if int(item.id) == int(res):
                 return item
-                
+
     def list_subadressen_by_huisnummer(self, huisnummer):
         '''
         List all `subadressen` for a :class:`Huisnummer`.
@@ -1103,7 +1103,7 @@ class CrabGateway(object):
             id = huisnummer.id
         except AttributeError:
             id = huisnummer
-            
+
         def creator():
             res = crab_gateway_request(
                 self.client, 'ListSubadressenWithStatusByHuisnummerId', id
@@ -1124,7 +1124,7 @@ class CrabGateway(object):
         for s in subadressen:
             s.set_gateway(self)
         return subadressen
-        
+
     def get_subadres_by_id(self, id):
         '''
         Retrieve a `Subadres` by the Id.
@@ -1156,7 +1156,7 @@ class CrabGateway(object):
             subadres = creator()
         subadres.set_gateway(self)
         return subadres
-    
+
     def list_adresposities_by_huisnummer(self, huisnummer):
         '''
         List all `adresposities` for a :class:`Huisnummer`.
@@ -1188,7 +1188,7 @@ class CrabGateway(object):
         for a in adresposities:
             a.set_gateway(self)
         return adresposities
-        
+
     def list_adresposities_by_nummer_and_straat(self, nummer, straat):
         '''
         List all `adresposities` for a huisnummer and a :class:`Straat`.
@@ -1221,7 +1221,7 @@ class CrabGateway(object):
         for a in adresposities:
             a.set_gateway(self)
         return adresposities
-        
+
     def list_adresposities_by_subadres(self, subadres):
         '''
         List all `adresposities` for a :class:`Subadres`.
@@ -1253,7 +1253,7 @@ class CrabGateway(object):
         for a in adresposities:
             a.set_gateway(self)
         return adresposities
-        
+
     def list_adresposities_by_subadres_and_huisnummer(self, subadres, huisnummer):
         '''
         List all `adresposities` for a subadres and a :class:`Huisnummer`.
@@ -1286,7 +1286,7 @@ class CrabGateway(object):
         for a in adresposities:
             a.set_gateway(self)
         return adresposities
-        
+
     def get_adrespositie_by_id(self, id):
         '''
         Retrieve a `Adrespositie` by the Id.
@@ -1911,11 +1911,11 @@ class Huisnummer(GatewayObject):
     @property
     def gebouwen(self):
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
-        
+
     @property
     def subadressen(self):
         return self.gateway.list_subadressen_by_huisnummer(self.id)
-    
+
     @property
     def adresposities(self):
         return self.gateway.list_adresposities_by_huisnummer(self.id)
@@ -2315,7 +2315,7 @@ class Gebouw(GatewayObject):
 
     def __repr__(self):
         return "Gebouw(%s)" % (self.id)
-    
+
 
 def check_lazy_load_subadres(f):
     '''
@@ -2365,7 +2365,7 @@ class Subadres(GatewayObject):
             self._aard = None
         self._metadata = metadata
         super(Subadres, self).__init__(**kwargs)
-        
+
     @property
     def huisnummer(self):
         self.check_gateway()
@@ -2384,7 +2384,7 @@ class Subadres(GatewayObject):
                 if int(status.id) == int(self.status_id):
                     self._status = status
         return self._status
-        
+
     @property
     @check_lazy_load_subadres
     def aard(self):
@@ -2394,7 +2394,7 @@ class Subadres(GatewayObject):
                 if int(aard.id) == int(self.aard_id):
                     self._aard = aard
         return self._aard
-        
+
     @property
     def adresposities(self):
         return self.gateway.list_adresposities_by_subadres(self.id)
@@ -2405,8 +2405,8 @@ class Subadres(GatewayObject):
 
     def __repr__(self):
         return "Subadres(%s, %s, '%s', %s)" % (self.id, self.status_id, self.subadres, self.huisnummer_id)
-        
-        
+
+
 def check_lazy_load_adrespositie(f):
     '''
     Decorator function to lazy load a :class:`Adrespositie`.
@@ -2426,8 +2426,8 @@ def check_lazy_load_adrespositie(f):
             adrespositie._metadata = a._metadata
         return f(*args)
     return wrapper
-        
-        
+
+
 class Adrespositie(GatewayObject):
     '''
     The position of an `Adres`.
@@ -2454,7 +2454,7 @@ class Adrespositie(GatewayObject):
         self._aard = aard
         self._metadata = metadata
         super(Adrespositie, self).__init__(**kwargs)
-        
+
     @property
     def herkomst(self):
         if self._herkomst is None:
@@ -2464,27 +2464,27 @@ class Adrespositie(GatewayObject):
                 if int(herkomst.id) == int(self.herkomst_id):
                     self._herkomst = herkomst
         return self._herkomst
-        
+
     @property
     @check_lazy_load_adrespositie
     def metadata(self):
         return self._metadata
-        
+
     @property
     @check_lazy_load_adrespositie
     def geometrie(self):
         return self._geometrie
-        
+
     @property
     @check_lazy_load_adrespositie
     def aard(self):
         return self._aard
-        
+
     def __unicode__(self):
-        return "Adrespositie (%s)" % (self.id)
+        return "Adrespositie %s" % (self.id)
 
     def __repr__(self):
-        return "Adrespositie(%s)" % (self.id)
+        return "Adrespositie(%s, %s)" % (self.id, self.herkomst_id)
 
 
 class Metadata(GatewayObject):
