@@ -1,9 +1,14 @@
-0.5.0 (??-??-2015)
+0.6.0 (??-??-2015)
+------------------
+
+- Implement operations dealing with Adrespositie. (#37) [TalissaJoly]
+- Improve the coverage. (#39) [TalissaJoly]
+
+0.5.0 (03-03-2015)
 ------------------
 
 - Implement operations dealing with Subadres. This deals with things like
-  postboxes in appartment complexes. (#34)
-- Implement operations dealing with Adrespositie. (#37)
+  postboxes in appartment complexes. (#34) (#40) [TalissaJoly]
 - Drop support for python 3.2 (#36)
 - Fix a bug with crab.list_aardsubadressen. (#38)
 
