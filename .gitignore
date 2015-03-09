@@ -33,3 +33,6 @@ nosetests.xml
 
 # Cache files
 dogpile_data
+
+# Rope
+.ropeproject
