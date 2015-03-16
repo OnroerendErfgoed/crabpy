@@ -3,6 +3,7 @@
 
 - Implement operations dealing with Adrespositie. (#37) [TalissaJoly]
 - Improve the coverage. (#39) [TalissaJoly]
+- Fix a bug with objects that have an empty bounding box. (#46) [TalissaJoly]
 
 0.5.0 (03-03-2015)
 ------------------
