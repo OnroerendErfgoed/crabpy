@@ -1,3 +1,9 @@
+0.6.0 (??-??-2015)
+------------------
+
+- Implement operations dealing with Adrespositie. (#37) [TalissaJoly]
+- Improve the coverage. (#39) [TalissaJoly]
+
 0.5.0 (03-03-2015)
 ------------------
 

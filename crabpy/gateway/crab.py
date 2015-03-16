@@ -1090,7 +1090,7 @@ class CrabGateway(object):
         for item in r:
             if int(item.id) == int(res):
                 return item
-                
+
     def list_subadressen_by_huisnummer(self, huisnummer):
         '''
         List all `subadressen` for a :class:`Huisnummer`.
@@ -1103,7 +1103,7 @@ class CrabGateway(object):
             id = huisnummer.id
         except AttributeError:
             id = huisnummer
-            
+
         def creator():
             res = crab_gateway_request(
                 self.client, 'ListSubadressenWithStatusByHuisnummerId', id
@@ -1124,7 +1124,7 @@ class CrabGateway(object):
         for s in subadressen:
             s.set_gateway(self)
         return subadressen
-        
+
     def get_subadres_by_id(self, id):
         '''
         Retrieve a `Subadres` by the Id.
@@ -1156,6 +1156,167 @@ class CrabGateway(object):
             subadres = creator()
         subadres.set_gateway(self)
         return subadres
+
+    def list_adresposities_by_huisnummer(self, huisnummer):
+        '''
+        List all `adresposities` for a :class:`Huisnummer`.
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `adresposities` are wanted. OR A huisnummer id.
+        :rtype: A :class:`list` of :class:`Adrespositie`
+        '''
+        try:
+            id = huisnummer.id
+        except AttributeError:
+            id = huisnummer
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListAdrespositiesByHuisnummerId', id
+            )
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                ) for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
+        if self.caches['short'].is_configured:
+            key = 'ListAdrespositiesByHuisnummerId#%s' % (id)
+            adresposities = self.caches['short'].get_or_create(key, creator)
+        else:
+            adresposities = creator()
+        for a in adresposities:
+            a.set_gateway(self)
+        return adresposities
+
+    def list_adresposities_by_nummer_and_straat(self, nummer, straat):
+        '''
+        List all `adresposities` for a huisnummer and a :class:`Straat`.
+
+        :param nummer: A string representing a certain huisnummer.
+        :param straat: The :class:`Straat` for which the \
+            `adresposities` are wanted. OR A straat id.
+        :rtype: A :class:`list` of :class:`Adrespositie`
+        '''
+        try:
+            sid = straat.id
+        except AttributeError:
+            sid = straat
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListAdrespositiesByHuisnummer', nummer, sid
+            )
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                )for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
+        if self.caches['short'].is_configured:
+            key = 'ListAdrespositiesByHuisnummer#%s%s' % (nummer, sid)
+            adresposities = self.caches['short'].get_or_create(key, creator)
+        else:
+            adresposities = creator()
+        for a in adresposities:
+            a.set_gateway(self)
+        return adresposities
+
+    def list_adresposities_by_subadres(self, subadres):
+        '''
+        List all `adresposities` for a :class:`Subadres`.
+
+        :param subadres: The :class:`Subadres` for which the \
+            `adresposities` are wanted. OR A subadres id.
+        :rtype: A :class:`list` of :class:`Adrespositie`
+        '''
+        try:
+            id = subadres.id
+        except AttributeError:
+            id = subadres
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListAdrespositiesBySubadresId', id
+            )
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                )for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
+        if self.caches['short'].is_configured:
+            key = 'ListAdrespositiesBySubadresId#%s' % (id)
+            adresposities = self.caches['short'].get_or_create(key, creator)
+        else:
+            adresposities = creator()
+        for a in adresposities:
+            a.set_gateway(self)
+        return adresposities
+
+    def list_adresposities_by_subadres_and_huisnummer(self, subadres, huisnummer):
+        '''
+        List all `adresposities` for a subadres and a :class:`Huisnummer`.
+
+        :param subadres: A string representing a certain subadres.
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `adresposities` are wanted. OR A huisnummer id.
+        :rtype: A :class:`list` of :class:`Adrespositie`
+        '''
+        try:
+            hid = huisnummer.id
+        except AttributeError:
+            hid = huisnummer
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListAdrespositiesBySubadres', subadres, hid
+            )
+            try:
+                return [Adrespositie(
+                    r.AdrespositieId,
+                    r.HerkomstAdrespositie
+                )for r in res.AdrespositieItem]
+            except AttributeError:
+                return []
+        if self.caches['short'].is_configured:
+            key = 'ListAdrespositiesBySubadres#%s%s' % (subadres, hid)
+            adresposities = self.caches['short'].get_or_create(key, creator)
+        else:
+            adresposities = creator()
+        for a in adresposities:
+            a.set_gateway(self)
+        return adresposities
+
+    def get_adrespositie_by_id(self, id):
+        '''
+        Retrieve a `Adrespositie` by the Id.
+
+        :param integer id: the Id of the `Adrespositie`
+        :rtype: :class:`Adrespositie`
+        '''
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'GetAdrespositieByAdrespositieId', id
+            )
+            return Adrespositie(
+                res.AdrespositieId,
+                res.HerkomstAdrespositie,
+                res.Geometrie,
+                res.AardAdres,
+                Metadata(
+                    res.BeginDatum,
+                    res.BeginTijd,
+                    self.get_bewerking(res.BeginBewerking),
+                    self.get_organisatie(res.BeginOrganisatie)
+                )
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetAdrespositieByAdrespositieId#%s' % (id)
+            adrespositie = self.caches['short'].get_or_create(key, creator)
+        else:
+            adrespositie = creator()
+        adrespositie.set_gateway(self)
+        return creator()
 
 
 class GatewayObject(object):
@@ -1754,10 +1915,14 @@ class Huisnummer(GatewayObject):
     @property
     def gebouwen(self):
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
-        
+
     @property
     def subadressen(self):
         return self.gateway.list_subadressen_by_huisnummer(self.id)
+
+    @property
+    def adresposities(self):
+        return self.gateway.list_adresposities_by_huisnummer(self.id)
 
     def __unicode__(self):
         return "%s (%s)" % (self.huisnummer, self.id)
@@ -2154,7 +2319,7 @@ class Gebouw(GatewayObject):
 
     def __repr__(self):
         return "Gebouw(%s)" % (self.id)
-    
+
 
 def check_lazy_load_subadres(f):
     '''
@@ -2204,7 +2369,7 @@ class Subadres(GatewayObject):
             self._aard = None
         self._metadata = metadata
         super(Subadres, self).__init__(**kwargs)
-        
+
     @property
     def huisnummer(self):
         self.check_gateway()
@@ -2223,7 +2388,7 @@ class Subadres(GatewayObject):
                 if int(status.id) == int(self.status_id):
                     self._status = status
         return self._status
-        
+
     @property
     @check_lazy_load_subadres
     def aard(self):
@@ -2234,12 +2399,96 @@ class Subadres(GatewayObject):
                     self._aard = aard
         return self._aard
 
+    @property
+    def adresposities(self):
+        return self.gateway.list_adresposities_by_subadres(self.id)
+
 
     def __unicode__(self):
         return "%s (%s)" % (self.subadres, self.id)
 
     def __repr__(self):
         return "Subadres(%s, %s, '%s', %s)" % (self.id, self.status_id, self.subadres, self.huisnummer_id)
+
+
+def check_lazy_load_adrespositie(f):
+    '''
+    Decorator function to lazy load a :class:`Adrespositie`.
+    '''
+    def wrapper(*args):
+        adrespositie = args[0]
+        if (
+            adrespositie._geometrie is None or
+            adrespositie._aard is None or
+            adrespositie._metadata is None
+        ):
+            log.debug('Lazy loading Adrespositie %d', adrespositie.id)
+            adrespositie.check_gateway()
+            a = adrespositie.gateway.get_adrespositie_by_id(adrespositie.id)
+            adrespositie._geometrie = a._geometrie
+            adrespositie._aard = a._aard
+            adrespositie._metadata = a._metadata
+        return f(*args)
+    return wrapper
+
+
+class Adrespositie(GatewayObject):
+    '''
+    The position of an `Adres`.
+
+    This can be used for the position of both :class:`Huisnummer` and
+    :class:`Subadres`.
+
+    A `Huisnummer` or `Subadres`, can have more than one `Adrespositie`, each
+    offering a different interpretation of the position of the `Adres`. See
+    the `herkomst` and `aard` of each `Adrespositie` to know which one to pick.
+    '''
+    def __init__(
+        self, id, herkomst, geometrie=None, aard=None,
+        metadata=None, **kwargs
+    ):
+        self.id = id
+        try:
+            self.herkomst_id = herkomst.id
+            self._herkomst = herkomst
+        except AttributeError:
+            self.herkomst_id = herkomst
+            self._herkomst = None
+        self._geometrie = geometrie
+        self._aard = aard
+        self._metadata = metadata
+        super(Adrespositie, self).__init__(**kwargs)
+
+    @property
+    def herkomst(self):
+        if self._herkomst is None:
+            self.check_gateway()
+            res = self.gateway.list_herkomstadresposities()
+            for herkomst in res:
+                if int(herkomst.id) == int(self.herkomst_id):
+                    self._herkomst = herkomst
+        return self._herkomst
+
+    @property
+    @check_lazy_load_adrespositie
+    def metadata(self):
+        return self._metadata
+
+    @property
+    @check_lazy_load_adrespositie
+    def geometrie(self):
+        return self._geometrie
+
+    @property
+    @check_lazy_load_adrespositie
+    def aard(self):
+        return self._aard
+
+    def __unicode__(self):
+        return "Adrespositie %s" % (self.id)
+
+    def __repr__(self):
+        return "Adrespositie(%s, %s)" % (self.id, self.herkomst_id)
 
 
 class Metadata(GatewayObject):
