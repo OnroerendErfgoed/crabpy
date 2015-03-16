@@ -1862,13 +1862,13 @@ class AdrespositieTests(unittest.TestCase):
         self.assertEqual(a.aard, 2)
         self.assertIsInstance(a.metadata, Metadata)
         self.assertEqual(a.metadata.begin_datum, '1830-01-01 00:00:00')
-        self.assertEqual('Adrespositie (4087928)', str(a))
-        self.assertEqual("Adrespositie(4087928)", repr(a))
+        self.assertEqual('Adrespositie 4087928', str(a))
+        self.assertEqual("Adrespositie(4087928, 2)", repr(a))
 
     def test_str_dont_lazy_load(self):
         a = Adrespositie(4087928, 2)
         a.set_gateway(CrabGateway(crab_factory()))
-        self.assertEqual('Adrespositie (4087928)', str(a))
+        self.assertEqual('Adrespositie 4087928', str(a))
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
