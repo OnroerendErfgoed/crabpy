@@ -27,7 +27,8 @@ from crabpy.gateway.crab import (
     Huisnummer, Postkanton,
     Wegobject, Wegsegment,
     Terreinobject, Perceel,
-    Gebouw, Metadata, Provincie, Subadres
+    Gebouw, Metadata, Provincie, Subadres,
+    Adrespositie
 )
 
 
@@ -263,6 +264,11 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.list_straten(gemeente)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Straat)
+        
+    def test_list_straten_empty(self):
+        res = self.crab.list_straten(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
 
     def test_get_straat_by_id(self):
         res = self.crab.get_straat_by_id(1)
@@ -281,6 +287,11 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.list_huisnummers_by_straat(straat)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Huisnummer)
+
+    def test_list_huisnummers_by_straat_empty(self):
+        res = self.crab.list_huisnummers_by_straat(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
 
     def test_get_huisnummer_by_id(self):
         res = self.crab.get_huisnummer_by_id(1)
@@ -314,6 +325,11 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Postkanton)
 
+    def test_list_postkantons_by_gemeente_empty(self):
+        res = self.crab.list_postkantons_by_gemeente(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+
     def test_get_postkanton_by_huisnummer(self):
         res = self.crab.get_postkanton_by_huisnummer(1)
         self.assertIsInstance(res, Postkanton)
@@ -334,6 +350,11 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Wegobject)
 
+    def test_list_wegobjecten_by_straat(self):
+        res = self.crab.list_wegobjecten_by_straat(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+
     def test_get_wegobject_by_id(self):
         res = self.crab.get_wegobject_by_id("53839893")
         self.assertIsInstance(res, Wegobject)
@@ -351,6 +372,11 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.list_wegsegmenten_by_straat(straat)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Wegsegment)
+
+    def test_list_wegsegmenten_by_straat_empty(self):
+        res = self.crab.list_wegsegmenten_by_straat(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
 
     def test_get_wegsegment_by_id(self):
         res = self.crab.get_wegsegment_by_id("108724")
@@ -370,6 +396,11 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Terreinobject)
 
+    def test_list_terreinobjecten_by_huisnummer_empty(self):
+        res = self.crab.list_terreinobjecten_by_huisnummer(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+
     def test_get_terreinobject_by_id(self):
         res = self.crab.get_terreinobject_by_id("13040_C_1747_G_002_00")
         self.assertIsInstance(res, Terreinobject)
@@ -388,6 +419,11 @@ class CrabGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Perceel)
 
+    def test_list_percelen_by_huisnummer_empty(self):
+        res = self.crab.list_percelen_by_huisnummer(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+
     def test_get_perceel_by_id(self):
         res = self.crab.get_perceel_by_id("13040C1747/00G002")
         self.assertIsInstance(res, Perceel)
@@ -405,6 +441,11 @@ class CrabGatewayTests(unittest.TestCase):
         res = self.crab.list_gebouwen_by_huisnummer(huisnummer)
         self.assertIsInstance(res, list)
         self.assertIsInstance(res[0], Gebouw)
+
+    def test_list_gebouwen_by_huisnummer_empty(self):
+        res = self.crab.list_gebouwen_by_huisnummer(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
 
     def test_get_gebouw_by_id(self):
         res = self.crab.get_gebouw_by_id("1538575")
@@ -437,6 +478,51 @@ class CrabGatewayTests(unittest.TestCase):
     def test_get_subadres_by_id_nonexisting(self):
         res = self.crab.get_subadres_by_id(0)
         self.assertEqual(res, None)
+
+    def test_list_adresposities_by_huisnummer(self):
+        res = self.crab.list_adresposities_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Adrespositie)
+        
+    def test_list_adresposities_by_huisnummer_empty(self):
+        res = self.crab.list_adresposities_by_huisnummer(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+        
+    def test_list_adresposities_by_nummer_and_straat(self):
+        res = self.crab.list_adresposities_by_nummer_and_straat(1, 1)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Adrespositie)
+    
+    def test_list_adresposities_by_nummer_and_straat_empty(self):
+        res = self.crab.list_adresposities_by_nummer_and_straat(0, 0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+        
+    def test_list_adresposities_by_subadres(self):
+        res = self.crab.list_adresposities_by_subadres(1120936)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Adrespositie)
+    
+    def test_list_adresposities_by_subadres_empty(self):
+        res = self.crab.list_adresposities_by_subadres(0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+    
+    def test_list_adresposities_by_subadres_and_huisnummer(self):
+        res = self.crab.list_adresposities_by_subadres_and_huisnummer('A', 129462)
+        self.assertIsInstance(res, list)
+        self.assertIsInstance(res[0], Adrespositie)
+
+    def test_list_adresposities_by_subadres_and_huisnummer(self):
+        res = self.crab.list_adresposities_by_subadres_and_huisnummer(0, 0)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 0)
+    
+    def test_get_adrespositie_by_id(self):
+        res = self.crab.get_adrespositie_by_id(4087928)
+        self.assertIsInstance(res, Adrespositie)
+        self.assertEqual(res.id, 4087928)
 
 
 class GewestTests(unittest.TestCase):
@@ -1141,6 +1227,19 @@ class HuisnummerTests(unittest.TestCase):
         h.set_gateway(crab)
         subadressen = h.subadressen
         self.assertIsInstance(subadressen, list)
+        
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_adresposities(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        h = Huisnummer(1, 3, '51', 17718)
+        h.set_gateway(crab)
+        adresposities = h.adresposities
+        self.assertIsInstance(adresposities, list)
 
     @unittest.skipUnless(
         run_crab_integration_tests(),
@@ -1784,6 +1883,70 @@ class SubadresTests(unittest.TestCase):
         s = Subadres(1, 3, 'A', 129462)
         self.assertRaises(RuntimeError, s.check_gateway)
 
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_adresposities(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        s = Subadres(1120936, 'A', 3)
+        s.set_gateway(crab)
+        adresposities = s.adresposities
+        self.assertIsInstance(adresposities, list)
+
+
+class AdrespositieTests(unittest.TestCase):
+    def test_fully_initialised(self):
+        a = Adrespositie(
+            4087928,
+            2,
+            """POINT(190705.34 224675.26)""",
+            2,
+            Metadata(
+                '1830-01-01 00:00:00',
+                '',
+                None,
+                None
+            )
+        )
+        self.assertEqual(a.id, 4087928)
+        self.assertEqual(a.herkomst_id, 2)
+        a.set_gateway(CrabGateway(crab_factory()))
+        self.assertEqual(a.geometrie, 'POINT(190705.34 224675.26)')
+        self.assertEqual(a.aard, 2)
+        self.assertIsInstance(a.metadata, Metadata)
+        self.assertEqual(a.metadata.begin_datum, '1830-01-01 00:00:00')
+        self.assertEqual('Adrespositie 4087928', str(a))
+        self.assertEqual("Adrespositie(4087928, 2)", repr(a))
+
+    def test_str_dont_lazy_load(self):
+        a = Adrespositie(4087928, 2)
+        a.set_gateway(CrabGateway(crab_factory()))
+        self.assertEqual('Adrespositie 4087928', str(a))
+
+    @unittest.skipUnless(
+        run_crab_integration_tests(),
+        'No CRAB Integration tests required'
+    )
+    def test_lazy_load(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        a = Adrespositie(4087928, 2)
+        a.set_gateway(crab)
+        self.assertEqual(a.id, 4087928)
+        self.assertEqual(a.herkomst_id, 2)
+        self.assertEqual(str(a.geometrie), str('POINT (190705.34 224675.26)'))
+        self.assertEqual(a.aard, 2)
+        self.assertIsInstance(a.metadata, Metadata)
+        self.assertEqual(a.metadata.begin_datum, '1830-01-01 00:00:00')
+        
+    def test_check_gateway_not_set(self):
+        a = Adrespositie(4087928, 2)
+        self.assertRaises(RuntimeError, a.check_gateway)
+
 
 @unittest.skipUnless(
     run_crab_integration_tests(),
@@ -1837,6 +2000,24 @@ class CrabCachedGatewayTests(unittest.TestCase):
             self.crab.caches['permanent'].get('ListGewesten#1'),
             NO_VALUE
         )
+        
+    def test_list_provincies(self):
+        res = self.crab.list_provincies(2)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['permanent'].get('ListProvinciesByGewestId#2'),
+            res
+        )
+        self.assertEqual(res[0].gewest.id, 2)
+    
+    def test_get_provincie_by_id(self):
+        res = self.crab.get_provincie_by_id(10000)
+        self.assertIsInstance(res, Provincie)
+        self.assertEqual(
+            self.crab.caches['permanent']
+                .get('GetProvincieByProvincieNiscode#10000'),
+            res
+        )
 
     def test_list_gemeenten_default_is_Vlaanderen(self):
         res = self.crab.list_gemeenten()
@@ -1872,6 +2053,23 @@ class CrabCachedGatewayTests(unittest.TestCase):
             r
         )
         self.assertNotEqual(res, r)
+
+    def test_list_gemeenten_by_provincie(self):
+        res = self.crab.list_gemeenten_by_provincie(10000)
+        provincie = self.crab.get_provincie_by_id(10000)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long'].get('ListGemeentenByProvincieId#10000'),
+            res
+        )
+        provincie = self.crab.get_provincie_by_id(10000)
+        res = self.crab.list_gemeenten_by_provincie(provincie)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab.caches['long']
+                .get('ListGemeentenByProvincieId#10000'),
+            res
+        )
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
@@ -2556,3 +2754,63 @@ class CrabCachedGatewayTests(unittest.TestCase):
                 .get('GetSubadresWithStatusBySubadresId#1120934'),
             res
         )
+        
+    def test_list_adresposities_by_huisnummer(self):
+        res = self.crab.list_adresposities_by_huisnummer(1)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListAdrespositiesByHuisnummerId#1'),
+            res
+        )
+        
+    def test_list_adresposities_by_nummer_and_straat(self):
+        res = self.crab.list_adresposities_by_nummer_and_straat(1, 1)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListAdrespositiesByHuisnummer#11'),
+            res
+        )
+        
+    def test_list_adresposities_by_subadres(self):
+        res = self.crab.list_adresposities_by_subadres(1120936)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListAdrespositiesBySubadresId#1120936'),
+            res
+        )
+        
+    def test_list_adresposities_by_subadres_and_huisnummer(self):
+        res = self.crab.list_adresposities_by_subadres_and_huisnummer('A', 129462)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListAdrespositiesBySubadres#A129462'),
+            res
+        )
+        huisnummer = self.crab.get_huisnummer_by_id(129462)
+        res = self.crab.list_adresposities_by_subadres_and_huisnummer('A', huisnummer)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.crab
+                .caches['short']
+                .get('ListAdrespositiesBySubadres#A129462'),
+            res
+        )
+        
+    def test_get_adrespositie_by_id(self):
+        res = self.crab.get_adrespositie_by_id(4087928)
+        self.assertIsInstance(res, Adrespositie)
+        self.assertEqual(
+            str(self.crab
+                .caches['short']
+                .get('GetAdrespositieByAdrespositieId#4087928')),
+            str(res)
+        )
+        
