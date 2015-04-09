@@ -1316,7 +1316,7 @@ class CrabGateway(object):
         else:
             adrespositie = creator()
         adrespositie.set_gateway(self)
-        return creator()
+        return adrespositie
 
 
 class GatewayObject(object):
@@ -2426,7 +2426,7 @@ def check_lazy_load_adrespositie(f):
             adrespositie.check_gateway()
             a = adrespositie.gateway.get_adrespositie_by_id(adrespositie.id)
             adrespositie._geometrie = a._geometrie
-            adrespositie._aard = a._aard
+            adrespositie.aard_id = a.aard_id
             adrespositie._metadata = a._metadata
         return f(*args)
     return wrapper
@@ -2455,7 +2455,12 @@ class Adrespositie(GatewayObject):
             self.herkomst_id = herkomst
             self._herkomst = None
         self._geometrie = geometrie
-        self._aard = aard
+        try:
+            self.aard_id = aard.id
+            self._aard = aard
+        except AttributeError:
+            self.aard_id = aard
+            self._aard = None
         self._metadata = metadata
         super(Adrespositie, self).__init__(**kwargs)
 
@@ -2482,6 +2487,12 @@ class Adrespositie(GatewayObject):
     @property
     @check_lazy_load_adrespositie
     def aard(self):
+        if self._aard is None:
+            res = self.gateway.list_aardadressen()
+            log.debug(res)
+            for aard in res:
+                if int(aard.id) == int(self.aard_id):
+                    self._aard = aard
         return self._aard
 
     def __unicode__(self):
