@@ -1316,7 +1316,7 @@ class CrabGateway(object):
         else:
             adrespositie = creator()
         adrespositie.set_gateway(self)
-        return creator()
+        return adrespositie
 
 
 class GatewayObject(object):
