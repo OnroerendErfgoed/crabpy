@@ -713,7 +713,6 @@ class CapakeyRestGateway(CapakeyGateway):
         def creator():
             url = self.url + '/municipality/' + str(gid) + '/department/' + str(aid) + '/section/' + str(sid) + '/parcel/1154/02C000?type=json'
             res = requests.get(url).json()
-            print res
             return Perceel(
                 res['perceelnummer'],
                 Sectie(sid, Afdeling(aid)),
