@@ -22,6 +22,8 @@ from crabpy.gateway.exception import (
 
 from dogpile.cache import make_region
 
+import requests
+
 
 def capakey_gateway_request(client, method, *args):
     '''
@@ -399,6 +401,366 @@ class CapakeyGateway(object):
             perceel = creator()
         perceel.set_gateway(self)
         return perceel
+
+
+class CapakeyRestGateway(CapakeyGateway):
+    '''
+    A REST gateway to the capakey webservice.
+    '''
+
+    caches = {}
+
+    def __init__(self, client, **kwargs):
+        self.client = client
+        self.url = 'http://geo.agiv.be/capakey/api/v0'
+        cache_regions = ['permanent', 'long', 'short']
+        for cr in cache_regions:
+            self.caches[cr] = make_region(key_mangler=str)
+        if 'cache_config' in kwargs:
+            for cr in cache_regions:
+                if ('%s.backend' % cr) in kwargs['cache_config']:
+                    log.debug('Configuring %s region on CapakeyRestGateway', cr)
+                    self.caches[cr].configure_from_config(
+                        kwargs['cache_config'],
+                        '%s.' % cr
+                    )
+        self.afdelingen = self.list_afdelingen()
+
+    def list_gemeenten(self, sort=1):
+        '''
+        List all `gemeenten` in Vlaanderen.
+
+        :param integer sort: What field to sort on.
+        :rtype: A :class:`list` of :class:`Gemeente`.
+        '''
+        def creator():
+            url = self.url + '/municipality/?type=json&orderbyCode=' + str(sort)
+            res = requests.get(url).json()
+            return [
+                Gemeente(r['municipalityCode'], r['municipalityName'])
+                for r in res['municipalities']
+            ]
+        if self.caches['permanent'].is_configured:
+            key = 'ListAdmGemeenten#%s' % sort
+            gemeente = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            gemeente = creator()
+        for g in gemeente:
+            g.set_gateway(self)
+        return gemeente
+
+    def get_gemeente_by_id(self, id):
+        '''
+        Retrieve a `gemeente` by id (the NIScode).
+
+        :rtype: :class:`Gemeente`
+        '''
+        def creator():
+            url = self.url + '/municipality/' + str(id) +'?type=json'
+            res = requests.get(url).json()
+            return Gemeente(
+                res['municipalityCode'],
+                res['municipalityName'],
+                res['geometry']['center'],
+                res['geometry']['boundingBox']
+            )
+        if self.caches['long'].is_configured:
+            key = 'GetAdmGemeenteByNiscode#%s' % id
+            gemeente = self.caches['long'].get_or_create(key, creator)
+        else:
+            gemeente = creator()
+        gemeente.set_gateway(self)
+        return gemeente
+
+    def list_afdelingen(self):
+        '''
+        List all `kadastrale afdelingen` in Flanders.
+
+        :param integer sort: Field to sort on.
+        :rtype: A :class:`list` of :class:`Afdeling`.
+        '''
+        def creator():
+            res = capakey_gateway_request(
+                self.client, 'ListKadAfdelingen', 1
+            )
+            return {r.KadAfdelingcode: r.Niscode for r in res.KadAfdelingItem}
+        if self.caches['permanent'].is_configured:
+            key = 'ListAfdelingen'
+            afdelingen = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            afdelingen = creator()
+        return afdelingen
+
+    def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
+        '''
+        List all `kadastrale afdelingen` in a `gemeente`.
+
+        :param gemeente: The :class:`Gemeente` for which the \
+            `afdelingen` are wanted.
+        :param integer sort: Field to sort on.
+        :rtype: A :class:`list` of :class:`Afdeling`.
+        '''
+        try:
+            gid = gemeente.id
+        except AttributeError:
+            gid = gemeente
+            gemeente = self.get_gemeente_by_id(gid)
+        gemeente.clear_gateway()
+
+        def creator():
+            url = self.url + '/municipality/' + str(gid) +'/department?type=json'
+            res = requests.get(url).json()
+            return [
+                Afdeling(
+                    id=r['departmentCode'],
+                    naam=r['departmentName'],
+                    gemeente=gemeente
+                ) for r in res['departments']]
+        if self.caches['permanent'].is_configured:
+            key = 'ListKadAfdelingenByNiscode#%s#%s' % (gid, sort)
+            afdelingen = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            afdelingen = creator()
+        for a in afdelingen:
+            a.set_gateway(self)
+        return afdelingen
+
+    def get_kadastrale_afdeling_by_id(self, id):
+        '''
+        Retrieve a 'kadastrale afdeling' by id.
+
+        :param id: An id of a `kadastrale afdeling`.
+        :rtype: A :class:`Afdeling`.
+        '''
+        def creator():
+            gid = self.afdelingen[str(id)]
+            url = self.url + '/municipality/' + str(gid) +'/department/' + str(id) + '?type=json'
+            res = requests.get(url).json()
+            return Afdeling(
+                id=res['departmentCode'],
+                naam=res['departmentName'],
+                gemeente=Gemeente(gid),
+                centroid=res['geometry']['center'],
+                bounding_box=res['geometry']['boundingBox']
+            )
+        if self.caches['long'].is_configured:
+            key = 'GetKadAfdelingByKadAfdelingcode#%s' % id
+            afdeling = self.caches['long'].get_or_create(key, creator)
+        else:
+            afdeling = creator()
+        afdeling.set_gateway(self)
+        return afdeling
+
+    def list_secties_by_afdeling(self, afdeling):
+        '''
+        List all `secties` in a `kadastrale afdeling`.
+
+        :param afdeling: The :class:`Afdeling` for which the `secties` are \
+            wanted. Can also be the id of and `afdeling`.
+        :rtype: A :class:`list` of `Sectie`.
+        '''
+        try:
+            aid = afdeling.id
+        except AttributeError:
+            aid = afdeling
+            afdeling = self.get_kadastrale_afdeling_by_id(aid)
+        gid = self.afdelingen[str(aid)]
+        afdeling.clear_gateway()
+
+        def creator():
+            url = self.url + '/municipality/' + str(gid) +'/department/' + str(aid) + '/section?type=json'
+            res = requests.get(url).json()
+            return [
+                Sectie(
+                    r['sectionCode'],
+                    afdeling
+                ) for r in res['sections']
+            ]
+        if self.caches['long'].is_configured:
+            key = 'ListKadSectiesByKadAfdelingcode#%s' % aid
+            secties = self.caches['long'].get_or_create(key, creator)
+        else:
+            secties = creator()
+        for s in secties:
+            s.set_gateway(self)
+        return secties
+
+    def get_sectie_by_id_and_afdeling(self, id, afdeling):
+        '''
+        Get a `sectie`.
+
+        :param id: An id of a sectie. eg. "A"
+        :param afdeling: The :class:`Afdeling` for in which the `sectie` can \
+            be found. Can also be the id of and `afdeling`.
+        :rtype: A :class:`Sectie`.
+        '''
+        try:
+            aid = afdeling.id
+        except AttributeError:
+            aid = afdeling
+            afdeling = self.get_kadastrale_afdeling_by_id(aid)
+        gid = self.afdelingen[str(aid)]
+        afdeling.clear_gateway()
+
+        def creator():
+            url = self.url + '/municipality/' + str(gid) +'/department/' + str(aid) + '/section/' + str(id) +'?type=json'
+            res = requests.get(url).json()
+            return Sectie(
+                res['sectionCode'],
+                afdeling,
+                res['geometry']['center'],
+                res['geometry']['boundingBox'],
+            )
+        if self.caches['long'].is_configured:
+            key = 'GetKadSectieByKadSectiecode#%s#%s' % (aid, id)
+            sectie = self.caches['long'].get_or_create(key, creator)
+        else:
+            sectie = creator()
+        sectie.set_gateway(self)
+        return sectie
+        
+    def parse_percid(self, capakey):
+        import re
+        match = re.match(
+            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
+            capakey
+        )
+        if match:
+            percid = match.group(1) + '_' + match.group(2) +\
+                '_' + match.group(3) + '_' + match.group(5) + '_' +\
+                match.group(6) + '_' + match.group(4)
+            return percid
+        else:
+            raise ValueError(
+                "Invalid Capakey %s can't be parsed" % self.capakey
+            )
+
+    def list_percelen_by_sectie(self, sectie, sort=1):
+        '''
+        List all percelen in a `sectie`.
+
+        :param sectie: The :class:`Sectie` for which the percelen are wanted.
+        :param integer sort: Field to sort on.
+        :rtype: A :class:`list` of :class:`Perceel`.
+        '''
+        sid = sectie.id
+        aid = sectie.afdeling.id
+        gid = self.afdelingen[str(aid)]
+        sectie.clear_gateway()
+        def creator():
+            url = self.url + '/municipality/' + str(gid) +'/department/' + str(aid) + '/section/' + str(sid) +'/parcel?type=json'
+            res = requests.get(url).json()
+            return [
+                Perceel(
+                    r['perceelnummer'],
+                    sectie,
+                    r['capakey'],
+                    self.parse_percid(r['capakey']),
+                ) for r in res['parcels']
+            ]
+        if self.caches['short'].is_configured:
+            key = 'ListKadPerceelsnummersByKadSectiecode#%s#%s#%s' % (sectie.afdeling.id, sectie.id, sort)
+            percelen = self.caches['short'].get_or_create(key, creator)
+        else:
+            percelen = creator()
+        for p in percelen:
+            p.set_gateway(self)
+        return percelen
+
+    def get_perceel_by_id_and_sectie(self, id, sectie):
+        '''
+        Get a `perceel`.
+
+        :param id: An id for a `perceel`.
+        :param sectie: The :class:`Sectie` that contains the perceel.
+        :rtype: :class:`Perceel`
+        '''
+        sectie.clear_gateway()
+
+        def creator():
+            res = capakey_gateway_request(
+                self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
+                sectie.afdeling.id, sectie.id, id
+            )
+            return Perceel(
+                res.KadPerceelsnummer,
+                sectie,
+                res.CaPaKey,
+                res.PERCID,
+                res.CaPaTy,
+                res.CaShKey,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetKadPerceelsnummerByKadPerceelsnummer#%s#%s#%s' % (sectie.afdeling.id, sectie.id, id)
+            perceel = self.caches['short'].get_or_create(key, creator)
+        else:
+            perceel = creator()
+        perceel.set_gateway(self)
+        return perceel
+
+    def get_perceel_by_capakey(self, capakey):
+        '''
+        Get a `perceel`.
+
+        :param capakey: An capakey for a `perceel`.
+        :rtype: :class:`Perceel`
+        '''
+        sid = capakey[5]
+        aid = capakey[0:5]
+        gid = self.afdelingen[str(aid)]
+        def creator():
+            url = self.url + '/municipality/' + str(gid) + '/department/' + str(aid) + '/section/' + str(sid) + '/parcel/1154/02C000?type=json'
+            res = requests.get(url).json()
+            print res
+            return Perceel(
+                res['perceelnummer'],
+                Sectie(sid, Afdeling(aid)),
+                res['capakey'],
+                self.parse_percid(res['capakey']),
+                res['type'],
+                res.CaShKey,
+                res['geometry']['center'],
+                res['geometry']['boundingBox']
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetKadPerceelsnummerByCaPaKey#%s' % capakey
+            perceel = self.caches['short'].get_or_create(key, creator)
+        else:
+            perceel = creator()
+        perceel.set_gateway(self)
+        return perceel
+
+    def get_perceel_by_percid(self, percid):
+        '''
+        Get a `perceel`.
+
+        :param percid: A percid for a `perceel`.
+        :rtype: :class:`Perceel`
+        '''
+        def creator():
+            res = capakey_gateway_request(
+                self.client, 'GetKadPerceelsnummerByPERCID', percid
+            )
+            return Perceel(
+                res.KadPerceelsnummer,
+                Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
+                res.CaPaKey,
+                res.PERCID,
+                res.CaPaTy,
+                res.CaShKey,
+                (res.CenterX, res.CenterY),
+                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+            )
+        if self.caches['short'].is_configured:
+            key = 'GetKadPerceelsnummerByPERCID#%s' % percid
+            perceel = self.caches['short'].get_or_create(key, creator)
+        else:
+            perceel = creator()
+        perceel.set_gateway(self)
+        return perceel
+
 
 
 class GatewayObject(object):

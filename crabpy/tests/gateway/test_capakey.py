@@ -11,6 +11,7 @@ from crabpy.client import (
 
 from crabpy.gateway.capakey import (
     CapakeyGateway,
+    CapakeyRestGateway,
     Gemeente,
     Afdeling,
     Sectie,
@@ -139,6 +140,117 @@ class CapakeyGatewayTests(unittest.TestCase):
         self.assertIsInstance(res, Perceel)
         self.assertEqual(res.sectie.id, 'A')
         self.assertEqual(res.sectie.afdeling.id, 44021)
+
+    def test_get_perceel_by_percid(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_percid(perc.percid)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+
+
+@unittest.skipUnless(
+    run_capakey_integration_tests(),
+    'No CAPAKEY Integration tests required'
+)
+class CapakeyRestGatewayTests(unittest.TestCase):
+
+    def setUp(self):
+        from testconfig import config
+        self.capakey_client = capakey_factory(
+            user=config['capakey']['user'],
+            password=config['capakey']['password']
+        )
+        self.capakey = CapakeyRestGateway(
+            self.capakey_client
+        )
+
+    def tearDown(self):
+        self.capakey_client = None
+        self.capakey = None
+
+    def test_list_gemeenten(self):
+        res = self.capakey.list_gemeenten()
+        self.assertIsInstance(res, list)
+
+    def test_get_gemeente_by_id(self):
+        res = self.capakey.get_gemeente_by_id(44021)
+        self.assertIsInstance(res, Gemeente)
+        self.assertEqual(res.id, 44021)
+
+    '''def test_get_gemeente_by_invalid_id(self):
+        from crabpy.gateway.exception import GatewayRuntimeException
+        with self.assertRaises(GatewayRuntimeException):
+            self.capakey.get_gemeente_by_id('gent')'''
+
+    def test_list_afdelingen(self):
+        res = self.capakey.list_kadastrale_afdelingen()
+        self.assertIsInstance(res, list)
+        self.assertGreater(len(res), 300)
+
+    def test_list_afdelingen_by_gemeente(self):
+        g = self.capakey.get_gemeente_by_id(44021)
+        res = self.capakey.list_kadastrale_afdelingen_by_gemeente(g)
+        self.assertIsInstance(res, list)
+        self.assertGreater(len(res), 0)
+        self.assertLess(len(res), 40)
+
+    def test_list_afdelingen_by_gemeente_id(self):
+        res = self.capakey.list_kadastrale_afdelingen_by_gemeente(44021)
+        self.assertIsInstance(res, list)
+        self.assertGreater(len(res), 0)
+        self.assertLess(len(res), 40)
+
+    def test_get_kadastrale_afdeling_by_id(self):
+        res = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        self.assertIsInstance(res, Afdeling)
+        self.assertEqual(res.id, 44021)
+        self.assertIsInstance(res.gemeente, Gemeente)
+        self.assertEqual(res.gemeente.id, 44021)
+
+    def test_list_secties_by_afdeling(self):
+        a = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        res = self.capakey.list_secties_by_afdeling(a)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 1)
+
+    def test_list_secties_by_afdeling_id(self):
+        res = self.capakey.list_secties_by_afdeling(44021)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 1)
+
+    def test_get_sectie_by_id_and_afdeling(self):
+        a = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        res = self.capakey.get_sectie_by_id_and_afdeling('A', a)
+        self.assertIsInstance(res, Sectie)
+        self.assertEqual(res.id, 'A')
+        self.assertEqual(res.afdeling.id, 44021)
+
+    def test_list_percelen_by_sectie(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        res = self.capakey.list_percelen_by_sectie(s)
+        self.assertIsInstance(res, list)
+        self.assertGreater(len(res), 0)
+
+    def test_get_perceel_by_id_and_sectie(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_id_and_sectie(perc.id, s)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+
+    '''def test_get_perceel_by_capakey(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_capakey(perc.capakey)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)'''
 
     def test_get_perceel_by_percid(self):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
@@ -636,6 +748,188 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
                 .get('GetKadPerceelsnummerByCaPaKey#%s' % perc.capakey),
             res
         )
+
+    def test_get_perceel_by_percid(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_percid(perc.percid)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey
+                .caches['short']
+                .get('GetKadPerceelsnummerByPERCID#%s' % perc.percid),
+            res
+        )
+        
+@unittest.skipUnless(
+    run_capakey_integration_tests(),
+    'No CAPAKEY Integration tests required'
+)
+class CapakeyCachedRestGatewayTests(unittest.TestCase):
+
+    def setUp(self):
+        from testconfig import config
+        self.capakey_client = capakey_factory(
+            user=config['capakey']['user'],
+            password=config['capakey']['password']
+        )
+        self.capakey = CapakeyRestGateway(
+            self.capakey_client,
+            cache_config={
+                'permanent.backend': 'dogpile.cache.memory',
+                'permanent.expiration_time': 86400,
+                'long.backend': 'dogpile.cache.memory',
+                'long.expiration_time': 3600,
+                'short.backend': 'dogpile.cache.memory',
+                'short.expiration_time': 600,
+            }
+        )
+
+    def tearDown(self):
+        self.capakey_client = None
+        self.capakey = None
+
+    def test_cache_is_configured(self):
+        from dogpile.cache.backends.memory import MemoryBackend
+        self.assertIsInstance(
+            self.capakey.caches['permanent'].backend,
+            MemoryBackend
+        )
+        self.assertTrue(self.capakey.caches['permanent'].is_configured)
+
+    def test_list_gemeenten(self):
+        res = self.capakey.list_gemeenten()
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListAdmGemeenten#1'),
+            res
+        )
+
+    def test_list_gemeenten_different_sort(self):
+        res = self.capakey.list_gemeenten(2)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListAdmGemeenten#2'),
+            res
+        )
+        from dogpile.cache.api import NO_VALUE
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListAdmGemeenten#1'),
+            NO_VALUE
+        )
+
+    def test_get_gemeente_by_id(self):
+        res = self.capakey.get_gemeente_by_id(44021)
+        self.assertIsInstance(res, Gemeente)
+        self.assertEqual(
+            self.capakey.caches['long'].get('GetAdmGemeenteByNiscode#44021'),
+            res
+        )
+
+    def test_list_afdelingen(self):
+        res = self.capakey.list_kadastrale_afdelingen()
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey.caches['permanent'].get('ListKadAfdelingen#1'),
+            res
+        )
+
+    def test_list_afdelingen_by_gemeente(self):
+        g = self.capakey.get_gemeente_by_id(44021)
+        self.assertEqual(
+            self.capakey.caches['long'].get('GetAdmGemeenteByNiscode#44021'),
+            g
+        )
+        res = self.capakey.list_kadastrale_afdelingen_by_gemeente(g)
+        self.assertIsInstance(res, list)
+        self.assertEqual(
+            self.capakey
+                .caches['permanent']
+                .get('ListKadAfdelingenByNiscode#44021#1'),
+            res
+        )
+
+    def test_get_kadastrale_afdeling_by_id(self):
+        res = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        self.assertIsInstance(res, Afdeling)
+        self.assertEqual(res.id, 44021)
+        self.assertIsInstance(res.gemeente, Gemeente)
+        self.assertEqual(res.gemeente.id, 44021)
+        self.assertEqual(
+            self.capakey
+                .caches['long']
+                .get('GetKadAfdelingByKadAfdelingcode#44021'),
+            res
+        )
+
+    def test_list_secties_by_afdeling_id(self):
+        res = self.capakey.list_secties_by_afdeling(44021)
+        self.assertIsInstance(res, list)
+        self.assertEqual(len(res), 1)
+        self.assertEqual(
+            self.capakey
+                .caches['long']
+                .get('ListKadSectiesByKadAfdelingcode#44021'),
+            res
+        )
+
+    def test_get_sectie_by_id_and_afdeling(self):
+        a = self.capakey.get_kadastrale_afdeling_by_id(44021)
+        res = self.capakey.get_sectie_by_id_and_afdeling('A', a)
+        self.assertIsInstance(res, Sectie)
+        self.assertEqual(res.id, 'A')
+        self.assertEqual(res.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey
+                .caches['long']
+                .get('GetKadSectieByKadSectiecode#44021#A'),
+            res
+        )
+
+    def test_list_percelen_by_sectie(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        res = self.capakey.list_percelen_by_sectie(s)
+        self.assertIsInstance(res, list)
+        self.assertGreater(len(res), 0)
+        self.assertEqual(
+            self.capakey
+                .caches['short']
+                .get('ListKadPerceelsnummersByKadSectiecode#44021#A#1'),
+            res
+        )
+
+    def test_get_perceel_by_id_and_sectie(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_id_and_sectie(perc.id, s)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey
+                .caches['short']
+                .get('GetKadPerceelsnummerByKadPerceelsnummer#44021#A#%s' % perc.id),
+            res
+        )
+
+    '''def test_get_perceel_by_capakey(self):
+        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = self.capakey.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        res = self.capakey.get_perceel_by_capakey(perc.capakey)
+        self.assertIsInstance(res, Perceel)
+        self.assertEqual(res.sectie.id, 'A')
+        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(
+            self.capakey
+                .caches['short']
+                .get('GetKadPerceelsnummerByCaPaKey#%s' % perc.capakey),
+            res
+        )'''
 
     def test_get_perceel_by_percid(self):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
