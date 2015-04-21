@@ -675,22 +675,22 @@ class CapakeyRestGateway(CapakeyGateway):
         :param sectie: The :class:`Sectie` that contains the perceel.
         :rtype: :class:`Perceel`
         '''
+        sid = sectie.id
+        aid = sectie.afdeling.id
+        gid = self.afdelingen[str(aid)]
         sectie.clear_gateway()
-
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
-                sectie.afdeling.id, sectie.id, id
-            )
+            url = self.url + '/municipality/' + str(gid) + '/department/' + str(aid) + '/section/' + str(sid) + '/parcel/' + id + '?type=json'
+            res = requests.get(url).json()
             return Perceel(
-                res.KadPerceelsnummer,
-                sectie,
-                res.CaPaKey,
-                res.PERCID,
-                res.CaPaTy,
+                res['perceelnummer'],
+                Sectie(sid, Afdeling(aid)),
+                res['capakey'],
+                self.parse_percid(res['capakey']),
+                res['type'],
                 res.CaShKey,
-                (res.CenterX, res.CenterY),
-                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+                res['geometry']['center'],
+                res['geometry']['boundingBox']
             )
         if self.caches['short'].is_configured:
             key = 'GetKadPerceelsnummerByKadPerceelsnummer#%s#%s#%s' % (sectie.afdeling.id, sectie.id, id)
@@ -710,8 +710,9 @@ class CapakeyRestGateway(CapakeyGateway):
         sid = capakey[5]
         aid = capakey[0:5]
         gid = self.afdelingen[str(aid)]
+        perceelnummer = capakey[6:]
         def creator():
-            url = self.url + '/municipality/' + str(gid) + '/department/' + str(aid) + '/section/' + str(sid) + '/parcel/1154/02C000?type=json'
+            url = self.url + '/municipality/' + str(gid) + '/department/' + str(aid) + '/section/' + str(sid) + '/parcel/' + perceelnummer + '?type=json'
             res = requests.get(url).json()
             return Perceel(
                 res['perceelnummer'],
@@ -738,19 +739,22 @@ class CapakeyRestGateway(CapakeyGateway):
         :param percid: A percid for a `perceel`.
         :rtype: :class:`Perceel`
         '''
+        sid = percid[6]
+        aid = percid[0:5]
+        gid = self.afdelingen[str(aid)]
+        perceelnummer = percid[8:12] + '/' + percid[19:] + percid[13:14] + percid[15:18]
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadPerceelsnummerByPERCID', percid
-            )
+            url = self.url + '/municipality/' + str(gid) + '/department/' + str(aid) + '/section/' + str(sid) + '/parcel/' + perceelnummer + '?type=json'
+            res = requests.get(url).json()
             return Perceel(
-                res.KadPerceelsnummer,
-                Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
-                res.CaPaKey,
-                res.PERCID,
-                res.CaPaTy,
+                res['perceelnummer'],
+                Sectie(sid, Afdeling(aid)),
+                res['capakey'],
+                percid,
+                res['type'],
                 res.CaShKey,
-                (res.CenterX, res.CenterY),
-                (res.MinimumX, res.MinimumY, res.MaximumX, res.MaximumY)
+                res['geometry']['center'],
+                res['geometry']['boundingBox']
             )
         if self.caches['short'].is_configured:
             key = 'GetKadPerceelsnummerByPERCID#%s' % percid
