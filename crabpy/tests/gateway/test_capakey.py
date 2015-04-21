@@ -136,10 +136,10 @@ class CapakeyGatewayTests(unittest.TestCase):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = self.capakey.list_percelen_by_sectie(s)
         perc = percelen[0]
-        res = self.capakey.get_perceel_by_capakey(perc.capakey)
+        res = self.capakey.get_perceel_by_capakey('12034A1175/00_000')
         self.assertIsInstance(res, Perceel)
         self.assertEqual(res.sectie.id, 'A')
-        self.assertEqual(res.sectie.afdeling.id, 44021)
+        self.assertEqual(res.sectie.afdeling.id, 12034)
 
     def test_get_perceel_by_percid(self):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
@@ -243,14 +243,11 @@ class CapakeyRestGatewayTests(unittest.TestCase):
         self.assertEqual(res.sectie.id, 'A')
         self.assertEqual(res.sectie.afdeling.id, 44021)
 
-    '''def test_get_perceel_by_capakey(self):
-        s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = self.capakey.list_percelen_by_sectie(s)
-        perc = percelen[0]
-        res = self.capakey.get_perceel_by_capakey(perc.capakey)
+    def test_get_perceel_by_capakey(self):
+        res = self.capakey.get_perceel_by_capakey('40613A1154/02C000')
         self.assertIsInstance(res, Perceel)
         self.assertEqual(res.sectie.id, 'A')
-        self.assertEqual(res.sectie.afdeling.id, 44021)'''
+        self.assertEqual(res.sectie.afdeling.id, 44021)
 
     def test_get_perceel_by_percid(self):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
@@ -916,7 +913,7 @@ class CapakeyCachedRestGatewayTests(unittest.TestCase):
             res
         )
 
-    '''def test_get_perceel_by_capakey(self):
+    def test_get_perceel_by_capakey(self):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = self.capakey.list_percelen_by_sectie(s)
         perc = percelen[0]
@@ -929,7 +926,7 @@ class CapakeyCachedRestGatewayTests(unittest.TestCase):
                 .caches['short']
                 .get('GetKadPerceelsnummerByCaPaKey#%s' % perc.capakey),
             res
-        )'''
+        )
 
     def test_get_perceel_by_percid(self):
         s = self.capakey.get_sectie_by_id_and_afdeling('A', 44021)
