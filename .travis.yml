@@ -9,6 +9,6 @@ install:
  - pip install nose coverage nose-testconfig
  - pip install coveralls
 
-script: py.test --cov crabpy --cov-report --cov-config nose_cover.cfg -c nose_travis.ini tests/
+script: py.test --cov crabpy --cov-report term-missing --cov-config nose_cover.cfg -c nose_travis.ini tests/
 after_success:
   coveralls
