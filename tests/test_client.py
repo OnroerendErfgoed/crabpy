@@ -11,9 +11,9 @@ from crabpy.client import (
     capakey_factory,
     capakey_request
 )
+import py
 TEST_DIR = os.path.dirname(__file__)
-settings = appconfig('config:' + os.path.join(TEST_DIR, 'test.ini'))
-
+settings = appconfig('config:' + os.path.join(TEST_DIR, '../' + py.test.config.option.__dict__['inifilename']))
 
 def run_crab_integration_tests():
     from tests import as_bool

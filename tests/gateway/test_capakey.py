@@ -20,9 +20,10 @@ from crabpy.gateway.capakey import (
     Sectie,
     Perceel
 )
+import py
 
 TEST_DIR = os.path.dirname(__file__)
-settings = appconfig('config:' + os.path.join(TEST_DIR, '../test.ini'))
+settings = appconfig('config:' + os.path.join(TEST_DIR, '../../' + py.test.config.option.__dict__['inifilename']))
 
 def run_capakey_integration_tests():
     from tests import as_bool

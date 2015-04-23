@@ -8,6 +8,7 @@ install:
  - python setup.py install
  - pip install nose coverage nose-testconfig
  - pip install coveralls
-script: nosetests --nologcapture --config nose_cover.cfg --tc-file nose_travis.ini
+
+script: py.test --cov crabpy --cov-report --cov-config nose_cover.cfg -c nose_travis.ini tests/
 after_success:
   coveralls
