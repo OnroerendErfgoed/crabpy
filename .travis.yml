@@ -7,6 +7,6 @@ install:
  - easy_install -U setuptools
  - pip install -r requirements-dev.txt
  - python setup.py install
-script: py.test
+script: py.test --cov crabpy --cov-report term-missing --cov-config nose_cover.cfg -c nose_travis.ini tests/
 after_success:
   coveralls

@@ -16,6 +16,7 @@ from crabpy.gateway.capakey import (
     Sectie,
     Perceel
 )
+import py
 
 from tests import (
     run_capakey_integration_tests,
