@@ -9,10 +9,6 @@ from crabpy.client import (
     crab_factory
 )
 
-import os
-
-from paste.deploy.loadwsgi import appconfig
-
 from crabpy.gateway.exception import (
     GatewayRuntimeException
 )
@@ -35,15 +31,10 @@ from crabpy.gateway.crab import (
     Adrespositie
 )
 
-TEST_DIR = os.path.dirname(__file__)
-settings = appconfig('config:' + os.path.join(TEST_DIR, '../test.ini'))
-
-def run_crab_integration_tests():
-    from tests import as_bool
-    try:
-        return as_bool(settings['crab_run_integration_tests'])
-    except KeyError:  # pragma NO COVER
-        return False
+from tests import (
+    run_crab_integration_tests,
+    config
+)
 
 
 @unittest.skipUnless(

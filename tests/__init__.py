@@ -1,11 +1,23 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*
+
+import os
+from six.moves import configparser
+
+config = configparser.ConfigParser()
+
+TEST_DIR = os.path.dirname(__file__)
+config.read(os.path.join(TEST_DIR, 'test.ini'))
 
 
-def as_bool(value):
-    '''
-    Cast a textual value from a config file to a boolean.
+def run_crab_integration_tests():
+    try:
+        return config.getboolean('crab','run_integration_tests')
+    except KeyError:  # pragma NO COVER
+        return False
 
-    Will convert 'true', 'True', '1', 't', 'T' or 'Yes' to `True`. All other
-    values are considered to be `False`.
-    '''
-    return value in ['true', 'True', '1', 't', 'T', 'Yes']
+
+def run_capakey_integration_tests():
+    try:
+        return config.getboolean('capakey', 'run_integration_tests')
+    except KeyError:  # pragma NO COVER
+        return False

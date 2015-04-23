@@ -9,10 +9,6 @@ from crabpy.client import (
     capakey_factory
 )
 
-import os
-
-from paste.deploy.loadwsgi import appconfig
-
 from crabpy.gateway.capakey import (
     CapakeyGateway,
     Gemeente,
@@ -21,16 +17,10 @@ from crabpy.gateway.capakey import (
     Perceel
 )
 
-TEST_DIR = os.path.dirname(__file__)
-settings = appconfig('config:' + os.path.join(TEST_DIR, '../test.ini'))
-
-def run_capakey_integration_tests():
-    from tests import as_bool
-    try:
-        return as_bool(settings['capakey_run_integration_tests'])
-    except KeyError:  # pragma NO COVER
-        return False
-
+from tests import (
+    run_capakey_integration_tests,
+    config
+)
 
 @unittest.skipUnless(
     run_capakey_integration_tests(),
@@ -40,8 +30,8 @@ class CapakeyGatewayTests(unittest.TestCase):
 
     def setUp(self):
         self.capakey_client = capakey_factory(
-            user=settings['capakey_user'],
-            password=settings['capakey_password']
+            user=config.get('capakey', 'user'),
+            password=config.get('capakey', 'password')
         )
         self.capakey = CapakeyGateway(
             self.capakey_client
@@ -189,8 +179,8 @@ class GemeenteTests(unittest.TestCase):
     def test_lazy_load(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         g = Gemeente(44021, 'Gent', gateway=capakey)
@@ -204,8 +194,8 @@ class GemeenteTests(unittest.TestCase):
     def test_lazy_load(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         g = Gemeente(44021, 'Gent')
@@ -222,8 +212,8 @@ class GemeenteTests(unittest.TestCase):
     def test_afdelingen(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         g = Gemeente(44021, 'Gent')
@@ -282,8 +272,8 @@ class AfdelingTests(unittest.TestCase):
     def test_lazy_load(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         a = Afdeling(44021)
@@ -300,8 +290,8 @@ class AfdelingTests(unittest.TestCase):
     def test_secties(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         a = Afdeling(44021)
@@ -343,8 +333,8 @@ class SectieTests(unittest.TestCase):
     def test_lazy_load(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         s = Sectie(
@@ -364,8 +354,8 @@ class SectieTests(unittest.TestCase):
     def test_percelen(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         s = Sectie(
@@ -420,8 +410,8 @@ class PerceelTests(unittest.TestCase):
     def test_lazy_load(self):
         capakey = CapakeyGateway(
             capakey_factory(
-                user=settings['capakey_user'],
-                password=settings['capakey_password']
+                user=config.get('capakey', 'user'),
+                password=config.get('capakey', 'password')
             )
         )
         p = Perceel(
@@ -474,8 +464,8 @@ class CapakeyCachedGatewayTests(unittest.TestCase):
 
     def setUp(self):
         self.capakey_client = capakey_factory(
-            user=settings['capakey_user'],
-            password=settings['capakey_password']
+            user=config.get('capakey', 'user'),
+            password=config.get('capakey', 'password')
         )
         self.capakey = CapakeyGateway(
             self.capakey_client,

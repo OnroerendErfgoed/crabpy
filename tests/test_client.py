@@ -3,32 +3,18 @@
 from __future__ import unicode_literals
 
 import unittest
-import os
-from paste.deploy.loadwsgi import appconfig
 
 from crabpy.client import (
     crab_factory,
     capakey_factory,
     capakey_request
 )
-TEST_DIR = os.path.dirname(__file__)
-settings = appconfig('config:' + os.path.join(TEST_DIR, 'test.ini'))
 
-
-def run_crab_integration_tests():
-    from tests import as_bool
-    try:
-        return as_bool(settings['crab_run_integration_tests'])
-    except KeyError:  # pragma NO COVER
-        return False
-
-
-def run_capakey_integration_tests():
-    from tests import as_bool
-    try:
-        return as_bool(settings['capakey_run_integration_tests'])
-    except KeyError:  # pragma NO COVER
-        return False
+from . import (
+    run_crab_integration_tests,
+    run_capakey_integration_tests,
+    config
+)
 
 
 class CrabClientTests(unittest.TestCase):
@@ -67,8 +53,8 @@ class CapakeyClientTests(unittest.TestCase):
 
     def setUp(self):
         self.capakey = capakey_factory(
-            user=settings['capakey_user'],
-            password=settings['capakey_password']
+            user=config.get('capakey', 'user'),
+            password=config.get('capakey','password')
         )
 
     def tearDown(self):
@@ -81,8 +67,8 @@ class CapakeyClientTests(unittest.TestCase):
         wsdl = "http://ws.agiv.be/capakeyws/nodataset.asmx?WSDL"
         self.capakey = capakey_factory(
             wsdl=wsdl,
-            user=settings['capakey_user'],
-            password=settings['capakey_password']
+            user=config.get('capakey', 'user'),
+            password=config.get('capakey','password')
         )
         self.assertEqual(self.capakey.wsdl.url, wsdl)
 
