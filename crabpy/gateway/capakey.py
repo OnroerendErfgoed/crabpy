@@ -688,7 +688,7 @@ class CapakeyRestGateway(CapakeyGateway):
                 res['capakey'],
                 self.parse_percid(res['capakey']),
                 res['type'],
-                res.CaShKey,
+                None,
                 res['geometry']['center'],
                 res['geometry']['boundingBox']
             )
@@ -720,7 +720,7 @@ class CapakeyRestGateway(CapakeyGateway):
                 res['capakey'],
                 self.parse_percid(res['capakey']),
                 res['type'],
-                res.CaShKey,
+                None,
                 res['geometry']['center'],
                 res['geometry']['boundingBox']
             )
@@ -752,7 +752,7 @@ class CapakeyRestGateway(CapakeyGateway):
                 res['capakey'],
                 percid,
                 res['type'],
-                res.CaShKey,
+                None,
                 res['geometry']['center'],
                 res['geometry']['boundingBox']
             )
