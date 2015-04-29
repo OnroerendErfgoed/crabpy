@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import unittest
+import pytest
 
 
-class ExceptionTests(unittest.TestCase):
+class TestException:
 
     def test_inheritance(self):
         from crabpy.gateway.exception import GatewayRuntimeException
@@ -11,5 +11,5 @@ class ExceptionTests(unittest.TestCase):
             'Something went wrong.',
             'soapfault'
         )
-        self.assertEqual(e.soapfault, 'soapfault')
-        self.assertEqual(e.message, 'Something went wrong.')
+        assert e.soapfault == 'soapfault'
+        assert e.message =='Something went wrong.'

@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 import unittest
+import pytest
 
 from crabpy.client import (
     crab_factory,
@@ -10,68 +11,59 @@ from crabpy.client import (
     capakey_request
 )
 
-from . import (
+from tests import (
     run_crab_integration_tests,
     run_capakey_integration_tests,
     config
 )
 
+@pytest.mark.skipif(
+    not pytest.config.getoption('--crab-integration'),
+    reason='No CRAB Integration tests required'
+)
+class TestCrabClient:
 
-class CrabClientTests(unittest.TestCase):
-
-    def setUp(self):
+    def setup_method(self, method):
         self.crab = crab_factory()
 
-    def tearDown(self):
+    def teardown_method(self, method):
         self.crab = None
 
-    @unittest.skipUnless(
-        run_crab_integration_tests(),
-        'No CRAB Integration tests required'
-    )
     def test_override_wsdl(self):
         wsdl = "http://crab.agiv.be/wscrab/wscrab.svc?wsdl"
         self.crab = crab_factory(
             wsdl=wsdl
         )
-        self.assertEqual(self.crab.wsdl.url, wsdl)
+        assert self.crab.wsdl.url == wsdl
 
-    @unittest.skipUnless(
-        run_crab_integration_tests(),
-        'No CRAB Integration tests required'
-    )
     def test_list_gemeenten(self):
         res = self.crab.service.ListGemeentenByGewestId(2)
-        self.assertGreater(len(res), 0)
+        assert len(res) > 0
 
 
-@unittest.skipUnless(
-    run_capakey_integration_tests(),
-    'No CAPAKEY Integration tests required'
-)
-class CapakeyClientTests(unittest.TestCase):
-
-    def setUp(self):
-        self.capakey = capakey_factory(
-            user=config.get('capakey', 'user'),
-            password=config.get('capakey','password')
-        )
-
-    def tearDown(self):
-        self.capakey = None
+class TestCapakeyClient:
 
     def test_user_and_password_must_be_set(self):
-        self.assertRaises(ValueError, capakey_factory)
+        with pytest.raises(ValueError):
+            capakey_factory()
 
-    def test_override_wsdl(self):
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-integration'),
+        reason = 'No CAPAKEY Integration tests required'
+    )
+    def test_override_wsdl(self, request):
         wsdl = "http://ws.agiv.be/capakeyws/nodataset.asmx?WSDL"
         self.capakey = capakey_factory(
             wsdl=wsdl,
-            user=config.get('capakey', 'user'),
-            password=config.get('capakey','password')
+            user=request.config.getoption('--capakey-user'),
+            password=request.config.getoption('--capakey-password')
         )
-        self.assertEqual(self.capakey.wsdl.url, wsdl)
+        assert self.capakey.wsdl.url == wsdl
 
-    def test_list_gemeenten(self):
-        res = capakey_request(self.capakey, 'ListAdmGemeenten', 1)
-        self.assertGreater(len(res), 0)
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-integration'),
+        reason = 'No CAPAKEY Integration tests required'
+    )
+    def test_list_gemeenten(self, capakey_gateway):
+        res = capakey_request(capakey_gateway, 'ListAdmGemeenten', 1)
+        assert len(res) > 0
