@@ -28,7 +28,7 @@ def pytest_addoption(parser):
     )
 
 @pytest.fixture(scope="session")
-def capakey_gateway(request):
+def capakey(request):
     if not request.config.getoption('--capakey-integration'):
         return None
     from crabpy.client import capakey_factory
@@ -37,3 +37,11 @@ def capakey_gateway(request):
         password=request.config.getoption("--capakey-password")
     )
     return capakey
+
+@pytest.fixture(scope="module")
+def capakey_gateway(capakey):
+    from crabpy.gateway.capakey import CapakeyGateway
+    capakey_gateway = CapakeyGateway(
+        capakey
+    )
+    return capakey_gateway

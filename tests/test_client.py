@@ -64,6 +64,6 @@ class TestCapakeyClient:
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
-    def test_list_gemeenten(self, capakey_gateway):
-        res = capakey_request(capakey_gateway, 'ListAdmGemeenten', 1)
+    def test_list_gemeenten(self, capakey):
+        res = capakey_request(capakey, 'ListAdmGemeenten', 1)
         assert len(res) > 0
