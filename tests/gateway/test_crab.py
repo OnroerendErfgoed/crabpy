@@ -3,7 +3,6 @@
 from __future__ import unicode_literals
 import six
 
-import unittest
 import pytest
 
 from crabpy.client import (
@@ -1521,7 +1520,7 @@ class TestPerceel:
         assert int(p.metadata.begin_organisatie.id) == 3
 
 
-class TestGebouw(unittest.TestCase):
+class GebouwTest:
     def test_fully_initialised(self):
         g = Gebouw(
             "1538575",
@@ -1820,9 +1819,9 @@ class TestAdrespositie:
     not pytest.config.getoption('--crab-integration'),
     reason='No CRAB Integration tests required'
 )
-class CrabCachedGatewayTests(unittest.TestCase):
+class TestCrabCachedGateway:
 
-    def setUp(self):
+    def setup_method(self, method):
         self.crab_client = crab_factory()
         self.crab = CrabGateway(
             self.crab_client,
@@ -1836,7 +1835,7 @@ class CrabCachedGatewayTests(unittest.TestCase):
             }
         )
 
-    def tearDown(self):
+    def teardown_method(self, method):
         self.crab_client = None
         self.crab = None
 
@@ -1892,7 +1891,7 @@ class CrabCachedGatewayTests(unittest.TestCase):
         r = self.crab.list_gemeenten(gewest, 2)
         assert isinstance(r, list)
         assert self.crab.caches['permanent'].get('ListGemeentenByGewestId#2#2') == r
-        self.assertNotEqual(res, r)
+        assert not res == r
 
     def test_list_gemeenten_by_provincie(self):
         res = self.crab.list_gemeenten_by_provincie(10000)
