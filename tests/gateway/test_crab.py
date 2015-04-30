@@ -32,11 +32,6 @@ from crabpy.gateway.crab import (
     Adrespositie
 )
 
-from tests import (
-    run_crab_integration_tests,
-    config
-)
-
 @pytest.mark.skipif(
     not pytest.config.getoption('--crab-integration'),
     reason='No CRAB Integration tests required'
@@ -489,7 +484,7 @@ class TestGewest:
             g.check_gateway()
 
     @pytest.mark.skipif(
-        not run_crab_integration_tests(),
+        not pytest.config.getoption('--crab-integration'),
         reason='No CRAB Integration tests required'
     )
     def test_gemeenten(self):
@@ -501,6 +496,10 @@ class TestGewest:
         gemeenten = g.gemeenten
         assert isinstance(gemeenten, list)
 
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--crab-integration'),
+        reason='No CRAB Integration tests required'
+    )
     def test_provincies(self):
         crab = CrabGateway(
             crab_factory()
@@ -1762,9 +1761,17 @@ class TestAdrespositie:
     def test_fully_initialised(self):
         a = Adrespositie(
             4087928,
-            2,
+            Herkomstadrespositie(
+                '6',
+                'manueleAanduidingVanToegangTotDeWeg',
+                None
+            ),
             """POINT(190705.34 224675.26)""",
-            2,
+            Aardadres(
+                '1',
+                'subAdres',
+                'Aanduiding van een plaats op een huisnummer'
+            ),
             Metadata(
                 '1830-01-01 00:00:00',
                 '',
@@ -1773,14 +1780,13 @@ class TestAdrespositie:
             )
         )
         assert a.id == 4087928
-        assert a.herkomst_id == 2
-        a.set_gateway(CrabGateway(crab_factory()))
-        assert str(a.geometrie) == str('POINT (190705.34 224675.26)')
-        assert int(a.aard.id) == 2
+        assert str(a.herkomst.id) == '6'
+        assert a.geometrie == 'POINT(190705.34 224675.26)'
+        assert str(a.aard.id) == '1'
         assert isinstance(a.metadata, Metadata)
         assert a.metadata.begin_datum == '1830-01-01 00:00:00'
         assert 'Adrespositie 4087928' == str(a)
-        assert "Adrespositie(4087928, 2)" == repr(a)
+        assert "Adrespositie(4087928, 6)" == repr(a)
 
     def test_str_dont_lazy_load(self):
         a = Adrespositie(4087928, 2)
