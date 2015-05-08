@@ -189,7 +189,7 @@ class CrabGateway(object):
             provincie = self.caches['permanent'].get_or_create(key, creator)
         else:
             provincie = creator()
-        if provincie = None:
+        if provincie == None:
             raise GatewayResourceNotFoundException()
         provincie.set_gateway(self)
         return provincie
@@ -202,12 +202,12 @@ class CrabGateway(object):
             `gemeenten` are wanted.
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
-        prov = self.get_provincie_by_id(provincie)
-        if prov == None:
+        try:
+            gewest = provincie.gewest
             prov = provincie
-        prov.set_gateway(self)
-        gewest = prov.gewest
-        gewest.clear_gateway()
+        except AttributeError:
+            prov = self.get_provincie_by_id(provincie)
+            gewest = prov.gewest
 
         def creator():
             gewest_gemeenten = self.list_gemeenten(gewest.id)

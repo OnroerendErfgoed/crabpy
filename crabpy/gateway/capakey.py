@@ -17,7 +17,8 @@ from suds import WebFault
 
 from crabpy.gateway.exception import (
     GatewayRuntimeException,
-    GatewayAuthenticationException
+    GatewayAuthenticationException,
+    GatewayResourceNotFoundException
 )
 
 from dogpile.cache import make_region
