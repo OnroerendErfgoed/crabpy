@@ -32,6 +32,9 @@ setup(
     package_dir={'crabpy': 'crabpy'},
     include_package_data=True,
     install_requires=requires,
+    entry_points="""\
+      [paste.app_factory]
+      main = crabpy:main""",
     license='MIT',
     zip_safe=False,
     classifiers=[
