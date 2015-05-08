@@ -239,15 +239,9 @@ class TestAfdeling:
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self):
-        capakey = CapakeyGateway(
-            capakey_factory(
-                user=config.get('capakey', 'user'),
-                password=config.get('capakey', 'password')
-            )
-        )
+    def test_lazy_load(self, capakey_gateway):
         a = Afdeling(44021)
-        a.set_gateway(capakey)
+        a.set_gateway(capakey_gateway)
         assert a.id == 44021
         assert a.naam == 'GENT  1 AFD'
         assert not a.centroid == None
@@ -257,21 +251,15 @@ class TestAfdeling:
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
-    def test_secties(self):
-        capakey = CapakeyGateway(
-            capakey_factory(
-                user=config.get('capakey', 'user'),
-                password=config.get('capakey', 'password')
-            )
-        )
+    def test_secties(self, capakey_gateway):
         a = Afdeling(44021)
-        a.set_gateway(capakey)
+        a.set_gateway(capakey_gateway)
         secties = a.secties
         assert isinstance(secties, list)
         assert len(secties) == 1
 
 
-class SectieTests(unittest.TestCase):
+class TestSectie:
 
     def test_fully_initialised(self):
         s = Sectie(
@@ -295,18 +283,12 @@ class SectieTests(unittest.TestCase):
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self):
-        capakey = CapakeyGateway(
-            capakey_factory(
-                user=config.get('capakey', 'user'),
-                password=config.get('capakey', 'password')
-            )
-        )
+    def test_lazy_load(self, capakey_gateway):
         s = Sectie(
             'A',
             Afdeling(44021)
         )
-        s.set_gateway(capakey)
+        s.set_gateway(capakey_gateway)
         assert s.id == 'A'
         assert s.afdeling.id == 44021
         assert not s.centroid == None
@@ -316,18 +298,12 @@ class SectieTests(unittest.TestCase):
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
-    def test_percelen(self):
-        capakey = CapakeyGateway(
-            capakey_factory(
-                user=config.get('capakey', 'user'),
-                password=config.get('capakey', 'password')
-            )
-        )
+    def test_percelen(self, capakey_gateway):
         s = Sectie(
             'A',
             Afdeling(44021)
         )
-        s.set_gateway(capakey)
+        s.set_gateway(capakey_gateway)
         percelen = s.percelen
         assert isinstance(percelen, list)
         assert len(percelen) > 0
