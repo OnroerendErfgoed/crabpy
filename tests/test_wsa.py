@@ -4,7 +4,7 @@ import unittest
 
 from suds.sax.element import Element
 
-from ..wsa import wsa
+from crabpy.wsa import wsa
 
 
 class ElementTests(unittest.TestCase):

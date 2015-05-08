@@ -1,0 +1,7 @@
+# Runtime requirements
+--requirement requirements.txt
+
+# Testing
+pytest==2.7.0
+pytest-cov==1.8.1
+coveralls==1.0a2
