@@ -106,6 +106,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'GetAdmGemeenteByNiscode', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Gemeente(
                 res.Niscode,
                 res.AdmGemeentenaam,
@@ -166,6 +168,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'ListKadAfdelingenByNiscode', gid, sort
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return [
                 Afdeling(
                     id=r.KadAfdelingcode,
@@ -192,6 +196,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'GetKadAfdelingByKadAfdelingcode', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Afdeling(
                 id=res.KadAfdelingcode,
                 naam=res.KadAfdelingnaam,
@@ -228,6 +234,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'ListKadSectiesByKadAfdelingcode', aid
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return [
                 Sectie(
                     r.KadSectiecode,
@@ -263,6 +271,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'GetKadSectieByKadSectiecode', aid, id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Sectie(
                 res.KadSectiecode,
                 afdeling,
@@ -324,6 +334,8 @@ class CapakeyGateway(object):
                 self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
                 sectie.afdeling.id, sectie.id, id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.KadPerceelsnummer,
                 sectie,
@@ -353,6 +365,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'GetKadPerceelsnummerByCaPaKey', capakey
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
@@ -382,6 +396,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'GetKadPerceelsnummerByPERCID', percid
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
