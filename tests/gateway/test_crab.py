@@ -10,7 +10,8 @@ from crabpy.client import (
 )
 
 from crabpy.gateway.exception import (
-    GatewayRuntimeException
+    GatewayRuntimeException,
+    GatewayResourceNotFoundException
 )
 
 from crabpy.gateway.crab import (
@@ -58,6 +59,10 @@ class TestCrabGateway:
         assert res.id == 2
         assert isinstance(res.centroid, tuple)
         assert isinstance(res.bounding_box, tuple)
+
+    def test_get_gewest_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_gewest_by_id(-1)
 
     def test_list_gemeenten_default(self):
         res = self.crab.list_gemeenten()
@@ -121,6 +126,10 @@ class TestCrabGateway:
         res = self.crab.get_provincie_by_id(90000)
         assert isinstance(res, Provincie)
         assert (res.niscode, 90000)
+
+    def test_get_provincie_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_provincie_by_id(-1)
 
     def test_list_gemeenten_by_provincie(self):
         provincie = Provincie(10000, 'Antwerpen', Gewest(2))
