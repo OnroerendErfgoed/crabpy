@@ -1330,6 +1330,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetAdrespositieByAdrespositieId', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Adrespositie(
                 res.AdrespositieId,
                 res.HerkomstAdrespositie,
