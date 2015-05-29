@@ -641,7 +641,7 @@ class CapakeyRestGateway(CapakeyGateway):
             sectie = creator()
         sectie.set_gateway(self)
         return sectie
-        
+
     def parse_percid(self, capakey):
         import re
         match = re.match(
