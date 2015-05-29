@@ -10,6 +10,10 @@ from crabpy.client import (
     capakey_factory
 )
 
+from crabpy.gateway.exception import (
+    GatewayResourceNotFoundException
+)
+
 from crabpy.gateway.capakey import (
     CapakeyGateway,
     Gemeente,
@@ -52,8 +56,7 @@ class TestCapakeyGateway:
         assert res.id == 44021
 
     def test_get_gemeente_by_invalid_id(self, capakey_gateway):
-        from crabpy.gateway.exception import GatewayRuntimeException
-        with pytest.raises(GatewayRuntimeException):
+        with pytest.raises(GatewayResourceNotFoundException):
             capakey_gateway.get_gemeente_by_id('gent')
 
     def test_list_afdelingen(self, capakey_gateway):
@@ -80,7 +83,11 @@ class TestCapakeyGateway:
         assert res.id == 44021
         assert isinstance(res.gemeente, Gemeente)
         assert res.gemeente.id == 44021
-
+        
+    def test_get_kadastrale_afdeling_by_unexisting_id(self, capakey_gateway):
+        with pytest.raises(GatewayResourceNotFoundException):
+            capakey_gateway.get_kadastrale_afdeling_by_id(44000)
+    
     def test_list_secties_by_afdeling(self, capakey_gateway):
         a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
         res = capakey_gateway.list_secties_by_afdeling(a)
@@ -98,6 +105,11 @@ class TestCapakeyGateway:
         assert isinstance(res, Sectie)
         assert res.id == 'A'
         assert res.afdeling.id == 44021
+        
+    def test_get_sectie_by_unexisting_id_and_afdeling(self, capakey_gateway):
+        a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
+        with pytest.raises(GatewayResourceNotFoundException):
+            capakey_gateway.get_sectie_by_id_and_afdeling('Z', a)
 
     def test_list_percelen_by_sectie(self, capakey_gateway):
         s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
@@ -113,6 +125,13 @@ class TestCapakeyGateway:
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
+        
+    def test_get_perceel_by_unexisting_id_and_sectie(self, capakey_gateway):
+        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = capakey_gateway.list_percelen_by_sectie(s)
+        perc = percelen[0]
+        with pytest.raises(GatewayResourceNotFoundException):
+            capakey_gateway.get_perceel_by_id_and_sectie(-1, s)
 
     def test_get_perceel_by_capakey(self, capakey_gateway):
         s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
@@ -123,6 +142,10 @@ class TestCapakeyGateway:
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
 
+    def test_get_perceel_by_unexisting_capakey(self, capakey_gateway):
+        with pytest.raises(GatewayResourceNotFoundException):
+            capakey_gateway.get_perceel_by_capakey('0000000')
+
     def test_get_perceel_by_percid(self, capakey_gateway):
         s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = capakey_gateway.list_percelen_by_sectie(s)
@@ -131,6 +154,10 @@ class TestCapakeyGateway:
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
+        
+    def test_get_perceel_by_unexisting_percid(self, capakey_gateway):
+        with pytest.raises(GatewayResourceNotFoundException):
+            capakey_gateway.get_perceel_by_percid('0000/0000')
 
 
 @pytest.mark.skipif(

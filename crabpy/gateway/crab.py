@@ -17,7 +17,8 @@ from crabpy.client import crab_request
 from suds import WebFault
 
 from crabpy.gateway.exception import (
-    GatewayRuntimeException
+    GatewayRuntimeException,
+    GatewayResourceNotFoundException
 )
 
 from dogpile.cache import make_region
@@ -123,6 +124,8 @@ class CrabGateway(object):
             de = crab_gateway_request(
                 self.client, 'GetGewestByGewestIdAndTaalCode', id, 'de'
             )
+            if nl == None:
+                raise GatewayResourceNotFoundException()
             return Gewest(
                 nl.GewestId,
                 {
@@ -138,6 +141,8 @@ class CrabGateway(object):
             gewest = self.caches['long'].get_or_create(key, creator)
         else:
             gewest = creator()
+        if gewest == None:
+            raise GatewayResourceNotFoundException()
         gewest.set_gateway(self)
         return gewest
 
@@ -184,6 +189,8 @@ class CrabGateway(object):
             provincie = self.caches['permanent'].get_or_create(key, creator)
         else:
             provincie = creator()
+        if provincie == None:
+            raise GatewayResourceNotFoundException()
         provincie.set_gateway(self)
         return provincie
 
@@ -196,12 +203,11 @@ class CrabGateway(object):
         :rtype: A :class:`list` of :class:`Gemeente`.
         '''
         try:
-            provincie = self.get_provincie_by_id(provincie)
+            gewest = provincie.gewest
+            prov = provincie
         except AttributeError:
-            pass
-        provincie.set_gateway(self)
-        gewest = provincie.gewest
-        gewest.clear_gateway()
+            prov = self.get_provincie_by_id(provincie)
+            gewest = prov.gewest
 
         def creator():
             gewest_gemeenten = self.list_gemeenten(gewest.id)
@@ -211,11 +217,11 @@ class CrabGateway(object):
                     r.naam,
                     r.niscode,
                     gewest
-                )for r in gewest_gemeenten if str(r.niscode)[0] == str(provincie.niscode)[0]
+                )for r in gewest_gemeenten if str(r.niscode)[0] == str(prov.niscode)[0]
             ]
 
         if self.caches['permanent'].is_configured:
-            key = 'ListGemeentenByProvincieId#%s' % provincie.id
+            key = 'ListGemeentenByProvincieId#%s' % prov.id
             gemeente = self.caches['long'].get_or_create(key, creator)
         else:
             gemeente = creator()
@@ -237,6 +243,8 @@ class CrabGateway(object):
         except AttributeError:
             gewest_id = gewest
             gewest = self.get_gewest_by_id(gewest_id)
+        if gewest == None:
+             raise GatewayResourceNotFoundException()
         gewest.clear_gateway()
 
         def creator():
@@ -271,6 +279,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetGemeenteByGemeenteId', id
             )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
             return Gemeente(
                 res.GemeenteId,
                 res.GemeenteNaam,
@@ -306,6 +316,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetGemeenteByNISGemeenteCode', niscode
             )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
             return Gemeente(
                 res.GemeenteId,
                 res.GemeenteNaam,
@@ -553,6 +565,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetStraatnaamWithStatusByStraatnaamId', id
             )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
             return Straat(
                 res.StraatnaamId,
                 res.StraatnaamLabel,
@@ -627,6 +641,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetHuisnummerWithStatusByHuisnummerId', id
             )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
             return Huisnummer(
                 res.HuisnummerId,
                 res.StatusHuisnummer,
@@ -666,6 +682,8 @@ class CrabGateway(object):
                 self.client, 'GetHuisnummerWithStatusByHuisnummer',
                 nummer, straat_id
             )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
             return Huisnummer(
                 res.HuisnummerId,
                 res.StatusHuisnummer,
@@ -737,6 +755,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetPostkantonByHuisnummerId', id
             )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
             return Postkanton(
                 res.PostkantonCode
             )
@@ -759,6 +779,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetWegobjectByIdentificatorWegobject', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Wegobject(
                 res.IdentificatorWegobject,
                 res.AardWegobject,
@@ -826,6 +848,8 @@ class CrabGateway(object):
                 self.client,
                 'GetWegsegmentByIdentificatorWegsegment', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Wegsegment(
                 res.IdentificatorWegsegment,
                 res.StatusWegsegment,
@@ -928,6 +952,8 @@ class CrabGateway(object):
                 self.client,
                 'GetTerreinobjectByIdentificatorTerreinobject', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Terreinobject(
                 res.IdentificatorTerreinobject,
                 res.AardTerreinobject,
@@ -993,6 +1019,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetPerceelByIdentificatorPerceel', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.IdentificatorPerceel,
                 (res.CenterX, res.CenterY),
@@ -1058,6 +1086,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetGebouwByIdentificatorGebouw', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Gebouw(
                 res.IdentificatorGebouw,
                 res.AardGebouw,
@@ -1136,6 +1166,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetSubadresWithStatusBySubadresId', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Subadres(
                 res.SubadresId,
                 res.Subadres,
@@ -1298,6 +1330,8 @@ class CrabGateway(object):
             res = crab_gateway_request(
                 self.client, 'GetAdrespositieByAdrespositieId', id
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return Adrespositie(
                 res.AdrespositieId,
                 res.HerkomstAdrespositie,

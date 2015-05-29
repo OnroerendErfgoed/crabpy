@@ -10,7 +10,8 @@ from crabpy.client import (
 )
 
 from crabpy.gateway.exception import (
-    GatewayRuntimeException
+    GatewayRuntimeException,
+    GatewayResourceNotFoundException
 )
 
 from crabpy.gateway.crab import (
@@ -58,6 +59,10 @@ class TestCrabGateway:
         assert res.id == 2
         assert isinstance(res.centroid, tuple)
         assert isinstance(res.bounding_box, tuple)
+
+    def test_get_gewest_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_gewest_by_id(-1)
 
     def test_list_gemeenten_default(self):
         res = self.crab.list_gemeenten()
@@ -122,6 +127,10 @@ class TestCrabGateway:
         assert isinstance(res, Provincie)
         assert (res.niscode, 90000)
 
+    def test_get_provincie_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_provincie_by_id(-1)
+
     def test_list_gemeenten_by_provincie(self):
         provincie = Provincie(10000, 'Antwerpen', Gewest(2))
         res = self.crab.list_gemeenten_by_provincie(provincie)
@@ -145,6 +154,10 @@ class TestCrabGateway:
         res = self.crab.get_gemeente_by_niscode(11001)
         assert isinstance(res, Gemeente)
         assert (res.niscode, 11001)
+        
+    def test_get_gemeente_by_unexisting_niscode(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_gemeente_by_niscode(-1)
 
     def test_list_talen(self):
         res = self.crab.list_talen()
@@ -245,6 +258,10 @@ class TestCrabGateway:
         res = self.crab.get_straat_by_id(1)
         assert isinstance(res, Straat)
         assert res.id == 1
+        
+    def test_get_straat_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_straat_by_id(-1)
 
     def test_list_huisnummers_by_straat(self):
         res = self.crab.list_huisnummers_by_straat(1)
@@ -264,6 +281,10 @@ class TestCrabGateway:
         res = self.crab.get_huisnummer_by_id(1)
         assert isinstance(res, Huisnummer)
         assert res.id == 1
+    
+    def test_get_huisnummer_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_huisnummer_by_id(-1)
 
     def test_get_huisnummer_by_nummer_and_straat(self):
         res = self.crab.get_huisnummer_by_nummer_and_straat(1, 1)
@@ -274,6 +295,10 @@ class TestCrabGateway:
         res = self.crab.get_huisnummer_by_nummer_and_straat(1, straat)
         assert isinstance(res, Huisnummer)
         assert res.huisnummer == '1'
+        
+    def test_get_huisnummer_by_unexisting_nummer_and_straat(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_huisnummer_by_nummer_and_straat(-1, -1)
 
     def test_list_postkantons_by_gemeente(self):
         res = self.crab.list_postkantons_by_gemeente(1)
@@ -295,6 +320,10 @@ class TestCrabGateway:
         huisnummer = self.crab.get_huisnummer_by_id(1)
         res = self.crab.get_postkanton_by_huisnummer(huisnummer)
         assert isinstance(res, Postkanton)
+        
+    def test_get_postkanton_by_unexisting_huisnummer(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_postkanton_by_huisnummer(-1)
 
     def test_list_wegobjecten_by_straat(self):
         res = self.crab.list_wegobjecten_by_straat(1)
@@ -314,6 +343,10 @@ class TestCrabGateway:
         res = self.crab.get_wegobject_by_id("53839893")
         assert isinstance(res, Wegobject)
         assert res.id == "53839893"
+        
+    def test_get_wegobject_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_wegobject_by_id(-1)
 
     def test_list_wegsegmenten_by_straat(self):
         res = self.crab.list_wegsegmenten_by_straat(1)
@@ -333,6 +366,10 @@ class TestCrabGateway:
         res = self.crab.get_wegsegment_by_id("108724")
         assert isinstance(res, Wegsegment)
         assert res.id == "108724"
+    
+    def test_get_wegsegment_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_wegsegment_by_id(-1)
 
     def test_list_terreinobjecten_by_huisnummer(self):
         res = self.crab.list_terreinobjecten_by_huisnummer(1)
@@ -352,6 +389,10 @@ class TestCrabGateway:
         res = self.crab.get_terreinobject_by_id("13040_C_1747_G_002_00")
         assert isinstance(res, Terreinobject)
         assert res.id == "13040_C_1747_G_002_00"
+        
+    def test_get_terreinobject_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_terreinobject_by_id(-1)
 
     def test_list_percelen_by_huisnummer(self):
         res = self.crab.list_percelen_by_huisnummer(1)
@@ -371,6 +412,10 @@ class TestCrabGateway:
         res = self.crab.get_perceel_by_id("13040C1747/00G002")
         assert isinstance(res, Perceel)
         assert res.id == "13040C1747/00G002"
+        
+    def test_get_perceel_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_perceel_by_id(-1)
 
     def test_list_gebouwen_by_huisnummer(self):
         res = self.crab.list_gebouwen_by_huisnummer(1)
@@ -390,6 +435,10 @@ class TestCrabGateway:
         res = self.crab.get_gebouw_by_id("1538575")
         assert isinstance(res, Gebouw)
         assert res.id == 1538575
+        
+    def test_get_gebouw_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_gebouw_by_id(-1)
 
     def test_list_subadressen_by_huisnummer(self):
         res = self.crab.list_subadressen_by_huisnummer(129462)
@@ -409,6 +458,10 @@ class TestCrabGateway:
         res = self.crab.get_subadres_by_id(1120936)
         assert isinstance(res, Subadres)
         assert res.id == 1120936
+        
+    def test_get_subadres_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_subadres_by_id(-1)
 
     def test_list_adresposities_by_huisnummer(self):
         res = self.crab.list_adresposities_by_huisnummer(1)
@@ -454,6 +507,10 @@ class TestCrabGateway:
         res = self.crab.get_adrespositie_by_id(4087928)
         assert isinstance(res, Adrespositie)
         assert res.id == 4087928
+        
+    def test_get_adrespositie_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_adrespositie_by_id(-1)
 
 
 class TestGewest:

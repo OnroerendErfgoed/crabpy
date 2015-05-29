@@ -17,7 +17,8 @@ from suds import WebFault
 
 from crabpy.gateway.exception import (
     GatewayRuntimeException,
-    GatewayAuthenticationException
+    GatewayAuthenticationException,
+    GatewayResourceNotFoundException
 )
 
 from dogpile.cache import make_region
@@ -105,9 +106,12 @@ class CapakeyGateway(object):
         :rtype: :class:`Gemeente`
         '''
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetAdmGemeenteByNiscode', id
-            )
+            try:
+                res = capakey_gateway_request(
+                    self.client, 'GetAdmGemeenteByNiscode', id
+                )
+            except GatewayRuntimeException:
+                raise GatewayResourceNotFoundException()
             return Gemeente(
                 res.Niscode,
                 res.AdmGemeentenaam,
@@ -168,6 +172,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'ListKadAfdelingenByNiscode', gid, sort
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return [
                 Afdeling(
                     id=r.KadAfdelingcode,
@@ -191,9 +197,12 @@ class CapakeyGateway(object):
         :rtype: A :class:`Afdeling`.
         '''
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadAfdelingByKadAfdelingcode', id
-            )
+            try:
+                res = capakey_gateway_request(
+                    self.client, 'GetKadAfdelingByKadAfdelingcode', id
+                )
+            except GatewayRuntimeException:
+                raise GatewayResourceNotFoundException()
             return Afdeling(
                 id=res.KadAfdelingcode,
                 naam=res.KadAfdelingnaam,
@@ -230,6 +239,8 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'ListKadSectiesByKadAfdelingcode', aid
             )
+            if res == None:
+                raise GatewayResourceNotFoundException()
             return [
                 Sectie(
                     r.KadSectiecode,
@@ -262,9 +273,12 @@ class CapakeyGateway(object):
         afdeling.clear_gateway()
 
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadSectieByKadSectiecode', aid, id
-            )
+            try:
+                res = capakey_gateway_request(
+                    self.client, 'GetKadSectieByKadSectiecode', aid, id
+                )
+            except GatewayRuntimeException:
+                raise GatewayResourceNotFoundException()
             return Sectie(
                 res.KadSectiecode,
                 afdeling,
@@ -322,10 +336,13 @@ class CapakeyGateway(object):
         sectie.clear_gateway()
 
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
-                sectie.afdeling.id, sectie.id, id
-            )
+            try:
+                res = capakey_gateway_request(
+                    self.client, 'GetKadPerceelsnummerByKadPerceelsnummer',
+                    sectie.afdeling.id, sectie.id, id
+                )
+            except GatewayRuntimeException:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.KadPerceelsnummer,
                 sectie,
@@ -352,9 +369,12 @@ class CapakeyGateway(object):
         :rtype: :class:`Perceel`
         '''
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadPerceelsnummerByCaPaKey', capakey
-            )
+            try:
+                res = capakey_gateway_request(
+                    self.client, 'GetKadPerceelsnummerByCaPaKey', capakey
+                )
+            except GatewayRuntimeException:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
@@ -381,9 +401,12 @@ class CapakeyGateway(object):
         :rtype: :class:`Perceel`
         '''
         def creator():
-            res = capakey_gateway_request(
-                self.client, 'GetKadPerceelsnummerByPERCID', percid
-            )
+            try:
+                res = capakey_gateway_request(
+                    self.client, 'GetKadPerceelsnummerByPERCID', percid
+                )
+            except GatewayRuntimeException:
+                raise GatewayResourceNotFoundException()
             return Perceel(
                 res.KadPerceelsnummer,
                 Sectie(res.KadSectiecode, Afdeling(res.KadAfdelingcode)),
