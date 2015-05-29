@@ -188,8 +188,8 @@ class TestCapakeyRestGateway:
         assert res.id == 44021
 
     def test_get_gemeente_by_invalid_id(self, capakey_gateway):
-        from crabpy.gateway.exception import GatewayRuntimeException
-        with pytest.raises(GatewayRuntimeException):
+        from crabpy.gateway.exception import GatewayResourceNotFoundException
+        with pytest.raises(GatewayResourceNotFoundException):
             capakey_gateway.get_gemeente_by_id('gent')
 
     def test_list_afdelingen(self, capakey_gateway):
