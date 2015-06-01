@@ -141,8 +141,6 @@ class CrabGateway(object):
             gewest = self.caches['long'].get_or_create(key, creator)
         else:
             gewest = creator()
-        if gewest == None:
-            raise GatewayResourceNotFoundException()
         gewest.set_gateway(self)
         return gewest
 
@@ -243,8 +241,6 @@ class CrabGateway(object):
         except AttributeError:
             gewest_id = gewest
             gewest = self.get_gewest_by_id(gewest_id)
-        if gewest == None:
-             raise GatewayResourceNotFoundException()
         gewest.clear_gateway()
 
         def creator():

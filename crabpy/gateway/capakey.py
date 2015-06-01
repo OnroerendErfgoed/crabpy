@@ -172,14 +172,16 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'ListKadAfdelingenByNiscode', gid, sort
             )
-            if res == None:
-                raise GatewayResourceNotFoundException()
-            return [
-                Afdeling(
-                    id=r.KadAfdelingcode,
-                    naam=r.KadAfdelingnaam,
-                    gemeente=gemeente
-                ) for r in res.KadAfdelingItem]
+            try:
+                return [
+                    Afdeling(
+                        id=r.KadAfdelingcode,
+                        naam=r.KadAfdelingnaam,
+                        gemeente=gemeente
+                    ) for r in res.KadAfdelingItem]
+            except AttributeError:
+                # Handle bad error handling on the CAPAKEY side
+                return []
         if self.caches['permanent'].is_configured:
             key = 'ListKadAfdelingenByNiscode#%s#%s' % (gid, sort)
             afdelingen = self.caches['permanent'].get_or_create(key, creator)
@@ -239,14 +241,16 @@ class CapakeyGateway(object):
             res = capakey_gateway_request(
                 self.client, 'ListKadSectiesByKadAfdelingcode', aid
             )
-            if res == None:
-                raise GatewayResourceNotFoundException()
-            return [
-                Sectie(
-                    r.KadSectiecode,
-                    afdeling
-                ) for r in res.KadSectieItem
-            ]
+            try:
+                return [
+                    Sectie(
+                        r.KadSectiecode,
+                        afdeling
+                    ) for r in res.KadSectieItem
+                ]
+            except AttributeError:
+                # Handle bad error handling on the CAPAKEY side
+                return []
         if self.caches['long'].is_configured:
             key = 'ListKadSectiesByKadAfdelingcode#%s' % aid
             secties = self.caches['long'].get_or_create(key, creator)
@@ -308,14 +312,18 @@ class CapakeyGateway(object):
                 self.client, 'ListKadPerceelsnummersByKadSectiecode',
                 sectie.afdeling.id, sectie.id, sort
             )
-            return [
-                Perceel(
-                    r.KadPerceelsnummer,
-                    sectie,
-                    r.CaPaKey,
-                    r.PERCID,
-                ) for r in res.KadPerceelsnummerItem
-            ]
+            try:
+                return [
+                    Perceel(
+                        r.KadPerceelsnummer,
+                        sectie,
+                        r.CaPaKey,
+                        r.PERCID,
+                    ) for r in res.KadPerceelsnummerItem
+                ]
+            except AttributeError:
+                # Handle bad error handling on the CAPAKEY side
+                return []
         if self.caches['short'].is_configured:
             key = 'ListKadPerceelsnummersByKadSectiecode#%s#%s#%s' % (sectie.afdeling.id, sectie.id, sort)
             percelen = self.caches['short'].get_or_create(key, creator)

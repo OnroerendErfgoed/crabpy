@@ -147,8 +147,14 @@ class TestCrabGateway:
         res = self.crab.get_gemeente_by_id(1)
         assert isinstance(res, Gemeente)
         assert (res.id, 1)
+
+    def test_get_gemeente_by_id_with_string(self):
         with pytest.raises(GatewayRuntimeException):
             self.crab.get_gemeente_by_id('gent')
+
+    def test_get_gemeente_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_gemeente_by_id(-1)
 
     def test_get_gemeente_by_niscode(self):
         res = self.crab.get_gemeente_by_niscode(11001)
@@ -1712,6 +1718,7 @@ class TestMetadata:
         assert int(m.begin_bewerking.id) == 1
         assert isinstance(m.begin_organisatie, Organisatie)
         assert int(m.begin_organisatie.id) == 6
+        assert 'Begin datum: 1830-01-01 00:00:00' == str(m)
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--crab-integration'),
