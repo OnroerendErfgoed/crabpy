@@ -19,7 +19,7 @@ requires = [
 
 setup(
     name='crabpy',
-    version='0.6.0.dev0',
+    version='0.6.0',
     description='Interact with AGIV webservices.',
     long_description=open('README.rst').read() + '\n\n' +
                      open('CHANGES.rst').read(),

@@ -1,4 +1,4 @@
-0.6.0 (??-??-2015)
+0.6.0 (01-06-2015)
 ------------------
 
 - Implement operations dealing with Adrespositie. (#37) [TalissaJoly]
