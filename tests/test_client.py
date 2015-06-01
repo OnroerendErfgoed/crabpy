@@ -2,19 +2,12 @@
 
 from __future__ import unicode_literals
 
-import unittest
 import pytest
 
 from crabpy.client import (
     crab_factory,
     capakey_factory,
     capakey_request
-)
-
-from tests import (
-    run_crab_integration_tests,
-    run_capakey_integration_tests,
-    config
 )
 
 @pytest.mark.skipif(

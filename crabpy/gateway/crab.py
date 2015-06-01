@@ -206,6 +206,7 @@ class CrabGateway(object):
         except AttributeError:
             prov = self.get_provincie_by_id(provincie)
             gewest = prov.gewest
+        gewest.clear_gateway()
 
         def creator():
             gewest_gemeenten = self.list_gemeenten(gewest.id)
