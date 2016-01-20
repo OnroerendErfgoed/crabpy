@@ -331,6 +331,15 @@ class TestCrabCachedGateway:
         assert isinstance(r, list)
         assert self.crab.caches['short'].get('ListHuisnummersWithStatusByStraatnaamId#21') == r
 
+    def test_list_huisnummers_by_perceel(self):
+        res = self.crab.list_huisnummers_by_perceel('13040C1747/00G002')
+        assert isinstance(res, list)
+        assert self.crab.caches['short'].get('ListHuisnummersWithStatusByIdentificatorPerceel#13040C1747/00G0021') == res
+        perceel = self.crab.get_perceel_by_id('13040C1747/00H002')
+        r = self.crab.list_huisnummers_by_perceel(perceel)
+        assert isinstance(r, list)
+        assert self.crab.caches['short'].get('ListHuisnummersWithStatusByIdentificatorPerceel#13040C1747/00H0021') == r
+
     def test_list_huisnummers_by_straat_different_sort(self):
         res = self.crab.list_huisnummers_by_straat(1, 2)
         assert isinstance(res, list)
@@ -479,6 +488,6 @@ class TestCrabCachedGateway:
         assert self.crab.caches['short'].get('ListAdrespositiesBySubadres#A129462') == res
 
     def test_get_adrespositie_by_id(self):
-        res = self.crab.get_adrespositie_by_id(4087928)
+        res = self.crab.get_adrespositie_by_id(4428005)
         assert isinstance(res, Adrespositie)
-        assert str(self.crab.caches['short'].get('GetAdrespositieByAdrespositieId#4087928')) == str(res)
+        assert str(self.crab.caches['short'].get('GetAdrespositieByAdrespositieId#4428005')) == str(res)

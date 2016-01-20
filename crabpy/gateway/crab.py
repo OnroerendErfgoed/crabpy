@@ -627,6 +627,46 @@ class CrabGateway(object):
             h.set_gateway(self)
         return huisnummers
 
+    def list_huisnummers_by_perceel(self, perceel, sort=1):
+        '''
+        List all `huisnummers` on a `Pereel`.
+
+        Generally there will only be one, but multiples are possible.
+
+        :param perceel: The :class:`Perceel` for which the \
+            `huisnummers` are wanted.
+        :rtype: A :class: `list` of :class:`Huisnummer`
+        '''
+        try:
+            id = perceel.id
+        except AttributeError:
+            id = perceel
+
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListHuisnummersWithStatusByIdentificatorPerceel',
+                id, sort
+            )
+            try:
+                return[
+                    Huisnummer(
+                        r.HuisnummerId,
+                        r.StatusHuisnummer,
+                        r.Huisnummer,
+                        id
+                    ) for r in res.HuisnummerWithStatusItem
+                ]
+            except AttributeError:
+                return []
+        if self.caches['short'].is_configured:
+            key = 'ListHuisnummersWithStatusByIdentificatorPerceel#%s%s' % (id, sort)
+            huisnummers = self.caches['short'].get_or_create(key, creator)
+        else:
+            huisnummers = creator()
+        for h in huisnummers:
+            h.set_gateway(self)
+        return huisnummers
+
     def get_huisnummer_by_id(self, id):
         '''
         Retrieve a `huisnummer` by the Id.
@@ -2246,6 +2286,11 @@ class Perceel(GatewayObject):
     @check_lazy_load_perceel
     def metadata(self):
         return self._metadata
+
+    @property
+    def huisnummers(self):
+        self.check_gateway()
+        return self.gateway.list_huisnummers_by_perceel(self.id)
 
     def __unicode__(self):
         return "Perceel %s" % (self.id)

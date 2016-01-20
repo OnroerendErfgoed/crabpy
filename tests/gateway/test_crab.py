@@ -283,6 +283,21 @@ class TestCrabGateway:
         assert isinstance(res, list)
         assert len(res) == 0
 
+    def test_list_huisnummers_by_perceel(self):
+        res1 = self.crab.list_huisnummers_by_perceel("13040C1747/00G002")
+        assert isinstance(res1, list)
+        assert isinstance(res1[0], Huisnummer)
+        perceel = self.crab.get_perceel_by_id("13040C1747/00G002")
+        res2 = self.crab.list_huisnummers_by_perceel(perceel)
+        assert isinstance(res2, list)
+        assert isinstance(res2[0], Huisnummer)
+        assert [p.id for p in res1] == [p.id for p in res2]
+
+    def test_list_huisnummers_by_perceel_empty(self):
+        res = self.crab.list_huisnummers_by_perceel("13040A0000/00A001")
+        assert isinstance(res, list)
+        assert len(res) == 0
+
     def test_get_huisnummer_by_id(self):
         res = self.crab.get_huisnummer_by_id(1)
         assert isinstance(res, Huisnummer)
@@ -510,9 +525,9 @@ class TestCrabGateway:
         assert len(res) == 0
 
     def test_get_adrespositie_by_id(self):
-        res = self.crab.get_adrespositie_by_id(4087928)
+        res = self.crab.get_adrespositie_by_id(4428005)
         assert isinstance(res, Adrespositie)
-        assert res.id == 4087928
+        assert res.id == 4428005
 
     def test_get_adrespositie_by_unexisting_id(self):
         with pytest.raises(GatewayResourceNotFoundException):
@@ -1582,6 +1597,19 @@ class TestPerceel:
         assert isinstance(p.metadata.begin_organisatie, Organisatie)
         assert int(p.metadata.begin_organisatie.id) == 3
 
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--crab-integration'),
+        reason='No CRAB Integration tests required'
+    )
+    def test_huisnummers(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        p = crab.get_perceel_by_id('13040C1747/00G002')
+        hnrs = p.huisnummers
+        assert isinstance(hnrs, list)
+        assert [h.id for h in hnrs] == [h.id for h in crab.list_huisnummers_by_perceel('13040C1747/00G002')]
+
 
 class GebouwTest:
     def test_fully_initialised(self):
@@ -1864,11 +1892,11 @@ class TestAdrespositie:
         crab = CrabGateway(
             crab_factory()
         )
-        a = Adrespositie(4087928, 2)
+        a = Adrespositie(4428005, 3)
         a.set_gateway(crab)
-        assert a.id == 4087928
-        assert a.herkomst_id == 2
-        assert str(a.geometrie) == str('POINT (190705.34 224675.26)')
+        assert a.id == 4428005
+        assert a.herkomst_id == 3
+        assert str(a.geometrie) == str('POINT (74414.91 225777.36)')
         assert int(a.aard.id) == 2
         assert isinstance(a.metadata, Metadata)
         assert a.metadata.begin_datum == '1830-01-01 00:00:00'
