@@ -533,6 +533,20 @@ class TestCrabGateway:
         with pytest.raises(GatewayResourceNotFoundException):
             self.crab.get_adrespositie_by_id(-1)
 
+    def test_get_postadres_by_huisnummer(self):
+        res = self.crab.get_postadres_by_huisnummer(1)
+        assert res == 'Steenweg op Oosthoven 51, 2300 Turnhout'
+        hnr = self.crab.get_huisnummer_by_id(1)
+        res = self.crab.get_postadres_by_huisnummer(hnr)
+        assert res == 'Steenweg op Oosthoven 51, 2300 Turnhout'
+
+    def test_get_postadres_by_subadres(self):
+        res = self.crab.get_postadres_by_subadres(1120936)
+        assert res == 'Antoon van Brabantstraat 7 bus B, 2630 Aartselaar'
+        hnr = self.crab.get_subadres_by_id(1120936)
+        res = self.crab.get_postadres_by_subadres(hnr)
+        assert res == 'Antoon van Brabantstraat 7 bus B, 2630 Aartselaar'
+
 
 class TestGewest:
 
@@ -1250,6 +1264,16 @@ class TestHuisnummer:
         with pytest.raises(RuntimeError):
             h.check_gateway()
 
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--crab-integration'),
+        reason='No CRAB Integration tests required'
+    )
+    def test_postadres(self):
+        crab = CrabGateway(crab_factory())
+        h = Huisnummer(1, 3, '51', 17718)
+        h.set_gateway(crab)
+        assert h.postadres == 'Steenweg op Oosthoven 51, 2300 Turnhout'
+
 
 class TestPostkanton:
     def test_fully_initialised(self):
@@ -1775,7 +1799,7 @@ class TestSubadres:
     def test_fully_initialised(self):
         s = Subadres(
             1120936,
-            "A",
+            "B",
             Statussubadres(3, 'inGebruik', 'None'),
             38020,
             Aardsubadres(1, 'gemeente', 'Gemeente.'),
@@ -1787,7 +1811,7 @@ class TestSubadres:
             )
         )
         assert s.id == 1120936
-        assert s.subadres == "A"
+        assert s.subadres == "B"
         assert int(s.status_id) == 3
         assert isinstance(s.status, Statussubadres)
         assert int(s.huisnummer_id) == 38020
@@ -1798,12 +1822,12 @@ class TestSubadres:
         assert int(s.metadata.begin_bewerking.id) == 1
         assert isinstance(s.metadata.begin_organisatie, Organisatie)
         assert int(s.metadata.begin_organisatie.id) == 5
-        assert 'A (1120936)' == str(s)
-        assert "Subadres(1120936, 3, 'A', 38020)" == repr(s)
+        assert 'B (1120936)' == str(s)
+        assert "Subadres(1120936, 3, 'B', 38020)" == repr(s)
 
     def test_str_dont_lazy_load(self):
-        s = Subadres(1120936, 'A', 3)
-        assert 'A (1120936)' == str(s)
+        s = Subadres(1120936, 'B', 3)
+        assert 'B (1120936)' == str(s)
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--crab-integration'),
@@ -1813,11 +1837,11 @@ class TestSubadres:
         crab = CrabGateway(
             crab_factory()
         )
-        s = Subadres(1120936, 'A', 3)
+        s = Subadres(1120936, 'B', 3)
         s.set_gateway(crab)
         assert s.id == 1120936
         assert int(s.status.id) == 3
-        assert s.subadres == "A"
+        assert s.subadres == "B"
         assert isinstance(s.aard, Aardsubadres)
         assert int(s.huisnummer.id) == 38020
         s.metadata.set_gateway(crab)
@@ -1830,7 +1854,7 @@ class TestSubadres:
         assert int(s.metadata.begin_organisatie.id) == 1
 
     def test_check_gateway_not_set(self):
-        s = Subadres(1, 3, 'A', 129462)
+        s = Subadres(1, 3, 'B', 129462)
         with pytest.raises(RuntimeError):
             s.check_gateway()
 
@@ -1842,10 +1866,20 @@ class TestSubadres:
         crab = CrabGateway(
             crab_factory()
         )
-        s = Subadres(1120936, 'A', 3)
+        s = Subadres(1120936, 'B', 3)
         s.set_gateway(crab)
         adresposities = s.adresposities
         assert isinstance(adresposities, list)
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--crab-integration'),
+        reason='No CRAB Integration tests required'
+    )
+    def test_postadres(self):
+        crab = CrabGateway(crab_factory())
+        s = Subadres(1120936, 'B', 3)
+        s.set_gateway(crab)
+        assert s.postadres == 'Antoon van Brabantstraat 7 bus B, 2630 Aartselaar'
 
 
 class TestAdrespositie:

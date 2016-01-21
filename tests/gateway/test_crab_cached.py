@@ -491,3 +491,13 @@ class TestCrabCachedGateway:
         res = self.crab.get_adrespositie_by_id(4428005)
         assert isinstance(res, Adrespositie)
         assert str(self.crab.caches['short'].get('GetAdrespositieByAdrespositieId#4428005')) == str(res)
+
+    def test_get_postadres_by_huisnummer(self):
+        res = self.crab.get_postadres_by_huisnummer(1)
+        assert res == 'Steenweg op Oosthoven 51, 2300 Turnhout'
+        assert str(self.crab.caches['short'].get('GetPostadresByHuisnummerId#1')) == str(res)
+
+    def test_get_postadres_by_subadres(self):
+        res = self.crab.get_postadres_by_subadres(1120936)
+        assert res == 'Antoon van Brabantstraat 7 bus B, 2630 Aartselaar'
+        assert str(self.crab.caches['short'].get('GetPostadresBySubadresId#1120936')) == str(res)

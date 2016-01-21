@@ -1389,6 +1389,58 @@ class CrabGateway(object):
         adrespositie.set_gateway(self)
         return adrespositie
 
+    def get_postadres_by_huisnummer(self, huisnummer):
+        '''
+        Get the `postadres` for a :class:`Huisnummer`.
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `postadres` is wanted. OR A huisnummer id.
+        :rtype: A :class:`str`.
+        '''
+        try:
+            id = huisnummer.id
+        except AttributeError:
+            id = huisnummer
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'GetPostadresByHuisnummerId', id
+            )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
+            return res.Postadres
+        if self.caches['short'].is_configured:
+            key = 'GetPostadresByHuisnummerId#%s' % (id)
+            postadres = self.caches['short'].get_or_create(key, creator)
+        else:
+            postadres = creator()
+        return postadres
+
+    def get_postadres_by_subadres(self, subadres):
+        '''
+        Get the `postadres` for a :class:`Subadres`.
+
+        :param subadres: The :class:`Subadres` for which the \
+            `postadres` is wanted. OR A subadres id.
+        :rtype: A :class:`str`.
+        '''
+        try:
+            id = subadres.id
+        except AttributeError:
+            id = subadres
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'GetPostadresBySubadresId', id
+            )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
+            return res.Postadres
+        if self.caches['short'].is_configured:
+            key = 'GetPostadresBySubadresId#%s' % (id)
+            postadres = self.caches['short'].get_or_create(key, creator)
+        else:
+            postadres = creator()
+        return postadres
+
 
 class GatewayObject(object):
     '''
@@ -1984,15 +2036,23 @@ class Huisnummer(GatewayObject):
         return [mini[0], mini[1], maxi[0], maxi[1]]
 
     @property
+    def postadres(self):
+        self.check_gateway()
+        return self.gateway.get_postadres_by_huisnummer(self.id)
+
+    @property
     def gebouwen(self):
+        self.check_gateway()
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
 
     @property
     def subadressen(self):
+        self.check_gateway()
         return self.gateway.list_subadressen_by_huisnummer(self.id)
 
     @property
     def adresposities(self):
+        self.check_gateway()
         return self.gateway.list_adresposities_by_huisnummer(self.id)
 
     def __unicode__(self):
@@ -2476,9 +2536,14 @@ class Subadres(GatewayObject):
         return self._aard
 
     @property
-    def adresposities(self):
-        return self.gateway.list_adresposities_by_subadres(self.id)
+    def postadres(self):
+        self.check_gateway()
+        return self.gateway.get_postadres_by_subadres(self.id)
 
+    @property
+    def adresposities(self):
+        self.check_gateway()
+        return self.gateway.list_adresposities_by_subadres(self.id)
 
     def __unicode__(self):
         return "%s (%s)" % (self.subadres, self.id)
