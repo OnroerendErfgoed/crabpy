@@ -2352,6 +2352,10 @@ class Perceel(GatewayObject):
         self.check_gateway()
         return self.gateway.list_huisnummers_by_perceel(self.id)
 
+    @property
+    def postadressen(self):
+        return [h.postadres for h in self.huisnummers]
+
     def __unicode__(self):
         return "Perceel %s" % (self.id)
 

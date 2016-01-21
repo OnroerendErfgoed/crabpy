@@ -1634,6 +1634,22 @@ class TestPerceel:
         assert isinstance(hnrs, list)
         assert [h.id for h in hnrs] == [h.id for h in crab.list_huisnummers_by_perceel('13040C1747/00G002')]
 
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--crab-integration'),
+        reason='No CRAB Integration tests required'
+    )
+    def test_postadressen(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        p = crab.get_perceel_by_id('13040C1747/00G002')
+        postadressen = p.postadressen
+        assert isinstance(postadressen, list)
+        assert [
+            'Steenweg op Oosthoven 51, 2300 Turnhout',
+            'Steenweg op Oosthoven 53, 2300 Turnhout'
+        ] == postadressen
+
 
 class GebouwTest:
     def test_fully_initialised(self):
