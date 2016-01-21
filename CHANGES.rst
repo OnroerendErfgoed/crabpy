@@ -1,3 +1,9 @@
+0.7.0 (??-??-2016)
+------------------
+
+- Add official support for python 3.5
+- Implement list_huisnummers_by_perceel. (#56)
+
 0.6.0 (01-06-2015)
 ------------------
 
