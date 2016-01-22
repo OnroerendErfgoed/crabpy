@@ -15,8 +15,8 @@ from crabpy.gateway.exception import (
 )
 
 from crabpy.gateway.crab import (
-    CrabGateway, Gewest,
-    Gemeente, Taal,
+    CrabGateway, Gewest, Provincie,
+    Gemeente, Deelgemeente, Taal,
     Bewerking, Organisatie,
     Aardsubadres, Aardadres,
     Aardgebouw, Aardwegobject,
@@ -28,7 +28,7 @@ from crabpy.gateway.crab import (
     Huisnummer, Postkanton,
     Wegobject, Wegsegment,
     Terreinobject, Perceel,
-    Gebouw, Metadata, Provincie, Subadres,
+    Gebouw, Metadata, Subadres,
     Adrespositie
 )
 
@@ -775,6 +775,37 @@ class TestGemeente:
         provincie = g.provincie
         assert isinstance(provincie, Provincie)
         assert 10000 == provincie.id
+
+
+class TestDeelgemeente:
+
+    def test_fully_initialised(self):
+        dg = Deelgemeente('45062A', 'Sint-Maria-Horebeke', 45062)
+        assert dg.niscode == '45062A'
+        assert dg.id == '45062A'
+        assert dg.naam == 'Sint-Maria-Horebeke'
+        assert 'Sint-Maria-Horebeke (45062A)' == str(dg)
+        assert "Deelgemeente('45062A', 'Sint-Maria-Horebeke', 45062)" == repr(dg)
+
+    def test_check_gateway_not_set(self):
+        dg = Deelgemeente('45062A', 'Sint-Maria-Horebeke', 45062)
+        with pytest.raises(RuntimeError):
+            dg.check_gateway()
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--crab-integration'),
+        reason='No CRAB Integration tests required'
+    )
+    def test_gemeente(self):
+        crab = CrabGateway(
+            crab_factory()
+        )
+        dg = Deelgemeente('45062A', 'Sint-Maria-Horebeke', 45062)
+        dg.set_gateway(crab)
+        gemeente = dg.gemeente
+        assert isinstance(gemeente, Gemeente)
+        assert gemeente.niscode == 45062
+        assert gemeente.naam == 'Horebeke'
 
 
 class TestTaal:

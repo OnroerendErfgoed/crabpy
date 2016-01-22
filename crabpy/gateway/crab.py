@@ -1705,6 +1705,42 @@ class Gemeente(GatewayObject):
         return "Gemeente(%s, '%s', %s)" % (self.id, self.naam, self.niscode)
 
 
+class Deelgemeente(GatewayObject):
+    '''
+    A subdivision of a :class:`Gemeente`.
+
+    .. versionadded:: 0.7.0
+    '''
+    def __init__(
+        self, niscode, naam, gemeente_niscode, **kwargs
+    ):
+        self.id = self.niscode = niscode
+        self.naam = naam
+        self.gemeente_niscode = gemeente_niscode
+
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+
+    def clear_gateway(self):
+        '''
+        Clear the currently set CrabGateway.
+        '''
+        self.gateway = None
+
+    @property
+    def gemeente(self):
+        return self.gateway.get_gemeente_by_niscode(self.gemeente_niscode)
+
+    def __unicode__(self):
+        return "%s (%s)" % (self.naam, self.niscode)
+
+    def __repr__(self):
+        return "Deelgemeente('%s', '%s', %s)" % (self.niscode, self.naam, self.gemeente_niscode)
+
+
 class Codelijst(GatewayObject):
     def __init__(
             self, id, naam, definitie, **kwargs
