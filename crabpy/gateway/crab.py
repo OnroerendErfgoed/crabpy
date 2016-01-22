@@ -95,7 +95,6 @@ class CrabGateway(object):
                 'gemeente_niscode': int(dg['gemeente_id'])
             } for dg in deelgemeenten_json
         }
-        log.debug(self.deelgemeenten)
 
     def list_gewesten(self, sort=1):
         '''
@@ -2769,7 +2768,6 @@ class Adrespositie(GatewayObject):
     def aard(self):
         if self._aard is None:
             res = self.gateway.list_aardadressen()
-            log.debug(res)
             for aard in res:
                 if int(aard.id) == int(self.aard_id):
                     self._aard = aard
