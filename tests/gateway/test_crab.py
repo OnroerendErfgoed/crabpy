@@ -809,7 +809,6 @@ class TestDeelgemeente:
 
     def test_fully_initialised(self):
         dg = Deelgemeente('45062A', 'Sint-Maria-Horebeke', 45062)
-        assert dg.niscode == '45062A'
         assert dg.id == '45062A'
         assert dg.naam == 'Sint-Maria-Horebeke'
         assert 'Sint-Maria-Horebeke (45062A)' == str(dg)
