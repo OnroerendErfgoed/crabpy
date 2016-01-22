@@ -1,0 +1,6800 @@
+[
+    {
+        "deelgemeente_id": "11001A", 
+        "deelgemeente_naam": "Aartselaar", 
+        "gemeente_id": "11001", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002A", 
+        "deelgemeente_naam": "Antwerpen", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002B", 
+        "deelgemeente_naam": "Lillo", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002K", 
+        "deelgemeente_naam": "Berendrecht", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002L", 
+        "deelgemeente_naam": "Zandvliet", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002P", 
+        "deelgemeente_naam": "Ekeren", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002Q", 
+        "deelgemeente_naam": "Merksem", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002R", 
+        "deelgemeente_naam": "Deurne", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002S", 
+        "deelgemeente_naam": "Borgerhout", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002T", 
+        "deelgemeente_naam": "Berchem", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002U", 
+        "deelgemeente_naam": "Wilrijk", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11002V", 
+        "deelgemeente_naam": "Hoboken", 
+        "gemeente_id": "11002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11004A", 
+        "deelgemeente_naam": "Boechout", 
+        "gemeente_id": "11004", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11004B", 
+        "deelgemeente_naam": "Vremde", 
+        "gemeente_id": "11004", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11005A", 
+        "deelgemeente_naam": "Boom", 
+        "gemeente_id": "11005", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11007A", 
+        "deelgemeente_naam": "Borsbeek", 
+        "gemeente_id": "11007", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11008A", 
+        "deelgemeente_naam": "Brasschaat", 
+        "gemeente_id": "11008", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11009A", 
+        "deelgemeente_naam": "Brecht", 
+        "gemeente_id": "11009", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11009B", 
+        "deelgemeente_naam": "Sint-Lenaarts", 
+        "gemeente_id": "11009", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11009C", 
+        "deelgemeente_naam": "Sint-Job-in-'t Goor", 
+        "gemeente_id": "11009", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11013A", 
+        "deelgemeente_naam": "Edegem", 
+        "gemeente_id": "11013", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11016A", 
+        "deelgemeente_naam": "Essen", 
+        "gemeente_id": "11016", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11018A", 
+        "deelgemeente_naam": "Hemiksem", 
+        "gemeente_id": "11018", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11021A", 
+        "deelgemeente_naam": "Hove", 
+        "gemeente_id": "11021", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11022A", 
+        "deelgemeente_naam": "Kalmthout", 
+        "gemeente_id": "11022", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11023A", 
+        "deelgemeente_naam": "Kapellen", 
+        "gemeente_id": "11023", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11024A", 
+        "deelgemeente_naam": "Kontich", 
+        "gemeente_id": "11024", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11024B", 
+        "deelgemeente_naam": "Waarloos", 
+        "gemeente_id": "11024", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11025A", 
+        "deelgemeente_naam": "Lint", 
+        "gemeente_id": "11025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11029A", 
+        "deelgemeente_naam": "Mortsel", 
+        "gemeente_id": "11029", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11030A", 
+        "deelgemeente_naam": "Niel", 
+        "gemeente_id": "11030", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11035A", 
+        "deelgemeente_naam": "Ranst", 
+        "gemeente_id": "11035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11035B", 
+        "deelgemeente_naam": "Oelegem", 
+        "gemeente_id": "11035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11035C", 
+        "deelgemeente_naam": "Broechem", 
+        "gemeente_id": "11035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11035D", 
+        "deelgemeente_naam": "Emblem", 
+        "gemeente_id": "11035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11037A", 
+        "deelgemeente_naam": "Rumst", 
+        "gemeente_id": "11037", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11037B", 
+        "deelgemeente_naam": "Terhagen", 
+        "gemeente_id": "11037", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11037C", 
+        "deelgemeente_naam": "Reet", 
+        "gemeente_id": "11037", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11038A", 
+        "deelgemeente_naam": "Schelle", 
+        "gemeente_id": "11038", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11039A", 
+        "deelgemeente_naam": "Schilde", 
+        "gemeente_id": "11039", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11039B", 
+        "deelgemeente_naam": "'s Gravenwezel", 
+        "gemeente_id": "11039", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11040A", 
+        "deelgemeente_naam": "Schoten", 
+        "gemeente_id": "11040", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11044A", 
+        "deelgemeente_naam": "Stabroek", 
+        "gemeente_id": "11044", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11044B", 
+        "deelgemeente_naam": "Hoevenen", 
+        "gemeente_id": "11044", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11050A", 
+        "deelgemeente_naam": "Wijnegem", 
+        "gemeente_id": "11050", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11052A", 
+        "deelgemeente_naam": "Wommelgem", 
+        "gemeente_id": "11052", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11053A", 
+        "deelgemeente_naam": "Wuustwezel", 
+        "gemeente_id": "11053", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11053B", 
+        "deelgemeente_naam": "Loenhout", 
+        "gemeente_id": "11053", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11054A", 
+        "deelgemeente_naam": "Zandhoven", 
+        "gemeente_id": "11054", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11054B", 
+        "deelgemeente_naam": "Pulderbos", 
+        "gemeente_id": "11054", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11054C", 
+        "deelgemeente_naam": "Pulle", 
+        "gemeente_id": "11054", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11054D", 
+        "deelgemeente_naam": "Viersel", 
+        "gemeente_id": "11054", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11054E", 
+        "deelgemeente_naam": "Massenhoven", 
+        "gemeente_id": "11054", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11055A", 
+        "deelgemeente_naam": "Zoersel", 
+        "gemeente_id": "11055", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11055B", 
+        "deelgemeente_naam": "Halle", 
+        "gemeente_id": "11055", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11056A", 
+        "deelgemeente_naam": "Zwijndrecht", 
+        "gemeente_id": "11056", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11056B", 
+        "deelgemeente_naam": "Burcht", 
+        "gemeente_id": "11056", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11057A", 
+        "deelgemeente_naam": "Westmalle", 
+        "gemeente_id": "11057", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "11057B", 
+        "deelgemeente_naam": "Oostmalle", 
+        "gemeente_id": "11057", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12002A", 
+        "deelgemeente_naam": "Berlaar", 
+        "gemeente_id": "12002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12005A", 
+        "deelgemeente_naam": "Bonheiden", 
+        "gemeente_id": "12005", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12005B", 
+        "deelgemeente_naam": "Rijmenam", 
+        "gemeente_id": "12005", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12007A", 
+        "deelgemeente_naam": "Bornem", 
+        "gemeente_id": "12007", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12007B", 
+        "deelgemeente_naam": "Hingene", 
+        "gemeente_id": "12007", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12007C", 
+        "deelgemeente_naam": "Mariekerke", 
+        "gemeente_id": "12007", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12007D", 
+        "deelgemeente_naam": "Weert", 
+        "gemeente_id": "12007", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12009A", 
+        "deelgemeente_naam": "Duffel", 
+        "gemeente_id": "12009", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12014A", 
+        "deelgemeente_naam": "Heist-op-den-Berg", 
+        "gemeente_id": "12014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12014B", 
+        "deelgemeente_naam": "Hallaar", 
+        "gemeente_id": "12014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12014C", 
+        "deelgemeente_naam": "Itegem", 
+        "gemeente_id": "12014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12014D", 
+        "deelgemeente_naam": "Wiekevorst", 
+        "gemeente_id": "12014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12014E", 
+        "deelgemeente_naam": "Booischot", 
+        "gemeente_id": "12014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12014F", 
+        "deelgemeente_naam": "Schriek", 
+        "gemeente_id": "12014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12021A", 
+        "deelgemeente_naam": "Lier", 
+        "gemeente_id": "12021", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12021B", 
+        "deelgemeente_naam": "Koningshooikt", 
+        "gemeente_id": "12021", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12025A", 
+        "deelgemeente_naam": "Mechelen", 
+        "gemeente_id": "12025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12025B", 
+        "deelgemeente_naam": "Hombeek", 
+        "gemeente_id": "12025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12025C", 
+        "deelgemeente_naam": "Leest", 
+        "gemeente_id": "12025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12025D", 
+        "deelgemeente_naam": "Heffen", 
+        "gemeente_id": "12025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12025E", 
+        "deelgemeente_naam": "Walem", 
+        "gemeente_id": "12025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12025F", 
+        "deelgemeente_naam": "Muizen", 
+        "gemeente_id": "12025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12026A", 
+        "deelgemeente_naam": "Nijlen", 
+        "gemeente_id": "12026", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12026B", 
+        "deelgemeente_naam": "Bevel", 
+        "gemeente_id": "12026", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12026C", 
+        "deelgemeente_naam": "Kessel", 
+        "gemeente_id": "12026", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12029A", 
+        "deelgemeente_naam": "Putte", 
+        "gemeente_id": "12029", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12029B", 
+        "deelgemeente_naam": "Beerzel", 
+        "gemeente_id": "12029", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12030A", 
+        "deelgemeente_naam": "Puurs", 
+        "gemeente_id": "12030", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12030B", 
+        "deelgemeente_naam": "Ruisbroek", 
+        "gemeente_id": "12030", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12030C", 
+        "deelgemeente_naam": "Breendonk", 
+        "gemeente_id": "12030", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12030D", 
+        "deelgemeente_naam": "Liezele", 
+        "gemeente_id": "12030", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12034A", 
+        "deelgemeente_naam": "Sint-Amands", 
+        "gemeente_id": "12034", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12034B", 
+        "deelgemeente_naam": "Oppuurs", 
+        "gemeente_id": "12034", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12034C", 
+        "deelgemeente_naam": "Lippelo", 
+        "gemeente_id": "12034", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12035A", 
+        "deelgemeente_naam": "Sint-Katelijne-Waver", 
+        "gemeente_id": "12035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12035B", 
+        "deelgemeente_naam": "Onze-Lieve-Vrouw-Waver", 
+        "gemeente_id": "12035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12040A", 
+        "deelgemeente_naam": "Willebroek", 
+        "gemeente_id": "12040", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12040B", 
+        "deelgemeente_naam": "Heindonk", 
+        "gemeente_id": "12040", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12040C", 
+        "deelgemeente_naam": "Blaasveld", 
+        "gemeente_id": "12040", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "12040D", 
+        "deelgemeente_naam": "Tisselt", 
+        "gemeente_id": "12040", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13001A", 
+        "deelgemeente_naam": "Arendonk", 
+        "gemeente_id": "13001", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13002A", 
+        "deelgemeente_naam": "Baarle-Hertog", 
+        "gemeente_id": "13002", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13003A", 
+        "deelgemeente_naam": "Balen", 
+        "gemeente_id": "13003", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13003B", 
+        "deelgemeente_naam": "Olmen", 
+        "gemeente_id": "13003", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13004A", 
+        "deelgemeente_naam": "Beerse", 
+        "gemeente_id": "13004", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13004B", 
+        "deelgemeente_naam": "Vlimmeren", 
+        "gemeente_id": "13004", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13006A", 
+        "deelgemeente_naam": "Dessel", 
+        "gemeente_id": "13006", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13008A", 
+        "deelgemeente_naam": "Geel", 
+        "gemeente_id": "13008", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13010A", 
+        "deelgemeente_naam": "Grobbendonk", 
+        "gemeente_id": "13010", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13010B", 
+        "deelgemeente_naam": "Bouwel", 
+        "gemeente_id": "13010", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13011A", 
+        "deelgemeente_naam": "Herentals", 
+        "gemeente_id": "13011", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13011B", 
+        "deelgemeente_naam": "Noorderwijk", 
+        "gemeente_id": "13011", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13011C", 
+        "deelgemeente_naam": "Morkhoven", 
+        "gemeente_id": "13011", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13012A", 
+        "deelgemeente_naam": "Herenthout", 
+        "gemeente_id": "13012", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13013A", 
+        "deelgemeente_naam": "Herselt", 
+        "gemeente_id": "13013", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13013B", 
+        "deelgemeente_naam": "Ramsel", 
+        "gemeente_id": "13013", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13014A", 
+        "deelgemeente_naam": "Hoogstraten", 
+        "gemeente_id": "13014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13014B", 
+        "deelgemeente_naam": "Minderhout", 
+        "gemeente_id": "13014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13014C", 
+        "deelgemeente_naam": "Meer", 
+        "gemeente_id": "13014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13014D", 
+        "deelgemeente_naam": "Meerle", 
+        "gemeente_id": "13014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13014E", 
+        "deelgemeente_naam": "Wortel", 
+        "gemeente_id": "13014", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13016A", 
+        "deelgemeente_naam": "Hulshout", 
+        "gemeente_id": "13016", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13016B", 
+        "deelgemeente_naam": "Westmeerbeek", 
+        "gemeente_id": "13016", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13016C", 
+        "deelgemeente_naam": "Houtvenne", 
+        "gemeente_id": "13016", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13017A", 
+        "deelgemeente_naam": "Kasterlee", 
+        "gemeente_id": "13017", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13017B", 
+        "deelgemeente_naam": "Lichtaart", 
+        "gemeente_id": "13017", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13017C", 
+        "deelgemeente_naam": "Tielen", 
+        "gemeente_id": "13017", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13019A", 
+        "deelgemeente_naam": "Lille", 
+        "gemeente_id": "13019", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13019B", 
+        "deelgemeente_naam": "Wechelderzande", 
+        "gemeente_id": "13019", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13019C", 
+        "deelgemeente_naam": "Gierle", 
+        "gemeente_id": "13019", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13019D", 
+        "deelgemeente_naam": "Poederlee", 
+        "gemeente_id": "13019", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13021A", 
+        "deelgemeente_naam": "Meerhout", 
+        "gemeente_id": "13021", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13023A", 
+        "deelgemeente_naam": "Merksplas", 
+        "gemeente_id": "13023", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13025A", 
+        "deelgemeente_naam": "Mol", 
+        "gemeente_id": "13025", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13029A", 
+        "deelgemeente_naam": "Olen", 
+        "gemeente_id": "13029", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13031A", 
+        "deelgemeente_naam": "Oud-Turnhout", 
+        "gemeente_id": "13031", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13035A", 
+        "deelgemeente_naam": "Ravels", 
+        "gemeente_id": "13035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13035B", 
+        "deelgemeente_naam": "Weelde", 
+        "gemeente_id": "13035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13035C", 
+        "deelgemeente_naam": "Poppel", 
+        "gemeente_id": "13035", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13036A", 
+        "deelgemeente_naam": "Retie", 
+        "gemeente_id": "13036", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13037A", 
+        "deelgemeente_naam": "Rijkevorsel", 
+        "gemeente_id": "13037", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13040A", 
+        "deelgemeente_naam": "Turnhout", 
+        "gemeente_id": "13040", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13044A", 
+        "deelgemeente_naam": "Vorselaar", 
+        "gemeente_id": "13044", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13046A", 
+        "deelgemeente_naam": "Vosselaar", 
+        "gemeente_id": "13046", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13049A", 
+        "deelgemeente_naam": "Westerlo", 
+        "gemeente_id": "13049", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13049B", 
+        "deelgemeente_naam": "Tongerlo", 
+        "gemeente_id": "13049", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13049C", 
+        "deelgemeente_naam": "Zoerle-Parwijs", 
+        "gemeente_id": "13049", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13049D", 
+        "deelgemeente_naam": "Oevel", 
+        "gemeente_id": "13049", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13053A", 
+        "deelgemeente_naam": "Veerle", 
+        "gemeente_id": "13053", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13053B", 
+        "deelgemeente_naam": "Varendonk", 
+        "gemeente_id": "13053", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13053C", 
+        "deelgemeente_naam": "Eindhout", 
+        "gemeente_id": "13053", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "13053D", 
+        "deelgemeente_naam": "Vorst", 
+        "gemeente_id": "13053", 
+        "provincie_id": "10000"
+    }, 
+    {
+        "deelgemeente_id": "23002A", 
+        "deelgemeente_naam": "Asse", 
+        "gemeente_id": "23002", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23002B", 
+        "deelgemeente_naam": "Mollem", 
+        "gemeente_id": "23002", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23002C", 
+        "deelgemeente_naam": "Kobbegem", 
+        "gemeente_id": "23002", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23002D", 
+        "deelgemeente_naam": "Relegem", 
+        "gemeente_id": "23002", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23002E", 
+        "deelgemeente_naam": "Zellik", 
+        "gemeente_id": "23002", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23002F", 
+        "deelgemeente_naam": "Bekkerzeel", 
+        "gemeente_id": "23002", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23003A", 
+        "deelgemeente_naam": "Beersel", 
+        "gemeente_id": "23003", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23003B", 
+        "deelgemeente_naam": "Alsemberg", 
+        "gemeente_id": "23003", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23003C", 
+        "deelgemeente_naam": "Dworp", 
+        "gemeente_id": "23003", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23003D", 
+        "deelgemeente_naam": "Huizingen", 
+        "gemeente_id": "23003", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23003E", 
+        "deelgemeente_naam": "Lot", 
+        "gemeente_id": "23003", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23009A", 
+        "deelgemeente_naam": "Bever", 
+        "gemeente_id": "23009", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23016A", 
+        "deelgemeente_naam": "Dilbeek", 
+        "gemeente_id": "23016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23016B", 
+        "deelgemeente_naam": "Sint-Ulriks-Kapelle", 
+        "gemeente_id": "23016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23016C", 
+        "deelgemeente_naam": "Groot-Bijgaarden", 
+        "gemeente_id": "23016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23016D", 
+        "deelgemeente_naam": "Itterbeek", 
+        "gemeente_id": "23016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23016E", 
+        "deelgemeente_naam": "Schepdaal", 
+        "gemeente_id": "23016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23016F", 
+        "deelgemeente_naam": "Sint-Martens-Bodegem", 
+        "gemeente_id": "23016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23023A", 
+        "deelgemeente_naam": "Galmaarden", 
+        "gemeente_id": "23023", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23023B", 
+        "deelgemeente_naam": "Vollezele", 
+        "gemeente_id": "23023", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23023C", 
+        "deelgemeente_naam": "Tollembeek", 
+        "gemeente_id": "23023", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23024A", 
+        "deelgemeente_naam": "Gooik", 
+        "gemeente_id": "23024", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23024B", 
+        "deelgemeente_naam": "Leerbeek", 
+        "gemeente_id": "23024", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23024C", 
+        "deelgemeente_naam": "Oetingen", 
+        "gemeente_id": "23024", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23024D", 
+        "deelgemeente_naam": "Kester", 
+        "gemeente_id": "23024", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23025A", 
+        "deelgemeente_naam": "Grimbergen", 
+        "gemeente_id": "23025", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23025B", 
+        "deelgemeente_naam": "Strombeek - Bever", 
+        "gemeente_id": "23025", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23025C", 
+        "deelgemeente_naam": "Beigem", 
+        "gemeente_id": "23025", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23025D", 
+        "deelgemeente_naam": "Humbeek", 
+        "gemeente_id": "23025", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23027A", 
+        "deelgemeente_naam": "Halle", 
+        "gemeente_id": "23027", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23027B", 
+        "deelgemeente_naam": "Buizingen", 
+        "gemeente_id": "23027", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23027C", 
+        "deelgemeente_naam": "Lembeek", 
+        "gemeente_id": "23027", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23032A", 
+        "deelgemeente_naam": "Herne", 
+        "gemeente_id": "23032", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23032B", 
+        "deelgemeente_naam": "Herfelingen", 
+        "gemeente_id": "23032", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23032C", 
+        "deelgemeente_naam": "Sint-Pieters-Kapelle", 
+        "gemeente_id": "23032", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23033A", 
+        "deelgemeente_naam": "Hoeilaart", 
+        "gemeente_id": "23033", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23038A", 
+        "deelgemeente_naam": "Kampenhout", 
+        "gemeente_id": "23038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23038B", 
+        "deelgemeente_naam": "Buken", 
+        "gemeente_id": "23038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23038C", 
+        "deelgemeente_naam": "Nederokkerzeel", 
+        "gemeente_id": "23038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23038D", 
+        "deelgemeente_naam": "Berg", 
+        "gemeente_id": "23038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23039A", 
+        "deelgemeente_naam": "Kapelle-op-den-Bos", 
+        "gemeente_id": "23039", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23039B", 
+        "deelgemeente_naam": "Nieuwenrode", 
+        "gemeente_id": "23039", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23039C", 
+        "deelgemeente_naam": "Ramsdonk", 
+        "gemeente_id": "23039", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23044A", 
+        "deelgemeente_naam": "Liedekerke", 
+        "gemeente_id": "23044", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23045A", 
+        "deelgemeente_naam": "Londerzeel", 
+        "gemeente_id": "23045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23045B", 
+        "deelgemeente_naam": "Malderen", 
+        "gemeente_id": "23045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23045C", 
+        "deelgemeente_naam": "Steenhuffel", 
+        "gemeente_id": "23045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23047A", 
+        "deelgemeente_naam": "Machelen", 
+        "gemeente_id": "23047", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23047B", 
+        "deelgemeente_naam": "Diegem", 
+        "gemeente_id": "23047", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23050A", 
+        "deelgemeente_naam": "Meise", 
+        "gemeente_id": "23050", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23050B", 
+        "deelgemeente_naam": "Wolvertem", 
+        "gemeente_id": "23050", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23052A", 
+        "deelgemeente_naam": "Merchtem", 
+        "gemeente_id": "23052", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23052B", 
+        "deelgemeente_naam": "Brussegem", 
+        "gemeente_id": "23052", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23052C", 
+        "deelgemeente_naam": "Hamme", 
+        "gemeente_id": "23052", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23060A", 
+        "deelgemeente_naam": "Opwijk", 
+        "gemeente_id": "23060", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23060B", 
+        "deelgemeente_naam": "Mazenzele", 
+        "gemeente_id": "23060", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23062A", 
+        "deelgemeente_naam": "Overijse", 
+        "gemeente_id": "23062", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23064A", 
+        "deelgemeente_naam": "Pepingen", 
+        "gemeente_id": "23064", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23064B", 
+        "deelgemeente_naam": "Elingen", 
+        "gemeente_id": "23064", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23064C", 
+        "deelgemeente_naam": "Beert", 
+        "gemeente_id": "23064", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23064D", 
+        "deelgemeente_naam": "Bellingen", 
+        "gemeente_id": "23064", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23064E", 
+        "deelgemeente_naam": "Bogaarden", 
+        "gemeente_id": "23064", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23064F", 
+        "deelgemeente_naam": "Heikruis", 
+        "gemeente_id": "23064", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23077A", 
+        "deelgemeente_naam": "Sint-Pieters-Leeuw", 
+        "gemeente_id": "23077", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23077B", 
+        "deelgemeente_naam": "Oudenaken", 
+        "gemeente_id": "23077", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23077C", 
+        "deelgemeente_naam": "Sint-Laureins-Berchem", 
+        "gemeente_id": "23077", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23077D", 
+        "deelgemeente_naam": "Vlezenbeek", 
+        "gemeente_id": "23077", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23077E", 
+        "deelgemeente_naam": "Ruisbroek", 
+        "gemeente_id": "23077", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23081A", 
+        "deelgemeente_naam": "Steenokkerzeel", 
+        "gemeente_id": "23081", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23081B", 
+        "deelgemeente_naam": "Melsbroek", 
+        "gemeente_id": "23081", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23081C", 
+        "deelgemeente_naam": "Perk", 
+        "gemeente_id": "23081", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23086A", 
+        "deelgemeente_naam": "Ternat", 
+        "gemeente_id": "23086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23086B", 
+        "deelgemeente_naam": "Wambeek", 
+        "gemeente_id": "23086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23086C", 
+        "deelgemeente_naam": "Sint-Katherina-Lombeek", 
+        "gemeente_id": "23086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23088A", 
+        "deelgemeente_naam": "Vilvoorde", 
+        "gemeente_id": "23088", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23088B", 
+        "deelgemeente_naam": "Peutie", 
+        "gemeente_id": "23088", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23094A", 
+        "deelgemeente_naam": "Zaventem", 
+        "gemeente_id": "23094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23094B", 
+        "deelgemeente_naam": "Nossegem", 
+        "gemeente_id": "23094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23094C", 
+        "deelgemeente_naam": "Sterrebeek", 
+        "gemeente_id": "23094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23094D", 
+        "deelgemeente_naam": "Sint-Stevens-Woluwe", 
+        "gemeente_id": "23094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23096A", 
+        "deelgemeente_naam": "Zemst", 
+        "gemeente_id": "23096", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23096B", 
+        "deelgemeente_naam": "Hofstade", 
+        "gemeente_id": "23096", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23096C", 
+        "deelgemeente_naam": "Weerde", 
+        "gemeente_id": "23096", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23096D", 
+        "deelgemeente_naam": "Elewijt", 
+        "gemeente_id": "23096", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23096E", 
+        "deelgemeente_naam": "Eppegem", 
+        "gemeente_id": "23096", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23097A", 
+        "deelgemeente_naam": "Roosdaal", 
+        "gemeente_id": "23097", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23097B", 
+        "deelgemeente_naam": "Borchtlombeek", 
+        "gemeente_id": "23097", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23097C", 
+        "deelgemeente_naam": "Onze-Lieve-Vrouw-Lombeek", 
+        "gemeente_id": "23097", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23097D", 
+        "deelgemeente_naam": "Pamel", 
+        "gemeente_id": "23097", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23097E", 
+        "deelgemeente_naam": "Strijtem", 
+        "gemeente_id": "23097", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23098A", 
+        "deelgemeente_naam": "Drogenbos", 
+        "gemeente_id": "23098", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23099A", 
+        "deelgemeente_naam": "Kraainem", 
+        "gemeente_id": "23099", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23100A", 
+        "deelgemeente_naam": "Linkebeek", 
+        "gemeente_id": "23100", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23101A", 
+        "deelgemeente_naam": "Sint-Genesius-Rode", 
+        "gemeente_id": "23101", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23102A", 
+        "deelgemeente_naam": "Wemmel", 
+        "gemeente_id": "23102", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23103A", 
+        "deelgemeente_naam": "Wezembeek-Oppem", 
+        "gemeente_id": "23103", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23104A", 
+        "deelgemeente_naam": "Sint-Kwintens-Lennik", 
+        "gemeente_id": "23104", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23104B", 
+        "deelgemeente_naam": "Sint-Martens-Lennik", 
+        "gemeente_id": "23104", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23104C", 
+        "deelgemeente_naam": "Gaasbeek", 
+        "gemeente_id": "23104", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23105A", 
+        "deelgemeente_naam": "Hekelgem", 
+        "gemeente_id": "23105", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23105B", 
+        "deelgemeente_naam": "Essene", 
+        "gemeente_id": "23105", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "23105C", 
+        "deelgemeente_naam": "Teralfene", 
+        "gemeente_id": "23105", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24001A", 
+        "deelgemeente_naam": "Aarschot", 
+        "gemeente_id": "24001", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24001B", 
+        "deelgemeente_naam": "Langdorp", 
+        "gemeente_id": "24001", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24001C", 
+        "deelgemeente_naam": "Rillaar", 
+        "gemeente_id": "24001", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24001D", 
+        "deelgemeente_naam": "Gelrode", 
+        "gemeente_id": "24001", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24007A", 
+        "deelgemeente_naam": "Begijnendijk", 
+        "gemeente_id": "24007", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24007B", 
+        "deelgemeente_naam": "Betekom", 
+        "gemeente_id": "24007", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24008A", 
+        "deelgemeente_naam": "Bekkevoort", 
+        "gemeente_id": "24008", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24008B", 
+        "deelgemeente_naam": "Assent", 
+        "gemeente_id": "24008", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24008C", 
+        "deelgemeente_naam": "Molenbeek - Wersbeek", 
+        "gemeente_id": "24008", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24009A", 
+        "deelgemeente_naam": "Bertem", 
+        "gemeente_id": "24009", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24009B", 
+        "deelgemeente_naam": "Korbeek-dijle", 
+        "gemeente_id": "24009", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24009C", 
+        "deelgemeente_naam": "Leefdaal", 
+        "gemeente_id": "24009", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24011A", 
+        "deelgemeente_naam": "Bierbeek", 
+        "gemeente_id": "24011", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24011B", 
+        "deelgemeente_naam": "Korbeek-Lo", 
+        "gemeente_id": "24011", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24011C", 
+        "deelgemeente_naam": "Lovenjoel", 
+        "gemeente_id": "24011", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24011D", 
+        "deelgemeente_naam": "Opvelp", 
+        "gemeente_id": "24011", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24014A", 
+        "deelgemeente_naam": "Boortmeerbeek", 
+        "gemeente_id": "24014", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24014B", 
+        "deelgemeente_naam": "Hever", 
+        "gemeente_id": "24014", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24016A", 
+        "deelgemeente_naam": "Boutersem", 
+        "gemeente_id": "24016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24016B", 
+        "deelgemeente_naam": "Kerkom", 
+        "gemeente_id": "24016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24016C", 
+        "deelgemeente_naam": "Roosbeek", 
+        "gemeente_id": "24016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24016D", 
+        "deelgemeente_naam": "Neervelp", 
+        "gemeente_id": "24016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24016E", 
+        "deelgemeente_naam": "Vertrijk", 
+        "gemeente_id": "24016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24016G", 
+        "deelgemeente_naam": "Willebringen", 
+        "gemeente_id": "24016", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24020A", 
+        "deelgemeente_naam": "Diest", 
+        "gemeente_id": "24020", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24020B", 
+        "deelgemeente_naam": "Webbekom", 
+        "gemeente_id": "24020", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24020C", 
+        "deelgemeente_naam": "Kaggevinne", 
+        "gemeente_id": "24020", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24020D", 
+        "deelgemeente_naam": "Molenstede", 
+        "gemeente_id": "24020", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24020E", 
+        "deelgemeente_naam": "Schaffen", 
+        "gemeente_id": "24020", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24020F", 
+        "deelgemeente_naam": "Deurne", 
+        "gemeente_id": "24020", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24028A", 
+        "deelgemeente_naam": "Geetbets", 
+        "gemeente_id": "24028", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24028B", 
+        "deelgemeente_naam": "Rummen", 
+        "gemeente_id": "24028", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24028C", 
+        "deelgemeente_naam": "Grazen", 
+        "gemeente_id": "24028", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24033A", 
+        "deelgemeente_naam": "Haacht", 
+        "gemeente_id": "24033", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24033B", 
+        "deelgemeente_naam": "Tildonk", 
+        "gemeente_id": "24033", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24033C", 
+        "deelgemeente_naam": "Wespelaar", 
+        "gemeente_id": "24033", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24038A", 
+        "deelgemeente_naam": "Herent", 
+        "gemeente_id": "24038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24038B", 
+        "deelgemeente_naam": "Winksele", 
+        "gemeente_id": "24038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24038C", 
+        "deelgemeente_naam": "Veltem-Beisem", 
+        "gemeente_id": "24038", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24041A", 
+        "deelgemeente_naam": "Hoegaarden", 
+        "gemeente_id": "24041", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24041B", 
+        "deelgemeente_naam": "Meldert", 
+        "gemeente_id": "24041", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24041C", 
+        "deelgemeente_naam": "Outgaarden", 
+        "gemeente_id": "24041", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24043A", 
+        "deelgemeente_naam": "Holsbeek", 
+        "gemeente_id": "24043", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24043B", 
+        "deelgemeente_naam": "Kortrijk-Dutsel", 
+        "gemeente_id": "24043", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24043C", 
+        "deelgemeente_naam": "Nieuwrode", 
+        "gemeente_id": "24043", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24043D", 
+        "deelgemeente_naam": "Sint-Pieters-Rode", 
+        "gemeente_id": "24043", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24045A", 
+        "deelgemeente_naam": "Huldenberg", 
+        "gemeente_id": "24045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24045B", 
+        "deelgemeente_naam": "Loonbeek", 
+        "gemeente_id": "24045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24045C", 
+        "deelgemeente_naam": "Neerijse", 
+        "gemeente_id": "24045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24045D", 
+        "deelgemeente_naam": "Sint-Agatha-Rode", 
+        "gemeente_id": "24045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24045E", 
+        "deelgemeente_naam": "Ottenburg", 
+        "gemeente_id": "24045", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24048A", 
+        "deelgemeente_naam": "Keerbergen", 
+        "gemeente_id": "24048", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24054A", 
+        "deelgemeente_naam": "Kortenaken", 
+        "gemeente_id": "24054", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24054B", 
+        "deelgemeente_naam": "Ransberg", 
+        "gemeente_id": "24054", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24054C", 
+        "deelgemeente_naam": "Hoeleden", 
+        "gemeente_id": "24054", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24054D", 
+        "deelgemeente_naam": "Kersbeek-Miskom", 
+        "gemeente_id": "24054", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24054E", 
+        "deelgemeente_naam": "Waanrode", 
+        "gemeente_id": "24054", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24055A", 
+        "deelgemeente_naam": "Kortenberg", 
+        "gemeente_id": "24055", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24055B", 
+        "deelgemeente_naam": "Erps-Kwerps", 
+        "gemeente_id": "24055", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24055C", 
+        "deelgemeente_naam": "Meerbeek", 
+        "gemeente_id": "24055", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24055D", 
+        "deelgemeente_naam": "Everberg", 
+        "gemeente_id": "24055", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059A", 
+        "deelgemeente_naam": "Landen", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059B", 
+        "deelgemeente_naam": "Rumsdorp", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059C", 
+        "deelgemeente_naam": "Walshoutem", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059D", 
+        "deelgemeente_naam": "Neerwinden", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059E", 
+        "deelgemeente_naam": "Wange", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059F", 
+        "deelgemeente_naam": "Eliksem", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059G", 
+        "deelgemeente_naam": "Ezemaal", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059H", 
+        "deelgemeente_naam": "Laar", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059J", 
+        "deelgemeente_naam": "Overwinden", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059K", 
+        "deelgemeente_naam": "Attenhoven", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059L", 
+        "deelgemeente_naam": "Neerlanden", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059M", 
+        "deelgemeente_naam": "Walsbets", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059N", 
+        "deelgemeente_naam": "Wezeren", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24059P", 
+        "deelgemeente_naam": "Waasmont", 
+        "gemeente_id": "24059", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24062A", 
+        "deelgemeente_naam": "Leuven", 
+        "gemeente_id": "24062", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24062B", 
+        "deelgemeente_naam": "Wilsele", 
+        "gemeente_id": "24062", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24062C", 
+        "deelgemeente_naam": "Kessel-Lo", 
+        "gemeente_id": "24062", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24062D", 
+        "deelgemeente_naam": "Heverlee", 
+        "gemeente_id": "24062", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24066A", 
+        "deelgemeente_naam": "Lubbeek", 
+        "gemeente_id": "24066", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24066B", 
+        "deelgemeente_naam": "Binkom", 
+        "gemeente_id": "24066", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24066C", 
+        "deelgemeente_naam": "Pellenberg", 
+        "gemeente_id": "24066", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24066D", 
+        "deelgemeente_naam": "Linden", 
+        "gemeente_id": "24066", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24086A", 
+        "deelgemeente_naam": "Oud-Heverlee", 
+        "gemeente_id": "24086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24086B", 
+        "deelgemeente_naam": "Vaalbeek", 
+        "gemeente_id": "24086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24086C", 
+        "deelgemeente_naam": "Blanden", 
+        "gemeente_id": "24086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24086D", 
+        "deelgemeente_naam": "Haasrode", 
+        "gemeente_id": "24086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24086E", 
+        "deelgemeente_naam": "Sint-Joris-Weert", 
+        "gemeente_id": "24086", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24094A", 
+        "deelgemeente_naam": "Rotselaar", 
+        "gemeente_id": "24094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24094B", 
+        "deelgemeente_naam": "Werchter", 
+        "gemeente_id": "24094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24094C", 
+        "deelgemeente_naam": "Wezemaal", 
+        "gemeente_id": "24094", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24104A", 
+        "deelgemeente_naam": "Tervuren", 
+        "gemeente_id": "24104", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24104B", 
+        "deelgemeente_naam": "Vossem", 
+        "gemeente_id": "24104", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24104C", 
+        "deelgemeente_naam": "Duisburg", 
+        "gemeente_id": "24104", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107A", 
+        "deelgemeente_naam": "Tienen", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107B", 
+        "deelgemeente_naam": "Oorbeek", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107C", 
+        "deelgemeente_naam": "Bost", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107D", 
+        "deelgemeente_naam": "Kumtich", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107E", 
+        "deelgemeente_naam": "Vissenaken", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107F", 
+        "deelgemeente_naam": "Sint-Margriete-Houtem", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107G", 
+        "deelgemeente_naam": "Oplinter", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107H", 
+        "deelgemeente_naam": "Hakendover", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24107J", 
+        "deelgemeente_naam": "Goetsenhoven", 
+        "gemeente_id": "24107", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24109A", 
+        "deelgemeente_naam": "Tremelo", 
+        "gemeente_id": "24109", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24109B", 
+        "deelgemeente_naam": "Baal", 
+        "gemeente_id": "24109", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24130A", 
+        "deelgemeente_naam": "Zoutleeuw", 
+        "gemeente_id": "24130", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24130B", 
+        "deelgemeente_naam": "Helen-Bos", 
+        "gemeente_id": "24130", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24130C", 
+        "deelgemeente_naam": "Halle-Booienhoven", 
+        "gemeente_id": "24130", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24130D", 
+        "deelgemeente_naam": "Dormaal", 
+        "gemeente_id": "24130", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24130E", 
+        "deelgemeente_naam": "Budingen", 
+        "gemeente_id": "24130", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133A", 
+        "deelgemeente_naam": "Drieslinter", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133B", 
+        "deelgemeente_naam": "Neerlinter", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133C", 
+        "deelgemeente_naam": "Orsmaal-Gussenhoven", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133D", 
+        "deelgemeente_naam": "Melkwezer", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133E", 
+        "deelgemeente_naam": "Neerhespen", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133F", 
+        "deelgemeente_naam": "Overhespen", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24133G", 
+        "deelgemeente_naam": "Wommersom", 
+        "gemeente_id": "24133", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24134A", 
+        "deelgemeente_naam": "Scherpenheuvel", 
+        "gemeente_id": "24134", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24134B", 
+        "deelgemeente_naam": "Zichem", 
+        "gemeente_id": "24134", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24134C", 
+        "deelgemeente_naam": "Messelbroek", 
+        "gemeente_id": "24134", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24134D", 
+        "deelgemeente_naam": "Testelt", 
+        "gemeente_id": "24134", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24134E", 
+        "deelgemeente_naam": "Averbode", 
+        "gemeente_id": "24134", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24135A", 
+        "deelgemeente_naam": "Tielt", 
+        "gemeente_id": "24135", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24135B", 
+        "deelgemeente_naam": "Meensel-Kiezegem", 
+        "gemeente_id": "24135", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24135C", 
+        "deelgemeente_naam": "Sint-Joris-Winge", 
+        "gemeente_id": "24135", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24135D", 
+        "deelgemeente_naam": "Houwaart", 
+        "gemeente_id": "24135", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24137A", 
+        "deelgemeente_naam": "Glabbeek-Zuurbemde", 
+        "gemeente_id": "24137", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24137B", 
+        "deelgemeente_naam": "Attenrode", 
+        "gemeente_id": "24137", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24137C", 
+        "deelgemeente_naam": "Bunsbeek", 
+        "gemeente_id": "24137", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "24137D", 
+        "deelgemeente_naam": "Kapellen", 
+        "gemeente_id": "24137", 
+        "provincie_id": "20001"
+    }, 
+    {
+        "deelgemeente_id": "31003A", 
+        "deelgemeente_naam": "Beernem", 
+        "gemeente_id": "31003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31003B", 
+        "deelgemeente_naam": "Oedelem", 
+        "gemeente_id": "31003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31003C", 
+        "deelgemeente_naam": "Sint-Joris", 
+        "gemeente_id": "31003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31004A", 
+        "deelgemeente_naam": "Blankenberge", 
+        "gemeente_id": "31004", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31004B", 
+        "deelgemeente_naam": "Uitkerke", 
+        "gemeente_id": "31004", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005A", 
+        "deelgemeente_naam": "Brugge", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005B", 
+        "deelgemeente_naam": "Zeebrugge", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005C", 
+        "deelgemeente_naam": "Dudzele", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005D", 
+        "deelgemeente_naam": "Koolkerke", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005E", 
+        "deelgemeente_naam": "Sint-Kruis", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005F", 
+        "deelgemeente_naam": "Assebroek", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005G", 
+        "deelgemeente_naam": "Sint-Michiels", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005H", 
+        "deelgemeente_naam": "Sint-Andries", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31005I", 
+        "deelgemeente_naam": "Lissewege", 
+        "gemeente_id": "31005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31006A", 
+        "deelgemeente_naam": "Damme", 
+        "gemeente_id": "31006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31006B", 
+        "deelgemeente_naam": "Hoeke", 
+        "gemeente_id": "31006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31006C", 
+        "deelgemeente_naam": "Oostkerke", 
+        "gemeente_id": "31006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31006D", 
+        "deelgemeente_naam": "Lapscheure", 
+        "gemeente_id": "31006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31006E", 
+        "deelgemeente_naam": "Moerkerke", 
+        "gemeente_id": "31006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31006F", 
+        "deelgemeente_naam": "Sijsele", 
+        "gemeente_id": "31006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31012A", 
+        "deelgemeente_naam": "Jabbeke", 
+        "gemeente_id": "31012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31012B", 
+        "deelgemeente_naam": "Zerkegem", 
+        "gemeente_id": "31012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31012C", 
+        "deelgemeente_naam": "Stalhille", 
+        "gemeente_id": "31012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31012D", 
+        "deelgemeente_naam": "Varsenare", 
+        "gemeente_id": "31012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31012E", 
+        "deelgemeente_naam": "Snellegem", 
+        "gemeente_id": "31012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31022A", 
+        "deelgemeente_naam": "Oostkamp", 
+        "gemeente_id": "31022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31022B", 
+        "deelgemeente_naam": "Hertsberge", 
+        "gemeente_id": "31022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31022C", 
+        "deelgemeente_naam": "Ruddervoorde", 
+        "gemeente_id": "31022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31022D", 
+        "deelgemeente_naam": "Waardamme", 
+        "gemeente_id": "31022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31033A", 
+        "deelgemeente_naam": "Torhout", 
+        "gemeente_id": "31033", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31040A", 
+        "deelgemeente_naam": "Zedelgem", 
+        "gemeente_id": "31040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31040B", 
+        "deelgemeente_naam": "Loppem", 
+        "gemeente_id": "31040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31040C", 
+        "deelgemeente_naam": "Veldegem", 
+        "gemeente_id": "31040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31040D", 
+        "deelgemeente_naam": "Aartrijke", 
+        "gemeente_id": "31040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31042A", 
+        "deelgemeente_naam": "Zuienkerke", 
+        "gemeente_id": "31042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31042B", 
+        "deelgemeente_naam": "Meetkerke", 
+        "gemeente_id": "31042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31042C", 
+        "deelgemeente_naam": "Houtave", 
+        "gemeente_id": "31042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31042D", 
+        "deelgemeente_naam": "Nieuwmunster", 
+        "gemeente_id": "31042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31043A", 
+        "deelgemeente_naam": "Knokke", 
+        "gemeente_id": "31043", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31043B", 
+        "deelgemeente_naam": "Heist", 
+        "gemeente_id": "31043", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31043C", 
+        "deelgemeente_naam": "Ramskapelle", 
+        "gemeente_id": "31043", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "31043D", 
+        "deelgemeente_naam": "Westkapelle", 
+        "gemeente_id": "31043", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003A", 
+        "deelgemeente_naam": "Diksmuide", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003B", 
+        "deelgemeente_naam": "Beerst", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003C", 
+        "deelgemeente_naam": "Keiem", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003D", 
+        "deelgemeente_naam": "Leke", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003E", 
+        "deelgemeente_naam": "Vladslo", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003F", 
+        "deelgemeente_naam": "Woumen", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003G", 
+        "deelgemeente_naam": "Nieuwkapelle", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003H", 
+        "deelgemeente_naam": "Oudekapelle", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003J", 
+        "deelgemeente_naam": "Sint-Jacobs-Kapelle", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003K", 
+        "deelgemeente_naam": "Oostkerke", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003L", 
+        "deelgemeente_naam": "Lampernisse", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003M", 
+        "deelgemeente_naam": "Pervijze", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003N", 
+        "deelgemeente_naam": "Stuivekenskerke", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003O", 
+        "deelgemeente_naam": "Esen", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32003P", 
+        "deelgemeente_naam": "Kaaskerke", 
+        "gemeente_id": "32003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32006A", 
+        "deelgemeente_naam": "Houthulst", 
+        "gemeente_id": "32006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32006B", 
+        "deelgemeente_naam": "Merkem", 
+        "gemeente_id": "32006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32006D", 
+        "deelgemeente_naam": "Klerken", 
+        "gemeente_id": "32006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32010A", 
+        "deelgemeente_naam": "Koekelare", 
+        "gemeente_id": "32010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32010B", 
+        "deelgemeente_naam": "Bovekerke", 
+        "gemeente_id": "32010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32010C", 
+        "deelgemeente_naam": "Zande", 
+        "gemeente_id": "32010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32011A", 
+        "deelgemeente_naam": "Kortemark", 
+        "gemeente_id": "32011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32011B", 
+        "deelgemeente_naam": "Handzame", 
+        "gemeente_id": "32011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32011C", 
+        "deelgemeente_naam": "Werken", 
+        "gemeente_id": "32011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32011D", 
+        "deelgemeente_naam": "Zarren", 
+        "gemeente_id": "32011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32030A", 
+        "deelgemeente_naam": "Lo", 
+        "gemeente_id": "32030", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32030B", 
+        "deelgemeente_naam": "Pollinkhove", 
+        "gemeente_id": "32030", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32030C", 
+        "deelgemeente_naam": "Reninge", 
+        "gemeente_id": "32030", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "32030D", 
+        "deelgemeente_naam": "Noordschote", 
+        "gemeente_id": "32030", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011A", 
+        "deelgemeente_naam": "Ieper", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011B", 
+        "deelgemeente_naam": "Brielen", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011C", 
+        "deelgemeente_naam": "Sint-Jan", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011D", 
+        "deelgemeente_naam": "Boezinge", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011E", 
+        "deelgemeente_naam": "Zuidschote", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011F", 
+        "deelgemeente_naam": "Elverdinge", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011G", 
+        "deelgemeente_naam": "Vlamertinge", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011H", 
+        "deelgemeente_naam": "Dikkebus", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011J", 
+        "deelgemeente_naam": "Voormezele", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011K", 
+        "deelgemeente_naam": "Hollebeke", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33011L", 
+        "deelgemeente_naam": "Zillebeke", 
+        "gemeente_id": "33011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33016A", 
+        "deelgemeente_naam": "Mesen", 
+        "gemeente_id": "33016", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33021A", 
+        "deelgemeente_naam": "Poperinge", 
+        "gemeente_id": "33021", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33021B", 
+        "deelgemeente_naam": "Reningelst", 
+        "gemeente_id": "33021", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33021C", 
+        "deelgemeente_naam": "Krombeke", 
+        "gemeente_id": "33021", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33021D", 
+        "deelgemeente_naam": "Proven", 
+        "gemeente_id": "33021", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33021E", 
+        "deelgemeente_naam": "Roesbrugge-Haringe", 
+        "gemeente_id": "33021", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33021F", 
+        "deelgemeente_naam": "Watou", 
+        "gemeente_id": "33021", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33029A", 
+        "deelgemeente_naam": "Wervik", 
+        "gemeente_id": "33029", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33029B", 
+        "deelgemeente_naam": "Geluwe", 
+        "gemeente_id": "33029", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33037A", 
+        "deelgemeente_naam": "Zonnebeke", 
+        "gemeente_id": "33037", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33037B", 
+        "deelgemeente_naam": "Passendale", 
+        "gemeente_id": "33037", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33037C", 
+        "deelgemeente_naam": "Beselare", 
+        "gemeente_id": "33037", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33037D", 
+        "deelgemeente_naam": "Geluveld", 
+        "gemeente_id": "33037", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33037E", 
+        "deelgemeente_naam": "Zandvoorde", 
+        "gemeente_id": "33037", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039A", 
+        "deelgemeente_naam": "Kemmel", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039B", 
+        "deelgemeente_naam": "Wijtschate", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039C", 
+        "deelgemeente_naam": "Wulvergem", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039D", 
+        "deelgemeente_naam": "Nieuwkerke", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039E", 
+        "deelgemeente_naam": "Dranouter", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039F", 
+        "deelgemeente_naam": "Loker", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33039G", 
+        "deelgemeente_naam": "Westouter", 
+        "gemeente_id": "33039", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33040A", 
+        "deelgemeente_naam": "Langemark", 
+        "gemeente_id": "33040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33040B", 
+        "deelgemeente_naam": "Bikschote", 
+        "gemeente_id": "33040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33040C", 
+        "deelgemeente_naam": "Poelkapelle", 
+        "gemeente_id": "33040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33041A", 
+        "deelgemeente_naam": "Oostvleteren", 
+        "gemeente_id": "33041", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33041B", 
+        "deelgemeente_naam": "Westvleteren", 
+        "gemeente_id": "33041", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "33041C", 
+        "deelgemeente_naam": "Woesten", 
+        "gemeente_id": "33041", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34002A", 
+        "deelgemeente_naam": "Anzegem", 
+        "gemeente_id": "34002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34002B", 
+        "deelgemeente_naam": "Gijzelbrechtegem", 
+        "gemeente_id": "34002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34002C", 
+        "deelgemeente_naam": "Kaster", 
+        "gemeente_id": "34002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34002D", 
+        "deelgemeente_naam": "Tiegem", 
+        "gemeente_id": "34002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34002E", 
+        "deelgemeente_naam": "Ingooigem", 
+        "gemeente_id": "34002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34002F", 
+        "deelgemeente_naam": "Vichte", 
+        "gemeente_id": "34002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34003A", 
+        "deelgemeente_naam": "Avelgem", 
+        "gemeente_id": "34003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34003B", 
+        "deelgemeente_naam": "Waarmaarde", 
+        "gemeente_id": "34003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34003C", 
+        "deelgemeente_naam": "Kerkhove", 
+        "gemeente_id": "34003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34003D", 
+        "deelgemeente_naam": "Outrijve", 
+        "gemeente_id": "34003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34003E", 
+        "deelgemeente_naam": "Bossuit", 
+        "gemeente_id": "34003", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34009A", 
+        "deelgemeente_naam": "Deerlijk", 
+        "gemeente_id": "34009", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34013A", 
+        "deelgemeente_naam": "Harelbeke", 
+        "gemeente_id": "34013", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34013B", 
+        "deelgemeente_naam": "Bavikhove", 
+        "gemeente_id": "34013", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34013C", 
+        "deelgemeente_naam": "Hulste", 
+        "gemeente_id": "34013", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022A", 
+        "deelgemeente_naam": "Kortrijk", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022B", 
+        "deelgemeente_naam": "Heule", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022C", 
+        "deelgemeente_naam": "Bissegem", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022D", 
+        "deelgemeente_naam": "Marke", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022E", 
+        "deelgemeente_naam": "Aalbeke", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022F", 
+        "deelgemeente_naam": "Rollegem", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022G", 
+        "deelgemeente_naam": "Bellegem", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34022H", 
+        "deelgemeente_naam": "Kooigem", 
+        "gemeente_id": "34022", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34023A", 
+        "deelgemeente_naam": "Kuurne", 
+        "gemeente_id": "34023", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34025A", 
+        "deelgemeente_naam": "Lendelede", 
+        "gemeente_id": "34025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34027A", 
+        "deelgemeente_naam": "Menen", 
+        "gemeente_id": "34027", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34027B", 
+        "deelgemeente_naam": "Lauwe", 
+        "gemeente_id": "34027", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34027C", 
+        "deelgemeente_naam": "Rekkem", 
+        "gemeente_id": "34027", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34040A", 
+        "deelgemeente_naam": "Waregem", 
+        "gemeente_id": "34040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34040B", 
+        "deelgemeente_naam": "Beveren", 
+        "gemeente_id": "34040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34040C", 
+        "deelgemeente_naam": "Desselgem", 
+        "gemeente_id": "34040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34040D", 
+        "deelgemeente_naam": "Sint-Eloois-Vijve", 
+        "gemeente_id": "34040", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34041A", 
+        "deelgemeente_naam": "Wevelgem", 
+        "gemeente_id": "34041", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34041B", 
+        "deelgemeente_naam": "Gullegem", 
+        "gemeente_id": "34041", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34041C", 
+        "deelgemeente_naam": "Moorsele", 
+        "gemeente_id": "34041", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34042A", 
+        "deelgemeente_naam": "Zwevegem", 
+        "gemeente_id": "34042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34042B", 
+        "deelgemeente_naam": "Otegem", 
+        "gemeente_id": "34042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34042C", 
+        "deelgemeente_naam": "Heestert", 
+        "gemeente_id": "34042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34042D", 
+        "deelgemeente_naam": "Moen", 
+        "gemeente_id": "34042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34042E", 
+        "deelgemeente_naam": "Sint-Denijs", 
+        "gemeente_id": "34042", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34043A", 
+        "deelgemeente_naam": "Spiere", 
+        "gemeente_id": "34043", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "34043B", 
+        "deelgemeente_naam": "Helkijn", 
+        "gemeente_id": "34043", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35002A", 
+        "deelgemeente_naam": "Bredene", 
+        "gemeente_id": "35002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35005A", 
+        "deelgemeente_naam": "Gistel", 
+        "gemeente_id": "35005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35005B", 
+        "deelgemeente_naam": "Moere", 
+        "gemeente_id": "35005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35005C", 
+        "deelgemeente_naam": "Zevekote", 
+        "gemeente_id": "35005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35005D", 
+        "deelgemeente_naam": "Snaaskerke", 
+        "gemeente_id": "35005", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35006A", 
+        "deelgemeente_naam": "Ichtegem", 
+        "gemeente_id": "35006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35006B", 
+        "deelgemeente_naam": "Eernegem", 
+        "gemeente_id": "35006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35006C", 
+        "deelgemeente_naam": "Bekegem", 
+        "gemeente_id": "35006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011A", 
+        "deelgemeente_naam": "Middelkerke", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011B", 
+        "deelgemeente_naam": "Wilskerke", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011C", 
+        "deelgemeente_naam": "Leffinge", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011D", 
+        "deelgemeente_naam": "Sint-Pieters-Kapelle", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011E", 
+        "deelgemeente_naam": "Schore", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011F", 
+        "deelgemeente_naam": "Mannekensvere", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011G", 
+        "deelgemeente_naam": "Slijpe", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011H", 
+        "deelgemeente_naam": "Westende", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35011J", 
+        "deelgemeente_naam": "Lombardsijde", 
+        "gemeente_id": "35011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35013A", 
+        "deelgemeente_naam": "Oostende", 
+        "gemeente_id": "35013", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35013C", 
+        "deelgemeente_naam": "Zandvoorde", 
+        "gemeente_id": "35013", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35013D", 
+        "deelgemeente_naam": "Stene", 
+        "gemeente_id": "35013", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35014A", 
+        "deelgemeente_naam": "Oudenburg", 
+        "gemeente_id": "35014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35014B", 
+        "deelgemeente_naam": "Ettelgem", 
+        "gemeente_id": "35014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35014C", 
+        "deelgemeente_naam": "Roksem", 
+        "gemeente_id": "35014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35014D", 
+        "deelgemeente_naam": "Westkerke", 
+        "gemeente_id": "35014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35029A", 
+        "deelgemeente_naam": "Klemskerke", 
+        "gemeente_id": "35029", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35029B", 
+        "deelgemeente_naam": "Vlissegem", 
+        "gemeente_id": "35029", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "35029C", 
+        "deelgemeente_naam": "Wenduine", 
+        "gemeente_id": "35029", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36006A", 
+        "deelgemeente_naam": "Hooglede", 
+        "gemeente_id": "36006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36006B", 
+        "deelgemeente_naam": "Gits", 
+        "gemeente_id": "36006", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36007A", 
+        "deelgemeente_naam": "Ingelmunster", 
+        "gemeente_id": "36007", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36008A", 
+        "deelgemeente_naam": "Izegem", 
+        "gemeente_id": "36008", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36008B", 
+        "deelgemeente_naam": "Kachtem", 
+        "gemeente_id": "36008", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36008C", 
+        "deelgemeente_naam": "Emelgem", 
+        "gemeente_id": "36008", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36010A", 
+        "deelgemeente_naam": "Ledegem", 
+        "gemeente_id": "36010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36010B", 
+        "deelgemeente_naam": "Rollegem-Kapelle", 
+        "gemeente_id": "36010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36010C", 
+        "deelgemeente_naam": "Sint-Eloois-Winkel", 
+        "gemeente_id": "36010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36011A", 
+        "deelgemeente_naam": "Lichtervelde", 
+        "gemeente_id": "36011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36012A", 
+        "deelgemeente_naam": "Moorslede", 
+        "gemeente_id": "36012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36012B", 
+        "deelgemeente_naam": "Dadizele", 
+        "gemeente_id": "36012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36015A", 
+        "deelgemeente_naam": "Roeselare", 
+        "gemeente_id": "36015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36015B", 
+        "deelgemeente_naam": "Oekene", 
+        "gemeente_id": "36015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36015C", 
+        "deelgemeente_naam": "Rumbeke", 
+        "gemeente_id": "36015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36015D", 
+        "deelgemeente_naam": "Beveren", 
+        "gemeente_id": "36015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36019A", 
+        "deelgemeente_naam": "Staden", 
+        "gemeente_id": "36019", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36019B", 
+        "deelgemeente_naam": "Oostnieuwkerke", 
+        "gemeente_id": "36019", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "36019C", 
+        "deelgemeente_naam": "Westrozebeke", 
+        "gemeente_id": "36019", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37002A", 
+        "deelgemeente_naam": "Dentergem", 
+        "gemeente_id": "37002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37002B", 
+        "deelgemeente_naam": "Markegem", 
+        "gemeente_id": "37002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37002C", 
+        "deelgemeente_naam": "Oeselgem", 
+        "gemeente_id": "37002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37002D", 
+        "deelgemeente_naam": "Wakken", 
+        "gemeente_id": "37002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37007A", 
+        "deelgemeente_naam": "Meulebeke", 
+        "gemeente_id": "37007", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37010A", 
+        "deelgemeente_naam": "Oostrozebeke", 
+        "gemeente_id": "37010", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37011A", 
+        "deelgemeente_naam": "Pittem", 
+        "gemeente_id": "37011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37011B", 
+        "deelgemeente_naam": "Egem", 
+        "gemeente_id": "37011", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37012A", 
+        "deelgemeente_naam": "Ruiselede", 
+        "gemeente_id": "37012", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37015A", 
+        "deelgemeente_naam": "Tielt", 
+        "gemeente_id": "37015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37015B", 
+        "deelgemeente_naam": "Schuiferskapelle", 
+        "gemeente_id": "37015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37015C", 
+        "deelgemeente_naam": "Kanegem", 
+        "gemeente_id": "37015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37015D", 
+        "deelgemeente_naam": "Aarsele", 
+        "gemeente_id": "37015", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37017A", 
+        "deelgemeente_naam": "Wielsbeke", 
+        "gemeente_id": "37017", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37017B", 
+        "deelgemeente_naam": "Ooigem", 
+        "gemeente_id": "37017", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37017C", 
+        "deelgemeente_naam": "Sint-Baafs-Vijve", 
+        "gemeente_id": "37017", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37018A", 
+        "deelgemeente_naam": "Wingene", 
+        "gemeente_id": "37018", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37018B", 
+        "deelgemeente_naam": "Zwevezele", 
+        "gemeente_id": "37018", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37020A", 
+        "deelgemeente_naam": "Ardooie", 
+        "gemeente_id": "37020", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "37020B", 
+        "deelgemeente_naam": "Koolskamp", 
+        "gemeente_id": "37020", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002A", 
+        "deelgemeente_naam": "Alveringem", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002B", 
+        "deelgemeente_naam": "Hoogstade", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002C", 
+        "deelgemeente_naam": "Leisele", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002D", 
+        "deelgemeente_naam": "Izenberge", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002E", 
+        "deelgemeente_naam": "Gijverinkhove", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002F", 
+        "deelgemeente_naam": "Stavele", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002G", 
+        "deelgemeente_naam": "Beveren", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002H", 
+        "deelgemeente_naam": "Oeren", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38002J", 
+        "deelgemeente_naam": "Sint-Rijkers", 
+        "gemeente_id": "38002", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38008A", 
+        "deelgemeente_naam": "De Panne", 
+        "gemeente_id": "38008", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38008B", 
+        "deelgemeente_naam": "Adinkerke", 
+        "gemeente_id": "38008", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38014A", 
+        "deelgemeente_naam": "Koksijde", 
+        "gemeente_id": "38014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38014B", 
+        "deelgemeente_naam": "Oostduinkerke", 
+        "gemeente_id": "38014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38014C", 
+        "deelgemeente_naam": "Wulpen", 
+        "gemeente_id": "38014", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38016A", 
+        "deelgemeente_naam": "Nieuwpoort", 
+        "gemeente_id": "38016", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38016B", 
+        "deelgemeente_naam": "Sint-Joris", 
+        "gemeente_id": "38016", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38016C", 
+        "deelgemeente_naam": "Ramskapelle", 
+        "gemeente_id": "38016", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025A", 
+        "deelgemeente_naam": "Veurne", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025B", 
+        "deelgemeente_naam": "Booitshoeke", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025C", 
+        "deelgemeente_naam": "Avekapelle", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025D", 
+        "deelgemeente_naam": "Eggewaartskapelle", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025E", 
+        "deelgemeente_naam": "Zoutenaaie", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025F", 
+        "deelgemeente_naam": "Steenkerke", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025G", 
+        "deelgemeente_naam": "Bulskamp", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025J", 
+        "deelgemeente_naam": "Houtem", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025K", 
+        "deelgemeente_naam": "De Moeren", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025L", 
+        "deelgemeente_naam": "Vinkem", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "38025M", 
+        "deelgemeente_naam": "Wulveringem", 
+        "gemeente_id": "38025", 
+        "provincie_id": "30000"
+    }, 
+    {
+        "deelgemeente_id": "41002A", 
+        "deelgemeente_naam": "Aalst", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002B", 
+        "deelgemeente_naam": "Hofstade", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002C", 
+        "deelgemeente_naam": "Gijzegem", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002D", 
+        "deelgemeente_naam": "Herdersem", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002E", 
+        "deelgemeente_naam": "Moorsel", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002F", 
+        "deelgemeente_naam": "Baardegem", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002G", 
+        "deelgemeente_naam": "Meldert", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002H", 
+        "deelgemeente_naam": "Erembodegem", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41002J", 
+        "deelgemeente_naam": "Nieuwerkerken", 
+        "gemeente_id": "41002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41011A", 
+        "deelgemeente_naam": "Denderleeuw", 
+        "gemeente_id": "41011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41011B", 
+        "deelgemeente_naam": "Iddergem", 
+        "gemeente_id": "41011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41011C", 
+        "deelgemeente_naam": "Welle", 
+        "gemeente_id": "41011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018A", 
+        "deelgemeente_naam": "Geraardsbergen", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018B", 
+        "deelgemeente_naam": "Nederboelare", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018C", 
+        "deelgemeente_naam": "Onkerzele", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018D", 
+        "deelgemeente_naam": "Overboelare", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018E", 
+        "deelgemeente_naam": "Goeferdinge", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018F", 
+        "deelgemeente_naam": "Zarlardinge", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018G", 
+        "deelgemeente_naam": "Schendelbeke", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018H", 
+        "deelgemeente_naam": "Ophasselt", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018J", 
+        "deelgemeente_naam": "Smeerebbe-Vloerzegem", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018K", 
+        "deelgemeente_naam": "Idegem", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018L", 
+        "deelgemeente_naam": "Grimminge", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018M", 
+        "deelgemeente_naam": "Zandbergen", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018N", 
+        "deelgemeente_naam": "Nieuwenhove", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018P", 
+        "deelgemeente_naam": "Waarbeke", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018R", 
+        "deelgemeente_naam": "Moerbeke", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41018S", 
+        "deelgemeente_naam": "Viane", 
+        "gemeente_id": "41018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41024A", 
+        "deelgemeente_naam": "Haaltert", 
+        "gemeente_id": "41024", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41024B", 
+        "deelgemeente_naam": "Denderhoutem", 
+        "gemeente_id": "41024", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41024C", 
+        "deelgemeente_naam": "Kerksken", 
+        "gemeente_id": "41024", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41024D", 
+        "deelgemeente_naam": "Heldergem", 
+        "gemeente_id": "41024", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027A", 
+        "deelgemeente_naam": "Herzele", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027B", 
+        "deelgemeente_naam": "Hillegem", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027C", 
+        "deelgemeente_naam": "Borsbeke", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027D", 
+        "deelgemeente_naam": "Ressegem", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027E", 
+        "deelgemeente_naam": "Woubrechtegem", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027F", 
+        "deelgemeente_naam": "Sint-Antelinks", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027G", 
+        "deelgemeente_naam": "Steenhuize-Wijnhuize", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41027H", 
+        "deelgemeente_naam": "Sint-Lievens-Esse", 
+        "gemeente_id": "41027", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41034A", 
+        "deelgemeente_naam": "Lede", 
+        "gemeente_id": "41034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41034B", 
+        "deelgemeente_naam": "Wanzele", 
+        "gemeente_id": "41034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41034C", 
+        "deelgemeente_naam": "Impe", 
+        "gemeente_id": "41034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41034D", 
+        "deelgemeente_naam": "Smetlede", 
+        "gemeente_id": "41034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41034E", 
+        "deelgemeente_naam": "Oordegem", 
+        "gemeente_id": "41034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048A", 
+        "deelgemeente_naam": "Ninove", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048B", 
+        "deelgemeente_naam": "Okegem", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048C", 
+        "deelgemeente_naam": "Meerbeke", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048D", 
+        "deelgemeente_naam": "Neigem", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048E", 
+        "deelgemeente_naam": "Lieferinge", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048F", 
+        "deelgemeente_naam": "Denderwindeke", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048G", 
+        "deelgemeente_naam": "Pollare", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048H", 
+        "deelgemeente_naam": "Appelterre-Eichem", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048J", 
+        "deelgemeente_naam": "Voorde", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048K", 
+        "deelgemeente_naam": "Aspelare", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048L", 
+        "deelgemeente_naam": "Nederhasselt", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41048M", 
+        "deelgemeente_naam": "Outer", 
+        "gemeente_id": "41048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41063A", 
+        "deelgemeente_naam": "Sint-Lievens-Houtem", 
+        "gemeente_id": "41063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41063B", 
+        "deelgemeente_naam": "Bavegem", 
+        "gemeente_id": "41063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41063C", 
+        "deelgemeente_naam": "Letterhoutem", 
+        "gemeente_id": "41063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41063D", 
+        "deelgemeente_naam": "Vlierzele", 
+        "gemeente_id": "41063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41063E", 
+        "deelgemeente_naam": "Zonnegem", 
+        "gemeente_id": "41063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081A", 
+        "deelgemeente_naam": "Zottegem", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081B", 
+        "deelgemeente_naam": "Elene", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081C", 
+        "deelgemeente_naam": "Leeuwergem", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081D", 
+        "deelgemeente_naam": "Grotenberge", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081E", 
+        "deelgemeente_naam": "Godveerdegem", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081F", 
+        "deelgemeente_naam": "Erwetegem", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081G", 
+        "deelgemeente_naam": "Sint-Goriks-Oudenhove", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081H", 
+        "deelgemeente_naam": "Strijpen", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081J", 
+        "deelgemeente_naam": "Velzeke-Ruddershove", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081K", 
+        "deelgemeente_naam": "Sint-Maria-Oudenhove", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41081L", 
+        "deelgemeente_naam": "Oombergen", 
+        "gemeente_id": "41081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082A", 
+        "deelgemeente_naam": "Mere", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082B", 
+        "deelgemeente_naam": "Erpe", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082C", 
+        "deelgemeente_naam": "Aaigem", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082D", 
+        "deelgemeente_naam": "Burst", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082E", 
+        "deelgemeente_naam": "Bambrugge", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082F", 
+        "deelgemeente_naam": "Ottergem", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082G", 
+        "deelgemeente_naam": "Vlekkem", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "41082H", 
+        "deelgemeente_naam": "Erondegem", 
+        "gemeente_id": "41082", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42003A", 
+        "deelgemeente_naam": "Berlare", 
+        "gemeente_id": "42003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42003B", 
+        "deelgemeente_naam": "Uitbergen", 
+        "gemeente_id": "42003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42003C", 
+        "deelgemeente_naam": "Overmere", 
+        "gemeente_id": "42003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42004A", 
+        "deelgemeente_naam": "Buggenhout", 
+        "gemeente_id": "42004", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42004B", 
+        "deelgemeente_naam": "Opdorp", 
+        "gemeente_id": "42004", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006A", 
+        "deelgemeente_naam": "Dendermonde", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006B", 
+        "deelgemeente_naam": "Appels", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006C", 
+        "deelgemeente_naam": "Sint-Gillis-bij-Dendermonde", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006D", 
+        "deelgemeente_naam": "Grembergen", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006E", 
+        "deelgemeente_naam": "Baasrode", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006F", 
+        "deelgemeente_naam": "Oudegem", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006G", 
+        "deelgemeente_naam": "Mespelare", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42006H", 
+        "deelgemeente_naam": "Schoonaarde", 
+        "gemeente_id": "42006", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42008A", 
+        "deelgemeente_naam": "Hamme", 
+        "gemeente_id": "42008", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42008B", 
+        "deelgemeente_naam": "Moerzeke", 
+        "gemeente_id": "42008", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42010A", 
+        "deelgemeente_naam": "Laarne", 
+        "gemeente_id": "42010", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42010B", 
+        "deelgemeente_naam": "Kalken", 
+        "gemeente_id": "42010", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42011A", 
+        "deelgemeente_naam": "Lebbeke", 
+        "gemeente_id": "42011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42011B", 
+        "deelgemeente_naam": "Wieze", 
+        "gemeente_id": "42011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42011C", 
+        "deelgemeente_naam": "Denderbelle", 
+        "gemeente_id": "42011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42023A", 
+        "deelgemeente_naam": "Waasmunster", 
+        "gemeente_id": "42023", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42025A", 
+        "deelgemeente_naam": "Wetteren", 
+        "gemeente_id": "42025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42025B", 
+        "deelgemeente_naam": "Massemen", 
+        "gemeente_id": "42025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42025C", 
+        "deelgemeente_naam": "Westrem", 
+        "gemeente_id": "42025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42026A", 
+        "deelgemeente_naam": "Wichelen", 
+        "gemeente_id": "42026", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42026B", 
+        "deelgemeente_naam": "Serskamp", 
+        "gemeente_id": "42026", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42026C", 
+        "deelgemeente_naam": "Schellebelle", 
+        "gemeente_id": "42026", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "42028A", 
+        "deelgemeente_naam": "Zele", 
+        "gemeente_id": "42028", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43002A", 
+        "deelgemeente_naam": "Assenede", 
+        "gemeente_id": "43002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43002B", 
+        "deelgemeente_naam": "Oosteeklo", 
+        "gemeente_id": "43002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43002C", 
+        "deelgemeente_naam": "Bassevelde", 
+        "gemeente_id": "43002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43002D", 
+        "deelgemeente_naam": "Boekhoute", 
+        "gemeente_id": "43002", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43005A", 
+        "deelgemeente_naam": "Eeklo", 
+        "gemeente_id": "43005", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43007A", 
+        "deelgemeente_naam": "Kaprijke", 
+        "gemeente_id": "43007", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43007B", 
+        "deelgemeente_naam": "Lembeke", 
+        "gemeente_id": "43007", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43010A", 
+        "deelgemeente_naam": "Maldegem", 
+        "gemeente_id": "43010", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43010B", 
+        "deelgemeente_naam": "Middelburg", 
+        "gemeente_id": "43010", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43010C", 
+        "deelgemeente_naam": "Adegem", 
+        "gemeente_id": "43010", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43014A", 
+        "deelgemeente_naam": "Sint-Laureins", 
+        "gemeente_id": "43014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43014B", 
+        "deelgemeente_naam": "Sint-Margriete", 
+        "gemeente_id": "43014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43014C", 
+        "deelgemeente_naam": "Sint-Jan-in-Eremo", 
+        "gemeente_id": "43014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43014D", 
+        "deelgemeente_naam": "Waterland-Oudeman", 
+        "gemeente_id": "43014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43014E", 
+        "deelgemeente_naam": "Watervliet", 
+        "gemeente_id": "43014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "43018A", 
+        "deelgemeente_naam": "Zelzate", 
+        "gemeente_id": "43018", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44001A", 
+        "deelgemeente_naam": "Aalter", 
+        "gemeente_id": "44001", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44001B", 
+        "deelgemeente_naam": "Bellem", 
+        "gemeente_id": "44001", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44001C", 
+        "deelgemeente_naam": "Lotenhulle", 
+        "gemeente_id": "44001", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44001D", 
+        "deelgemeente_naam": "Poeke", 
+        "gemeente_id": "44001", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011A", 
+        "deelgemeente_naam": "Deinze", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011B", 
+        "deelgemeente_naam": "Astene", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011C", 
+        "deelgemeente_naam": "Petegem-aan-de-Leie", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011D", 
+        "deelgemeente_naam": "Zeveren", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011E", 
+        "deelgemeente_naam": "Grammene", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011F", 
+        "deelgemeente_naam": "Gottem", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011G", 
+        "deelgemeente_naam": "Wontergem", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011H", 
+        "deelgemeente_naam": "Vinkt", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011J", 
+        "deelgemeente_naam": "Meigem", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011K", 
+        "deelgemeente_naam": "Bachte-Maria-Leerne", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44011L", 
+        "deelgemeente_naam": "Sint-Martens-Leerne", 
+        "gemeente_id": "44011", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44012A", 
+        "deelgemeente_naam": "De pinte", 
+        "gemeente_id": "44012", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44012B", 
+        "deelgemeente_naam": "Zevergem", 
+        "gemeente_id": "44012", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44013A", 
+        "deelgemeente_naam": "Destelbergen", 
+        "gemeente_id": "44013", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44013B", 
+        "deelgemeente_naam": "Heusden", 
+        "gemeente_id": "44013", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44019A", 
+        "deelgemeente_naam": "Evergem", 
+        "gemeente_id": "44019", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44019B", 
+        "deelgemeente_naam": "Sleidinge", 
+        "gemeente_id": "44019", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44019C", 
+        "deelgemeente_naam": "Ertvelde", 
+        "gemeente_id": "44019", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44019D", 
+        "deelgemeente_naam": "Kluizen", 
+        "gemeente_id": "44019", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44020A", 
+        "deelgemeente_naam": "Gavere", 
+        "gemeente_id": "44020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44020B", 
+        "deelgemeente_naam": "Semmerzake", 
+        "gemeente_id": "44020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44020C", 
+        "deelgemeente_naam": "Vurste", 
+        "gemeente_id": "44020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44020D", 
+        "deelgemeente_naam": "Baaigem", 
+        "gemeente_id": "44020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44020E", 
+        "deelgemeente_naam": "Dikkelvenne", 
+        "gemeente_id": "44020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44020F", 
+        "deelgemeente_naam": "Asper", 
+        "gemeente_id": "44020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021A", 
+        "deelgemeente_naam": "Gent", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021C", 
+        "deelgemeente_naam": "Sint-Denijs-Westrem", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021D", 
+        "deelgemeente_naam": "Oostakker", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021E", 
+        "deelgemeente_naam": "Sint-Amandsberg", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021F", 
+        "deelgemeente_naam": "Gentbrugge", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021G", 
+        "deelgemeente_naam": "Ledeberg", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021H", 
+        "deelgemeente_naam": "Zwijnaarde", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021J", 
+        "deelgemeente_naam": "Afsnee", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021K", 
+        "deelgemeente_naam": "Drongen", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021L", 
+        "deelgemeente_naam": "Mariakerke", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021M", 
+        "deelgemeente_naam": "Wondelgem", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021N", 
+        "deelgemeente_naam": "Desteldonk", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021O", 
+        "deelgemeente_naam": "Mendonk", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44021P", 
+        "deelgemeente_naam": "Sint-Kruis-Winkel", 
+        "gemeente_id": "44021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44029A", 
+        "deelgemeente_naam": "Knesselare", 
+        "gemeente_id": "44029", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44029B", 
+        "deelgemeente_naam": "Ursel", 
+        "gemeente_id": "44029", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44034A", 
+        "deelgemeente_naam": "Lochristi", 
+        "gemeente_id": "44034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44034B", 
+        "deelgemeente_naam": "Zaffelare", 
+        "gemeente_id": "44034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44034C", 
+        "deelgemeente_naam": "Zeveneken", 
+        "gemeente_id": "44034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44034D", 
+        "deelgemeente_naam": "Beervelde", 
+        "gemeente_id": "44034", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44036A", 
+        "deelgemeente_naam": "Lovendegem", 
+        "gemeente_id": "44036", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44036B", 
+        "deelgemeente_naam": "Vinderhoute", 
+        "gemeente_id": "44036", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44040A", 
+        "deelgemeente_naam": "Melle", 
+        "gemeente_id": "44040", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44040B", 
+        "deelgemeente_naam": "Gontrode", 
+        "gemeente_id": "44040", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44043A", 
+        "deelgemeente_naam": "Merelbeke", 
+        "gemeente_id": "44043", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44043B", 
+        "deelgemeente_naam": "Bottelare", 
+        "gemeente_id": "44043", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44043C", 
+        "deelgemeente_naam": "Munte", 
+        "gemeente_id": "44043", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44043D", 
+        "deelgemeente_naam": "Schelderode", 
+        "gemeente_id": "44043", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44043E", 
+        "deelgemeente_naam": "Melsen", 
+        "gemeente_id": "44043", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44043F", 
+        "deelgemeente_naam": "Lemberge", 
+        "gemeente_id": "44043", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44045A", 
+        "deelgemeente_naam": "Moerbeke", 
+        "gemeente_id": "44045", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44048A", 
+        "deelgemeente_naam": "Nazareth", 
+        "gemeente_id": "44048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44048B", 
+        "deelgemeente_naam": "Eke", 
+        "gemeente_id": "44048", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44049A", 
+        "deelgemeente_naam": "Nevele", 
+        "gemeente_id": "44049", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44049B", 
+        "deelgemeente_naam": "Poesele", 
+        "gemeente_id": "44049", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44049C", 
+        "deelgemeente_naam": "Hansbeke", 
+        "gemeente_id": "44049", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44049D", 
+        "deelgemeente_naam": "Merendree", 
+        "gemeente_id": "44049", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44049E", 
+        "deelgemeente_naam": "Landegem", 
+        "gemeente_id": "44049", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44049F", 
+        "deelgemeente_naam": "Vosselare", 
+        "gemeente_id": "44049", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44052A", 
+        "deelgemeente_naam": "Oosterzele", 
+        "gemeente_id": "44052", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44052B", 
+        "deelgemeente_naam": "Balegem", 
+        "gemeente_id": "44052", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44052C", 
+        "deelgemeente_naam": "Scheldewindeke", 
+        "gemeente_id": "44052", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44052D", 
+        "deelgemeente_naam": "Moortsele", 
+        "gemeente_id": "44052", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44052E", 
+        "deelgemeente_naam": "Landskouter", 
+        "gemeente_id": "44052", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44052F", 
+        "deelgemeente_naam": "Gijzenzele", 
+        "gemeente_id": "44052", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44064A", 
+        "deelgemeente_naam": "Sint-Martens-Latem", 
+        "gemeente_id": "44064", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44064B", 
+        "deelgemeente_naam": "Deurle", 
+        "gemeente_id": "44064", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44072A", 
+        "deelgemeente_naam": "Waarschoot", 
+        "gemeente_id": "44072", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44073A", 
+        "deelgemeente_naam": "Wachtebeke", 
+        "gemeente_id": "44073", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44080A", 
+        "deelgemeente_naam": "Zomergem", 
+        "gemeente_id": "44080", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44080B", 
+        "deelgemeente_naam": "Ronsele", 
+        "gemeente_id": "44080", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44080C", 
+        "deelgemeente_naam": "Oostwinkel", 
+        "gemeente_id": "44080", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44081A", 
+        "deelgemeente_naam": "Zulte", 
+        "gemeente_id": "44081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44081B", 
+        "deelgemeente_naam": "Olsene", 
+        "gemeente_id": "44081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44081C", 
+        "deelgemeente_naam": "Machelen", 
+        "gemeente_id": "44081", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45017A", 
+        "deelgemeente_naam": "Kruishoutem", 
+        "gemeente_id": "45017", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45017C", 
+        "deelgemeente_naam": "Wannegem-Lede", 
+        "gemeente_id": "45017", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45017D", 
+        "deelgemeente_naam": "Nokere", 
+        "gemeente_id": "45017", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035A", 
+        "deelgemeente_naam": "Oudenaarde", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035B", 
+        "deelgemeente_naam": "Heurne", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035C", 
+        "deelgemeente_naam": "Welden", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035D", 
+        "deelgemeente_naam": "Mater", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035E", 
+        "deelgemeente_naam": "Melden", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035F", 
+        "deelgemeente_naam": "Mullem", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035G", 
+        "deelgemeente_naam": "Bevere", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035H", 
+        "deelgemeente_naam": "Edelare", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035I", 
+        "deelgemeente_naam": "Eine", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035J", 
+        "deelgemeente_naam": "Ename", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035K", 
+        "deelgemeente_naam": "Leupegem", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035L", 
+        "deelgemeente_naam": "Nederename", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45035M", 
+        "deelgemeente_naam": "Volkegem", 
+        "gemeente_id": "45035", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45041A", 
+        "deelgemeente_naam": "Ronse", 
+        "gemeente_id": "45041", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45057A", 
+        "deelgemeente_naam": "Zingem", 
+        "gemeente_id": "45057", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45057B", 
+        "deelgemeente_naam": "Ouwegem", 
+        "gemeente_id": "45057", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45057C", 
+        "deelgemeente_naam": "Huise", 
+        "gemeente_id": "45057", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059A", 
+        "deelgemeente_naam": "Nederbrakel", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059B", 
+        "deelgemeente_naam": "Opbrakel", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059C", 
+        "deelgemeente_naam": "Zegelsem", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059D", 
+        "deelgemeente_naam": "Elst", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059E", 
+        "deelgemeente_naam": "Michelbeke", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059F", 
+        "deelgemeente_naam": "Parike", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059G", 
+        "deelgemeente_naam": "Everbeek", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45059H", 
+        "deelgemeente_naam": "Sint-Maria-Oudenhove", 
+        "gemeente_id": "45059", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45060A", 
+        "deelgemeente_naam": "Ruien", 
+        "gemeente_id": "45060", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45060B", 
+        "deelgemeente_naam": "Berchem", 
+        "gemeente_id": "45060", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45060C", 
+        "deelgemeente_naam": "Kwaremont", 
+        "gemeente_id": "45060", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45060D", 
+        "deelgemeente_naam": "Zulzeke", 
+        "gemeente_id": "45060", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45061A", 
+        "deelgemeente_naam": "Petegem-aan-de-Schelde", 
+        "gemeente_id": "45061", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45061B", 
+        "deelgemeente_naam": "Wortegem", 
+        "gemeente_id": "45061", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45061C", 
+        "deelgemeente_naam": "Moregem", 
+        "gemeente_id": "45061", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45061D", 
+        "deelgemeente_naam": "Elsegem", 
+        "gemeente_id": "45061", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45061E", 
+        "deelgemeente_naam": "Ooike", 
+        "gemeente_id": "45061", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45062A", 
+        "deelgemeente_naam": "Sint-Maria-Horebeke", 
+        "gemeente_id": "45062", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45062B", 
+        "deelgemeente_naam": "Sint-Kornelis-Horebeke", 
+        "gemeente_id": "45062", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45063A", 
+        "deelgemeente_naam": "Sint-Maria-Lierde", 
+        "gemeente_id": "45063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45063B", 
+        "deelgemeente_naam": "Hemelveerdegem", 
+        "gemeente_id": "45063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45063C", 
+        "deelgemeente_naam": "Deftinge", 
+        "gemeente_id": "45063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45063D", 
+        "deelgemeente_naam": "Sint-Martens-Lierde", 
+        "gemeente_id": "45063", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45064A", 
+        "deelgemeente_naam": "Etikhove", 
+        "gemeente_id": "45064", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45064B", 
+        "deelgemeente_naam": "Nukerke", 
+        "gemeente_id": "45064", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45064C", 
+        "deelgemeente_naam": "Maarke-Kerkem", 
+        "gemeente_id": "45064", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45064D", 
+        "deelgemeente_naam": "Schorisse", 
+        "gemeente_id": "45064", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065A", 
+        "deelgemeente_naam": "Munkzwalm", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065B", 
+        "deelgemeente_naam": "Paulatem", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065C", 
+        "deelgemeente_naam": "Sint-Maria-Latem", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065D", 
+        "deelgemeente_naam": "Meilegem", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065E", 
+        "deelgemeente_naam": "Beerlegem", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065F", 
+        "deelgemeente_naam": "Dikkele", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065G", 
+        "deelgemeente_naam": "Hundelgem", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065H", 
+        "deelgemeente_naam": "Roborst", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065J", 
+        "deelgemeente_naam": "Rozebeke", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065K", 
+        "deelgemeente_naam": "Sint-Blasius-Boekel", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065L", 
+        "deelgemeente_naam": "Sint-Denijs-Boekel", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45065M", 
+        "deelgemeente_naam": "Nederzwalm-Hermelgem", 
+        "gemeente_id": "45065", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003A", 
+        "deelgemeente_naam": "Beveren", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003B", 
+        "deelgemeente_naam": "Vrasene", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003C", 
+        "deelgemeente_naam": "Verrebroek", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003D", 
+        "deelgemeente_naam": "Kieldrecht", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003E", 
+        "deelgemeente_naam": "Doel", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003F", 
+        "deelgemeente_naam": "Kallo", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003G", 
+        "deelgemeente_naam": "Melsele", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46003H", 
+        "deelgemeente_naam": "Haasdonk", 
+        "gemeente_id": "46003", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46013A", 
+        "deelgemeente_naam": "Kruibeke", 
+        "gemeente_id": "46013", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46013B", 
+        "deelgemeente_naam": "Bazel", 
+        "gemeente_id": "46013", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46013C", 
+        "deelgemeente_naam": "Rupelmonde", 
+        "gemeente_id": "46013", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46014A", 
+        "deelgemeente_naam": "Lokeren", 
+        "gemeente_id": "46014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46014B", 
+        "deelgemeente_naam": "Eksaarde", 
+        "gemeente_id": "46014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46014C", 
+        "deelgemeente_naam": "Daknam", 
+        "gemeente_id": "46014", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46020A", 
+        "deelgemeente_naam": "Sint-Gillis-Waas", 
+        "gemeente_id": "46020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46020B", 
+        "deelgemeente_naam": "De Klinge", 
+        "gemeente_id": "46020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46020C", 
+        "deelgemeente_naam": "Meerdonk", 
+        "gemeente_id": "46020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46020D", 
+        "deelgemeente_naam": "Sint-Pauwels", 
+        "gemeente_id": "46020", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46021A", 
+        "deelgemeente_naam": "Sint-Niklaas", 
+        "gemeente_id": "46021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46021B", 
+        "deelgemeente_naam": "Nieuwkerken-Waas", 
+        "gemeente_id": "46021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46021C", 
+        "deelgemeente_naam": "Belsele", 
+        "gemeente_id": "46021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46021D", 
+        "deelgemeente_naam": "Sinaai", 
+        "gemeente_id": "46021", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46024A", 
+        "deelgemeente_naam": "Stekene", 
+        "gemeente_id": "46024", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46024B", 
+        "deelgemeente_naam": "Kemzeke", 
+        "gemeente_id": "46024", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46025A", 
+        "deelgemeente_naam": "Temse", 
+        "gemeente_id": "46025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46025B", 
+        "deelgemeente_naam": "Steendorp", 
+        "gemeente_id": "46025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46025C", 
+        "deelgemeente_naam": "Tielrode", 
+        "gemeente_id": "46025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "46025D", 
+        "deelgemeente_naam": "Elversele", 
+        "gemeente_id": "46025", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "71002A", 
+        "deelgemeente_naam": "As", 
+        "gemeente_id": "71002", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71002B", 
+        "deelgemeente_naam": "Niel-bij-As", 
+        "gemeente_id": "71002", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71004A", 
+        "deelgemeente_naam": "Beringen", 
+        "gemeente_id": "71004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71004B", 
+        "deelgemeente_naam": "Paal", 
+        "gemeente_id": "71004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71004C", 
+        "deelgemeente_naam": "Koersel", 
+        "gemeente_id": "71004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71004D", 
+        "deelgemeente_naam": "Beverlo", 
+        "gemeente_id": "71004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71011A", 
+        "deelgemeente_naam": "Diepenbeek", 
+        "gemeente_id": "71011", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71016A", 
+        "deelgemeente_naam": "Genk", 
+        "gemeente_id": "71016", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017A", 
+        "deelgemeente_naam": "Gingelom", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017B", 
+        "deelgemeente_naam": "Niel-bij-Sint-Truiden", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017C", 
+        "deelgemeente_naam": "Muizen", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017D", 
+        "deelgemeente_naam": "Buvingen", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017E", 
+        "deelgemeente_naam": "Borlo", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017F", 
+        "deelgemeente_naam": "Mielen-boven-Aalst", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017G", 
+        "deelgemeente_naam": "Boekhout", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017H", 
+        "deelgemeente_naam": "Jeuk", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017J", 
+        "deelgemeente_naam": "Montenaken", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017K", 
+        "deelgemeente_naam": "Kortijs", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71017L", 
+        "deelgemeente_naam": "Vorsen", 
+        "gemeente_id": "71017", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71020A", 
+        "deelgemeente_naam": "Halen", 
+        "gemeente_id": "71020", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71020B", 
+        "deelgemeente_naam": "Zelem", 
+        "gemeente_id": "71020", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71020C", 
+        "deelgemeente_naam": "Loksbergen", 
+        "gemeente_id": "71020", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022A", 
+        "deelgemeente_naam": "Hasselt", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022B", 
+        "deelgemeente_naam": "Wimmertingen", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022C", 
+        "deelgemeente_naam": "Sint-Lambrechts-Herk", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022D", 
+        "deelgemeente_naam": "Kuringen", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022E", 
+        "deelgemeente_naam": "Stokrooie", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022F", 
+        "deelgemeente_naam": "Kermt", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022G", 
+        "deelgemeente_naam": "Spalbeek", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71022H", 
+        "deelgemeente_naam": "Stevoort", 
+        "gemeente_id": "71022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71024A", 
+        "deelgemeente_naam": "Herk-de-Stad", 
+        "gemeente_id": "71024", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71024B", 
+        "deelgemeente_naam": "Donk", 
+        "gemeente_id": "71024", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71024C", 
+        "deelgemeente_naam": "Schulen", 
+        "gemeente_id": "71024", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71024D", 
+        "deelgemeente_naam": "Berbroek", 
+        "gemeente_id": "71024", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71034A", 
+        "deelgemeente_naam": "Leopoldsburg", 
+        "gemeente_id": "71034", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71034B", 
+        "deelgemeente_naam": "Heppen", 
+        "gemeente_id": "71034", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71037A", 
+        "deelgemeente_naam": "Lummen", 
+        "gemeente_id": "71037", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71037B", 
+        "deelgemeente_naam": "Linkhout", 
+        "gemeente_id": "71037", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71037C", 
+        "deelgemeente_naam": "Meldert", 
+        "gemeente_id": "71037", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71045A", 
+        "deelgemeente_naam": "Nieuwerkerken", 
+        "gemeente_id": "71045", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71045B", 
+        "deelgemeente_naam": "Binderveld", 
+        "gemeente_id": "71045", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71045C", 
+        "deelgemeente_naam": "Wijer", 
+        "gemeente_id": "71045", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71045D", 
+        "deelgemeente_naam": "Kozen", 
+        "gemeente_id": "71045", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71047A", 
+        "deelgemeente_naam": "Opglabbeek", 
+        "gemeente_id": "71047", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053A", 
+        "deelgemeente_naam": "Sint-Truiden", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053B", 
+        "deelgemeente_naam": "Halmaal", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053C", 
+        "deelgemeente_naam": "Wilderen", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053D", 
+        "deelgemeente_naam": "Duras", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053E", 
+        "deelgemeente_naam": "Gorsem", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053F", 
+        "deelgemeente_naam": "Runkelen", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053G", 
+        "deelgemeente_naam": "Zepperen", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053H", 
+        "deelgemeente_naam": "Ordingen", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053J", 
+        "deelgemeente_naam": "Brustem", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053K", 
+        "deelgemeente_naam": "Groot-Gelmen", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053L", 
+        "deelgemeente_naam": "Engelmanshoven", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053M", 
+        "deelgemeente_naam": "Gelinden", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053N", 
+        "deelgemeente_naam": "Aalst", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053P", 
+        "deelgemeente_naam": "Kerkom-bij-Sint-Truiden", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053R", 
+        "deelgemeente_naam": "Velm", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71053S", 
+        "deelgemeente_naam": "Gelmen", 
+        "gemeente_id": "71053", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71057A", 
+        "deelgemeente_naam": "Tessenderlo", 
+        "gemeente_id": "71057", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71066A", 
+        "deelgemeente_naam": "Zonhoven", 
+        "gemeente_id": "71066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71067A", 
+        "deelgemeente_naam": "Zutendaal", 
+        "gemeente_id": "71067", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71069A", 
+        "deelgemeente_naam": "Oostham", 
+        "gemeente_id": "71069", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71069B", 
+        "deelgemeente_naam": "Kwaadmechelen", 
+        "gemeente_id": "71069", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71070A", 
+        "deelgemeente_naam": "Heusden", 
+        "gemeente_id": "71070", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "71070B", 
+        "deelgemeente_naam": "Zolder", 
+        "gemeente_id": "71070", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72003A", 
+        "deelgemeente_naam": "Bocholt", 
+        "gemeente_id": "72003", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72003B", 
+        "deelgemeente_naam": "Reppel", 
+        "gemeente_id": "72003", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72003C", 
+        "deelgemeente_naam": "Kaulille", 
+        "gemeente_id": "72003", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72004A", 
+        "deelgemeente_naam": "Bree", 
+        "gemeente_id": "72004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72004B", 
+        "deelgemeente_naam": "Tongerlo", 
+        "gemeente_id": "72004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72004C", 
+        "deelgemeente_naam": "Opitter", 
+        "gemeente_id": "72004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72004D", 
+        "deelgemeente_naam": "Beek", 
+        "gemeente_id": "72004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72004E", 
+        "deelgemeente_naam": "Gerdingen", 
+        "gemeente_id": "72004", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72018A", 
+        "deelgemeente_naam": "Kinrooi", 
+        "gemeente_id": "72018", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72018B", 
+        "deelgemeente_naam": "Molenbeersel", 
+        "gemeente_id": "72018", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72018C", 
+        "deelgemeente_naam": "Kessenich", 
+        "gemeente_id": "72018", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72018D", 
+        "deelgemeente_naam": "Ophoven", 
+        "gemeente_id": "72018", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72020A", 
+        "deelgemeente_naam": "Lommel", 
+        "gemeente_id": "72020", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72021A", 
+        "deelgemeente_naam": "Maaseik", 
+        "gemeente_id": "72021", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72021B", 
+        "deelgemeente_naam": "Neeroeteren", 
+        "gemeente_id": "72021", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72021C", 
+        "deelgemeente_naam": "Opoeteren", 
+        "gemeente_id": "72021", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72025A", 
+        "deelgemeente_naam": "Neerpelt", 
+        "gemeente_id": "72025", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72025B", 
+        "deelgemeente_naam": "Sint-Huibrechts-Lille", 
+        "gemeente_id": "72025", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72029A", 
+        "deelgemeente_naam": "Overpelt", 
+        "gemeente_id": "72029", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72030A", 
+        "deelgemeente_naam": "Peer", 
+        "gemeente_id": "72030", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72030B", 
+        "deelgemeente_naam": "Kleine Brogel", 
+        "gemeente_id": "72030", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72030C", 
+        "deelgemeente_naam": "Grote Brogel", 
+        "gemeente_id": "72030", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72030D", 
+        "deelgemeente_naam": "Wijchmaal", 
+        "gemeente_id": "72030", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72037A", 
+        "deelgemeente_naam": "Hamont", 
+        "gemeente_id": "72037", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72037B", 
+        "deelgemeente_naam": "Achel", 
+        "gemeente_id": "72037", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72038A", 
+        "deelgemeente_naam": "Hechtel", 
+        "gemeente_id": "72038", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72038B", 
+        "deelgemeente_naam": "Eksel", 
+        "gemeente_id": "72038", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72039A", 
+        "deelgemeente_naam": "Houthalen", 
+        "gemeente_id": "72039", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72039B", 
+        "deelgemeente_naam": "Helchteren", 
+        "gemeente_id": "72039", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72040A", 
+        "deelgemeente_naam": "Meeuwen", 
+        "gemeente_id": "72040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72040B", 
+        "deelgemeente_naam": "Wijshagen", 
+        "gemeente_id": "72040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72040C", 
+        "deelgemeente_naam": "Ellikom", 
+        "gemeente_id": "72040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72040D", 
+        "deelgemeente_naam": "Gruitrode", 
+        "gemeente_id": "72040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72040E", 
+        "deelgemeente_naam": "Neerglabbeek", 
+        "gemeente_id": "72040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72041A", 
+        "deelgemeente_naam": "Dilsen", 
+        "gemeente_id": "72041", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72041B", 
+        "deelgemeente_naam": "Rotem", 
+        "gemeente_id": "72041", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72041C", 
+        "deelgemeente_naam": "Elen", 
+        "gemeente_id": "72041", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72041D", 
+        "deelgemeente_naam": "Stokkem", 
+        "gemeente_id": "72041", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72041E", 
+        "deelgemeente_naam": "Lanklaar", 
+        "gemeente_id": "72041", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73001A", 
+        "deelgemeente_naam": "Alken", 
+        "gemeente_id": "73001", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006A", 
+        "deelgemeente_naam": "Bilzen", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006B", 
+        "deelgemeente_naam": "Beverst", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006C", 
+        "deelgemeente_naam": "Munsterbilzen", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006D", 
+        "deelgemeente_naam": "Waltwilder", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006E", 
+        "deelgemeente_naam": "Hoelbeek", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006F", 
+        "deelgemeente_naam": "Eigenbilzen", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006G", 
+        "deelgemeente_naam": "Mopertingen", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006H", 
+        "deelgemeente_naam": "Hees", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006J", 
+        "deelgemeente_naam": "Rosmeer", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006K", 
+        "deelgemeente_naam": "Kleine-spouwen", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006L", 
+        "deelgemeente_naam": "Grote-Spouwen", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006M", 
+        "deelgemeente_naam": "Rijkhoven", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73006N", 
+        "deelgemeente_naam": "Martenslinde", 
+        "gemeente_id": "73006", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009A", 
+        "deelgemeente_naam": "Borgloon", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009B", 
+        "deelgemeente_naam": "Kuttekoven", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009C", 
+        "deelgemeente_naam": "Kerniel", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009D", 
+        "deelgemeente_naam": "Gors-Opleeuw", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009E", 
+        "deelgemeente_naam": "Jesseren", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009F", 
+        "deelgemeente_naam": "Bommershoven", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009G", 
+        "deelgemeente_naam": "Groot-Loon", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009H", 
+        "deelgemeente_naam": "Broekom", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009J", 
+        "deelgemeente_naam": "Hendrieken", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009K", 
+        "deelgemeente_naam": "Voort", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009L", 
+        "deelgemeente_naam": "Gotem", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009M", 
+        "deelgemeente_naam": "Hoepertingen", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73009N", 
+        "deelgemeente_naam": "Rijkel", 
+        "gemeente_id": "73009", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022A", 
+        "deelgemeente_naam": "Heers", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022B", 
+        "deelgemeente_naam": "Batsheers", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022C", 
+        "deelgemeente_naam": "Opheers", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022D", 
+        "deelgemeente_naam": "Veulen", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022E", 
+        "deelgemeente_naam": "Gutschoven", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022F", 
+        "deelgemeente_naam": "Mettekoven", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022G", 
+        "deelgemeente_naam": "Klein-Gelmen", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022H", 
+        "deelgemeente_naam": "Heks", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022J", 
+        "deelgemeente_naam": "Horpmaal", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022K", 
+        "deelgemeente_naam": "Vechmaal", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022L", 
+        "deelgemeente_naam": "Mechelen-Bovelingen", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022M", 
+        "deelgemeente_naam": "Rukkelingen-Loon", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73022N", 
+        "deelgemeente_naam": "Bovelingen", 
+        "gemeente_id": "73022", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73028A", 
+        "deelgemeente_naam": "Herstappe", 
+        "gemeente_id": "73028", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73032A", 
+        "deelgemeente_naam": "Hoeselt", 
+        "gemeente_id": "73032", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73032B", 
+        "deelgemeente_naam": "Werm", 
+        "gemeente_id": "73032", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73032C", 
+        "deelgemeente_naam": "Romershoven", 
+        "gemeente_id": "73032", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73032D", 
+        "deelgemeente_naam": "Sint-Huibrechts-Hern", 
+        "gemeente_id": "73032", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73032E", 
+        "deelgemeente_naam": "Schalkhoven", 
+        "gemeente_id": "73032", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73040A", 
+        "deelgemeente_naam": "Kortessem", 
+        "gemeente_id": "73040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73040B", 
+        "deelgemeente_naam": "Wintershoven", 
+        "gemeente_id": "73040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73040C", 
+        "deelgemeente_naam": "Vliermaalroot", 
+        "gemeente_id": "73040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73040D", 
+        "deelgemeente_naam": "Vliermaal", 
+        "gemeente_id": "73040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73040E", 
+        "deelgemeente_naam": "Guigoven", 
+        "gemeente_id": "73040", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73042A", 
+        "deelgemeente_naam": "Lanaken", 
+        "gemeente_id": "73042", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73042B", 
+        "deelgemeente_naam": "Rekem", 
+        "gemeente_id": "73042", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73042C", 
+        "deelgemeente_naam": "Neerharen", 
+        "gemeente_id": "73042", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73042D", 
+        "deelgemeente_naam": "Veldwezelt", 
+        "gemeente_id": "73042", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73042E", 
+        "deelgemeente_naam": "Gellik", 
+        "gemeente_id": "73042", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066A", 
+        "deelgemeente_naam": "Riemst", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066B", 
+        "deelgemeente_naam": "Herderen", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066C", 
+        "deelgemeente_naam": "Vlijtingen", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066D", 
+        "deelgemeente_naam": "Vroenhoven", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066E", 
+        "deelgemeente_naam": "Kanne", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066F", 
+        "deelgemeente_naam": "Zichen-Zussen-Bolder", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066G", 
+        "deelgemeente_naam": "Valmeer", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066H", 
+        "deelgemeente_naam": "Millen", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066J", 
+        "deelgemeente_naam": "Genoelselderen", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73066K", 
+        "deelgemeente_naam": "Membruggen", 
+        "gemeente_id": "73066", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083A", 
+        "deelgemeente_naam": "Tongeren", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083B", 
+        "deelgemeente_naam": "Koninksem", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083C", 
+        "deelgemeente_naam": "Neerrepen", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083D", 
+        "deelgemeente_naam": "Riksingen", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083E", 
+        "deelgemeente_naam": "Henis", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083F", 
+        "deelgemeente_naam": "Berg", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083G", 
+        "deelgemeente_naam": "Mal", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083H", 
+        "deelgemeente_naam": "Sluizen", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083J", 
+        "deelgemeente_naam": "Nerem", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083K", 
+        "deelgemeente_naam": "Vreren", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083L", 
+        "deelgemeente_naam": "Rutten", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083M", 
+        "deelgemeente_naam": "Lauw", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083N", 
+        "deelgemeente_naam": "Widooie", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083P", 
+        "deelgemeente_naam": "Piringen", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083R", 
+        "deelgemeente_naam": "Overrepen", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083S", 
+        "deelgemeente_naam": "'s Herenelderen", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083T", 
+        "deelgemeente_naam": "Haren", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083U", 
+        "deelgemeente_naam": "Kolmont", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73083V", 
+        "deelgemeente_naam": "Diets-Heur", 
+        "gemeente_id": "73083", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73098A", 
+        "deelgemeente_naam": "Wellen", 
+        "gemeente_id": "73098", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73098B", 
+        "deelgemeente_naam": "Herten", 
+        "gemeente_id": "73098", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73098C", 
+        "deelgemeente_naam": "Berlingen", 
+        "gemeente_id": "73098", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73098D", 
+        "deelgemeente_naam": "Ulbeek", 
+        "gemeente_id": "73098", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107A", 
+        "deelgemeente_naam": "Mechelen-aan-de-Maas", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107B", 
+        "deelgemeente_naam": "Opgrimbie", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107C", 
+        "deelgemeente_naam": "Vucht", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107D", 
+        "deelgemeente_naam": "Eisden", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107E", 
+        "deelgemeente_naam": "Leut", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107F", 
+        "deelgemeente_naam": "Meeswijk", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107G", 
+        "deelgemeente_naam": "Boorsem", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73107H", 
+        "deelgemeente_naam": "Uikhoven", 
+        "gemeente_id": "73107", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73109A", 
+        "deelgemeente_naam": "'s Gravenvoeren", 
+        "gemeente_id": "73109", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73109B", 
+        "deelgemeente_naam": "Sint-Martens-Voeren", 
+        "gemeente_id": "73109", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73109C", 
+        "deelgemeente_naam": "Teuven", 
+        "gemeente_id": "73109", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73109D", 
+        "deelgemeente_naam": "Remersdaal", 
+        "gemeente_id": "73109", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73109E", 
+        "deelgemeente_naam": "Sint-Pieters-Voeren", 
+        "gemeente_id": "73109", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "73109F", 
+        "deelgemeente_naam": "Moelingen", 
+        "gemeente_id": "73109", 
+        "provincie_id": "70000"
+    }
+]
