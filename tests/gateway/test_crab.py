@@ -5,6 +5,9 @@ import six
 
 import pytest
 
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 from crabpy.client import (
     crab_factory
 )
@@ -164,6 +167,31 @@ class TestCrabGateway:
     def test_get_gemeente_by_unexisting_niscode(self):
         with pytest.raises(GatewayResourceNotFoundException):
             self.crab.get_gemeente_by_niscode(-1)
+
+    def test_list_deelgemeenten(self):
+        res = self.crab.list_deelgemeenten()
+        assert isinstance(res, list)
+        assert isinstance(res[0], Deelgemeente)
+
+    def test_list_deelgemeenten_by_gemeente(self):
+        res = self.crab.list_deelgemeenten_by_gemeente(45062)
+        assert isinstance(res, list)
+        assert len(res) == 2
+        assert isinstance(res[0], Deelgemeente)
+        gemeente = self.crab.get_gemeente_by_niscode(45062)
+        res = self.crab.list_deelgemeenten_by_gemeente(gemeente)
+        assert isinstance(res, list)
+        assert len(res) == 2
+        assert isinstance(res[0], Deelgemeente)
+
+    def test_get_deelgemeente_by_id(self):
+        res = self.crab.get_deelgemeente_by_id('45062A')
+        assert isinstance(res, Deelgemeente)
+        assert res.id == '45062A'
+
+    def test_get_deelgemeente_by_unexisting_id(self):
+        with pytest.raises(GatewayResourceNotFoundException):
+            self.crab.get_deelgemeente_by_id(-1)
 
     def test_list_talen(self):
         res = self.crab.list_talen()

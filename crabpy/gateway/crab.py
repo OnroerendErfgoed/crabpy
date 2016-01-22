@@ -8,6 +8,10 @@ This module contains an opionated gateway for the crab webservice.
 from __future__ import unicode_literals
 import six
 import math
+import json
+import os
+
+from io import open
 
 import logging
 log = logging.getLogger(__name__)
@@ -22,6 +26,13 @@ from crabpy.gateway.exception import (
 )
 
 from dogpile.cache import make_region
+
+parent_dir = os.path.dirname(__file__)
+data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+deelgemeenten_json = json.load(
+    open(os.path.join(data_dir, "deelgemeenten.json"),
+    encoding='utf-8')
+)
 
 
 def crab_gateway_request(client, method, *args):
@@ -77,6 +88,14 @@ class CrabGateway(object):
                         kwargs['cache_config'],
                         '%s.' % cr
                     )
+        self.deelgemeenten = {
+            dg['deelgemeente_id']: {
+                'id': dg['deelgemeente_id'],
+                'naam': dg['deelgemeente_naam'],
+                'gemeente_niscode': int(dg['gemeente_id'])
+            } for dg in deelgemeenten_json
+        }
+        log.debug(self.deelgemeenten)
 
     def list_gewesten(self, sort=1):
         '''
@@ -337,6 +356,86 @@ class CrabGateway(object):
             gemeente = creator()
         gemeente.set_gateway(self)
         return gemeente
+
+    def list_deelgemeenten(self, gewest=2):
+        '''
+        List all `deelgemeenten` in a `gewest`.
+
+        :param gewest: The :class:`Gewest` for which the \
+            `deelgemeenten` are wanted. Currently only Flanders is supported.
+        :rtype: A :class:`list` of :class:`Deelgemeente`.
+        '''
+        try:
+            gewest_id = gewest.id
+        except AttributeError:
+            gewest_id = gewest
+
+        if gewest_id <> 2:
+            raise ValueError('Currently only deelgemeenten in Flanders are known.')
+
+        def creator():
+            return [Deelgemeente(dg['id'], dg['naam'], dg['gemeente_niscode']) for dg in self.deelgemeenten.values()]
+
+        if self.caches['permanent'].is_configured:
+            key = 'ListDeelgemeentenByGewestId#%s' % gewest_id
+            deelgemeenten = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            deelgemeenten = creator()
+        for dg in deelgemeenten:
+            dg.set_gateway(self)
+        return deelgemeenten
+
+    def list_deelgemeenten_by_gemeente(self, gemeente):
+        '''
+        List all `deelgemeenten` in a `gemeente`.
+
+        :param gemeente: The :class:`Gemeente` for which the \
+            `deelgemeenten` are wanted. Currently only Flanders is supported.
+        :rtype: A :class:`list` of :class:`Deelgemeente`.
+        '''
+        try:
+            niscode = gemeente.niscode
+        except AttributeError:
+            niscode = gemeente
+
+        def creator():
+            return [
+                Deelgemeente(dg['id'], dg['naam'], dg['gemeente_niscode'])
+                for dg in self.deelgemeenten.values() if dg['gemeente_niscode'] == niscode
+            ]
+
+        if self.caches['permanent'].is_configured:
+            key = 'ListDeelgemeentenByGemeenteNiscode#%s' % niscode
+            deelgemeenten = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            deelgemeenten = creator()
+        for dg in deelgemeenten:
+            dg.set_gateway(self)
+        return deelgemeenten
+
+    def get_deelgemeente_by_id(self, id):
+        '''
+        Retrieve a `deelgemeente` by the id.
+
+        :param string id: The id of the deelgemeente.
+        :rtype: :class:`Deelgemeente`
+        '''
+        def creator():
+            if id in self.deelgemeenten:
+                dg = self.deelgemeenten[id]
+                return Deelgemeente(dg['id'], dg['naam'], dg['gemeente_niscode'])
+            else:
+                return None
+
+        if self.caches['permanent'].is_configured:
+            key = 'GetDeelgemeenteByDeelgemeenteId#%s' % id
+            deelgemeente = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            deelgemeente = creator()
+        if deelgemeente == None:
+            raise GatewayResourceNotFoundException()
+        deelgemeente.set_gateway(self)
+        return deelgemeente
 
     def _list_codeobject(self, function, sort, returnclass):
         def creator():
@@ -1712,9 +1811,9 @@ class Deelgemeente(GatewayObject):
     .. versionadded:: 0.7.0
     '''
     def __init__(
-        self, niscode, naam, gemeente_niscode, **kwargs
+        self, id, naam, gemeente_niscode, **kwargs
     ):
-        self.id = self.niscode = niscode
+        self.id = id
         self.naam = naam
         self.gemeente_niscode = gemeente_niscode
 
@@ -1735,10 +1834,10 @@ class Deelgemeente(GatewayObject):
         return self.gateway.get_gemeente_by_niscode(self.gemeente_niscode)
 
     def __unicode__(self):
-        return "%s (%s)" % (self.naam, self.niscode)
+        return "%s (%s)" % (self.naam, self.id)
 
     def __repr__(self):
-        return "Deelgemeente('%s', '%s', %s)" % (self.niscode, self.naam, self.gemeente_niscode)
+        return "Deelgemeente('%s', '%s', %s)" % (self.id, self.naam, self.gemeente_niscode)
 
 
 class Codelijst(GatewayObject):
