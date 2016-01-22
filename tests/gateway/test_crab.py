@@ -173,6 +173,10 @@ class TestCrabGateway:
         assert isinstance(res, list)
         assert isinstance(res[0], Deelgemeente)
 
+    def test_list_deelgemeenten_wrong_gewest(self):
+        with pytest.raises(ValueError):
+            self.crab.list_deelgemeenten(1)
+
     def test_list_deelgemeenten_by_gemeente(self):
         res = self.crab.list_deelgemeenten_by_gemeente(45062)
         assert isinstance(res, list)
