@@ -6,6 +6,8 @@
 - Implement get_postadres_by_huisnummer and get_postadres_by_subadres. (#57)
 - A a property Perceel.postadressen to get the postadressen for a certain
   Perceel. (#58)
+- Implement a Deelgemeente object and list_deelgemeenten,
+  list_deelgemeenten_by_gemeente and get_deelgemeente_by_id. (#63)
 
 0.6.0 (01-06-2015)
 ------------------
