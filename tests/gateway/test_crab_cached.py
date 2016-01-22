@@ -9,12 +9,12 @@ from crabpy.client import (
 )
 
 from crabpy.gateway.crab import (
-    CrabGateway, Gewest,
-    Gemeente, Straat,
+    CrabGateway, Gewest, Provincie,
+    Gemeente, Deelgemeente, Straat,
     Huisnummer, Postkanton,
     Wegobject, Wegsegment,
     Terreinobject, Perceel,
-    Gebouw, Provincie, Subadres,
+    Gebouw, Subadres,
     Adrespositie
 )
 
@@ -115,6 +115,20 @@ class TestCrabCachedGateway:
         res = self.crab.get_gemeente_by_niscode(11001)
         assert isinstance(res, Gemeente)
         assert self.crab.caches['long'].get('GetGemeenteByNISGemeenteCode#11001') == res
+
+    def test_list_deelgemeenten_by_gemeente(self):
+        res = self.crab.list_deelgemeenten_by_gemeente(45062)
+        assert isinstance(res, list)
+        assert self.crab.caches['permanent'].get('ListDeelgemeentenByGemeenteId#45062') == res
+        gemeente = self.crab.get_gemeente_by_niscode(45062)
+        res = self.crab.list_deelgemeenten_by_gemeente(gemeente)
+        assert isinstance(res, list)
+        assert self.crab.caches['permanent'].get('ListDeelgemeentenByGemeenteId#45062') == res
+
+    def test_get_deelgemeente_by_id(self):
+        res = self.crab.get_deelgemeente_by_id('45062A')
+        assert isinstance(res, Deelgemeente)
+        assert self.crab.caches['permanent'].get('GetDeelgemeenteByDeelgemeenteId#45062A') == res
 
     def test_list_talen(self):
         res = self.crab.list_talen()
