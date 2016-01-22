@@ -369,7 +369,7 @@ class CrabGateway(object):
         except AttributeError:
             gewest_id = gewest
 
-        if gewest_id <> 2:
+        if gewest_id != 2:
             raise ValueError('Currently only deelgemeenten in Flanders are known.')
 
         def creator():
