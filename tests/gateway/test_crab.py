@@ -6,7 +6,7 @@ import six
 import pytest
 
 import logging
-logging.basicConfig(level=logging.DEBUG)
+#logging.basicConfig(level=logging.DEBUG)
 
 from crabpy.client import (
     crab_factory
@@ -1707,10 +1707,7 @@ class TestPerceel:
         p = crab.get_perceel_by_id('13040C1747/00G002')
         postadressen = p.postadressen
         assert isinstance(postadressen, list)
-        assert [
-            'Steenweg op Oosthoven 51, 2300 Turnhout',
-            'Steenweg op Oosthoven 53, 2300 Turnhout'
-        ] == postadressen
+        assert ['Steenweg op Oosthoven 51, 2300 Turnhout'] == postadressen
 
 
 class GebouwTest:

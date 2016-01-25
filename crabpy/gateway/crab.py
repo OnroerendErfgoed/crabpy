@@ -2488,7 +2488,12 @@ class Perceel(GatewayObject):
 
     @property
     def postadressen(self):
-        return [h.postadres for h in self.huisnummers]
+        '''
+        Returns the postadressen for this Percell.
+
+        Will only take the huisnummers with status `inGebruik` into account.
+        '''
+        return [h.postadres for h in self.huisnummers if h.status.id == '3']
 
     def __unicode__(self):
         return "Perceel %s" % (self.id)
