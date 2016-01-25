@@ -2483,15 +2483,24 @@ class Perceel(GatewayObject):
 
     @property
     def huisnummers(self):
+        '''
+        Returns the huisnummers on this Perceel.
+
+        Some of the huisnummers might no longer be active.
+
+        :rtype: list
+        '''
         self.check_gateway()
         return self.gateway.list_huisnummers_by_perceel(self.id)
 
     @property
     def postadressen(self):
         '''
-        Returns the postadressen for this Percell.
+        Returns the postadressen for this Perceel.
 
         Will only take the huisnummers with status `inGebruik` into account.
+
+        :rtype: list 
         '''
         return [h.postadres for h in self.huisnummers if h.status.id == '3']
 
