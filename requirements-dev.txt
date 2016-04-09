@@ -5,7 +5,7 @@
 pytest==2.8.5
 pytest-cov==2.2.0
 coveralls==1.1
-flake8==2.4.1
+flake8==2.5.4
 
 # Update data script
 requests==2.9.1
