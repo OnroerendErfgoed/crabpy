@@ -746,14 +746,12 @@ class CrabGateway(object):
                 id, sort
             )
             try:
-                return[
-                    Huisnummer(
-                        r.HuisnummerId,
-                        r.StatusHuisnummer,
-                        r.Huisnummer,
-                        id
-                    ) for r in res.HuisnummerWithStatusItem
-                ]
+                huisnummers= []
+                for r in res.HuisnummerWithStatusItem:
+                    h = self.get_huisnummer_by_id(r.HuisnummerId)
+                    h.clear_gateway()
+                    huisnummers.append(h)
+                return huisnummers
             except AttributeError:
                 return []
         if self.caches['short'].is_configured:
