@@ -1,4 +1,20 @@
-0.6.0 (??-??-2015)
+0.7.1 (??-??-2016)
+------------------
+
+- Fix a bug with list_huisnummers_by_perceel. (#67)
+
+0.7.0 (25-01-2016)
+------------------
+
+- Add official support for python 3.5
+- Implement list_huisnummers_by_perceel. (#56)
+- Implement get_postadres_by_huisnummer and get_postadres_by_subadres. (#57)
+- A a property Perceel.postadressen to get the postadressen for a certain
+  Perceel. (#58)
+- Implement a Deelgemeente object and list_deelgemeenten,
+  list_deelgemeenten_by_gemeente and get_deelgemeente_by_id. (#63)
+
+0.6.0 (01-06-2015)
 ------------------
 
 - Implement operations dealing with Adrespositie. (#37) [TalissaJoly]

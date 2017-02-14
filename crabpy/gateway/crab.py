@@ -8,6 +8,10 @@ This module contains an opionated gateway for the crab webservice.
 from __future__ import unicode_literals
 import six
 import math
+import json
+import os
+
+from io import open
 
 import logging
 log = logging.getLogger(__name__)
@@ -22,6 +26,13 @@ from crabpy.gateway.exception import (
 )
 
 from dogpile.cache import make_region
+
+parent_dir = os.path.dirname(__file__)
+data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+deelgemeenten_json = json.load(
+    open(os.path.join(data_dir, "deelgemeenten.json"),
+    encoding='utf-8')
+)
 
 
 def crab_gateway_request(client, method, *args):
@@ -77,6 +88,13 @@ class CrabGateway(object):
                         kwargs['cache_config'],
                         '%s.' % cr
                     )
+        self.deelgemeenten = {
+            dg['deelgemeente_id']: {
+                'id': dg['deelgemeente_id'],
+                'naam': dg['deelgemeente_naam'],
+                'gemeente_niscode': int(dg['gemeente_id'])
+            } for dg in deelgemeenten_json
+        }
 
     def list_gewesten(self, sort=1):
         '''
@@ -206,6 +224,7 @@ class CrabGateway(object):
         except AttributeError:
             prov = self.get_provincie_by_id(provincie)
             gewest = prov.gewest
+        gewest.clear_gateway()
 
         def creator():
             gewest_gemeenten = self.list_gemeenten(gewest.id)
@@ -336,6 +355,86 @@ class CrabGateway(object):
             gemeente = creator()
         gemeente.set_gateway(self)
         return gemeente
+
+    def list_deelgemeenten(self, gewest=2):
+        '''
+        List all `deelgemeenten` in a `gewest`.
+
+        :param gewest: The :class:`Gewest` for which the \
+            `deelgemeenten` are wanted. Currently only Flanders is supported.
+        :rtype: A :class:`list` of :class:`Deelgemeente`.
+        '''
+        try:
+            gewest_id = gewest.id
+        except AttributeError:
+            gewest_id = gewest
+
+        if gewest_id != 2:
+            raise ValueError('Currently only deelgemeenten in Flanders are known.')
+
+        def creator():
+            return [Deelgemeente(dg['id'], dg['naam'], dg['gemeente_niscode']) for dg in self.deelgemeenten.values()]
+
+        if self.caches['permanent'].is_configured:
+            key = 'ListDeelgemeentenByGewestId#%s' % gewest_id
+            deelgemeenten = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            deelgemeenten = creator()
+        for dg in deelgemeenten:
+            dg.set_gateway(self)
+        return deelgemeenten
+
+    def list_deelgemeenten_by_gemeente(self, gemeente):
+        '''
+        List all `deelgemeenten` in a `gemeente`.
+
+        :param gemeente: The :class:`Gemeente` for which the \
+            `deelgemeenten` are wanted. Currently only Flanders is supported.
+        :rtype: A :class:`list` of :class:`Deelgemeente`.
+        '''
+        try:
+            niscode = gemeente.niscode
+        except AttributeError:
+            niscode = gemeente
+
+        def creator():
+            return [
+                Deelgemeente(dg['id'], dg['naam'], dg['gemeente_niscode'])
+                for dg in self.deelgemeenten.values() if dg['gemeente_niscode'] == niscode
+            ]
+
+        if self.caches['permanent'].is_configured:
+            key = 'ListDeelgemeentenByGemeenteId#%s' % niscode
+            deelgemeenten = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            deelgemeenten = creator()
+        for dg in deelgemeenten:
+            dg.set_gateway(self)
+        return deelgemeenten
+
+    def get_deelgemeente_by_id(self, id):
+        '''
+        Retrieve a `deelgemeente` by the id.
+
+        :param string id: The id of the deelgemeente.
+        :rtype: :class:`Deelgemeente`
+        '''
+        def creator():
+            if id in self.deelgemeenten:
+                dg = self.deelgemeenten[id]
+                return Deelgemeente(dg['id'], dg['naam'], dg['gemeente_niscode'])
+            else:
+                return None
+
+        if self.caches['permanent'].is_configured:
+            key = 'GetDeelgemeenteByDeelgemeenteId#%s' % id
+            deelgemeente = self.caches['permanent'].get_or_create(key, creator)
+        else:
+            deelgemeente = creator()
+        if deelgemeente == None:
+            raise GatewayResourceNotFoundException()
+        deelgemeente.set_gateway(self)
+        return deelgemeente
 
     def _list_codeobject(self, function, sort, returnclass):
         def creator():
@@ -619,6 +718,44 @@ class CrabGateway(object):
                 return []
         if self.caches['short'].is_configured:
             key = 'ListHuisnummersWithStatusByStraatnaamId#%s%s' % (id, sort)
+            huisnummers = self.caches['short'].get_or_create(key, creator)
+        else:
+            huisnummers = creator()
+        for h in huisnummers:
+            h.set_gateway(self)
+        return huisnummers
+
+    def list_huisnummers_by_perceel(self, perceel, sort=1):
+        '''
+        List all `huisnummers` on a `Pereel`.
+
+        Generally there will only be one, but multiples are possible.
+
+        :param perceel: The :class:`Perceel` for which the \
+            `huisnummers` are wanted.
+        :rtype: A :class: `list` of :class:`Huisnummer`
+        '''
+        try:
+            id = perceel.id
+        except AttributeError:
+            id = perceel
+
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'ListHuisnummersWithStatusByIdentificatorPerceel',
+                id, sort
+            )
+            try:
+                huisnummers= []
+                for r in res.HuisnummerWithStatusItem:
+                    h = self.get_huisnummer_by_id(r.HuisnummerId)
+                    h.clear_gateway()
+                    huisnummers.append(h)
+                return huisnummers
+            except AttributeError:
+                return []
+        if self.caches['short'].is_configured:
+            key = 'ListHuisnummersWithStatusByIdentificatorPerceel#%s%s' % (id, sort)
             huisnummers = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummers = creator()
@@ -1348,6 +1485,58 @@ class CrabGateway(object):
         adrespositie.set_gateway(self)
         return adrespositie
 
+    def get_postadres_by_huisnummer(self, huisnummer):
+        '''
+        Get the `postadres` for a :class:`Huisnummer`.
+
+        :param huisnummer: The :class:`Huisnummer` for which the \
+            `postadres` is wanted. OR A huisnummer id.
+        :rtype: A :class:`str`.
+        '''
+        try:
+            id = huisnummer.id
+        except AttributeError:
+            id = huisnummer
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'GetPostadresByHuisnummerId', id
+            )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
+            return res.Postadres
+        if self.caches['short'].is_configured:
+            key = 'GetPostadresByHuisnummerId#%s' % (id)
+            postadres = self.caches['short'].get_or_create(key, creator)
+        else:
+            postadres = creator()
+        return postadres
+
+    def get_postadres_by_subadres(self, subadres):
+        '''
+        Get the `postadres` for a :class:`Subadres`.
+
+        :param subadres: The :class:`Subadres` for which the \
+            `postadres` is wanted. OR A subadres id.
+        :rtype: A :class:`str`.
+        '''
+        try:
+            id = subadres.id
+        except AttributeError:
+            id = subadres
+        def creator():
+            res = crab_gateway_request(
+                self.client, 'GetPostadresBySubadresId', id
+            )
+            if res == None:
+                 raise GatewayResourceNotFoundException()
+            return res.Postadres
+        if self.caches['short'].is_configured:
+            key = 'GetPostadresBySubadresId#%s' % (id)
+            postadres = self.caches['short'].get_or_create(key, creator)
+        else:
+            postadres = creator()
+        return postadres
+
 
 class GatewayObject(object):
     '''
@@ -1610,6 +1799,42 @@ class Gemeente(GatewayObject):
 
     def __repr__(self):
         return "Gemeente(%s, '%s', %s)" % (self.id, self.naam, self.niscode)
+
+
+class Deelgemeente(GatewayObject):
+    '''
+    A subdivision of a :class:`Gemeente`.
+
+    .. versionadded:: 0.7.0
+    '''
+    def __init__(
+        self, id, naam, gemeente_niscode, **kwargs
+    ):
+        self.id = id
+        self.naam = naam
+        self.gemeente_niscode = gemeente_niscode
+
+    def set_gateway(self, gateway):
+        '''
+        :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
+        '''
+        self.gateway = gateway
+
+    def clear_gateway(self):
+        '''
+        Clear the currently set CrabGateway.
+        '''
+        self.gateway = None
+
+    @property
+    def gemeente(self):
+        return self.gateway.get_gemeente_by_niscode(self.gemeente_niscode)
+
+    def __unicode__(self):
+        return "%s (%s)" % (self.naam, self.id)
+
+    def __repr__(self):
+        return "Deelgemeente('%s', '%s', %s)" % (self.id, self.naam, self.gemeente_niscode)
 
 
 class Codelijst(GatewayObject):
@@ -1943,15 +2168,23 @@ class Huisnummer(GatewayObject):
         return [mini[0], mini[1], maxi[0], maxi[1]]
 
     @property
+    def postadres(self):
+        self.check_gateway()
+        return self.gateway.get_postadres_by_huisnummer(self.id)
+
+    @property
     def gebouwen(self):
+        self.check_gateway()
         return self.gateway.list_gebouwen_by_huisnummer(self.id)
 
     @property
     def subadressen(self):
+        self.check_gateway()
         return self.gateway.list_subadressen_by_huisnummer(self.id)
 
     @property
     def adresposities(self):
+        self.check_gateway()
         return self.gateway.list_adresposities_by_huisnummer(self.id)
 
     def __unicode__(self):
@@ -2246,6 +2479,29 @@ class Perceel(GatewayObject):
     def metadata(self):
         return self._metadata
 
+    @property
+    def huisnummers(self):
+        '''
+        Returns the huisnummers on this Perceel.
+
+        Some of the huisnummers might no longer be active.
+
+        :rtype: list
+        '''
+        self.check_gateway()
+        return self.gateway.list_huisnummers_by_perceel(self.id)
+
+    @property
+    def postadressen(self):
+        '''
+        Returns the postadressen for this Perceel.
+
+        Will only take the huisnummers with status `inGebruik` into account.
+
+        :rtype: list 
+        '''
+        return [h.postadres for h in self.huisnummers if h.status.id == '3']
+
     def __unicode__(self):
         return "Perceel %s" % (self.id)
 
@@ -2430,9 +2686,14 @@ class Subadres(GatewayObject):
         return self._aard
 
     @property
-    def adresposities(self):
-        return self.gateway.list_adresposities_by_subadres(self.id)
+    def postadres(self):
+        self.check_gateway()
+        return self.gateway.get_postadres_by_subadres(self.id)
 
+    @property
+    def adresposities(self):
+        self.check_gateway()
+        return self.gateway.list_adresposities_by_subadres(self.id)
 
     def __unicode__(self):
         return "%s (%s)" % (self.subadres, self.id)
@@ -2519,7 +2780,6 @@ class Adrespositie(GatewayObject):
     def aard(self):
         if self._aard is None:
             res = self.gateway.list_aardadressen()
-            log.debug(res)
             for aard in res:
                 if int(aard.id) == int(self.aard_id):
                     self._aard = aard
