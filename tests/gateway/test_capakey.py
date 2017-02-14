@@ -184,104 +184,92 @@ class TestCapakeyGateway:
 )
 class TestCapakeyRestGateway:
 
-    def test_list_gemeenten(self, capakey_gateway):
-        res = capakey_gateway.list_gemeenten()
+    def test_list_gemeenten(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.list_gemeenten()
         assert isinstance(res, list)
 
-    def test_list_gemeenten_invalid_auth(self):
-        capakey_gateway_client = capakey_factory(
-            user='USER',
-            password='PASSWORD'
-        )
-        capakey_gateway = CapakeyGateway(
-            capakey_gateway_client
-        )
-        from crabpy.gateway.exception import GatewayAuthenticationException
-        with pytest.raises(GatewayAuthenticationException):
-            capakey_gateway.list_gemeenten()
-
-    def test_get_gemeente_by_id(self, capakey_gateway):
-        res = capakey_gateway.get_gemeente_by_id(44021)
+    def test_get_gemeente_by_id(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.get_gemeente_by_id(44021)
         assert isinstance(res, Gemeente)
         assert res.id == 44021
 
-    def test_get_gemeente_by_invalid_id(self, capakey_gateway):
+    def test_get_gemeente_by_invalid_id(self, capakey_rest_gateway):
         from crabpy.gateway.exception import GatewayResourceNotFoundException
         with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_gemeente_by_id('gent')
+            capakey_rest_gateway.get_gemeente_by_id('gent')
 
-    def test_list_afdelingen(self, capakey_gateway):
-        res = capakey_gateway.list_kadastrale_afdelingen()
+    def test_list_afdelingen(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.list_kadastrale_afdelingen()
         assert isinstance(res, list)
         assert len(res) > 300
 
-    def test_list_afdelingen_by_gemeente(self, capakey_gateway):
-        g = capakey_gateway.get_gemeente_by_id(44021)
-        res = capakey_gateway.list_kadastrale_afdelingen_by_gemeente(g)
+    def test_list_afdelingen_by_gemeente(self, capakey_rest_gateway):
+        g = capakey_rest_gateway.get_gemeente_by_id(44021)
+        res = capakey_rest_gateway.list_kadastrale_afdelingen_by_gemeente(g)
         assert isinstance(res, list)
         assert len(res) > 0
         assert len(res) < 40
 
-    def test_list_afdelingen_by_gemeente_id(self, capakey_gateway):
-        res = capakey_gateway.list_kadastrale_afdelingen_by_gemeente(44021)
+    def test_list_afdelingen_by_gemeente_id(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.list_kadastrale_afdelingen_by_gemeente(44021)
         assert isinstance(res, list)
         assert len(res) > 0
         assert len(res) < 40
 
-    def test_get_kadastrale_afdeling_by_id(self, capakey_gateway):
-        res = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
+    def test_get_kadastrale_afdeling_by_id(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.get_kadastrale_afdeling_by_id(44021)
         assert isinstance(res, Afdeling)
         assert res.id == 44021
         assert isinstance(res.gemeente, Gemeente)
         assert res.gemeente.id == 44021
 
-    def test_list_secties_by_afdeling(self, capakey_gateway):
-        a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
-        res = capakey_gateway.list_secties_by_afdeling(a)
+    def test_list_secties_by_afdeling(self, capakey_rest_gateway):
+        a = capakey_rest_gateway.get_kadastrale_afdeling_by_id(44021)
+        res = capakey_rest_gateway.list_secties_by_afdeling(a)
         assert isinstance(res, list)
         assert len(res) ==  1
 
-    def test_list_secties_by_afdeling_id(self, capakey_gateway):
-        res = capakey_gateway.list_secties_by_afdeling(44021)
+    def test_list_secties_by_afdeling_id(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.list_secties_by_afdeling(44021)
         assert isinstance(res, list)
         assert len(res) == 1
 
-    def test_get_sectie_by_id_and_afdeling(self, capakey_gateway):
-        a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
-        res = capakey_gateway.get_sectie_by_id_and_afdeling('A', a)
+    def test_get_sectie_by_id_and_afdeling(self, capakey_rest_gateway):
+        a = capakey_rest_gateway.get_kadastrale_afdeling_by_id(44021)
+        res = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', a)
         assert isinstance(res, Sectie)
         assert res.id == 'A'
         assert res.afdeling.id == 44021
 
-    def test_list_percelen_by_sectie(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        res = capakey_gateway.list_percelen_by_sectie(s)
+    def test_list_percelen_by_sectie(self, capakey_rest_gateway):
+        s = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', 44021)
+        res = capakey_rest_gateway.list_percelen_by_sectie(s)
         assert isinstance(res, list)
         assert len(res) > 0
 
-    def test_get_perceel_by_id_and_sectie(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
+    def test_get_perceel_by_id_and_sectie(self, capakey_rest_gateway):
+        s = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = capakey_rest_gateway.list_percelen_by_sectie(s)
         perc = percelen[0]
-        res = capakey_gateway.get_perceel_by_id_and_sectie(perc.id, s)
+        res = capakey_rest_gateway.get_perceel_by_id_and_sectie(perc.id, s)
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
 
-    def test_get_perceel_by_capakey(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
+    def test_get_perceel_by_capakey(self, capakey_rest_gateway):
+        s = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = capakey_rest_gateway.list_percelen_by_sectie(s)
         perc = percelen[0]
-        res = capakey_gateway.get_perceel_by_capakey(perc.capakey)
+        res = capakey_rest_gateway.get_perceel_by_capakey(perc.capakey)
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
 
-    def test_get_perceel_by_percid(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
+    def test_get_perceel_by_percid(self, capakey_rest_gateway):
+        s = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', 44021)
+        percelen = capakey_rest_gateway.list_percelen_by_sectie(s)
         perc = percelen[0]
-        res = capakey_gateway.get_perceel_by_percid(perc.percid)
+        res = capakey_rest_gateway.get_perceel_by_percid(perc.percid)
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
@@ -558,3 +546,7 @@ class TestPerceel:
                 '46013_A_1154_C_000_02',
                 '46013A1154/02C000',
             )
+
+    def test_from_capakey_to_percid_and_back(self):
+        assert Perceel.get_percid_from_capakey('46013A1154/02C000') == '46013_A_1154_C_000_02'
+        assert Perceel.get_capakey_from_percid('46013_A_1154_C_000_02') == '46013A1154/02C000'

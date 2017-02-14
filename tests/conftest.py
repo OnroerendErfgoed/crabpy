@@ -45,3 +45,9 @@ def capakey_gateway(capakey):
         capakey
     )
     return capakey_gateway
+
+@pytest.fixture(scope="module")
+def capakey_rest_gateway():
+    from crabpy.gateway.capakey import CapakeyRestGateway
+    capakey_gateway = CapakeyRestGateway()
+    return capakey_gateway
