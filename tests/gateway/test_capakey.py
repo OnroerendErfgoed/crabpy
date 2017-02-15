@@ -550,3 +550,9 @@ class TestPerceel:
     def test_from_capakey_to_percid_and_back(self):
         assert Perceel.get_percid_from_capakey('46013A1154/02C000') == '46013_A_1154_C_000_02'
         assert Perceel.get_capakey_from_percid('46013_A_1154_C_000_02') == '46013A1154/02C000'
+
+    def test_invalid_capakey_or_percid(self):
+        with pytest.raises(ValueError):
+            Perceel.get_capakey_from_percid('46013A1154/02C000')
+        with pytest.raises(ValueError):
+            Perceel.get_percid_from_capakey('46013_A_1154_C_000_02')
