@@ -463,7 +463,7 @@ class CapakeyRestGateway(CapakeyGateway):
     def __init__(self, **kwargs):
         self.base_url = kwargs.get(
             'base_url',
-            'http://geoservices.beta.informatievlaanderen.be:80/capakey/api/v0.1'
+            'https://geoservices.beta.informatievlaanderen.be/capakey/api/v0.1'
         )
         self.base_headers = {
             'Accept': 'application/json'
@@ -593,20 +593,6 @@ class CapakeyRestGateway(CapakeyGateway):
             a.set_gateway(self)
         return afdelingen
 
-    def get_gemeente_for_kadastrale_afdeling(self, afdeling):
-        try:
-            aid = afdeling.id
-        except AttributeError:
-            aid = afdeling
-
-        afdelingen = self.list_kadastrale_afdelingen()
-
-        for a in afdelingen:
-            if a.id == aid:
-                return a.gemeente
-
-        raise GatewayResourceNotFoundException()
-
     def get_kadastrale_afdeling_by_id(self, aid):
         '''
         Retrieve a 'kadastrale afdeling' by id.
@@ -615,8 +601,7 @@ class CapakeyRestGateway(CapakeyGateway):
         :rtype: A :class:`Afdeling`.
         '''
         def creator():
-            g = self.get_gemeente_for_kadastrale_afdeling(aid)
-            url = self.base_url + '/municipality/%s/department/%s' % (g.id, aid)
+            url = self.base_url + '/department/%s' % (aid)
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
@@ -626,7 +611,7 @@ class CapakeyRestGateway(CapakeyGateway):
             return Afdeling(
                 id=res['departmentCode'],
                 naam=res['departmentName'],
-                gemeente=g,
+                gemeente=Gemeente(res['municipalityCode'], res['municipalityName']),
                 centroid=res['geometry']['center'],
                 bounding_box=res['geometry']['boundingBox']
             )
