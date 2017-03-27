@@ -616,7 +616,7 @@ class CapakeyRestGateway(object):
                 bounding_box=res['geometry']['boundingBox']
             )
         if self.caches['long'].is_configured:
-            key = 'get_kadastrale_afdeling_by_id_rest#%s' % id
+            key = 'get_kadastrale_afdeling_by_id_rest#%s' % aid
             afdeling = self.caches['long'].get_or_create(key, creator)
         else:
             afdeling = creator()
