@@ -19,13 +19,22 @@ from crabpy.gateway.capakey import (
     Gemeente,
     Afdeling,
     Sectie,
-    Perceel
+    Perceel,
+    capakey_rest_gateway_request,
+    GatewayRuntimeException
 )
+
+import requests
 
 from tests import (
     run_capakey_integration_tests,
     config
 )
+
+try:
+    from unittest.mock import MagicMock
+except:
+    from mock import MagicMock
 
 
 @pytest.mark.skipif(
@@ -273,6 +282,28 @@ class TestCapakeyRestGateway:
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
+
+    def test_requests_connection(self):
+        requests.get = MagicMock(side_effect=connection_error)
+        with pytest.raises(GatewayRuntimeException) as cm:
+            capakey_rest_gateway_request('url')
+        exception = cm.value.message
+        assert exception == 'Could not execute request due to connection problems:\nConnectionError()'
+
+    def test_requests_request_exception(self):
+        requests.get = MagicMock(side_effect=request_exception)
+        with pytest.raises(GatewayRuntimeException) as cm:
+            capakey_rest_gateway_request('url')
+        exception = cm.value.message
+        assert exception == 'Could not execute request due to:\nRequestException()'
+
+
+def connection_error(url, headers={}, params={}):
+    raise requests.exceptions.ConnectionError
+
+
+def request_exception(url, headers={}, params={}):
+    raise requests.exceptions.RequestException
 
 
 class TestGemeente:

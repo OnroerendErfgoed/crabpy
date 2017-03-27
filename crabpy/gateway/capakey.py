@@ -434,26 +434,26 @@ class CapakeyGateway(object):
         return perceel
 
 
-def capakey_rest_gateway_request(url, headers = {}, params = {}):
+def capakey_rest_gateway_request(url, headers={}, params={}):
     try:
         res = requests.get(url, headers=headers, params=params)
         res.raise_for_status()
         return res
     except requests.ConnectionError as ce:
         raise GatewayRuntimeException(
-            'Could not execute request due to connection problems:\n%s' % ce.message,
+            'Could not execute request due to connection problems:\n%s' % repr(ce),
             ce
         )
     except requests.HTTPError as he:
         raise GatewayResourceNotFoundException()
     except requests.RequestException as re:
         raise GatewayRuntimeException(
-            'Could not execute request due to:\n%s' % re.message,
+            'Could not execute request due to:\n%s' % repr(re),
             re
         )
 
 
-class CapakeyRestGateway(CapakeyGateway):
+class CapakeyRestGateway(object):
     '''
     A REST gateway to the capakey webservice.
     '''
