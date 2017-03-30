@@ -633,19 +633,17 @@ class CapakeyRestGateway(object):
         '''
         try:
             aid = afdeling.id
+            gid = afdeling.gemeente.id
         except AttributeError:
             aid = afdeling
             afdeling = self.get_kadastrale_afdeling_by_id(aid)
+            gid = afdeling.gemeente.id
         afdeling.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section' % (afdeling.gemeente.id, afdeling.id)
+            url = self.base_url + '/municipality/%s/department/%s/section' % (gid, aid)
             h = self.base_headers
-            p = {
-                'geometry': 'bbox',
-                'srs': 31370
-            }
-            res = capakey_rest_gateway_request(url, h, p).json()
+            res = capakey_rest_gateway_request(url, h).json()
             return [
                 Sectie(
                     r['sectionCode'],
@@ -731,7 +729,7 @@ class CapakeyRestGateway(object):
                 "Invalid percid %s can't be parsed" % percid
             )
 
-    def list_percelen_by_sectie(self, sectie, sort=1):
+    def list_percelen_by_sectie(self, sectie):
         '''
         List all percelen in a `sectie`.
 
@@ -746,7 +744,10 @@ class CapakeyRestGateway(object):
         def creator():
             url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel' % (gid, aid, sid)
             h = self.base_headers
-            res = capakey_rest_gateway_request(url, h).json()
+            p = {
+                'data': 'cadmap'
+            }
+            res = capakey_rest_gateway_request(url, h, p).json()
             return [
                 Perceel(
                     r['perceelnummer'],
@@ -781,7 +782,8 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370
+                'srs': 31370,
+                'data': 'cadmap'
             }
             res = capakey_rest_gateway_request(url, p, h).json()
             return Perceel(
@@ -814,7 +816,8 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370
+                'srs': 31370,
+                'data': 'cadmap'
             }
             res = capakey_rest_gateway_request(url, p, h).json()
             return Perceel(

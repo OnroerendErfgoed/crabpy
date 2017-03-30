@@ -31,7 +31,7 @@ def capakey_gateway(capakey):
     return capakey_gateway
 
 @pytest.mark.skipif(
-    not pytest.config.getoption('--capakey-integration'),
+    not pytest.config.getoption('--capakey-soap-integration'),
     reason = 'No CAPAKEY Integration tests required'
 )
 class TestCapakeyCachedGateway:
