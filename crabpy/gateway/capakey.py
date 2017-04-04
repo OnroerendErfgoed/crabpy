@@ -69,7 +69,6 @@ class CapakeyGateway(object):
 
     @deprecate(DEPRECATIONWARNING.format(''))
     def __init__(self, client, **kwargs):
-        log.warning('test')
         self.client = client
         cache_regions = ['permanent', 'long', 'short']
         for cr in cache_regions:
