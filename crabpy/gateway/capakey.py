@@ -24,6 +24,12 @@ from crabpy.gateway.exception import (
 from dogpile.cache import make_region
 
 import requests
+from zope.deprecation import deprecate
+import warnings
+warnings.simplefilter('always', DeprecationWarning)
+logging.captureWarnings(True)
+
+DEPRECATIONWARNING = 'CapakeyGateway{0} (SOAP) is deprecated, use CapakeyRestGateway{0} (REST) instead.'
 
 
 def capakey_gateway_request(client, method, *args):
@@ -61,7 +67,9 @@ class CapakeyGateway(object):
 
     caches = {}
 
+    @deprecate(DEPRECATIONWARNING.format(''))
     def __init__(self, client, **kwargs):
+        log.warning('test')
         self.client = client
         cache_regions = ['permanent', 'long', 'short']
         for cr in cache_regions:
@@ -75,6 +83,7 @@ class CapakeyGateway(object):
                         '%s.' % cr
                     )
 
+    @deprecate(DEPRECATIONWARNING.format('.list_gemeenten'))
     def list_gemeenten(self, sort=1):
         '''
         List all `gemeenten` in Vlaanderen.
@@ -99,6 +108,7 @@ class CapakeyGateway(object):
             g.set_gateway(self)
         return gemeente
 
+    @deprecate(DEPRECATIONWARNING.format('.get_gemeente_by_id'))
     def get_gemeente_by_id(self, id):
         '''
         Retrieve a `gemeente` by id (the NIScode).
@@ -126,6 +136,7 @@ class CapakeyGateway(object):
         gemeente.set_gateway(self)
         return gemeente
 
+    @deprecate(DEPRECATIONWARNING.format('.list_kadastrale_afdelingen'))
     def list_kadastrale_afdelingen(self, sort=1):
         '''
         List all `kadastrale afdelingen` in Flanders.
@@ -152,6 +163,7 @@ class CapakeyGateway(object):
             a.set_gateway(self)
         return afdelingen
 
+    @deprecate(DEPRECATIONWARNING.format('.list_kadastrale_afdelingen_by_gemeente'))
     def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
         '''
         List all `kadastrale afdelingen` in a `gemeente`.
@@ -191,6 +203,7 @@ class CapakeyGateway(object):
             a.set_gateway(self)
         return afdelingen
 
+    @deprecate(DEPRECATIONWARNING.format('.get_kadastrale_afdeling_by_id'))
     def get_kadastrale_afdeling_by_id(self, id):
         '''
         Retrieve a 'kadastrale afdeling' by id.
@@ -222,6 +235,7 @@ class CapakeyGateway(object):
         afdeling.set_gateway(self)
         return afdeling
 
+    @deprecate(DEPRECATIONWARNING.format('.list_secties_by_afdeling'))
     def list_secties_by_afdeling(self, afdeling):
         '''
         List all `secties` in a `kadastrale afdeling`.
@@ -260,6 +274,7 @@ class CapakeyGateway(object):
             s.set_gateway(self)
         return secties
 
+    @deprecate(DEPRECATIONWARNING.format('.get_sectie_by_id_and_afdeling'))
     def get_sectie_by_id_and_afdeling(self, id, afdeling):
         '''
         Get a `sectie`.
@@ -297,6 +312,7 @@ class CapakeyGateway(object):
         sectie.set_gateway(self)
         return sectie
 
+    @deprecate(DEPRECATIONWARNING.format('.list_percelen_by_sectie'))
     def list_percelen_by_sectie(self, sectie, sort=1):
         '''
         List all percelen in a `sectie`.
@@ -333,6 +349,7 @@ class CapakeyGateway(object):
             p.set_gateway(self)
         return percelen
 
+    @deprecate(DEPRECATIONWARNING.format('.get_perceel_by_id_and_sectie'))
     def get_perceel_by_id_and_sectie(self, id, sectie):
         '''
         Get a `perceel`.
@@ -369,6 +386,7 @@ class CapakeyGateway(object):
         perceel.set_gateway(self)
         return perceel
 
+    @deprecate(DEPRECATIONWARNING.format('.get_perceel_by_capakey'))
     def get_perceel_by_capakey(self, capakey):
         '''
         Get a `perceel`.
@@ -401,6 +419,7 @@ class CapakeyGateway(object):
         perceel.set_gateway(self)
         return perceel
 
+    @deprecate(DEPRECATIONWARNING.format('.get_perceel_by_percid'))
     def get_perceel_by_percid(self, percid):
         '''
         Get a `perceel`.
