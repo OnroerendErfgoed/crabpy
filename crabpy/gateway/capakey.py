@@ -536,7 +536,7 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370
+                'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
             return Gemeente(
@@ -623,7 +623,7 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370
+                'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
             return Afdeling(
@@ -698,7 +698,7 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370
+                'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
             return Sectie(
@@ -800,7 +800,7 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370,
+                'srs': '31370',
                 'data': 'cadmap'
             }
             res = capakey_rest_gateway_request(url, p, h).json()
@@ -834,7 +834,7 @@ class CapakeyRestGateway(object):
             h = self.base_headers
             p = {
                 'geometry': 'bbox',
-                'srs': 31370,
+                'srs': '31370',
                 'data': 'cadmap'
             }
             res = capakey_rest_gateway_request(url, p, h).json()
