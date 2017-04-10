@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 This script demonstrates using the capakey gateway to walk the entire
 cadastral tree of a `gemeente`.
-'''
+
+WARNING: The CapakeyGateway (SOAP) is deprecated, use CapakeyRestGateway (REST) instead.
+"""
 
 from crabpy.client import capakey_factory
 

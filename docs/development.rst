@@ -24,7 +24,7 @@ copy this file and edit the copy instead of the original.
 .. code-block:: ini
 
    [pytest]
-   addopts = --crab-integration --capakey-integration --capakey-user=<username> --capakey-password=<password>
+   addopts = --crab-integration --capakey-integration --capakey-soap-integration --capakey-soap-user=<username> --capakey-soap-password=<password>
 
 .. code-block:: bash
 

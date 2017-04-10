@@ -27,6 +27,8 @@ provided to make life easier.
 .. literalinclude:: /../examples/capakey.py
    :language: python
 
+Be careful: the CAPAKEY SOAP gateway is deprecated. We advise you the use the CAPAKEY REST gateway instead.
+
 
 Using a client behing a proxy
 -----------------------------
@@ -41,7 +43,7 @@ by passing the proxy parameter to the :func:`crabpy.client.crab_factory` or
 
 
 Using the CRAB gateway
------------------------
+----------------------
 
 To make life easier and crab more pythonic, we've also implemented a gateway
 that abstracts some more of the service and provides richer objects as responses.
@@ -99,9 +101,10 @@ See the examples folder for some more sample code.
 .. _agiv: http://www.agiv.be
 .. _dogpile: https://bitbucket.org/zzzeek/dogpile.cache
 
+Be careful: the CAPAKEY SOAP gateway is deprecated. We advise you the use the CAPAKEY REST gateway instead.
 
 Using the CAPAKEY REST gateway
--------------------------
+------------------------------
 
 To make life easier and capakey more pythonic, we've also implemented a rest gateway
 that abstracts some more of the service and provides richer objects as responses.
@@ -125,7 +128,7 @@ Please bear in mind that in this case short can probably be fairly long. We
 suspect that the database underlying the capakey service is not updated that
 regularly, so a short caching duration could easily be one hour or even a day.
 
-.. literalinclude:: /../examples/capakey_gateway_caching.py
+.. literalinclude:: /../examples/capakey_gateway_rest_caching.py
    :language: python
 
 

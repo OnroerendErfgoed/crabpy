@@ -1,29 +1,18 @@
 # -*- coding: utf-8 -*-
 '''
 This script demonstrates querying the capakey gateway while maintaining a cache.
-
-WARNING: The CapakeyGateway (SOAP) is deprecated, use CapakeyRestGateway (REST) instead.
 '''
 
 import os
-
-from crabpy.client import capakey_factory
-
-capakey = capakey_factory(
-    user = 'USER',
-    password = 'PASSWORD'
-)
-
-from crabpy.gateway.capakey import CapakeyGateway
+from crabpy.gateway.capakey import CapakeyRestGateway
 
 root = "./dogpile_data/"
 
 if not os.path.exists(root):
     os.makedirs(root)
 
-g = CapakeyGateway(
-    capakey,
-    cache_config = {
+g = CapakeyRestGateway(
+    cache_config={
         'permanent.backend': 'dogpile.cache.dbm',
         'permanent.expiration_time': 604800,
         'permanent.arguments.filename': os.path.join(root, 'capakey_permanent.dbm'),

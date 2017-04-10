@@ -1,7 +1,8 @@
-0.7.1 (??-??-2016)
+0.8.0 (??-??-2017)
 ------------------
 
-- Fix a bug with list_huisnummers_by_perceel. (#67)
+- Add Capakey REST gateway (#45)
+- Deprecate Capakey SOAP gateway (#69)
 
 0.7.0 (25-01-2016)
 ------------------
