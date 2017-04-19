@@ -41,20 +41,20 @@ class TestCapakeyClient:
             capakey_factory()
 
     @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-integration'),
+        not pytest.config.getoption('--capakey-soap-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
     def test_override_wsdl(self, request):
         wsdl = "http://ws.agiv.be/capakeyws/nodataset.asmx?WSDL"
         self.capakey = capakey_factory(
             wsdl=wsdl,
-            user=request.config.getoption('--capakey-user'),
-            password=request.config.getoption('--capakey-password')
+            user=request.config.getoption('--capakey-soap-user'),
+            password=request.config.getoption('--capakey-soap-password')
         )
         assert self.capakey.wsdl.url == wsdl
 
     @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-integration'),
+        not pytest.config.getoption('--capakey-soap-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
     def test_list_gemeenten(self, capakey):

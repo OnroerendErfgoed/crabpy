@@ -17,24 +17,29 @@ def pytest_addoption(parser):
         help="capakey-integartion: Run CAPAKEY integration tests or not?"
     )
     parser.addoption(
-        "--capakey-user",
-        action="store", default="capakey_user",
-        help="capakey-user: Run CAPAKEY integration tests with this user"
+        "--capakey-soap-integration",
+        action="store_true",
+        help="capakey-integartion: Run CAPAKEY SOAP integration tests or not?"
     )
     parser.addoption(
-        "--capakey-password",
+        "--capakey-soap-user",
+        action="store", default="capakey_user",
+        help="capakey-soap-user: Run CAPAKEY integration tests with this user"
+    )
+    parser.addoption(
+        "--capakey-soap-password",
         action="store", default="capakey_password",
-        help="capakey-password: Run CAPAKEY integration tests with this password"
+        help="capakey-soap-password: Run CAPAKEY integration tests with this password"
     )
 
 @pytest.fixture(scope="session")
 def capakey(request):
-    if not request.config.getoption('--capakey-integration'):
+    if not request.config.getoption('--capakey-soap-integration'):
         return None
     from crabpy.client import capakey_factory
     capakey = capakey_factory(
-        user=request.config.getoption("--capakey-user"),
-        password=request.config.getoption("--capakey-password")
+        user=request.config.getoption("--capakey-soap-user"),
+        password=request.config.getoption("--capakey-soap-password")
     )
     return capakey
 

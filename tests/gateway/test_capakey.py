@@ -19,17 +19,34 @@ from crabpy.gateway.capakey import (
     Gemeente,
     Afdeling,
     Sectie,
-    Perceel
+    Perceel,
+    capakey_rest_gateway_request,
+    GatewayRuntimeException
 )
+
+import requests
 
 from tests import (
     run_capakey_integration_tests,
     config
 )
 
+try:
+    from unittest.mock import MagicMock, patch
+except:
+    from mock import MagicMock, patch
+
+
+def connection_error(url, headers={}, params={}):
+    raise requests.exceptions.ConnectionError
+
+
+def request_exception(url, headers={}, params={}):
+    raise requests.exceptions.RequestException
+
 
 @pytest.mark.skipif(
-    not pytest.config.getoption('--capakey-integration'),
+    not pytest.config.getoption('--capakey-soap-integration'),
     reason = 'No CAPAKEY Integration tests required'
 )
 class TestCapakeyGateway:
@@ -274,6 +291,20 @@ class TestCapakeyRestGateway:
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
 
+    @patch('requests.get', MagicMock(side_effect=connection_error))
+    def test_requests_connection(self):
+        with pytest.raises(GatewayRuntimeException) as cm:
+            capakey_rest_gateway_request('url')
+        exception = cm.value.message
+        assert exception == 'Could not execute request due to connection problems:\nConnectionError()'
+
+    @patch('requests.get', MagicMock(side_effect=request_exception))
+    def test_requests_request_exception(self):
+        with pytest.raises(GatewayRuntimeException) as cm:
+            capakey_rest_gateway_request('url')
+        exception = cm.value.message
+        assert exception == 'Could not execute request due to:\nRequestException()'
+
 
 class TestGemeente:
 
@@ -306,9 +337,19 @@ class TestGemeente:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self, capakey_gateway):
+    def test_lazy_load_1(self, capakey_rest_gateway):
+        g = Gemeente(44021, 'Gent', gateway=capakey_rest_gateway)
+        g.clear_gateway()
+        with pytest.raises(RuntimeError):
+            g.check_gateway()
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_lazy_load_1_soap(self, capakey_gateway):
         g = Gemeente(44021, 'Gent', gateway=capakey_gateway)
         g.clear_gateway()
         with pytest.raises(RuntimeError):
@@ -318,7 +359,19 @@ class TestGemeente:
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self, capakey_gateway):
+    def test_lazy_load(self, capakey_rest_gateway):
+        g = Gemeente(44021, 'Gent')
+        g.set_gateway(capakey_rest_gateway)
+        assert g.id == 44021
+        assert g.naam == 'Gent'
+        assert not g.centroid == None
+        assert not g.bounding_box == None
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_lazy_load_soap(self, capakey_gateway):
         g = Gemeente(44021, 'Gent')
         g.set_gateway(capakey_gateway)
         assert g.id == 44021
@@ -328,9 +381,21 @@ class TestGemeente:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_afdelingen(self, capakey_gateway):
+    def test_afdelingen(self, capakey_rest_gateway):
+        g = Gemeente(44021, 'Gent')
+        g.set_gateway(capakey_rest_gateway)
+        afdelingen = g.afdelingen
+        assert isinstance(afdelingen, list)
+        assert len(afdelingen) > 0
+        assert len(afdelingen) < 40
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_afdelingen_soap(self, capakey_gateway):
         g = Gemeente(44021, 'Gent')
         g.set_gateway(capakey_gateway)
         afdelingen = g.afdelingen
@@ -380,9 +445,21 @@ class TestAfdeling:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self, capakey_gateway):
+    def test_lazy_load(self, capakey_rest_gateway):
+        a = Afdeling(44021)
+        a.set_gateway(capakey_rest_gateway)
+        assert a.id == 44021
+        assert a.naam == 'GENT  1 AFD'
+        assert not a.centroid == None
+        assert not a.bounding_box == None
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_lazy_load_soap(self, capakey_gateway):
         a = Afdeling(44021)
         a.set_gateway(capakey_gateway)
         assert a.id == 44021
@@ -392,9 +469,20 @@ class TestAfdeling:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_secties(self, capakey_gateway):
+    def test_secties(self, capakey_rest_gateway):
+        a = Afdeling(44021)
+        a.set_gateway(capakey_rest_gateway)
+        secties = a.secties
+        assert isinstance(secties, list)
+        assert len(secties) == 1
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_secties_soap(self, capakey_gateway):
         a = Afdeling(44021)
         a.set_gateway(capakey_gateway)
         secties = a.secties
@@ -422,9 +510,9 @@ class TestSectie:
         with pytest.raises(RuntimeError):
             s.check_gateway()
 
-    def test_clear_gateway(self, capakey_gateway):
+    def test_clear_gateway(self, capakey_rest_gateway):
         s = Sectie('A', Afdeling(44021))
-        s.set_gateway(capakey_gateway)
+        s.set_gateway(capakey_rest_gateway)
         s.check_gateway()
         s.clear_gateway()
         with pytest.raises(RuntimeError):
@@ -432,9 +520,24 @@ class TestSectie:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self, capakey_gateway):
+    def test_lazy_load(self, capakey_rest_gateway):
+        s = Sectie(
+            'A',
+            Afdeling(44021)
+        )
+        s.set_gateway(capakey_rest_gateway)
+        assert s.id == 'A'
+        assert s.afdeling.id == 44021
+        assert not s.centroid == None
+        assert not s.bounding_box == None
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_lazy_load_soap(self, capakey_gateway):
         s = Sectie(
             'A',
             Afdeling(44021)
@@ -447,9 +550,23 @@ class TestSectie:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_percelen(self, capakey_gateway):
+    def test_percelen(self, capakey_rest_gateway):
+        s = Sectie(
+            'A',
+            Afdeling(44021)
+        )
+        s.set_gateway(capakey_rest_gateway)
+        percelen = s.percelen
+        assert isinstance(percelen, list)
+        assert len(percelen) > 0
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_percelen_soap(self, capakey_gateway):
         s = Sectie(
             'A',
             Afdeling(44021)
@@ -500,12 +617,29 @@ class TestPerceel:
             p.sectie.check_gateway()
             p.check_gateway()
 
-
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
-    def test_lazy_load(self, capakey_gateway):
+    def test_lazy_load(self, capakey_rest_gateway):
+        p = Perceel(
+            '1154/02C000', Sectie('A', Afdeling(46013)),
+            '46013A1154/02C000', '46013_A_1154_C_000_02',
+            gateway=capakey_rest_gateway
+        )
+        assert p.id == '1154/02C000'
+        assert p.sectie.id == 'A'
+        assert p.sectie.afdeling.id == 46013
+        assert p.capatype == None
+        assert p.cashkey == None
+        assert not p.centroid == None
+        assert not p.bounding_box == None
+
+    @pytest.mark.skipif(
+        not pytest.config.getoption('--capakey-soap-integration'),
+        reason='No CAPAKEY Integration tests required'
+    )
+    def test_lazy_load_soap(self, capakey_gateway):
         p = Perceel(
             '1154/02C000', Sectie('A', Afdeling(46013)),
             '46013A1154/02C000', '46013_A_1154_C_000_02',
