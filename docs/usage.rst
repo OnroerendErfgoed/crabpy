@@ -96,12 +96,9 @@ regularly, so a short caching duration could easily be one hour or even a day.
 
 See the examples folder for some more sample code.
 
-.. _agiv: http://www.agiv.be
-.. _dogpile: https://bitbucket.org/zzzeek/dogpile.cache
-
 
 Using the CAPAKEY REST gateway
--------------------------
+------------------------------
 
 To make life easier and capakey more pythonic, we've also implemented a rest gateway
 that abstracts some more of the service and provides richer objects as responses.
