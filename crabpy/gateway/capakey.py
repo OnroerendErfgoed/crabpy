@@ -63,6 +63,9 @@ def capakey_gateway_request(client, method, *args):
 class CapakeyGateway(object):
     '''
     A gateway to the capakey webservice.
+
+    .. deprecated:: 0.8.0
+       Will be removed in version `0.9.0`. Please use the :class:`CapakeyRestGateway`.
     '''
 
     caches = {}
@@ -474,6 +477,8 @@ def capakey_rest_gateway_request(url, headers={}, params={}):
 class CapakeyRestGateway(object):
     '''
     A REST gateway to the capakey webservice.
+
+    .. versionadded:: 0.8.0
     '''
 
     caches = {}
