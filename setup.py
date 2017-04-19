@@ -20,7 +20,7 @@ requires = [
 
 setup(
     name='crabpy',
-    version='0.7.1',
+    version='0.8.0',
     description='Interact with AGIV webservices.',
     long_description=open('README.rst').read() + '\n\n' +
                      open('CHANGES.rst').read(),
@@ -45,9 +45,9 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
     test_suite='nose.collector'
 )

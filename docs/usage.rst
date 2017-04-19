@@ -98,10 +98,10 @@ regularly, so a short caching duration could easily be one hour or even a day.
 
 See the examples folder for some more sample code.
 
-.. _agiv: http://www.agiv.be
-.. _dogpile: https://bitbucket.org/zzzeek/dogpile.cache
 
-Be careful: the CAPAKEY SOAP gateway is deprecated. We advise you the use the CAPAKEY REST gateway instead.
+.. warning::
+
+   Be careful: the CAPAKEY SOAP gateway is deprecated. We advise you the use the CAPAKEY REST gateway instead.
 
 Using the CAPAKEY REST gateway
 ------------------------------

@@ -1,8 +1,11 @@
-0.8.0 (??-??-2017)
+0.8.0 (19-04-2017)
 ------------------
 
-- Add Capakey REST gateway (#45)
+- Added a CapakeyRestGateway that uses the new Capakey REST service provided by
+  Informatie Vlaanderen. (#45, #53)
 - Deprecate Capakey SOAP gateway (#69)
+- Fix a bug with list_huisnummers_by_perceel. (#67)
+- Dropped support for Python 3.3 and added support for Python 3.6.
 
 0.7.0 (25-01-2016)
 ------------------
