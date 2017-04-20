@@ -176,8 +176,8 @@ class TestCapakeyGateway:
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
-        assert res.centroid == (104033.43150000274, 194675.36899999902)
-        assert res.bounding_box == (104026.09700000286, 194663.61899999902, 104040.76600000262, 194687.11899999902)
+        assert res.centroid == (104033.431500003, 194675.368999999)
+        assert res.bounding_box == (104026.097000003, 194663.618999999, 104040.766000003, 194687.118999999)
 
     def test_get_perceel_by_unexisting_capakey(self, capakey_gateway):
         with pytest.raises(GatewayResourceNotFoundException):
