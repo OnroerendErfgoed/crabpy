@@ -1,4 +1,4 @@
-0.8.1 (??-04-2017)
+0.8.1 (20-04-2017)
 ------------------
 
 - Updated center and bounding box format in responses of the CapakeyRestGateway
