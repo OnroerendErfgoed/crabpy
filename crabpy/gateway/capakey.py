@@ -506,11 +506,23 @@ class CapakeyRestGateway(object):
 
     @staticmethod
     def _parse_centroid(center):
+        '''
+        Parse response center from the CapakeyRestGateway to (CenterX, CenterY)
+        
+        :param center: response center from the CapakeyRestGateway
+        :return: (CenterX, CenterY)
+        '''
         coordinates = json.loads(center)["coordinates"]
         return coordinates[0], coordinates[1]
 
     @staticmethod
     def _parse_bounding_box(bounding_box):
+        '''
+        Parse response bounding box from the CapakeyRestGateway to (MinimumX, MinimumY, MaximumX, MaximumY)
+        
+        :param bounding_box: response bounding box from the CapakeyRestGateway
+        :return: (MinimumX, MinimumY, MaximumX, MaximumY)
+        '''
         coordinates = json.loads(bounding_box)["coordinates"]
         x_coords = [x for x, y in coordinates[0]]
         y_coords = [y for x, y in coordinates[0]]
