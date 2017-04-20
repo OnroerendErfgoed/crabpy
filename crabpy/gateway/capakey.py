@@ -7,6 +7,7 @@ This module contains an opionated gateway for the capakey webservice.
 
 from __future__ import unicode_literals
 import six
+import json
 
 import logging
 log = logging.getLogger(__name__)
@@ -503,6 +504,18 @@ class CapakeyRestGateway(object):
                         '%s.' % cr
                     )
 
+    @staticmethod
+    def _parse_centroid(center):
+        coordinates = json.loads(center)["coordinates"]
+        return coordinates[0], coordinates[1]
+
+    @staticmethod
+    def _parse_bounding_box(bounding_box):
+        coordinates = json.loads(bounding_box)["coordinates"]
+        x_coords = [x for x, y in coordinates[0]]
+        y_coords = [y for x, y in coordinates[0]]
+        return min(x_coords), min(y_coords), max(x_coords), max(y_coords)
+
     def list_gemeenten(self, sort=1):
         '''
         List all `gemeenten` in Vlaanderen.
@@ -547,8 +560,8 @@ class CapakeyRestGateway(object):
             return Gemeente(
                 res['municipalityCode'],
                 res['municipalityName'],
-                res['geometry']['center'],
-                res['geometry']['boundingBox']
+                self._parse_centroid(res['geometry']['center']),
+                self._parse_bounding_box(res['geometry']['boundingBox'])
             )
         if self.caches['long'].is_configured:
             key = 'get_gemeente_by_id_rest#%s' % id
@@ -635,8 +648,8 @@ class CapakeyRestGateway(object):
                 id=res['departmentCode'],
                 naam=res['departmentName'],
                 gemeente=Gemeente(res['municipalityCode'], res['municipalityName']),
-                centroid=res['geometry']['center'],
-                bounding_box=res['geometry']['boundingBox']
+                centroid=self._parse_centroid(res['geometry']['center']),
+                bounding_box=self._parse_bounding_box(res['geometry']['boundingBox'])
             )
         if self.caches['long'].is_configured:
             key = 'get_kadastrale_afdeling_by_id_rest#%s' % aid
@@ -709,8 +722,8 @@ class CapakeyRestGateway(object):
             return Sectie(
                 res['sectionCode'],
                 afdeling,
-                res['geometry']['center'],
-                res['geometry']['boundingBox'],
+                self._parse_centroid(res['geometry']['center']),
+                self._parse_bounding_box(res['geometry']['boundingBox'])
             )
         if self.caches['long'].is_configured:
             key = 'get_sectie_by_id_and_afdeling_rest#%s#%s' % (id, aid)
@@ -816,8 +829,8 @@ class CapakeyRestGateway(object):
                 Perceel.get_percid_from_capakey(res['capakey']),
                 None,
                 None,
-                res['geometry']['center'],
-                res['geometry']['boundingBox']
+                self._parse_centroid(res['geometry']['center']),
+                self._parse_bounding_box(res['geometry']['boundingBox'])
             )
         if self.caches['short'].is_configured:
             key = 'get_perceel_by_id_and_sectie_rest#%s#%s#%s' % (id, sectie.id, sectie.afdeling.id)
@@ -857,8 +870,8 @@ class CapakeyRestGateway(object):
                 Perceel.get_percid_from_capakey(res['capakey']),
                 None,
                 None,
-                res['geometry']['center'],
-                res['geometry']['boundingBox']
+                self._parse_centroid(res['geometry']['center']),
+                self._parse_bounding_box(res['geometry']['boundingBox'])
             )
         if self.caches['short'].is_configured:
             key = 'get_perceel_by_capakey_rest#%s' % capakey
