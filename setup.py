@@ -15,7 +15,8 @@ requires = [
     'suds-jurko>=0.6.0',
     'dogpile.cache',
     'six',
-    'requests'
+    'requests',
+    'zope.deprecation'
 ]
 
 setup(
