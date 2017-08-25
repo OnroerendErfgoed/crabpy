@@ -1,3 +1,9 @@
+0.8.2 (25-08-2017)
+------------------
+- Add zope.deprecation to setup.py #76
+- Upgrade capakey rest service #78
+
+
 0.8.1 (20-04-2017)
 ------------------
 
