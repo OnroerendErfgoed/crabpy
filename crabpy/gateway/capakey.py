@@ -880,6 +880,7 @@ class CapakeyRestGateway(object):
                 ),
                 res['capakey'],
                 Perceel.get_percid_from_capakey(res['capakey']),
+                res['adres'],
                 None,
                 None,
                 self._parse_centroid(res['geometry']['center']),
@@ -1198,7 +1199,7 @@ class Perceel(GatewayObject):
     '''
 
     def __init__(
-        self, id, sectie, capakey, percid,
+        self, id, sectie, capakey, percid, adressen=None,
         capatype=None, cashkey=None,
         centroid=None, bounding_box=None,
         **kwargs
@@ -1207,6 +1208,7 @@ class Perceel(GatewayObject):
         self.sectie = sectie
         self.capakey = capakey
         self.percid = percid
+        self.adressen = adressen
         self._capatype = capatype
         self._cashkey = cashkey
         self._centroid = centroid
