@@ -1263,7 +1263,6 @@ class Perceel(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self.adressen = adressen
-        print "adressen: %s" % adressen
         self.polygon = polygon
         self.crs = crs
         super(Perceel, self).__init__(**kwargs)
