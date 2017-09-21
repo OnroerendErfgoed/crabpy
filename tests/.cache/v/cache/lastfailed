@@ -1,0 +1,7 @@
+{
+  "gateway/test_capakey.py::TestCapakeyRestGateway::()::test_list_afdelingen": true, 
+  "gateway/test_capakey.py::TestPerceel::()::test_lazy_load": true, 
+  "gateway/test_crab.py::TestCrabGateway::()::test_get_huisnummer_by_nummer_and_straat": true, 
+  "gateway/test_crab.py::TestCrabGateway::()::test_list_huisnummers_by_perceel_empty": true, 
+  "gateway/test_crab_cached.py::TestCrabCachedGateway::()::test_list_aardterreinobjecten_different_sort": true
+}
