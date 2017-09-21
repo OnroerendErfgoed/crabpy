@@ -1556,7 +1556,7 @@ class TestWegsegment:
  150543.214411631 200773.35943738,\
  150546.079307631 200764.489805374,\
  150548.592075631 200754.511565369)"""
-        )
+
         w.metadata.set_gateway(crab)
         assert isinstance(w.metadata, Metadata)
         assert not w.metadata.begin_datum == None
