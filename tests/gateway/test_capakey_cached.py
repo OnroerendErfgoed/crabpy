@@ -84,7 +84,7 @@ class TestCapakeyCachedGateway:
     def test_list_secties_by_afdeling_id(self, capakey_gateway):
         res = capakey_gateway.list_secties_by_afdeling(44021)
         assert isinstance(res, list)
-        assert (len(res), 1)
+        assert len(res) == 1
         assert capakey_gateway.caches['long'].get('ListKadSectiesByKadAfdelingcode#44021') == res
 
     def test_get_sectie_by_id_and_afdeling(self, capakey_gateway):
@@ -202,7 +202,7 @@ class TestCapakeyRestCachedGateway:
     def test_list_secties_by_afdeling_id(self, capakey_rest_gateway):
         res = capakey_rest_gateway.list_secties_by_afdeling(44021)
         assert isinstance(res, list)
-        assert (len(res), 1)
+        assert len(res) == 1
         assert capakey_rest_gateway.caches['long'].get('list_secties_by_afdeling_rest#44021') == res
 
     def test_get_sectie_by_id_and_afdeling(self, capakey_rest_gateway):

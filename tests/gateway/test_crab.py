@@ -116,19 +116,19 @@ class TestCrabGateway:
         assert res.niscode == 40000
         res = self.crab.get_provincie_by_id(50000)
         assert isinstance(res, Provincie)
-        assert (res.niscode, 50000)
+        assert res.niscode == 50000
         res = self.crab.get_provincie_by_id(60000)
         assert isinstance(res, Provincie)
-        assert (res.niscode, 60000)
+        assert res.niscode == 60000
         res = self.crab.get_provincie_by_id(70000)
         assert isinstance(res, Provincie)
-        assert (res.niscode, 70000)
+        assert res.niscode == 70000
         res = self.crab.get_provincie_by_id(80000)
         assert isinstance(res, Provincie)
-        assert (res.niscode, 80000)
+        assert res.niscode == 80000)
         res = self.crab.get_provincie_by_id(90000)
         assert isinstance(res, Provincie)
-        assert (res.niscode, 90000)
+        assert res.niscode == 90000
 
     def test_get_provincie_by_unexisting_id(self):
         with pytest.raises(GatewayResourceNotFoundException):
@@ -139,17 +139,17 @@ class TestCrabGateway:
         res = self.crab.list_gemeenten_by_provincie(provincie)
         assert isinstance(res, list)
         assert isinstance(res[0], Gemeente)
-        assert (str(res[0].niscode)[0], '1')
+        assert str(res[0].niscode)[0] == '1'
         provincie = 10000
         res = self.crab.list_gemeenten_by_provincie(provincie)
         assert isinstance(res, list)
         assert isinstance(res[0], Gemeente)
-        assert (str(res[0].niscode)[0], '1')
+        assert str(res[0].niscode)[0] == '1'
 
     def test_get_gemeente_by_id(self):
         res = self.crab.get_gemeente_by_id(1)
         assert isinstance(res, Gemeente)
-        assert (res.id, 1)
+        assert res.id == 1
 
     def test_get_gemeente_by_id_with_string(self):
         with pytest.raises(GatewayRuntimeException):
@@ -162,7 +162,7 @@ class TestCrabGateway:
     def test_get_gemeente_by_niscode(self):
         res = self.crab.get_gemeente_by_niscode(11001)
         assert isinstance(res, Gemeente)
-        assert (res.niscode, 11001)
+        assert res.niscode == 11001
 
     def test_get_gemeente_by_unexisting_niscode(self):
         with pytest.raises(GatewayResourceNotFoundException):
@@ -342,8 +342,8 @@ class TestCrabGateway:
     def test_get_huisnummer_by_nummer_and_straat(self):
         res = self.crab.get_huisnummer_by_nummer_and_straat(1, 1)
         assert isinstance(res, Huisnummer)
-        assert (res.huisnummer, '1')
-        assert (res.straat.id, 1)
+        assert res.huisnummer == '1'
+        assert res.straat.id == 1
         straat = self.crab.get_straat_by_id(1)
         res = self.crab.get_huisnummer_by_nummer_and_straat(1, straat)
         assert isinstance(res, Huisnummer)
@@ -1060,8 +1060,8 @@ class TestStraat:
 
     def test_str_and_repr_dont_lazy_load(self):
         s = Straat(1, 'Acacialaan', 1, 3)
-        assert ('Acacialaan (1)', str(s))
-        assert ("Straat(1, 'Acacialaan', 1, 3)", repr(s))
+        assert 'Acacialaan (1)' == str(s)
+        assert "Straat(1, 'Acacialaan', 1, 3)" == repr(s)
 
     def test_check_gateway_not_set(self):
         s = Straat(1, 'Acacialaan', 1, 3)
@@ -1319,7 +1319,7 @@ class TestHuisnummer:
         h.set_gateway(crab)
         bounding = h.bounding_box
         assert isinstance(bounding, list)
-        assert (len(bounding), 4)
+        assert len(bounding) == 4
 
     def test_check_gateway_not_set(self):
         h = Huisnummer(1, 3, '51', 17718)
@@ -1531,11 +1531,10 @@ class TestWegsegment:
         )
         w = Wegsegment('108724', 4)
         w.set_gateway(crab)
-        assert (w.id, "108724")
-        assert (int(w.status.id), 4)
-        assert (int(w.methode.id), 3)
-        assert (
-            w.geometrie,
+        assert w.id ==  "108724"
+        assert int(w.status.id) == 4
+        assert int(w.methode.id) == 3
+        assert w.geometrie ==
             """LINESTRING (150339.255243488 201166.401677653,\
  150342.836939491 201165.832525652,\
  150345.139531493 201165.466573652,\
