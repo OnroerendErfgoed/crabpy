@@ -1534,8 +1534,7 @@ class TestWegsegment:
         assert w.id ==  "108724"
         assert int(w.status.id) == 4
         assert int(w.methode.id) == 3
-        assert w.geometrie ==
-            """LINESTRING (150339.255243488 201166.401677653,\
+        assert w.geometrie == """LINESTRING (150339.255243488 201166.401677653,\
  150342.836939491 201165.832525652,\
  150345.139531493 201165.466573652,\
  150349.791371495 201164.769421652,\
