@@ -319,20 +319,17 @@ class TestGemeente:
             (104154.2225, 197300.703),
             (94653.453, 185680.984, 113654.992, 208920.422)
         )
-        assert (g.id, 44021)
-        assert (g.naam, 'Gent')
-        assert (g.centroid, (104154.2225, 197300.703))
-        assert (
-            g.bounding_box,
-            (94653.453, 185680.984, 113654.992, 208920.422)
-        )
-        assert ('Gent (44021)', str(g))
-        assert ("Gemeente(44021, 'Gent')", repr(g))
+        assert g.id == 44021
+        assert g.naam == 'Gent'
+        assert g.centroid == (104154.2225, 197300.703)
+        assert g.bounding_box == (94653.453, 185680.984, 113654.992, 208920.422)
+        assert 'Gent (44021)' == str(g)
+        assert "Gemeente(44021, 'Gent')" == repr(g)
 
     def test_str_and_repr_dont_lazy_load(self):
         g = Gemeente(44021, 'Gent')
-        assert ('Gent (44021)', str(g))
-        assert ("Gemeente(44021, 'Gent')", repr(g))
+        assert 'Gent (44021)' == str(g)
+        assert "Gemeente(44021, 'Gent')" == repr(g)
 
     def test_check_gateway_not_set(self):
         g = Gemeente(44021, 'Gent')
@@ -506,7 +503,7 @@ class TestSectie:
         assert s.id == 'A'
         assert s.centroid == (104893.06375, 196022.244094)
         assert s.bounding_box == (104002.076625, 194168.3415, 105784.050875, 197876.146688)
-        assert ('Gent  1 AFD (44021), Sectie A', str(s))
+        assert 'Gent  1 AFD (44021), Sectie A' == str(s)
         assert "Sectie('A', Afdeling(44021, 'Gent  1 AFD'))" == repr(s)
 
     def test_check_gateway_not_set(self):
