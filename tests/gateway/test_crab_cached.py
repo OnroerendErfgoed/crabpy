@@ -66,7 +66,7 @@ class TestCrabCachedGateway:
         res = self.crab.list_provincies(2)
         assert isinstance(res, list)
         assert self.crab.caches['permanent'].get('ListProvinciesByGewestId#2') == res
-        assert (res[0].gewest.id, 2)
+        assert res[0].gewest.id == 2
 
     def test_get_provincie_by_id(self):
         res = self.crab.get_provincie_by_id(10000)
@@ -77,14 +77,14 @@ class TestCrabCachedGateway:
         res = self.crab.list_gemeenten()
         assert isinstance(res, list)
         assert self.crab.caches['permanent'].get('ListGemeentenByGewestId#2#1') == res
-        assert (res[0].gewest.id, 2)
+        assert res[0].gewest.id == 2
 
     def test_list_gemeenten_gewest_1(self):
         gewest = Gewest(1)
         r = self.crab.list_gemeenten(gewest)
         assert isinstance(r, list)
         assert self.crab.caches['permanent'].get('ListGemeentenByGewestId#1#1') == r
-        assert (r[0].gewest.id, 1)
+        assert r[0].gewest.id == 1
 
     def test_list_gemeenten_different_sort(self):
         res = self.crab.list_gemeenten(2, 1)
