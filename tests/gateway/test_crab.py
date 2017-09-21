@@ -125,7 +125,7 @@ class TestCrabGateway:
         assert res.niscode == 70000
         res = self.crab.get_provincie_by_id(80000)
         assert isinstance(res, Provincie)
-        assert res.niscode == 80000)
+        assert res.niscode == 80000
         res = self.crab.get_provincie_by_id(90000)
         assert isinstance(res, Provincie)
         assert res.niscode == 90000
