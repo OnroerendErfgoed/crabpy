@@ -1613,7 +1613,7 @@ class TestTerreinobject:
         t = Terreinobject("13040_C_1747_G_002_00", 1)
         t.set_gateway(crab)
         assert t.id == "13040_C_1747_G_002_00"
-        assert t.centroid == (190708.59, 224667.59)
+        assert t.centroid == (190708.6, 224667.59)
         assert t.bounding_box == (190700.24, 224649.87, 190716.95, 224701.7)
         assert int(t.aard.id) == 1
         t.metadata.set_gateway(crab)
@@ -1673,7 +1673,7 @@ class TestPerceel:
         p = Perceel("13040C1747/00G002")
         p.set_gateway(crab)
         assert p.id == "13040C1747/00G002"
-        assert p.centroid == (190708.59, 224667.59)
+        assert p.centroid == (190708.6, 224667.59)
         p.metadata.set_gateway(crab)
         assert isinstance(p.metadata, Metadata)
         assert p.metadata.begin_datum is not None
