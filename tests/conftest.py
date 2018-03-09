@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*
-
-import os
 import pytest
-from six.moves import configparser
 
 
 def pytest_addoption(parser):

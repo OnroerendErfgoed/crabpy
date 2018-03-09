@@ -6,10 +6,6 @@ except ImportError:  # pragma NO COVER
     import unittest  # noqa
 import pytest
 
-from crabpy.gateway.exception import (
-    GatewayResourceNotFoundException
-)
-
 from crabpy.gateway.capakey import (
     Gemeente,
     Afdeling,
@@ -20,12 +16,6 @@ from crabpy.gateway.capakey import (
 )
 
 import requests
-
-from tests import (
-    run_capakey_integration_tests,
-    config
-)
-
 try:
     from unittest.mock import MagicMock, patch
 except:

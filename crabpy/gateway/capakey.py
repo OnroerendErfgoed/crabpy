@@ -14,7 +14,6 @@ log = logging.getLogger(__name__)
 
 from crabpy.gateway.exception import (
     GatewayRuntimeException,
-    GatewayAuthenticationException,
     GatewayResourceNotFoundException
 )
 
