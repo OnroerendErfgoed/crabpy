@@ -21,8 +21,8 @@ requires = [
 
 setup(
     name='crabpy',
-    version='0.8.2',
-    description='Interact with AGIV webservices.',
+    version='0.8.3',
+    description='Interact with geographical webservices by Informatie Vlaanderen.',
     long_description=open('README.rst').read() + '\n\n' +
                      open('CHANGES.rst').read(),
     author='Onroerend Erfgoed',

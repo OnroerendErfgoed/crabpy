@@ -30,7 +30,7 @@ provided to make life easier.
 Be careful: the CAPAKEY SOAP gateway is deprecated. We advise you the use the CAPAKEY REST gateway instead.
 
 
-Using a client behing a proxy
+Using a client behind a proxy
 -----------------------------
 
 If you need to connect to CRAB or CAPAKEY through a proxy, you can do so 

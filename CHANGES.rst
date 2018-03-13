@@ -1,3 +1,10 @@
+0.8.3 (07-12-2017)
+------------------
+
+- Fix some unit tests.
+- Update some dependencies
+- Configure pyup
+
 0.8.2 (25-08-2017)
 ------------------
 - Add zope.deprecation to setup.py #76
