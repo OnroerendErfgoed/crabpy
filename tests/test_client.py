@@ -6,8 +6,6 @@ import pytest
 
 from crabpy.client import (
     crab_factory,
-    capakey_factory,
-    capakey_request
 )
 
 @pytest.mark.skipif(
@@ -31,32 +29,4 @@ class TestCrabClient:
 
     def test_list_gemeenten(self):
         res = self.crab.service.ListGemeentenByGewestId(2)
-        assert len(res) > 0
-
-
-class TestCapakeyClient:
-
-    def test_user_and_password_must_be_set(self):
-        with pytest.raises(ValueError):
-            capakey_factory()
-
-    @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason = 'No CAPAKEY Integration tests required'
-    )
-    def test_override_wsdl(self, request):
-        wsdl = "http://ws.agiv.be/capakeyws/nodataset.asmx?WSDL"
-        self.capakey = capakey_factory(
-            wsdl=wsdl,
-            user=request.config.getoption('--capakey-soap-user'),
-            password=request.config.getoption('--capakey-soap-password')
-        )
-        assert self.capakey.wsdl.url == wsdl
-
-    @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason = 'No CAPAKEY Integration tests required'
-    )
-    def test_list_gemeenten(self, capakey):
-        res = capakey_request(capakey, 'ListAdmGemeenten', 1)
         assert len(res) > 0

@@ -15,13 +15,12 @@ requires = [
     'suds-jurko>=0.6.0',
     'dogpile.cache',
     'six',
-    'requests',
-    'zope.deprecation'
+    'requests'
 ]
 
 setup(
     name='crabpy',
-    version='0.8.3',
+    version='0.9.0',
     description='Interact with geographical webservices by Informatie Vlaanderen.',
     long_description=open('README.rst').read() + '\n\n' +
                      open('CHANGES.rst').read(),

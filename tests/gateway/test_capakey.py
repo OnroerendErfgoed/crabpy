@@ -6,16 +6,7 @@ except ImportError:  # pragma NO COVER
     import unittest  # noqa
 import pytest
 
-from crabpy.client import (
-    capakey_factory
-)
-
-from crabpy.gateway.exception import (
-    GatewayResourceNotFoundException
-)
-
 from crabpy.gateway.capakey import (
-    CapakeyGateway,
     Gemeente,
     Afdeling,
     Sectie,
@@ -25,12 +16,6 @@ from crabpy.gateway.capakey import (
 )
 
 import requests
-
-from tests import (
-    run_capakey_integration_tests,
-    config
-)
-
 try:
     from unittest.mock import MagicMock, patch
 except:
@@ -43,158 +28,6 @@ def connection_error(url, headers={}, params={}):
 
 def request_exception(url, headers={}, params={}):
     raise requests.exceptions.RequestException
-
-
-@pytest.mark.skipif(
-    not pytest.config.getoption('--capakey-soap-integration'),
-    reason = 'No CAPAKEY Integration tests required'
-)
-class TestCapakeyGateway:
-
-    def test_list_gemeenten(self, capakey_gateway):
-        res = capakey_gateway.list_gemeenten()
-        assert isinstance(res, list)
-
-    def test_list_gemeenten_invalid_auth(self):
-        capakey_gateway_client = capakey_factory(
-            user='USER',
-            password='PASSWORD'
-        )
-        capakey_gateway = CapakeyGateway(
-            capakey_gateway_client
-        )
-        from crabpy.gateway.exception import GatewayAuthenticationException
-        with pytest.raises(GatewayAuthenticationException):
-            capakey_gateway.list_gemeenten()
-
-    def test_get_gemeente_by_id(self, capakey_gateway):
-        res = capakey_gateway.get_gemeente_by_id(44021)
-        assert isinstance(res, Gemeente)
-        assert res.id == 44021
-
-    def test_get_gemeente_by_invalid_id(self, capakey_gateway):
-        with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_gemeente_by_id('gent')
-
-    def test_list_afdelingen(self, capakey_gateway):
-        res = capakey_gateway.list_kadastrale_afdelingen()
-        assert isinstance(res, list)
-        assert len(res) > 300
-
-    def test_list_afdelingen_by_gemeente(self, capakey_gateway):
-        g = capakey_gateway.get_gemeente_by_id(44021)
-        res = capakey_gateway.list_kadastrale_afdelingen_by_gemeente(g)
-        assert isinstance(res, list)
-        assert len(res) > 0
-        assert len(res) < 40
-
-    def test_list_afdelingen_by_unexisting_gemeente(self, capakey_gateway):
-        g = Gemeente(99999)
-        res = capakey_gateway.list_kadastrale_afdelingen_by_gemeente(g)
-        assert isinstance(res, list)
-        assert len(res) == 0
-
-    def test_list_afdelingen_by_gemeente_id(self, capakey_gateway):
-        res = capakey_gateway.list_kadastrale_afdelingen_by_gemeente(44021)
-        assert isinstance(res, list)
-        assert len(res) > 0
-        assert len(res) < 40
-
-    def test_get_kadastrale_afdeling_by_id(self, capakey_gateway):
-        res = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
-        assert isinstance(res, Afdeling)
-        assert res.id == 44021
-        assert isinstance(res.gemeente, Gemeente)
-        assert res.gemeente.id == 44021
-
-    def test_get_kadastrale_afdeling_by_unexisting_id(self, capakey_gateway):
-        with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_kadastrale_afdeling_by_id(44000)
-
-    def test_list_secties_by_afdeling(self, capakey_gateway):
-        a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
-        res = capakey_gateway.list_secties_by_afdeling(a)
-        assert isinstance(res, list)
-        assert len(res) ==  1
-
-    def test_list_secties_by_unexisting_afdeling(self, capakey_gateway):
-        a = Afdeling(99000)
-        res = capakey_gateway.list_secties_by_afdeling(a)
-        assert isinstance(res, list)
-        assert len(res) ==  0
-
-    def test_list_secties_by_afdeling_id(self, capakey_gateway):
-        res = capakey_gateway.list_secties_by_afdeling(44021)
-        assert isinstance(res, list)
-        assert len(res) == 1
-
-    def test_get_sectie_by_id_and_afdeling(self, capakey_gateway):
-        a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
-        res = capakey_gateway.get_sectie_by_id_and_afdeling('A', a)
-        assert isinstance(res, Sectie)
-        assert res.id == 'A'
-        assert res.afdeling.id == 44021
-
-    def test_get_sectie_by_unexisting_id_and_afdeling(self, capakey_gateway):
-        a = capakey_gateway.get_kadastrale_afdeling_by_id(44021)
-        with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_sectie_by_id_and_afdeling('Z', a)
-
-    def test_list_percelen_by_sectie(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        res = capakey_gateway.list_percelen_by_sectie(s)
-        assert isinstance(res, list)
-        assert len(res) > 0
-
-    def test_list_percelen_by_unexisting_sectie(self, capakey_gateway):
-        s = Sectie('Z', Afdeling(99000))
-        res = capakey_gateway.list_percelen_by_sectie(s)
-        assert isinstance(res, list)
-        assert len(res) ==  0
-
-    def test_get_perceel_by_id_and_sectie(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
-        perc = percelen[0]
-        res = capakey_gateway.get_perceel_by_id_and_sectie(perc.id, s)
-        assert isinstance(res, Perceel)
-        assert res.sectie.id == 'A'
-        assert res.sectie.afdeling.id == 44021
-
-    def test_get_perceel_by_unexisting_id_and_sectie(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
-        perc = percelen[0]
-        with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_perceel_by_id_and_sectie(-1, s)
-
-    def test_get_perceel_by_capakey(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
-        perc = percelen[0]
-        res = capakey_gateway.get_perceel_by_capakey(perc.capakey)
-        assert isinstance(res, Perceel)
-        assert res.sectie.id == 'A'
-        assert res.sectie.afdeling.id == 44021
-        assert res.centroid == (104033.431500003, 194675.368999999)
-        assert res.bounding_box == (104026.097000003, 194663.618999999, 104040.766000003, 194687.118999999)
-
-    def test_get_perceel_by_unexisting_capakey(self, capakey_gateway):
-        with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_perceel_by_capakey('0000000')
-
-    def test_get_perceel_by_percid(self, capakey_gateway):
-        s = capakey_gateway.get_sectie_by_id_and_afdeling('A', 44021)
-        percelen = capakey_gateway.list_percelen_by_sectie(s)
-        perc = percelen[0]
-        res = capakey_gateway.get_perceel_by_percid(perc.percid)
-        assert isinstance(res, Perceel)
-        assert res.sectie.id == 'A'
-        assert res.sectie.afdeling.id == 44021
-
-    def test_get_perceel_by_unexisting_percid(self, capakey_gateway):
-        with pytest.raises(GatewayResourceNotFoundException):
-            capakey_gateway.get_perceel_by_percid('0000/0000')
 
 
 @pytest.mark.skipif(
@@ -347,16 +180,6 @@ class TestGemeente:
             g.check_gateway()
 
     @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_lazy_load_1_soap(self, capakey_gateway):
-        g = Gemeente(44021, 'Gent', gateway=capakey_gateway)
-        g.clear_gateway()
-        with pytest.raises(RuntimeError):
-            g.check_gateway()
-
-    @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
         reason = 'No CAPAKEY Integration tests required'
     )
@@ -369,36 +192,12 @@ class TestGemeente:
         assert not g.bounding_box == None
 
     @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_lazy_load_soap(self, capakey_gateway):
-        g = Gemeente(44021, 'Gent')
-        g.set_gateway(capakey_gateway)
-        assert g.id == 44021
-        assert g.naam == 'Gent'
-        assert not g.centroid == None
-        assert not g.bounding_box == None
-
-    @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
         reason='No CAPAKEY Integration tests required'
     )
     def test_afdelingen(self, capakey_rest_gateway):
         g = Gemeente(44021, 'Gent')
         g.set_gateway(capakey_rest_gateway)
-        afdelingen = g.afdelingen
-        assert isinstance(afdelingen, list)
-        assert len(afdelingen) > 0
-        assert len(afdelingen) < 40
-
-    @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_afdelingen_soap(self, capakey_gateway):
-        g = Gemeente(44021, 'Gent')
-        g.set_gateway(capakey_gateway)
         afdelingen = g.afdelingen
         assert isinstance(afdelingen, list)
         assert len(afdelingen) > 0
@@ -457,35 +256,12 @@ class TestAfdeling:
         assert not a.bounding_box == None
 
     @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_lazy_load_soap(self, capakey_gateway):
-        a = Afdeling(44021)
-        a.set_gateway(capakey_gateway)
-        assert a.id == 44021
-        assert a.naam == 'GENT  1 AFD'
-        assert not a.centroid == None
-        assert not a.bounding_box == None
-
-    @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
         reason='No CAPAKEY Integration tests required'
     )
     def test_secties(self, capakey_rest_gateway):
         a = Afdeling(44021)
         a.set_gateway(capakey_rest_gateway)
-        secties = a.secties
-        assert isinstance(secties, list)
-        assert len(secties) == 1
-
-    @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_secties_soap(self, capakey_gateway):
-        a = Afdeling(44021)
-        a.set_gateway(capakey_gateway)
         secties = a.secties
         assert isinstance(secties, list)
         assert len(secties) == 1
@@ -535,21 +311,6 @@ class TestSectie:
         assert not s.bounding_box == None
 
     @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_lazy_load_soap(self, capakey_gateway):
-        s = Sectie(
-            'A',
-            Afdeling(44021)
-        )
-        s.set_gateway(capakey_gateway)
-        assert s.id == 'A'
-        assert s.afdeling.id == 44021
-        assert not s.centroid == None
-        assert not s.bounding_box == None
-
-    @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
         reason='No CAPAKEY Integration tests required'
     )
@@ -559,20 +320,6 @@ class TestSectie:
             Afdeling(44021)
         )
         s.set_gateway(capakey_rest_gateway)
-        percelen = s.percelen
-        assert isinstance(percelen, list)
-        assert len(percelen) > 0
-
-    @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_percelen_soap(self, capakey_gateway):
-        s = Sectie(
-            'A',
-            Afdeling(44021)
-        )
-        s.set_gateway(capakey_gateway)
         percelen = s.percelen
         assert isinstance(percelen, list)
         assert len(percelen) > 0
@@ -605,12 +352,12 @@ class TestPerceel:
         with pytest.raises(RuntimeError):
             p.check_gateway()
 
-    def test_clear_gateway(self, capakey_gateway):
+    def test_clear_gateway(self, capakey_rest_gateway):
         p = Perceel(
             '1154/02C000', Sectie('A', Afdeling(46013)),
             '40613A1154/02C000', '40613_A_1154_C_000_02'
         )
-        p.set_gateway(capakey_gateway)
+        p.set_gateway(capakey_rest_gateway)
         p.check_gateway()
         p.sectie.check_gateway()
         p.clear_gateway()
@@ -633,24 +380,6 @@ class TestPerceel:
         assert p.sectie.afdeling.id == 46013
         assert p.capatype == None
         assert p.cashkey == None
-        assert not p.centroid == None
-        assert not p.bounding_box == None
-
-    @pytest.mark.skipif(
-        not pytest.config.getoption('--capakey-soap-integration'),
-        reason='No CAPAKEY Integration tests required'
-    )
-    def test_lazy_load_soap(self, capakey_gateway):
-        p = Perceel(
-            '1154/02C000', Sectie('A', Afdeling(46013)),
-            '46013A1154/02C000', '46013_A_1154_C_000_02',
-            gateway=capakey_gateway
-        )
-        assert p.id == '1154/02C000'
-        assert p.sectie.id == 'A'
-        assert p.sectie.afdeling.id == 46013
-        assert not p.capatype == None
-        assert not p.cashkey == None
         assert not p.centroid == None
         assert not p.bounding_box == None
 

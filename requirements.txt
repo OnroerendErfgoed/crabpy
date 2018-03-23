@@ -1,5 +1,4 @@
 requests==2.18.4
 suds-jurko==0.6
-dogpile.cache==0.6.4
+dogpile.cache==0.6.5
 six==1.11.0
-zope.deprecation==4.3.0
