@@ -367,7 +367,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel' % (gid, aid, sid)
             h = self.base_headers
             p = {
-                'data': 'cadmap'
+                'data': 'adp'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
             return [
@@ -405,7 +405,7 @@ class CapakeyRestGateway(object):
             p = {
                 'geometry': 'full',
                 'srs': '31370',
-                'data': 'cadmap'
+                'data': 'adp'
             }
             res = capakey_rest_gateway_request(url, p, h).json()
             return Perceel(
@@ -439,7 +439,7 @@ class CapakeyRestGateway(object):
             p = {
                 'geometry': 'full',
                 'srs': '31370',
-                'data': 'cadmap'
+                'data': 'adp'
             }
             res = capakey_rest_gateway_request(url, p, h).json()
             return Perceel(
