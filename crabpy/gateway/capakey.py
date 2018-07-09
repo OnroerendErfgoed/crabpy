@@ -139,7 +139,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s' % id
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
@@ -226,7 +226,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/department/%s' % (aid)
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
@@ -301,7 +301,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s/department/%s/section/%s' % (afdeling.gemeente.id, afdeling.id, id)
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
@@ -403,7 +403,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel/%s' % (gid, aid, sid, id)
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370',
                 'data': 'cadmap'
             }
@@ -437,7 +437,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/parcel/%s' % capakey
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370',
                 'data': 'cadmap'
             }
