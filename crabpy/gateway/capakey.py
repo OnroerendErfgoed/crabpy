@@ -318,7 +318,6 @@ class CapakeyRestGateway(object):
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
-            raise Exception(res['geometry']['shape'])
             return Sectie(
                 res['sectionCode'],
                 afdeling,
@@ -426,7 +425,7 @@ class CapakeyRestGateway(object):
                 'srs': '31370',
                 'data': 'adp'
             }
-            res = capakey_rest_gateway_request(url, p, h).json()
+            res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
                 res['perceelnummer'],
                 sectie,
@@ -436,6 +435,7 @@ class CapakeyRestGateway(object):
                 None,
                 self._parse_centroid(res['geometry']['center']),
                 self._parse_bounding_box(res['geometry']['boundingBox']),
+                res['geometry']['shape']
             )
 
         if self.caches['short'].is_configured:
@@ -462,7 +462,7 @@ class CapakeyRestGateway(object):
                 'srs': '31370',
                 'data': 'adp'
             }
-            res = capakey_rest_gateway_request(url, p, h).json()
+            res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
                 res['perceelnummer'],
                 Sectie(
@@ -479,6 +479,7 @@ class CapakeyRestGateway(object):
                 None,
                 self._parse_centroid(res['geometry']['center']),
                 self._parse_bounding_box(res['geometry']['boundingBox']),
+                res['geometry']['shape']
             )
 
         if self.caches['short'].is_configured:
@@ -808,7 +809,7 @@ class Perceel(GatewayObject):
         self, id, sectie, capakey, percid,
         capatype=None, cashkey=None,
         centroid=None, bounding_box=None,
-        **kwargs
+        shape=None, **kwargs
     ):
         self.id = id
         self.sectie = sectie
@@ -818,6 +819,7 @@ class Perceel(GatewayObject):
         self._cashkey = cashkey
         self._centroid = centroid
         self._bounding_box = bounding_box
+        self.shape = shape
         super(Perceel, self).__init__(**kwargs)
         self._split_capakey()
 
