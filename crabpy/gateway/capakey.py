@@ -418,7 +418,7 @@ class CapakeyRestGateway(object):
         sectie.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel/%s?geometry=full' % (
+            url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel/%s' % (
             gid, aid, sid, id)
             h = self.base_headers
             p = {
@@ -456,7 +456,7 @@ class CapakeyRestGateway(object):
         '''
 
         def creator():
-            url = self.base_url + '/parcel/%s?geometry=full' % capakey
+            url = self.base_url + '/parcel/%s' % capakey
             h = self.base_headers
             p = {
                 'geometry': 'full',
