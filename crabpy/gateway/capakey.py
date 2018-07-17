@@ -143,7 +143,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s' % id
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
@@ -151,7 +151,8 @@ class CapakeyRestGateway(object):
                 res['municipalityCode'],
                 res['municipalityName'],
                 self._parse_centroid(res['geometry']['center']),
-                self._parse_bounding_box(res['geometry']['boundingBox'])
+                self._parse_bounding_box(res['geometry']['boundingBox']),
+                res['geometry']['shape']
             )
 
         if self.caches['long'].is_configured:
@@ -235,7 +236,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/department/%s' % (aid)
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
@@ -244,7 +245,8 @@ class CapakeyRestGateway(object):
                 naam=res['departmentName'],
                 gemeente=Gemeente(res['municipalityCode'], res['municipalityName']),
                 centroid=self._parse_centroid(res['geometry']['center']),
-                bounding_box=self._parse_bounding_box(res['geometry']['boundingBox'])
+                bounding_box=self._parse_bounding_box(res['geometry']['boundingBox']),
+                shape=res['geometry']['shape']
             )
 
         if self.caches['long'].is_configured:
@@ -312,7 +314,7 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s/department/%s/section/%s' % (afdeling.gemeente.id, afdeling.id, id)
             h = self.base_headers
             p = {
-                'geometry': 'bbox',
+                'geometry': 'full',
                 'srs': '31370'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
@@ -320,7 +322,8 @@ class CapakeyRestGateway(object):
                 res['sectionCode'],
                 afdeling,
                 self._parse_centroid(res['geometry']['center']),
-                self._parse_bounding_box(res['geometry']['boundingBox'])
+                self._parse_bounding_box(res['geometry']['boundingBox']),
+                res['geometry']['shape'],
             )
 
         if self.caches['long'].is_configured:
@@ -415,14 +418,15 @@ class CapakeyRestGateway(object):
         sectie.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel/%s?geometry=full' % (
+            url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel/%s' % (
             gid, aid, sid, id)
             h = self.base_headers
             p = {
+                'geometry': 'full',
                 'srs': '31370',
                 'data': 'adp'
             }
-            res = capakey_rest_gateway_request(url, p, h).json()
+            res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
                 res['perceelnummer'],
                 sectie,
@@ -452,13 +456,14 @@ class CapakeyRestGateway(object):
         '''
 
         def creator():
-            url = self.base_url + '/parcel/%s?geometry=full' % capakey
+            url = self.base_url + '/parcel/%s' % capakey
             h = self.base_headers
             p = {
+                'geometry': 'full',
                 'srs': '31370',
                 'data': 'adp'
             }
-            res = capakey_rest_gateway_request(url, p, h).json()
+            res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
                 res['perceelnummer'],
                 Sectie(
@@ -567,12 +572,13 @@ class Gemeente(GatewayObject):
     def __init__(
         self, id, naam=None,
         centroid=None, bounding_box=None,
-        **kwargs
+        shape=None, **kwargs
     ):
         self.id = int(id)
         self._naam = naam
         self._centroid = centroid
         self._bounding_box = bounding_box
+        self.shape = shape
         super(Gemeente, self).__init__(**kwargs)
 
     @property
@@ -630,13 +636,14 @@ class Afdeling(GatewayObject):
     def __init__(
         self, id, naam=None, gemeente=None,
         centroid=None, bounding_box=None,
-        **kwargs
+        shape=None, **kwargs
     ):
         self.id = int(id)
         self._naam = naam
         self._gemeente = gemeente
         self._centroid = centroid
         self._bounding_box = bounding_box
+        self.shape = shape
         super(Afdeling, self).__init__(**kwargs)
 
     def set_gateway(self, gateway):
@@ -721,12 +728,13 @@ class Sectie(GatewayObject):
     def __init__(
         self, id, afdeling,
         centroid=None, bounding_box=None,
-        **kwargs
+        shape=None, **kwargs
     ):
         self.id = id
         self.afdeling = afdeling
         self._centroid = centroid
         self._bounding_box = bounding_box
+        self.shape = shape
         super(Sectie, self).__init__(**kwargs)
 
     def set_gateway(self, gateway):

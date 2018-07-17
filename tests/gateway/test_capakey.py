@@ -16,6 +16,7 @@ from crabpy.gateway.capakey import (
 )
 
 import requests
+
 try:
     from unittest.mock import MagicMock, patch
 except:
@@ -32,7 +33,7 @@ def request_exception(url, headers={}, params={}):
 
 @pytest.mark.skipif(
     not pytest.config.getoption('--capakey-integration'),
-    reason = 'No CAPAKEY Integration tests required'
+    reason='No CAPAKEY Integration tests required'
 )
 class TestCapakeyRestGateway:
 
@@ -79,7 +80,7 @@ class TestCapakeyRestGateway:
         a = capakey_rest_gateway.get_kadastrale_afdeling_by_id(44021)
         res = capakey_rest_gateway.list_secties_by_afdeling(a)
         assert isinstance(res, list)
-        assert len(res) ==  1
+        assert len(res) == 1
 
     def test_list_secties_by_afdeling_id(self, capakey_rest_gateway):
         res = capakey_rest_gateway.list_secties_by_afdeling(44021)
@@ -116,8 +117,9 @@ class TestCapakeyRestGateway:
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
-        assert res.centroid == (104033.43150000274, 194675.36899999902)
-        assert res.bounding_box == (104026.09700000286, 194663.61899999902, 104040.76600000262, 194687.11899999902)
+        assert res.centroid == (104036.06609148532, 194676.86989716627)
+        assert res.bounding_box == (104029.26020348072, 194665.0235611573, 104042.87197948992, 194688.71623317525)
+        assert res.shape is not None
 
     def test_get_perceel_by_percid(self, capakey_rest_gateway):
         s = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', 44021)
@@ -181,7 +183,7 @@ class TestGemeente:
 
     @pytest.mark.skipif(
         not pytest.config.getoption('--capakey-integration'),
-        reason = 'No CAPAKEY Integration tests required'
+        reason='No CAPAKEY Integration tests required'
     )
     def test_lazy_load(self, capakey_rest_gateway):
         g = Gemeente(44021, 'Gent')
@@ -227,7 +229,7 @@ class TestAfdeling:
             'GENT  1 AFD',
             Gemeente(44021, 'Gent'),
         )
-        assert a.id ==44021
+        assert a.id == 44021
         assert a.naam == 'GENT  1 AFD'
         assert 'GENT  1 AFD (44021)' == str(a)
         assert "Afdeling(44021, 'GENT  1 AFD')" == repr(a)
@@ -342,7 +344,8 @@ class TestPerceel:
         assert p.centroid == (104893.06375, 196022.244094)
         assert p.bounding_box == (104002.076625, 194168.3415, 105784.050875, 197876.146688)
         assert p.capakey == str(p)
-        assert "Perceel('1154/02C000', Sectie('A', Afdeling(46013)), '40613A1154/02C000', '40613_A_1154_C_000_02')" == repr(p)
+        assert "Perceel('1154/02C000', Sectie('A', Afdeling(46013)), '40613A1154/02C000', '40613_A_1154_C_000_02')" == repr(
+            p)
 
     def test_check_gateway_not_set(self):
         p = Perceel(
@@ -401,7 +404,7 @@ class TestPerceel:
         assert p.grondnummer == '1154'
         assert p.bisnummer == '02'
         assert p.exponent == 'C'
-        assert p.macht =='000'
+        assert p.macht == '000'
 
     def test_parse_invalid_capakey(self):
         with pytest.raises(ValueError):
