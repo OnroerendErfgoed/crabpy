@@ -1,3 +1,9 @@
+0.10.0 (17-07-2018)
+------------------
+
+- Capakey service: change source base map (#95)
+- Capakey service: return full geometry (#96)
+
 0.9.0 (20-03-2018)
 ------------------
 
