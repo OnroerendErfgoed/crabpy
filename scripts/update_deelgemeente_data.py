@@ -4,7 +4,7 @@ import os
 
 from shutil import copyfile, rmtree
 
-version = '0.1.0'
+version = '0.3.1'
 
 download_url = 'https://github.com/OnroerendErfgoed/deelgemeenten/archive/v%s.tar.gz' % version
 

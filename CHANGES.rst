@@ -1,3 +1,10 @@
+0.11.0 (03-01-2019)
+------------------
+
+- Update deelgemeenten (#110, #116)
+- Fix travis tests (#112)
+- Update dependencies
+
 0.10.0 (17-07-2018)
 ------------------
 
