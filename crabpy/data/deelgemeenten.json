@@ -516,45 +516,45 @@
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12030A", 
+        "deelgemeente_id": "12041A", 
         "deelgemeente_naam": "Puurs", 
-        "gemeente_id": "12030", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12030B", 
+        "deelgemeente_id": "12041B", 
         "deelgemeente_naam": "Ruisbroek", 
-        "gemeente_id": "12030", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12030C", 
+        "deelgemeente_id": "12041C", 
         "deelgemeente_naam": "Breendonk", 
-        "gemeente_id": "12030", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12030D", 
+        "deelgemeente_id": "12041D", 
         "deelgemeente_naam": "Liezele", 
-        "gemeente_id": "12030", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12034A", 
+        "deelgemeente_id": "12041E", 
         "deelgemeente_naam": "Sint-Amands", 
-        "gemeente_id": "12034", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12034B", 
+        "deelgemeente_id": "12041F", 
         "deelgemeente_naam": "Oppuurs", 
-        "gemeente_id": "12034", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
-        "deelgemeente_id": "12034C", 
+        "deelgemeente_id": "12041G", 
         "deelgemeente_naam": "Lippelo", 
-        "gemeente_id": "12034", 
+        "gemeente_id": "12041", 
         "provincie_id": "10000"
     }, 
     {
@@ -1413,12 +1413,6 @@
         "deelgemeente_id": "23096E", 
         "deelgemeente_naam": "Eppegem", 
         "gemeente_id": "23096", 
-        "provincie_id": "20001"
-    }, 
-    {
-        "deelgemeente_id": "23097A", 
-        "deelgemeente_naam": "Roosdaal", 
-        "gemeente_id": "23097", 
         "provincie_id": "20001"
     }, 
     {
@@ -4518,98 +4512,146 @@
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44001A", 
+        "deelgemeente_id": "44084A", 
         "deelgemeente_naam": "Aalter", 
-        "gemeente_id": "44001", 
+        "gemeente_id": "44084", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44001B", 
+        "deelgemeente_id": "44084B", 
         "deelgemeente_naam": "Bellem", 
-        "gemeente_id": "44001", 
+        "gemeente_id": "44084", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44001C", 
+        "deelgemeente_id": "44084C", 
         "deelgemeente_naam": "Lotenhulle", 
-        "gemeente_id": "44001", 
+        "gemeente_id": "44084", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44001D", 
+        "deelgemeente_id": "44084D", 
         "deelgemeente_naam": "Poeke", 
-        "gemeente_id": "44001", 
+        "gemeente_id": "44084", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011A", 
+        "deelgemeente_id": "44084E", 
+        "deelgemeente_naam": "Knesselare", 
+        "gemeente_id": "44084", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44084F", 
+        "deelgemeente_naam": "Ursel", 
+        "gemeente_id": "44084", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083A", 
         "deelgemeente_naam": "Deinze", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011B", 
+        "deelgemeente_id": "44083B", 
         "deelgemeente_naam": "Astene", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011C", 
+        "deelgemeente_id": "44083C", 
         "deelgemeente_naam": "Petegem-aan-de-Leie", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011D", 
+        "deelgemeente_id": "44083D", 
         "deelgemeente_naam": "Zeveren", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011E", 
+        "deelgemeente_id": "44083E", 
         "deelgemeente_naam": "Grammene", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011F", 
+        "deelgemeente_id": "44083F", 
         "deelgemeente_naam": "Gottem", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011G", 
+        "deelgemeente_id": "44083G", 
         "deelgemeente_naam": "Wontergem", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011H", 
+        "deelgemeente_id": "44083H", 
         "deelgemeente_naam": "Vinkt", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011J", 
+        "deelgemeente_id": "44083I", 
         "deelgemeente_naam": "Meigem", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011K", 
+        "deelgemeente_id": "44083J", 
         "deelgemeente_naam": "Bachte-Maria-Leerne", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44011L", 
+        "deelgemeente_id": "44083K", 
         "deelgemeente_naam": "Sint-Martens-Leerne", 
-        "gemeente_id": "44011", 
+        "gemeente_id": "44083", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083L", 
+        "deelgemeente_naam": "Nevele", 
+        "gemeente_id": "44083", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083M", 
+        "deelgemeente_naam": "Poesele", 
+        "gemeente_id": "44083", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083N", 
+        "deelgemeente_naam": "Hansbeke", 
+        "gemeente_id": "44083", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083O", 
+        "deelgemeente_naam": "Merendree", 
+        "gemeente_id": "44083", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083P", 
+        "deelgemeente_naam": "Landegem", 
+        "gemeente_id": "44083", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44083Q", 
+        "deelgemeente_naam": "Vosselare", 
+        "gemeente_id": "44083", 
         "provincie_id": "40000"
     }, 
     {
         "deelgemeente_id": "44012A", 
-        "deelgemeente_naam": "De pinte", 
+        "deelgemeente_naam": "De Pinte", 
         "gemeente_id": "44012", 
         "provincie_id": "40000"
     }, 
@@ -4776,18 +4818,6 @@
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44029A", 
-        "deelgemeente_naam": "Knesselare", 
-        "gemeente_id": "44029", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44029B", 
-        "deelgemeente_naam": "Ursel", 
-        "gemeente_id": "44029", 
-        "provincie_id": "40000"
-    }, 
-    {
         "deelgemeente_id": "44034A", 
         "deelgemeente_naam": "Lochristi", 
         "gemeente_id": "44034", 
@@ -4809,18 +4839,6 @@
         "deelgemeente_id": "44034D", 
         "deelgemeente_naam": "Beervelde", 
         "gemeente_id": "44034", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44036A", 
-        "deelgemeente_naam": "Lovendegem", 
-        "gemeente_id": "44036", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44036B", 
-        "deelgemeente_naam": "Vinderhoute", 
-        "gemeente_id": "44036", 
         "provincie_id": "40000"
     }, 
     {
@@ -4890,42 +4908,6 @@
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44049A", 
-        "deelgemeente_naam": "Nevele", 
-        "gemeente_id": "44049", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44049B", 
-        "deelgemeente_naam": "Poesele", 
-        "gemeente_id": "44049", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44049C", 
-        "deelgemeente_naam": "Hansbeke", 
-        "gemeente_id": "44049", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44049D", 
-        "deelgemeente_naam": "Merendree", 
-        "gemeente_id": "44049", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44049E", 
-        "deelgemeente_naam": "Landegem", 
-        "gemeente_id": "44049", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "44049F", 
-        "deelgemeente_naam": "Vosselare", 
-        "gemeente_id": "44049", 
-        "provincie_id": "40000"
-    }, 
-    {
         "deelgemeente_id": "44052A", 
         "deelgemeente_naam": "Oosterzele", 
         "gemeente_id": "44052", 
@@ -4974,33 +4956,45 @@
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44072A", 
-        "deelgemeente_naam": "Waarschoot", 
-        "gemeente_id": "44072", 
-        "provincie_id": "40000"
-    }, 
-    {
         "deelgemeente_id": "44073A", 
         "deelgemeente_naam": "Wachtebeke", 
         "gemeente_id": "44073", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44080A", 
+        "deelgemeente_id": "44085A", 
+        "deelgemeente_naam": "Waarschoot", 
+        "gemeente_id": "44085", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44085B", 
+        "deelgemeente_naam": "Lovendegem", 
+        "gemeente_id": "44085", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44085C", 
+        "deelgemeente_naam": "Vinderhoute", 
+        "gemeente_id": "44085", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "44085D", 
         "deelgemeente_naam": "Zomergem", 
-        "gemeente_id": "44080", 
+        "gemeente_id": "44085", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44080B", 
+        "deelgemeente_id": "44085E", 
         "deelgemeente_naam": "Ronsele", 
-        "gemeente_id": "44080", 
+        "gemeente_id": "44085", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "44080C", 
+        "deelgemeente_id": "44085F", 
         "deelgemeente_naam": "Oostwinkel", 
-        "gemeente_id": "44080", 
+        "gemeente_id": "44085", 
         "provincie_id": "40000"
     }, 
     {
@@ -5022,21 +5016,39 @@
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "45017A", 
+        "deelgemeente_id": "45068A", 
         "deelgemeente_naam": "Kruishoutem", 
-        "gemeente_id": "45017", 
+        "gemeente_id": "45068", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "45017C", 
+        "deelgemeente_id": "45068B", 
         "deelgemeente_naam": "Wannegem-Lede", 
-        "gemeente_id": "45017", 
+        "gemeente_id": "45068", 
         "provincie_id": "40000"
     }, 
     {
-        "deelgemeente_id": "45017D", 
+        "deelgemeente_id": "45068C", 
         "deelgemeente_naam": "Nokere", 
-        "gemeente_id": "45017", 
+        "gemeente_id": "45068", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45068D", 
+        "deelgemeente_naam": "Zingem", 
+        "gemeente_id": "45068", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45068E", 
+        "deelgemeente_naam": "Ouwegem", 
+        "gemeente_id": "45068", 
+        "provincie_id": "40000"
+    }, 
+    {
+        "deelgemeente_id": "45068F", 
+        "deelgemeente_naam": "Huise", 
+        "gemeente_id": "45068", 
         "provincie_id": "40000"
     }, 
     {
@@ -5121,24 +5133,6 @@
         "deelgemeente_id": "45041A", 
         "deelgemeente_naam": "Ronse", 
         "gemeente_id": "45041", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "45057A", 
-        "deelgemeente_naam": "Zingem", 
-        "gemeente_id": "45057", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "45057B", 
-        "deelgemeente_naam": "Ouwegem", 
-        "gemeente_id": "45057", 
-        "provincie_id": "40000"
-    }, 
-    {
-        "deelgemeente_id": "45057C", 
-        "deelgemeente_naam": "Huise", 
-        "gemeente_id": "45057", 
         "provincie_id": "40000"
     }, 
     {
@@ -5802,12 +5796,6 @@
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "71047A", 
-        "deelgemeente_naam": "Opglabbeek", 
-        "gemeente_id": "71047", 
-        "provincie_id": "70000"
-    }, 
-    {
         "deelgemeente_id": "71053A", 
         "deelgemeente_naam": "Sint-Truiden", 
         "gemeente_id": "71053", 
@@ -6042,24 +6030,6 @@
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "72025A", 
-        "deelgemeente_naam": "Neerpelt", 
-        "gemeente_id": "72025", 
-        "provincie_id": "70000"
-    }, 
-    {
-        "deelgemeente_id": "72025B", 
-        "deelgemeente_naam": "Sint-Huibrechts-Lille", 
-        "gemeente_id": "72025", 
-        "provincie_id": "70000"
-    }, 
-    {
-        "deelgemeente_id": "72029A", 
-        "deelgemeente_naam": "Overpelt", 
-        "gemeente_id": "72029", 
-        "provincie_id": "70000"
-    }, 
-    {
         "deelgemeente_id": "72030A", 
         "deelgemeente_naam": "Peer", 
         "gemeente_id": "72030", 
@@ -6120,33 +6090,39 @@
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "72040A", 
+        "deelgemeente_id": "72042A", 
         "deelgemeente_naam": "Meeuwen", 
-        "gemeente_id": "72040", 
+        "gemeente_id": "72042", 
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "72040B", 
+        "deelgemeente_id": "72042B", 
         "deelgemeente_naam": "Wijshagen", 
-        "gemeente_id": "72040", 
+        "gemeente_id": "72042", 
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "72040C", 
+        "deelgemeente_id": "72042C", 
         "deelgemeente_naam": "Ellikom", 
-        "gemeente_id": "72040", 
+        "gemeente_id": "72042", 
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "72040D", 
+        "deelgemeente_id": "72042D", 
         "deelgemeente_naam": "Gruitrode", 
-        "gemeente_id": "72040", 
+        "gemeente_id": "72042", 
         "provincie_id": "70000"
     }, 
     {
-        "deelgemeente_id": "72040E", 
+        "deelgemeente_id": "72042E", 
         "deelgemeente_naam": "Neerglabbeek", 
-        "gemeente_id": "72040", 
+        "gemeente_id": "72042", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72042F", 
+        "deelgemeente_naam": "Opglabbeek", 
+        "gemeente_id": "72042", 
         "provincie_id": "70000"
     }, 
     {
@@ -6177,6 +6153,24 @@
         "deelgemeente_id": "72041E", 
         "deelgemeente_naam": "Lanklaar", 
         "gemeente_id": "72041", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72043A", 
+        "deelgemeente_naam": "Neerpelt", 
+        "gemeente_id": "72043", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72043B", 
+        "deelgemeente_naam": "Overpelt", 
+        "gemeente_id": "72043", 
+        "provincie_id": "70000"
+    }, 
+    {
+        "deelgemeente_id": "72043C", 
+        "deelgemeente_naam": "Sint-Huibrechts-Lille", 
+        "gemeente_id": "72043", 
         "provincie_id": "70000"
     }, 
     {
