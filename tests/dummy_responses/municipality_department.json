@@ -1,0 +1,130 @@
+{
+  "departments": [
+    {
+      "departmentCode": "44021",
+      "departmentName": "GENT  1 AFD"
+    },
+    {
+      "departmentCode": "44802",
+      "departmentName": "GENT  2 AFD"
+    },
+    {
+      "departmentCode": "44803",
+      "departmentName": "GENT  3 AFD"
+    },
+    {
+      "departmentCode": "44804",
+      "departmentName": "GENT  4 AFD"
+    },
+    {
+      "departmentCode": "44805",
+      "departmentName": "GENT  5 AFD"
+    },
+    {
+      "departmentCode": "44806",
+      "departmentName": "GENT  6 AFD"
+    },
+    {
+      "departmentCode": "44807",
+      "departmentName": "GENT  7 AFD"
+    },
+    {
+      "departmentCode": "44808",
+      "departmentName": "GENT  8 AFD"
+    },
+    {
+      "departmentCode": "44809",
+      "departmentName": "GENT  9 AFD"
+    },
+    {
+      "departmentCode": "44810",
+      "departmentName": "GENT 10 AFD"
+    },
+    {
+      "departmentCode": "44811",
+      "departmentName": "GENT 11 AFD"
+    },
+    {
+      "departmentCode": "44812",
+      "departmentName": "GENT 12 AFD"
+    },
+    {
+      "departmentCode": "44813",
+      "departmentName": "GENT 13 AFD"
+    },
+    {
+      "departmentCode": "44814",
+      "departmentName": "GENT 14 AFD"
+    },
+    {
+      "departmentCode": "44815",
+      "departmentName": "GENT 15 AFD"
+    },
+    {
+      "departmentCode": "44816",
+      "departmentName": "GENT 16 AFD"
+    },
+    {
+      "departmentCode": "44051",
+      "departmentName": "GENT 17 AFD/OOSTAKKER/"
+    },
+    {
+      "departmentCode": "44061",
+      "departmentName": "GENT 18 AFD/ST-AMANDSBERG 1 AFD/"
+    },
+    {
+      "departmentCode": "44432",
+      "departmentName": "GENT 19 AFD/ST-AMANDSBERG  2 AFD"
+    },
+    {
+      "departmentCode": "44032",
+      "departmentName": "GENT 20 AFD/LEDEBERG/"
+    },
+    {
+      "departmentCode": "44022",
+      "departmentName": "GENT 21 AFD/GENTBRUGGE  1 AFD/"
+    },
+    {
+      "departmentCode": "44362",
+      "departmentName": "GENT 22 AFD/GENTBRUGGE  2 AFD/"
+    },
+    {
+      "departmentCode": "44363",
+      "departmentName": "GENT 23 AFD/GENTBRUGGE  3 AFD/"
+    },
+    {
+      "departmentCode": "44082",
+      "departmentName": "GENT 24 AFD/ZWIJNAARDE/"
+    },
+    {
+      "departmentCode": "44062",
+      "departmentName": "GENT 25 AFD/ST-DENIJS-WESTREM/"
+    },
+    {
+      "departmentCode": "44002",
+      "departmentName": "GENT 26 AFD/AFSNEE/"
+    },
+    {
+      "departmentCode": "44017",
+      "departmentName": "GENT 27 AFD/DRONGEN  1 AFD/"
+    },
+    {
+      "departmentCode": "44342",
+      "departmentName": "GENT 28 AFD/DRONGEN  2 AFD/"
+    },
+    {
+      "departmentCode": "44038",
+      "departmentName": "GENT 29 AFD/MARIAKERKE/"
+    },
+    {
+      "departmentCode": "44074",
+      "departmentName": "GENT 30 AFD/WONDELGEM/"
+    }
+  ],
+  "result": {
+    "succes": true,
+    "startTimeStamp": "2019-06-18T06:37:28.9145873+00:00",
+    "endTimeStamp": "2019-06-18T06:37:28.9145873+00:00",
+    "elapsed": 0
+  }
+}
