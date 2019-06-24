@@ -449,16 +449,9 @@ class CapakeyRestGateway(object):
         perceel.set_gateway(self)
         return perceel
 
-    def get_perceel_by_capakey(self, capakey):
-        '''
-        Get a `perceel`.
-
-        :param capakey: An capakey for a `perceel`.
-        :rtype: :class:`Perceel`
-        '''
+    def _get_perceel_by(self, url, cache_key):
 
         def creator():
-            url = self.base_url + '/parcel/%s' % capakey
             h = self.base_headers
             p = {
                 'geometry': 'full',
@@ -487,12 +480,36 @@ class CapakeyRestGateway(object):
             )
 
         if self.caches['short'].is_configured:
-            key = 'get_perceel_by_capakey_rest#%s' % capakey
+            key = cache_key
             perceel = self.caches['short'].get_or_create(key, creator)
         else:
             perceel = creator()
         perceel.set_gateway(self)
         return perceel
+
+    def get_perceel_by_capakey(self, capakey):
+        '''
+        Get a `perceel`.
+
+        :param capakey: An capakey for a `perceel`.
+        :rtype: :class:`Perceel`
+        '''
+
+        url = self.base_url + '/parcel/%s' % capakey
+        cache_key = 'get_perceel_by_capakey_rest#%s' % capakey
+        return self._get_perceel_by(url, cache_key)
+
+    def get_perceel_by_coordinates(self, x, y):
+        '''
+        Get a `perceel`.
+
+        :param capakey: An capakey for a `perceel`.
+        :rtype: :class:`Perceel`
+        '''
+
+        url = self.base_url + '/parcel?x=%s&y=%s' % (x, y)
+        cache_key = 'get_perceel_by_coordinates_rest#%s%s' % (x, y)
+        return self._get_perceel_by(url, cache_key)
 
     def get_perceel_by_percid(self, percid):
         '''
