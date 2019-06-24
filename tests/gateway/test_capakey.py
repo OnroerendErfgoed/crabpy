@@ -121,6 +121,15 @@ class TestCapakeyRestGateway:
         assert res.bounding_box == (104029.2602000013, 194665.0236000009, 104042.87200000137, 194688.71620000154)
         assert res.shape is not None
 
+    def test_get_perceel_by_coordinates(self, capakey_rest_gateway):
+        res = capakey_rest_gateway.get_perceel_by_coordinates(104036, 194676)
+        assert isinstance(res, Perceel)
+        assert res.sectie.id == 'A'
+        assert res.sectie.afdeling.id == 44021
+        assert res.centroid == (104036.06610000134, 194676.8699000012)
+        assert res.bounding_box == (104029.2602000013, 194665.0236000009, 104042.87200000137, 194688.71620000154)
+        assert res.shape is not None
+
     def test_get_perceel_by_percid(self, capakey_rest_gateway):
         s = capakey_rest_gateway.get_sectie_by_id_and_afdeling('A', 44021)
         percelen = capakey_rest_gateway.list_percelen_by_sectie(s)
