@@ -36,3 +36,6 @@ dogpile_data
 
 # Rope
 .ropeproject
+
+# Pycharm
+.idea/
