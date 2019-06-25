@@ -147,19 +147,19 @@ class TestCapakeyRestGateway:
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
-        assert res.centroid == (104036.06609148532, 194676.86989716627)
-        assert res.bounding_box == (104029.26020348072, 194665.0235611573, 104042.87197948992, 194688.71623317525)
+        assert res.centroid == (104036.06610000134, 194676.8699000012)
+        assert res.bounding_box == (104029.2602000013, 194665.0236000009, 104042.87200000137, 194688.71620000154)
         assert res.shape is not None
 
-    #TODO Mock and reenable    
-    '''def test_get_perceel_by_coordinates(self, capakey_rest_gateway):
+    def test_get_perceel_by_coordinates(self, capakey_rest_gateway,
+                                        parcels_response):
         res = capakey_rest_gateway.get_perceel_by_coordinates(104036, 194676)
         assert isinstance(res, Perceel)
         assert res.sectie.id == 'A'
         assert res.sectie.afdeling.id == 44021
         assert res.centroid == (104036.06610000134, 194676.8699000012)
         assert res.bounding_box == (104029.2602000013, 194665.0236000009, 104042.87200000137, 194688.71620000154)
-        assert res.shape is not None'''
+        assert res.shape is not None
 
     def test_get_perceel_by_percid(self, capakey_rest_gateway,
                                    department_response,
