@@ -1,0 +1,1210 @@
+{
+  "municipalities": [
+    {
+      "municipalityCode": "41002",
+      "municipalityName": "Aalst"
+    },
+    {
+      "municipalityCode": "44084",
+      "municipalityName": "Aalter"
+    },
+    {
+      "municipalityCode": "24001",
+      "municipalityName": "Aarschot"
+    },
+    {
+      "municipalityCode": "11001",
+      "municipalityName": "Aartselaar"
+    },
+    {
+      "municipalityCode": "23105",
+      "municipalityName": "Affligem"
+    },
+    {
+      "municipalityCode": "73001",
+      "municipalityName": "Alken"
+    },
+    {
+      "municipalityCode": "38002",
+      "municipalityName": "Alveringem"
+    },
+    {
+      "municipalityCode": "11002",
+      "municipalityName": "Antwerpen"
+    },
+    {
+      "municipalityCode": "34002",
+      "municipalityName": "Anzegem"
+    },
+    {
+      "municipalityCode": "37020",
+      "municipalityName": "Ardooie"
+    },
+    {
+      "municipalityCode": "13001",
+      "municipalityName": "Arendonk"
+    },
+    {
+      "municipalityCode": "71002",
+      "municipalityName": "As"
+    },
+    {
+      "municipalityCode": "23002",
+      "municipalityName": "Asse"
+    },
+    {
+      "municipalityCode": "43002",
+      "municipalityName": "Assenede"
+    },
+    {
+      "municipalityCode": "34003",
+      "municipalityName": "Avelgem"
+    },
+    {
+      "municipalityCode": "13002",
+      "municipalityName": "Baarle-Hertog"
+    },
+    {
+      "municipalityCode": "13003",
+      "municipalityName": "Balen"
+    },
+    {
+      "municipalityCode": "31003",
+      "municipalityName": "Beernem"
+    },
+    {
+      "municipalityCode": "13004",
+      "municipalityName": "Beerse"
+    },
+    {
+      "municipalityCode": "23003",
+      "municipalityName": "Beersel"
+    },
+    {
+      "municipalityCode": "24007",
+      "municipalityName": "Begijnendijk"
+    },
+    {
+      "municipalityCode": "24008",
+      "municipalityName": "Bekkevoort"
+    },
+    {
+      "municipalityCode": "71004",
+      "municipalityName": "Beringen"
+    },
+    {
+      "municipalityCode": "12002",
+      "municipalityName": "Berlaar"
+    },
+    {
+      "municipalityCode": "42003",
+      "municipalityName": "Berlare"
+    },
+    {
+      "municipalityCode": "24009",
+      "municipalityName": "Bertem"
+    },
+    {
+      "municipalityCode": "23009",
+      "municipalityName": "Bever"
+    },
+    {
+      "municipalityCode": "46003",
+      "municipalityName": "Beveren"
+    },
+    {
+      "municipalityCode": "24011",
+      "municipalityName": "Bierbeek"
+    },
+    {
+      "municipalityCode": "73006",
+      "municipalityName": "Bilzen"
+    },
+    {
+      "municipalityCode": "31004",
+      "municipalityName": "Blankenberge"
+    },
+    {
+      "municipalityCode": "72003",
+      "municipalityName": "Bocholt"
+    },
+    {
+      "municipalityCode": "11004",
+      "municipalityName": "Boechout"
+    },
+    {
+      "municipalityCode": "12005",
+      "municipalityName": "Bonheiden"
+    },
+    {
+      "municipalityCode": "11005",
+      "municipalityName": "Boom"
+    },
+    {
+      "municipalityCode": "24014",
+      "municipalityName": "Boortmeerbeek"
+    },
+    {
+      "municipalityCode": "73009",
+      "municipalityName": "Borgloon"
+    },
+    {
+      "municipalityCode": "12007",
+      "municipalityName": "Bornem"
+    },
+    {
+      "municipalityCode": "11007",
+      "municipalityName": "Borsbeek"
+    },
+    {
+      "municipalityCode": "24016",
+      "municipalityName": "Boutersem"
+    },
+    {
+      "municipalityCode": "45059",
+      "municipalityName": "Brakel"
+    },
+    {
+      "municipalityCode": "11008",
+      "municipalityName": "Brasschaat"
+    },
+    {
+      "municipalityCode": "11009",
+      "municipalityName": "Brecht"
+    },
+    {
+      "municipalityCode": "35002",
+      "municipalityName": "Bredene"
+    },
+    {
+      "municipalityCode": "72004",
+      "municipalityName": "Bree"
+    },
+    {
+      "municipalityCode": "31005",
+      "municipalityName": "Brugge"
+    },
+    {
+      "municipalityCode": "42004",
+      "municipalityName": "Buggenhout"
+    },
+    {
+      "municipalityCode": "31006",
+      "municipalityName": "Damme"
+    },
+    {
+      "municipalityCode": "35029",
+      "municipalityName": "De Haan"
+    },
+    {
+      "municipalityCode": "38008",
+      "municipalityName": "De Panne"
+    },
+    {
+      "municipalityCode": "44012",
+      "municipalityName": "De Pinte"
+    },
+    {
+      "municipalityCode": "34009",
+      "municipalityName": "Deerlijk"
+    },
+    {
+      "municipalityCode": "44083",
+      "municipalityName": "Deinze"
+    },
+    {
+      "municipalityCode": "41011",
+      "municipalityName": "Denderleeuw"
+    },
+    {
+      "municipalityCode": "42006",
+      "municipalityName": "Dendermonde"
+    },
+    {
+      "municipalityCode": "37002",
+      "municipalityName": "Dentergem"
+    },
+    {
+      "municipalityCode": "13006",
+      "municipalityName": "Dessel"
+    },
+    {
+      "municipalityCode": "44013",
+      "municipalityName": "Destelbergen"
+    },
+    {
+      "municipalityCode": "71011",
+      "municipalityName": "Diepenbeek"
+    },
+    {
+      "municipalityCode": "24020",
+      "municipalityName": "Diest"
+    },
+    {
+      "municipalityCode": "32003",
+      "municipalityName": "Diksmuide"
+    },
+    {
+      "municipalityCode": "23016",
+      "municipalityName": "Dilbeek"
+    },
+    {
+      "municipalityCode": "72041",
+      "municipalityName": "Dilsen-Stokkem"
+    },
+    {
+      "municipalityCode": "23098",
+      "municipalityName": "Drogenbos"
+    },
+    {
+      "municipalityCode": "12009",
+      "municipalityName": "Duffel"
+    },
+    {
+      "municipalityCode": "11013",
+      "municipalityName": "Edegem"
+    },
+    {
+      "municipalityCode": "43005",
+      "municipalityName": "Eeklo"
+    },
+    {
+      "municipalityCode": "41082",
+      "municipalityName": "Erpe-Mere"
+    },
+    {
+      "municipalityCode": "11016",
+      "municipalityName": "Essen"
+    },
+    {
+      "municipalityCode": "44019",
+      "municipalityName": "Evergem"
+    },
+    {
+      "municipalityCode": "23023",
+      "municipalityName": "Galmaarden"
+    },
+    {
+      "municipalityCode": "44020",
+      "municipalityName": "Gavere"
+    },
+    {
+      "municipalityCode": "13008",
+      "municipalityName": "Geel"
+    },
+    {
+      "municipalityCode": "24028",
+      "municipalityName": "Geetbets"
+    },
+    {
+      "municipalityCode": "71016",
+      "municipalityName": "Genk"
+    },
+    {
+      "municipalityCode": "44021",
+      "municipalityName": "Gent"
+    },
+    {
+      "municipalityCode": "41018",
+      "municipalityName": "Geraardsbergen"
+    },
+    {
+      "municipalityCode": "71017",
+      "municipalityName": "Gingelom"
+    },
+    {
+      "municipalityCode": "35005",
+      "municipalityName": "Gistel"
+    },
+    {
+      "municipalityCode": "24137",
+      "municipalityName": "Glabbeek"
+    },
+    {
+      "municipalityCode": "23024",
+      "municipalityName": "Gooik"
+    },
+    {
+      "municipalityCode": "23025",
+      "municipalityName": "Grimbergen"
+    },
+    {
+      "municipalityCode": "13010",
+      "municipalityName": "Grobbendonk"
+    },
+    {
+      "municipalityCode": "24033",
+      "municipalityName": "Haacht"
+    },
+    {
+      "municipalityCode": "41024",
+      "municipalityName": "Haaltert"
+    },
+    {
+      "municipalityCode": "71020",
+      "municipalityName": "Halen"
+    },
+    {
+      "municipalityCode": "23027",
+      "municipalityName": "Halle"
+    },
+    {
+      "municipalityCode": "71069",
+      "municipalityName": "Ham"
+    },
+    {
+      "municipalityCode": "42008",
+      "municipalityName": "Hamme"
+    },
+    {
+      "municipalityCode": "72037",
+      "municipalityName": "Hamont-Achel"
+    },
+    {
+      "municipalityCode": "34013",
+      "municipalityName": "Harelbeke"
+    },
+    {
+      "municipalityCode": "71022",
+      "municipalityName": "Hasselt"
+    },
+    {
+      "municipalityCode": "72038",
+      "municipalityName": "Hechtel-Eksel"
+    },
+    {
+      "municipalityCode": "73022",
+      "municipalityName": "Heers"
+    },
+    {
+      "municipalityCode": "12014",
+      "municipalityName": "Heist-op-den-Berg"
+    },
+    {
+      "municipalityCode": "11018",
+      "municipalityName": "Hemiksem"
+    },
+    {
+      "municipalityCode": "24038",
+      "municipalityName": "Herent"
+    },
+    {
+      "municipalityCode": "13011",
+      "municipalityName": "Herentals"
+    },
+    {
+      "municipalityCode": "13012",
+      "municipalityName": "Herenthout"
+    },
+    {
+      "municipalityCode": "71024",
+      "municipalityName": "Herk-de-Stad"
+    },
+    {
+      "municipalityCode": "23032",
+      "municipalityName": "Herne"
+    },
+    {
+      "municipalityCode": "13013",
+      "municipalityName": "Herselt"
+    },
+    {
+      "municipalityCode": "73028",
+      "municipalityName": "Herstappe"
+    },
+    {
+      "municipalityCode": "41027",
+      "municipalityName": "Herzele"
+    },
+    {
+      "municipalityCode": "71070",
+      "municipalityName": "Heusden-Zolder"
+    },
+    {
+      "municipalityCode": "33039",
+      "municipalityName": "Heuvelland"
+    },
+    {
+      "municipalityCode": "24041",
+      "municipalityName": "Hoegaarden"
+    },
+    {
+      "municipalityCode": "23033",
+      "municipalityName": "Hoeilaart"
+    },
+    {
+      "municipalityCode": "73032",
+      "municipalityName": "Hoeselt"
+    },
+    {
+      "municipalityCode": "24043",
+      "municipalityName": "Holsbeek"
+    },
+    {
+      "municipalityCode": "36006",
+      "municipalityName": "Hooglede"
+    },
+    {
+      "municipalityCode": "13014",
+      "municipalityName": "Hoogstraten"
+    },
+    {
+      "municipalityCode": "45062",
+      "municipalityName": "Horebeke"
+    },
+    {
+      "municipalityCode": "72039",
+      "municipalityName": "Houthalen-Helchteren"
+    },
+    {
+      "municipalityCode": "32006",
+      "municipalityName": "Houthulst"
+    },
+    {
+      "municipalityCode": "11021",
+      "municipalityName": "Hove"
+    },
+    {
+      "municipalityCode": "24045",
+      "municipalityName": "Huldenberg"
+    },
+    {
+      "municipalityCode": "13016",
+      "municipalityName": "Hulshout"
+    },
+    {
+      "municipalityCode": "35006",
+      "municipalityName": "Ichtegem"
+    },
+    {
+      "municipalityCode": "33011",
+      "municipalityName": "Ieper"
+    },
+    {
+      "municipalityCode": "36007",
+      "municipalityName": "Ingelmunster"
+    },
+    {
+      "municipalityCode": "36008",
+      "municipalityName": "Izegem"
+    },
+    {
+      "municipalityCode": "31012",
+      "municipalityName": "Jabbeke"
+    },
+    {
+      "municipalityCode": "11022",
+      "municipalityName": "Kalmthout"
+    },
+    {
+      "municipalityCode": "23038",
+      "municipalityName": "Kampenhout"
+    },
+    {
+      "municipalityCode": "11023",
+      "municipalityName": "Kapellen"
+    },
+    {
+      "municipalityCode": "23039",
+      "municipalityName": "Kapelle-op-den-Bos"
+    },
+    {
+      "municipalityCode": "43007",
+      "municipalityName": "Kaprijke"
+    },
+    {
+      "municipalityCode": "13017",
+      "municipalityName": "Kasterlee"
+    },
+    {
+      "municipalityCode": "24048",
+      "municipalityName": "Keerbergen"
+    },
+    {
+      "municipalityCode": "72018",
+      "municipalityName": "Kinrooi"
+    },
+    {
+      "municipalityCode": "45060",
+      "municipalityName": "Kluisbergen"
+    },
+    {
+      "municipalityCode": "31043",
+      "municipalityName": "Knokke-Heist"
+    },
+    {
+      "municipalityCode": "32010",
+      "municipalityName": "Koekelare"
+    },
+    {
+      "municipalityCode": "38014",
+      "municipalityName": "Koksijde"
+    },
+    {
+      "municipalityCode": "11024",
+      "municipalityName": "Kontich"
+    },
+    {
+      "municipalityCode": "32011",
+      "municipalityName": "Kortemark"
+    },
+    {
+      "municipalityCode": "24054",
+      "municipalityName": "Kortenaken"
+    },
+    {
+      "municipalityCode": "24055",
+      "municipalityName": "Kortenberg"
+    },
+    {
+      "municipalityCode": "73040",
+      "municipalityName": "Kortessem"
+    },
+    {
+      "municipalityCode": "34022",
+      "municipalityName": "Kortrijk"
+    },
+    {
+      "municipalityCode": "23099",
+      "municipalityName": "Kraainem"
+    },
+    {
+      "municipalityCode": "46013",
+      "municipalityName": "Kruibeke"
+    },
+    {
+      "municipalityCode": "45068",
+      "municipalityName": "Kruisem"
+    },
+    {
+      "municipalityCode": "34023",
+      "municipalityName": "Kuurne"
+    },
+    {
+      "municipalityCode": "13053",
+      "municipalityName": "Laakdal"
+    },
+    {
+      "municipalityCode": "42010",
+      "municipalityName": "Laarne"
+    },
+    {
+      "municipalityCode": "73042",
+      "municipalityName": "Lanaken"
+    },
+    {
+      "municipalityCode": "24059",
+      "municipalityName": "Landen"
+    },
+    {
+      "municipalityCode": "33040",
+      "municipalityName": "Langemark-Poelkapelle"
+    },
+    {
+      "municipalityCode": "42011",
+      "municipalityName": "Lebbeke"
+    },
+    {
+      "municipalityCode": "41034",
+      "municipalityName": "Lede"
+    },
+    {
+      "municipalityCode": "36010",
+      "municipalityName": "Ledegem"
+    },
+    {
+      "municipalityCode": "34025",
+      "municipalityName": "Lendelede"
+    },
+    {
+      "municipalityCode": "23104",
+      "municipalityName": "Lennik"
+    },
+    {
+      "municipalityCode": "71034",
+      "municipalityName": "Leopoldsburg"
+    },
+    {
+      "municipalityCode": "24062",
+      "municipalityName": "Leuven"
+    },
+    {
+      "municipalityCode": "36011",
+      "municipalityName": "Lichtervelde"
+    },
+    {
+      "municipalityCode": "23044",
+      "municipalityName": "Liedekerke"
+    },
+    {
+      "municipalityCode": "12021",
+      "municipalityName": "Lier"
+    },
+    {
+      "municipalityCode": "45063",
+      "municipalityName": "Lierde"
+    },
+    {
+      "municipalityCode": "44085",
+      "municipalityName": "Lievegem"
+    },
+    {
+      "municipalityCode": "13019",
+      "municipalityName": "Lille"
+    },
+    {
+      "municipalityCode": "23100",
+      "municipalityName": "Linkebeek"
+    },
+    {
+      "municipalityCode": "11025",
+      "municipalityName": "Lint"
+    },
+    {
+      "municipalityCode": "24133",
+      "municipalityName": "Linter"
+    },
+    {
+      "municipalityCode": "44034",
+      "municipalityName": "Lochristi"
+    },
+    {
+      "municipalityCode": "46014",
+      "municipalityName": "Lokeren"
+    },
+    {
+      "municipalityCode": "72020",
+      "municipalityName": "Lommel"
+    },
+    {
+      "municipalityCode": "23045",
+      "municipalityName": "Londerzeel"
+    },
+    {
+      "municipalityCode": "32030",
+      "municipalityName": "Lo-Reninge"
+    },
+    {
+      "municipalityCode": "24066",
+      "municipalityName": "Lubbeek"
+    },
+    {
+      "municipalityCode": "71037",
+      "municipalityName": "Lummen"
+    },
+    {
+      "municipalityCode": "45064",
+      "municipalityName": "Maarkedal"
+    },
+    {
+      "municipalityCode": "72021",
+      "municipalityName": "Maaseik"
+    },
+    {
+      "municipalityCode": "73107",
+      "municipalityName": "Maasmechelen"
+    },
+    {
+      "municipalityCode": "23047",
+      "municipalityName": "Machelen"
+    },
+    {
+      "municipalityCode": "43010",
+      "municipalityName": "Maldegem"
+    },
+    {
+      "municipalityCode": "11057",
+      "municipalityName": "Malle"
+    },
+    {
+      "municipalityCode": "12025",
+      "municipalityName": "Mechelen"
+    },
+    {
+      "municipalityCode": "13021",
+      "municipalityName": "Meerhout"
+    },
+    {
+      "municipalityCode": "23050",
+      "municipalityName": "Meise"
+    },
+    {
+      "municipalityCode": "44040",
+      "municipalityName": "Melle"
+    },
+    {
+      "municipalityCode": "34027",
+      "municipalityName": "Menen"
+    },
+    {
+      "municipalityCode": "23052",
+      "municipalityName": "Merchtem"
+    },
+    {
+      "municipalityCode": "44043",
+      "municipalityName": "Merelbeke"
+    },
+    {
+      "municipalityCode": "13023",
+      "municipalityName": "Merksplas"
+    },
+    {
+      "municipalityCode": "33016",
+      "municipalityName": "Mesen"
+    },
+    {
+      "municipalityCode": "37007",
+      "municipalityName": "Meulebeke"
+    },
+    {
+      "municipalityCode": "35011",
+      "municipalityName": "Middelkerke"
+    },
+    {
+      "municipalityCode": "44045",
+      "municipalityName": "Moerbeke"
+    },
+    {
+      "municipalityCode": "13025",
+      "municipalityName": "Mol"
+    },
+    {
+      "municipalityCode": "36012",
+      "municipalityName": "Moorslede"
+    },
+    {
+      "municipalityCode": "11029",
+      "municipalityName": "Mortsel"
+    },
+    {
+      "municipalityCode": "44048",
+      "municipalityName": "Nazareth"
+    },
+    {
+      "municipalityCode": "11030",
+      "municipalityName": "Niel"
+    },
+    {
+      "municipalityCode": "71045",
+      "municipalityName": "Nieuwerkerken"
+    },
+    {
+      "municipalityCode": "38016",
+      "municipalityName": "Nieuwpoort"
+    },
+    {
+      "municipalityCode": "12026",
+      "municipalityName": "Nijlen"
+    },
+    {
+      "municipalityCode": "41048",
+      "municipalityName": "Ninove"
+    },
+    {
+      "municipalityCode": "13029",
+      "municipalityName": "Olen"
+    },
+    {
+      "municipalityCode": "35013",
+      "municipalityName": "Oostende"
+    },
+    {
+      "municipalityCode": "44052",
+      "municipalityName": "Oosterzele"
+    },
+    {
+      "municipalityCode": "31022",
+      "municipalityName": "Oostkamp"
+    },
+    {
+      "municipalityCode": "37010",
+      "municipalityName": "Oostrozebeke"
+    },
+    {
+      "municipalityCode": "23060",
+      "municipalityName": "Opwijk"
+    },
+    {
+      "municipalityCode": "45035",
+      "municipalityName": "Oudenaarde"
+    },
+    {
+      "municipalityCode": "35014",
+      "municipalityName": "Oudenburg"
+    },
+    {
+      "municipalityCode": "24086",
+      "municipalityName": "Oud-Heverlee"
+    },
+    {
+      "municipalityCode": "72042",
+      "municipalityName": "Oudsbergen"
+    },
+    {
+      "municipalityCode": "13031",
+      "municipalityName": "Oud-Turnhout"
+    },
+    {
+      "municipalityCode": "23062",
+      "municipalityName": "Overijse"
+    },
+    {
+      "municipalityCode": "72030",
+      "municipalityName": "Peer"
+    },
+    {
+      "municipalityCode": "72043",
+      "municipalityName": "Pelt"
+    },
+    {
+      "municipalityCode": "23064",
+      "municipalityName": "Pepingen"
+    },
+    {
+      "municipalityCode": "37011",
+      "municipalityName": "Pittem"
+    },
+    {
+      "municipalityCode": "33021",
+      "municipalityName": "Poperinge"
+    },
+    {
+      "municipalityCode": "12029",
+      "municipalityName": "Putte"
+    },
+    {
+      "municipalityCode": "12041",
+      "municipalityName": "Puurs-Sint-Amands"
+    },
+    {
+      "municipalityCode": "11035",
+      "municipalityName": "Ranst"
+    },
+    {
+      "municipalityCode": "13035",
+      "municipalityName": "Ravels"
+    },
+    {
+      "municipalityCode": "13036",
+      "municipalityName": "Retie"
+    },
+    {
+      "municipalityCode": "73066",
+      "municipalityName": "Riemst"
+    },
+    {
+      "municipalityCode": "13037",
+      "municipalityName": "Rijkevorsel"
+    },
+    {
+      "municipalityCode": "36015",
+      "municipalityName": "Roeselare"
+    },
+    {
+      "municipalityCode": "45041",
+      "municipalityName": "Ronse"
+    },
+    {
+      "municipalityCode": "23097",
+      "municipalityName": "Roosdaal"
+    },
+    {
+      "municipalityCode": "24094",
+      "municipalityName": "Rotselaar"
+    },
+    {
+      "municipalityCode": "37012",
+      "municipalityName": "Ruiselede"
+    },
+    {
+      "municipalityCode": "11037",
+      "municipalityName": "Rumst"
+    },
+    {
+      "municipalityCode": "11038",
+      "municipalityName": "Schelle"
+    },
+    {
+      "municipalityCode": "24134",
+      "municipalityName": "Scherpenheuvel-Zichem"
+    },
+    {
+      "municipalityCode": "11039",
+      "municipalityName": "Schilde"
+    },
+    {
+      "municipalityCode": "11040",
+      "municipalityName": "Schoten"
+    },
+    {
+      "municipalityCode": "23101",
+      "municipalityName": "Sint-Genesius-Rode"
+    },
+    {
+      "municipalityCode": "46020",
+      "municipalityName": "Sint-Gillis-Waas"
+    },
+    {
+      "municipalityCode": "12035",
+      "municipalityName": "Sint-Katelijne-Waver"
+    },
+    {
+      "municipalityCode": "43014",
+      "municipalityName": "Sint-Laureins"
+    },
+    {
+      "municipalityCode": "41063",
+      "municipalityName": "Sint-Lievens-Houtem"
+    },
+    {
+      "municipalityCode": "44064",
+      "municipalityName": "Sint-Martens-Latem"
+    },
+    {
+      "municipalityCode": "46021",
+      "municipalityName": "Sint-Niklaas"
+    },
+    {
+      "municipalityCode": "23077",
+      "municipalityName": "Sint-Pieters-Leeuw"
+    },
+    {
+      "municipalityCode": "71053",
+      "municipalityName": "Sint-Truiden"
+    },
+    {
+      "municipalityCode": "34043",
+      "municipalityName": "Spiere-Helkijn"
+    },
+    {
+      "municipalityCode": "11044",
+      "municipalityName": "Stabroek"
+    },
+    {
+      "municipalityCode": "36019",
+      "municipalityName": "Staden"
+    },
+    {
+      "municipalityCode": "23081",
+      "municipalityName": "Steenokkerzeel"
+    },
+    {
+      "municipalityCode": "46024",
+      "municipalityName": "Stekene"
+    },
+    {
+      "municipalityCode": "46025",
+      "municipalityName": "Temse"
+    },
+    {
+      "municipalityCode": "23086",
+      "municipalityName": "Ternat"
+    },
+    {
+      "municipalityCode": "24104",
+      "municipalityName": "Tervuren"
+    },
+    {
+      "municipalityCode": "71057",
+      "municipalityName": "Tessenderlo"
+    },
+    {
+      "municipalityCode": "37015",
+      "municipalityName": "Tielt"
+    },
+    {
+      "municipalityCode": "24135",
+      "municipalityName": "Tielt-Winge"
+    },
+    {
+      "municipalityCode": "24107",
+      "municipalityName": "Tienen"
+    },
+    {
+      "municipalityCode": "73083",
+      "municipalityName": "Tongeren"
+    },
+    {
+      "municipalityCode": "31033",
+      "municipalityName": "Torhout"
+    },
+    {
+      "municipalityCode": "24109",
+      "municipalityName": "Tremelo"
+    },
+    {
+      "municipalityCode": "13040",
+      "municipalityName": "Turnhout"
+    },
+    {
+      "municipalityCode": "38025",
+      "municipalityName": "Veurne"
+    },
+    {
+      "municipalityCode": "23088",
+      "municipalityName": "Vilvoorde"
+    },
+    {
+      "municipalityCode": "33041",
+      "municipalityName": "Vleteren"
+    },
+    {
+      "municipalityCode": "73109",
+      "municipalityName": "Voeren"
+    },
+    {
+      "municipalityCode": "13044",
+      "municipalityName": "Vorselaar"
+    },
+    {
+      "municipalityCode": "13046",
+      "municipalityName": "Vosselaar"
+    },
+    {
+      "municipalityCode": "42023",
+      "municipalityName": "Waasmunster"
+    },
+    {
+      "municipalityCode": "44073",
+      "municipalityName": "Wachtebeke"
+    },
+    {
+      "municipalityCode": "34040",
+      "municipalityName": "Waregem"
+    },
+    {
+      "municipalityCode": "73098",
+      "municipalityName": "Wellen"
+    },
+    {
+      "municipalityCode": "23102",
+      "municipalityName": "Wemmel"
+    },
+    {
+      "municipalityCode": "33029",
+      "municipalityName": "Wervik"
+    },
+    {
+      "municipalityCode": "13049",
+      "municipalityName": "Westerlo"
+    },
+    {
+      "municipalityCode": "42025",
+      "municipalityName": "Wetteren"
+    },
+    {
+      "municipalityCode": "34041",
+      "municipalityName": "Wevelgem"
+    },
+    {
+      "municipalityCode": "23103",
+      "municipalityName": "Wezembeek-Oppem"
+    },
+    {
+      "municipalityCode": "42026",
+      "municipalityName": "Wichelen"
+    },
+    {
+      "municipalityCode": "37017",
+      "municipalityName": "Wielsbeke"
+    },
+    {
+      "municipalityCode": "11050",
+      "municipalityName": "Wijnegem"
+    },
+    {
+      "municipalityCode": "12040",
+      "municipalityName": "Willebroek"
+    },
+    {
+      "municipalityCode": "37018",
+      "municipalityName": "Wingene"
+    },
+    {
+      "municipalityCode": "11052",
+      "municipalityName": "Wommelgem"
+    },
+    {
+      "municipalityCode": "45061",
+      "municipalityName": "Wortegem-Petegem"
+    },
+    {
+      "municipalityCode": "11053",
+      "municipalityName": "Wuustwezel"
+    },
+    {
+      "municipalityCode": "11054",
+      "municipalityName": "Zandhoven"
+    },
+    {
+      "municipalityCode": "23094",
+      "municipalityName": "Zaventem"
+    },
+    {
+      "municipalityCode": "31040",
+      "municipalityName": "Zedelgem"
+    },
+    {
+      "municipalityCode": "42028",
+      "municipalityName": "Zele"
+    },
+    {
+      "municipalityCode": "43018",
+      "municipalityName": "Zelzate"
+    },
+    {
+      "municipalityCode": "23096",
+      "municipalityName": "Zemst"
+    },
+    {
+      "municipalityCode": "11055",
+      "municipalityName": "Zoersel"
+    },
+    {
+      "municipalityCode": "71066",
+      "municipalityName": "Zonhoven"
+    },
+    {
+      "municipalityCode": "33037",
+      "municipalityName": "Zonnebeke"
+    },
+    {
+      "municipalityCode": "41081",
+      "municipalityName": "Zottegem"
+    },
+    {
+      "municipalityCode": "24130",
+      "municipalityName": "Zoutleeuw"
+    },
+    {
+      "municipalityCode": "31042",
+      "municipalityName": "Zuienkerke"
+    },
+    {
+      "municipalityCode": "44081",
+      "municipalityName": "Zulte"
+    },
+    {
+      "municipalityCode": "71067",
+      "municipalityName": "Zutendaal"
+    },
+    {
+      "municipalityCode": "45065",
+      "municipalityName": "Zwalm"
+    },
+    {
+      "municipalityCode": "34042",
+      "municipalityName": "Zwevegem"
+    },
+    {
+      "municipalityCode": "11056",
+      "municipalityName": "Zwijndrecht"
+    }
+  ],
+  "result": {
+    "succes": true,
+    "startTimeStamp": "2019-06-18T06:22:16.6376521+00:00",
+    "endTimeStamp": "2019-06-18T06:22:16.6376521+00:00",
+    "elapsed": 0
+  }
+}

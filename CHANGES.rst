@@ -1,3 +1,10 @@
+0.12.0 (24-06-2019)
+-------------------
+
+- Switchen naar v2 van de capakey REST-API (#120)
+- Mocken van calls naar externe url's bij testen (#118)
+- get_perceel_by_coordinates (#121)
+
 0.11.0 (03-01-2019)
 ------------------
 

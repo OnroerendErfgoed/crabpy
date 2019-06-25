@@ -62,7 +62,7 @@ class CapakeyRestGateway(object):
     def __init__(self, **kwargs):
         self.base_url = kwargs.get(
             'base_url',
-            'https://geoservices.informatievlaanderen.be/capakey/api/v1'
+            'https://geoservices.informatievlaanderen.be/capakey/api/v2'
         )
         self.base_headers = {
             'Accept': 'application/json'
@@ -383,7 +383,8 @@ class CapakeyRestGateway(object):
             url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel' % (gid, aid, sid)
             h = self.base_headers
             p = {
-                'data': 'adp'
+                'data': 'adp',
+                'status': 'actual'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
             return [
@@ -424,7 +425,8 @@ class CapakeyRestGateway(object):
             p = {
                 'geometry': 'full',
                 'srs': '31370',
-                'data': 'adp'
+                'data': 'adp',
+                'status': 'actual'
             }
             res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
