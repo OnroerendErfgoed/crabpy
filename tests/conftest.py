@@ -9,7 +9,7 @@ from mock import Mock
 
 from crabpy.gateway.crab import CrabGateway
 
-CAPAKEY_URL = 'https://geoservices.informatievlaanderen.be/capakey/api/v1'
+CAPAKEY_URL = 'https://geoservices.informatievlaanderen.be/capakey/api/v2'
 
 
 def pytest_addoption(parser):
@@ -169,6 +169,19 @@ def department_section_parcel_response(mocked_responses):
 def parcel_response(mocked_responses):
     url = re.compile(
         r'{capakey}/parcel/[^/]+/[^/]+\?'
+        .format(capakey=CAPAKEY_URL)
+    )
+    mocked_responses.add(
+        method='GET',
+        url=url,
+        json=load_json('parcel.json')
+    )
+
+
+@pytest.fixture(scope='function')
+def parcels_response(mocked_responses):
+    url = re.compile(
+        r'{capakey}/parcel\?'
         .format(capakey=CAPAKEY_URL)
     )
     mocked_responses.add(
