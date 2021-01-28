@@ -352,7 +352,7 @@ class TestPerceel:
     def test_fully_initialised(self):
         p = Perceel(
             '1154/02C000', Sectie('A', Afdeling(46013)),
-            '40613A1154/02C000', '40613_A_1154_C_000_02',
+            '40613A1154/02C000', '40613_A_1154_C_000_02', ['Teststraat 10, 2000 Gemeente'],
             'capaty', 'cashkey',
             (104893.06375, 196022.244094),
             (104002.076625, 194168.3415, 105784.050875, 197876.146688)
@@ -364,6 +364,7 @@ class TestPerceel:
         assert p.centroid == (104893.06375, 196022.244094)
         assert p.bounding_box == (104002.076625, 194168.3415, 105784.050875, 197876.146688)
         assert p.capakey == str(p)
+        assert p.adres == ['Teststraat 10, 2000 Gemeente']
         assert ("Perceel('1154/02C000', Sectie('A', Afdeling(46013)), "
                 "'40613A1154/02C000', '40613_A_1154_C_000_02')" == repr(p))
 
