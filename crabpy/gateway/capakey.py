@@ -837,8 +837,8 @@ class Perceel(GatewayObject):
         self.id = id
         self.sectie = sectie
         self.capakey = capakey
-        self.adres = adres
         self.percid = percid
+        self.adres = adres
         self._capatype = capatype
         self._cashkey = cashkey
         self._centroid = centroid
