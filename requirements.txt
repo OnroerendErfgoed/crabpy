@@ -1,4 +1,4 @@
-requests==2.21.0
+requests==2.25.1
 suds-jurko==0.6
 dogpile.cache==0.7.1
 six==1.12.0
