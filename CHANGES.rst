@@ -2,7 +2,7 @@
 -------------------
 
 - Verwijderen python 2 support (#160)
-- Vervangen suds door suds-py (#160)
+- Vervangen suds-jurko door suds-py (#160)
 - Upgraden requirements
 
 0.12.1 (28-01-2021)
