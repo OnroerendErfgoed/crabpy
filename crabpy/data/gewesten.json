@@ -1,0 +1,20 @@
+[
+  {
+    "bounding_box": [141217.19, 161462.89, 157988.3, 178152.83],
+    "centroid": [149602.75, 169600.83],
+    "id": 1,
+    "naam": "Brussels Hoofdstedelijk Gewest"
+  },
+  {
+    "bounding_box": [22279.17, 153050.23, 258873.3, 244022.31],
+    "centroid": [138165.09, 189297.53],
+    "id": 2,
+    "naam": "Vlaams Gewest"
+  },
+  {
+    "bounding_box": [42262.91, 21192.8, 295156.81, 167700.47],
+    "centroid": [180603.15, 72950.6],
+    "id": 3,
+    "naam": "Waals Gewest"
+  }
+]

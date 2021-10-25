@@ -1,32 +1,22 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This module contains an opionated gateway for the crab webservice.
 
 .. versionadded:: 0.3.0
-'''
+"""
 
-from __future__ import unicode_literals
-import six
-import math
 import json
+import logging
+import math
 import os
 
-from io import open
-
-import logging
-log = logging.getLogger(__name__)
-
-from crabpy.client import crab_request
-
+from dogpile.cache import make_region
 from suds import WebFault
 
-from crabpy.gateway.exception import (
-    GatewayRuntimeException,
-    GatewayResourceNotFoundException
-)
+from crabpy.client import crab_request
+from crabpy.gateway.exception import GatewayResourceNotFoundException
+from crabpy.gateway.exception import GatewayRuntimeException
 
-from dogpile.cache import make_region
-
+log = logging.getLogger(__name__)
 parent_dir = os.path.dirname(__file__)
 data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
 deelgemeenten_json = json.load(
@@ -36,7 +26,7 @@ deelgemeenten_json = json.load(
 
 
 def crab_gateway_request(client, method, *args):
-    '''
+    """
     Utility function that helps making requests to the CRAB service.
 
     This is a specialised version of :func:`crabpy.client.crab_request` that
@@ -45,7 +35,7 @@ def crab_gateway_request(client, method, *args):
     :param client: A :class:`suds.client.Client` for the CRAB service.
     :param string action: Which method to call, eg. `ListGewesten`
     :returns: Result of the SOAP call.
-    '''
+    """
     try:
         return crab_request(client, method, *args)
     except WebFault as wf:
@@ -56,10 +46,10 @@ def crab_gateway_request(client, method, *args):
         raise err
 
 
-class CrabGateway(object):
-    '''
+class CrabGateway:
+    """
     A gateway to the CRAB webservice.
-    '''
+    """
     caches = {}
 
     provincies = [
@@ -89,20 +79,20 @@ class CrabGateway(object):
                         '%s.' % cr
                     )
         self.deelgemeenten = {
-            dg['deelgemeente_id']: {
-                'id': dg['deelgemeente_id'],
-                'naam': dg['deelgemeente_naam'],
-                'gemeente_niscode': int(dg['gemeente_id'])
+            dg['id']: {
+                'id': dg['id'],
+                'naam': dg['naam'],
+                'gemeente_niscode': int(dg['gemeente_niscode'])
             } for dg in deelgemeenten_json
         }
 
     def list_gewesten(self, sort=1):
-        '''
+        """
         List all `gewesten` in Belgium.
 
         :param integer sort: What field to sort on.
         :rtype: A :class`list` of class: `Gewest`.
-        '''
+        """
         def creator():
             res = crab_gateway_request(self.client, 'ListGewesten', sort)
             tmp = {}
@@ -126,12 +116,12 @@ class CrabGateway(object):
         return gewesten
 
     def get_gewest_by_id(self, id):
-        '''
+        """
         Get a `gewest` by id.
 
         :param integer id: The id of a `gewest`.
         :rtype: A :class:`Gewest`.
-        '''
+        """
         def creator():
             nl = crab_gateway_request(
                 self.client, 'GetGewestByGewestIdAndTaalCode', id, 'nl'
@@ -163,14 +153,14 @@ class CrabGateway(object):
         return gewest
 
     def list_provincies(self, gewest=2):
-        '''
+        """
         List all `provincies` in a `gewest`.
 
         :param gewest: The :class:`Gewest` for which the \
             `provincies` are wanted.
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Provincie`.
-        '''
+        """
         try:
             gewest_id = gewest.id
         except AttributeError:
@@ -189,12 +179,12 @@ class CrabGateway(object):
         return provincies
 
     def get_provincie_by_id(self, niscode):
-        '''
+        """
         Retrieve a `provincie` by the niscode.
 
         :param integer niscode: The niscode of the provincie.
         :rtype: :class:`Provincie`
-        '''
+        """
         def creator():
             for p in self.provincies:
                 if p[0] == niscode:
@@ -211,13 +201,13 @@ class CrabGateway(object):
         return provincie
 
     def list_gemeenten_by_provincie(self, provincie):
-        '''
+        """
         List all `gemeenten` in a `provincie`.
 
         :param provincie: The :class:`Provincie` for which the \
             `gemeenten` are wanted.
         :rtype: A :class:`list` of :class:`Gemeente`.
-        '''
+        """
         try:
             gewest = provincie.gewest
             prov = provincie
@@ -247,14 +237,14 @@ class CrabGateway(object):
         return gemeente
 
     def list_gemeenten(self, gewest=2, sort=1):
-        '''
+        """
         List all `gemeenten` in a `gewest`.
 
         :param gewest: The :class:`Gewest` for which the \
             `gemeenten` are wanted.
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
-        '''
+        """
         try:
             gewest_id = gewest.id
         except AttributeError:
@@ -275,7 +265,7 @@ class CrabGateway(object):
                 )for r in res.GemeenteItem if r.TaalCode == r.TaalCodeGemeenteNaam
             ]
         if self.caches['permanent'].is_configured:
-            key = 'ListGemeentenByGewestId#%s#%s' % (gewest_id, sort)
+            key = f'ListGemeentenByGewestId#{gewest_id}#{sort}'
             gemeenten = self.caches['permanent'].get_or_create(key, creator)
         else:
             gemeenten = creator()
@@ -284,12 +274,12 @@ class CrabGateway(object):
         return gemeenten
 
     def get_gemeente_by_id(self, id):
-        '''
+        """
         Retrieve a `gemeente` by the crab id.
 
         :param integer id: The CRAB id of the gemeente.
         :rtype: :class:`Gemeente`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetGemeenteByGemeenteId', id
@@ -320,12 +310,12 @@ class CrabGateway(object):
         return gemeente
 
     def get_gemeente_by_niscode(self, niscode):
-        '''
+        """
         Retrieve a `gemeente` by the NIScode.
 
         :param integer niscode: The NIScode of the gemeente.
         :rtype: :class:`Gemeente`
-        '''
+        """
 
         def creator():
             res = crab_gateway_request(
@@ -357,13 +347,13 @@ class CrabGateway(object):
         return gemeente
 
     def list_deelgemeenten(self, gewest=2):
-        '''
+        """
         List all `deelgemeenten` in a `gewest`.
 
         :param gewest: The :class:`Gewest` for which the \
             `deelgemeenten` are wanted. Currently only Flanders is supported.
         :rtype: A :class:`list` of :class:`Deelgemeente`.
-        '''
+        """
         try:
             gewest_id = gewest.id
         except AttributeError:
@@ -385,13 +375,13 @@ class CrabGateway(object):
         return deelgemeenten
 
     def list_deelgemeenten_by_gemeente(self, gemeente):
-        '''
+        """
         List all `deelgemeenten` in a `gemeente`.
 
         :param gemeente: The :class:`Gemeente` for which the \
             `deelgemeenten` are wanted. Currently only Flanders is supported.
         :rtype: A :class:`list` of :class:`Deelgemeente`.
-        '''
+        """
         try:
             niscode = gemeente.niscode
         except AttributeError:
@@ -413,12 +403,12 @@ class CrabGateway(object):
         return deelgemeenten
 
     def get_deelgemeente_by_id(self, id):
-        '''
+        """
         Retrieve a `deelgemeente` by the id.
 
         :param string id: The id of the deelgemeente.
         :rtype: :class:`Deelgemeente`
-        '''
+        """
         def creator():
             if id in self.deelgemeenten:
                 dg = self.deelgemeenten[id]
@@ -453,172 +443,172 @@ class CrabGateway(object):
             return creator()
 
     def list_talen(self, sort=1):
-        '''
+        """
         List all `talen`.
 
         :rtype: A :class:`list` of :class:`Taal`
-        '''
+        """
         return self._list_codeobject('ListTalen', sort, 'Taal')
 
     def list_bewerkingen(self, sort=1):
-        '''
+        """
         List all `bewerkingen`.
 
         :rtype: A :class:`list` of :class:`Bewerking`
-        '''
+        """
         return self._list_codeobject(
             'ListBewerkingen', sort, 'Bewerking'
         )
 
     def list_organisaties(self, sort=1):
-        '''
+        """
         List all `organisaties`.
 
         :rtype: A :class:`list` of :class:`Organisatie`
-        '''
+        """
         return self._list_codeobject(
             'ListOrganisaties', sort, 'Organisatie'
         )
 
     def list_aardsubadressen(self, sort=1):
-        '''
+        """
         List all `aardsubadressen`.
 
         :rtype: A :class:`list` of :class:`Aardsubadres`
-        '''
+        """
         return self._list_codeobject(
             'ListAardSubadressen', sort, 'Aardsubadres'
         )
 
     def list_aardadressen(self, sort=1):
-        '''
+        """
         List all `aardadressen`.
 
         :rtype: A :class:`list` of :class:`Aardadres`
-        '''
+        """
         return self._list_codeobject(
             'ListAardAdressen', sort, 'Aardadres'
         )
 
     def list_aardgebouwen(self, sort=1):
-        '''
+        """
         List all `aardgebouwen`.
 
         :rtype: A :class:`list` of :class:`Aardgebouw`
-        '''
+        """
         return self._list_codeobject(
             'ListAardGebouwen', sort, 'Aardgebouw'
         )
 
     def list_aardwegobjecten(self, sort=1):
-        '''
+        """
         List all `aardwegobjecten`.
 
         :rtype: A :class:`list` of :class:`Aardwegobject`
-        '''
+        """
         return self._list_codeobject(
             'ListAardWegobjecten', sort, 'Aardwegobject'
         )
 
     def list_aardterreinobjecten(self, sort=1):
-        '''
+        """
         List all `aardterreinobjecten`.
 
         :rtype: A :class:`list` of :class:`Aardterreinobject`
-        '''
+        """
         return self._list_codeobject(
             'ListAardTerreinobjecten', sort, 'Aardterreinobject'
         )
 
     def list_statushuisnummers(self, sort=1):
-        '''
+        """
         List all `statushuisnummers`.
 
         :rtype: A :class:`list` of :class:`Statushuisnummer`
-        '''
+        """
         return self._list_codeobject(
             'ListStatusHuisnummers', sort, 'Statushuisnummer'
         )
 
     def list_statussubadressen(self, sort=1):
-        '''
+        """
         List all `statussubadressen`.
 
         :rtype: A :class:`list` of :class:`Statussubadres`
-        '''
+        """
         return self._list_codeobject(
             'ListStatusSubadressen', sort, 'Statussubadres'
         )
 
     def list_statusstraatnamen(self, sort=1):
-        '''
+        """
         List all `statusstraatnamen`.
 
         :rtype: A :class:`list` of :class:`Statusstraatnaam`
-        '''
+        """
         return self._list_codeobject(
             'ListStatusStraatnamen', sort, 'Statusstraatnaam'
         )
 
     def list_statuswegsegmenten(self, sort=1):
-        '''
+        """
         List all `statuswegsegmenten`.
 
         :rtype: A :class:`list` of :class:`Statuswegsegment`
-        '''
+        """
         return self._list_codeobject(
             'ListStatusWegsegmenten', sort, 'Statuswegsegment'
         )
 
     def list_geometriemethodewegsegmenten(self, sort=1):
-        '''
+        """
         List all `geometriemethodewegsegmenten`.
 
         :rtype: A :class:`list` of :class:`Geometriemethodewegsegment`
-        '''
+        """
         return self._list_codeobject(
             'ListGeometriemethodeWegsegmenten', sort,
             'Geometriemethodewegsegment'
         )
 
     def list_statusgebouwen(self, sort=1):
-        '''
+        """
         List all `statusgebouwen`.
 
         :rtype: A :class:`list` of :class:`Statusgebouwen`
-        '''
+        """
         return self._list_codeobject(
             'ListStatusGebouwen', sort, 'Statusgebouw'
         )
 
     def list_geometriemethodegebouwen(self, sort=1):
-        '''
+        """
         List all `geometriegebouwen`.
 
         :rtype: A :class:`list` of :class:`Geometriegebouw`
-        '''
+        """
         return self._list_codeobject(
             'ListGeometriemethodeGebouwen', sort, 'Geometriemethodegebouw'
         )
 
     def list_herkomstadresposities(self, sort=1):
-        '''
+        """
         List all `herkomstadresposities`.
 
         :rtype: A :class:`list` of :class:`Herkomstadrespositie`
-        '''
+        """
         return self._list_codeobject(
             'ListHerkomstAdresposities', sort, 'Herkomstadrespositie'
         )
 
     def list_straten(self, gemeente, sort=1):
-        '''
+        """
         List all `straten` in a `Gemeente`.
 
         :param gemeente: The :class:`Gemeente` for which the \
             `straten` are wanted.
         :rtype: A :class:`list` of :class:`Straat`
-        '''
+        """
         try:
             id = gemeente.id
         except AttributeError:
@@ -641,7 +631,7 @@ class CrabGateway(object):
             except AttributeError:
                 return []
         if self.caches['long'].is_configured:
-            key = 'ListStraatnamenWithStatusByGemeenteId#%s%s' % (id, sort)
+            key = f'ListStraatnamenWithStatusByGemeenteId#{id}{sort}'
             straten = self.caches['long'].get_or_create(key, creator)
         else:
             straten = creator()
@@ -650,12 +640,12 @@ class CrabGateway(object):
         return straten
 
     def get_straat_by_id(self, id):
-        '''
+        """
         Retrieve a `straat` by the Id.
 
         :param integer id: The id of the `straat`.
         :rtype: :class:`Straat`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetStraatnaamWithStatusByStraatnaamId', id
@@ -688,13 +678,13 @@ class CrabGateway(object):
         return straat
 
     def list_huisnummers_by_straat(self, straat, sort=1):
-        '''
+        """
         List all `huisnummers` in a `Straat`.
 
         :param straat: The :class:`Straat` for which the \
             `huisnummers` are wanted.
         :rtype: A :class: `list` of :class:`Huisnummer`
-        '''
+        """
         try:
             id = straat.id
         except AttributeError:
@@ -717,7 +707,7 @@ class CrabGateway(object):
             except AttributeError:
                 return []
         if self.caches['short'].is_configured:
-            key = 'ListHuisnummersWithStatusByStraatnaamId#%s%s' % (id, sort)
+            key = f'ListHuisnummersWithStatusByStraatnaamId#{id}{sort}'
             huisnummers = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummers = creator()
@@ -726,7 +716,7 @@ class CrabGateway(object):
         return huisnummers
 
     def list_huisnummers_by_perceel(self, perceel, sort=1):
-        '''
+        """
         List all `huisnummers` on a `Pereel`.
 
         Generally there will only be one, but multiples are possible.
@@ -734,7 +724,7 @@ class CrabGateway(object):
         :param perceel: The :class:`Perceel` for which the \
             `huisnummers` are wanted.
         :rtype: A :class: `list` of :class:`Huisnummer`
-        '''
+        """
         try:
             id = perceel.id
         except AttributeError:
@@ -755,7 +745,7 @@ class CrabGateway(object):
             except AttributeError:
                 return []
         if self.caches['short'].is_configured:
-            key = 'ListHuisnummersWithStatusByIdentificatorPerceel#%s%s' % (id, sort)
+            key = f'ListHuisnummersWithStatusByIdentificatorPerceel#{id}{sort}'
             huisnummers = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummers = creator()
@@ -764,12 +754,12 @@ class CrabGateway(object):
         return huisnummers
 
     def get_huisnummer_by_id(self, id):
-        '''
+        """
         Retrieve a `huisnummer` by the Id.
 
         :param integer id: the Id of the `huisnummer`
         :rtype: :class:`Huisnummer`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetHuisnummerWithStatusByHuisnummerId', id
@@ -797,14 +787,14 @@ class CrabGateway(object):
         return huisnummer
 
     def get_huisnummer_by_nummer_and_straat(self, nummer, straat):
-        '''
+        """
         Retrieve a `huisnummer` by the `nummer` and `straat`
 
         :param integer nummer: The huisnummer of the 'huisnummer`
         :param straat: The :class:`Straat` in which the `huisnummer` \
             is situated.
         :rtype: A :class:`Huisnummer`
-        '''
+        """
         try:
             straat_id = straat.id
         except AttributeError:
@@ -830,7 +820,7 @@ class CrabGateway(object):
                 )
             )
         if self.caches['short'].is_configured:
-            key = 'GetHuisnummerWithStatusByHuisnummer#%s%s' % (nummer, straat_id)
+            key = f'GetHuisnummerWithStatusByHuisnummer#{nummer}{straat_id}'
             huisnummer = self.caches['short'].get_or_create(key, creator)
         else:
             huisnummer = creator()
@@ -838,13 +828,13 @@ class CrabGateway(object):
         return huisnummer
 
     def list_postkantons_by_gemeente(self, gemeente):
-        '''
+        """
         List all `postkantons` in a :class:`Gemeente`
 
         :param gemeente: The :class:`Gemeente` for which the \
             `potkantons` are wanted.
         :rtype: A :class:`list` of :class:`Postkanton`
-        '''
+        """
         try:
             id = gemeente.id
         except AttributeError:
@@ -872,13 +862,13 @@ class CrabGateway(object):
         return postkantons
 
     def get_postkanton_by_huisnummer(self, huisnummer):
-        '''
+        """
         Retrieve a `postkanton` by the Huisnummer.
 
         :param huisnummer: The :class:`Huisnummer` for which the `postkanton` \
                 is wanted.
         :rtype: :class:`Postkanton`
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -902,12 +892,12 @@ class CrabGateway(object):
         return postkanton
 
     def get_wegobject_by_id(self, id):
-        '''
+        """
         Retrieve a `Wegobject` by the Id.
 
         :param integer id: the Id of the `Wegobject`
         :rtype: :class:`Wegobject`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetWegobjectByIdentificatorWegobject', id
@@ -935,13 +925,13 @@ class CrabGateway(object):
         return wegobject
 
     def list_wegobjecten_by_straat(self, straat):
-        '''
+        """
         List all `wegobjecten` in a :class:`Straat`
 
         :param straat: The :class:`Straat` for which the `wegobjecten` \
                 are wanted.
         :rtype: A :class:`list` of :class:`Wegobject`
-        '''
+        """
         try:
             id = straat.id
         except AttributeError:
@@ -970,12 +960,12 @@ class CrabGateway(object):
         return wegobjecten
 
     def get_wegsegment_by_id(self, id):
-        '''
+        """
         Retrieve a `wegsegment` by the Id.
 
         :param integer id: the Id of the `wegsegment`
         :rtype: :class:`Wegsegment`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client,
@@ -1004,13 +994,13 @@ class CrabGateway(object):
         return wegsegment
 
     def list_wegsegmenten_by_straat(self, straat):
-        '''
+        """
         List all `wegsegmenten` in a :class:`Straat`
 
         :param straat: The :class:`Straat` for which the `wegsegmenten` \
                 are wanted.
         :rtype: A :class:`list` of :class:`Wegsegment`
-        '''
+        """
         try:
             id = straat.id
         except AttributeError:
@@ -1039,13 +1029,13 @@ class CrabGateway(object):
         return wegsegmenten
 
     def list_terreinobjecten_by_huisnummer(self, huisnummer):
-        '''
+        """
         List all `terreinobjecten` for a :class:`Huisnummer`
 
         :param huisnummer: The :class:`Huisnummer` for which the \
             `terreinobjecten` are wanted.
         :rtype: A :class:`list` of :class:`Terreinobject`
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -1074,12 +1064,12 @@ class CrabGateway(object):
         return terreinobjecten
 
     def get_terreinobject_by_id(self, id):
-        '''
+        """
         Retrieve a `Terreinobject` by the Id.
 
         :param integer id: the Id of the `Terreinobject`
         :rtype: :class:`Terreinobject`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client,
@@ -1108,13 +1098,13 @@ class CrabGateway(object):
         return terreinobject
 
     def list_percelen_by_huisnummer(self, huisnummer):
-        '''
+        """
         List all `percelen` for a :class:`Huisnummer`
 
         :param huisnummer: The :class:`Huisnummer` for which the \
             `percelen` are wanted.
         :rtype: A :class:`list` of :class:`Perceel`
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -1142,12 +1132,12 @@ class CrabGateway(object):
         return percelen
 
     def get_perceel_by_id(self, id):
-        '''
+        """
         Retrieve a `Perceel` by the Id.
 
         :param string id: the Id of the `Perceel`
         :rtype: :class:`Perceel`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetPerceelByIdentificatorPerceel', id
@@ -1173,13 +1163,13 @@ class CrabGateway(object):
         return perceel
 
     def list_gebouwen_by_huisnummer(self, huisnummer):
-        '''
+        """
         List all `gebouwen` for a :class:`Huisnummer`.
 
         :param huisnummer: The :class:`Huisnummer` for which the \
             `gebouwen` are wanted.
         :rtype: A :class:`list` of :class:`Gebouw`
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -1209,12 +1199,12 @@ class CrabGateway(object):
         return gebouwen
 
     def get_gebouw_by_id(self, id):
-        '''
+        """
         Retrieve a `Gebouw` by the Id.
 
         :param integer id: the Id of the `Gebouw`
         :rtype: :class:`Gebouw`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetGebouwByIdentificatorGebouw', id
@@ -1255,13 +1245,13 @@ class CrabGateway(object):
                 return item
 
     def list_subadressen_by_huisnummer(self, huisnummer):
-        '''
+        """
         List all `subadressen` for a :class:`Huisnummer`.
 
         :param huisnummer: The :class:`Huisnummer` for which the \
             `subadressen` are wanted. OR A huisnummer id.
         :rtype: A :class:`list` of :class:`Gebouw`
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -1289,12 +1279,12 @@ class CrabGateway(object):
         return subadressen
 
     def get_subadres_by_id(self, id):
-        '''
+        """
         Retrieve a `Subadres` by the Id.
 
         :param integer id: the Id of the `Subadres`
         :rtype: :class:`Subadres`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetSubadresWithStatusBySubadresId', id
@@ -1323,13 +1313,13 @@ class CrabGateway(object):
         return subadres
 
     def list_adresposities_by_huisnummer(self, huisnummer):
-        '''
+        """
         List all `adresposities` for a :class:`Huisnummer`.
 
         :param huisnummer: The :class:`Huisnummer` for which the \
             `adresposities` are wanted. OR A huisnummer id.
         :rtype: A :class:`list` of :class:`Adrespositie`
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -1355,14 +1345,14 @@ class CrabGateway(object):
         return adresposities
 
     def list_adresposities_by_nummer_and_straat(self, nummer, straat):
-        '''
+        """
         List all `adresposities` for a huisnummer and a :class:`Straat`.
 
         :param nummer: A string representing a certain huisnummer.
         :param straat: The :class:`Straat` for which the \
             `adresposities` are wanted. OR A straat id.
         :rtype: A :class:`list` of :class:`Adrespositie`
-        '''
+        """
         try:
             sid = straat.id
         except AttributeError:
@@ -1379,7 +1369,7 @@ class CrabGateway(object):
             except AttributeError:
                 return []
         if self.caches['short'].is_configured:
-            key = 'ListAdrespositiesByHuisnummer#%s%s' % (nummer, sid)
+            key = f'ListAdrespositiesByHuisnummer#{nummer}{sid}'
             adresposities = self.caches['short'].get_or_create(key, creator)
         else:
             adresposities = creator()
@@ -1388,13 +1378,13 @@ class CrabGateway(object):
         return adresposities
 
     def list_adresposities_by_subadres(self, subadres):
-        '''
+        """
         List all `adresposities` for a :class:`Subadres`.
 
         :param subadres: The :class:`Subadres` for which the \
             `adresposities` are wanted. OR A subadres id.
         :rtype: A :class:`list` of :class:`Adrespositie`
-        '''
+        """
         try:
             id = subadres.id
         except AttributeError:
@@ -1420,14 +1410,14 @@ class CrabGateway(object):
         return adresposities
 
     def list_adresposities_by_subadres_and_huisnummer(self, subadres, huisnummer):
-        '''
+        """
         List all `adresposities` for a subadres and a :class:`Huisnummer`.
 
         :param subadres: A string representing a certain subadres.
         :param huisnummer: The :class:`Huisnummer` for which the \
             `adresposities` are wanted. OR A huisnummer id.
         :rtype: A :class:`list` of :class:`Adrespositie`
-        '''
+        """
         try:
             hid = huisnummer.id
         except AttributeError:
@@ -1444,7 +1434,7 @@ class CrabGateway(object):
             except AttributeError:
                 return []
         if self.caches['short'].is_configured:
-            key = 'ListAdrespositiesBySubadres#%s%s' % (subadres, hid)
+            key = f'ListAdrespositiesBySubadres#{subadres}{hid}'
             adresposities = self.caches['short'].get_or_create(key, creator)
         else:
             adresposities = creator()
@@ -1453,12 +1443,12 @@ class CrabGateway(object):
         return adresposities
 
     def get_adrespositie_by_id(self, id):
-        '''
+        """
         Retrieve a `Adrespositie` by the Id.
 
         :param integer id: the Id of the `Adrespositie`
         :rtype: :class:`Adrespositie`
-        '''
+        """
         def creator():
             res = crab_gateway_request(
                 self.client, 'GetAdrespositieByAdrespositieId', id
@@ -1486,13 +1476,13 @@ class CrabGateway(object):
         return adrespositie
 
     def get_postadres_by_huisnummer(self, huisnummer):
-        '''
+        """
         Get the `postadres` for a :class:`Huisnummer`.
 
         :param huisnummer: The :class:`Huisnummer` for which the \
             `postadres` is wanted. OR A huisnummer id.
         :rtype: A :class:`str`.
-        '''
+        """
         try:
             id = huisnummer.id
         except AttributeError:
@@ -1512,13 +1502,13 @@ class CrabGateway(object):
         return postadres
 
     def get_postadres_by_subadres(self, subadres):
-        '''
+        """
         Get the `postadres` for a :class:`Subadres`.
 
         :param subadres: The :class:`Subadres` for which the \
             `postadres` is wanted. OR A subadres id.
         :rtype: A :class:`str`.
-        '''
+        """
         try:
             id = subadres.id
         except AttributeError:
@@ -1538,53 +1528,49 @@ class CrabGateway(object):
         return postadres
 
 
-class GatewayObject(object):
-    '''
+class GatewayObject:
+    """
     Abstract class for objects that are able to use a
     :class:`crabpy.Gateway.CrabGateway` to find further information.
-    '''
+    """
 
     gateway = None
-    '''
+    """
     The :class:`crabpy.gateway.crab.CrabGateway` to use when making
     further calls to the CRAB service.
-    '''
+    """
 
     def __init__(self, **kwargs):
         if 'gateway' in kwargs:
             self.set_gateway(kwargs['gateway'])
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CrabGateway.
-        '''
+        """
         self.gateway = None
 
     def check_gateway(self):
-        '''
+        """
         Check to see if a gateway was set on this object.
-        '''
+        """
         if not self.gateway:
             raise RuntimeError("There's no Gateway I can use")
 
-    if six.PY2:
-        def __str__(self):
-            return self.__unicode__().encode('utf-8')
-    else:
-        def __str__(self):
-            return self.__unicode__()
+    def __str__(self):
+        return self.__unicode__()
 
 
 def check_lazy_load_gewest(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Gewest`.
-    '''
+    """
     def wrapper(self):
         gewest = self
         attribute = 'namen' if f.__name__ == 'naam' else f.__name__
@@ -1600,12 +1586,12 @@ def check_lazy_load_gewest(f):
 
 
 class Gewest(GatewayObject):
-    '''
+    """
     A large administrative unit in Belgium.
 
     Belgium consists of 3 `gewesten`. Together they form the entire territory
     of the country.
-    '''
+    """
     def __init__(
         self,
         id,
@@ -1618,7 +1604,7 @@ class Gewest(GatewayObject):
         self._namen = namen
         self._centroid = centroid
         self._bounding_box = bounding_box
-        super(Gewest, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     @check_lazy_load_gewest
@@ -1645,7 +1631,7 @@ class Gewest(GatewayObject):
 
     def __unicode__(self):
         if self._namen is not None:
-            return "%s (%s)" % (self.naam, self.id)
+            return f"{self.naam} ({self.id})"
         else:
             return "Gewest %s" % (self.id)
 
@@ -1654,11 +1640,11 @@ class Gewest(GatewayObject):
 
 
 class Provincie(GatewayObject):
-    '''
+    """
     The largest administrative unit within a :class:`Gewest`.
 
     .. versionadded:: 0.4.0
-    '''
+    """
     def __init__(
         self, niscode, naam, gewest, **kwargs
     ):
@@ -1667,16 +1653,16 @@ class Provincie(GatewayObject):
         self.gewest = gewest
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
         self.gewest.gateway = gateway
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CrabGateway.
-        '''
+        """
         self.gateway = None
         self.gewest.clear_gateway()
 
@@ -1686,16 +1672,16 @@ class Provincie(GatewayObject):
         return self.gateway.list_gemeenten_by_provincie(self.niscode)
 
     def __unicode__(self):
-        return "%s (%s)" % (self.naam, self.niscode)
+        return f"{self.naam} ({self.niscode})"
 
     def __repr__(self):
-        return "Provincie(%s, '%s', Gewest(%s))" % (self.niscode, self.naam, self.gewest.id)
+        return f"Provincie({self.niscode}, '{self.naam}', Gewest({self.gewest.id}))"
 
 
 def check_lazy_load_gemeente(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Gemeente`.
-    '''
+    """
     def wrapper(*args):
         gemeente = args[0]
         if (
@@ -1714,9 +1700,9 @@ def check_lazy_load_gemeente(f):
 
 
 class Gemeente(GatewayObject):
-    '''
+    """
     The smallest administrative unit in Belgium.
-    '''
+    """
     def __init__(
             self, id, naam, niscode, gewest,
             taal=None, centroid=None,
@@ -1735,19 +1721,19 @@ class Gemeente(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self._metadata = metadata
-        super(Gemeente, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
         self.gewest.set_gateway(gateway)
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CrabGateway.
-        '''
+        """
         self.gateway = None
         self.gewest.clear_gateway()
 
@@ -1795,18 +1781,18 @@ class Gemeente(GatewayObject):
                 return p
 
     def __unicode__(self):
-        return "%s (%s)" % (self.naam, self.id)
+        return f"{self.naam} ({self.id})"
 
     def __repr__(self):
-        return "Gemeente(%s, '%s', %s)" % (self.id, self.naam, self.niscode)
+        return f"Gemeente({self.id}, '{self.naam}', {self.niscode})"
 
 
 class Deelgemeente(GatewayObject):
-    '''
+    """
     A subdivision of a :class:`Gemeente`.
 
     .. versionadded:: 0.7.0
-    '''
+    """
     def __init__(
         self, id, naam, gemeente_niscode, **kwargs
     ):
@@ -1815,15 +1801,15 @@ class Deelgemeente(GatewayObject):
         self.gemeente_niscode = gemeente_niscode
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.crab.CrabGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CrabGateway.
-        '''
+        """
         self.gateway = None
 
     @property
@@ -1831,10 +1817,10 @@ class Deelgemeente(GatewayObject):
         return self.gateway.get_gemeente_by_niscode(self.gemeente_niscode)
 
     def __unicode__(self):
-        return "%s (%s)" % (self.naam, self.id)
+        return f"{self.naam} ({self.id})"
 
     def __repr__(self):
-        return "Deelgemeente('%s', '%s', %s)" % (self.id, self.naam, self.gemeente_niscode)
+        return f"Deelgemeente('{self.id}', '{self.naam}', {self.gemeente_niscode})"
 
 
 class Codelijst(GatewayObject):
@@ -1844,144 +1830,144 @@ class Codelijst(GatewayObject):
         self.id = id
         self.naam = naam
         self.definitie = definitie
-        super(Codelijst, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def __unicode__(self):
         return self.naam
 
 
 class Taal(Codelijst):
-    '''
+    """
     A language.
-    '''
+    """
     def __repr__(self):
-        return "Taal('%s', '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Taal('{self.id}', '{self.naam}', '{self.definitie}')"
 
 
 class Bewerking(Codelijst):
-    '''
+    """
     An edit.
-    '''
+    """
     def __repr__(self):
-        return "Bewerking(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Bewerking({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Organisatie(Codelijst):
-    '''
+    """
     An organisation that played a role in the genessis of an object.
-    '''
+    """
     def __repr__(self):
-        return "Organisatie(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Organisatie({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Aardsubadres(Codelijst):
-    '''
+    """
     The nature of a subaddress.
-    '''
+    """
     def __repr__(self):
-        return "Aardsubadres(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Aardsubadres({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Aardadres(Codelijst):
-    '''
+    """
     The nature of an address.
-    '''
+    """
     def __repr__(self):
-        return "Aardadres(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Aardadres({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Aardgebouw(Codelijst):
-    '''
+    """
     The nature of a building.
-    '''
+    """
     def __repr__(self):
-        return "Aardgebouw(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Aardgebouw({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Aardwegobject(Codelijst):
-    '''
+    """
     The nature of a `wegobject`.
-    '''
+    """
     def __repr__(self):
-        return "Aardwegobject(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Aardwegobject({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Aardterreinobject(Codelijst):
-    '''
+    """
     The nature of a `terreinobject`.
-    '''
+    """
     def __repr__(self):
-        return "Aardterreinobject(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Aardterreinobject({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Statushuisnummer(Codelijst):
-    '''
+    """
     The current state of a `huisnummer`.
-    '''
+    """
     def __repr__(self):
-        return "Statushuisnummer(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Statushuisnummer({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Statussubadres(Codelijst):
-    '''
+    """
     The current state of a `subadres`.
-    '''
+    """
     def __repr__(self):
-        return "Statussubadres(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Statussubadres({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Statusstraatnaam(Codelijst):
-    '''
+    """
     The current state of a `straatnaam`.
-    '''
+    """
     def __repr__(self):
-        return "Statusstraatnaam(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Statusstraatnaam({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Statuswegsegment(Codelijst):
-    '''
+    """
     The current state of a `wegsegment`.
-    '''
+    """
     def __repr__(self):
-        return "Statuswegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Statuswegsegment({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Geometriemethodewegsegment(Codelijst):
-    '''
+    """
     The geometry method of a :class:`Wegsegment`.
-    '''
+    """
     def __repr__(self):
-        return "Geometriemethodewegsegment(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Geometriemethodewegsegment({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Statusgebouw(Codelijst):
-    '''
+    """
     The current state of a :class:`Gebouw`.
-    '''
+    """
     def __repr__(self):
-        return "Statusgebouw(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Statusgebouw({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Geometriemethodegebouw(Codelijst):
-    '''
+    """
     The geometry method of a :class:`Gebouw`.
-    '''
+    """
     def __repr__(self):
-        return "Geometriemethodegebouw(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Geometriemethodegebouw({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 class Herkomstadrespositie(Codelijst):
-    '''
+    """
     The origin of an Adressposition.
-    '''
+    """
     def __repr__(self):
-        return "Herkomstadrespositie(%s, '%s', '%s')" % (self.id, self.naam, self.definitie)
+        return f"Herkomstadrespositie({self.id}, '{self.naam}', '{self.definitie}')"
 
 
 def check_lazy_load_straat(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Straat`.
-    '''
+    """
     def wrapper(*args):
         straat = args[0]
         if (
@@ -1997,11 +1983,11 @@ def check_lazy_load_straat(f):
 
 
 class Straat(GatewayObject):
-    '''
+    """
     A street.
 
     A street object is always located in one and exactly one :class:`Gemeente`.
-    '''
+    """
     def __init__(
             self, id, label, gemeente_id, status,
             straatnaam=None, taalcode=None,
@@ -2019,7 +2005,7 @@ class Straat(GatewayObject):
         self._namen = ((straatnaam, taalcode), (straatnaam2, taalcode2))
         self.gemeente_id = gemeente_id
         self._metadata = metadata
-        super(Straat, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     @check_lazy_load_straat
@@ -2081,16 +2067,16 @@ class Straat(GatewayObject):
         return [min(x), min(y), max(x), max(y)]
 
     def __unicode__(self):
-        return "%s (%s)" % (self.label, self.id)
+        return f"{self.label} ({self.id})"
 
     def __repr__(self):
-        return "Straat(%s, '%s', %s, %s)" % (self.id, self.label, self.gemeente_id, self.status_id)
+        return f"Straat({self.id}, '{self.label}', {self.gemeente_id}, {self.status_id})"
 
 
 def check_lazy_load_huisnummer(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Huisnummer`.
-    '''
+    """
     def wrapper(*args):
         huisnummer = args[0]
         if (
@@ -2105,11 +2091,11 @@ def check_lazy_load_huisnummer(f):
 
 
 class Huisnummer(GatewayObject):
-    '''
+    """
     A house number.
 
     This is mainly a combination of a street and a house number.
-    '''
+    """
     def __init__(
             self, id, status, huisnummer, straat_id,
             metadata=None, **kwargs
@@ -2124,7 +2110,7 @@ class Huisnummer(GatewayObject):
         self.huisnummer = huisnummer
         self.straat_id = straat_id
         self._metadata = metadata
-        super(Huisnummer, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def straat(self):
@@ -2188,21 +2174,21 @@ class Huisnummer(GatewayObject):
         return self.gateway.list_adresposities_by_huisnummer(self.id)
 
     def __unicode__(self):
-        return "%s (%s)" % (self.huisnummer, self.id)
+        return f"{self.huisnummer} ({self.id})"
 
     def __repr__(self):
-        return "Huisnummer(%s, %s, '%s', %s)" % (self.id, self.status_id, self.huisnummer, self.straat_id)
+        return f"Huisnummer({self.id}, {self.status_id}, '{self.huisnummer}', {self.straat_id})"
 
 
 class Postkanton(GatewayObject):
-    '''
+    """
     A postal code.
 
     Eg. postal code `9000` for the city of Ghent.
-    '''
+    """
     def __init__(self, id, **kwargs):
         self.id = int(id)
-        super(Postkanton, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def __unicode__(self):
         return "Postkanton %s" % (self.id)
@@ -2212,9 +2198,9 @@ class Postkanton(GatewayObject):
 
 
 def check_lazy_load_wegobject(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Wegobject`.
-    '''
+    """
     def wrapper(*args):
         wegobject = args[0]
         if (
@@ -2247,7 +2233,7 @@ class Wegobject(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self._metadata = metadata
-        super(Wegobject, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def aard(self):
@@ -2281,9 +2267,9 @@ class Wegobject(GatewayObject):
 
 
 def check_lazy_load_wegsegment(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Wegsegment`.
-    '''
+    """
     def wrapper(*args):
         wegsegment = args[0]
         if (
@@ -2321,7 +2307,7 @@ class Wegsegment(GatewayObject):
             self._methode = None
         self._geometrie = geometrie
         self._metadata = metadata
-        super(Wegsegment, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def status(self):
@@ -2360,9 +2346,9 @@ class Wegsegment(GatewayObject):
 
 
 def check_lazy_load_terreinobject(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Terreinobject`.
-    '''
+    """
     def wrapper(*args):
         terreinobject = args[0]
         if (
@@ -2381,14 +2367,14 @@ def check_lazy_load_terreinobject(f):
 
 
 class Terreinobject(GatewayObject):
-    '''
+    """
     A cadastral parcel.
 
     A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
     in the source of the data and the information provided. eg. A
     `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
     also has the centroid, but not the `bounding box`.
-    '''
+    """
     def __init__(
         self, id, aard, centroid=None,
         bounding_box=None, metadata=None, **kwargs
@@ -2403,7 +2389,7 @@ class Terreinobject(GatewayObject):
         self._centroid = centroid
         self._metadata = metadata
         self._bounding_box = bounding_box
-        super(Terreinobject, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def aard(self):
@@ -2437,9 +2423,9 @@ class Terreinobject(GatewayObject):
 
 
 def check_lazy_load_perceel(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Perceel`.
-    '''
+    """
     def wrapper(*args):
         perceel = args[0]
         if perceel._centroid is None or perceel._metadata is None:
@@ -2453,21 +2439,21 @@ def check_lazy_load_perceel(f):
 
 
 class Perceel(GatewayObject):
-    '''
+    """
     A cadastral Parcel.
 
     A :class:`Terreinobject` is somewhat different from a :class:`Perceel`
     in the source of the data and the information provided. eg. A
     `terreinobject` has a `centroid` and a `bounding box`, while a `perceel`
     also has the centroid, but not the `bounding box`.
-    '''
+    """
     def __init__(
         self, id, centroid=None, metadata=None, **kwargs
     ):
         self.id = id
         self._centroid = centroid
         self._metadata = metadata
-        super(Perceel, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     @check_lazy_load_perceel
@@ -2481,25 +2467,25 @@ class Perceel(GatewayObject):
 
     @property
     def huisnummers(self):
-        '''
+        """
         Returns the huisnummers on this Perceel.
 
         Some of the huisnummers might no longer be active.
 
         :rtype: list
-        '''
+        """
         self.check_gateway()
         return self.gateway.list_huisnummers_by_perceel(self.id)
 
     @property
     def postadressen(self):
-        '''
+        """
         Returns the postadressen for this Perceel.
 
         Will only take the huisnummers with status `inGebruik` into account.
 
         :rtype: list 
-        '''
+        """
         return [h.postadres for h in self.huisnummers if h.status.id == '3']
 
     def __unicode__(self):
@@ -2510,9 +2496,9 @@ class Perceel(GatewayObject):
 
 
 def check_lazy_load_gebouw(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Gebouw`.
-    '''
+    """
     def wrapper(*args):
         gebouw = args[0]
         if (
@@ -2530,9 +2516,9 @@ def check_lazy_load_gebouw(f):
 
 
 class Gebouw(GatewayObject):
-    '''
+    """
     A building.
-    '''
+    """
     def __init__(
         self, id, aard, status,
         methode=None, geometrie=None, metadata=None, **kwargs
@@ -2558,7 +2544,7 @@ class Gebouw(GatewayObject):
             self._methode = None
         self._geometrie = geometrie
         self._metadata = metadata
-        super(Gebouw, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def aard(self):
@@ -2608,9 +2594,9 @@ class Gebouw(GatewayObject):
 
 
 def check_lazy_load_subadres(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Subadres`.
-    '''
+    """
     def wrapper(*args):
         subadres = args[0]
         if (
@@ -2629,11 +2615,11 @@ def check_lazy_load_subadres(f):
 
 
 class Subadres(GatewayObject):
-    '''
+    """
     An address within a certain :class:`Huisnummer`.
 
     These can eg. be postboxes within an appartment complex.
-    '''
+    """
     def __init__(
             self, id, subadres, status, huisnummer_id=None, aard=None,
             metadata=None, **kwargs
@@ -2654,7 +2640,7 @@ class Subadres(GatewayObject):
             self.aard_id = aard
             self._aard = None
         self._metadata = metadata
-        super(Subadres, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def huisnummer(self):
@@ -2696,16 +2682,16 @@ class Subadres(GatewayObject):
         return self.gateway.list_adresposities_by_subadres(self.id)
 
     def __unicode__(self):
-        return "%s (%s)" % (self.subadres, self.id)
+        return f"{self.subadres} ({self.id})"
 
     def __repr__(self):
-        return "Subadres(%s, %s, '%s', %s)" % (self.id, self.status_id, self.subadres, self.huisnummer_id)
+        return f"Subadres({self.id}, {self.status_id}, '{self.subadres}', {self.huisnummer_id})"
 
 
 def check_lazy_load_adrespositie(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Adrespositie`.
-    '''
+    """
     def wrapper(*args):
         adrespositie = args[0]
         if (
@@ -2724,7 +2710,7 @@ def check_lazy_load_adrespositie(f):
 
 
 class Adrespositie(GatewayObject):
-    '''
+    """
     The position of an `Adres`.
 
     This can be used for the position of both :class:`Huisnummer` and
@@ -2733,7 +2719,7 @@ class Adrespositie(GatewayObject):
     A `Huisnummer` or `Subadres`, can have more than one `Adrespositie`, each
     offering a different interpretation of the position of the `Adres`. See
     the `herkomst` and `aard` of each `Adrespositie` to know which one to pick.
-    '''
+    """
     def __init__(
         self, id, herkomst, geometrie=None, aard=None,
         metadata=None, **kwargs
@@ -2753,7 +2739,7 @@ class Adrespositie(GatewayObject):
             self.aard_id = aard
             self._aard = None
         self._metadata = metadata
-        super(Adrespositie, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def herkomst(self):
@@ -2789,16 +2775,16 @@ class Adrespositie(GatewayObject):
         return "Adrespositie %s" % (self.id)
 
     def __repr__(self):
-        return "Adrespositie(%s, %s)" % (self.id, self.herkomst_id)
+        return f"Adrespositie({self.id}, {self.herkomst_id})"
 
 
 class Metadata(GatewayObject):
-    '''
+    """
     Metadata about a `straat`, `huisnummer`, ...
 
     Some of the metadata available is the datum the object was created, the
     organisation that created it and the type of creation.
-    '''
+    """
     def __init__(
         self, begin_datum, begin_tijd,
         begin_bewerking, begin_organisatie,
@@ -2818,7 +2804,7 @@ class Metadata(GatewayObject):
         except AttributeError:
             self._begin_organisatie_id = begin_organisatie
             self._begin_organisatie = None
-        super(Metadata, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     def begin_bewerking(self):

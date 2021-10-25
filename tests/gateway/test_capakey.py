@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import re
 
 from tests.conftest import CAPAKEY_URL
@@ -23,7 +22,7 @@ import requests
 try:
     from unittest.mock import MagicMock, patch
 except:
-    from mock import MagicMock, patch
+    from unittest.mock import MagicMock, patch
 
 
 def connection_error(url, headers={}, params={}):
@@ -50,7 +49,7 @@ class TestCapakeyRestGateway:
     def test_get_gemeente_by_invalid_id(self, capakey_rest_gateway,
                                         mocked_responses):
         url = re.compile(
-            r'{capakey}/municipality/[^/]+\?'.format(capakey=CAPAKEY_URL)
+            fr'{CAPAKEY_URL}/municipality/[^/]+\?'
         )
         mocked_responses.add(method='GET', url=url, status=404)
         from crabpy.gateway.exception import GatewayResourceNotFoundException

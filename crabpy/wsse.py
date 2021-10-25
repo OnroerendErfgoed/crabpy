@@ -1,21 +1,18 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This module adds a :class:`UsernameDigestToken` for use with SOAP services.
 
 .. versionadded:: 0.2.0
-'''
+"""
 
-from __future__ import unicode_literals
-
-from base64 import b64encode
 
 import hashlib
-
+from base64 import b64encode
 from datetime import datetime
 
-from suds.wsse import UsernameToken, wssens, wsuns
-
 from suds.sax.element import Element
+from suds.wsse import UsernameToken
+from suds.wsse import wssens
+from suds.wsse import wsuns
 
 
 class UsernameDigestToken(UsernameToken):
@@ -45,7 +42,7 @@ class UsernameDigestToken(UsernameToken):
             s.append(self.password.encode('utf-8'))
             s.append(str(datetime.utcnow()).encode('utf-8'))
             m = hashlib.md5()
-            m.update(':'.encode('utf-8').join(s))
+            m.update(b':'.join(s))
             self.nonce = m.hexdigest().encode('utf-8')
         else:
             self.nonce = text
