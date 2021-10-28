@@ -411,6 +411,16 @@ class TestGemeente:
         provincie = g.provincie
         assert provincie.naam == "Antwerpen"
 
+    def test_taal(self, gateway, client):
+        client.get_gemeente.return_value = create_client_get_gemeente_item()
+        g = Gemeente(niscode="1", gateway=gateway)
+        assert g.taal == "nl"
+
+    def test_naam(self, gateway, client):
+        client.get_gemeente.return_value = create_client_get_gemeente_item()
+        g = Gemeente(niscode="1", gateway=gateway)
+        assert g.naam == "Moeskroen"
+
     def test_caching_and_lazy_loading(self, gateway, client):
         client.get_gemeente.return_value = create_client_get_gemeente_item()
         gemeente = Gemeente(niscode="1", gateway=gateway)

@@ -411,11 +411,7 @@ class Gewest(GatewayObject):
             return f"Gewest {self.id}"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["id", "naam", "centroid", "bounding_box"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Gewest(id={self.id})"
 
 
 class Provincie(GatewayObject):
@@ -439,11 +435,7 @@ class Provincie(GatewayObject):
         return f"{self.naam} ({self.niscode})"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["niscode", "naam", "gewest"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Provincie(niscode={self.niscode})"
 
 
 class Gemeente(GatewayObject):
@@ -478,7 +470,7 @@ class Gemeente(GatewayObject):
     def taal(self):
         taal_nl = False
         taal_fr = False
-        for naam in self._source_json["straatnamen"]:
+        for naam in self._source_json["gemeentenamen"]:
             if naam["taal"] == "nl":
                 taal_nl = True
             elif naam["taal"] == "fr":
@@ -517,11 +509,7 @@ class Gemeente(GatewayObject):
         return f"{self.naam} ({self.niscode})"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["niscode", "naam", "taal"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Gemeente(niscode={self.niscode})"
 
 
 class Deelgemeente(GatewayObject):
@@ -545,11 +533,7 @@ class Deelgemeente(GatewayObject):
         return f"{self.naam} ({self.id})"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["id", "naam", "gemeente_niscode"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Deelgemeente(id={self.id}"
 
 
 class Straat(GatewayObject):
@@ -634,11 +618,7 @@ class Straat(GatewayObject):
         return f"{self.naam} ({self.id})"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["id", "gemeente", "status", "naam", "taal"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Straat(id={self.id})"
 
 
 class Adres(GatewayObject):
@@ -717,11 +697,7 @@ class Adres(GatewayObject):
         return f"{self.label} ({self.id})"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["id", "status", "huisnummer", "label", "taal", "gemeente"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Adres(id={self.id})"
 
 
 class Perceel(GatewayObject):
@@ -764,8 +740,7 @@ class Perceel(GatewayObject):
         return f"Perceel {self.id}"
 
     def __repr__(self):
-        attrs = [f"{attr}={repr(getattr(self, attr))}" for attr in ["id", "status"]]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Perceel(id={self.id})"
 
 
 class Gebouw(GatewayObject):
@@ -815,8 +790,4 @@ class Gebouw(GatewayObject):
         return f"Gebouw {self.id}"
 
     def __repr__(self):
-        attrs = [
-            f"{attr}={repr(getattr(self, attr))}"
-            for attr in ["id", "status", "percelen", "geojson"]
-        ]
-        return f"Gewest({', '.join(attrs)})"
+        return f"Gebouw(id={self.id})"
