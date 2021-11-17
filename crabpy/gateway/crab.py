@@ -2076,8 +2076,8 @@ class Straat(GatewayObject):
             list = a.split(',')
             for z in list:
                 temp = z.split()
-                x.append(temp[0])
-                y.append(temp[1])
+                x.append(float(temp[0]))
+                y.append(float(temp[1]))
         return [min(x), min(y), max(x), max(y)]
 
     def __unicode__(self):
