@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
-
 import pytest
-from mock import Mock
+from unittest.mock import Mock
 
 from crabpy.gateway.crab import (
     Gewest, Provincie,

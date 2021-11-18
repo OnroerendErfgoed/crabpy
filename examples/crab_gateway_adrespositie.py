@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This script demonstrates using the crab gateway to get information about the
 position of an `adres`.
-'''
+"""
 
 from crabpy.client import crab_factory
 from crabpy.gateway.crab import CrabGateway
@@ -15,4 +14,4 @@ print(str(straat))
 for h in straat.huisnummers:
     print("\t* %s" % h)
     for ap in h.adresposities:
-        print("\t\t* %s: %s" % (ap.herkomst, ap.geometrie))
+        print(f"\t\t* {ap.herkomst}: {ap.geometrie}")

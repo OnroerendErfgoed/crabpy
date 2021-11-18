@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This script demonstrates using the capakey client through the
 :func:`crabpy.client.capakey_request` function.
-'''
+"""
 
 from crabpy.client import capakey_factory, capakey_request
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 This script demonstrates using the capakey rest gateway to walk the entire
 cadastral tree of a `gemeente`.

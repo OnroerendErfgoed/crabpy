@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-
-from __future__ import unicode_literals
 import six
 
 import pytest
-from mock import Mock
+from unittest.mock import Mock
 
 from crabpy.gateway.exception import (
     GatewayRuntimeException,
@@ -945,7 +942,7 @@ class TestGemeente:
     )
     def test_unicode_py2(self):
         g = Gemeente(92, 'Biévène', 23009, Gewest(2))
-        assert 'Biévène (92)'.encode('utf-8') == str(g)
+        assert 'Biévène (92)'.encode() == str(g)
 
     @pytest.mark.skipif(
         not six.PY3,
@@ -2166,7 +2163,7 @@ class TestAdrespositie:
         a.set_gateway(crab_gateway)
         assert a.id == 4428005
         assert a.herkomst_id == 3
-        assert str(a.geometrie) == str('POINT (74414.91 225777.36)')
+        assert str(a.geometrie) == 'POINT (74414.91 225777.36)'
         assert int(a.aard.id) == 2
         assert isinstance(a.metadata, Metadata)
         assert a.metadata.begin_datum == '1830-01-01 00:00:00'

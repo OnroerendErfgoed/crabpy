@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 
-import os
-import sys
-
-import crabpy
-
-from setuptools import setup, find_packages
+from setuptools import find_packages
+from setuptools import setup
 
 packages = [
     'crabpy',
@@ -14,7 +10,6 @@ packages = [
 requires = [
     'suds-py3>=1.4.4.1',
     'dogpile.cache',
-    'six',
     'requests'
 ]
 

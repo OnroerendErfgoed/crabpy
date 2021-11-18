@@ -1,37 +1,30 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This module contains an opionated gateway for the capakey webservice.
 
 .. versionadded:: 0.2.0
-'''
+"""
 
-from __future__ import unicode_literals
-import six
 import json
-
 import logging
+
+import requests
+from dogpile.cache import make_region
+
+from crabpy.gateway.exception import GatewayResourceNotFoundException
+from crabpy.gateway.exception import GatewayRuntimeException
 
 log = logging.getLogger(__name__)
 
-from crabpy.gateway.exception import (
-    GatewayRuntimeException,
-    GatewayResourceNotFoundException
-)
-
-from dogpile.cache import make_region
-
-import requests
-
 
 def capakey_rest_gateway_request(url, headers={}, params={}):
-    '''
+    """
     Utility function that helps making requests to the CAPAKEY REST service.
 
     :param string url: URL to request.
     :param dict headers: Headers to send with the URL.
     :param dict params: Parameters to send with the URL.
     :returns: Result of the call.
-    '''
+    """
     try:
         res = requests.get(url, headers=headers, params=params)
         res.raise_for_status()
@@ -50,12 +43,12 @@ def capakey_rest_gateway_request(url, headers={}, params={}):
         )
 
 
-class CapakeyRestGateway(object):
-    '''
+class CapakeyRestGateway:
+    """
     A REST gateway to the capakey webservice.
 
     .. versionadded:: 0.8.0
-    '''
+    """
 
     caches = {}
 
@@ -81,35 +74,35 @@ class CapakeyRestGateway(object):
 
     @staticmethod
     def _parse_centroid(center):
-        '''
+        """
         Parse response center from the CapakeyRestGateway to (CenterX, CenterY)
         
         :param center: response center from the CapakeyRestGateway
         :return: (CenterX, CenterY)
-        '''
+        """
         coordinates = json.loads(center)["coordinates"]
         return coordinates[0], coordinates[1]
 
     @staticmethod
     def _parse_bounding_box(bounding_box):
-        '''
+        """
         Parse response bounding box from the CapakeyRestGateway to (MinimumX, MinimumY, MaximumX, MaximumY)
         
         :param bounding_box: response bounding box from the CapakeyRestGateway
         :return: (MinimumX, MinimumY, MaximumX, MaximumY)
-        '''
+        """
         coordinates = json.loads(bounding_box)["coordinates"]
         x_coords = [x for x, y in coordinates[0]]
         y_coords = [y for x, y in coordinates[0]]
         return min(x_coords), min(y_coords), max(x_coords), max(y_coords)
 
     def list_gemeenten(self, sort=1):
-        '''
+        """
         List all `gemeenten` in Vlaanderen.
 
         :param integer sort: What field to sort on.
         :rtype: A :class:`list` of :class:`Gemeente`.
-        '''
+        """
 
         def creator():
             url = self.base_url + '/municipality'
@@ -133,11 +126,11 @@ class CapakeyRestGateway(object):
         return gemeente
 
     def get_gemeente_by_id(self, id):
-        '''
+        """
         Retrieve a `gemeente` by id (the NIScode).
 
         :rtype: :class:`Gemeente`
-        '''
+        """
 
         def creator():
             url = self.base_url + '/municipality/%s' % id
@@ -164,12 +157,12 @@ class CapakeyRestGateway(object):
         return gemeente
 
     def list_kadastrale_afdelingen(self):
-        '''
+        """
         List all `kadastrale afdelingen` in Flanders.
 
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Afdeling`.
-        '''
+        """
 
         def creator():
             gemeentes = self.list_gemeenten()
@@ -186,14 +179,14 @@ class CapakeyRestGateway(object):
         return afdelingen
 
     def list_kadastrale_afdelingen_by_gemeente(self, gemeente, sort=1):
-        '''
+        """
         List all `kadastrale afdelingen` in a `gemeente`.
 
         :param gemeente: The :class:`Gemeente` for which the \
             `afdelingen` are wanted.
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Afdeling`.
-        '''
+        """
         try:
             gid = gemeente.id
         except AttributeError:
@@ -216,7 +209,7 @@ class CapakeyRestGateway(object):
                 ) for r in res['departments']]
 
         if self.caches['permanent'].is_configured:
-            key = 'list_kadastrale_afdelingen_by_gemeente_rest#%s#%s' % (gid, sort)
+            key = f'list_kadastrale_afdelingen_by_gemeente_rest#{gid}#{sort}'
             afdelingen = self.caches['permanent'].get_or_create(key, creator)
         else:
             afdelingen = creator()
@@ -225,12 +218,12 @@ class CapakeyRestGateway(object):
         return afdelingen
 
     def get_kadastrale_afdeling_by_id(self, aid):
-        '''
+        """
         Retrieve a 'kadastrale afdeling' by id.
 
         :param aid: An id of a `kadastrale afdeling`.
         :rtype: A :class:`Afdeling`.
-        '''
+        """
 
         def creator():
             url = self.base_url + '/department/%s' % (aid)
@@ -258,13 +251,13 @@ class CapakeyRestGateway(object):
         return afdeling
 
     def list_secties_by_afdeling(self, afdeling):
-        '''
+        """
         List all `secties` in a `kadastrale afdeling`.
 
         :param afdeling: The :class:`Afdeling` for which the `secties` are \
             wanted. Can also be the id of and `afdeling`.
         :rtype: A :class:`list` of `Sectie`.
-        '''
+        """
         try:
             aid = afdeling.id
             gid = afdeling.gemeente.id
@@ -275,7 +268,7 @@ class CapakeyRestGateway(object):
         afdeling.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section' % (gid, aid)
+            url = self.base_url + f'/municipality/{gid}/department/{aid}/section'
             h = self.base_headers
             res = capakey_rest_gateway_request(url, h).json()
             return [
@@ -295,14 +288,14 @@ class CapakeyRestGateway(object):
         return secties
 
     def get_sectie_by_id_and_afdeling(self, id, afdeling):
-        '''
+        """
         Get a `sectie`.
 
         :param id: An id of a sectie. eg. "A"
         :param afdeling: The :class:`Afdeling` for in which the `sectie` can \
             be found. Can also be the id of and `afdeling`.
         :rtype: A :class:`Sectie`.
-        '''
+        """
         try:
             aid = afdeling.id
         except AttributeError:
@@ -311,7 +304,7 @@ class CapakeyRestGateway(object):
         afdeling.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section/%s' % (afdeling.gemeente.id, afdeling.id, id)
+            url = self.base_url + f'/municipality/{afdeling.gemeente.id}/department/{afdeling.id}/section/{id}'
             h = self.base_headers
             p = {
                 'geometry': 'full',
@@ -327,7 +320,7 @@ class CapakeyRestGateway(object):
             )
 
         if self.caches['long'].is_configured:
-            key = 'get_sectie_by_id_and_afdeling_rest#%s#%s' % (id, aid)
+            key = f'get_sectie_by_id_and_afdeling_rest#{id}#{aid}'
             sectie = self.caches['long'].get_or_create(key, creator)
         else:
             sectie = creator()
@@ -367,20 +360,20 @@ class CapakeyRestGateway(object):
             )
 
     def list_percelen_by_sectie(self, sectie):
-        '''
+        """
         List all percelen in a `sectie`.
 
         :param sectie: The :class:`Sectie` for which the percelen are wanted.
         :param integer sort: Field to sort on.
         :rtype: A :class:`list` of :class:`Perceel`.
-        '''
+        """
         sid = sectie.id
         aid = sectie.afdeling.id
         gid = sectie.afdeling.gemeente.id
         sectie.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel' % (gid, aid, sid)
+            url = self.base_url + f'/municipality/{gid}/department/{aid}/section/{sid}/parcel'
             h = self.base_headers
             p = {
                 'data': 'adp',
@@ -397,7 +390,7 @@ class CapakeyRestGateway(object):
             ]
 
         if self.caches['short'].is_configured:
-            key = 'list_percelen_by_sectie_rest#%s#%s#%s' % (gid, aid, sid)
+            key = f'list_percelen_by_sectie_rest#{gid}#{aid}#{sid}'
             percelen = self.caches['short'].get_or_create(key, creator)
         else:
             percelen = creator()
@@ -406,20 +399,20 @@ class CapakeyRestGateway(object):
         return percelen
 
     def get_perceel_by_id_and_sectie(self, id, sectie):
-        '''
+        """
         Get a `perceel`.
 
         :param id: An id for a `perceel`.
         :param sectie: The :class:`Sectie` that contains the perceel.
         :rtype: :class:`Perceel`
-        '''
+        """
         sid = sectie.id
         aid = sectie.afdeling.id
         gid = sectie.afdeling.gemeente.id
         sectie.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department/%s/section/%s/parcel/%s' % (
+            url = self.base_url + '/municipality/{}/department/{}/section/{}/parcel/{}'.format(
             gid, aid, sid, id)
             h = self.base_headers
             p = {
@@ -443,7 +436,7 @@ class CapakeyRestGateway(object):
             )
 
         if self.caches['short'].is_configured:
-            key = 'get_perceel_by_id_and_sectie_rest#%s#%s#%s' % (id, sectie.id, sectie.afdeling.id)
+            key = f'get_perceel_by_id_and_sectie_rest#{id}#{sectie.id}#{sectie.afdeling.id}'
             perceel = self.caches['short'].get_or_create(key, creator)
         else:
             perceel = creator()
@@ -490,91 +483,87 @@ class CapakeyRestGateway(object):
         return perceel
 
     def get_perceel_by_capakey(self, capakey):
-        '''
+        """
         Get a `perceel`.
 
         :param capakey: An capakey for a `perceel`.
         :rtype: :class:`Perceel`
-        '''
+        """
 
         url = self.base_url + '/parcel/%s' % capakey
         cache_key = 'get_perceel_by_capakey_rest#%s' % capakey
         return self._get_perceel_by(url, cache_key)
 
     def get_perceel_by_coordinates(self, x, y):
-        '''
+        """
         Get a `perceel`.
 
         :param capakey: An capakey for a `perceel`.
         :rtype: :class:`Perceel`
-        '''
+        """
 
-        url = self.base_url + '/parcel?x=%s&y=%s' % (x, y)
-        cache_key = 'get_perceel_by_coordinates_rest#%s%s' % (x, y)
+        url = self.base_url + f'/parcel?x={x}&y={y}'
+        cache_key = f'get_perceel_by_coordinates_rest#{x}{y}'
         return self._get_perceel_by(url, cache_key)
 
     def get_perceel_by_percid(self, percid):
-        '''
+        """
         Get a `perceel`.
 
         :param percid: A percid for a `perceel`.
         :rtype: :class:`Perceel`
-        '''
+        """
         return self.get_perceel_by_capakey(
             Perceel.get_capakey_from_percid(percid)
         )
 
 
-class GatewayObject(object):
-    '''
+class GatewayObject:
+    """
     Abstract class for all objects being returned from the Gateway.
-    '''
+    """
 
     gateway = None
-    '''
+    """
     The :class:`crabpy.gateway.capakey.CapakeyGateway` to use when making
     further calls to the Capakey service.
-    '''
+    """
 
     def __init__(self, **kwargs):
         if 'gateway' in kwargs:
             self.set_gateway(kwargs['gateway'])
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CapakeyGateway.
-        '''
+        """
         self.gateway = None
 
     def check_gateway(self):
-        '''
+        """
         Check to see if a gateway was set on this object.
-        '''
+        """
         if not self.gateway:
             raise RuntimeError("There's no Gateway I can use")
 
-    if six.PY2:
-        def __str__(self):
-            return self.__unicode__().encode('utf-8')
-    else:
-        def __str__(self):
-            return self.__unicode__()
+    def __str__(self):
+        return self.__unicode__()
 
 
 def check_lazy_load_gemeente(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Gemeente`.
-    '''
+    """
 
     def wrapper(self):
         gemeente = self
-        if (getattr(gemeente, '_%s' % f.__name__, None) is None):
+        if getattr(gemeente, '_%s' % f.__name__, None) is None:
             log.debug('Lazy loading Gemeente %d', gemeente.id)
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
@@ -587,9 +576,9 @@ def check_lazy_load_gemeente(f):
 
 
 class Gemeente(GatewayObject):
-    '''
+    """
     The smallest administrative unit in Belgium.
-    '''
+    """
 
     def __init__(
         self, id, naam=None,
@@ -601,7 +590,7 @@ class Gemeente(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self.shape = shape
-        super(Gemeente, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     @property
     @check_lazy_load_gemeente
@@ -624,16 +613,16 @@ class Gemeente(GatewayObject):
         return self.gateway.list_kadastrale_afdelingen_by_gemeente(self)
 
     def __unicode__(self):
-        return '%s (%s)' % (self.naam, self.id)
+        return f'{self.naam} ({self.id})'
 
     def __repr__(self):
-        return "Gemeente(%s, '%s')" % (self.id, self.naam)
+        return f"Gemeente({self.id}, '{self.naam}')"
 
 
 def check_lazy_load_afdeling(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Afdeling`.
-    '''
+    """
 
     def wrapper(self):
         afdeling = self
@@ -651,9 +640,9 @@ def check_lazy_load_afdeling(f):
 
 
 class Afdeling(GatewayObject):
-    '''
+    """
     A Cadastral Division of a :class:`Gemeente`.
-    '''
+    """
 
     def __init__(
         self, id, naam=None, gemeente=None,
@@ -666,20 +655,20 @@ class Afdeling(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self.shape = shape
-        super(Afdeling, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
         if (self._gemeente is not None):
             self._gemeente.set_gateway(gateway)
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CapakeyGateway.
-        '''
+        """
         self.gateway = None
         if (self._gemeente is not None):
             self._gemeente.clear_gateway()
@@ -711,21 +700,21 @@ class Afdeling(GatewayObject):
 
     def __unicode__(self):
         if self._naam is not None:
-            return '%s (%s)' % (self._naam, self.id)
+            return f'{self._naam} ({self.id})'
         else:
             return 'Afdeling %s' % (self.id)
 
     def __repr__(self):
         if self._naam is not None:
-            return "Afdeling(%s, '%s')" % (self.id, self._naam)
+            return f"Afdeling({self.id}, '{self._naam}')"
         else:
             return 'Afdeling(%s)' % (self.id)
 
 
 def check_lazy_load_sectie(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Sectie`.
-    '''
+    """
 
     def wrapper(self):
         sectie = self
@@ -743,9 +732,9 @@ def check_lazy_load_sectie(f):
 
 
 class Sectie(GatewayObject):
-    '''
+    """
     A subdivision of a :class:`Afdeling`.
-    '''
+    """
 
     def __init__(
         self, id, afdeling,
@@ -757,19 +746,19 @@ class Sectie(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self.shape = shape
-        super(Sectie, self).__init__(**kwargs)
+        super().__init__(**kwargs)
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
         self.afdeling.set_gateway(gateway)
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CapakeyGateway.
-        '''
+        """
         self.gateway = None
         self.afdeling.clear_gateway()
 
@@ -789,16 +778,16 @@ class Sectie(GatewayObject):
         return self.gateway.list_percelen_by_sectie(self)
 
     def __unicode__(self):
-        return '%s, Sectie %s' % (self.afdeling, self.id)
+        return f'{self.afdeling}, Sectie {self.id}'
 
     def __repr__(self):
-        return "Sectie('%s', %s)" % (self.id, repr(self.afdeling))
+        return f"Sectie('{self.id}', {repr(self.afdeling)})"
 
 
 def check_lazy_load_perceel(f):
-    '''
+    """
     Decorator function to lazy load a :class:`Perceel`.
-    '''
+    """
 
     def wrapper(self):
         perceel = self
@@ -824,9 +813,9 @@ def check_lazy_load_perceel(f):
 
 
 class Perceel(GatewayObject):
-    '''
+    """
     A Cadastral Parcel.
-    '''
+    """
 
     def __init__(
         self, id, sectie, capakey, percid, adres=None,
@@ -844,20 +833,20 @@ class Perceel(GatewayObject):
         self._centroid = centroid
         self._bounding_box = bounding_box
         self.shape = shape
-        super(Perceel, self).__init__(**kwargs)
+        super().__init__(**kwargs)
         self._split_capakey()
 
     def set_gateway(self, gateway):
-        '''
+        """
         :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
-        '''
+        """
         self.gateway = gateway
         self.sectie.set_gateway(gateway)
 
     def clear_gateway(self):
-        '''
+        """
         Clear the currently set CapakeyGateway.
-        '''
+        """
         self.gateway = None
         self.sectie.clear_gateway()
 
@@ -896,11 +885,11 @@ class Perceel(GatewayObject):
             )
 
     def _split_capakey(self):
-        '''
+        """
         Split a capakey into more readable elements.
 
         Splits a capakey into it's grondnummer, bisnummer, exponent and macht.
-        '''
+        """
         import re
         match = re.match(
             r"^[0-9]{5}[A-Z]{1}([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
@@ -940,6 +929,6 @@ class Perceel(GatewayObject):
         return self.capakey
 
     def __repr__(self):
-        return "Perceel('%s', %s, '%s', '%s')" % (
+        return "Perceel('{}', {}, '{}', '{}')".format(
             self.id, repr(self.sectie), self.capakey, self.percid
         )
