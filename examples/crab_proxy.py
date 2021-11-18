@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This script show how to connect to the WS-WRAB service through a proxy.
-'''
+"""
 
 from crabpy.client import crab_factory
 

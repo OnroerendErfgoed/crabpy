@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This script demonstrates querying the crab gateway while maintaining a cache.
-'''
+"""
 
 import os
 

@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*
 import json
 import os
 import re
 
 import pytest
 import responses
-from mock import Mock
+from unittest.mock import Mock
 
 from crabpy.gateway.crab import CrabGateway
 
@@ -70,7 +69,7 @@ def mocked_responses():
 def municipalities_response(mocked_responses):
     mocked_responses.add(
         method='GET',
-        url='{capakey}/municipality?'.format(capakey=CAPAKEY_URL),
+        url=f'{CAPAKEY_URL}/municipality?',
         json=load_json('municipalities.json')
     )
 
@@ -78,7 +77,7 @@ def municipalities_response(mocked_responses):
 @pytest.fixture(scope='function')
 def municipality_response(mocked_responses):
     url = re.compile(
-        r'{capakey}/municipality/\d+\?'.format(capakey=CAPAKEY_URL)
+        fr'{CAPAKEY_URL}/municipality/\d+\?'
     )
     mocked_responses.add(
         method='GET',
@@ -103,7 +102,7 @@ def municipality_department_response(mocked_responses):
 @pytest.fixture(scope='function')
 def department_response(mocked_responses):
     url = re.compile(
-        r'{capakey}/department/\d+\?'.format(capakey=CAPAKEY_URL)
+        fr'{CAPAKEY_URL}/department/\d+\?'
     )
     mocked_responses.add(
         method='GET',

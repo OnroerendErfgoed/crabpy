@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This script demonstrates querying the capakey gateway while maintaining a cache.
-'''
+"""
 
 import os
 from crabpy.gateway.capakey import CapakeyRestGateway

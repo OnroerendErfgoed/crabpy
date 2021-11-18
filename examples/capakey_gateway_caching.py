@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
-'''
+"""
 This script demonstrates querying the capakey gateway while maintaining a cache.
 
 WARNING: The CapakeyGateway (SOAP) is deprecated, use CapakeyRestGateway (REST) instead.
-'''
+"""
 
 import os
 
