@@ -1991,8 +1991,8 @@ class Straat(GatewayObject):
     """
     def __init__(
             self, id, label, gemeente_id, status,
-            straatnaam=None, taalcode=None,
-            straatnaam2=None, taalcode2=None,
+            straatnaam, taalcode,
+            straatnaam2, taalcode2,
             metadata=None, **kwargs
     ):
         self.id = id

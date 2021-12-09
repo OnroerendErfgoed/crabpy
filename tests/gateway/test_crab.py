@@ -375,7 +375,7 @@ class TestCrabGateway:
         res = crab_gateway.list_huisnummers_by_straat(1)
         assert isinstance(res, list)
         assert isinstance(res[0], Huisnummer)
-        straat = Straat(1, None, None, None)
+        straat = Straat(1, None, None, None, None, None, None, None)
         res = crab_gateway.list_huisnummers_by_straat(straat)
         assert isinstance(res, list)
         assert isinstance(res[0], Huisnummer)
@@ -440,7 +440,7 @@ class TestCrabGateway:
         assert isinstance(res, Huisnummer)
         assert res.huisnummer == '1'
         assert res.straat.id == 1
-        straat = Straat(1, None, None, None)
+        straat = Straat(1, None, None, None, None, None, None, None)
         res = crab_gateway.get_huisnummer_by_nummer_and_straat(1, straat)
         assert isinstance(res, Huisnummer)
         assert res.huisnummer == '1'
@@ -496,7 +496,7 @@ class TestCrabGateway:
         res = crab_gateway.list_wegobjecten_by_straat(1)
         assert isinstance(res, list)
         assert isinstance(res[0], Wegobject)
-        straat = Straat(1, None, None, None)
+        straat = Straat(1, None, None, None, None, None, None, None)
         res = crab_gateway.list_wegobjecten_by_straat(straat)
         assert isinstance(res, list)
         assert isinstance(res[0], Wegobject)
@@ -531,7 +531,7 @@ class TestCrabGateway:
         res = crab_gateway.list_wegsegmenten_by_straat(1)
         assert isinstance(res, list)
         assert isinstance(res[0], Wegsegment)
-        straat = Straat(1, None, None, None)
+        straat = Straat(1, None, None, None, None, None, None, None)
         res = crab_gateway.list_wegsegmenten_by_straat(straat)
         assert isinstance(res, list)
         assert isinstance(res[0], Wegsegment)
@@ -1249,7 +1249,7 @@ class TestStraat:
         crab_service.GetGemeenteByGemeenteId.return_value = Mock(
             GemeenteId=1, GewestId=1, BeginBewerking=1, BeginOrganisatie=1
         )
-        s = Straat(1, 'Acacialaan', 1, 3, 'Acacialaan', 'nl')
+        s = Straat(1, 'Acacialaan', 1, 3, 'Acacialaan', 'nl', None, None)
         s.set_gateway(crab_gateway)
         assert s.id == 1
         assert s.label == 'Acacialaan'
@@ -1266,12 +1266,12 @@ class TestStraat:
         assert int(s.metadata.begin_organisatie.id) == 1
 
     def test_str_and_repr_dont_lazy_load(self):
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         assert 'Acacialaan (1)' == str(s)
         assert "Straat(1, 'Acacialaan', 1, 3)" == repr(s)
 
     def test_check_gateway_not_set(self):
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         with pytest.raises(RuntimeError):
             s.check_gateway()
 
@@ -1279,7 +1279,7 @@ class TestStraat:
         crab_service.ListHuisnummersWithStatusByStraatnaamId.return_value = (
             Mock(HuisnummerWithStatusItem=[Mock(HuisnummerId=1)])
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         huisnummers = s.huisnummers
         assert isinstance(huisnummers, list)
@@ -1295,7 +1295,7 @@ class TestStraat:
             GemeenteId=1, GewestId=1, BeginBewerking=1, BeginOrganisatie=1,
             TaalCode='nl'
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         taal = s.taal
         assert isinstance(taal, Taal)
@@ -1305,7 +1305,7 @@ class TestStraat:
         crab_service.GetGemeenteByGemeenteId.return_value = Mock(
             GemeenteId=1, GewestId=1, BeginBewerking=1, BeginOrganisatie=1
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         gemeente = s.gemeente
         assert isinstance(gemeente, Gemeente)
@@ -1314,7 +1314,7 @@ class TestStraat:
         crab_service.ListStatusStraatnamen.return_value = Mock(
             CodeItem=[Mock(Code=3)]
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         status = s.status
         assert isinstance(status, Statusstraatnaam)
@@ -1324,7 +1324,7 @@ class TestStraat:
             WegobjectItem=[Mock(IdentificatorWegobject=1,
                                 AardWegobject=1)]
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         wegobjecten = s.wegobjecten
         assert isinstance(wegobjecten, list)
@@ -1334,7 +1334,7 @@ class TestStraat:
         crab_service.ListWegsegmentenByStraatnaamId.return_value = Mock(
             WegsegmentItem=[Mock()]
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         wegsegmenten = s.wegsegmenten
         assert isinstance(wegsegmenten, list)
@@ -1352,7 +1352,7 @@ class TestStraat:
                            '150345.139531493 201165.466573652,'
                            '150349.791371495 201164.769421652)')
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, None, None, None, None)
         s.set_gateway(crab_gateway)
         bounding = s.bounding_box
         assert isinstance(bounding, list)
