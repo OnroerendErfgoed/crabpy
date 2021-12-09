@@ -465,7 +465,7 @@ class TestCrabCachedGateway:
         res = crab_gateway.list_huisnummers_by_straat(1)
         assert isinstance(res, list)
         assert crab_gateway.caches['short'].get('ListHuisnummersWithStatusByStraatnaamId#11') == res
-        straat = Straat(2, None, None, None)
+        straat = Straat(2, None, None, None, None, None, None, None)
         r = crab_gateway.list_huisnummers_by_straat(straat)
         assert isinstance(r, list)
         assert crab_gateway.caches['short'].get('ListHuisnummersWithStatusByStraatnaamId#21') == r
@@ -494,7 +494,7 @@ class TestCrabCachedGateway:
         res = crab_gateway.list_huisnummers_by_straat(1, 2)
         assert isinstance(res, list)
         assert crab_gateway.caches['short'].get('ListHuisnummersWithStatusByStraatnaamId#12') == res
-        straat = Straat(2, None, None, None)
+        straat = Straat(2, None, None, None, None, None, None, None)
         r = crab_gateway.list_huisnummers_by_straat(straat, 2)
         assert isinstance(r, list)
         assert crab_gateway.caches['short'].get('ListHuisnummersWithStatusByStraatnaamId#22') == r
@@ -519,7 +519,7 @@ class TestCrabCachedGateway:
         res = crab_gateway.get_huisnummer_by_nummer_and_straat(1, 1)
         assert isinstance(res, Huisnummer)
         assert crab_gateway.caches['short'].get('GetHuisnummerWithStatusByHuisnummer#11') == res
-        straat = Straat(1, None, None, None)
+        straat = Straat(1, None, None, None, None, None, None, None)
         res = crab_gateway.get_huisnummer_by_nummer_and_straat(1, straat)
         assert isinstance(res, Huisnummer)
         assert crab_gateway.caches['short'].get("GetHuisnummerWithStatusByHuisnummer#11") == res
@@ -556,7 +556,7 @@ class TestCrabCachedGateway:
         res = crab_gateway.list_wegobjecten_by_straat(1)
         assert isinstance(res, list)
         assert crab_gateway.caches['short'].get('ListWegobjectenByStraatnaamId#1') == res
-        straat = Straat(2, None, None, None)
+        straat = Straat(2, None, None, None, None, None, None, None)
         res = crab_gateway.list_wegobjecten_by_straat(straat)
         assert crab_gateway.caches['short'].get('ListWegobjectenByStraatnaamId#2') == res
 
@@ -576,7 +576,7 @@ class TestCrabCachedGateway:
         res = crab_gateway.list_wegsegmenten_by_straat(1)
         assert isinstance(res, list)
         assert crab_gateway.caches['short'].get('ListWegsegmentenByStraatnaamId#1') == res
-        straat = Straat(2, None, None, None)
+        straat = Straat(2, None, None, None, None, None, None, None)
         r = crab_gateway.list_wegsegmenten_by_straat(straat)
         assert crab_gateway.caches['short'].get('ListWegsegmentenByStraatnaamId#2') == r
 
