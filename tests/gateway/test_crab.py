@@ -1249,7 +1249,7 @@ class TestStraat:
         crab_service.GetGemeenteByGemeenteId.return_value = Mock(
             GemeenteId=1, GewestId=1, BeginBewerking=1, BeginOrganisatie=1
         )
-        s = Straat(1, 'Acacialaan', 1, 3)
+        s = Straat(1, 'Acacialaan', 1, 3, 'Acacialaan', 'nl')
         s.set_gateway(crab_gateway)
         assert s.id == 1
         assert s.label == 'Acacialaan'
