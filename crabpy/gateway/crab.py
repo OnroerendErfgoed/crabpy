@@ -625,7 +625,11 @@ class CrabGateway:
                         r.StraatnaamId,
                         r.StraatnaamLabel,
                         id,
-                        r.StatusStraatnaam
+                        r.StatusStraatnaam,
+                        r.Straatnaam,
+                        r.TaalCode,
+                        r.StraatnaamTweedeTaal,
+                        r.TaalCodeTweedeTaal
                     )for r in res.StraatnaamWithStatusItem
                 ]
             except AttributeError:
@@ -1970,13 +1974,10 @@ def check_lazy_load_straat(f):
     """
     def wrapper(*args):
         straat = args[0]
-        if (
-            straat._namen is None or straat._metadata is None
-        ):
+        if (straat._metadata is None):
             log.debug('Lazy loading Straat %d', straat.id)
             straat.check_gateway()
             s = straat.gateway.get_straat_by_id(straat.id)
-            straat._namen = s._namen
             straat._metadata = s._metadata
         return f(*args)
     return wrapper
@@ -1990,8 +1991,8 @@ class Straat(GatewayObject):
     """
     def __init__(
             self, id, label, gemeente_id, status,
-            straatnaam=None, taalcode=None,
-            straatnaam2=None, taalcode2=None,
+            straatnaam, taalcode,
+            straatnaam2, taalcode2,
             metadata=None, **kwargs
     ):
         self.id = id
@@ -2008,7 +2009,6 @@ class Straat(GatewayObject):
         super().__init__(**kwargs)
 
     @property
-    @check_lazy_load_straat
     def namen(self):
         return self._namen
 
