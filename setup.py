@@ -15,7 +15,7 @@ requires = [
 
 setup(
     name='crabpy',
-    version='0.14.0',
+    version='0.15.0',
     description='Interact with geographical webservices by Informatie Vlaanderen.',
     long_description=open('README.rst').read() + '\n\n' +
                      open('CHANGES.rst').read(),
