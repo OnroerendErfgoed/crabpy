@@ -55,7 +55,7 @@ class CapakeyRestGateway:
     def __init__(self, **kwargs):
         self.base_url = kwargs.get(
             'base_url',
-            'https://geoservices.informatievlaanderen.be/capakey/api/v2'
+            'https://geo.api.vlaanderen.be/capakey/v2'
         )
         self.base_headers = {
             'Accept': 'application/json'

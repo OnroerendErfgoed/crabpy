@@ -8,7 +8,7 @@ from unittest.mock import Mock
 
 from crabpy.gateway.crab import CrabGateway
 
-CAPAKEY_URL = 'https://geoservices.informatievlaanderen.be/capakey/api/v2'
+CAPAKEY_URL = 'https://geo.api.vlaanderen.be/capakey/v2'
 
 
 def pytest_addoption(parser):
