@@ -26,6 +26,8 @@ def capakey_rest_gateway_request(url, headers={}, params={}):
     :returns: Result of the call.
     """
     try:
+        # calls to geoservices give a 403 if the user-agent is not set
+        headers["user-agent"] = "*"
         res = requests.get(url, headers=headers, params=params)
         res.raise_for_status()
         return res
