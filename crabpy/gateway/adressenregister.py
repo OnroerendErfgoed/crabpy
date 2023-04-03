@@ -501,7 +501,7 @@ class Gemeente(GatewayObject):
 
     @LazyProperty
     def status(self):
-        return self._source_json["straatnaamStatus"]
+        return self._source_json["gemeenteStatus"]
 
     @LazyProperty
     def straten(self):
