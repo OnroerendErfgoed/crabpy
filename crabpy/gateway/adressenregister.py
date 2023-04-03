@@ -715,6 +715,8 @@ class Adres(GatewayObject):
             self.postinfo = postinfo
         if busnummer is not AUTO:
             self.busnummer = busnummer
+        if status is not AUTO:
+            self.status = status
 
     @classmethod
     def from_list_response(cls, adres, gateway):
@@ -743,6 +745,10 @@ class Adres(GatewayObject):
     @LazyProperty
     def huisnummer(self):
         return self._source_json["huisnummer"]
+
+    @LazyProperty
+    def status(self):
+        return self._source_json["adresStatus"]
 
     @LazyProperty
     def straat(self):
