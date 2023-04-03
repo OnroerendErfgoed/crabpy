@@ -407,6 +407,26 @@ class Gateway:
         ]
 
     @SHORT_CACHE.cache_on_arguments()
+    def list_percelen_with_params(self, status=None, adresObjectId=None):
+        """
+        List all `percelen` with the given parameters.
+
+        :param status: str
+        :param adresOjbectId: str
+        :return: :rtype:
+        """
+
+        return [
+            Perceel.from_list_response(perceel, self)
+            for perceel
+            in self.client.get_percelen(
+                status=status,
+                adresObjectId=adresObjectId
+            )
+        ]
+
+
+    @SHORT_CACHE.cache_on_arguments()
     def list_adressen_by_perceel(self, perceel):
         """
         List all `adressen` in a `Perceel`.
