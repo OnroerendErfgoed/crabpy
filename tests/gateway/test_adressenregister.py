@@ -716,15 +716,13 @@ class TestPostinfo:
         client.get_postinfos.return_value = create_client_get_post_infos()
         res = gateway.get_postinfo_by_gemeentenaam("brussel")
         assert res[0].status == "gerealiseerd"
-        assert res[0].taal == "nl"
 
     def test_get_postinfo(self, gateway, client):
         client.get_postinfo.return_value = create_client_get_post_info()
         postinfo = Postinfo("7850", gateway)
-        assert postinfo.namen == ["EDINGEN", "Lettelingen", "Mark"]
+        assert postinfo.namen("nl") == ["EDINGEN", "Lettelingen", "Mark"]
         assert postinfo.id == "7850"
         assert postinfo.status == "gerealiseerd"
-        assert postinfo.taal == "nl"
-        postinfo_fr = Postinfo("7850", gateway, "fr")
-        assert postinfo_fr.namen == ["Enghien"]
+        postinfo_fr = Postinfo("7850", gateway)
+        assert postinfo_fr.namen("fr") == ["Enghien"]
         assert postinfo_fr.id == "7850"

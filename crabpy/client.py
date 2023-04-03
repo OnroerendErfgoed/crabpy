@@ -56,7 +56,7 @@ class AdressenRegisterClient:
     def __init__(self, base_url, api_key):
         super().__init__()
         self.session = requests.Session()
-        self.v2_header = {"Accept": "application/json", "x-api-key": api_key}
+        self.v1_header = {"Accept": "application/json", "x-api-key": api_key}
         self.v2_header = {"Accept": "application/ld+json", "x-api-key": api_key}
         self.base_url = base_url[:-1] if base_url.endswith("/") else base_url
 
@@ -72,7 +72,7 @@ class AdressenRegisterClient:
                 response = self.session.get(
                     response["volgende"],
                     params=params,
-                    headers=self.v2_header if "v2" in url else self.v2_header
+                    headers=self.v2_header if "v2" in url else self.v1_header
                 )
                 response.raise_for_status()
                 response = response.json()

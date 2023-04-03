@@ -670,6 +670,7 @@ class Adres(GatewayObject):
             id_=adres["identificator"]["objectId"],
             label=adres["volledigAdres"]["geografischeNaam"]["spelling"],
             huisnummer=adres["huisnummer"],
+            busnummer=adres.get("busnummer", ""),
             status=adres["adresStatus"],
             gateway=gateway,
         )
@@ -692,13 +693,19 @@ class Adres(GatewayObject):
 
     @LazyProperty
     def straat(self):
-        return (
-            self._source_json["straatnaam"]["straatnaam"]["geografischeNaam"]["spelling"]
+        return Straat(
+            id_=self._source_json["straatnaam"]["objectId"],
+            naam=self._source_json["straatnaam"]["straatnaam"]["geografischeNaam"][
+                "spelling"],
+            gateway=self.gateway,
         )
 
     @LazyProperty
     def postinfo(self):
-        return self._source_json["postinfo"]["objectId"]
+        return Postinfo(
+            id_=self._source_json["postinfo"]["objectId"],
+            gateway=self.gateway,
+        )
 
     @LazyProperty
     def busnummer(self):
@@ -830,10 +837,9 @@ class Postinfo(GatewayObject):
     Postal code information.
     """
 
-    def __init__(self, id_, gateway, taal="nl", namen=AUTO, status=AUTO, gemeente=AUTO):
+    def __init__(self, id_, gateway, namen=AUTO, status=AUTO, gemeente=AUTO):
         super().__init__(gateway=gateway)
         self.id = id_
-        self.taal = taal
         if status is not AUTO:
             self.status = status
         if namen is not AUTO:
@@ -861,14 +867,18 @@ class Postinfo(GatewayObject):
 
     @LazyProperty
     def gemeente(self):
-        return self._source_json["gemeentenaam"]["geografischeNaam"]["spelling"]
+        return Gemeente(
+            niscode=self._source_json["gemeente"]["objectId"],
+            gateway=self.gateway,
+            naam=self._source_json["gemeente"]["gemeentenaam"]["geografischeNaam"][
+                "spelling"]
+        )
 
-    @LazyProperty
-    def namen(self):
+    def namen(self, taal="nl"):
         namen = [
             postnaam["geografischeNaam"]["spelling"]
             for postnaam in self._source_json["postnamen"]
-            if postnaam["geografischeNaam"]["taal"] == self.taal
+            if postnaam["geografischeNaam"]["taal"] == taal
         ]
         if namen:
             return namen
