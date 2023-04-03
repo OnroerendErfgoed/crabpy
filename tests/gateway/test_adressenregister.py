@@ -521,6 +521,11 @@ class TestAdressenRegisterGateway:
         assert len(res) == 1
         assert res[0].id == "763445"
 
+    def test_get_adres_by_id(self, gateway, client):
+        client.get_adres.return_value = create_client_get_adres_item()
+        res = gateway.get_adres_by_id(763445)
+        assert res.id == '763445'
+
     def test_get_perceel_by_id(self, gateway, client):
         client.get_perceel.return_value = create_client_get_perceel_item()
         res = gateway.get_perceel_by_id("1")

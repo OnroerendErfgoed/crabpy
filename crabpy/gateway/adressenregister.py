@@ -354,6 +354,15 @@ class Gateway:
             for adres in self.client.get_adressen(straatnaamObjectId=straat.id)
         ]
 
+    @LONG_CACHE.cache_on_arguments()
+    def get_adres_by_id(self, adres_id):
+        """
+        Retrieve a `adres` by the Id.
+
+        :param integer adres_id: The id of the `adres`.
+        :rtype: :class:`Adres`
+        """
+        return Adres.from_get_response(self.client.get_adres(adres_id), self)
 
     @SHORT_CACHE.cache_on_arguments()
     def list_adressen_with_params(
@@ -368,6 +377,20 @@ class Gateway:
         status=None,
         straatnaamObjectId=None,
     ):
+        """
+        List all `adressen` with the given parameters.
+
+        :param gemeentenaam: string
+        :param postcode:integer
+        :param straatnaam: string
+        :param homoniem_toevoeging: string
+        :param huisnummer: string
+        :param busnummer: string
+        :param niscode: string
+        :param status: string
+        :param straatnaamObjectId: integer
+        :return: :rtype: Adres
+        """
         return [
             Adres.from_list_response(adres, self)
             for adres in self.client.get_adressen(
@@ -708,7 +731,8 @@ class Adres(GatewayObject):
     def from_get_response(cls, adres, gateway):
         res = Adres(
             id_=adres["identificator"]["objectId"],
-            gateway=gateway)
+            gateway=gateway
+        )
         res._source_json = adres
         return res
 
