@@ -770,3 +770,10 @@ class TestPostinfo:
         postinfo_fr = Postinfo("7850", gateway)
         assert postinfo_fr.namen("fr") == ["Enghien"]
         assert postinfo_fr.id == "7850"
+
+    def test_get_postinfo_by_postcode(self, gateway, client):
+        client.get_postinfo.return_value = create_client_get_post_info()
+        postinfo = gateway.get_postinfo_by_id("7850")
+        assert postinfo.namen("nl") == ["EDINGEN", "Lettelingen", "Mark"]
+        assert postinfo.id == "7850"
+        assert postinfo.status == "gerealiseerd"

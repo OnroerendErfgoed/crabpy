@@ -16,7 +16,6 @@ from crabpy.gateway.exception import GatewayResourceNotFoundException
 LOG = logging.getLogger(__name__)
 AUTO = object()
 
-
 LONG_CACHE = make_region()
 SHORT_CACHE = make_region()
 
@@ -259,6 +258,17 @@ class Gateway:
         ]
 
     @LONG_CACHE.cache_on_arguments()
+    def get_postinfo_by_id(self, postcode):
+        """
+        Retrieve a `postinfo` by crab id.
+
+        :param integer gemeente_id: The crab id of the municipality.
+        :rtype: :class:`Postinfo`
+        """
+        return Postinfo.from_get_response(self.client.get_postinfo(postcode), self)
+
+
+    @LONG_CACHE.cache_on_arguments()
     def list_deelgemeenten(self, gewest=2):
         """
         List all `deelgemeenten` in a `gewest`.
@@ -425,7 +435,6 @@ class Gateway:
             )
         ]
 
-
     @SHORT_CACHE.cache_on_arguments()
     def list_adressen_by_perceel(self, perceel):
         """
@@ -560,12 +569,12 @@ class Gemeente(GatewayObject):
     def naam(self, taal="nl"):
         for _taal in [taal, self.taal]:
             naam = next(
-            (
-                gemeentenaam["spelling"]
-                for gemeentenaam in self._source_json["gemeentenamen"]
-                if gemeentenaam["taal"] == _taal
-            ), None
-        )
+                (
+                    gemeentenaam["spelling"]
+                    for gemeentenaam in self._source_json["gemeentenamen"]
+                    if gemeentenaam["taal"] == _taal
+                ), None
+            )
             if naam:
                 return naam
 
