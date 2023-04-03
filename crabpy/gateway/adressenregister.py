@@ -354,6 +354,35 @@ class Gateway:
             for adres in self.client.get_adressen(straatnaamObjectId=straat.id)
         ]
 
+
+    @SHORT_CACHE.cache_on_arguments()
+    def list_adressen_with_params(
+        self,
+        gemeentenaam=None,
+        postcode=None,
+        straatnaam=None,
+        homoniem_toevoeging=None,
+        huisnummer=None,
+        busnummer=None,
+        niscode=None,
+        status=None,
+        straatnaamObjectId=None,
+    ):
+        return [
+            Adres.from_list_response(adres, self)
+            for adres in self.client.get_adressen(
+                gemeentenaam=gemeentenaam,
+                postcode=postcode,
+                straatnaam=straatnaam,
+                homoniem_toevoeging=homoniem_toevoeging,
+                huisnummer=huisnummer,
+                busnummer=busnummer,
+                niscode=niscode,
+                status=status,
+                straatnaamObjectId=straatnaamObjectId,
+            )
+        ]
+
     @SHORT_CACHE.cache_on_arguments()
     def list_adressen_by_perceel(self, perceel):
         """

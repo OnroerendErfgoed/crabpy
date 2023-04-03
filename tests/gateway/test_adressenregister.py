@@ -493,6 +493,21 @@ class TestAdressenRegisterGateway:
         assert res[0].label == "Goorbaan 59, 2230 Herselt"
         assert res[0].status == "inGebruik"
 
+    def test_list_adressen_by_straat_and_huisnummer(self, gateway, client):
+        client.get_adressen.return_value = [
+            create_client_list_adressen_item(),
+        ]
+        res = gateway.list_adressen_with_params(
+            straatnaamObjectId=1,
+            huisnummer="59",
+        )
+        assert len(res) == 1
+        assert res[0].id == "200001"
+        assert res[0].huisnummer == "59"
+        assert res[0].label == "Goorbaan 59, 2230 Herselt"
+        assert res[0].status == "inGebruik"
+
+
     def test_list_adressen_by_perceel(self, gateway, client):
         client.get_adres.return_value = create_client_get_adres_item()
         client.get_perceel.return_value = create_client_get_perceel_item()
