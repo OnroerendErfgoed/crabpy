@@ -386,12 +386,14 @@ class TestAdressenRegisterGateway:
         res = gateway.get_gemeente_by_id(1)
         assert res.niscode == "54007"
         assert res.naam() == "Moeskroen"
+        assert res.uri == "https://data.vlaanderen.be/id/gemeente/54007"
 
     def test_get_gemeente_by_niscode(self, gateway, client):
         client.get_gemeente.return_value = create_client_get_gemeente_item()
         res = gateway.get_gemeente_by_niscode(1)
         assert res.niscode == "54007"
         assert res.naam() == "Moeskroen"
+        assert res.uri == "https://data.vlaanderen.be/id/gemeente/54007"
 
     def test_list_deelgemeenten(self, gateway):
         res = gateway.list_deelgemeenten()
@@ -489,11 +491,13 @@ class TestAdressenRegisterGateway:
         client.get_adres.return_value = create_client_get_adres_item()
         res = gateway.get_adres_by_id(763445)
         assert res.id == "763445"
+        assert res.uri == "https://data.vlaanderen.be/id/adres/763445"
 
     def test_get_perceel_by_id(self, gateway, client):
         client.get_perceel.return_value = create_client_get_perceel_item()
         res = gateway.get_perceel_by_id("1")
         assert res.id == "11001B0009-00H004"
+        assert res.uri == "https://data.vlaanderen.be/id/perceel/11001B0009-00H004"
 
     def test_get_gebouw_by_id(self, gateway, client):
         client.get_gebouw.return_value = create_client_get_gebouw_item()
@@ -508,6 +512,7 @@ class TestAdressenRegisterGateway:
         assert len(res.percelen) == 1
         assert res.percelen[0].id == "23052A0059-00C000"
         assert res.status == "gerealiseerd"
+        assert res.uri == "https://data.vlaanderen.be/id/gebouw/5666547"
 
 
 class TestGewest:
