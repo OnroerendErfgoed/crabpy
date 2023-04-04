@@ -1,0 +1,11 @@
+[flake8]
+inline-quotes = double
+application_import_names = crabpy,tests
+exclude =
+    .venv,
+    ./venv,
+    __pycache__
+import-order-style = pycharm
+max-line-length = 90
+select = C,E,F,W,B,B950
+extend-ignore = E203, E501, W503

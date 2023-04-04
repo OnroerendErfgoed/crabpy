@@ -1,6 +1,6 @@
 import contextlib
 import os
-from six.moves import configparser
+import configparser
 
 from crabpy.gateway import adressenregister
 
@@ -33,14 +33,11 @@ def memory_cache():
         adressenregister.setup_cache(
             {
                 "long.backend": "dogpile.cache.memory",
-                "short.backend": "dogpile.cache.memory"
+                "short.backend": "dogpile.cache.memory",
             }
         )
         yield
     finally:
         adressenregister.setup_cache(
-            {
-                "long.backend": "dogpile.cache.null",
-                "short.backend": "dogpile.cache.null"
-            }
+            {"long.backend": "dogpile.cache.null", "short.backend": "dogpile.cache.null"}
         )

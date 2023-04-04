@@ -35,9 +35,7 @@ def create_client_list_gemeenten_item():
             "versieId": "2002-08-13T16:33:18+02:00",
         },
         "detail": "https://api.basisregisters.vlaanderen.be/v1/gemeenten/54007",
-        "gemeentenaam": {
-            "geografischeNaam": {"spelling": "Mouscron", "taal": "fr"}
-        },
+        "gemeentenaam": {"geografischeNaam": {"spelling": "Mouscron", "taal": "fr"}},
         "gemeenteStatus": "inGebruik",
     }
 
@@ -69,9 +67,7 @@ def create_client_list_straatnamen_item():
             "versieId": "2011-04-29T13:34:14+02:00",
         },
         "detail": "https://api.basisregisters.vlaanderen.be/v1/straatnamen/1",
-        "straatnaam": {
-            "geografischeNaam": {"spelling": "Acacialaan", "taal": "nl"}
-        },
+        "straatnaam": {"geografischeNaam": {"spelling": "Acacialaan", "taal": "nl"}},
         "straatnaamStatus": "inGebruik",
     }
 
@@ -87,9 +83,7 @@ def create_client_get_straatnaam_item():
         "gemeente": {
             "objectId": "11002",
             "detail": "https://api.basisregisters.vlaanderen.be/v1/gemeenten/11002",
-            "gemeentenaam": {
-                "geografischeNaam": {"spelling": "Antwerpen", "taal": "nl"}
-            },
+            "gemeentenaam": {"geografischeNaam": {"spelling": "Antwerpen", "taal": "nl"}},
         },
         "straatnamen": [{"spelling": "Edelvalklaan", "taal": "nl"}],
         "homoniemToevoegingen": [],
@@ -139,9 +133,7 @@ def create_client_get_adres_item():
         "straatnaam": {
             "objectId": "93",
             "detail": "https://api.basisregisters.vlaanderen.be/v1/straatnamen/93",
-            "straatnaam": {
-                "geografischeNaam": {"spelling": "Oudestraat", "taal": "nl"}
-            },
+            "straatnaam": {"geografischeNaam": {"spelling": "Oudestraat", "taal": "nl"}},
         },
         "huisnummer": "27",
         "busnummer": "A",
@@ -208,45 +200,20 @@ def create_client_get_post_info():
             "id": "https://data.vlaanderen.be/id/postinfo/7850",
             "naamruimte": "https://data.vlaanderen.be/id/postinfo",
             "objectId": "7850",
-            "versieId": "2020-02-10T12:44:14+01:00"
+            "versieId": "2020-02-10T12:44:14+01:00",
         },
         "gemeente": {
             "objectId": "55010",
             "detail": "https://api.basisregisters.vlaanderen.be/v2/gemeenten/55010",
-            "gemeentenaam": {
-                "geografischeNaam": {
-                    "spelling": "Enghien",
-                    "taal": "fr"
-                }
-            }
+            "gemeentenaam": {"geografischeNaam": {"spelling": "Enghien", "taal": "fr"}},
         },
         "postnamen": [
-            {
-                "geografischeNaam": {
-                    "spelling": "EDINGEN",
-                    "taal": "nl"
-                }
-            },
-            {
-                "geografischeNaam": {
-                    "spelling": "Enghien",
-                    "taal": "fr"
-                }
-            },
-            {
-                "geografischeNaam": {
-                    "spelling": "Lettelingen",
-                    "taal": "nl"
-                }
-            },
-            {
-                "geografischeNaam": {
-                    "spelling": "Mark",
-                    "taal": "nl"
-                }
-            }
+            {"geografischeNaam": {"spelling": "EDINGEN", "taal": "nl"}},
+            {"geografischeNaam": {"spelling": "Enghien", "taal": "fr"}},
+            {"geografischeNaam": {"spelling": "Lettelingen", "taal": "nl"}},
+            {"geografischeNaam": {"spelling": "Mark", "taal": "nl"}},
         ],
-        "postInfoStatus": "gerealiseerd"
+        "postInfoStatus": "gerealiseerd",
     }
 
 
@@ -258,18 +225,11 @@ def create_client_get_post_infos():
                 "id": "https://data.vlaanderen.be/id/postinfo/1000",
                 "naamruimte": "https://data.vlaanderen.be/id/postinfo",
                 "objectId": "1000",
-                "versieId": "2020-02-10T12:44:14+01:00"
+                "versieId": "2020-02-10T12:44:14+01:00",
             },
             "detail": "https://api.basisregisters.vlaanderen.be/v2/postinfo/1000",
             "postInfoStatus": "gerealiseerd",
-            "postnamen": [
-                {
-                    "geografischeNaam": {
-                        "spelling": "BRUSSEL",
-                        "taal": "nl"
-                    }
-                }
-            ]
+            "postnamen": [{"geografischeNaam": {"spelling": "BRUSSEL", "taal": "nl"}}],
         },
         {
             "@type": "PostInfo",
@@ -277,18 +237,11 @@ def create_client_get_post_infos():
                 "id": "https://data.vlaanderen.be/id/postinfo/1020",
                 "naamruimte": "https://data.vlaanderen.be/id/postinfo",
                 "objectId": "1020",
-                "versieId": "2020-02-10T12:44:14+01:00"
+                "versieId": "2020-02-10T12:44:14+01:00",
             },
             "detail": "https://api.basisregisters.vlaanderen.be/v2/postinfo/1020",
             "postInfoStatus": "gerealiseerd",
-            "postnamen": [
-                {
-                    "geografischeNaam": {
-                        "spelling": "Laken",
-                        "taal": "nl"
-                    }
-                }
-            ]
+            "postnamen": [{"geografischeNaam": {"spelling": "Laken", "taal": "nl"}}],
         },
         {
             "@type": "PostInfo",
@@ -296,7 +249,7 @@ def create_client_get_post_infos():
                 "id": "https://data.vlaanderen.be/id/postinfo/1031",
                 "naamruimte": "https://data.vlaanderen.be/id/postinfo",
                 "objectId": "1031",
-                "versieId": "2020-02-10T12:44:14+01:00"
+                "versieId": "2020-02-10T12:44:14+01:00",
             },
             "detail": "https://api.basisregisters.vlaanderen.be/v2/postinfo/1031",
             "postInfoStatus": "gerealiseerd",
@@ -304,10 +257,10 @@ def create_client_get_post_infos():
                 {
                     "geografischeNaam": {
                         "spelling": "Christelijke Sociale Organisaties",
-                        "taal": "nl"
+                        "taal": "nl",
                     }
                 }
-            ]
+            ],
         },
         {
             "@type": "PostInfo",
@@ -315,7 +268,7 @@ def create_client_get_post_infos():
                 "id": "https://data.vlaanderen.be/id/postinfo/1041",
                 "naamruimte": "https://data.vlaanderen.be/id/postinfo",
                 "objectId": "1041",
-                "versieId": "2020-02-10T12:44:14+01:00"
+                "versieId": "2020-02-10T12:44:14+01:00",
             },
             "detail": "https://api.basisregisters.vlaanderen.be/v2/postinfo/1041",
             "postInfoStatus": "gerealiseerd",
@@ -323,10 +276,10 @@ def create_client_get_post_infos():
                 {
                     "geografischeNaam": {
                         "spelling": "International press center",
-                        "taal": "en"
+                        "taal": "en",
                     }
                 }
-            ]
+            ],
         },
         {
             "@type": "PostInfo",
@@ -334,18 +287,13 @@ def create_client_get_post_infos():
                 "id": "https://data.vlaanderen.be/id/postinfo/1120",
                 "naamruimte": "https://data.vlaanderen.be/id/postinfo",
                 "objectId": "1120",
-                "versieId": "2020-02-10T12:44:14+01:00"
+                "versieId": "2020-02-10T12:44:14+01:00",
             },
             "detail": "https://api.basisregisters.vlaanderen.be/v2/postinfo/1120",
             "postInfoStatus": "gerealiseerd",
             "postnamen": [
-                {
-                    "geografischeNaam": {
-                        "spelling": "Neder-Over-Heembeek",
-                        "taal": "nl"
-                    }
-                }
-            ]
+                {"geografischeNaam": {"spelling": "Neder-Over-Heembeek", "taal": "nl"}}
+            ],
         },
         {
             "@type": "PostInfo",
@@ -353,24 +301,16 @@ def create_client_get_post_infos():
                 "id": "https://data.vlaanderen.be/id/postinfo/1130",
                 "naamruimte": "https://data.vlaanderen.be/id/postinfo",
                 "objectId": "1130",
-                "versieId": "2020-02-10T12:44:14+01:00"
+                "versieId": "2020-02-10T12:44:14+01:00",
             },
             "detail": "https://api.basisregisters.vlaanderen.be/v2/postinfo/1130",
             "postInfoStatus": "gerealiseerd",
-            "postnamen": [
-                {
-                    "geografischeNaam": {
-                        "spelling": "Haren",
-                        "taal": "nl"
-                    }
-                }
-            ]
-        }
+            "postnamen": [{"geografischeNaam": {"spelling": "Haren", "taal": "nl"}}],
+        },
     ]
 
 
 class TestAdressenRegisterGateway:
-
     def test_list_gewesten(self, gateway):
         res = gateway.list_gewesten()
         assert len(res) == 3
@@ -509,7 +449,7 @@ class TestAdressenRegisterGateway:
     def test_get_perceel_by_id(self, gateway, client):
         client.get_perceel.return_value = create_client_get_perceel_item()
         res = gateway.get_perceel_by_id("1")
-        assert res.id == '11001B0009-00H004'
+        assert res.id == "11001B0009-00H004"
 
     def test_get_gebouw_by_id(self, gateway, client):
         client.get_gebouw.return_value = create_client_get_gebouw_item()
@@ -527,7 +467,6 @@ class TestAdressenRegisterGateway:
 
 
 class TestGewest:
-
     def test_gemeenten(self, gateway, client):
         one = create_client_list_gemeenten_item()
         two = create_client_list_gemeenten_item()
@@ -549,7 +488,6 @@ class TestGewest:
 
 
 class TestProvincie:
-
     def test_gemeenten(self, gateway, client):
         one = create_client_list_gemeenten_item()
         two = create_client_list_gemeenten_item()
@@ -564,7 +502,6 @@ class TestProvincie:
 
 
 class TestGemeente:
-
     def test_straten(self, gateway, client):
         client.get_straatnamen.return_value = [create_client_list_straatnamen_item()]
         g = Gemeente(niscode="1", naam="test-gemeente", gateway=gateway)
@@ -610,13 +547,12 @@ class TestGemeente:
 
 
 class TestDeelgemeente:
-
     def test_gemeente(self, gateway):
         dg = Deelgemeente(
             id_="45062A",
             naam="Sint-Maria-Horebeke",
             gemeente_niscode="45062",
-            gateway=None
+            gateway=None,
         )
         gemeente = dg.gemeente
         assert isinstance(gemeente, Gemeente)
@@ -624,11 +560,8 @@ class TestDeelgemeente:
 
 
 class TestStraat:
-
     def test_adressen(self, gateway, client):
-        client.get_adressen.return_value = [
-            create_client_list_adressen_item()
-        ]
+        client.get_adressen.return_value = [create_client_list_adressen_item()]
         straat = Straat(id_=1, naam="straatnaam", gateway=gateway)
         adressen = straat.adressen
         assert len(adressen) == 1
@@ -646,7 +579,6 @@ class TestStraat:
 
 
 class TestAdres:
-
     def test_adres(self, gateway, client):
         client.get_adres.return_value = create_client_get_adres_item()
         adres = Adres(id_="1", gateway=gateway)
@@ -662,7 +594,6 @@ class TestAdres:
 
 
 class TestPerceel:
-
     def test_adressen(self, gateway, client):
         client.get_perceel.return_value = create_client_get_perceel_item()
         perceel = Perceel(id_="1", gateway=gateway)
@@ -682,7 +613,7 @@ class TestPerceel:
                 "id": "https://data.vlaanderen.be/id/perceel/13013C0384-02H003",
                 "objectId": "13013C0384-02H003",
             },
-            "perceelStatus": "gerealiseerd"
+            "perceelStatus": "gerealiseerd",
         }
         perceel = Perceel(id_=1, gateway=gateway).from_list_response(
             perceel=perceel_list_item, gateway=gateway
@@ -690,16 +621,16 @@ class TestPerceel:
         assert perceel.status == "gerealiseerd"
         assert perceel.id == "13013C0384-02H003"
 
-class TestGebouw:
 
+class TestGebouw:
     def test_gebouw(self, gateway, client):
         client.get_gebouw.return_value = create_client_get_gebouw_item()
         gebouw = Gebouw(id_=1, gateway=gateway)
         assert gebouw.status == "gerealiseerd"
         assert gebouw.geojson == {
-            'polygon': {
-                'coordinates': [[[140284.15277253836, 186724.7413156703]]],
-                'type': 'Polygon'
+            "polygon": {
+                "coordinates": [[[140284.15277253836, 186724.7413156703]]],
+                "type": "Polygon",
             }
         }
 

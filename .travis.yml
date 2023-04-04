@@ -6,6 +6,8 @@ python:
 install:
  - pip install -r requirements-dev.txt
  - python setup.py install
-script: py.test --cov crabpy --cov-report term-missing -c pytest_travis.ini tests/
+script:
+ - flake8 || travis_terminate 1
+ - py.test --cov crabpy --cov-report term-missing -c pytest_travis.ini tests/
 after_success:
   coveralls
