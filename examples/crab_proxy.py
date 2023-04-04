@@ -6,8 +6,8 @@ from crabpy.client import crab_factory
 
 crab = crab_factory(
     proxy={
-        'http': 'http://proxy.example.com:3128',
-        'https': 'https://httpsproxy.example.com:3128'
+        "http": "http://proxy.example.com:3128",
+        "https": "https://httpsproxy.example.com:3128",
     }
 )
 

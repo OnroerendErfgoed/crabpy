@@ -33,15 +33,13 @@ def capakey_rest_gateway_request(url, headers={}, params={}):
         return res
     except requests.ConnectionError as ce:
         raise GatewayRuntimeException(
-            'Could not execute request due to connection problems:\n%s' % repr(ce),
-            ce
+            "Could not execute request due to connection problems:\n%s" % repr(ce), ce
         )
-    except requests.HTTPError as he:
+    except requests.HTTPError:
         raise GatewayResourceNotFoundException()
     except requests.RequestException as re:
         raise GatewayRuntimeException(
-            'Could not execute request due to:\n%s' % repr(re),
-            re
+            "Could not execute request due to:\n%s" % repr(re), re
         )
 
 
@@ -55,30 +53,24 @@ class CapakeyRestGateway:
     caches = {}
 
     def __init__(self, **kwargs):
-        self.base_url = kwargs.get(
-            'base_url',
-            'https://geo.api.vlaanderen.be/capakey/v2'
-        )
-        self.base_headers = {
-            'Accept': 'application/json'
-        }
-        cache_regions = ['permanent', 'long', 'short']
+        self.base_url = kwargs.get("base_url", "https://geo.api.vlaanderen.be/capakey/v2")
+        self.base_headers = {"Accept": "application/json"}
+        cache_regions = ["permanent", "long", "short"]
         for cr in cache_regions:
             self.caches[cr] = make_region(key_mangler=str)
-        if 'cache_config' in kwargs:
+        if "cache_config" in kwargs:
             for cr in cache_regions:
-                if ('%s.backend' % cr) in kwargs['cache_config']:
-                    log.debug('Configuring %s region on CapakeyRestGateway', cr)
+                if ("%s.backend" % cr) in kwargs["cache_config"]:
+                    log.debug("Configuring %s region on CapakeyRestGateway", cr)
                     self.caches[cr].configure_from_config(
-                        kwargs['cache_config'],
-                        '%s.' % cr
+                        kwargs["cache_config"], "%s." % cr
                     )
 
     @staticmethod
     def _parse_centroid(center):
         """
         Parse response center from the CapakeyRestGateway to (CenterX, CenterY)
-        
+
         :param center: response center from the CapakeyRestGateway
         :return: (CenterX, CenterY)
         """
@@ -89,7 +81,7 @@ class CapakeyRestGateway:
     def _parse_bounding_box(bounding_box):
         """
         Parse response bounding box from the CapakeyRestGateway to (MinimumX, MinimumY, MaximumX, MaximumY)
-        
+
         :param bounding_box: response bounding box from the CapakeyRestGateway
         :return: (MinimumX, MinimumY, MaximumX, MaximumY)
         """
@@ -107,20 +99,18 @@ class CapakeyRestGateway:
         """
 
         def creator():
-            url = self.base_url + '/municipality'
+            url = self.base_url + "/municipality"
             h = self.base_headers
-            p = {
-                'orderbyCode': sort == 1
-            }
+            p = {"orderbyCode": sort == 1}
             res = capakey_rest_gateway_request(url, h, p).json()
             return [
-                Gemeente(r['municipalityCode'], r['municipalityName'])
-                for r in res['municipalities']
+                Gemeente(r["municipalityCode"], r["municipalityName"])
+                for r in res["municipalities"]
             ]
 
-        if self.caches['permanent'].is_configured:
-            key = 'list_gemeenten_rest#%s' % sort
-            gemeente = self.caches['permanent'].get_or_create(key, creator)
+        if self.caches["permanent"].is_configured:
+            key = "list_gemeenten_rest#%s" % sort
+            gemeente = self.caches["permanent"].get_or_create(key, creator)
         else:
             gemeente = creator()
         for g in gemeente:
@@ -135,24 +125,21 @@ class CapakeyRestGateway:
         """
 
         def creator():
-            url = self.base_url + '/municipality/%s' % id
+            url = self.base_url + "/municipality/%s" % id
             h = self.base_headers
-            p = {
-                'geometry': 'full',
-                'srs': '31370'
-            }
+            p = {"geometry": "full", "srs": "31370"}
             res = capakey_rest_gateway_request(url, h, p).json()
             return Gemeente(
-                res['municipalityCode'],
-                res['municipalityName'],
-                self._parse_centroid(res['geometry']['center']),
-                self._parse_bounding_box(res['geometry']['boundingBox']),
-                res['geometry']['shape']
+                res["municipalityCode"],
+                res["municipalityName"],
+                self._parse_centroid(res["geometry"]["center"]),
+                self._parse_bounding_box(res["geometry"]["boundingBox"]),
+                res["geometry"]["shape"],
             )
 
-        if self.caches['long'].is_configured:
-            key = 'get_gemeente_by_id_rest#%s' % id
-            gemeente = self.caches['long'].get_or_create(key, creator)
+        if self.caches["long"].is_configured:
+            key = "get_gemeente_by_id_rest#%s" % id
+            gemeente = self.caches["long"].get_or_create(key, creator)
         else:
             gemeente = creator()
         gemeente.set_gateway(self)
@@ -173,9 +160,9 @@ class CapakeyRestGateway:
                 res += self.list_kadastrale_afdelingen_by_gemeente(g)
             return res
 
-        if self.caches['permanent'].is_configured:
-            key = 'list_afdelingen_rest'
-            afdelingen = self.caches['permanent'].get_or_create(key, creator)
+        if self.caches["permanent"].is_configured:
+            key = "list_afdelingen_rest"
+            afdelingen = self.caches["permanent"].get_or_create(key, creator)
         else:
             afdelingen = creator()
         return afdelingen
@@ -197,22 +184,20 @@ class CapakeyRestGateway:
         gemeente.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/%s/department' % gid
+            url = self.base_url + "/municipality/%s/department" % gid
             h = self.base_headers
-            p = {
-                'orderbyCode': sort == 1
-            }
+            p = {"orderbyCode": sort == 1}
             res = capakey_rest_gateway_request(url, h, p).json()
             return [
                 Afdeling(
-                    id=r['departmentCode'],
-                    naam=r['departmentName'],
-                    gemeente=gemeente
-                ) for r in res['departments']]
+                    id=r["departmentCode"], naam=r["departmentName"], gemeente=gemeente
+                )
+                for r in res["departments"]
+            ]
 
-        if self.caches['permanent'].is_configured:
-            key = f'list_kadastrale_afdelingen_by_gemeente_rest#{gid}#{sort}'
-            afdelingen = self.caches['permanent'].get_or_create(key, creator)
+        if self.caches["permanent"].is_configured:
+            key = f"list_kadastrale_afdelingen_by_gemeente_rest#{gid}#{sort}"
+            afdelingen = self.caches["permanent"].get_or_create(key, creator)
         else:
             afdelingen = creator()
         for a in afdelingen:
@@ -228,25 +213,22 @@ class CapakeyRestGateway:
         """
 
         def creator():
-            url = self.base_url + '/department/%s' % (aid)
+            url = self.base_url + "/department/%s" % (aid)
             h = self.base_headers
-            p = {
-                'geometry': 'full',
-                'srs': '31370'
-            }
+            p = {"geometry": "full", "srs": "31370"}
             res = capakey_rest_gateway_request(url, h, p).json()
             return Afdeling(
-                id=res['departmentCode'],
-                naam=res['departmentName'],
-                gemeente=Gemeente(res['municipalityCode'], res['municipalityName']),
-                centroid=self._parse_centroid(res['geometry']['center']),
-                bounding_box=self._parse_bounding_box(res['geometry']['boundingBox']),
-                shape=res['geometry']['shape']
+                id=res["departmentCode"],
+                naam=res["departmentName"],
+                gemeente=Gemeente(res["municipalityCode"], res["municipalityName"]),
+                centroid=self._parse_centroid(res["geometry"]["center"]),
+                bounding_box=self._parse_bounding_box(res["geometry"]["boundingBox"]),
+                shape=res["geometry"]["shape"],
             )
 
-        if self.caches['long'].is_configured:
-            key = 'get_kadastrale_afdeling_by_id_rest#%s' % aid
-            afdeling = self.caches['long'].get_or_create(key, creator)
+        if self.caches["long"].is_configured:
+            key = "get_kadastrale_afdeling_by_id_rest#%s" % aid
+            afdeling = self.caches["long"].get_or_create(key, creator)
         else:
             afdeling = creator()
         afdeling.set_gateway(self)
@@ -270,19 +252,14 @@ class CapakeyRestGateway:
         afdeling.clear_gateway()
 
         def creator():
-            url = self.base_url + f'/municipality/{gid}/department/{aid}/section'
+            url = self.base_url + f"/municipality/{gid}/department/{aid}/section"
             h = self.base_headers
             res = capakey_rest_gateway_request(url, h).json()
-            return [
-                Sectie(
-                    r['sectionCode'],
-                    afdeling
-                ) for r in res['sections']
-            ]
+            return [Sectie(r["sectionCode"], afdeling) for r in res["sections"]]
 
-        if self.caches['long'].is_configured:
-            key = 'list_secties_by_afdeling_rest#%s' % aid
-            secties = self.caches['long'].get_or_create(key, creator)
+        if self.caches["long"].is_configured:
+            key = "list_secties_by_afdeling_rest#%s" % aid
+            secties = self.caches["long"].get_or_create(key, creator)
         else:
             secties = creator()
         for s in secties:
@@ -306,24 +283,24 @@ class CapakeyRestGateway:
         afdeling.clear_gateway()
 
         def creator():
-            url = self.base_url + f'/municipality/{afdeling.gemeente.id}/department/{afdeling.id}/section/{id}'
+            url = (
+                self.base_url
+                + f"/municipality/{afdeling.gemeente.id}/department/{afdeling.id}/section/{id}"
+            )
             h = self.base_headers
-            p = {
-                'geometry': 'full',
-                'srs': '31370'
-            }
+            p = {"geometry": "full", "srs": "31370"}
             res = capakey_rest_gateway_request(url, h, p).json()
             return Sectie(
-                res['sectionCode'],
+                res["sectionCode"],
                 afdeling,
-                self._parse_centroid(res['geometry']['center']),
-                self._parse_bounding_box(res['geometry']['boundingBox']),
-                res['geometry']['shape'],
+                self._parse_centroid(res["geometry"]["center"]),
+                self._parse_bounding_box(res["geometry"]["boundingBox"]),
+                res["geometry"]["shape"],
             )
 
-        if self.caches['long'].is_configured:
-            key = f'get_sectie_by_id_and_afdeling_rest#{id}#{aid}'
-            sectie = self.caches['long'].get_or_create(key, creator)
+        if self.caches["long"].is_configured:
+            key = f"get_sectie_by_id_and_afdeling_rest#{id}#{aid}"
+            sectie = self.caches["long"].get_or_create(key, creator)
         else:
             sectie = creator()
         sectie.set_gateway(self)
@@ -331,35 +308,50 @@ class CapakeyRestGateway:
 
     def parse_percid(self, capakey):
         import re
+
         match = re.match(
-            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
-            capakey
+            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$", capakey
         )
         if match:
-            percid = match.group(1) + '_' + match.group(2) + \
-                     '_' + match.group(3) + '_' + match.group(5) + '_' + \
-                     match.group(6) + '_' + match.group(4)
+            percid = (
+                match.group(1)
+                + "_"
+                + match.group(2)
+                + "_"
+                + match.group(3)
+                + "_"
+                + match.group(5)
+                + "_"
+                + match.group(6)
+                + "_"
+                + match.group(4)
+            )
             return percid
         else:
-            raise ValueError(
-                "Invalid Capakey %s can't be parsed" % capakey
-            )
+            raise ValueError("Invalid Capakey %s can't be parsed" % capakey)
 
     def parse_capakey(self, percid):
         import re
+
         match = re.match(
             r"^([0-9]{5})_([A-Z]{1})_([0-9]{4})_([A-Z\_]{1})_([0-9]{3})_([0-9]{2})$",
-            percid
+            percid,
         )
         if match:
-            capakey = match.group(1) + match.group(2) + \
-                      match.group(3) + '/' + match.group(5) + '_' + \
-                      match.group(6) + '_' + match.group(4)
+            capakey = (
+                match.group(1)
+                + match.group(2)
+                + match.group(3)
+                + "/"
+                + match.group(5)
+                + "_"
+                + match.group(6)
+                + "_"
+                + match.group(4)
+            )
             return capakey
         else:
-            raise ValueError(
-                "Invalid percid %s can't be parsed" % percid
-            )
+            raise ValueError("Invalid percid %s can't be parsed" % percid)
 
     def list_percelen_by_sectie(self, sectie):
         """
@@ -375,25 +367,26 @@ class CapakeyRestGateway:
         sectie.clear_gateway()
 
         def creator():
-            url = self.base_url + f'/municipality/{gid}/department/{aid}/section/{sid}/parcel'
+            url = (
+                self.base_url
+                + f"/municipality/{gid}/department/{aid}/section/{sid}/parcel"
+            )
             h = self.base_headers
-            p = {
-                'data': 'adp',
-                'status': 'actual'
-            }
+            p = {"data": "adp", "status": "actual"}
             res = capakey_rest_gateway_request(url, h, p).json()
             return [
                 Perceel(
-                    r['perceelnummer'],
+                    r["perceelnummer"],
                     sectie,
-                    r['capakey'],
-                    self.parse_percid(r['capakey']),
-                ) for r in res['parcels']
+                    r["capakey"],
+                    self.parse_percid(r["capakey"]),
+                )
+                for r in res["parcels"]
             ]
 
-        if self.caches['short'].is_configured:
-            key = f'list_percelen_by_sectie_rest#{gid}#{aid}#{sid}'
-            percelen = self.caches['short'].get_or_create(key, creator)
+        if self.caches["short"].is_configured:
+            key = f"list_percelen_by_sectie_rest#{gid}#{aid}#{sid}"
+            percelen = self.caches["short"].get_or_create(key, creator)
         else:
             percelen = creator()
         for p in percelen:
@@ -414,71 +407,66 @@ class CapakeyRestGateway:
         sectie.clear_gateway()
 
         def creator():
-            url = self.base_url + '/municipality/{}/department/{}/section/{}/parcel/{}'.format(
-            gid, aid, sid, id)
+            url = (
+                self.base_url
+                + "/municipality/{}/department/{}/section/{}/parcel/{}".format(
+                    gid, aid, sid, id
+                )
+            )
             h = self.base_headers
-            p = {
-                'geometry': 'full',
-                'srs': '31370',
-                'data': 'adp',
-                'status': 'actual'
-            }
+            p = {"geometry": "full", "srs": "31370", "data": "adp", "status": "actual"}
             res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
-                res['perceelnummer'],
+                res["perceelnummer"],
                 sectie,
-                res['capakey'],
-                Perceel.get_percid_from_capakey(res['capakey']),
-                res['adres'],
+                res["capakey"],
+                Perceel.get_percid_from_capakey(res["capakey"]),
+                res["adres"],
                 None,
                 None,
-                self._parse_centroid(res['geometry']['center']),
-                self._parse_bounding_box(res['geometry']['boundingBox']),
-                res['geometry']['shape']
+                self._parse_centroid(res["geometry"]["center"]),
+                self._parse_bounding_box(res["geometry"]["boundingBox"]),
+                res["geometry"]["shape"],
             )
 
-        if self.caches['short'].is_configured:
-            key = f'get_perceel_by_id_and_sectie_rest#{id}#{sectie.id}#{sectie.afdeling.id}'
-            perceel = self.caches['short'].get_or_create(key, creator)
+        if self.caches["short"].is_configured:
+            key = (
+                f"get_perceel_by_id_and_sectie_rest#{id}#{sectie.id}#{sectie.afdeling.id}"
+            )
+            perceel = self.caches["short"].get_or_create(key, creator)
         else:
             perceel = creator()
         perceel.set_gateway(self)
         return perceel
 
     def _get_perceel_by(self, url, cache_key):
-
         def creator():
             h = self.base_headers
-            p = {
-                'geometry': 'full',
-                'srs': '31370',
-                'data': 'adp',
-                'status': 'actual'
-            }
+            p = {"geometry": "full", "srs": "31370", "data": "adp", "status": "actual"}
             res = capakey_rest_gateway_request(url, h, p).json()
             return Perceel(
-                res['perceelnummer'],
+                res["perceelnummer"],
                 Sectie(
-                    res['sectionCode'],
+                    res["sectionCode"],
                     Afdeling(
-                        res['departmentCode'],
-                        res['departmentName'],
-                        Gemeente(res['municipalityCode'], res['municipalityName'])
-                    )
+                        res["departmentCode"],
+                        res["departmentName"],
+                        Gemeente(res["municipalityCode"], res["municipalityName"]),
+                    ),
                 ),
-                res['capakey'],
-                Perceel.get_percid_from_capakey(res['capakey']),
-                res['adres'],
+                res["capakey"],
+                Perceel.get_percid_from_capakey(res["capakey"]),
+                res["adres"],
                 None,
                 None,
-                self._parse_centroid(res['geometry']['center']),
-                self._parse_bounding_box(res['geometry']['boundingBox']),
-                res['geometry']['shape']
+                self._parse_centroid(res["geometry"]["center"]),
+                self._parse_bounding_box(res["geometry"]["boundingBox"]),
+                res["geometry"]["shape"],
             )
 
-        if self.caches['short'].is_configured:
+        if self.caches["short"].is_configured:
             key = cache_key
-            perceel = self.caches['short'].get_or_create(key, creator)
+            perceel = self.caches["short"].get_or_create(key, creator)
         else:
             perceel = creator()
         perceel.set_gateway(self)
@@ -492,8 +480,8 @@ class CapakeyRestGateway:
         :rtype: :class:`Perceel`
         """
 
-        url = self.base_url + '/parcel/%s' % capakey
-        cache_key = 'get_perceel_by_capakey_rest#%s' % capakey
+        url = self.base_url + "/parcel/%s" % capakey
+        cache_key = "get_perceel_by_capakey_rest#%s" % capakey
         return self._get_perceel_by(url, cache_key)
 
     def get_perceel_by_coordinates(self, x, y):
@@ -504,8 +492,8 @@ class CapakeyRestGateway:
         :rtype: :class:`Perceel`
         """
 
-        url = self.base_url + f'/parcel?x={x}&y={y}'
-        cache_key = f'get_perceel_by_coordinates_rest#{x}{y}'
+        url = self.base_url + f"/parcel?x={x}&y={y}"
+        cache_key = f"get_perceel_by_coordinates_rest#{x}{y}"
         return self._get_perceel_by(url, cache_key)
 
     def get_perceel_by_percid(self, percid):
@@ -515,9 +503,7 @@ class CapakeyRestGateway:
         :param percid: A percid for a `perceel`.
         :rtype: :class:`Perceel`
         """
-        return self.get_perceel_by_capakey(
-            Perceel.get_capakey_from_percid(percid)
-        )
+        return self.get_perceel_by_capakey(Perceel.get_capakey_from_percid(percid))
 
 
 class GatewayObject:
@@ -532,8 +518,8 @@ class GatewayObject:
     """
 
     def __init__(self, **kwargs):
-        if 'gateway' in kwargs:
-            self.set_gateway(kwargs['gateway'])
+        if "gateway" in kwargs:
+            self.set_gateway(kwargs["gateway"])
 
     def set_gateway(self, gateway):
         """
@@ -565,8 +551,8 @@ def check_lazy_load_gemeente(f):
 
     def wrapper(self):
         gemeente = self
-        if getattr(gemeente, '_%s' % f.__name__, None) is None:
-            log.debug('Lazy loading Gemeente %d', gemeente.id)
+        if getattr(gemeente, "_%s" % f.__name__, None) is None:
+            log.debug("Lazy loading Gemeente %d", gemeente.id)
             gemeente.check_gateway()
             g = gemeente.gateway.get_gemeente_by_id(gemeente.id)
             gemeente._naam = g._naam
@@ -583,9 +569,7 @@ class Gemeente(GatewayObject):
     """
 
     def __init__(
-        self, id, naam=None,
-        centroid=None, bounding_box=None,
-        shape=None, **kwargs
+        self, id, naam=None, centroid=None, bounding_box=None, shape=None, **kwargs
     ):
         self.id = int(id)
         self._naam = naam
@@ -615,7 +599,7 @@ class Gemeente(GatewayObject):
         return self.gateway.list_kadastrale_afdelingen_by_gemeente(self)
 
     def __unicode__(self):
-        return f'{self.naam} ({self.id})'
+        return f"{self.naam} ({self.id})"
 
     def __repr__(self):
         return f"Gemeente({self.id}, '{self.naam}')"
@@ -628,8 +612,8 @@ def check_lazy_load_afdeling(f):
 
     def wrapper(self):
         afdeling = self
-        if (getattr(afdeling, '_%s' % f.__name__, None) is None):
-            log.debug('Lazy loading Afdeling %d', afdeling.id)
+        if getattr(afdeling, "_%s" % f.__name__, None) is None:
+            log.debug("Lazy loading Afdeling %d", afdeling.id)
             afdeling.check_gateway()
             a = afdeling.gateway.get_kadastrale_afdeling_by_id(afdeling.id)
             afdeling._naam = a._naam
@@ -647,9 +631,14 @@ class Afdeling(GatewayObject):
     """
 
     def __init__(
-        self, id, naam=None, gemeente=None,
-        centroid=None, bounding_box=None,
-        shape=None, **kwargs
+        self,
+        id,
+        naam=None,
+        gemeente=None,
+        centroid=None,
+        bounding_box=None,
+        shape=None,
+        **kwargs,
     ):
         self.id = int(id)
         self._naam = naam
@@ -664,7 +653,7 @@ class Afdeling(GatewayObject):
         :param crabpy.gateway.capakey.CapakeyGateway gateway: Gateway to use.
         """
         self.gateway = gateway
-        if (self._gemeente is not None):
+        if self._gemeente is not None:
             self._gemeente.set_gateway(gateway)
 
     def clear_gateway(self):
@@ -672,7 +661,7 @@ class Afdeling(GatewayObject):
         Clear the currently set CapakeyGateway.
         """
         self.gateway = None
-        if (self._gemeente is not None):
+        if self._gemeente is not None:
             self._gemeente.clear_gateway()
 
     @property
@@ -702,15 +691,15 @@ class Afdeling(GatewayObject):
 
     def __unicode__(self):
         if self._naam is not None:
-            return f'{self._naam} ({self.id})'
+            return f"{self._naam} ({self.id})"
         else:
-            return 'Afdeling %s' % (self.id)
+            return "Afdeling %s" % (self.id)
 
     def __repr__(self):
         if self._naam is not None:
             return f"Afdeling({self.id}, '{self._naam}')"
         else:
-            return 'Afdeling(%s)' % (self.id)
+            return "Afdeling(%s)" % (self.id)
 
 
 def check_lazy_load_sectie(f):
@@ -720,8 +709,10 @@ def check_lazy_load_sectie(f):
 
     def wrapper(self):
         sectie = self
-        if (getattr(sectie, '_%s' % f.__name__, None) is None):
-            log.debug('Lazy loading Sectie %s in Afdeling %d', sectie.id, sectie.afdeling.id)
+        if getattr(sectie, "_%s" % f.__name__, None) is None:
+            log.debug(
+                "Lazy loading Sectie %s in Afdeling %d", sectie.id, sectie.afdeling.id
+            )
             sectie.check_gateway()
             s = sectie.gateway.get_sectie_by_id_and_afdeling(
                 sectie.id, sectie.afdeling.id
@@ -739,9 +730,7 @@ class Sectie(GatewayObject):
     """
 
     def __init__(
-        self, id, afdeling,
-        centroid=None, bounding_box=None,
-        shape=None, **kwargs
+        self, id, afdeling, centroid=None, bounding_box=None, shape=None, **kwargs
     ):
         self.id = id
         self.afdeling = afdeling
@@ -780,7 +769,7 @@ class Sectie(GatewayObject):
         return self.gateway.list_percelen_by_sectie(self)
 
     def __unicode__(self):
-        return f'{self.afdeling}, Sectie {self.id}'
+        return f"{self.afdeling}, Sectie {self.id}"
 
     def __repr__(self):
         return f"Sectie('{self.id}', {repr(self.afdeling)})"
@@ -793,18 +782,15 @@ def check_lazy_load_perceel(f):
 
     def wrapper(self):
         perceel = self
-        if (getattr(perceel, '_%s' % f.__name__, None) is None):
+        if getattr(perceel, "_%s" % f.__name__, None) is None:
             log.debug(
-                'Lazy loading Perceel %s in Sectie %s in Afdeling %d',
+                "Lazy loading Perceel %s in Sectie %s in Afdeling %d",
                 perceel.id,
                 perceel.sectie.id,
-                perceel.sectie.afdeling.id
+                perceel.sectie.afdeling.id,
             )
             perceel.check_gateway()
-            p = perceel.gateway.get_perceel_by_id_and_sectie(
-                perceel.id,
-                perceel.sectie
-            )
+            p = perceel.gateway.get_perceel_by_id_and_sectie(perceel.id, perceel.sectie)
             perceel._centroid = p._centroid
             perceel._bounding_box = p._bounding_box
             perceel._capatype = p._capatype
@@ -820,10 +806,18 @@ class Perceel(GatewayObject):
     """
 
     def __init__(
-        self, id, sectie, capakey, percid, adres=None,
-        capatype=None, cashkey=None,
-        centroid=None, bounding_box=None,
-        shape=None, **kwargs
+        self,
+        id,
+        sectie,
+        capakey,
+        percid,
+        adres=None,
+        capatype=None,
+        cashkey=None,
+        centroid=None,
+        bounding_box=None,
+        shape=None,
+        **kwargs,
     ):
         self.id = id
         self.sectie = sectie
@@ -855,36 +849,49 @@ class Perceel(GatewayObject):
     @staticmethod
     def get_percid_from_capakey(capakey):
         import re
+
         match = re.match(
-            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
-            capakey
+            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$", capakey
         )
         if match:
-            percid = match.group(1) + '_' + match.group(2) + \
-                     '_' + match.group(3) + '_' + match.group(5) + '_' + \
-                     match.group(6) + '_' + match.group(4)
+            percid = (
+                match.group(1)
+                + "_"
+                + match.group(2)
+                + "_"
+                + match.group(3)
+                + "_"
+                + match.group(5)
+                + "_"
+                + match.group(6)
+                + "_"
+                + match.group(4)
+            )
             return percid
         else:
-            raise ValueError(
-                "Invalid Capakey %s can't be parsed" % capakey
-            )
+            raise ValueError("Invalid Capakey %s can't be parsed" % capakey)
 
     @staticmethod
     def get_capakey_from_percid(percid):
         import re
+
         match = re.match(
             r"^([0-9]{5})_([A-Z]{1})_([0-9]{4})_([A-Z\_]{1})_([0-9]{3})_([0-9]{2})$",
-            percid
+            percid,
         )
         if match:
-            capakey = match.group(1) + match.group(2) + \
-                      match.group(3) + '/' + match.group(6) + \
-                      match.group(4) + match.group(5)
+            capakey = (
+                match.group(1)
+                + match.group(2)
+                + match.group(3)
+                + "/"
+                + match.group(6)
+                + match.group(4)
+                + match.group(5)
+            )
             return capakey
         else:
-            raise ValueError(
-                "Invalid percid %s can't be parsed" % percid
-            )
+            raise ValueError("Invalid percid %s can't be parsed" % percid)
 
     def _split_capakey(self):
         """
@@ -893,9 +900,10 @@ class Perceel(GatewayObject):
         Splits a capakey into it's grondnummer, bisnummer, exponent and macht.
         """
         import re
+
         match = re.match(
             r"^[0-9]{5}[A-Z]{1}([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
-            self.capakey
+            self.capakey,
         )
         if match:
             self.grondnummer = match.group(1)
@@ -903,9 +911,7 @@ class Perceel(GatewayObject):
             self.exponent = match.group(3)
             self.macht = match.group(4)
         else:
-            raise ValueError(
-                "Invalid Capakey %s can't be parsed" % self.capakey
-            )
+            raise ValueError("Invalid Capakey %s can't be parsed" % self.capakey)
 
     @property
     @check_lazy_load_perceel

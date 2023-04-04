@@ -16,7 +16,6 @@ from crabpy.gateway.exception import GatewayResourceNotFoundException
 LOG = logging.getLogger(__name__)
 AUTO = object()
 
-
 LONG_CACHE = make_region()
 SHORT_CACHE = make_region()
 
@@ -170,9 +169,7 @@ class Gateway:
             `provincies` are wanted.
         :rtype: A :class:`list` of :class:`Provincie`.
         """
-        return [
-            provincie for provincie in self.provincies if provincie.gewest == gewest
-        ]
+        return [provincie for provincie in self.provincies if provincie.gewest == gewest]
 
     def get_provincie_by_id(self, niscode):
         """
@@ -257,6 +254,16 @@ class Gateway:
             Postinfo.from_list_response(postinfo, self)
             for postinfo in self.client.get_postinfos(gemeentenaam=gemeente_naam)
         ]
+
+    @LONG_CACHE.cache_on_arguments()
+    def get_postinfo_by_id(self, postcode):
+        """
+        Retrieve a `postinfo` by crab id.
+
+        :param integer gemeente_id: The crab id of the municipality.
+        :rtype: :class:`Postinfo`
+        """
+        return Postinfo.from_get_response(self.client.get_postinfo(postcode), self)
 
     @LONG_CACHE.cache_on_arguments()
     def list_deelgemeenten(self, gewest=2):
@@ -354,6 +361,75 @@ class Gateway:
             for adres in self.client.get_adressen(straatnaamObjectId=straat.id)
         ]
 
+    @LONG_CACHE.cache_on_arguments()
+    def get_adres_by_id(self, adres_id):
+        """
+        Retrieve a `adres` by the Id.
+
+        :param integer adres_id: The id of the `adres`.
+        :rtype: :class:`Adres`
+        """
+        return Adres.from_get_response(self.client.get_adres(adres_id), self)
+
+    @SHORT_CACHE.cache_on_arguments()
+    def list_adressen_with_params(
+        self,
+        gemeentenaam=None,
+        postcode=None,
+        straatnaam=None,
+        homoniem_toevoeging=None,
+        huisnummer=None,
+        busnummer=None,
+        niscode=None,
+        status=None,
+        straatnaamObjectId=None,
+    ):
+        """
+        List all `adressen` with the given parameters.
+
+        :param gemeentenaam: string
+        :param postcode:integer
+        :param straatnaam: string
+        :param homoniem_toevoeging: string
+        :param huisnummer: string
+        :param busnummer: string
+        :param niscode: string
+        :param status: string
+        :param straatnaamObjectId: integer
+        :return: :rtype: Adres
+        """
+        return [
+            Adres.from_list_response(adres, self)
+            for adres in self.client.get_adressen(
+                gemeentenaam=gemeentenaam,
+                postcode=postcode,
+                straatnaam=straatnaam,
+                homoniem_toevoeging=homoniem_toevoeging,
+                huisnummer=huisnummer,
+                busnummer=busnummer,
+                niscode=niscode,
+                status=status,
+                straatnaamObjectId=straatnaamObjectId,
+            )
+        ]
+
+    @SHORT_CACHE.cache_on_arguments()
+    def list_percelen_with_params(self, status=None, adresObjectId=None):
+        """
+        List all `percelen` with the given parameters.
+
+        :param status: str
+        :param adresOjbectId: str
+        :return: :rtype:
+        """
+
+        return [
+            Perceel.from_list_response(perceel, self)
+            for perceel in self.client.get_percelen(
+                status=status, adresObjectId=adresObjectId
+            )
+        ]
+
     @SHORT_CACHE.cache_on_arguments()
     def list_adressen_by_perceel(self, perceel):
         """
@@ -389,7 +465,6 @@ class Gateway:
 
 
 class GatewayObject:
-
     def __init__(self, gateway):
         self.gateway: Gateway = gateway
 
@@ -488,12 +563,13 @@ class Gemeente(GatewayObject):
     def naam(self, taal="nl"):
         for _taal in [taal, self.taal]:
             naam = next(
-            (
-                gemeentenaam["spelling"]
-                for gemeentenaam in self._source_json["gemeentenamen"]
-                if gemeentenaam["taal"] == _taal
-            ), None
-        )
+                (
+                    gemeentenaam["spelling"]
+                    for gemeentenaam in self._source_json["gemeentenamen"]
+                    if gemeentenaam["taal"] == _taal
+                ),
+                None,
+            )
             if naam:
                 return naam
 
@@ -518,9 +594,7 @@ class Gemeente(GatewayObject):
                 return p
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(
-        function_key_generator=cache_on_attribute("niscode")
-    )
+    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("niscode"))
     def _source_json(self):
         return self.gateway.client.get_gemeente(self.niscode)
 
@@ -593,7 +667,8 @@ class Straat(GatewayObject):
                 straatnaam["spelling"]
                 for straatnaam in self._source_json["straatnamen"]
                 if straatnaam["taal"] == taal
-            ), None
+            ),
+            None,
         )
         if naam:
             return naam
@@ -615,9 +690,7 @@ class Straat(GatewayObject):
         return self.gateway.list_adressen_by_straat(self)
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(
-        function_key_generator=cache_on_attribute("id")
-    )
+    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("id"))
     def _source_json(self):
         return self.gateway.client.get_straatnaam(self.id)
 
@@ -663,6 +736,8 @@ class Adres(GatewayObject):
             self.postinfo = postinfo
         if busnummer is not AUTO:
             self.busnummer = busnummer
+        if status is not AUTO:
+            self.status = status
 
     @classmethod
     def from_list_response(cls, adres, gateway):
@@ -677,9 +752,7 @@ class Adres(GatewayObject):
 
     @classmethod
     def from_get_response(cls, adres, gateway):
-        res = Adres(
-            id_=adres["identificator"]["objectId"],
-            gateway=gateway)
+        res = Adres(id_=adres["identificator"]["objectId"], gateway=gateway)
         res._source_json = adres
         return res
 
@@ -692,11 +765,16 @@ class Adres(GatewayObject):
         return self._source_json["huisnummer"]
 
     @LazyProperty
+    def status(self):
+        return self._source_json["adresStatus"]
+
+    @LazyProperty
     def straat(self):
         return Straat(
             id_=self._source_json["straatnaam"]["objectId"],
             naam=self._source_json["straatnaam"]["straatnaam"]["geografischeNaam"][
-                "spelling"],
+                "spelling"
+            ],
             gateway=self.gateway,
         )
 
@@ -718,9 +796,7 @@ class Adres(GatewayObject):
         )
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(
-        function_key_generator=cache_on_attribute("id")
-    )
+    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("id"))
     def _source_json(self):
         return self.gateway.client.get_adres(self.id)
 
@@ -758,9 +834,7 @@ class Perceel(GatewayObject):
         return res
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(
-        function_key_generator=cache_on_attribute("id")
-    )
+    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("id"))
     def _source_json(self):
         return self.gateway.client.get_perceel(self.id)
 
@@ -819,9 +893,7 @@ class Gebouw(GatewayObject):
         return self._source_json["geometriePolygoon"]
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(
-        function_key_generator=cache_on_attribute("id")
-    )
+    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("id"))
     def _source_json(self):
         return self.gateway.client.get_gebouw(self.id)
 
@@ -871,7 +943,8 @@ class Postinfo(GatewayObject):
             niscode=self._source_json["gemeente"]["objectId"],
             gateway=self.gateway,
             naam=self._source_json["gemeente"]["gemeentenaam"]["geografischeNaam"][
-                "spelling"]
+                "spelling"
+            ],
         )
 
     def namen(self, taal="nl"):
@@ -889,9 +962,7 @@ class Postinfo(GatewayObject):
             ]
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(
-        function_key_generator=cache_on_attribute("id")
-    )
+    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("id"))
     def _source_json(self):
         return self.gateway.client.get_postinfo(self.id)
 

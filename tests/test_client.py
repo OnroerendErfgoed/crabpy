@@ -177,7 +177,7 @@ class TestAdressenRegisterClient:
             url="https://test-adres.be/v2/gemeenten",
             json={
                 "gemeenten": [{"name": "test-gemeente1"}],
-                "volgende": "https://test-adres.be/v2/gemeenten"
+                "volgende": "https://test-adres.be/v2/gemeenten",
             },
         )
         requests_mock.add(

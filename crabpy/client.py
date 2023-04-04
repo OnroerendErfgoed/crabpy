@@ -72,7 +72,7 @@ class AdressenRegisterClient:
                 response = self.session.get(
                     response["volgende"],
                     params=params,
-                    headers=self.v2_header if "v2" in url else self.v1_header
+                    headers=self.v2_header if "v2" in url else self.v1_header,
                 )
                 response.raise_for_status()
                 response = response.json()
@@ -200,13 +200,13 @@ class AdressenRegisterClient:
     def get_perceel(self, perceel_id):
         return self._get(f"/v2/percelen/{perceel_id}")
 
-    def get_percelen(self, status=None, adresOjbectId=None):
+    def get_percelen(self, status=None, adresObjectId=None):
         params = {}
         if status is not None:
             params["status"] = status
-        if adresOjbectId is not None:
-            params["adresOjbectId"] = adresOjbectId
-        return self._get_list(f"/v2/percelen", "percelen", params=params)
+        if adresObjectId is not None:
+            params["adresOjbectId"] = adresObjectId
+        return self._get_list("/v2/percelen", "percelen", params=params)
 
     def get_gebouw(self, gebouw_id):
         return self._get(f"/v2/gebouwen/{gebouw_id}")
@@ -215,4 +215,4 @@ class AdressenRegisterClient:
         params = {}
         if status is not None:
             params["status"] = status
-        return self._get_list(f"/v2/gebouwen", "gebouwen", params=params)
+        return self._get_list("/v2/gebouwen", "gebouwen", params=params)

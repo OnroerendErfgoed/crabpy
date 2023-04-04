@@ -34,6 +34,7 @@ class GatewayAuthenticationException(GatewayRuntimeException):
     """
     An exception that signifies something went wrong during authentication.
     """
+
     pass
 
 
@@ -41,5 +42,6 @@ class GatewayResourceNotFoundException(GatewayException):
     """
     An exception that signifies that no results where found.
     """
+
     def __init__(self):
-        GatewayException.__init__(self, 'This resource was not found.')
+        GatewayException.__init__(self, "This resource was not found.")
