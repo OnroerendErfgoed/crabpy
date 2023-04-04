@@ -541,7 +541,7 @@ class Gemeente(GatewayObject):
         if status is not AUTO:
             self.status = status
         if uri is not AUTO:
-            self.status = status
+            self.uri = uri
 
     @classmethod
     def from_list_response(cls, gemeente, gateway):
