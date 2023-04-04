@@ -200,12 +200,12 @@ class AdressenRegisterClient:
     def get_perceel(self, perceel_id):
         return self._get(f"/v2/percelen/{perceel_id}")
 
-    def get_percelen(self, status=None, adresOjbectId=None):
+    def get_percelen(self, status=None, adresObjectId=None):
         params = {}
         if status is not None:
             params["status"] = status
-        if adresOjbectId is not None:
-            params["adresOjbectId"] = adresOjbectId
+        if adresObjectId is not None:
+            params["adresOjbectId"] = adresObjectId
         return self._get_list(f"/v2/percelen", "percelen", params=params)
 
     def get_gebouw(self, gebouw_id):
