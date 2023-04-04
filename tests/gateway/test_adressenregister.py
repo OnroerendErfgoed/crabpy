@@ -2,7 +2,6 @@ from unittest.mock import Mock
 
 import pytest
 
-import tests
 from crabpy.gateway import adressenregister
 from crabpy.gateway.adressenregister import Adres
 from crabpy.gateway.adressenregister import Deelgemeente
@@ -14,6 +13,7 @@ from crabpy.gateway.adressenregister import Postinfo
 from crabpy.gateway.adressenregister import Provincie
 from crabpy.gateway.adressenregister import Straat
 from crabpy.gateway.exception import GatewayResourceNotFoundException
+from tests import memory_cache
 
 
 @pytest.fixture()
@@ -596,7 +596,7 @@ class TestGemeente:
         gemeente = Gemeente(niscode="1", gateway=gateway)
         assert gemeente.naam() == "Moeskroen"
         assert client.get_gemeente.call_count == 2
-        with tests.memory_cache():
+        with memory_cache():
             gemeente = Gemeente(niscode="1", gateway=gateway)
             assert gemeente.naam() == "Moeskroen"
             assert gemeente.naam() == "Moeskroen"
