@@ -17,11 +17,6 @@ from crabpy.gateway.exception import GatewayResourceNotFoundException
 from crabpy.gateway.exception import GatewayRuntimeException
 
 log = logging.getLogger(__name__)
-parent_dir = os.path.dirname(__file__)
-data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
-deelgemeenten_json = json.load(
-    open(os.path.join(data_dir, "deelgemeenten.json"), encoding="utf-8")
-)
 
 
 def crab_gateway_request(client, method, *args):
@@ -78,6 +73,10 @@ class CrabGateway:
                     self.caches[cr].configure_from_config(
                         kwargs["cache_config"], "%s." % cr
                     )
+        data_dir = os.path.join(os.path.dirname(__file__), "..", "data")
+        with open(os.path.join(data_dir, "deelgemeenten.json"), encoding="utf-8") as f:
+            deelgemeenten_json = json.load(f)
+
         self.deelgemeenten = {
             dg["id"]: {
                 "id": dg["id"],

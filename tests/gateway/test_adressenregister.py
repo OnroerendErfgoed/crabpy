@@ -153,6 +153,20 @@ def create_client_get_adres_item():
     }
 
 
+def create_client_get_perceel_list_item():
+    return {
+        "@type": "Perceel",
+        "identificator": {
+            "id": "https://data.vlaanderen.be/id/perceel/13013C0384-02H003",
+            "naamruimte": "https://data.vlaanderen.be/id/perceel",
+            "objectId": "13013C0384-02H003",
+            "versieId": "2004-02-13T05:34:17+01:00",
+        },
+        "detail": "https://api.basisregisters.vlaanderen.be/v2/percelen/13013C0384-02H003",
+        "perceelStatus": "gerealiseerd",
+    }
+
+
 def create_client_get_perceel_item():
     return {
         "identificator": {
@@ -433,6 +447,31 @@ class TestAdressenRegisterGateway:
         assert res[0].label == "Goorbaan 59, 2230 Herselt"
         assert res[0].status == "inGebruik"
 
+    def test_list_adressen_by_straat_and_huisnummer(self, gateway, client):
+        client.get_adressen.return_value = [
+            create_client_list_adressen_item(),
+        ]
+        res = gateway.list_adressen_with_params(
+            straatnaamObjectId=1,
+            huisnummer="59",
+        )
+        assert len(res) == 1
+        assert res[0].id == "200001"
+        assert res[0].huisnummer == "59"
+        assert res[0].label == "Goorbaan 59, 2230 Herselt"
+        assert res[0].status == "inGebruik"
+
+    def test_list_percelen_by_adres(self, gateway, client):
+        client.get_percelen.return_value = [
+            create_client_get_perceel_list_item(),
+        ]
+        res = gateway.list_percelen_with_params(
+            adresObjectId=200001,
+        )
+        assert len(res) == 1
+        assert res[0].id == "13013C0384-02H003"
+        assert res[0].status == "gerealiseerd"
+
     def test_list_adressen_by_perceel(self, gateway, client):
         client.get_adres.return_value = create_client_get_adres_item()
         client.get_perceel.return_value = create_client_get_perceel_item()
@@ -445,6 +484,11 @@ class TestAdressenRegisterGateway:
         )
         assert len(res) == 1
         assert res[0].id == "763445"
+
+    def test_get_adres_by_id(self, gateway, client):
+        client.get_adres.return_value = create_client_get_adres_item()
+        res = gateway.get_adres_by_id(763445)
+        assert res.id == "763445"
 
     def test_get_perceel_by_id(self, gateway, client):
         client.get_perceel.return_value = create_client_get_perceel_item()
@@ -657,3 +701,10 @@ class TestPostinfo:
         postinfo_fr = Postinfo("7850", gateway)
         assert postinfo_fr.namen("fr") == ["Enghien"]
         assert postinfo_fr.id == "7850"
+
+    def test_get_postinfo_by_postcode(self, gateway, client):
+        client.get_postinfo.return_value = create_client_get_post_info()
+        postinfo = gateway.get_postinfo_by_id("7850")
+        assert postinfo.namen("nl") == ["EDINGEN", "Lettelingen", "Mark"]
+        assert postinfo.id == "7850"
+        assert postinfo.status == "gerealiseerd"

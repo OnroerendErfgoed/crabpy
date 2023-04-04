@@ -16,7 +16,6 @@ from crabpy.gateway.exception import GatewayResourceNotFoundException
 LOG = logging.getLogger(__name__)
 AUTO = object()
 
-
 LONG_CACHE = make_region()
 SHORT_CACHE = make_region()
 
@@ -257,6 +256,16 @@ class Gateway:
         ]
 
     @LONG_CACHE.cache_on_arguments()
+    def get_postinfo_by_id(self, postcode):
+        """
+        Retrieve a `postinfo` by crab id.
+
+        :param integer gemeente_id: The crab id of the municipality.
+        :rtype: :class:`Postinfo`
+        """
+        return Postinfo.from_get_response(self.client.get_postinfo(postcode), self)
+
+    @LONG_CACHE.cache_on_arguments()
     def list_deelgemeenten(self, gewest=2):
         """
         List all `deelgemeenten` in a `gewest`.
@@ -350,6 +359,75 @@ class Gateway:
         return [
             Adres.from_list_response(adres, self)
             for adres in self.client.get_adressen(straatnaamObjectId=straat.id)
+        ]
+
+    @LONG_CACHE.cache_on_arguments()
+    def get_adres_by_id(self, adres_id):
+        """
+        Retrieve a `adres` by the Id.
+
+        :param integer adres_id: The id of the `adres`.
+        :rtype: :class:`Adres`
+        """
+        return Adres.from_get_response(self.client.get_adres(adres_id), self)
+
+    @SHORT_CACHE.cache_on_arguments()
+    def list_adressen_with_params(
+        self,
+        gemeentenaam=None,
+        postcode=None,
+        straatnaam=None,
+        homoniem_toevoeging=None,
+        huisnummer=None,
+        busnummer=None,
+        niscode=None,
+        status=None,
+        straatnaamObjectId=None,
+    ):
+        """
+        List all `adressen` with the given parameters.
+
+        :param gemeentenaam: string
+        :param postcode:integer
+        :param straatnaam: string
+        :param homoniem_toevoeging: string
+        :param huisnummer: string
+        :param busnummer: string
+        :param niscode: string
+        :param status: string
+        :param straatnaamObjectId: integer
+        :return: :rtype: Adres
+        """
+        return [
+            Adres.from_list_response(adres, self)
+            for adres in self.client.get_adressen(
+                gemeentenaam=gemeentenaam,
+                postcode=postcode,
+                straatnaam=straatnaam,
+                homoniem_toevoeging=homoniem_toevoeging,
+                huisnummer=huisnummer,
+                busnummer=busnummer,
+                niscode=niscode,
+                status=status,
+                straatnaamObjectId=straatnaamObjectId,
+            )
+        ]
+
+    @SHORT_CACHE.cache_on_arguments()
+    def list_percelen_with_params(self, status=None, adresObjectId=None):
+        """
+        List all `percelen` with the given parameters.
+
+        :param status: str
+        :param adresOjbectId: str
+        :return: :rtype:
+        """
+
+        return [
+            Perceel.from_list_response(perceel, self)
+            for perceel in self.client.get_percelen(
+                status=status, adresObjectId=adresObjectId
+            )
         ]
 
     @SHORT_CACHE.cache_on_arguments()
@@ -658,6 +736,8 @@ class Adres(GatewayObject):
             self.postinfo = postinfo
         if busnummer is not AUTO:
             self.busnummer = busnummer
+        if status is not AUTO:
+            self.status = status
 
     @classmethod
     def from_list_response(cls, adres, gateway):
@@ -683,6 +763,10 @@ class Adres(GatewayObject):
     @LazyProperty
     def huisnummer(self):
         return self._source_json["huisnummer"]
+
+    @LazyProperty
+    def status(self):
+        return self._source_json["adresStatus"]
 
     @LazyProperty
     def straat(self):
