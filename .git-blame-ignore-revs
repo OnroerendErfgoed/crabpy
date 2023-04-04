@@ -7,4 +7,4 @@
 #   git config blame.ignoreRevsFile .git-blame-ignore-revs
 
 # black + flake8 linting
-cf3445940b162d7475863b0ec6bfb97bb7acb2b0
+6bf366f928231a59b81212df182c27163ad2727d
