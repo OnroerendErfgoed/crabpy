@@ -6,13 +6,9 @@ WARNING: The CapakeyGateway (SOAP) is deprecated, use CapakeyRestGateway (REST) 
 """
 
 from crabpy.client import capakey_factory
-
-capakey = capakey_factory(
-    user = 'USER',
-    password = 'PASSWORD'
-)
-
 from crabpy.gateway.capakey import CapakeyGateway
+
+capakey = capakey_factory(user="USER", password="PASSWORD")
 
 g = CapakeyGateway(capakey)
 
