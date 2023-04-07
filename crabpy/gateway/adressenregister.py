@@ -592,7 +592,7 @@ class Gemeente(GatewayObject):
 
     @LazyProperty
     def postinfo(self):
-        return self.gateway.get_postinfo_by_gemeentenaam(self, gemeentenaam=self.naam)
+        return self.gateway.get_postinfo_by_gemeentenaam(gemeentenaam=self.naam)
 
     @LazyProperty
     def provincie(self):
