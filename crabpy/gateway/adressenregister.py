@@ -592,7 +592,8 @@ class Gemeente(GatewayObject):
 
     @LazyProperty
     def postinfo(self):
-        return self.gateway.get_postinfo_by_gemeentenaam(gemeentenaam=self.naam)
+        gemeente_naam = self.naam() if not isinstance(self.naam, str) else self.naam
+        return self.gateway.get_postinfo_by_gemeentenaam(gemeente_naam)
 
     @LazyProperty
     def provincie(self):
