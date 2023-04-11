@@ -17,7 +17,7 @@ setup(
     author="Onroerend Erfgoed",
     author_email="ict@onroerenderfgoed.be",
     url="http://github.com/onroerenderfgoed/crabpy",
-    packages=find_packages(),
+    packages=find_packages(exclude=["tests*"]),
     package_data={"": ["LICENSE"]},
     package_dir={"crabpy": "crabpy"},
     include_package_data=True,
