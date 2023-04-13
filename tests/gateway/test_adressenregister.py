@@ -441,7 +441,7 @@ class TestAdressenRegisterGateway:
             create_client_list_adressen_item(),
         ]
         res = gateway.list_adressen_by_straat(
-            Straat("1", "inGebruik", "straatnaaam", "nl", gateway)
+            Straat("1", gateway, status="inGebruik", naam="straatnaaam")
         )
         assert len(res) == 2
         assert res[0].id == "200001"

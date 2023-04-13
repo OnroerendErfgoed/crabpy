@@ -464,6 +464,11 @@ class Gateway:
         return Gebouw.from_get_response(self.client.get_gebouw(gebouw_id), self)
 
 
+class CallableString(str):
+    def __call__(self, *args, **kwargs):
+        return self
+
+
 class GatewayObject:
     def __init__(self, gateway):
         self.gateway: Gateway = gateway
@@ -535,6 +540,10 @@ class Gemeente(GatewayObject):
         super().__init__(gateway)
         self.niscode = niscode
         if naam is not AUTO:
+            if isinstance(naam, str):
+                naam = CallableString(naam)
+            if not callable(naam):
+                raise ValueError("naam must be a callable")
             self.naam = naam
         if taal is not AUTO:
             self.taal = taal
@@ -648,6 +657,10 @@ class Straat(GatewayObject):
         super().__init__(gateway)
         self.id = id_
         if naam is not AUTO:
+            if isinstance(naam, str):
+                naam = CallableString(naam)
+            if not callable(naam):
+                raise ValueError("naam must be a callable")
             self.naam = naam
         if status is not AUTO:
             self.status = status
@@ -951,7 +964,10 @@ class Postinfo(GatewayObject):
         if status is not AUTO:
             self.status = status
         if namen is not AUTO:
-            self.namen = namen
+            if callable(namen):
+                self.namen = namen
+            else:
+                raise ValueError("namen must be callable")
         if gemeente is not AUTO:
             self.gemeente = gemeente
         if uri is not AUTO:
