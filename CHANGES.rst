@@ -1,3 +1,12 @@
+1.0.0 (13-04-2023)
+------------------
+
+- Naar v2 van adressenregister (#185)
+- File wordt niet geclosed (#133)
+- black, flake8, python2 weg en pre-commit (#195)
+- Uitbreidingen aan adressenregister model (#192)
+- pip install van crabpy installeert ook een "tests" met alle data van crabpy (#165)
+
 0.16.1 (29-03-2023)
 -------------------
 

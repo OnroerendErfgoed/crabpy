@@ -1,0 +1,10 @@
+# Ignore revisions listed in this file in git blame
+# https://git-scm.com/docs/git-config#Documentation/git-config.txt-blameignoreRevsFile
+# Minimum git version: v2.23
+# add git-core apt repository if latest version not available:
+#   sudo add-apt-repository ppa:git-core/ppa -y
+# To enable the rule in git config, execute the line below from the project root dir:
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+
+# black + flake8 linting
+6bf366f928231a59b81212df182c27163ad2727d

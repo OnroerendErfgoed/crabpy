@@ -56,9 +56,8 @@ class AdressenRegisterClient:
     def __init__(self, base_url, api_key):
         super().__init__()
         self.session = requests.Session()
-        self.session.headers.update(
-            {"Accept": "application/json", "x-api-key": api_key}
-        )
+        self.v1_header = {"Accept": "application/json", "x-api-key": api_key}
+        self.v2_header = {"Accept": "application/ld+json", "x-api-key": api_key}
         self.base_url = base_url[:-1] if base_url.endswith("/") else base_url
 
     def _get_list(self, url, response_key, params=None):
@@ -71,7 +70,9 @@ class AdressenRegisterClient:
         try:
             while "volgende" in response:
                 response = self.session.get(
-                    response["volgende"], params=params
+                    response["volgende"],
+                    params=params,
+                    headers=self.v2_header if "v2" in url else self.v1_header,
                 )
                 response.raise_for_status()
                 response = response.json()
@@ -89,7 +90,7 @@ class AdressenRegisterClient:
             raise AdressenRegisterClientException from e
 
     def get_gemeente(self, gemeente_id):
-        return self._get(f"/v1/gemeenten/{gemeente_id}")
+        return self._get(f"/v2/gemeenten/{gemeente_id}")
 
     def get_gemeenten(self, gemeentenaam=None, status=None):
         params = {}
@@ -97,19 +98,21 @@ class AdressenRegisterClient:
             params["gemeentenaam"] = gemeentenaam
         if status is not None:
             params["status"] = status
-        return self._get_list("/v1/gemeenten", "gemeenten", params)
+        return self._get_list("/v2/gemeenten", "gemeenten", params)
 
     def get_postinfo(self, postinfo_id):
-        return self._get(f"/v1/postinfo/{postinfo_id}")
+        return self._get(f"/v2/postinfo/{postinfo_id}")
 
-    def get_postinfos(self, gemeentenaam=None):
+    def get_postinfos(self, gemeentenaam=None, postnaam=None):
         params = {}
         if gemeentenaam is not None:
             params["gemeentenaam"] = gemeentenaam
-        return self._get_list("/v1/postinfo", "postInfoObjecten", params=params)
+        if postnaam is not None:
+            params["postnaam"] = postnaam
+        return self._get_list("/v2/postinfo", "postInfoObjecten", params=params)
 
     def get_straatnaam(self, straatnaam_id):
-        return self._get(f"/v1/straatnamen/{straatnaam_id}")
+        return self._get(f"/v2/straatnamen/{straatnaam_id}")
 
     def get_straatnamen(
         self, straatnaam=None, gemeentenaam=None, niscode=None, status=None
@@ -123,7 +126,7 @@ class AdressenRegisterClient:
             params["nisCode"] = niscode
         if status is not None:
             params["status"] = status
-        return self._get_list("/v1/straatnamen", "straatnamen", params=params)
+        return self._get_list("/v2/straatnamen", "straatnamen", params=params)
 
     def get_adres_match(
         self,
@@ -159,7 +162,7 @@ class AdressenRegisterClient:
         return self._get("/v1/adresmatch", params=params)
 
     def get_adres(self, adres_id):
-        return self._get(f"/v1/adressen/{adres_id}")
+        return self._get(f"/v2/adressen/{adres_id}")
 
     def get_adressen(
         self,
@@ -171,6 +174,7 @@ class AdressenRegisterClient:
         busnummer=None,
         niscode=None,
         status=None,
+        straatnaamObjectId=None,
     ):
         params = {}
         if gemeentenaam is not None:
@@ -189,22 +193,26 @@ class AdressenRegisterClient:
             params["niscode"] = niscode
         if status is not None:
             params["status"] = status
-        return self._get_list("/v1/adressen", "adressen", params=params)
+        if straatnaamObjectId is not None:
+            params["straatnaamObjectId"] = straatnaamObjectId
+        return self._get_list("/v2/adressen", "adressen", params=params)
 
     def get_perceel(self, perceel_id):
-        return self._get(f"/v1/percelen/{perceel_id}")
+        return self._get(f"/v2/percelen/{perceel_id}")
 
-    def get_percelen(self, status=None):
+    def get_percelen(self, status=None, adresObjectId=None):
         params = {}
         if status is not None:
             params["status"] = status
-        return self._get_list(f"/v1/percelen", "percelen", params=params)
+        if adresObjectId is not None:
+            params["adresOjbectId"] = adresObjectId
+        return self._get_list("/v2/percelen", "percelen", params=params)
 
     def get_gebouw(self, gebouw_id):
-        return self._get(f"/v1/gebouwen/{gebouw_id}")
+        return self._get(f"/v2/gebouwen/{gebouw_id}")
 
     def get_gebouwen(self, status=None):
         params = {}
         if status is not None:
             params["status"] = status
-        return self._get_list(f"/v1/gebouwen", "gebouwen", params=params)
+        return self._get_list("/v2/gebouwen", "gebouwen", params=params)

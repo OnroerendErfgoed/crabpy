@@ -21,17 +21,17 @@ gateway = Gateway(
 antwerpen = gateway.get_provincie_by_id("10000")
 aartselaar = antwerpen.gemeenten[0]
 
-print('Straten in AARTSELAAR (1)')
-print('-------------------------')
+print("Straten in AARTSELAAR (1)")
+print("-------------------------")
 print([str(straat) for straat in gateway.list_straten(aartselaar)])
-print('Straten in AARTSELAAR (2)')
-print('-------------------------')
+print("Straten in AARTSELAAR (2)")
+print("-------------------------")
 print([str(straat) for straat in aartselaar.straten])
 
 straat = aartselaar.straten[1]
-print('Adressen in AARTSELAAR Straat1 (1)')
-print('----------------------------------')
+print("Adressen in AARTSELAAR Straat1 (1)")
+print("----------------------------------")
 print([str(huisnummer) for huisnummer in gateway.list_adressen_by_straat(straat)])
-print('Adressen in AARTSELAAR Straat1 (2)')
-print('----------------------------------')
+print("Adressen in AARTSELAAR Straat1 (2)")
+print("----------------------------------")
 print([str(huisnummer) for huisnummer in straat.adressen])
