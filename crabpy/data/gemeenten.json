@@ -1,0 +1,8136 @@
+[
+    {
+        "niscode": "21001",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Anderlecht"
+            },
+            {
+                "taal": "nl",
+                "naam": "Anderlecht"
+            }
+        ]
+    },
+    {
+        "niscode": "21002",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Auderghem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oudergem"
+            }
+        ]
+    },
+    {
+        "niscode": "21003",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Berchem-Sainte-Agathe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Agatha-Berchem"
+            }
+        ]
+    },
+    {
+        "niscode": "21004",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bruxelles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brussel"
+            }
+        ]
+    },
+    {
+        "niscode": "21005",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Etterbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Etterbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "21006",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Evere"
+            },
+            {
+                "taal": "nl",
+                "naam": "Evere"
+            }
+        ]
+    },
+    {
+        "niscode": "21007",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Forest"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vorst"
+            }
+        ]
+    },
+    {
+        "niscode": "21008",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ganshoren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ganshoren"
+            }
+        ]
+    },
+    {
+        "niscode": "21009",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ixelles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Elsene"
+            }
+        ]
+    },
+    {
+        "niscode": "21010",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Jette"
+            },
+            {
+                "taal": "nl",
+                "naam": "Jette"
+            }
+        ]
+    },
+    {
+        "niscode": "21011",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Koekelberg"
+            },
+            {
+                "taal": "nl",
+                "naam": "Koekelberg"
+            }
+        ]
+    },
+    {
+        "niscode": "21012",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Molenbeek-Saint-Jean"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Jans-Molenbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "21013",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Gilles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Gillis"
+            }
+        ]
+    },
+    {
+        "niscode": "21014",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Josse-ten-Noode"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Joost-ten-Node"
+            }
+        ]
+    },
+    {
+        "niscode": "21015",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Schaerbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Schaarbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "21016",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Uccle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ukkel"
+            }
+        ]
+    },
+    {
+        "niscode": "21017",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Watermael-Boitsfort"
+            },
+            {
+                "taal": "nl",
+                "naam": "Watermaal-Bosvoorde"
+            }
+        ]
+    },
+    {
+        "niscode": "21018",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Woluwe-Saint-Lambert"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Lambrechts-Woluwe"
+            }
+        ]
+    },
+    {
+        "niscode": "21019",
+        "provincie": null,
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Woluwe-Saint-Pierre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Pieters-Woluwe"
+            }
+        ]
+    },
+    {
+        "niscode": "11001",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aartselaar"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aartselaar"
+            }
+        ]
+    },
+    {
+        "niscode": "11002",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Anvers"
+            },
+            {
+                "taal": "nl",
+                "naam": "Antwerpen"
+            }
+        ]
+    },
+    {
+        "niscode": "11004",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Boechout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Boechout"
+            }
+        ]
+    },
+    {
+        "niscode": "11005",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Boom"
+            },
+            {
+                "taal": "nl",
+                "naam": "Boom"
+            }
+        ]
+    },
+    {
+        "niscode": "11007",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Borsbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Borsbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "11008",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Brasschaat"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brasschaat"
+            }
+        ]
+    },
+    {
+        "niscode": "11009",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Brecht"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brecht"
+            }
+        ]
+    },
+    {
+        "niscode": "11013",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Edegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Edegem"
+            }
+        ]
+    },
+    {
+        "niscode": "11016",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Essen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Essen"
+            }
+        ]
+    },
+    {
+        "niscode": "11018",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hemiksem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hemiksem"
+            }
+        ]
+    },
+    {
+        "niscode": "11021",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hove"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hove"
+            }
+        ]
+    },
+    {
+        "niscode": "11022",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kalmthout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kalmthout"
+            }
+        ]
+    },
+    {
+        "niscode": "11023",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kapellen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kapellen"
+            }
+        ]
+    },
+    {
+        "niscode": "11024",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kontich"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kontich"
+            }
+        ]
+    },
+    {
+        "niscode": "11025",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lint"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lint"
+            }
+        ]
+    },
+    {
+        "niscode": "11057",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Malle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Malle"
+            }
+        ]
+    },
+    {
+        "niscode": "11029",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mortsel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mortsel"
+            }
+        ]
+    },
+    {
+        "niscode": "11030",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Niel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Niel"
+            }
+        ]
+    },
+    {
+        "niscode": "11035",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ranst"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ranst"
+            }
+        ]
+    },
+    {
+        "niscode": "11037",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rumst"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rumst"
+            }
+        ]
+    },
+    {
+        "niscode": "11038",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Schelle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Schelle"
+            }
+        ]
+    },
+    {
+        "niscode": "11039",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Schilde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Schilde"
+            }
+        ]
+    },
+    {
+        "niscode": "11040",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Schoten"
+            },
+            {
+                "taal": "nl",
+                "naam": "Schoten"
+            }
+        ]
+    },
+    {
+        "niscode": "11044",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Stabroek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Stabroek"
+            }
+        ]
+    },
+    {
+        "niscode": "11050",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wijnegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wijnegem"
+            }
+        ]
+    },
+    {
+        "niscode": "11052",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wommelgem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wommelgem"
+            }
+        ]
+    },
+    {
+        "niscode": "11053",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wuustwezel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wuustwezel"
+            }
+        ]
+    },
+    {
+        "niscode": "11054",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zandhoven"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zandhoven"
+            }
+        ]
+    },
+    {
+        "niscode": "11055",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zoersel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zoersel"
+            }
+        ]
+    },
+    {
+        "niscode": "11056",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zwijndrecht"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zwijndrecht"
+            }
+        ]
+    },
+    {
+        "niscode": "12002",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Berlaar"
+            },
+            {
+                "taal": "nl",
+                "naam": "Berlaar"
+            }
+        ]
+    },
+    {
+        "niscode": "12005",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bonheiden"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bonheiden"
+            }
+        ]
+    },
+    {
+        "niscode": "12007",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bornem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bornem"
+            }
+        ]
+    },
+    {
+        "niscode": "12009",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Duffel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Duffel"
+            }
+        ]
+    },
+    {
+        "niscode": "12014",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Heist-op-den-Berg"
+            },
+            {
+                "taal": "nl",
+                "naam": "Heist-op-den-Berg"
+            }
+        ]
+    },
+    {
+        "niscode": "12021",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lierre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lier"
+            }
+        ]
+    },
+    {
+        "niscode": "12025",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Malines"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mechelen"
+            }
+        ]
+    },
+    {
+        "niscode": "12026",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nijlen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nijlen"
+            }
+        ]
+    },
+    {
+        "niscode": "12029",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Putte"
+            },
+            {
+                "taal": "nl",
+                "naam": "Putte"
+            }
+        ]
+    },
+    {
+        "niscode": "12041",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Puurs-Sint-Amands"
+            },
+            {
+                "taal": "nl",
+                "naam": "Puurs-Sint-Amands"
+            }
+        ]
+    },
+    {
+        "niscode": "12035",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sint-Katelijne-Waver"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Katelijne-Waver"
+            }
+        ]
+    },
+    {
+        "niscode": "12040",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Willebroek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Willebroek"
+            }
+        ]
+    },
+    {
+        "niscode": "13001",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Arendonk"
+            },
+            {
+                "taal": "nl",
+                "naam": "Arendonk"
+            }
+        ]
+    },
+    {
+        "niscode": "13002",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Baerle-Duc"
+            },
+            {
+                "taal": "nl",
+                "naam": "Baarle-Hertog"
+            }
+        ]
+    },
+    {
+        "niscode": "13003",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Balen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Balen"
+            }
+        ]
+    },
+    {
+        "niscode": "13004",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beerse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beerse"
+            }
+        ]
+    },
+    {
+        "niscode": "13006",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dessel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dessel"
+            }
+        ]
+    },
+    {
+        "niscode": "13008",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Geel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Geel"
+            }
+        ]
+    },
+    {
+        "niscode": "13010",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Grobbendonk"
+            },
+            {
+                "taal": "nl",
+                "naam": "Grobbendonk"
+            }
+        ]
+    },
+    {
+        "niscode": "13011",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herentals"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herentals"
+            }
+        ]
+    },
+    {
+        "niscode": "13012",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herenthout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herenthout"
+            }
+        ]
+    },
+    {
+        "niscode": "13013",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herselt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herselt"
+            }
+        ]
+    },
+    {
+        "niscode": "13014",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hoogstraten"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hoogstraten"
+            }
+        ]
+    },
+    {
+        "niscode": "13016",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hulshout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hulshout"
+            }
+        ]
+    },
+    {
+        "niscode": "13017",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kasterlee"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kasterlee"
+            }
+        ]
+    },
+    {
+        "niscode": "13053",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Laakdal"
+            },
+            {
+                "taal": "nl",
+                "naam": "Laakdal"
+            }
+        ]
+    },
+    {
+        "niscode": "13019",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lille"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lille"
+            }
+        ]
+    },
+    {
+        "niscode": "13021",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Meerhout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Meerhout"
+            }
+        ]
+    },
+    {
+        "niscode": "13023",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Merksplas"
+            },
+            {
+                "taal": "nl",
+                "naam": "Merksplas"
+            }
+        ]
+    },
+    {
+        "niscode": "13025",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mol"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mol"
+            }
+        ]
+    },
+    {
+        "niscode": "13029",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Olen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Olen"
+            }
+        ]
+    },
+    {
+        "niscode": "13031",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oud-Turnhout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oud-Turnhout"
+            }
+        ]
+    },
+    {
+        "niscode": "13035",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ravels"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ravels"
+            }
+        ]
+    },
+    {
+        "niscode": "13036",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Retie"
+            },
+            {
+                "taal": "nl",
+                "naam": "Retie"
+            }
+        ]
+    },
+    {
+        "niscode": "13037",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rijkevorsel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rijkevorsel"
+            }
+        ]
+    },
+    {
+        "niscode": "13040",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Turnhout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Turnhout"
+            }
+        ]
+    },
+    {
+        "niscode": "13044",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vorselaar"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vorselaar"
+            }
+        ]
+    },
+    {
+        "niscode": "13046",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vosselaar"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vosselaar"
+            }
+        ]
+    },
+    {
+        "niscode": "13049",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Westerlo"
+            },
+            {
+                "taal": "nl",
+                "naam": "Westerlo"
+            }
+        ]
+    },
+    {
+        "niscode": "23105",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Affligem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Affligem"
+            }
+        ]
+    },
+    {
+        "niscode": "23002",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Asse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Asse"
+            }
+        ]
+    },
+    {
+        "niscode": "23003",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beersel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beersel"
+            }
+        ]
+    },
+    {
+        "niscode": "23009",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Biévène"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bever"
+            }
+        ]
+    },
+    {
+        "niscode": "23016",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dilbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dilbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "23098",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Drogenbos"
+            },
+            {
+                "taal": "nl",
+                "naam": "Drogenbos"
+            }
+        ]
+    },
+    {
+        "niscode": "23023",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gammerages"
+            },
+            {
+                "taal": "nl",
+                "naam": "Galmaarden"
+            }
+        ]
+    },
+    {
+        "niscode": "23024",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gooik"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gooik"
+            }
+        ]
+    },
+    {
+        "niscode": "23025",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Grimbergen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Grimbergen"
+            }
+        ]
+    },
+    {
+        "niscode": "23027",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hal"
+            },
+            {
+                "taal": "nl",
+                "naam": "Halle"
+            }
+        ]
+    },
+    {
+        "niscode": "23032",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herne"
+            }
+        ]
+    },
+    {
+        "niscode": "23033",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hoeilaart"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hoeilaart"
+            }
+        ]
+    },
+    {
+        "niscode": "23038",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kampenhout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kampenhout"
+            }
+        ]
+    },
+    {
+        "niscode": "23039",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kapelle-op-den-Bos"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kapelle-op-den-Bos"
+            }
+        ]
+    },
+    {
+        "niscode": "23099",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kraainem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kraainem"
+            }
+        ]
+    },
+    {
+        "niscode": "23104",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lennik"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lennik"
+            }
+        ]
+    },
+    {
+        "niscode": "23044",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Liedekerke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Liedekerke"
+            }
+        ]
+    },
+    {
+        "niscode": "23100",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Linkebeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Linkebeek"
+            }
+        ]
+    },
+    {
+        "niscode": "23045",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Londerzeel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Londerzeel"
+            }
+        ]
+    },
+    {
+        "niscode": "23047",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Machelen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Machelen"
+            }
+        ]
+    },
+    {
+        "niscode": "23050",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Meise"
+            },
+            {
+                "taal": "nl",
+                "naam": "Meise"
+            }
+        ]
+    },
+    {
+        "niscode": "23052",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Merchtem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Merchtem"
+            }
+        ]
+    },
+    {
+        "niscode": "23060",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Opwijk"
+            },
+            {
+                "taal": "nl",
+                "naam": "Opwijk"
+            }
+        ]
+    },
+    {
+        "niscode": "23062",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Overijse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Overijse"
+            }
+        ]
+    },
+    {
+        "niscode": "23064",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pepingen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pepingen"
+            }
+        ]
+    },
+    {
+        "niscode": "23101",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rhode-Saint-Genèse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Genesius-Rode"
+            }
+        ]
+    },
+    {
+        "niscode": "23097",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Roosdaal"
+            },
+            {
+                "taal": "nl",
+                "naam": "Roosdaal"
+            }
+        ]
+    },
+    {
+        "niscode": "23077",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sint-Pieters-Leeuw"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Pieters-Leeuw"
+            }
+        ]
+    },
+    {
+        "niscode": "23081",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Steenokkerzeel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Steenokkerzeel"
+            }
+        ]
+    },
+    {
+        "niscode": "23086",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ternat"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ternat"
+            }
+        ]
+    },
+    {
+        "niscode": "23088",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vilvorde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vilvoorde"
+            }
+        ]
+    },
+    {
+        "niscode": "23102",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wemmel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wemmel"
+            }
+        ]
+    },
+    {
+        "niscode": "23103",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wezembeek-Oppem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wezembeek-Oppem"
+            }
+        ]
+    },
+    {
+        "niscode": "23094",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zaventem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zaventem"
+            }
+        ]
+    },
+    {
+        "niscode": "23096",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zemst"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zemst"
+            }
+        ]
+    },
+    {
+        "niscode": "24001",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aarschot"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aarschot"
+            }
+        ]
+    },
+    {
+        "niscode": "24007",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Begijnendijk"
+            },
+            {
+                "taal": "nl",
+                "naam": "Begijnendijk"
+            }
+        ]
+    },
+    {
+        "niscode": "24008",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bekkevoort"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bekkevoort"
+            }
+        ]
+    },
+    {
+        "niscode": "24009",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bertem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bertem"
+            }
+        ]
+    },
+    {
+        "niscode": "24011",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bierbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bierbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "24014",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Boortmeerbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Boortmeerbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "24016",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Boutersem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Boutersem"
+            }
+        ]
+    },
+    {
+        "niscode": "24020",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Diest"
+            },
+            {
+                "taal": "nl",
+                "naam": "Diest"
+            }
+        ]
+    },
+    {
+        "niscode": "24028",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Geetbets"
+            },
+            {
+                "taal": "nl",
+                "naam": "Geetbets"
+            }
+        ]
+    },
+    {
+        "niscode": "24137",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Glabbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Glabbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "24033",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Haacht"
+            },
+            {
+                "taal": "nl",
+                "naam": "Haacht"
+            }
+        ]
+    },
+    {
+        "niscode": "24038",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herent"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herent"
+            }
+        ]
+    },
+    {
+        "niscode": "24041",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hoegaarden"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hoegaarden"
+            }
+        ]
+    },
+    {
+        "niscode": "24043",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Holsbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Holsbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "24045",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Huldenberg"
+            },
+            {
+                "taal": "nl",
+                "naam": "Huldenberg"
+            }
+        ]
+    },
+    {
+        "niscode": "24048",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Keerbergen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Keerbergen"
+            }
+        ]
+    },
+    {
+        "niscode": "24054",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kortenaken"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kortenaken"
+            }
+        ]
+    },
+    {
+        "niscode": "24055",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kortenberg"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kortenberg"
+            }
+        ]
+    },
+    {
+        "niscode": "24059",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Landen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Landen"
+            }
+        ]
+    },
+    {
+        "niscode": "24130",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Léau"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zoutleeuw"
+            }
+        ]
+    },
+    {
+        "niscode": "24133",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Linter"
+            },
+            {
+                "taal": "nl",
+                "naam": "Linter"
+            }
+        ]
+    },
+    {
+        "niscode": "24062",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Louvain"
+            },
+            {
+                "taal": "nl",
+                "naam": "Leuven"
+            }
+        ]
+    },
+    {
+        "niscode": "24066",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lubbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lubbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "24134",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Montaigu-Zichem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Scherpenheuvel-Zichem"
+            }
+        ]
+    },
+    {
+        "niscode": "24086",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oud-Heverlee"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oud-Heverlee"
+            }
+        ]
+    },
+    {
+        "niscode": "24094",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rotselaar"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rotselaar"
+            }
+        ]
+    },
+    {
+        "niscode": "24104",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tervuren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tervuren"
+            }
+        ]
+    },
+    {
+        "niscode": "24135",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tielt-Winge"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tielt-Winge"
+            }
+        ]
+    },
+    {
+        "niscode": "24107",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tirlemont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tienen"
+            }
+        ]
+    },
+    {
+        "niscode": "24109",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tremelo"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tremelo"
+            }
+        ]
+    },
+    {
+        "niscode": "31003",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beernem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beernem"
+            }
+        ]
+    },
+    {
+        "niscode": "31004",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Blankenberge"
+            },
+            {
+                "taal": "nl",
+                "naam": "Blankenberge"
+            }
+        ]
+    },
+    {
+        "niscode": "31005",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bruges"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brugge"
+            }
+        ]
+    },
+    {
+        "niscode": "31006",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Damme"
+            },
+            {
+                "taal": "nl",
+                "naam": "Damme"
+            }
+        ]
+    },
+    {
+        "niscode": "31012",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Jabbeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Jabbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "31043",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Knokke-Heist"
+            },
+            {
+                "taal": "nl",
+                "naam": "Knokke-Heist"
+            }
+        ]
+    },
+    {
+        "niscode": "31022",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oostkamp"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oostkamp"
+            }
+        ]
+    },
+    {
+        "niscode": "31033",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Torhout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Torhout"
+            }
+        ]
+    },
+    {
+        "niscode": "31040",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zedelgem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zedelgem"
+            }
+        ]
+    },
+    {
+        "niscode": "31042",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zuienkerke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zuienkerke"
+            }
+        ]
+    },
+    {
+        "niscode": "34002",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Anzegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Anzegem"
+            }
+        ]
+    },
+    {
+        "niscode": "34003",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Avelgem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Avelgem"
+            }
+        ]
+    },
+    {
+        "niscode": "34022",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Courtrai"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kortrijk"
+            }
+        ]
+    },
+    {
+        "niscode": "34009",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Deerlijk"
+            },
+            {
+                "taal": "nl",
+                "naam": "Deerlijk"
+            }
+        ]
+    },
+    {
+        "niscode": "34043",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Espierres-Helchin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Spiere-Helkijn"
+            }
+        ]
+    },
+    {
+        "niscode": "34013",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Harelbeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Harelbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "34023",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kuurne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kuurne"
+            }
+        ]
+    },
+    {
+        "niscode": "34025",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lendelede"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lendelede"
+            }
+        ]
+    },
+    {
+        "niscode": "34027",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Menin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Menen"
+            }
+        ]
+    },
+    {
+        "niscode": "34040",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Waregem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Waregem"
+            }
+        ]
+    },
+    {
+        "niscode": "34041",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wevelgem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wevelgem"
+            }
+        ]
+    },
+    {
+        "niscode": "34042",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zwevegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zwevegem"
+            }
+        ]
+    },
+    {
+        "niscode": "32003",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dixmude"
+            },
+            {
+                "taal": "nl",
+                "naam": "Diksmuide"
+            }
+        ]
+    },
+    {
+        "niscode": "32006",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Houthulst"
+            },
+            {
+                "taal": "nl",
+                "naam": "Houthulst"
+            }
+        ]
+    },
+    {
+        "niscode": "32010",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Koekelare"
+            },
+            {
+                "taal": "nl",
+                "naam": "Koekelare"
+            }
+        ]
+    },
+    {
+        "niscode": "32011",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kortemark"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kortemark"
+            }
+        ]
+    },
+    {
+        "niscode": "32030",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lo-Reninge"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lo-Reninge"
+            }
+        ]
+    },
+    {
+        "niscode": "38002",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Alveringem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Alveringem"
+            }
+        ]
+    },
+    {
+        "niscode": "38025",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Furnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Veurne"
+            }
+        ]
+    },
+    {
+        "niscode": "38014",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Koksijde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Koksijde"
+            }
+        ]
+    },
+    {
+        "niscode": "38008",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "La Panne"
+            },
+            {
+                "taal": "nl",
+                "naam": "De Panne"
+            }
+        ]
+    },
+    {
+        "niscode": "38016",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nieuport"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nieuwpoort"
+            }
+        ]
+    },
+    {
+        "niscode": "35002",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bredene"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bredene"
+            }
+        ]
+    },
+    {
+        "niscode": "35029",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "De Haan"
+            },
+            {
+                "taal": "nl",
+                "naam": "De Haan"
+            }
+        ]
+    },
+    {
+        "niscode": "35005",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gistel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gistel"
+            }
+        ]
+    },
+    {
+        "niscode": "35006",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ichtegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ichtegem"
+            }
+        ]
+    },
+    {
+        "niscode": "35011",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Middelkerke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Middelkerke"
+            }
+        ]
+    },
+    {
+        "niscode": "35013",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ostende"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oostende"
+            }
+        ]
+    },
+    {
+        "niscode": "35014",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oudenburg"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oudenburg"
+            }
+        ]
+    },
+    {
+        "niscode": "36006",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hooglede"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hooglede"
+            }
+        ]
+    },
+    {
+        "niscode": "36007",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ingelmunster"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ingelmunster"
+            }
+        ]
+    },
+    {
+        "niscode": "36008",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Izegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Izegem"
+            }
+        ]
+    },
+    {
+        "niscode": "36010",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ledegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ledegem"
+            }
+        ]
+    },
+    {
+        "niscode": "36011",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lichtervelde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lichtervelde"
+            }
+        ]
+    },
+    {
+        "niscode": "36012",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Moorslede"
+            },
+            {
+                "taal": "nl",
+                "naam": "Moorslede"
+            }
+        ]
+    },
+    {
+        "niscode": "36015",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Roulers"
+            },
+            {
+                "taal": "nl",
+                "naam": "Roeselare"
+            }
+        ]
+    },
+    {
+        "niscode": "36019",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Staden"
+            },
+            {
+                "taal": "nl",
+                "naam": "Staden"
+            }
+        ]
+    },
+    {
+        "niscode": "37020",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ardooie"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ardooie"
+            }
+        ]
+    },
+    {
+        "niscode": "37002",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dentergem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dentergem"
+            }
+        ]
+    },
+    {
+        "niscode": "37007",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Meulebeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Meulebeke"
+            }
+        ]
+    },
+    {
+        "niscode": "37010",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oostrozebeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oostrozebeke"
+            }
+        ]
+    },
+    {
+        "niscode": "37011",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pittem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pittem"
+            }
+        ]
+    },
+    {
+        "niscode": "37012",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ruiselede"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ruiselede"
+            }
+        ]
+    },
+    {
+        "niscode": "37015",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tielt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tielt"
+            }
+        ]
+    },
+    {
+        "niscode": "37017",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wielsbeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wielsbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "37018",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wingene"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wingene"
+            }
+        ]
+    },
+    {
+        "niscode": "33039",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Heuvelland"
+            },
+            {
+                "taal": "nl",
+                "naam": "Heuvelland"
+            }
+        ]
+    },
+    {
+        "niscode": "33040",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Langemark-Poelkapelle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Langemark-Poelkapelle"
+            }
+        ]
+    },
+    {
+        "niscode": "33016",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Messines"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mesen"
+            }
+        ]
+    },
+    {
+        "niscode": "33021",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Poperinge"
+            },
+            {
+                "taal": "nl",
+                "naam": "Poperinge"
+            }
+        ]
+    },
+    {
+        "niscode": "33041",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vleteren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vleteren"
+            }
+        ]
+    },
+    {
+        "niscode": "33029",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wervik"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wervik"
+            }
+        ]
+    },
+    {
+        "niscode": "33011",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ypres"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ieper"
+            }
+        ]
+    },
+    {
+        "niscode": "33037",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zonnebeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zonnebeke"
+            }
+        ]
+    },
+    {
+        "niscode": "41002",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Alost"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aalst"
+            }
+        ]
+    },
+    {
+        "niscode": "41011",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Denderleeuw"
+            },
+            {
+                "taal": "nl",
+                "naam": "Denderleeuw"
+            }
+        ]
+    },
+    {
+        "niscode": "41082",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Erpe-Mere"
+            },
+            {
+                "taal": "nl",
+                "naam": "Erpe-Mere"
+            }
+        ]
+    },
+    {
+        "niscode": "41018",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Grammont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Geraardsbergen"
+            }
+        ]
+    },
+    {
+        "niscode": "41024",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Haaltert"
+            },
+            {
+                "taal": "nl",
+                "naam": "Haaltert"
+            }
+        ]
+    },
+    {
+        "niscode": "41027",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herzele"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herzele"
+            }
+        ]
+    },
+    {
+        "niscode": "41034",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lede"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lede"
+            }
+        ]
+    },
+    {
+        "niscode": "41048",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ninove"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ninove"
+            }
+        ]
+    },
+    {
+        "niscode": "41063",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sint-Lievens-Houtem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Lievens-Houtem"
+            }
+        ]
+    },
+    {
+        "niscode": "41081",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zottegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zottegem"
+            }
+        ]
+    },
+    {
+        "niscode": "45035",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Audenarde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oudenaarde"
+            }
+        ]
+    },
+    {
+        "niscode": "45059",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Brakel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brakel"
+            }
+        ]
+    },
+    {
+        "niscode": "45062",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Horebeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Horebeke"
+            }
+        ]
+    },
+    {
+        "niscode": "45060",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kluisbergen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kluisbergen"
+            }
+        ]
+    },
+    {
+        "niscode": "45068",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kruisem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kruisem"
+            }
+        ]
+    },
+    {
+        "niscode": "45063",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lierde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lierde"
+            }
+        ]
+    },
+    {
+        "niscode": "45064",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Maarkedal"
+            },
+            {
+                "taal": "nl",
+                "naam": "Maarkedal"
+            }
+        ]
+    },
+    {
+        "niscode": "45041",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Renaix"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ronse"
+            }
+        ]
+    },
+    {
+        "niscode": "45061",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wortegem-Petegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wortegem-Petegem"
+            }
+        ]
+    },
+    {
+        "niscode": "45065",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zwalm"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zwalm"
+            }
+        ]
+    },
+    {
+        "niscode": "43002",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Assenede"
+            },
+            {
+                "taal": "nl",
+                "naam": "Assenede"
+            }
+        ]
+    },
+    {
+        "niscode": "43005",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Eeklo"
+            },
+            {
+                "taal": "nl",
+                "naam": "Eeklo"
+            }
+        ]
+    },
+    {
+        "niscode": "43007",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kaprijke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kaprijke"
+            }
+        ]
+    },
+    {
+        "niscode": "43010",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Maldegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Maldegem"
+            }
+        ]
+    },
+    {
+        "niscode": "43014",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sint-Laureins"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Laureins"
+            }
+        ]
+    },
+    {
+        "niscode": "43018",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zelzate"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zelzate"
+            }
+        ]
+    },
+    {
+        "niscode": "44084",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aalter"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aalter"
+            }
+        ]
+    },
+    {
+        "niscode": "44012",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "De Pinte"
+            },
+            {
+                "taal": "nl",
+                "naam": "De Pinte"
+            }
+        ]
+    },
+    {
+        "niscode": "44083",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Deinze"
+            },
+            {
+                "taal": "nl",
+                "naam": "Deinze"
+            }
+        ]
+    },
+    {
+        "niscode": "44013",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Destelbergen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Destelbergen"
+            }
+        ]
+    },
+    {
+        "niscode": "44019",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Evergem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Evergem"
+            }
+        ]
+    },
+    {
+        "niscode": "44021",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gand"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gent"
+            }
+        ]
+    },
+    {
+        "niscode": "44020",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gavere"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gavere"
+            }
+        ]
+    },
+    {
+        "niscode": "44085",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lievegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lievegem"
+            }
+        ]
+    },
+    {
+        "niscode": "44034",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lochristi"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lochristi"
+            }
+        ]
+    },
+    {
+        "niscode": "44040",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Melle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Melle"
+            }
+        ]
+    },
+    {
+        "niscode": "44043",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Merelbeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Merelbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "44045",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Moerbeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Moerbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "44048",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nazareth"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nazareth"
+            }
+        ]
+    },
+    {
+        "niscode": "44052",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oosterzele"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oosterzele"
+            }
+        ]
+    },
+    {
+        "niscode": "44064",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sint-Martens-Latem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Martens-Latem"
+            }
+        ]
+    },
+    {
+        "niscode": "44073",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wachtebeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wachtebeke"
+            }
+        ]
+    },
+    {
+        "niscode": "44081",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zulte"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zulte"
+            }
+        ]
+    },
+    {
+        "niscode": "46003",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beveren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beveren"
+            }
+        ]
+    },
+    {
+        "niscode": "46013",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kruibeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kruibeke"
+            }
+        ]
+    },
+    {
+        "niscode": "46014",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lokeren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lokeren"
+            }
+        ]
+    },
+    {
+        "niscode": "46021",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Nicolas"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Niklaas"
+            }
+        ]
+    },
+    {
+        "niscode": "46020",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sint-Gillis-Waas"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Gillis-Waas"
+            }
+        ]
+    },
+    {
+        "niscode": "46024",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Stekene"
+            },
+            {
+                "taal": "nl",
+                "naam": "Stekene"
+            }
+        ]
+    },
+    {
+        "niscode": "46025",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tamise"
+            },
+            {
+                "taal": "nl",
+                "naam": "Temse"
+            }
+        ]
+    },
+    {
+        "niscode": "42003",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Berlare"
+            },
+            {
+                "taal": "nl",
+                "naam": "Berlare"
+            }
+        ]
+    },
+    {
+        "niscode": "42004",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Buggenhout"
+            },
+            {
+                "taal": "nl",
+                "naam": "Buggenhout"
+            }
+        ]
+    },
+    {
+        "niscode": "42008",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hamme"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hamme"
+            }
+        ]
+    },
+    {
+        "niscode": "42010",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Laarne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Laarne"
+            }
+        ]
+    },
+    {
+        "niscode": "42011",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lebbeke"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lebbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "42006",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Termonde"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dendermonde"
+            }
+        ]
+    },
+    {
+        "niscode": "42023",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Waasmunster"
+            },
+            {
+                "taal": "nl",
+                "naam": "Waasmunster"
+            }
+        ]
+    },
+    {
+        "niscode": "42025",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wetteren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wetteren"
+            }
+        ]
+    },
+    {
+        "niscode": "42026",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wichelen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wichelen"
+            }
+        ]
+    },
+    {
+        "niscode": "42028",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zele"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zele"
+            }
+        ]
+    },
+    {
+        "niscode": "71002",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "As"
+            },
+            {
+                "taal": "nl",
+                "naam": "As"
+            }
+        ]
+    },
+    {
+        "niscode": "71004",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beringen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beringen"
+            }
+        ]
+    },
+    {
+        "niscode": "71034",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bourg-Léopold"
+            },
+            {
+                "taal": "nl",
+                "naam": "Leopoldsburg"
+            }
+        ]
+    },
+    {
+        "niscode": "71011",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Diepenbeek"
+            },
+            {
+                "taal": "nl",
+                "naam": "Diepenbeek"
+            }
+        ]
+    },
+    {
+        "niscode": "71016",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Genk"
+            },
+            {
+                "taal": "nl",
+                "naam": "Genk"
+            }
+        ]
+    },
+    {
+        "niscode": "71017",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gingelom"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gingelom"
+            }
+        ]
+    },
+    {
+        "niscode": "71020",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Halen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Halen"
+            }
+        ]
+    },
+    {
+        "niscode": "71069",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ham"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ham"
+            }
+        ]
+    },
+    {
+        "niscode": "71022",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hasselt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hasselt"
+            }
+        ]
+    },
+    {
+        "niscode": "71024",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herck-la-Ville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herk-de-Stad"
+            }
+        ]
+    },
+    {
+        "niscode": "71070",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Heusden-Zolder"
+            },
+            {
+                "taal": "nl",
+                "naam": "Heusden-Zolder"
+            }
+        ]
+    },
+    {
+        "niscode": "71037",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lummen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lummen"
+            }
+        ]
+    },
+    {
+        "niscode": "71045",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nieuwerkerken"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nieuwerkerken"
+            }
+        ]
+    },
+    {
+        "niscode": "71053",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Trond"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sint-Truiden"
+            }
+        ]
+    },
+    {
+        "niscode": "71057",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tessenderlo"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tessenderlo"
+            }
+        ]
+    },
+    {
+        "niscode": "71066",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zonhoven"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zonhoven"
+            }
+        ]
+    },
+    {
+        "niscode": "71067",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Zutendaal"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zutendaal"
+            }
+        ]
+    },
+    {
+        "niscode": "72003",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bocholt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bocholt"
+            }
+        ]
+    },
+    {
+        "niscode": "72004",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bree"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bree"
+            }
+        ]
+    },
+    {
+        "niscode": "72041",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dilsen-Stokkem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dilsen-Stokkem"
+            }
+        ]
+    },
+    {
+        "niscode": "72037",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hamont-Achel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hamont-Achel"
+            }
+        ]
+    },
+    {
+        "niscode": "72038",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hechtel-Eksel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hechtel-Eksel"
+            }
+        ]
+    },
+    {
+        "niscode": "72039",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Houthalen-Helchteren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Houthalen-Helchteren"
+            }
+        ]
+    },
+    {
+        "niscode": "72018",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kinrooi"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kinrooi"
+            }
+        ]
+    },
+    {
+        "niscode": "72020",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lommel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lommel"
+            }
+        ]
+    },
+    {
+        "niscode": "72021",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Maaseik"
+            },
+            {
+                "taal": "nl",
+                "naam": "Maaseik"
+            }
+        ]
+    },
+    {
+        "niscode": "72042",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oudsbergen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oudsbergen"
+            }
+        ]
+    },
+    {
+        "niscode": "72030",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Peer"
+            },
+            {
+                "taal": "nl",
+                "naam": "Peer"
+            }
+        ]
+    },
+    {
+        "niscode": "72043",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pelt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pelt"
+            }
+        ]
+    },
+    {
+        "niscode": "73001",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Alken"
+            },
+            {
+                "taal": "nl",
+                "naam": "Alken"
+            }
+        ]
+    },
+    {
+        "niscode": "73006",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bilzen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bilzen"
+            }
+        ]
+    },
+    {
+        "niscode": "73109",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fourons"
+            },
+            {
+                "taal": "nl",
+                "naam": "Voeren"
+            }
+        ]
+    },
+    {
+        "niscode": "73022",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Heers"
+            },
+            {
+                "taal": "nl",
+                "naam": "Heers"
+            }
+        ]
+    },
+    {
+        "niscode": "73028",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herstappe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herstappe"
+            }
+        ]
+    },
+    {
+        "niscode": "73032",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hoeselt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hoeselt"
+            }
+        ]
+    },
+    {
+        "niscode": "73040",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Kortessem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kortessem"
+            }
+        ]
+    },
+    {
+        "niscode": "73042",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lanaken"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lanaken"
+            }
+        ]
+    },
+    {
+        "niscode": "73009",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Looz"
+            },
+            {
+                "taal": "nl",
+                "naam": "Borgloon"
+            }
+        ]
+    },
+    {
+        "niscode": "73107",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Maasmechelen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Maasmechelen"
+            }
+        ]
+    },
+    {
+        "niscode": "73066",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Riemst"
+            },
+            {
+                "taal": "nl",
+                "naam": "Riemst"
+            }
+        ]
+    },
+    {
+        "niscode": "73083",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tongres"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tongeren"
+            }
+        ]
+    },
+    {
+        "niscode": "73098",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wellen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wellen"
+            }
+        ]
+    },
+    {
+        "niscode": "25005",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beauvechain"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bevekom"
+            }
+        ]
+    },
+    {
+        "niscode": "25014",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Braine-l'Alleud"
+            },
+            {
+                "taal": "nl",
+                "naam": "Eigenbrakel"
+            }
+        ]
+    },
+    {
+        "niscode": "25015",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Braine-le-Château"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kasteelbrakel"
+            }
+        ]
+    },
+    {
+        "niscode": "25117",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chastre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chastre"
+            }
+        ]
+    },
+    {
+        "niscode": "25018",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chaumont-Gistoux"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chaumont-Gistoux"
+            }
+        ]
+    },
+    {
+        "niscode": "25023",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Court-Saint-Etienne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Court-Saint-Etienne"
+            }
+        ]
+    },
+    {
+        "niscode": "25031",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Genappe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Genepien"
+            }
+        ]
+    },
+    {
+        "niscode": "25037",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Grez-Doiceau"
+            },
+            {
+                "taal": "nl",
+                "naam": "Graven"
+            }
+        ]
+    },
+    {
+        "niscode": "25118",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hélécine"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hélécine"
+            }
+        ]
+    },
+    {
+        "niscode": "25043",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Incourt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Incourt"
+            }
+        ]
+    },
+    {
+        "niscode": "25044",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ittre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Itter"
+            }
+        ]
+    },
+    {
+        "niscode": "25048",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Jodoigne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Geldenaken"
+            }
+        ]
+    },
+    {
+        "niscode": "25050",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "La Hulpe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Terhulpen"
+            }
+        ]
+    },
+    {
+        "niscode": "25119",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lasne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lasne"
+            }
+        ]
+    },
+    {
+        "niscode": "25068",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mont-Saint-Guibert"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mont-Saint-Guibert"
+            }
+        ]
+    },
+    {
+        "niscode": "25072",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nivelles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nijvel"
+            }
+        ]
+    },
+    {
+        "niscode": "25120",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Orp-Jauche"
+            },
+            {
+                "taal": "nl",
+                "naam": "Orp-Jauche"
+            }
+        ]
+    },
+    {
+        "niscode": "25121",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ottignies-Louvain-la-Neuve"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ottignies-Louvain-la-Neuve"
+            }
+        ]
+    },
+    {
+        "niscode": "25084",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Perwez"
+            },
+            {
+                "taal": "nl",
+                "naam": "Perwijs"
+            }
+        ]
+    },
+    {
+        "niscode": "25122",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ramillies"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ramillies"
+            }
+        ]
+    },
+    {
+        "niscode": "25123",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rebecq"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rebecq"
+            }
+        ]
+    },
+    {
+        "niscode": "25091",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rixensart"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rixensart"
+            }
+        ]
+    },
+    {
+        "niscode": "25105",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tubize"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tubeke"
+            }
+        ]
+    },
+    {
+        "niscode": "25107",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Villers-la-Ville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Villers-la-Ville"
+            }
+        ]
+    },
+    {
+        "niscode": "25124",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Walhain"
+            },
+            {
+                "taal": "nl",
+                "naam": "Walhain"
+            }
+        ]
+    },
+    {
+        "niscode": "25110",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Waterloo"
+            },
+            {
+                "taal": "nl",
+                "naam": "Waterloo"
+            }
+        ]
+    },
+    {
+        "niscode": "25112",
+        "provincie": "20002",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wavre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Waver"
+            }
+        ]
+    },
+    {
+        "niscode": "51004",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ath"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aat"
+            }
+        ]
+    },
+    {
+        "niscode": "51008",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beloeil"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beloeil"
+            }
+        ]
+    },
+    {
+        "niscode": "51009",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bernissart"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bernissart"
+            }
+        ]
+    },
+    {
+        "niscode": "51012",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Brugelette"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brugelette"
+            }
+        ]
+    },
+    {
+        "niscode": "51014",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chièvres"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chièvres"
+            }
+        ]
+    },
+    {
+        "niscode": "51017",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ellezelles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Elzele"
+            }
+        ]
+    },
+    {
+        "niscode": "51067",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Enghien"
+            },
+            {
+                "taal": "nl",
+                "naam": "Edingen"
+            }
+        ]
+    },
+    {
+        "niscode": "51019",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Flobecq"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vloesberg"
+            }
+        ]
+    },
+    {
+        "niscode": "51065",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Frasnes-lez-Anvaing"
+            },
+            {
+                "taal": "nl",
+                "naam": "Frasnes-lez-Anvaing"
+            }
+        ]
+    },
+    {
+        "niscode": "51069",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lessines"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lessen"
+            }
+        ]
+    },
+    {
+        "niscode": "51068",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Silly"
+            },
+            {
+                "taal": "nl",
+                "naam": "Opzullik"
+            }
+        ]
+    },
+    {
+        "niscode": "52074",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aiseau-Presles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aiseau-Presles"
+            }
+        ]
+    },
+    {
+        "niscode": "52010",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chapelle-lez-Herlaimont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chapelle-lez-Herlaimont"
+            }
+        ]
+    },
+    {
+        "niscode": "52011",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Charleroi"
+            },
+            {
+                "taal": "nl",
+                "naam": "Charleroi"
+            }
+        ]
+    },
+    {
+        "niscode": "52012",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Châtelet"
+            },
+            {
+                "taal": "nl",
+                "naam": "Châtelet"
+            }
+        ]
+    },
+    {
+        "niscode": "52015",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Courcelles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Courcelles"
+            }
+        ]
+    },
+    {
+        "niscode": "52018",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Farciennes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Farciennes"
+            }
+        ]
+    },
+    {
+        "niscode": "52021",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fleurus"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fleurus"
+            }
+        ]
+    },
+    {
+        "niscode": "52022",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fontaine-l'Evêque"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fontaine-l'Evêque"
+            }
+        ]
+    },
+    {
+        "niscode": "52025",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gerpinnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gerpinnes"
+            }
+        ]
+    },
+    {
+        "niscode": "52075",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Les Bons Villers"
+            },
+            {
+                "taal": "nl",
+                "naam": "Les Bons Villers"
+            }
+        ]
+    },
+    {
+        "niscode": "52048",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Montigny-le-Tilleul"
+            },
+            {
+                "taal": "nl",
+                "naam": "Montigny-le-Tilleul"
+            }
+        ]
+    },
+    {
+        "niscode": "52055",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pont-à-Celles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pont-à-Celles"
+            }
+        ]
+    },
+    {
+        "niscode": "53014",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Boussu"
+            },
+            {
+                "taal": "nl",
+                "naam": "Boussu"
+            }
+        ]
+    },
+    {
+        "niscode": "53082",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Colfontaine"
+            },
+            {
+                "taal": "nl",
+                "naam": "Colfontaine"
+            }
+        ]
+    },
+    {
+        "niscode": "53020",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dour"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dour"
+            }
+        ]
+    },
+    {
+        "niscode": "53028",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Frameries"
+            },
+            {
+                "taal": "nl",
+                "naam": "Frameries"
+            }
+        ]
+    },
+    {
+        "niscode": "53039",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hensies"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hensies"
+            }
+        ]
+    },
+    {
+        "niscode": "53083",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Honnelles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Honnelles"
+            }
+        ]
+    },
+    {
+        "niscode": "53044",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Jurbise"
+            },
+            {
+                "taal": "nl",
+                "naam": "Jurbeke"
+            }
+        ]
+    },
+    {
+        "niscode": "53046",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lens"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lens"
+            }
+        ]
+    },
+    {
+        "niscode": "53053",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mons"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bergen"
+            }
+        ]
+    },
+    {
+        "niscode": "53065",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Quaregnon"
+            },
+            {
+                "taal": "nl",
+                "naam": "Quaregnon"
+            }
+        ]
+    },
+    {
+        "niscode": "53084",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Quévy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Quévy"
+            }
+        ]
+    },
+    {
+        "niscode": "53068",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Quiévrain"
+            },
+            {
+                "taal": "nl",
+                "naam": "Quiévrain"
+            }
+        ]
+    },
+    {
+        "niscode": "53070",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Ghislain"
+            },
+            {
+                "taal": "nl",
+                "naam": "Saint-Ghislain"
+            }
+        ]
+    },
+    {
+        "niscode": "55004",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Braine-le-Comte"
+            },
+            {
+                "taal": "nl",
+                "naam": "'s Gravenbrakel"
+            }
+        ]
+    },
+    {
+        "niscode": "55050",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ecaussinnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ecaussinnes"
+            }
+        ]
+    },
+    {
+        "niscode": "55035",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Le Roeulx"
+            },
+            {
+                "taal": "nl",
+                "naam": "Le Roeulx"
+            }
+        ]
+    },
+    {
+        "niscode": "55086",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Manage"
+            },
+            {
+                "taal": "nl",
+                "naam": "Manage"
+            }
+        ]
+    },
+    {
+        "niscode": "55085",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Seneffe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Seneffe"
+            }
+        ]
+    },
+    {
+        "niscode": "55040",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Soignies"
+            },
+            {
+                "taal": "nl",
+                "naam": "Zinnik"
+            }
+        ]
+    },
+    {
+        "niscode": "56001",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Anderlues"
+            },
+            {
+                "taal": "nl",
+                "naam": "Anderlues"
+            }
+        ]
+    },
+    {
+        "niscode": "56005",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beaumont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beaumont"
+            }
+        ]
+    },
+    {
+        "niscode": "56016",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chimay"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chimay"
+            }
+        ]
+    },
+    {
+        "niscode": "56022",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Erquelinnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Erquelinnes"
+            }
+        ]
+    },
+    {
+        "niscode": "56029",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Froidchapelle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Froidchapelle"
+            }
+        ]
+    },
+    {
+        "niscode": "56086",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ham-sur-Heure-Nalinnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ham-sur-Heure-Nalinnes"
+            }
+        ]
+    },
+    {
+        "niscode": "56044",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lobbes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lobbes"
+            }
+        ]
+    },
+    {
+        "niscode": "56049",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Merbes-le-Château"
+            },
+            {
+                "taal": "nl",
+                "naam": "Merbes-le-Château"
+            }
+        ]
+    },
+    {
+        "niscode": "56051",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Momignies"
+            },
+            {
+                "taal": "nl",
+                "naam": "Momignies"
+            }
+        ]
+    },
+    {
+        "niscode": "56088",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sivry-Rance"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sivry-Rance"
+            }
+        ]
+    },
+    {
+        "niscode": "56078",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Thuin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Thuin"
+            }
+        ]
+    },
+    {
+        "niscode": "57003",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Antoing"
+            },
+            {
+                "taal": "nl",
+                "naam": "Antoing"
+            }
+        ]
+    },
+    {
+        "niscode": "57093",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Brunehaut"
+            },
+            {
+                "taal": "nl",
+                "naam": "Brunehaut"
+            }
+        ]
+    },
+    {
+        "niscode": "57018",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Celles"
+            },
+            {
+                "taal": "nl",
+                "naam": "Celles"
+            }
+        ]
+    },
+    {
+        "niscode": "57097",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Comines-Warneton"
+            },
+            {
+                "taal": "nl",
+                "naam": "Komen-Waasten"
+            }
+        ]
+    },
+    {
+        "niscode": "57027",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Estaimpuis"
+            },
+            {
+                "taal": "nl",
+                "naam": "Estaimpuis"
+            }
+        ]
+    },
+    {
+        "niscode": "57094",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Leuze-en-Hainaut"
+            },
+            {
+                "taal": "nl",
+                "naam": "Leuze-en-Hainaut"
+            }
+        ]
+    },
+    {
+        "niscode": "57095",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mont-de-l'Enclus"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mont-de-l'Enclus"
+            }
+        ]
+    },
+    {
+        "niscode": "57096",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mouscron"
+            },
+            {
+                "taal": "nl",
+                "naam": "Moeskroen"
+            }
+        ]
+    },
+    {
+        "niscode": "57062",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pecq"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pecq"
+            }
+        ]
+    },
+    {
+        "niscode": "57064",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Péruwelz"
+            },
+            {
+                "taal": "nl",
+                "naam": "Péruwelz"
+            }
+        ]
+    },
+    {
+        "niscode": "57072",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rumes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rumes"
+            }
+        ]
+    },
+    {
+        "niscode": "57081",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tournai"
+            },
+            {
+                "taal": "nl",
+                "naam": "Doornik"
+            }
+        ]
+    },
+    {
+        "niscode": "58001",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "La Louvière"
+            },
+            {
+                "taal": "nl",
+                "naam": "La Louvière"
+            }
+        ]
+    },
+    {
+        "niscode": "58002",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Binche"
+            },
+            {
+                "taal": "nl",
+                "naam": "Binche"
+            }
+        ]
+    },
+    {
+        "niscode": "58003",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Estinnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Estinnes"
+            }
+        ]
+    },
+    {
+        "niscode": "58004",
+        "provincie": "50000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Morlanwelz"
+            },
+            {
+                "taal": "nl",
+                "naam": "Morlanwelz"
+            }
+        ]
+    },
+    {
+        "niscode": "61003",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Amay"
+            },
+            {
+                "taal": "nl",
+                "naam": "Amay"
+            }
+        ]
+    },
+    {
+        "niscode": "61079",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Anthisnes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Anthisnes"
+            }
+        ]
+    },
+    {
+        "niscode": "61010",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Burdinne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Burdinne"
+            }
+        ]
+    },
+    {
+        "niscode": "61012",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Clavier"
+            },
+            {
+                "taal": "nl",
+                "naam": "Clavier"
+            }
+        ]
+    },
+    {
+        "niscode": "61080",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Engis"
+            },
+            {
+                "taal": "nl",
+                "naam": "Engis"
+            }
+        ]
+    },
+    {
+        "niscode": "61019",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ferrières"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ferrières"
+            }
+        ]
+    },
+    {
+        "niscode": "61024",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hamoir"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hamoir"
+            }
+        ]
+    },
+    {
+        "niscode": "61028",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Héron"
+            },
+            {
+                "taal": "nl",
+                "naam": "Héron"
+            }
+        ]
+    },
+    {
+        "niscode": "61031",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Huy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hoei"
+            }
+        ]
+    },
+    {
+        "niscode": "61039",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Marchin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Marchin"
+            }
+        ]
+    },
+    {
+        "niscode": "61041",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Modave"
+            },
+            {
+                "taal": "nl",
+                "naam": "Modave"
+            }
+        ]
+    },
+    {
+        "niscode": "61043",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nandrin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nandrin"
+            }
+        ]
+    },
+    {
+        "niscode": "61048",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ouffet"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ouffet"
+            }
+        ]
+    },
+    {
+        "niscode": "61081",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tinlot"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tinlot"
+            }
+        ]
+    },
+    {
+        "niscode": "61063",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Verlaine"
+            },
+            {
+                "taal": "nl",
+                "naam": "Verlaine"
+            }
+        ]
+    },
+    {
+        "niscode": "61068",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Villers-le-Bouillet"
+            },
+            {
+                "taal": "nl",
+                "naam": "Villers-le-Bouillet"
+            }
+        ]
+    },
+    {
+        "niscode": "61072",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wanze"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wanze"
+            }
+        ]
+    },
+    {
+        "niscode": "62003",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ans"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ans"
+            }
+        ]
+    },
+    {
+        "niscode": "62006",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Awans"
+            },
+            {
+                "taal": "nl",
+                "naam": "Awans"
+            }
+        ]
+    },
+    {
+        "niscode": "62009",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aywaille"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aywaille"
+            }
+        ]
+    },
+    {
+        "niscode": "62011",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bassenge"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bitsingen"
+            }
+        ]
+    },
+    {
+        "niscode": "62015",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beyne-Heusay"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beyne-Heusay"
+            }
+        ]
+    },
+    {
+        "niscode": "62119",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Blégny"
+            },
+            {
+                "taal": "nl",
+                "naam": "Blégny"
+            }
+        ]
+    },
+    {
+        "niscode": "62022",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chaudfontaine"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chaudfontaine"
+            }
+        ]
+    },
+    {
+        "niscode": "62026",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Comblain-au-Pont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Comblain-au-Pont"
+            }
+        ]
+    },
+    {
+        "niscode": "62027",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dalhem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dalhem"
+            }
+        ]
+    },
+    {
+        "niscode": "62032",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Esneux"
+            },
+            {
+                "taal": "nl",
+                "naam": "Esneux"
+            }
+        ]
+    },
+    {
+        "niscode": "62120",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Flémalle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Flémalle"
+            }
+        ]
+    },
+    {
+        "niscode": "62038",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fléron"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fléron"
+            }
+        ]
+    },
+    {
+        "niscode": "62118",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Grâce-Hollogne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Grâce-Hollogne"
+            }
+        ]
+    },
+    {
+        "niscode": "62051",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herstal"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herstal"
+            }
+        ]
+    },
+    {
+        "niscode": "62060",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Juprelle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Juprelle"
+            }
+        ]
+    },
+    {
+        "niscode": "62063",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Liège"
+            },
+            {
+                "taal": "nl",
+                "naam": "Luik"
+            }
+        ]
+    },
+    {
+        "niscode": "62121",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Neupré"
+            },
+            {
+                "taal": "nl",
+                "naam": "Neupré"
+            }
+        ]
+    },
+    {
+        "niscode": "62079",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oupeye"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oupeye"
+            }
+        ]
+    },
+    {
+        "niscode": "62093",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Nicolas"
+            },
+            {
+                "taal": "nl",
+                "naam": "Saint-Nicolas"
+            }
+        ]
+    },
+    {
+        "niscode": "62096",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Seraing"
+            },
+            {
+                "taal": "nl",
+                "naam": "Seraing"
+            }
+        ]
+    },
+    {
+        "niscode": "62099",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Soumagne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Soumagne"
+            }
+        ]
+    },
+    {
+        "niscode": "62100",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sprimont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sprimont"
+            }
+        ]
+    },
+    {
+        "niscode": "62122",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Trooz"
+            },
+            {
+                "taal": "nl",
+                "naam": "Trooz"
+            }
+        ]
+    },
+    {
+        "niscode": "62108",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Visé"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wezet"
+            }
+        ]
+    },
+    {
+        "niscode": "63001",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Amblève"
+            },
+            {
+                "taal": "nl",
+                "naam": "Amel"
+            }
+        ]
+    },
+    {
+        "niscode": "63003",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aubel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aubel"
+            }
+        ]
+    },
+    {
+        "niscode": "63004",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Baelen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Baelen"
+            }
+        ]
+    },
+    {
+        "niscode": "63012",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bullange"
+            },
+            {
+                "taal": "nl",
+                "naam": "Büllingen"
+            }
+        ]
+    },
+    {
+        "niscode": "63087",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Burg-Reuland"
+            },
+            {
+                "taal": "nl",
+                "naam": "Burg-Reuland"
+            }
+        ]
+    },
+    {
+        "niscode": "63013",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Butgenbach"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bütgenbach"
+            }
+        ]
+    },
+    {
+        "niscode": "63020",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dison"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dison"
+            }
+        ]
+    },
+    {
+        "niscode": "63023",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Eupen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Eupen"
+            }
+        ]
+    },
+    {
+        "niscode": "63035",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herve"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herve"
+            }
+        ]
+    },
+    {
+        "niscode": "63038",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Jalhay"
+            },
+            {
+                "taal": "nl",
+                "naam": "Jalhay"
+            }
+        ]
+    },
+    {
+        "niscode": "63040",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "La Calamine"
+            },
+            {
+                "taal": "nl",
+                "naam": "Kelmis"
+            }
+        ]
+    },
+    {
+        "niscode": "63045",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lierneux"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lierneux"
+            }
+        ]
+    },
+    {
+        "niscode": "63046",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Limbourg"
+            },
+            {
+                "taal": "nl",
+                "naam": "Limburg"
+            }
+        ]
+    },
+    {
+        "niscode": "63048",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lontzen"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lontzen"
+            }
+        ]
+    },
+    {
+        "niscode": "63049",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Malmedy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Malmedy"
+            }
+        ]
+    },
+    {
+        "niscode": "63057",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Olne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Olne"
+            }
+        ]
+    },
+    {
+        "niscode": "63058",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pepinster"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pepinster"
+            }
+        ]
+    },
+    {
+        "niscode": "63088",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Plombières"
+            },
+            {
+                "taal": "nl",
+                "naam": "Plombières"
+            }
+        ]
+    },
+    {
+        "niscode": "63061",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Raeren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Raeren"
+            }
+        ]
+    },
+    {
+        "niscode": "63067",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Vith"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sankt Vith"
+            }
+        ]
+    },
+    {
+        "niscode": "63072",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Spa"
+            },
+            {
+                "taal": "nl",
+                "naam": "Spa"
+            }
+        ]
+    },
+    {
+        "niscode": "63073",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Stavelot"
+            },
+            {
+                "taal": "nl",
+                "naam": "Stavelot"
+            }
+        ]
+    },
+    {
+        "niscode": "63075",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Stoumont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Stoumont"
+            }
+        ]
+    },
+    {
+        "niscode": "63076",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Theux"
+            },
+            {
+                "taal": "nl",
+                "naam": "Theux"
+            }
+        ]
+    },
+    {
+        "niscode": "63089",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Thimister-Clermont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Thimister-Clermont"
+            }
+        ]
+    },
+    {
+        "niscode": "63086",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Trois-Ponts"
+            },
+            {
+                "taal": "nl",
+                "naam": "Trois-Ponts"
+            }
+        ]
+    },
+    {
+        "niscode": "63079",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Verviers"
+            },
+            {
+                "taal": "nl",
+                "naam": "Verviers"
+            }
+        ]
+    },
+    {
+        "niscode": "63080",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Waimes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Weismes"
+            }
+        ]
+    },
+    {
+        "niscode": "63084",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Welkenraedt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Welkenraedt"
+            }
+        ]
+    },
+    {
+        "niscode": "64008",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Berloz"
+            },
+            {
+                "taal": "nl",
+                "naam": "Berloz"
+            }
+        ]
+    },
+    {
+        "niscode": "64015",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Braives"
+            },
+            {
+                "taal": "nl",
+                "naam": "Braives"
+            }
+        ]
+    },
+    {
+        "niscode": "64021",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Crisnée"
+            },
+            {
+                "taal": "nl",
+                "naam": "Crisnée"
+            }
+        ]
+    },
+    {
+        "niscode": "64023",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Donceel"
+            },
+            {
+                "taal": "nl",
+                "naam": "Donceel"
+            }
+        ]
+    },
+    {
+        "niscode": "64076",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Faimes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Faimes"
+            }
+        ]
+    },
+    {
+        "niscode": "64025",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fexhe-le-Haut-Clocher"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fexhe-le-Haut-Clocher"
+            }
+        ]
+    },
+    {
+        "niscode": "64029",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Geer"
+            },
+            {
+                "taal": "nl",
+                "naam": "Geer"
+            }
+        ]
+    },
+    {
+        "niscode": "64034",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hannut"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hannuit"
+            }
+        ]
+    },
+    {
+        "niscode": "64047",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lincent"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lijsem"
+            }
+        ]
+    },
+    {
+        "niscode": "64056",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Oreye"
+            },
+            {
+                "taal": "nl",
+                "naam": "Oerle"
+            }
+        ]
+    },
+    {
+        "niscode": "64063",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Remicourt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Remicourt"
+            }
+        ]
+    },
+    {
+        "niscode": "64065",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Georges-sur-Meuse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Saint-Georges-sur-Meuse"
+            }
+        ]
+    },
+    {
+        "niscode": "64074",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Waremme"
+            },
+            {
+                "taal": "nl",
+                "naam": "Borgworm"
+            }
+        ]
+    },
+    {
+        "niscode": "64075",
+        "provincie": "60000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wasseiges"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wasseiges"
+            }
+        ]
+    },
+    {
+        "niscode": "81001",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Arlon"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aarlen"
+            }
+        ]
+    },
+    {
+        "niscode": "81003",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Attert"
+            },
+            {
+                "taal": "nl",
+                "naam": "Attert"
+            }
+        ]
+    },
+    {
+        "niscode": "81004",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Aubange"
+            },
+            {
+                "taal": "nl",
+                "naam": "Aubange"
+            }
+        ]
+    },
+    {
+        "niscode": "81013",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Martelange"
+            },
+            {
+                "taal": "nl",
+                "naam": "Martelange"
+            }
+        ]
+    },
+    {
+        "niscode": "81015",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Messancy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Messancy"
+            }
+        ]
+    },
+    {
+        "niscode": "82003",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bastogne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bastenaken"
+            }
+        ]
+    },
+    {
+        "niscode": "82005",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bertogne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bertogne"
+            }
+        ]
+    },
+    {
+        "niscode": "82009",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fauvillers"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fauvillers"
+            }
+        ]
+    },
+    {
+        "niscode": "82037",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gouvy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gouvy"
+            }
+        ]
+    },
+    {
+        "niscode": "82014",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Houffalize"
+            },
+            {
+                "taal": "nl",
+                "naam": "Houffalize"
+            }
+        ]
+    },
+    {
+        "niscode": "82038",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sainte-Ode"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sainte-Ode"
+            }
+        ]
+    },
+    {
+        "niscode": "82036",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vaux-sur-Sûre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vaux-sur-Sûre"
+            }
+        ]
+    },
+    {
+        "niscode": "82032",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vielsalm"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vielsalm"
+            }
+        ]
+    },
+    {
+        "niscode": "83012",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Durbuy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Durbuy"
+            }
+        ]
+    },
+    {
+        "niscode": "83013",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Erezée"
+            },
+            {
+                "taal": "nl",
+                "naam": "Erezée"
+            }
+        ]
+    },
+    {
+        "niscode": "83028",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hotton"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hotton"
+            }
+        ]
+    },
+    {
+        "niscode": "83031",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "La Roche-en-Ardenne"
+            },
+            {
+                "taal": "nl",
+                "naam": "La Roche-en-Ardenne"
+            }
+        ]
+    },
+    {
+        "niscode": "83055",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Manhay"
+            },
+            {
+                "taal": "nl",
+                "naam": "Manhay"
+            }
+        ]
+    },
+    {
+        "niscode": "83034",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Marche-en-Famenne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Marche-en-Famenne"
+            }
+        ]
+    },
+    {
+        "niscode": "83040",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nassogne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nassogne"
+            }
+        ]
+    },
+    {
+        "niscode": "83044",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rendeux"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rendeux"
+            }
+        ]
+    },
+    {
+        "niscode": "83049",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tenneville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tenneville"
+            }
+        ]
+    },
+    {
+        "niscode": "84009",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bertrix"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bertrix"
+            }
+        ]
+    },
+    {
+        "niscode": "84010",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bouillon"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bouillon"
+            }
+        ]
+    },
+    {
+        "niscode": "84016",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Daverdisse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Daverdisse"
+            }
+        ]
+    },
+    {
+        "niscode": "84029",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Herbeumont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Herbeumont"
+            }
+        ]
+    },
+    {
+        "niscode": "84033",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Léglise"
+            },
+            {
+                "taal": "nl",
+                "naam": "Léglise"
+            }
+        ]
+    },
+    {
+        "niscode": "84035",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Libin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Libin"
+            }
+        ]
+    },
+    {
+        "niscode": "84077",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Libramont-Chevigny"
+            },
+            {
+                "taal": "nl",
+                "naam": "Libramont-Chevigny"
+            }
+        ]
+    },
+    {
+        "niscode": "84043",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Neufchâteau"
+            },
+            {
+                "taal": "nl",
+                "naam": "Neufchâteau"
+            }
+        ]
+    },
+    {
+        "niscode": "84050",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Paliseul"
+            },
+            {
+                "taal": "nl",
+                "naam": "Paliseul"
+            }
+        ]
+    },
+    {
+        "niscode": "84059",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Hubert"
+            },
+            {
+                "taal": "nl",
+                "naam": "Saint-Hubert"
+            }
+        ]
+    },
+    {
+        "niscode": "84068",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tellin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tellin"
+            }
+        ]
+    },
+    {
+        "niscode": "84075",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wellin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wellin"
+            }
+        ]
+    },
+    {
+        "niscode": "85007",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Chiny"
+            },
+            {
+                "taal": "nl",
+                "naam": "Chiny"
+            }
+        ]
+    },
+    {
+        "niscode": "85009",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Etalle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Etalle"
+            }
+        ]
+    },
+    {
+        "niscode": "85011",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Florenville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Florenville"
+            }
+        ]
+    },
+    {
+        "niscode": "85046",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Habay"
+            },
+            {
+                "taal": "nl",
+                "naam": "Habay"
+            }
+        ]
+    },
+    {
+        "niscode": "85024",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Meix-devant-Virton"
+            },
+            {
+                "taal": "nl",
+                "naam": "Meix-devant-Virton"
+            }
+        ]
+    },
+    {
+        "niscode": "85026",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Musson"
+            },
+            {
+                "taal": "nl",
+                "naam": "Musson"
+            }
+        ]
+    },
+    {
+        "niscode": "85047",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rouvroy"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rouvroy"
+            }
+        ]
+    },
+    {
+        "niscode": "85034",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Saint-Léger"
+            },
+            {
+                "taal": "nl",
+                "naam": "Saint-Léger"
+            }
+        ]
+    },
+    {
+        "niscode": "85039",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tintigny"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tintigny"
+            }
+        ]
+    },
+    {
+        "niscode": "85045",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Virton"
+            },
+            {
+                "taal": "nl",
+                "naam": "Virton"
+            }
+        ]
+    },
+    {
+        "niscode": "91005",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Anhée"
+            },
+            {
+                "taal": "nl",
+                "naam": "Anhée"
+            }
+        ]
+    },
+    {
+        "niscode": "91013",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beauraing"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beauraing"
+            }
+        ]
+    },
+    {
+        "niscode": "91015",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bièvre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bièvre"
+            }
+        ]
+    },
+    {
+        "niscode": "91030",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ciney"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ciney"
+            }
+        ]
+    },
+    {
+        "niscode": "91034",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Dinant"
+            },
+            {
+                "taal": "nl",
+                "naam": "Dinant"
+            }
+        ]
+    },
+    {
+        "niscode": "91054",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gedinne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gedinne"
+            }
+        ]
+    },
+    {
+        "niscode": "91059",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hamois"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hamois"
+            }
+        ]
+    },
+    {
+        "niscode": "91142",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hastière"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hastière"
+            }
+        ]
+    },
+    {
+        "niscode": "91064",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Havelange"
+            },
+            {
+                "taal": "nl",
+                "naam": "Havelange"
+            }
+        ]
+    },
+    {
+        "niscode": "91072",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Houyet"
+            },
+            {
+                "taal": "nl",
+                "naam": "Houyet"
+            }
+        ]
+    },
+    {
+        "niscode": "91103",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Onhaye"
+            },
+            {
+                "taal": "nl",
+                "naam": "Onhaye"
+            }
+        ]
+    },
+    {
+        "niscode": "91114",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Rochefort"
+            },
+            {
+                "taal": "nl",
+                "naam": "Rochefort"
+            }
+        ]
+    },
+    {
+        "niscode": "91120",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Somme-Leuze"
+            },
+            {
+                "taal": "nl",
+                "naam": "Somme-Leuze"
+            }
+        ]
+    },
+    {
+        "niscode": "91143",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Vresse-sur-Semois"
+            },
+            {
+                "taal": "nl",
+                "naam": "Vresse-sur-Semois"
+            }
+        ]
+    },
+    {
+        "niscode": "91141",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Yvoir"
+            },
+            {
+                "taal": "nl",
+                "naam": "Yvoir"
+            }
+        ]
+    },
+    {
+        "niscode": "92003",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Andenne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Andenne"
+            }
+        ]
+    },
+    {
+        "niscode": "92006",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Assesse"
+            },
+            {
+                "taal": "nl",
+                "naam": "Assesse"
+            }
+        ]
+    },
+    {
+        "niscode": "92035",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Eghezée"
+            },
+            {
+                "taal": "nl",
+                "naam": "Eghezée"
+            }
+        ]
+    },
+    {
+        "niscode": "92138",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fernelmont"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fernelmont"
+            }
+        ]
+    },
+    {
+        "niscode": "92045",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Floreffe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Floreffe"
+            }
+        ]
+    },
+    {
+        "niscode": "92048",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Fosses-la-Ville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Fosses-la-Ville"
+            }
+        ]
+    },
+    {
+        "niscode": "92142",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gembloux"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gembloux"
+            }
+        ]
+    },
+    {
+        "niscode": "92054",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Gesves"
+            },
+            {
+                "taal": "nl",
+                "naam": "Gesves"
+            }
+        ]
+    },
+    {
+        "niscode": "92140",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Jemeppe-sur-Sambre"
+            },
+            {
+                "taal": "nl",
+                "naam": "Jemeppe-sur-Sambre"
+            }
+        ]
+    },
+    {
+        "niscode": "92141",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "La Bruyère"
+            },
+            {
+                "taal": "nl",
+                "naam": "La Bruyère"
+            }
+        ]
+    },
+    {
+        "niscode": "92087",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Mettet"
+            },
+            {
+                "taal": "nl",
+                "naam": "Mettet"
+            }
+        ]
+    },
+    {
+        "niscode": "92094",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Namur"
+            },
+            {
+                "taal": "nl",
+                "naam": "Namen"
+            }
+        ]
+    },
+    {
+        "niscode": "92097",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Ohey"
+            },
+            {
+                "taal": "nl",
+                "naam": "Ohey"
+            }
+        ]
+    },
+    {
+        "niscode": "92101",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Profondeville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Profondeville"
+            }
+        ]
+    },
+    {
+        "niscode": "92137",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sambreville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sambreville"
+            }
+        ]
+    },
+    {
+        "niscode": "92114",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Sombreffe"
+            },
+            {
+                "taal": "nl",
+                "naam": "Sombreffe"
+            }
+        ]
+    },
+    {
+        "niscode": "93010",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Cerfontaine"
+            },
+            {
+                "taal": "nl",
+                "naam": "Cerfontaine"
+            }
+        ]
+    },
+    {
+        "niscode": "93014",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Couvin"
+            },
+            {
+                "taal": "nl",
+                "naam": "Couvin"
+            }
+        ]
+    },
+    {
+        "niscode": "93018",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Doische"
+            },
+            {
+                "taal": "nl",
+                "naam": "Doische"
+            }
+        ]
+    },
+    {
+        "niscode": "93022",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Florennes"
+            },
+            {
+                "taal": "nl",
+                "naam": "Florennes"
+            }
+        ]
+    },
+    {
+        "niscode": "93056",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Philippeville"
+            },
+            {
+                "taal": "nl",
+                "naam": "Philippeville"
+            }
+        ]
+    },
+    {
+        "niscode": "93090",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Viroinval"
+            },
+            {
+                "taal": "nl",
+                "naam": "Viroinval"
+            }
+        ]
+    },
+    {
+        "niscode": "93088",
+        "provincie": "90000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Walcourt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Walcourt"
+            }
+        ]
+    }
+]
