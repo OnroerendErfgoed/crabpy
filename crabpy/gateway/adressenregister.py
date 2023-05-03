@@ -141,7 +141,7 @@ class Gateway:
             return Provincie(
                 niscode=data["niscode"],
                 naam=data["naam"],
-                gewest=data["gewest"],
+                gewest_niscode=data["gewest"],
                 gateway=self,
             )
 
@@ -160,27 +160,30 @@ class Gateway:
     def list_gewesten(self):
         return self.gewesten
 
-    def get_gewest_by_id(self, id_):
+    def get_gewest_by_niscode(self, niscode):
         """
-        Get a `gewest` by id.
+        Get a `gewest` by niscode.
 
-        :param integer id_: The id of a `gewest`.
+        :param string niscode: The niscode of a `gewest`.
         :rtype: A :class:`Gewest`.
         """
         for gewest in self.gewesten:
-            if gewest.id == id_:
+            if gewest.niscode == niscode:
                 return gewest
         raise GatewayResourceNotFoundException()
 
-    def list_provincies(self, gewest=2):
+    def list_provincies(self, gewest_niscode="2000"):
         """
         List all `provincies` in a `gewest`.
 
-        :param gewest: The :class:`Gewest` for which the \
-            `provincies` are wanted.
+        :param gewest_niscode: The niscode for which the `provincies` are wanted.
         :rtype: A :class:`list` of :class:`Provincie`.
         """
-        return [provincie for provincie in self.provincies if provincie.gewest == gewest]
+        return [
+            provincie
+            for provincie in self.provincies
+            if provincie.gewest_niscode == gewest_niscode
+        ]
 
     def get_provincie_by_id(self, niscode):
         """
@@ -189,7 +192,7 @@ class Gateway:
         :param str niscode: The niscode of the provincie.
         :rtype: :class:`Provincie`
         """
-        niscode = str(niscode)
+        niscode = niscode
         for provincie in self.provincies:
             if provincie.niscode == niscode:
                 return provincie
@@ -205,14 +208,14 @@ class Gateway:
         """
         if not isinstance(provincie, Provincie):
             provincie = self.get_provincie_by_id(provincie)
-        provincie_niscode = str(provincie.niscode)
+        provincie_niscode = provincie.niscode
         return [
             gemeente
             for gemeente in self.gemeenten
             if gemeente.provincie_niscode == provincie_niscode
         ]
 
-    def list_gemeenten(self, gewest=2):
+    def list_gemeenten(self, gewest_niscode="2000"):
         """
         List all `gemeenten` in a `gewest`.
 
@@ -221,7 +224,7 @@ class Gateway:
         :rtype: A :class:`list` of :class:`Gemeente`.
         """
         # Brussel is a special case, because it has no provinces
-        if str(gewest) == "1":
+        if gewest_niscode == "4000":
             return [
                 gemeente
                 for gemeente in self.gemeenten
@@ -229,8 +232,8 @@ class Gateway:
             ]
         provincie_niscodes = [
             provincie.niscode
-            for provincie in self.list_provincies(gewest=gewest)
-            if provincie.gewest == gewest
+            for provincie in self.list_provincies(gewest_niscode=gewest_niscode)
+            if provincie.gewest_niscode == gewest_niscode
         ]
         return [
             gemeente
@@ -242,11 +245,11 @@ class Gateway:
         """
         Retrieve a `gemeente` by the NIScode.
 
-        :param integer niscode: The NIScode of the gemeente.
+        :param string niscode: The NIScode of the gemeente.
         :rtype: :class:`Gemeente`
         """
         return next(
-            (gemeente for gemeente in self.gemeenten if gemeente.niscode == str(niscode)),
+            (gemeente for gemeente in self.gemeenten if gemeente.niscode == niscode),
             None,
         )
 
@@ -268,12 +271,12 @@ class Gateway:
         """
         Retrieve a `postinfo` by crab id.
 
-        :param integer gemeente_id: The crab id of the municipality.
+        :param integer postcode: The postcode the municipality.
         :rtype: :class:`Postinfo`
         """
         return Postinfo.from_get_response(self.client.get_postinfo(postcode), self)
 
-    def list_deelgemeenten(self, gewest=2):
+    def list_deelgemeenten(self, gewest_niscode="2000"):
         """
         List all `deelgemeenten` in a `gewest`.
 
@@ -283,8 +286,8 @@ class Gateway:
         """
         first_niscode_digits = [
             provincie.niscode[0]
-            for provincie in self.list_provincies(gewest=gewest)
-            if provincie.gewest == gewest or gewest is None
+            for provincie in self.list_provincies(gewest_niscode=gewest_niscode)
+            if provincie.gewest_niscode == gewest_niscode or gewest_niscode is None
         ]
         return [
             deelgemeente
@@ -345,7 +348,7 @@ class Gateway:
         """
         Retrieve a `straat` by the Id.
 
-        :param integer straat_id: The id of the `straat`.
+        :param string straat_id: The id of the `straat`.
         :rtype: :class:`Straat`
         """
         return Straat.from_get_response(self.client.get_straatnaam(straat_id), self)
@@ -371,7 +374,7 @@ class Gateway:
         """
         Retrieve a `adres` by the Id.
 
-        :param integer adres_id: The id of the `adres`.
+        :param string adres_id: The id of the `adres`.
         :rtype: :class:`Adres`
         """
         return Adres.from_get_response(self.client.get_adres(adres_id), self)
@@ -400,7 +403,7 @@ class Gateway:
         :param busnummer: string
         :param niscode: string
         :param status: string
-        :param straatnaamObjectId: integer
+        :param straatnaamObjectId: string
         :return: :rtype: Adres
         """
         return [
@@ -497,11 +500,11 @@ class Gewest(GatewayObject):
 
     @LazyProperty
     def provincies(self):
-        return self.gateway.list_provincies(gewest=self.id)
+        return self.gateway.list_provincies(gewest_niscode=self.niscode)
 
     @LazyProperty
     def gemeenten(self):
-        return self.gateway.list_gemeenten(self.id)
+        return self.gateway.list_gemeenten(self.niscode)
 
     def __str__(self):
         if self.naam is not None:
@@ -520,11 +523,11 @@ class Provincie(GatewayObject):
     .. versionadded:: 0.4.0
     """
 
-    def __init__(self, niscode, naam, gewest, gateway):
+    def __init__(self, niscode, naam, gewest_niscode, gateway):
         super().__init__(gateway)
         self.niscode = niscode
         self.naam = naam
-        self.gewest = gewest
+        self.gewest_niscode = gewest_niscode
 
     @LazyProperty
     def gemeenten(self):
@@ -578,7 +581,7 @@ class Gemeente(GatewayObject):
 
     @LazyProperty
     def gewest(self):
-        return self.gateway.get_gewest_by_id(self.provincie.gewest)
+        return self.gateway.get_gewest_by_niscode(self.provincie.gewest_niscode)
 
     def __str__(self):
         return f"{self.naam} ({self.niscode})"

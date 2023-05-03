@@ -1,51 +1,51 @@
 [
   {
-    "gewest": 2,
+    "gewest": "2000",
     "niscode": "10000",
     "naam": "Antwerpen"
   },
   {
-    "gewest": 2,
+    "gewest": "2000",
     "niscode": "20001",
     "naam": "Vlaams-Brabant"
   },
   {
-    "gewest": 2,
+    "gewest": "2000",
     "niscode": "30000",
     "naam": "West-Vlaanderen"
   },
   {
-    "gewest": 2,
+    "gewest": "2000",
     "niscode": "40000",
     "naam": "Oost-Vlaanderen"
   },
   {
-    "gewest": 2,
+    "gewest": "2000",
     "niscode": "70000",
     "naam": "Limburg"
   },
   {
-    "gewest": 3,
+    "gewest": "3000",
     "niscode": "20002",
     "naam": "Waals-Brabant"
   },
   {
-    "gewest": 3,
+    "gewest": "3000",
     "niscode": "50000",
     "naam": "Henegouwen"
   },
   {
-    "gewest": 3,
+    "gewest": "3000",
     "niscode": "60000",
     "naam": "Luik"
   },
   {
-    "gewest": 3,
+    "gewest": "3000",
     "niscode": "80000",
     "naam": "Luxemburg"
   },
   {
-    "gewest": 3,
+    "gewest": "3000",
     "niscode": "90000",
     "naam": "Namen"
   }
