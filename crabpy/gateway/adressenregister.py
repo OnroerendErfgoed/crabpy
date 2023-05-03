@@ -119,10 +119,19 @@ class Gateway:
                 gateway=self,
             )
 
+        def gemeente_from_json_data(data):
+            return Gemeente(
+                niscode=data["niscode"],
+                provincie_niscode=data["provincie"],
+                namen=data["namen"],
+                gateway=self,
+            )
+
         def gewest_from_json_data(data):
             return Gewest(
                 id_=data["id"],
                 naam=data["naam"],
+                niscode=data["niscode"],
                 centroid=data["centroid"],
                 bounding_box=data["bounding_box"],
                 gateway=self,
@@ -143,6 +152,8 @@ class Gateway:
             self.gewesten = json.load(f, object_hook=gewest_from_json_data)
         with open(os.path.join(data_dir, "provincies.json"), encoding="utf-8") as f:
             self.provincies = json.load(f, object_hook=provincie_from_json_data)
+        with open(os.path.join(data_dir, "gemeenten.json"), encoding="utf-8") as f:
+            self.gemeenten = [gemeente_from_json_data(data) for data in json.load(f)]
 
         setup_cache(cache_settings)
 
@@ -184,7 +195,6 @@ class Gateway:
                 return provincie
         return None
 
-    @LONG_CACHE.cache_on_arguments()
     def list_gemeenten_by_provincie(self, provincie):
         """
         List all `gemeenten` in a `provincie`.
@@ -195,14 +205,13 @@ class Gateway:
         """
         if not isinstance(provincie, Provincie):
             provincie = self.get_provincie_by_id(provincie)
-        first_niscode_digit = str(provincie.niscode)[0]
+        provincie_niscode = str(provincie.niscode)
         return [
-            Gemeente.from_list_response(gemeente, self)
-            for gemeente in self.client.get_gemeenten()
-            if gemeente["identificator"]["objectId"][0] == first_niscode_digit
+            gemeente
+            for gemeente in self.gemeenten
+            if gemeente.provincie_niscode == provincie_niscode
         ]
 
-    @LONG_CACHE.cache_on_arguments()
     def list_gemeenten(self, gewest=2):
         """
         List all `gemeenten` in a `gewest`.
@@ -211,28 +220,24 @@ class Gateway:
             `gemeenten` are wanted.
         :rtype: A :class:`list` of :class:`Gemeente`.
         """
-        first_niscode_digits = [
-            provincie.niscode[0]
+        # Brussel is a special case, because it has no provinces
+        if str(gewest) == "1":
+            return [
+                gemeente
+                for gemeente in self.gemeenten
+                if gemeente.niscode.startswith("21")
+            ]
+        provincie_niscodes = [
+            provincie.niscode
             for provincie in self.list_provincies(gewest=gewest)
-            if provincie.gewest == gewest or gewest is None
+            if provincie.gewest == gewest
         ]
         return [
-            Gemeente.from_list_response(gemeente, self)
-            for gemeente in self.client.get_gemeenten()
-            if gemeente["identificator"]["objectId"][0] in first_niscode_digits
+            gemeente
+            for gemeente in self.gemeenten
+            if gemeente.provincie_niscode in provincie_niscodes
         ]
 
-    @LONG_CACHE.cache_on_arguments()
-    def get_gemeente_by_id(self, gemeente_id):
-        """
-        Retrieve a `gemeente` by the crab id.
-
-        :param integer gemeente_id: The niscode of the gemeente.
-        :rtype: :class:`Gemeente`
-        """
-        return Gemeente.from_get_response(self.client.get_gemeente(gemeente_id), self)
-
-    @LONG_CACHE.cache_on_arguments()
     def get_gemeente_by_niscode(self, niscode):
         """
         Retrieve a `gemeente` by the NIScode.
@@ -240,7 +245,10 @@ class Gateway:
         :param integer niscode: The NIScode of the gemeente.
         :rtype: :class:`Gemeente`
         """
-        return Gemeente.from_get_response(self.client.get_gemeente(niscode), self)
+        return next(
+            (gemeente for gemeente in self.gemeenten if gemeente.niscode == str(niscode)),
+            None,
+        )
 
     @LONG_CACHE.cache_on_arguments()
     def get_postinfo_by_gemeentenaam(self, gemeente_naam):
@@ -265,7 +273,6 @@ class Gateway:
         """
         return Postinfo.from_get_response(self.client.get_postinfo(postcode), self)
 
-    @LONG_CACHE.cache_on_arguments()
     def list_deelgemeenten(self, gewest=2):
         """
         List all `deelgemeenten` in a `gewest`.
@@ -285,7 +292,6 @@ class Gateway:
             if deelgemeente.id[0] in first_niscode_digits
         ]
 
-    @LONG_CACHE.cache_on_arguments()
     def list_deelgemeenten_by_gemeente(self, gemeente):
         """
         List all `deelgemeenten` in a `gemeente`.
@@ -302,7 +308,6 @@ class Gateway:
             if deelgemeente.gemeente_niscode == gemeente.niscode
         ]
 
-    @LONG_CACHE.cache_on_arguments()
     def get_deelgemeente_by_id(self, deelgemeente_id):
         """
         Retrieve a `deelgemeente` by the id.
@@ -482,10 +487,11 @@ class Gewest(GatewayObject):
     of the country.
     """
 
-    def __init__(self, id_, naam, centroid, bounding_box, gateway=None):
+    def __init__(self, id_, niscode, naam, centroid, bounding_box, gateway=None):
         super().__init__(gateway=gateway)
         self.id = int(id_)
         self.naam = naam
+        self.niscode = niscode
         self.centroid = centroid
         self.bounding_box = bounding_box
 
@@ -536,64 +542,26 @@ class Gemeente(GatewayObject):
     The smallest administrative unit in Belgium.
     """
 
-    def __init__(self, niscode, gateway, naam=AUTO, taal=AUTO, status=AUTO, uri=AUTO):
+    def __init__(self, niscode, gateway, provincie_niscode=None, namen=None, naam=None):
         super().__init__(gateway)
         self.niscode = niscode
-        if naam is not AUTO:
+        self.provincie_niscode = provincie_niscode
+        if not (namen or naam):
+            raise ValueError("Either namen or naam must be given")
+        if namen is not None:
+            self.namen = namen
+        if naam is not None:
             if isinstance(naam, str):
                 naam = CallableString(naam)
             if not callable(naam):
                 raise ValueError("naam must be a callable")
             self.naam = naam
-        if taal is not AUTO:
-            self.taal = taal
-        if status is not AUTO:
-            self.status = status
-        if uri is not AUTO:
-            self.uri = uri
-
-    @classmethod
-    def from_list_response(cls, gemeente, gateway):
-        return Gemeente(
-            naam=gemeente["gemeentenaam"]["geografischeNaam"]["spelling"],
-            niscode=gemeente["identificator"]["objectId"],
-            status=gemeente["gemeenteStatus"],
-            uri=gemeente["identificator"]["id"],
-            gateway=gateway,
-        )
-
-    @classmethod
-    def from_get_response(cls, gemeente, gateway):
-        res = Gemeente(niscode=gemeente["identificator"]["objectId"], gateway=gateway)
-        res._source_json = gemeente
-        return res
-
-    @LazyProperty
-    def uri(self):
-        return self._source_json["identificator"]["id"]
-
-    @LazyProperty
-    def taal(self):
-        return self._source_json["officieleTalen"][0]
 
     def naam(self, taal="nl"):
-        for _taal in [taal, self.taal]:
-            naam = next(
-                (
-                    gemeentenaam["spelling"]
-                    for gemeentenaam in self._source_json["gemeentenamen"]
-                    if gemeentenaam["taal"] == _taal
-                ),
-                None,
-            )
-            if naam:
-                return naam
-
-        return self._source_json["gemeentenamen"][0]["spelling"]
-
-    @LazyProperty
-    def status(self):
-        return self._source_json["gemeenteStatus"]
+        return next(
+            (naam["naam"] for naam in self.namen if naam["taal"] == taal),
+            self.namen[0]["naam"],
+        )
 
     @LazyProperty
     def straten(self):
@@ -606,14 +574,11 @@ class Gemeente(GatewayObject):
 
     @LazyProperty
     def provincie(self):
-        for p in self.gateway.provincies:
-            if self.niscode[0] == p.niscode[0]:
-                return p
+        return self.gateway.get_provincie_by_id(self.provincie_niscode)
 
     @LazyProperty
-    @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("niscode"))
-    def _source_json(self):
-        return self.gateway.client.get_gemeente(self.niscode)
+    def gewest(self):
+        return self.gateway.get_gewest_by_id(self.provincie.gewest)
 
     def __str__(self):
         return f"{self.naam} ({self.niscode})"
@@ -637,7 +602,7 @@ class Deelgemeente(GatewayObject):
 
     @LazyProperty
     def gemeente(self):
-        return Gemeente(niscode=self.gemeente_niscode, gateway=self.gateway)
+        return self.gateway.get_gemeente_by_niscode(self.gemeente_niscode)
 
     def __str__(self):
         return f"{self.naam} ({self.id})"
@@ -709,9 +674,8 @@ class Straat(GatewayObject):
 
     @LazyProperty
     def gemeente(self):
-        return Gemeente(
-            niscode=self._source_json["gemeente"]["objectId"], gateway=self.gateway
-        )
+        gemeente_niscode = self._source_json["gemeente"]["objectId"]
+        return self.gateway.get_gemeente_by_niscode(gemeente_niscode)
 
     @LazyProperty
     def adressen(self):
@@ -827,9 +791,8 @@ class Adres(GatewayObject):
 
     @LazyProperty
     def gemeente(self):
-        return Gemeente(
-            niscode=self._source_json["gemeente"]["objectId"], gateway=self.gateway
-        )
+        gemeente_niscode = self._source_json["gemeente"]["objectId"]
+        return self.gateway.get_gemeente_by_niscode(gemeente_niscode)
 
     @LazyProperty
     @SHORT_CACHE.cache_on_arguments(function_key_generator=cache_on_attribute("id"))
@@ -998,13 +961,8 @@ class Postinfo(GatewayObject):
 
     @LazyProperty
     def gemeente(self):
-        return Gemeente(
-            niscode=self._source_json["gemeente"]["objectId"],
-            gateway=self.gateway,
-            naam=self._source_json["gemeente"]["gemeentenaam"]["geografischeNaam"][
-                "spelling"
-            ],
-        )
+        niscode = self._source_json["gemeente"]["objectId"]
+        return self.gateway.get_gemeente_by_niscode(niscode)
 
     def namen(self, taal="nl"):
         namen = [
