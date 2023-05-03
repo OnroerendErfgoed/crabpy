@@ -13,7 +13,6 @@ from crabpy.gateway.adressenregister import Postinfo
 from crabpy.gateway.adressenregister import Provincie
 from crabpy.gateway.adressenregister import Straat
 from crabpy.gateway.exception import GatewayResourceNotFoundException
-from tests import memory_cache
 
 
 @pytest.fixture()
@@ -354,57 +353,47 @@ class TestAdressenRegisterGateway:
         assert res.naam == "Antwerpen"
 
     def test_list_gemeenten_by_provincie(self, gateway, client):
-        one = create_client_list_gemeenten_item()
-        two = create_client_list_gemeenten_item()
-        one["identificator"]["objectId"] = "10001"
-        two["identificator"]["objectId"] = "20001"
-        client.get_gemeenten.return_value = [one, two]
         res = gateway.list_gemeenten_by_provincie(
             Provincie("10000", "antwerpen", 2, gateway)
         )
-        assert len(res) == 1
-        assert res[0].niscode == "10001"
+        assert len(res) == 69
+        assert res[0].niscode == "11001"
 
     def test_get_gewest_by_unexisting_id(self, gateway):
         with pytest.raises(GatewayResourceNotFoundException):
             gateway.get_gewest_by_id(5)
 
     def test_list_gemeenten_default(self, gateway, client):
-        one = create_client_list_gemeenten_item()
-        two = create_client_list_gemeenten_item()
-        three = create_client_list_gemeenten_item()
-        one["identificator"]["objectId"] = "10001"
-        two["identificator"]["objectId"] = "20001"
-        three["identificator"]["objectId"] = "60001"
-        client.get_gemeenten.return_value = [one, two, three]
         res = gateway.list_gemeenten()
-        assert len(res) == 2
-        assert [gemeente.niscode for gemeente in res] == ["10001", "20001"]
-
-    def test_get_gemeente_by_id(self, gateway, client):
-        client.get_gemeente.return_value = create_client_get_gemeente_item()
-        res = gateway.get_gemeente_by_id(1)
-        assert res.niscode == "54007"
-        assert res.naam() == "Moeskroen"
-        assert res.uri == "https://data.vlaanderen.be/id/gemeente/54007"
+        assert len(res) == 300
+        niscodes = [gemeente.niscode for gemeente in res]
+        assert "11001" in niscodes
+        assert "23002" in niscodes
+        assert "31003" in niscodes
+        assert "41002" in niscodes
+        assert "41002" in niscodes
+        assert "71002" in niscodes
 
     def test_get_gemeente_by_niscode(self, gateway, client):
-        client.get_gemeente.return_value = create_client_get_gemeente_item()
-        res = gateway.get_gemeente_by_niscode(1)
-        assert res.niscode == "54007"
+        res = gateway.get_gemeente_by_niscode(57096)
+        assert res.niscode == "57096"
         assert res.naam() == "Moeskroen"
-        assert res.uri == "https://data.vlaanderen.be/id/gemeente/54007"
+        assert res.provincie.niscode == "50000"
+        res = gateway.get_gemeente_by_niscode("57096")
+        assert res.niscode == "57096"
+        assert res.naam() == "Moeskroen"
+        assert res.provincie.niscode == "50000"
 
     def test_list_deelgemeenten(self, gateway):
         res = gateway.list_deelgemeenten()
-        assert len(res) == 1132
+        assert len(res) == 1299
         assert res[0].naam == "Aartselaar"
         assert res[0].id == "11001A"
         assert res[0].gemeente_niscode == "11001"
 
     def test_list_deelgemeenten_by_gemeente(self, gateway):
         res = gateway.list_deelgemeenten_by_gemeente(
-            Gemeente(niscode="11001", naam="Aartselaar", taal="nl", gateway=gateway)
+            Gemeente(niscode="11001", naam="Aartselaar", gateway=gateway)
         )
         assert len(res) == 1
         assert res[0].naam == "Aartselaar"
@@ -422,7 +411,9 @@ class TestAdressenRegisterGateway:
             create_client_list_straatnamen_item(),
             create_client_list_straatnamen_item(),
         ]
-        res = gateway.list_straten(Gemeente("Aartselaar", "11001", "nl", gateway))
+        res = gateway.list_straten(
+            Gemeente(naam="Aartselaar", niscode="11001", gateway=gateway)
+        )
         assert len(res) == 2
         assert res[0].id == "1"
         assert res[0].naam == "Acacialaan"
@@ -517,18 +508,16 @@ class TestAdressenRegisterGateway:
 
 class TestGewest:
     def test_gemeenten(self, gateway, client):
-        one = create_client_list_gemeenten_item()
-        two = create_client_list_gemeenten_item()
-        three = create_client_list_gemeenten_item()
-        one["identificator"]["objectId"] = "10001"
-        two["identificator"]["objectId"] = "20001"
-        three["identificator"]["objectId"] = "60001"
-        client.get_gemeenten.return_value = [one, two, three]
-
         vlaanderen = gateway.get_gewest_by_id(2)
         res = vlaanderen.gemeenten
-        assert len(res) == 2
-        assert [gemeente.niscode for gemeente in res] == ["10001", "20001"]
+        assert len(res) == 300
+        niscodes = [gemeente.niscode for gemeente in res]
+        assert "11001" in niscodes
+        assert "23002" in niscodes
+        assert "31003" in niscodes
+        assert "41002" in niscodes
+        assert "41002" in niscodes
+        assert "71002" in niscodes
 
     def test_provincies(self, gateway):
         vlaanderen = gateway.get_gewest_by_id(2)
@@ -538,16 +527,12 @@ class TestGewest:
 
 class TestProvincie:
     def test_gemeenten(self, gateway, client):
-        one = create_client_list_gemeenten_item()
-        two = create_client_list_gemeenten_item()
-        one["identificator"]["objectId"] = "10001"
-        two["identificator"]["objectId"] = "20001"
-        client.get_gemeenten.return_value = [one, two]
-
-        p = Provincie("10001", "Antwerpen", Gewest(2, "Vlaanderen", None, None), gateway)
+        p = Provincie(
+            "10000", "Antwerpen", Gewest(2, "2000", "Vlaanderen", None, None), gateway
+        )
         res = p.gemeenten
-        assert len(res) == 1
-        assert res[0].niscode == "10001"
+        assert len(res) == 69
+        assert res[0].niscode == "11001"
 
 
 class TestGemeente:
@@ -559,40 +544,38 @@ class TestGemeente:
         assert straten[0].id == "1"
 
     def test_provincie(self, gateway):
-        g = Gemeente(niscode="1", naam="test-gemeente", gateway=gateway)
+        g = Gemeente(
+            niscode="1", provincie_niscode="10000", naam="test-gemeente", gateway=gateway
+        )
         provincie = g.provincie
         assert provincie.naam == "Antwerpen"
 
-    def test_taal(self, gateway, client):
-        client.get_gemeente.return_value = create_client_get_gemeente_item()
-        g = Gemeente(niscode="1", gateway=gateway)
-        assert g.taal == "fr"
+    def test_gewest(self, gateway):
+        g = Gemeente(
+            niscode="1", provincie_niscode="10000", naam="test-gemeente", gateway=gateway
+        )
+        gewest = g.gewest
+        assert gewest.naam == "Vlaams Gewest"
+        assert gewest.id == 2
+        assert gewest.niscode == "2000"
 
     def test_naam(self, gateway, client):
-        client.get_gemeente.return_value = create_client_get_gemeente_item()
-        g = Gemeente(niscode="1", gateway=gateway)
+        g = gateway.get_gemeente_by_niscode("57096")
         assert g.naam() == "Moeskroen"
+        assert g.naam("fr") == "Mouscron"
 
-    def test_caching_and_lazy_loading(self, gateway, client):
-        client.get_gemeente.return_value = create_client_get_gemeente_item()
-        gemeente = Gemeente(niscode="1", gateway=gateway)
-        assert gemeente.naam() == "Moeskroen"
-        assert gemeente.naam("fr") == "Mouscron"
-        assert client.get_gemeente.call_count == 1
-        gemeente = Gemeente(niscode="1", gateway=gateway)
-        assert gemeente.naam() == "Moeskroen"
-        assert client.get_gemeente.call_count == 2
-        with memory_cache():
-            gemeente = Gemeente(niscode="1", gateway=gateway)
-            assert gemeente.naam() == "Moeskroen"
-            assert gemeente.naam() == "Moeskroen"
-            gemeente = Gemeente(niscode="1", gateway=gateway)
-            assert gemeente.naam() == "Moeskroen"
-            assert client.get_gemeente.call_count == 3
+    def test_gemeente_brussel(self, gateway, client):
+        gemeente = gateway.get_gemeente_by_niscode("21004")
+        assert gemeente.naam() == "Brussel"
+        assert gemeente.naam("fr") == "Bruxelles"
+        assert gemeente.provincie is None
+        assert gemeente.provincie_niscode is None
 
-            gemeente = Gemeente(niscode="2", gateway=gateway)
-            assert gemeente.naam() == "Moeskroen"
-            assert client.get_gemeente.call_count == 4
+    def test_gemeenten_brussels_gewest(self, gateway, client):
+        gemeenten = gateway.list_gemeenten("1")
+        assert 19 == len(gemeenten)
+        assert "21001" == gemeenten[0].niscode
+        assert "Anderlecht" == gemeenten[0].naam()
 
 
 class TestDeelgemeente:
@@ -601,7 +584,7 @@ class TestDeelgemeente:
             id_="45062A",
             naam="Sint-Maria-Horebeke",
             gemeente_niscode="45062",
-            gateway=None,
+            gateway=gateway,
         )
         gemeente = dg.gemeente
         assert isinstance(gemeente, Gemeente)
