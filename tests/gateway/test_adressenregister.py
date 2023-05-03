@@ -550,6 +550,15 @@ class TestGemeente:
         provincie = g.provincie
         assert provincie.naam == "Antwerpen"
 
+    def test_gewest(self, gateway):
+        g = Gemeente(
+            niscode="1", provincie_niscode="10000", naam="test-gemeente", gateway=gateway
+        )
+        gewest = g.gewest
+        assert gewest.naam == "Vlaams Gewest"
+        assert gewest.id == 2
+        assert gewest.niscode == "2000"
+
     def test_naam(self, gateway, client):
         g = gateway.get_gemeente_by_niscode("57096")
         assert g.naam() == "Moeskroen"

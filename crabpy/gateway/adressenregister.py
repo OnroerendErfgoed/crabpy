@@ -576,6 +576,10 @@ class Gemeente(GatewayObject):
     def provincie(self):
         return self.gateway.get_provincie_by_id(self.provincie_niscode)
 
+    @LazyProperty
+    def gewest(self):
+        return self.gateway.get_gewest_by_id(self.provincie.gewest)
+
     def __str__(self):
         return f"{self.naam} ({self.niscode})"
 
