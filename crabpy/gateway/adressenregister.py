@@ -11,7 +11,6 @@ from dogpile.cache import make_region
 from dogpile.util import compat
 
 from crabpy.client import AdressenRegisterClient
-from crabpy.gateway.exception import GatewayResourceNotFoundException
 
 LOG = logging.getLogger(__name__)
 AUTO = object()
@@ -170,7 +169,7 @@ class Gateway:
         for gewest in self.gewesten:
             if gewest.niscode == niscode:
                 return gewest
-        raise GatewayResourceNotFoundException()
+        return None
 
     def list_provincies(self, gewest_niscode="2000"):
         """

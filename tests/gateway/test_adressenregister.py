@@ -12,7 +12,6 @@ from crabpy.gateway.adressenregister import Perceel
 from crabpy.gateway.adressenregister import Postinfo
 from crabpy.gateway.adressenregister import Provincie
 from crabpy.gateway.adressenregister import Straat
-from crabpy.gateway.exception import GatewayResourceNotFoundException
 
 
 @pytest.fixture()
@@ -360,8 +359,7 @@ class TestAdressenRegisterGateway:
         assert res[0].niscode == "11001"
 
     def test_get_gewest_by_unexisting_id(self, gateway):
-        with pytest.raises(GatewayResourceNotFoundException):
-            gateway.get_gewest_by_niscode("5000")
+        assert gateway.get_gewest_by_niscode("5000") is None
 
     def test_list_gemeenten_default(self, gateway, client):
         res = gateway.list_gemeenten()
