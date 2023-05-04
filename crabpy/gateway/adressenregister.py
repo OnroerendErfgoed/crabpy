@@ -184,7 +184,7 @@ class Gateway:
             if provincie.gewest_niscode == gewest_niscode
         ]
 
-    def get_provincie_by_id(self, niscode):
+    def get_provincie_by_niscode(self, niscode):
         """
         Retrieve a `provincie` by the niscode.
 
@@ -206,7 +206,9 @@ class Gateway:
         :rtype: A :class:`list` of :class:`Gemeente`.
         """
         if not isinstance(provincie, Provincie):
-            provincie = self.get_provincie_by_id(provincie)
+            provincie = self.get_provincie_by_niscode(provincie)
+        if provincie is None:
+            return []
         provincie_niscode = provincie.niscode
         return [
             gemeente
@@ -304,6 +306,8 @@ class Gateway:
         """
         if not isinstance(gemeente, Gemeente):
             gemeente = self.get_gemeente_by_niscode(gemeente)
+        if gemeente is None:
+            return []
         return [
             deelgemeente
             for deelgemeente in self.deelgemeenten
@@ -337,6 +341,8 @@ class Gateway:
         """
         if not isinstance(gemeente, Gemeente):
             gemeente = self.get_gemeente_by_niscode(gemeente)
+        if gemeente is None:
+            return []
         return [
             Straat.from_list_response(straat, self)
             for straat in self.client.get_straatnamen(niscode=gemeente.niscode)
@@ -576,7 +582,7 @@ class Gemeente(GatewayObject):
 
     @LazyProperty
     def provincie(self):
-        return self.gateway.get_provincie_by_id(self.provincie_niscode)
+        return self.gateway.get_provincie_by_niscode(self.provincie_niscode)
 
     @LazyProperty
     def gewest(self):
