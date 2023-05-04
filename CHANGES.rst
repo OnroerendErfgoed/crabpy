@@ -1,3 +1,9 @@
+1.2.0 (04-05-2023)
+------------------
+
+- uniformiseer alles naar niscodes en check dat alle niscodes strings zijn (#208)
+- errors checken en fine tunen (#209)
+
 1.1.0 (03-05-2023)
 ------------------
 
