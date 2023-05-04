@@ -347,7 +347,7 @@ class TestAdressenRegisterGateway:
         assert [p.niscode for p in res] == ["10000", "20001", "30000", "40000", "70000"]
 
     def test_get_provincie_by_id(self, gateway):
-        res = gateway.get_provincie_by_id("10000")
+        res = gateway.get_provincie_by_niscode("10000")
         assert res.niscode == "10000"
         assert res.naam == "Antwerpen"
 
