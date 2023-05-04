@@ -334,7 +334,7 @@ class TestAdressenRegisterGateway:
         ]
 
     def test_get_gewest_by_id(self, gateway):
-        res = gateway.get_gewest_by_id(2)
+        res = gateway.get_gewest_by_niscode("2000")
         assert isinstance(res, Gewest)
         assert res.id == 2
         assert res.naam == "Vlaams Gewest"
@@ -361,7 +361,7 @@ class TestAdressenRegisterGateway:
 
     def test_get_gewest_by_unexisting_id(self, gateway):
         with pytest.raises(GatewayResourceNotFoundException):
-            gateway.get_gewest_by_id(5)
+            gateway.get_gewest_by_niscode("5000")
 
     def test_list_gemeenten_default(self, gateway, client):
         res = gateway.list_gemeenten()
@@ -375,10 +375,6 @@ class TestAdressenRegisterGateway:
         assert "71002" in niscodes
 
     def test_get_gemeente_by_niscode(self, gateway, client):
-        res = gateway.get_gemeente_by_niscode(57096)
-        assert res.niscode == "57096"
-        assert res.naam() == "Moeskroen"
-        assert res.provincie.niscode == "50000"
         res = gateway.get_gemeente_by_niscode("57096")
         assert res.niscode == "57096"
         assert res.naam() == "Moeskroen"
@@ -508,7 +504,7 @@ class TestAdressenRegisterGateway:
 
 class TestGewest:
     def test_gemeenten(self, gateway, client):
-        vlaanderen = gateway.get_gewest_by_id(2)
+        vlaanderen = gateway.get_gewest_by_niscode("2000")
         res = vlaanderen.gemeenten
         assert len(res) == 300
         niscodes = [gemeente.niscode for gemeente in res]
@@ -520,7 +516,7 @@ class TestGewest:
         assert "71002" in niscodes
 
     def test_provincies(self, gateway):
-        vlaanderen = gateway.get_gewest_by_id(2)
+        vlaanderen = gateway.get_gewest_by_niscode("2000")
         provincies = vlaanderen.provincies
         assert len(provincies) == 5
 
@@ -572,7 +568,7 @@ class TestGemeente:
         assert gemeente.provincie_niscode is None
 
     def test_gemeenten_brussels_gewest(self, gateway, client):
-        gemeenten = gateway.list_gemeenten("1")
+        gemeenten = gateway.list_gemeenten("4000")
         assert 19 == len(gemeenten)
         assert "21001" == gemeenten[0].niscode
         assert "Anderlecht" == gemeenten[0].naam()
