@@ -98,7 +98,7 @@ class AdressenRegisterClient:
             params["gemeentenaam"] = gemeentenaam
         if status is not None:
             params["status"] = status
-        return self._get_list("/v2/gemeenten", "gemeenten", params)
+        return self._get_list("/v2/gemeenten", "gemeenten", params=params)
 
     def get_postinfo(self, postinfo_id):
         return self._get(f"/v2/postinfo/{postinfo_id}")
@@ -205,7 +205,7 @@ class AdressenRegisterClient:
         if status is not None:
             params["status"] = status
         if adresObjectId is not None:
-            params["adresOjbectId"] = adresObjectId
+            params["adresObjectId"] = adresObjectId
         return self._get_list("/v2/percelen", "percelen", params=params)
 
     def get_gebouw(self, gebouw_id):
