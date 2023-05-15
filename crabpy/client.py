@@ -69,8 +69,12 @@ class AdressenRegisterClient:
         response = {"volgende": f"{self.base_url}{url}"}
         try:
             while "volgende" in response:
+                url = response["volgende"]
+                # Originele params komen mee in de volgende url vanaf 2de request
+                if "?" in url:
+                    params = None
                 response = self.session.get(
-                    response["volgende"],
+                    url,
                     params=params,
                     headers=self.v2_header if "v2" in url else self.v1_header,
                 )
