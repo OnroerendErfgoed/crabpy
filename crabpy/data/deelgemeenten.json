@@ -5,68 +5,23 @@
     "gemeente_niscode": "11001"
   },
   {
-    "id": "110021",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "11002"
-  },
-  {
     "id": "11002A",
-    "naam": "1-2-3-4 Administr. Wijk Of District",
+    "naam": "Antwerpen",
     "gemeente_niscode": "11002"
   },
   {
     "id": "11002B",
-    "naam": "Linkeroever",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002C",
-    "naam": "5-6 Administr. Wijk Of Distr.",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002D",
-    "naam": "7 Administr. Wijk Of District",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002E",
-    "naam": "8 Administr. Wijk Of District",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002F",
-    "naam": "9 Administr. Wijk Of District",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002G",
-    "naam": "10 Administr. Wijk Of District",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002H",
-    "naam": "11 Administr. Wijk Of District",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002J",
-    "naam": "12 Administr. Wijk Of District",
+    "naam": "Lillo",
     "gemeente_niscode": "11002"
   },
   {
     "id": "11002K",
-    "naam": "2 En 3 District Havengebied",
+    "naam": "Berendrecht",
     "gemeente_niscode": "11002"
   },
   {
     "id": "11002L",
-    "naam": "4 En 5 District",
-    "gemeente_niscode": "11002"
-  },
-  {
-    "id": "11002M",
-    "naam": "Schelde",
+    "naam": "Zandvliet",
     "gemeente_niscode": "11002"
   },
   {
@@ -131,7 +86,7 @@
   },
   {
     "id": "11009A",
-    "naam": "Brecht*",
+    "naam": "Brecht",
     "gemeente_niscode": "11009"
   },
   {
@@ -141,7 +96,7 @@
   },
   {
     "id": "11009C",
-    "naam": "Sint-Job-In-'t Goor",
+    "naam": "Sint-Job-in-'t Goor",
     "gemeente_niscode": "11009"
   },
   {
@@ -151,7 +106,7 @@
   },
   {
     "id": "11016A",
-    "naam": "Essen +deel Kalmthout",
+    "naam": "Essen",
     "gemeente_niscode": "11016"
   },
   {
@@ -166,17 +121,12 @@
   },
   {
     "id": "11022A",
-    "naam": "Kalmthout* & Deel Wuustwezel",
+    "naam": "Kalmthout",
     "gemeente_niscode": "11022"
   },
   {
     "id": "11023A",
     "naam": "Kapellen",
-    "gemeente_niscode": "11023"
-  },
-  {
-    "id": "11023B",
-    "naam": "Zuid Kapellen-",
     "gemeente_niscode": "11023"
   },
   {
@@ -225,11 +175,6 @@
     "gemeente_niscode": "11035"
   },
   {
-    "id": "110371",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "11037"
-  },
-  {
     "id": "11037A",
     "naam": "Rumst",
     "gemeente_niscode": "11037"
@@ -265,11 +210,6 @@
     "gemeente_niscode": "11040"
   },
   {
-    "id": "110441",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "11044"
-  },
-  {
     "id": "11044A",
     "naam": "Stabroek",
     "gemeente_niscode": "11044"
@@ -291,18 +231,13 @@
   },
   {
     "id": "11053A",
-    "naam": "Wuustwezel*",
+    "naam": "Wuustwezel",
     "gemeente_niscode": "11053"
   },
   {
     "id": "11053B",
     "naam": "Loenhout",
     "gemeente_niscode": "11053"
-  },
-  {
-    "id": "110541",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "11054"
   },
   {
     "id": "11054A",
@@ -331,7 +266,7 @@
   },
   {
     "id": "11055A",
-    "naam": "Zoersel & Deel Brecht",
+    "naam": "Zoersel",
     "gemeente_niscode": "11055"
   },
   {
@@ -348,11 +283,6 @@
     "id": "11056B",
     "naam": "Burcht",
     "gemeente_niscode": "11056"
-  },
-  {
-    "id": "110571",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "11057"
   },
   {
     "id": "11057A",
@@ -376,7 +306,7 @@
   },
   {
     "id": "12005B",
-    "naam": "Rijmenam*",
+    "naam": "Rijmenam",
     "gemeente_niscode": "12005"
   },
   {
@@ -406,7 +336,7 @@
   },
   {
     "id": "12014A",
-    "naam": "Heist-Op-Den-Berg",
+    "naam": "Heist-op-den-Berg",
     "gemeente_niscode": "12014"
   },
   {
@@ -446,7 +376,7 @@
   },
   {
     "id": "12025A",
-    "naam": "Mechelen & Deel St-Katelijne-W",
+    "naam": "Mechelen",
     "gemeente_niscode": "12025"
   },
   {
@@ -491,7 +421,7 @@
   },
   {
     "id": "12029A",
-    "naam": "Putte & Deel O. L. V. Waver & Rijmenam",
+    "naam": "Putte",
     "gemeente_niscode": "12029"
   },
   {
@@ -500,53 +430,53 @@
     "gemeente_niscode": "12029"
   },
   {
-    "id": "12030A",
+    "id": "12041A",
     "naam": "Puurs",
     "gemeente_niscode": "12041"
   },
   {
-    "id": "12030B",
-    "naam": "Ruisbroek* + Deel Willebroek",
+    "id": "12041B",
+    "naam": "Ruisbroek",
     "gemeente_niscode": "12041"
   },
   {
-    "id": "12030C",
-    "naam": "Breendonk* + Deel Tisselt",
+    "id": "12041C",
+    "naam": "Breendonk",
     "gemeente_niscode": "12041"
   },
   {
-    "id": "12030D",
+    "id": "12041D",
     "naam": "Liezele",
     "gemeente_niscode": "12041"
   },
   {
-    "id": "12034A",
+    "id": "12041E",
     "naam": "Sint-Amands",
     "gemeente_niscode": "12041"
   },
   {
-    "id": "12034B",
+    "id": "12041F",
     "naam": "Oppuurs",
     "gemeente_niscode": "12041"
   },
   {
-    "id": "12034C",
+    "id": "12041G",
     "naam": "Lippelo",
     "gemeente_niscode": "12041"
   },
   {
     "id": "12035A",
-    "naam": "Sint-Katelijne-Waver*",
+    "naam": "Sint-Katelijne-Waver",
     "gemeente_niscode": "12035"
   },
   {
     "id": "12035B",
-    "naam": "Onze-Lieve-Vrouw-Waver*",
+    "naam": "Onze-Lieve-Vrouw-Waver",
     "gemeente_niscode": "12035"
   },
   {
     "id": "12040A",
-    "naam": "Willebroek* & Deel Breendonk En Ruisbroek",
+    "naam": "Willebroek",
     "gemeente_niscode": "12040"
   },
   {
@@ -561,12 +491,12 @@
   },
   {
     "id": "12040D",
-    "naam": "Tisselt* + Deel Breendonk",
+    "naam": "Tisselt",
     "gemeente_niscode": "12040"
   },
   {
     "id": "13001A",
-    "naam": "Arendonk* & Deel Retie",
+    "naam": "Arendonk",
     "gemeente_niscode": "13001"
   },
   {
@@ -601,12 +531,7 @@
   },
   {
     "id": "13008A",
-    "naam": "Geel + Deel Oevel",
-    "gemeente_niscode": "13008"
-  },
-  {
-    "id": "13008B",
-    "naam": "Ten Aard",
+    "naam": "Geel",
     "gemeente_niscode": "13008"
   },
   {
@@ -716,7 +641,7 @@
   },
   {
     "id": "13019C",
-    "naam": "Gierle + Deel Van Vosselaar",
+    "naam": "Gierle",
     "gemeente_niscode": "13019"
   },
   {
@@ -731,7 +656,7 @@
   },
   {
     "id": "13023A",
-    "naam": "Merksplas + Deel Rijkevorsel",
+    "naam": "Merksplas",
     "gemeente_niscode": "13023"
   },
   {
@@ -746,12 +671,12 @@
   },
   {
     "id": "13031A",
-    "naam": "Oud-Turnhout*",
+    "naam": "Oud-Turnhout",
     "gemeente_niscode": "13031"
   },
   {
     "id": "13035A",
-    "naam": "Ravels & Deel Oud-Turnhout",
+    "naam": "Ravels",
     "gemeente_niscode": "13035"
   },
   {
@@ -766,12 +691,12 @@
   },
   {
     "id": "13036A",
-    "naam": "Retie* & Deel Arendonk & Oud-Turnhout",
+    "naam": "Retie",
     "gemeente_niscode": "13036"
   },
   {
     "id": "13037A",
-    "naam": "Rijkevorsel*",
+    "naam": "Rijkevorsel",
     "gemeente_niscode": "13037"
   },
   {
@@ -786,7 +711,7 @@
   },
   {
     "id": "13046A",
-    "naam": "Vosselaar*",
+    "naam": "Vosselaar",
     "gemeente_niscode": "13046"
   },
   {
@@ -806,7 +731,7 @@
   },
   {
     "id": "13049D",
-    "naam": "Oevel*",
+    "naam": "Oevel",
     "gemeente_niscode": "13049"
   },
   {
@@ -828,141 +753,6 @@
     "id": "13053D",
     "naam": "Vorst",
     "gemeente_niscode": "13053"
-  },
-  {
-    "id": "21001A",
-    "naam": "Anderlecht-Centrum",
-    "gemeente_niscode": "21001"
-  },
-  {
-    "id": "21001B",
-    "naam": "Anderlecht-Kanaal-Spoor Oost",
-    "gemeente_niscode": "21001"
-  },
-  {
-    "id": "21001C",
-    "naam": "Anderlecht-Ring West",
-    "gemeente_niscode": "21001"
-  },
-  {
-    "id": "21002A",
-    "naam": "Oudergem",
-    "gemeente_niscode": "21002"
-  },
-  {
-    "id": "21003A",
-    "naam": "Sint-Agatha-Berchem",
-    "gemeente_niscode": "21003"
-  },
-  {
-    "id": "21004A",
-    "naam": "Brussel Pentagoon",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21004B",
-    "naam": "Brussel-Wetstraat",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21004C",
-    "naam": "Brussel-Louisa",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21004D",
-    "naam": "Brussel-Antwerpse Stwg",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21004E",
-    "naam": "Brussel-Laken",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21004F",
-    "naam": "Brussel-Neder-Overheembeek",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21004G",
-    "naam": "Brussel-Haren",
-    "gemeente_niscode": "21004"
-  },
-  {
-    "id": "21005A",
-    "naam": "Etterbeek",
-    "gemeente_niscode": "21005"
-  },
-  {
-    "id": "21006A",
-    "naam": "Evere",
-    "gemeente_niscode": "21006"
-  },
-  {
-    "id": "21007A",
-    "naam": "Vorst",
-    "gemeente_niscode": "21007"
-  },
-  {
-    "id": "21008A",
-    "naam": "Ganshoren",
-    "gemeente_niscode": "21008"
-  },
-  {
-    "id": "21009A",
-    "naam": "Elsene",
-    "gemeente_niscode": "21009"
-  },
-  {
-    "id": "21010A",
-    "naam": "Jette",
-    "gemeente_niscode": "21010"
-  },
-  {
-    "id": "21011A",
-    "naam": "Koekelberg",
-    "gemeente_niscode": "21011"
-  },
-  {
-    "id": "21012A",
-    "naam": "Sint-Jans-Molenbeek",
-    "gemeente_niscode": "21012"
-  },
-  {
-    "id": "21013A",
-    "naam": "Sint-Gillis",
-    "gemeente_niscode": "21013"
-  },
-  {
-    "id": "21014A",
-    "naam": "Sint-Joost-Ten-Node",
-    "gemeente_niscode": "21014"
-  },
-  {
-    "id": "21015A",
-    "naam": "Schaarbeek",
-    "gemeente_niscode": "21015"
-  },
-  {
-    "id": "21016A",
-    "naam": "Ukkel",
-    "gemeente_niscode": "21016"
-  },
-  {
-    "id": "21017A",
-    "naam": "Watermaal-Bosvoorde",
-    "gemeente_niscode": "21017"
-  },
-  {
-    "id": "21018A",
-    "naam": "Sint-Lambrechts-Woluwe",
-    "gemeente_niscode": "21018"
-  },
-  {
-    "id": "21019A",
-    "naam": "Sint-Pieters-Woluwe",
-    "gemeente_niscode": "21019"
   },
   {
     "id": "23002A",
@@ -1031,12 +821,12 @@
   },
   {
     "id": "23016B",
-    "naam": "Sint Ulriks Kapelle-",
+    "naam": "Sint-Ulriks-Kapelle",
     "gemeente_niscode": "23016"
   },
   {
     "id": "23016C",
-    "naam": "Groot Bijgaarden-",
+    "naam": "Groot-Bijgaarden",
     "gemeente_niscode": "23016"
   },
   {
@@ -1051,7 +841,7 @@
   },
   {
     "id": "23016F",
-    "naam": "Sint Martens-Bodegem ",
+    "naam": "Sint-Martens-Bodegem",
     "gemeente_niscode": "23016"
   },
   {
@@ -1071,7 +861,7 @@
   },
   {
     "id": "23024A",
-    "naam": "Gooik*",
+    "naam": "Gooik",
     "gemeente_niscode": "23024"
   },
   {
@@ -1096,7 +886,7 @@
   },
   {
     "id": "23025B",
-    "naam": "Strombeek Bever-",
+    "naam": "Strombeek - Bever",
     "gemeente_niscode": "23025"
   },
   {
@@ -1166,7 +956,7 @@
   },
   {
     "id": "23039A",
-    "naam": "Kapelle-Op-Den-Bos En Deel Van Zemst",
+    "naam": "Kapelle-op-den-Bos",
     "gemeente_niscode": "23039"
   },
   {
@@ -1181,7 +971,7 @@
   },
   {
     "id": "23044A",
-    "naam": "Liedekerke +deel Borchtlombeek",
+    "naam": "Liedekerke",
     "gemeente_niscode": "23044"
   },
   {
@@ -1200,11 +990,6 @@
     "gemeente_niscode": "23045"
   },
   {
-    "id": "230471",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "23047"
-  },
-  {
     "id": "23047A",
     "naam": "Machelen",
     "gemeente_niscode": "23047"
@@ -1216,7 +1001,7 @@
   },
   {
     "id": "23050A",
-    "naam": "Meise + Deel Van Brussegem",
+    "naam": "Meise",
     "gemeente_niscode": "23050"
   },
   {
@@ -1231,7 +1016,7 @@
   },
   {
     "id": "23052B",
-    "naam": "Brussegem*",
+    "naam": "Brussegem",
     "gemeente_niscode": "23052"
   },
   {
@@ -1340,11 +1125,6 @@
     "gemeente_niscode": "23086"
   },
   {
-    "id": "230881",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "23088"
-  },
-  {
     "id": "23088A",
     "naam": "Vilvoorde",
     "gemeente_niscode": "23088"
@@ -1376,7 +1156,7 @@
   },
   {
     "id": "23096A",
-    "naam": "Zemst*",
+    "naam": "Zemst",
     "gemeente_niscode": "23096"
   },
   {
@@ -1400,18 +1180,23 @@
     "gemeente_niscode": "23096"
   },
   {
-    "id": "230971",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "23097"
-  },
-  {
-    "id": "23097A",
-    "naam": "Roosdaal*+deel Van Gooik En Sint-Kwintens-Lennik",
-    "gemeente_niscode": "23097"
-  },
-  {
     "id": "23097B",
-    "naam": "Borchtlombeek*",
+    "naam": "Borchtlombeek",
+    "gemeente_niscode": "23097"
+  },
+  {
+    "id": "23097C",
+    "naam": "Onze-Lieve-Vrouw-Lombeek",
+    "gemeente_niscode": "23097"
+  },
+  {
+    "id": "23097D",
+    "naam": "Pamel",
+    "gemeente_niscode": "23097"
+  },
+  {
+    "id": "23097E",
+    "naam": "Strijtem",
     "gemeente_niscode": "23097"
   },
   {
@@ -1446,7 +1231,7 @@
   },
   {
     "id": "23104A",
-    "naam": "St-Kwintens-Lennik* + Deel Roosdaal",
+    "naam": "Sint-Kwintens-Lennik",
     "gemeente_niscode": "23104"
   },
   {
@@ -1476,7 +1261,7 @@
   },
   {
     "id": "24001A",
-    "naam": "Aarschot + Deel Begijnendijk",
+    "naam": "Aarschot",
     "gemeente_niscode": "24001"
   },
   {
@@ -1496,12 +1281,12 @@
   },
   {
     "id": "24007A",
-    "naam": "Begijnendijk*",
+    "naam": "Begijnendijk",
     "gemeente_niscode": "24007"
   },
   {
     "id": "24007B",
-    "naam": "Betekom*",
+    "naam": "Betekom",
     "gemeente_niscode": "24007"
   },
   {
@@ -1516,7 +1301,7 @@
   },
   {
     "id": "24008C",
-    "naam": "Molenbeek Wersbeek-",
+    "naam": "Molenbeek - Wersbeek",
     "gemeente_niscode": "24008"
   },
   {
@@ -1526,7 +1311,7 @@
   },
   {
     "id": "24009B",
-    "naam": "Korbeek-Dijle",
+    "naam": "Korbeek-dijle",
     "gemeente_niscode": "24009"
   },
   {
@@ -1541,7 +1326,7 @@
   },
   {
     "id": "24011B",
-    "naam": "Korbeek-Lo*",
+    "naam": "Korbeek-Lo",
     "gemeente_niscode": "24011"
   },
   {
@@ -1551,13 +1336,8 @@
   },
   {
     "id": "24011D",
-    "naam": "Honsem (deel)",
+    "naam": "Opvelp",
     "gemeente_niscode": "24011"
-  },
-  {
-    "id": "240141",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "24014"
   },
   {
     "id": "24014A",
@@ -1586,7 +1366,17 @@
   },
   {
     "id": "24016D",
-    "naam": "Honsem*",
+    "naam": "Neervelp",
+    "gemeente_niscode": "24016"
+  },
+  {
+    "id": "24016E",
+    "naam": "Vertrijk",
+    "gemeente_niscode": "24016"
+  },
+  {
+    "id": "24016G",
+    "naam": "Willebringen",
     "gemeente_niscode": "24016"
   },
   {
@@ -1601,7 +1391,7 @@
   },
   {
     "id": "24020C",
-    "naam": "Kaggevinne*",
+    "naam": "Kaggevinne",
     "gemeente_niscode": "24020"
   },
   {
@@ -1641,7 +1431,7 @@
   },
   {
     "id": "24033B",
-    "naam": "Tildonk + Deel Van Herent + Deel Van Werchter",
+    "naam": "Tildonk",
     "gemeente_niscode": "24033"
   },
   {
@@ -1651,7 +1441,7 @@
   },
   {
     "id": "24038A",
-    "naam": "Herent*",
+    "naam": "Herent",
     "gemeente_niscode": "24038"
   },
   {
@@ -1666,17 +1456,17 @@
   },
   {
     "id": "24041A",
-    "naam": "Hoegaarden* + Deel Van Kumtich + Deel Van Tienen",
+    "naam": "Hoegaarden",
     "gemeente_niscode": "24041"
   },
   {
     "id": "24041B",
-    "naam": "Honsem (deel)",
+    "naam": "Meldert",
     "gemeente_niscode": "24041"
   },
   {
     "id": "24041C",
-    "naam": "Outgaarden + Deel Van Goetsenhoven",
+    "naam": "Outgaarden",
     "gemeente_niscode": "24041"
   },
   {
@@ -1741,7 +1531,7 @@
   },
   {
     "id": "24054C",
-    "naam": "Hoeleden + Deel Bunsbeek & Sint-Magriete-Houtem",
+    "naam": "Hoeleden",
     "gemeente_niscode": "24054"
   },
   {
@@ -1781,7 +1571,7 @@
   },
   {
     "id": "24059B",
-    "naam": "Landen-Rumsdorp",
+    "naam": "Rumsdorp",
     "gemeente_niscode": "24059"
   },
   {
@@ -1796,27 +1586,27 @@
   },
   {
     "id": "24059E",
-    "naam": "Neerwinden-Wange",
+    "naam": "Wange",
     "gemeente_niscode": "24059"
   },
   {
     "id": "24059F",
-    "naam": "Neerwinden-Eliksem",
+    "naam": "Eliksem",
     "gemeente_niscode": "24059"
   },
   {
     "id": "24059G",
-    "naam": "Neerwinden-Ezemaal",
+    "naam": "Ezemaal",
     "gemeente_niscode": "24059"
   },
   {
     "id": "24059H",
-    "naam": "Neerwinden-Laar",
+    "naam": "Laar",
     "gemeente_niscode": "24059"
   },
   {
     "id": "24059J",
-    "naam": "Neerwinden-Overwinden",
+    "naam": "Overwinden",
     "gemeente_niscode": "24059"
   },
   {
@@ -1826,7 +1616,22 @@
   },
   {
     "id": "24059L",
-    "naam": "Attenhoven-Neerlanden",
+    "naam": "Neerlanden",
+    "gemeente_niscode": "24059"
+  },
+  {
+    "id": "24059M",
+    "naam": "Walsbets",
+    "gemeente_niscode": "24059"
+  },
+  {
+    "id": "24059N",
+    "naam": "Wezeren",
+    "gemeente_niscode": "24059"
+  },
+  {
+    "id": "24059P",
+    "naam": "Waasmont",
     "gemeente_niscode": "24059"
   },
   {
@@ -1846,17 +1651,7 @@
   },
   {
     "id": "24062D",
-    "naam": "Heverlee + Deel Van Blanden",
-    "gemeente_niscode": "24062"
-  },
-  {
-    "id": "24062E",
-    "naam": "Deel Korbeek-Lo +deel Haasrode",
-    "gemeente_niscode": "24062"
-  },
-  {
-    "id": "24062F",
-    "naam": "Deel Herent",
+    "naam": "Heverlee",
     "gemeente_niscode": "24062"
   },
   {
@@ -1891,12 +1686,12 @@
   },
   {
     "id": "24086C",
-    "naam": "Blanden*",
+    "naam": "Blanden",
     "gemeente_niscode": "24086"
   },
   {
     "id": "24086D",
-    "naam": "Haasrode*",
+    "naam": "Haasrode",
     "gemeente_niscode": "24086"
   },
   {
@@ -1911,7 +1706,7 @@
   },
   {
     "id": "24094B",
-    "naam": "Werchter*",
+    "naam": "Werchter",
     "gemeente_niscode": "24094"
   },
   {
@@ -1936,12 +1731,12 @@
   },
   {
     "id": "24107A",
-    "naam": "Tienen*",
+    "naam": "Tienen",
     "gemeente_niscode": "24107"
   },
   {
     "id": "24107B",
-    "naam": "Oorbeek + Deel Van Hoegaarden",
+    "naam": "Oorbeek",
     "gemeente_niscode": "24107"
   },
   {
@@ -1951,7 +1746,7 @@
   },
   {
     "id": "24107D",
-    "naam": "Kumtich*",
+    "naam": "Kumtich",
     "gemeente_niscode": "24107"
   },
   {
@@ -1961,7 +1756,7 @@
   },
   {
     "id": "24107F",
-    "naam": "Sint-Margriete-Houtem* + Deel Van Bunsbeek",
+    "naam": "Sint-Margriete-Houtem",
     "gemeente_niscode": "24107"
   },
   {
@@ -1976,7 +1771,7 @@
   },
   {
     "id": "24107J",
-    "naam": "Goetsenhoven*",
+    "naam": "Goetsenhoven",
     "gemeente_niscode": "24107"
   },
   {
@@ -1986,7 +1781,7 @@
   },
   {
     "id": "24109B",
-    "naam": "Baal+deel Van Betekom",
+    "naam": "Baal",
     "gemeente_niscode": "24109"
   },
   {
@@ -1996,7 +1791,7 @@
   },
   {
     "id": "24130B",
-    "naam": "Helenbos",
+    "naam": "Helen-Bos",
     "gemeente_niscode": "24130"
   },
   {
@@ -2016,12 +1811,12 @@
   },
   {
     "id": "24133A",
-    "naam": "Linter-Drieslinter",
+    "naam": "Drieslinter",
     "gemeente_niscode": "24133"
   },
   {
     "id": "24133B",
-    "naam": "Linter-Neerlinter",
+    "naam": "Neerlinter",
     "gemeente_niscode": "24133"
   },
   {
@@ -2031,22 +1826,22 @@
   },
   {
     "id": "24133D",
-    "naam": "Orsmaal-Melkwezer",
+    "naam": "Melkwezer",
     "gemeente_niscode": "24133"
   },
   {
     "id": "24133E",
-    "naam": "Orsmaal-Neerhespen",
+    "naam": "Neerhespen",
     "gemeente_niscode": "24133"
   },
   {
     "id": "24133F",
-    "naam": "Orsmaal-Overhespen",
+    "naam": "Overhespen",
     "gemeente_niscode": "24133"
   },
   {
     "id": "24133G",
-    "naam": "Orsmaal-Wommersom",
+    "naam": "Wommersom",
     "gemeente_niscode": "24133"
   },
   {
@@ -2075,18 +1870,13 @@
     "gemeente_niscode": "24134"
   },
   {
-    "id": "24134F",
-    "naam": "Deel Kaggevinne",
-    "gemeente_niscode": "24134"
-  },
-  {
     "id": "24135A",
     "naam": "Tielt",
     "gemeente_niscode": "24135"
   },
   {
     "id": "24135B",
-    "naam": "Meensel",
+    "naam": "Meensel-Kiezegem",
     "gemeente_niscode": "24135"
   },
   {
@@ -2111,598 +1901,13 @@
   },
   {
     "id": "24137C",
-    "naam": "Bunsbeek*",
+    "naam": "Bunsbeek",
     "gemeente_niscode": "24137"
   },
   {
     "id": "24137D",
     "naam": "Kapellen",
     "gemeente_niscode": "24137"
-  },
-  {
-    "id": "25005A",
-    "naam": "Beauvechain",
-    "gemeente_niscode": "25005"
-  },
-  {
-    "id": "25005B",
-    "naam": "L'ecluse",
-    "gemeente_niscode": "25005"
-  },
-  {
-    "id": "25005C",
-    "naam": "Tourinnes-La-Grosse",
-    "gemeente_niscode": "25005"
-  },
-  {
-    "id": "25005D",
-    "naam": "Nodebais",
-    "gemeente_niscode": "25005"
-  },
-  {
-    "id": "25005E",
-    "naam": "Hamme-Mille & Partie De Bossut Gottechain",
-    "gemeente_niscode": "25005"
-  },
-  {
-    "id": "250141",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "25014"
-  },
-  {
-    "id": "25014A",
-    "naam": "Braine-L'alleud*",
-    "gemeente_niscode": "25014"
-  },
-  {
-    "id": "25014B",
-    "naam": "Lillois-Witterzee",
-    "gemeente_niscode": "25014"
-  },
-  {
-    "id": "25014C",
-    "naam": "Ophain-Bois-Seigneur-Isaac",
-    "gemeente_niscode": "25014"
-  },
-  {
-    "id": "25015A",
-    "naam": "Braine-Le-Chateau",
-    "gemeente_niscode": "25015"
-  },
-  {
-    "id": "25015B",
-    "naam": "Wauthier-Braine",
-    "gemeente_niscode": "25015"
-  },
-  {
-    "id": "25018A",
-    "naam": "Chaumont-Gistoux",
-    "gemeente_niscode": "25018"
-  },
-  {
-    "id": "25018B",
-    "naam": "Corroy-Le-Grand*",
-    "gemeente_niscode": "25018"
-  },
-  {
-    "id": "25018C",
-    "naam": "Dion-Le-Mont",
-    "gemeente_niscode": "25018"
-  },
-  {
-    "id": "25018D",
-    "naam": "Dion-Le-Val",
-    "gemeente_niscode": "25018"
-  },
-  {
-    "id": "25018E",
-    "naam": "Bonlez",
-    "gemeente_niscode": "25018"
-  },
-  {
-    "id": "25018F",
-    "naam": "Longueville",
-    "gemeente_niscode": "25018"
-  },
-  {
-    "id": "25023A",
-    "naam": "Court-Saint-Etienne",
-    "gemeente_niscode": "25023"
-  },
-  {
-    "id": "25031A",
-    "naam": "Genappe",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031B",
-    "naam": "Baisy-Thy*",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031C",
-    "naam": "Loupoigne",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031D",
-    "naam": "Houtain-Le-Val",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031E",
-    "naam": "Vieux-Genappe",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031F",
-    "naam": "Glabais",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031G",
-    "naam": "Ways",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25031H",
-    "naam": "Bousval",
-    "gemeente_niscode": "25031"
-  },
-  {
-    "id": "25037A",
-    "naam": "Grez-Doiceau",
-    "gemeente_niscode": "25037"
-  },
-  {
-    "id": "25037B",
-    "naam": "Archennes",
-    "gemeente_niscode": "25037"
-  },
-  {
-    "id": "25037C",
-    "naam": "Biez",
-    "gemeente_niscode": "25037"
-  },
-  {
-    "id": "25037D",
-    "naam": "Bossut-Gottechain*",
-    "gemeente_niscode": "25037"
-  },
-  {
-    "id": "25037E",
-    "naam": "Nethen",
-    "gemeente_niscode": "25037"
-  },
-  {
-    "id": "25043A",
-    "naam": "Incourt",
-    "gemeente_niscode": "25043"
-  },
-  {
-    "id": "25043B",
-    "naam": "Glimes",
-    "gemeente_niscode": "25043"
-  },
-  {
-    "id": "25043C",
-    "naam": "Opprebais",
-    "gemeente_niscode": "25043"
-  },
-  {
-    "id": "25043D",
-    "naam": "Roux-Miroir",
-    "gemeente_niscode": "25043"
-  },
-  {
-    "id": "25043E",
-    "naam": "Pietrebais & Part Dongelberg",
-    "gemeente_niscode": "25043"
-  },
-  {
-    "id": "25044A",
-    "naam": "Ittre",
-    "gemeente_niscode": "25044"
-  },
-  {
-    "id": "25044B",
-    "naam": "Haut-Ittre",
-    "gemeente_niscode": "25044"
-  },
-  {
-    "id": "25044C",
-    "naam": "Virginal-Samme*",
-    "gemeente_niscode": "25044"
-  },
-  {
-    "id": "25048A",
-    "naam": "Jodoigne",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048B",
-    "naam": "Jodoigne-Souveraine",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048C",
-    "naam": "Jauchelette",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048D",
-    "naam": "Dongelberg*",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048E",
-    "naam": "Lathuy",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048F",
-    "naam": "Melin",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048G",
-    "naam": "Saint-Remy-Geest",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048H",
-    "naam": "Zetrud-Lumay",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048J",
-    "naam": "Saint-Jean-Geest",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25048K",
-    "naam": "Pietrain",
-    "gemeente_niscode": "25048"
-  },
-  {
-    "id": "25050A",
-    "naam": "La Hulpe",
-    "gemeente_niscode": "25050"
-  },
-  {
-    "id": "25068A",
-    "naam": "Mont-Saint-Guibert",
-    "gemeente_niscode": "25068"
-  },
-  {
-    "id": "25068B",
-    "naam": "Corbais",
-    "gemeente_niscode": "25068"
-  },
-  {
-    "id": "25068C",
-    "naam": "Hevillers",
-    "gemeente_niscode": "25068"
-  },
-  {
-    "id": "25072A",
-    "naam": "Nivelles",
-    "gemeente_niscode": "25072"
-  },
-  {
-    "id": "25072B",
-    "naam": "Baulers",
-    "gemeente_niscode": "25072"
-  },
-  {
-    "id": "25072C",
-    "naam": "Thines",
-    "gemeente_niscode": "25072"
-  },
-  {
-    "id": "25072D",
-    "naam": "Monstreux",
-    "gemeente_niscode": "25072"
-  },
-  {
-    "id": "25072E",
-    "naam": "Bornival",
-    "gemeente_niscode": "25072"
-  },
-  {
-    "id": "25084A",
-    "naam": "Perwez",
-    "gemeente_niscode": "25084"
-  },
-  {
-    "id": "25084B",
-    "naam": "Thorembais-Saint-Trond",
-    "gemeente_niscode": "25084"
-  },
-  {
-    "id": "25084C",
-    "naam": "Orbais",
-    "gemeente_niscode": "25084"
-  },
-  {
-    "id": "25084D",
-    "naam": "Maleves-Sainte-Marie-Wastines",
-    "gemeente_niscode": "25084"
-  },
-  {
-    "id": "25084E",
-    "naam": "Thorembais-Les Beguines",
-    "gemeente_niscode": "25084"
-  },
-  {
-    "id": "25091A",
-    "naam": "Rixensart",
-    "gemeente_niscode": "25091"
-  },
-  {
-    "id": "25091B",
-    "naam": "Genval",
-    "gemeente_niscode": "25091"
-  },
-  {
-    "id": "25091C",
-    "naam": "Rosieres",
-    "gemeente_niscode": "25091"
-  },
-  {
-    "id": "25105A",
-    "naam": "Tubize",
-    "gemeente_niscode": "25105"
-  },
-  {
-    "id": "25105B",
-    "naam": "Oisquercq & Partie De Virginal-Samme",
-    "gemeente_niscode": "25105"
-  },
-  {
-    "id": "25105C",
-    "naam": "Clabecq",
-    "gemeente_niscode": "25105"
-  },
-  {
-    "id": "25105D",
-    "naam": "Saintes*",
-    "gemeente_niscode": "25105"
-  },
-  {
-    "id": "25107A",
-    "naam": "Villers-La-Ville",
-    "gemeente_niscode": "25107"
-  },
-  {
-    "id": "25107B",
-    "naam": "Tilly",
-    "gemeente_niscode": "25107"
-  },
-  {
-    "id": "25107C",
-    "naam": "Mellery & Partie De Gentinnes",
-    "gemeente_niscode": "25107"
-  },
-  {
-    "id": "25107D",
-    "naam": "Marbais",
-    "gemeente_niscode": "25107"
-  },
-  {
-    "id": "25107E",
-    "naam": "Sart-Dames-Avelines",
-    "gemeente_niscode": "25107"
-  },
-  {
-    "id": "25110A",
-    "naam": "Waterloo + Partie De Braine-L'alleud, De Ohain",
-    "gemeente_niscode": "25110"
-  },
-  {
-    "id": "25112A",
-    "naam": "Wavre*",
-    "gemeente_niscode": "25112"
-  },
-  {
-    "id": "25112B",
-    "naam": "Bierges",
-    "gemeente_niscode": "25112"
-  },
-  {
-    "id": "25112C",
-    "naam": "Limal*",
-    "gemeente_niscode": "25112"
-  },
-  {
-    "id": "25117A",
-    "naam": "Chastre-Villeroux-Blanmont",
-    "gemeente_niscode": "25117"
-  },
-  {
-    "id": "25117B",
-    "naam": "Cortil-Noirmont",
-    "gemeente_niscode": "25117"
-  },
-  {
-    "id": "25117C",
-    "naam": "Saint-Gery",
-    "gemeente_niscode": "25117"
-  },
-  {
-    "id": "25117D",
-    "naam": "Gentinnes*",
-    "gemeente_niscode": "25117"
-  },
-  {
-    "id": "25118A",
-    "naam": "Neerheylissem",
-    "gemeente_niscode": "25118"
-  },
-  {
-    "id": "25118B",
-    "naam": "Opheylissem",
-    "gemeente_niscode": "25118"
-  },
-  {
-    "id": "25118C",
-    "naam": "Linsmeau",
-    "gemeente_niscode": "25118"
-  },
-  {
-    "id": "251191",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "25119"
-  },
-  {
-    "id": "25119A",
-    "naam": "Lasne-Chapelle-Saint-Lambert",
-    "gemeente_niscode": "25119"
-  },
-  {
-    "id": "25119B",
-    "naam": "Couture-Saint-Germain",
-    "gemeente_niscode": "25119"
-  },
-  {
-    "id": "25119C",
-    "naam": "Maransart",
-    "gemeente_niscode": "25119"
-  },
-  {
-    "id": "25119D",
-    "naam": "Ohain*",
-    "gemeente_niscode": "25119"
-  },
-  {
-    "id": "25119E",
-    "naam": "Plancenoit",
-    "gemeente_niscode": "25119"
-  },
-  {
-    "id": "25120A",
-    "naam": "Orp-Le-Grand",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25120B",
-    "naam": "Jandrain-Jandrenouille",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25120C",
-    "naam": "Jauche",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25120D",
-    "naam": "Folx-Les-Caves",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25120E",
-    "naam": "Enines",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25120F",
-    "naam": "Marilles",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25120G",
-    "naam": "Noduwez",
-    "gemeente_niscode": "25120"
-  },
-  {
-    "id": "25121A",
-    "naam": "Ottignies",
-    "gemeente_niscode": "25121"
-  },
-  {
-    "id": "25121B",
-    "naam": "Ceroux-Mousty*",
-    "gemeente_niscode": "25121"
-  },
-  {
-    "id": "25121C",
-    "naam": "Limelette",
-    "gemeente_niscode": "25121"
-  },
-  {
-    "id": "25121D",
-    "naam": "Partie De Limal, De Corroy-Le Grand,-De Wavre ",
-    "gemeente_niscode": "25121"
-  },
-  {
-    "id": "25122A",
-    "naam": "Ramillies-Offus",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25122B",
-    "naam": "Grand-Rosiere-Hottomont",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25122C",
-    "naam": "Geest-Gerompont-Petit-Rosiere",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25122D",
-    "naam": "Mont-Saint-Andre",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25122E",
-    "naam": "Bomal",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25122F",
-    "naam": "Autre-Eglise",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25122G",
-    "naam": "Huppaye",
-    "gemeente_niscode": "25122"
-  },
-  {
-    "id": "25123A",
-    "naam": "Rebecq-Rognon",
-    "gemeente_niscode": "25123"
-  },
-  {
-    "id": "25123B",
-    "naam": "Bierghes",
-    "gemeente_niscode": "25123"
-  },
-  {
-    "id": "25123C",
-    "naam": "Quenast",
-    "gemeente_niscode": "25123"
-  },
-  {
-    "id": "25123D",
-    "naam": "Parties De Saintes",
-    "gemeente_niscode": "25123"
-  },
-  {
-    "id": "25124A",
-    "naam": "Walhain-Saint-Paul",
-    "gemeente_niscode": "25124"
-  },
-  {
-    "id": "25124B",
-    "naam": "Nil-Saint-Vincent-Saint-Martin",
-    "gemeente_niscode": "25124"
-  },
-  {
-    "id": "25124C",
-    "naam": "Tourinnes-Saint-Lambert",
-    "gemeente_niscode": "25124"
   },
   {
     "id": "31003A",
@@ -2730,28 +1935,13 @@
     "gemeente_niscode": "31004"
   },
   {
-    "id": "31004X",
-    "naam": "Strand",
-    "gemeente_niscode": "31004"
-  },
-  {
-    "id": "310051",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "31005"
-  },
-  {
-    "id": "310059",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "31005"
-  },
-  {
     "id": "31005A",
     "naam": "Brugge",
     "gemeente_niscode": "31005"
   },
   {
     "id": "31005B",
-    "naam": "Lissewege ( & Zeebrugge )",
+    "naam": "Zeebrugge",
     "gemeente_niscode": "31005"
   },
   {
@@ -2766,7 +1956,7 @@
   },
   {
     "id": "31005E",
-    "naam": "Sint-Kruis*",
+    "naam": "Sint-Kruis",
     "gemeente_niscode": "31005"
   },
   {
@@ -2785,8 +1975,8 @@
     "gemeente_niscode": "31005"
   },
   {
-    "id": "31005X",
-    "naam": "Strand",
+    "id": "31005I",
+    "naam": "Lissewege",
     "gemeente_niscode": "31005"
   },
   {
@@ -2796,12 +1986,12 @@
   },
   {
     "id": "31006B",
-    "naam": "Afdeling 2 Sint-Kruis ",
+    "naam": "Hoeke",
     "gemeente_niscode": "31006"
   },
   {
     "id": "31006C",
-    "naam": "Oostkerke + Hoeke",
+    "naam": "Oostkerke",
     "gemeente_niscode": "31006"
   },
   {
@@ -2870,11 +2060,6 @@
     "gemeente_niscode": "31033"
   },
   {
-    "id": "31033B",
-    "naam": "Wijnendale Deel-Aartrijke + Ichtegem ",
-    "gemeente_niscode": "31033"
-  },
-  {
     "id": "31040A",
     "naam": "Zedelgem",
     "gemeente_niscode": "31040"
@@ -2891,7 +2076,7 @@
   },
   {
     "id": "31040D",
-    "naam": "Aartrijke*",
+    "naam": "Aartrijke",
     "gemeente_niscode": "31040"
   },
   {
@@ -2911,7 +2096,7 @@
   },
   {
     "id": "31042D",
-    "naam": "Nieuwmunster*",
+    "naam": "Nieuwmunster",
     "gemeente_niscode": "31042"
   },
   {
@@ -2932,11 +2117,6 @@
   {
     "id": "31043D",
     "naam": "Westkapelle",
-    "gemeente_niscode": "31043"
-  },
-  {
-    "id": "31043X",
-    "naam": "Strand",
     "gemeente_niscode": "31043"
   },
   {
@@ -2966,7 +2146,7 @@
   },
   {
     "id": "32003F",
-    "naam": "Woumen*",
+    "naam": "Woumen",
     "gemeente_niscode": "32003"
   },
   {
@@ -3005,6 +2185,16 @@
     "gemeente_niscode": "32003"
   },
   {
+    "id": "32003O",
+    "naam": "Esen",
+    "gemeente_niscode": "32003"
+  },
+  {
+    "id": "32003P",
+    "naam": "Kaaskerke",
+    "gemeente_niscode": "32003"
+  },
+  {
     "id": "32006A",
     "naam": "Houthulst",
     "gemeente_niscode": "32006"
@@ -3012,11 +2202,6 @@
   {
     "id": "32006B",
     "naam": "Merkem",
-    "gemeente_niscode": "32006"
-  },
-  {
-    "id": "32006C",
-    "naam": "Deel Woumen Afdeling-3 ",
     "gemeente_niscode": "32006"
   },
   {
@@ -3146,7 +2331,7 @@
   },
   {
     "id": "33021B",
-    "naam": "Reningelst*",
+    "naam": "Reningelst",
     "gemeente_niscode": "33021"
   },
   {
@@ -3181,7 +2366,7 @@
   },
   {
     "id": "33037A",
-    "naam": "Zonnebeke*",
+    "naam": "Zonnebeke",
     "gemeente_niscode": "33037"
   },
   {
@@ -3240,13 +2425,8 @@
     "gemeente_niscode": "33039"
   },
   {
-    "id": "33039H",
-    "naam": "Deel Reningelst",
-    "gemeente_niscode": "33039"
-  },
-  {
     "id": "33040A",
-    "naam": "Langemark + Deel Zonnebeke",
+    "naam": "Langemark",
     "gemeente_niscode": "33040"
   },
   {
@@ -3306,17 +2486,17 @@
   },
   {
     "id": "34003A",
-    "naam": "Avelgem*& Deel Kluisbergen",
+    "naam": "Avelgem",
     "gemeente_niscode": "34003"
   },
   {
     "id": "34003B",
-    "naam": "Waarmaarde*",
+    "naam": "Waarmaarde",
     "gemeente_niscode": "34003"
   },
   {
     "id": "34003C",
-    "naam": "Kerkhove* + Deel Van Berchem",
+    "naam": "Kerkhove",
     "gemeente_niscode": "34003"
   },
   {
@@ -3336,7 +2516,7 @@
   },
   {
     "id": "34013A",
-    "naam": "Harelbeke*",
+    "naam": "Harelbeke",
     "gemeente_niscode": "34013"
   },
   {
@@ -3351,7 +2531,7 @@
   },
   {
     "id": "34022A",
-    "naam": "Kortrijk + Deel Harelbeke En Kuurne",
+    "naam": "Kortrijk",
     "gemeente_niscode": "34022"
   },
   {
@@ -3391,7 +2571,7 @@
   },
   {
     "id": "34023A",
-    "naam": "Kuurne*",
+    "naam": "Kuurne",
     "gemeente_niscode": "34023"
   },
   {
@@ -3415,18 +2595,13 @@
     "gemeente_niscode": "34027"
   },
   {
-    "id": "340401",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "34040"
-  },
-  {
     "id": "34040A",
     "naam": "Waregem",
     "gemeente_niscode": "34040"
   },
   {
     "id": "34040B",
-    "naam": "Beveren-Leie",
+    "naam": "Beveren",
     "gemeente_niscode": "34040"
   },
   {
@@ -3438,11 +2613,6 @@
     "id": "34040D",
     "naam": "Sint-Eloois-Vijve",
     "gemeente_niscode": "34040"
-  },
-  {
-    "id": "340412",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "34041"
   },
   {
     "id": "34041A",
@@ -3500,13 +2670,8 @@
     "gemeente_niscode": "35002"
   },
   {
-    "id": "35002X",
-    "naam": "Strand",
-    "gemeente_niscode": "35002"
-  },
-  {
     "id": "35005A",
-    "naam": "Gistel+deel Westkerke",
+    "naam": "Gistel",
     "gemeente_niscode": "35005"
   },
   {
@@ -3526,7 +2691,7 @@
   },
   {
     "id": "35006A",
-    "naam": "Ichtegem*",
+    "naam": "Ichtegem",
     "gemeente_niscode": "35006"
   },
   {
@@ -3576,7 +2741,7 @@
   },
   {
     "id": "35011H",
-    "naam": "Westende*",
+    "naam": "Westende",
     "gemeente_niscode": "35011"
   },
   {
@@ -3585,43 +2750,18 @@
     "gemeente_niscode": "35011"
   },
   {
-    "id": "35011X",
-    "naam": "Strand",
-    "gemeente_niscode": "35011"
-  },
-  {
     "id": "35013A",
-    "naam": "Oostende*",
-    "gemeente_niscode": "35013"
-  },
-  {
-    "id": "35013B",
-    "naam": "Oostende*",
+    "naam": "Oostende",
     "gemeente_niscode": "35013"
   },
   {
     "id": "35013C",
-    "naam": "Oostende Zandvoorde +oostende*",
+    "naam": "Zandvoorde",
     "gemeente_niscode": "35013"
   },
   {
     "id": "35013D",
-    "naam": "Oostende-Stene + Oostende*",
-    "gemeente_niscode": "35013"
-  },
-  {
-    "id": "35013E",
-    "naam": "Oostende-Stene + Oostende*",
-    "gemeente_niscode": "35013"
-  },
-  {
-    "id": "35013F",
-    "naam": "Oostende + Oostende-Stene*",
-    "gemeente_niscode": "35013"
-  },
-  {
-    "id": "35013X",
-    "naam": "Strand",
+    "naam": "Stene",
     "gemeente_niscode": "35013"
   },
   {
@@ -3641,7 +2781,7 @@
   },
   {
     "id": "35014D",
-    "naam": "Westkerke*",
+    "naam": "Westkerke",
     "gemeente_niscode": "35014"
   },
   {
@@ -3651,17 +2791,12 @@
   },
   {
     "id": "35029B",
-    "naam": "Vlissegem + Deel Nieuwmunster",
+    "naam": "Vlissegem",
     "gemeente_niscode": "35029"
   },
   {
     "id": "35029C",
     "naam": "Wenduine",
-    "gemeente_niscode": "35029"
-  },
-  {
-    "id": "35029X",
-    "naam": "Strand",
     "gemeente_niscode": "35029"
   },
   {
@@ -3680,11 +2815,6 @@
     "gemeente_niscode": "36007"
   },
   {
-    "id": "360081",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "36008"
-  },
-  {
     "id": "36008A",
     "naam": "Izegem",
     "gemeente_niscode": "36008"
@@ -3695,13 +2825,18 @@
     "gemeente_niscode": "36008"
   },
   {
+    "id": "36008C",
+    "naam": "Emelgem",
+    "gemeente_niscode": "36008"
+  },
+  {
     "id": "36010A",
     "naam": "Ledegem",
     "gemeente_niscode": "36010"
   },
   {
     "id": "36010B",
-    "naam": "Rollegem Kapelle",
+    "naam": "Rollegem-Kapelle",
     "gemeente_niscode": "36010"
   },
   {
@@ -3725,11 +2860,6 @@
     "gemeente_niscode": "36012"
   },
   {
-    "id": "360151",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "36015"
-  },
-  {
     "id": "36015A",
     "naam": "Roeselare",
     "gemeente_niscode": "36015"
@@ -3742,6 +2872,11 @@
   {
     "id": "36015C",
     "naam": "Rumbeke",
+    "gemeente_niscode": "36015"
+  },
+  {
+    "id": "36015D",
+    "naam": "Beveren",
     "gemeente_niscode": "36015"
   },
   {
@@ -3825,11 +2960,6 @@
     "gemeente_niscode": "37015"
   },
   {
-    "id": "370171",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "37017"
-  },
-  {
     "id": "37017A",
     "naam": "Wielsbeke",
     "gemeente_niscode": "37017"
@@ -3900,6 +3030,16 @@
     "gemeente_niscode": "38002"
   },
   {
+    "id": "38002H",
+    "naam": "Oeren",
+    "gemeente_niscode": "38002"
+  },
+  {
+    "id": "38002J",
+    "naam": "Sint-Rijkers",
+    "gemeente_niscode": "38002"
+  },
+  {
     "id": "38008A",
     "naam": "De Panne",
     "gemeente_niscode": "38008"
@@ -3907,11 +3047,6 @@
   {
     "id": "38008B",
     "naam": "Adinkerke",
-    "gemeente_niscode": "38008"
-  },
-  {
-    "id": "38008X",
-    "naam": "Strand",
     "gemeente_niscode": "38008"
   },
   {
@@ -3930,13 +3065,8 @@
     "gemeente_niscode": "38014"
   },
   {
-    "id": "38014X",
-    "naam": "Strand",
-    "gemeente_niscode": "38014"
-  },
-  {
     "id": "38016A",
-    "naam": "Nieuwpoort+deel Westende",
+    "naam": "Nieuwpoort",
     "gemeente_niscode": "38016"
   },
   {
@@ -3947,11 +3077,6 @@
   {
     "id": "38016C",
     "naam": "Ramskapelle",
-    "gemeente_niscode": "38016"
-  },
-  {
-    "id": "38016X",
-    "naam": "Strand",
     "gemeente_niscode": "38016"
   },
   {
@@ -3990,11 +3115,6 @@
     "gemeente_niscode": "38025"
   },
   {
-    "id": "38025H",
-    "naam": "Beauvoorde",
-    "gemeente_niscode": "38025"
-  },
-  {
     "id": "38025J",
     "naam": "Houtem",
     "gemeente_niscode": "38025"
@@ -4002,6 +3122,16 @@
   {
     "id": "38025K",
     "naam": "De Moeren",
+    "gemeente_niscode": "38025"
+  },
+  {
+    "id": "38025L",
+    "naam": "Vinkem",
+    "gemeente_niscode": "38025"
+  },
+  {
+    "id": "38025M",
+    "naam": "Wulveringem",
     "gemeente_niscode": "38025"
   },
   {
@@ -4041,7 +3171,7 @@
   },
   {
     "id": "41002H",
-    "naam": "Erembodegem*",
+    "naam": "Erembodegem",
     "gemeente_niscode": "41002"
   },
   {
@@ -4056,7 +3186,7 @@
   },
   {
     "id": "41011B",
-    "naam": "Iddergem + Deel Ninove",
+    "naam": "Iddergem",
     "gemeente_niscode": "41011"
   },
   {
@@ -4145,13 +3275,8 @@
     "gemeente_niscode": "41018"
   },
   {
-    "id": "410241",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "41024"
-  },
-  {
     "id": "41024A",
-    "naam": "Haaltert + Deel Erembodegem",
+    "naam": "Haaltert",
     "gemeente_niscode": "41024"
   },
   {
@@ -4221,7 +3346,7 @@
   },
   {
     "id": "41034C",
-    "naam": "Impe + Deel Vlierzele",
+    "naam": "Impe",
     "gemeente_niscode": "41034"
   },
   {
@@ -4236,7 +3361,7 @@
   },
   {
     "id": "41048A",
-    "naam": "Ninove*",
+    "naam": "Ninove",
     "gemeente_niscode": "41048"
   },
   {
@@ -4296,7 +3421,7 @@
   },
   {
     "id": "41063A",
-    "naam": "Sint-Lievens-Houtem + Deel Oombergen",
+    "naam": "Sint-Lievens-Houtem",
     "gemeente_niscode": "41063"
   },
   {
@@ -4311,7 +3436,7 @@
   },
   {
     "id": "41063D",
-    "naam": "Vlierzele*",
+    "naam": "Vlierzele",
     "gemeente_niscode": "41063"
   },
   {
@@ -4326,12 +3451,12 @@
   },
   {
     "id": "41081B",
-    "naam": "Elene + Oombergen*",
+    "naam": "Elene",
     "gemeente_niscode": "41081"
   },
   {
     "id": "41081C",
-    "naam": "Leeuwergen",
+    "naam": "Leeuwergem",
     "gemeente_niscode": "41081"
   },
   {
@@ -4366,7 +3491,12 @@
   },
   {
     "id": "41081K",
-    "naam": "Sint-Maria-Oudenhove*",
+    "naam": "Sint-Maria-Oudenhove",
+    "gemeente_niscode": "41081"
+  },
+  {
+    "id": "41081L",
+    "naam": "Oombergen",
     "gemeente_niscode": "41081"
   },
   {
@@ -4410,11 +3540,6 @@
     "gemeente_niscode": "41082"
   },
   {
-    "id": "420031",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "42003"
-  },
-  {
     "id": "42003A",
     "naam": "Berlare",
     "gemeente_niscode": "42003"
@@ -4426,12 +3551,17 @@
   },
   {
     "id": "42003C",
-    "naam": "Overmere*+deel Lokeren",
+    "naam": "Overmere",
     "gemeente_niscode": "42003"
   },
   {
     "id": "42004A",
     "naam": "Buggenhout",
+    "gemeente_niscode": "42004"
+  },
+  {
+    "id": "42004B",
+    "naam": "Opdorp",
     "gemeente_niscode": "42004"
   },
   {
@@ -4446,7 +3576,7 @@
   },
   {
     "id": "42006C",
-    "naam": "Sint-Gillis-Bij-Dendermonde",
+    "naam": "Sint-Gillis-bij-Dendermonde",
     "gemeente_niscode": "42006"
   },
   {
@@ -4546,7 +3676,7 @@
   },
   {
     "id": "42028A",
-    "naam": "Zele*+deel Lokeren",
+    "naam": "Zele",
     "gemeente_niscode": "42028"
   },
   {
@@ -4571,7 +3701,7 @@
   },
   {
     "id": "43005A",
-    "naam": "Eeklo* + Deel Adegem",
+    "naam": "Eeklo",
     "gemeente_niscode": "43005"
   },
   {
@@ -4585,11 +3715,6 @@
     "gemeente_niscode": "43007"
   },
   {
-    "id": "430101",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "43010"
-  },
-  {
     "id": "43010A",
     "naam": "Maldegem",
     "gemeente_niscode": "43010"
@@ -4601,7 +3726,7 @@
   },
   {
     "id": "43010C",
-    "naam": "Adegem*+deel Van Eeklo",
+    "naam": "Adegem",
     "gemeente_niscode": "43010"
   },
   {
@@ -4616,7 +3741,7 @@
   },
   {
     "id": "43014C",
-    "naam": "Sint-Jan-In-Eremo",
+    "naam": "Sint-Jan-in-Eremo",
     "gemeente_niscode": "43014"
   },
   {
@@ -4635,78 +3760,118 @@
     "gemeente_niscode": "43018"
   },
   {
-    "id": "44001A",
+    "id": "44084A",
     "naam": "Aalter",
     "gemeente_niscode": "44084"
   },
   {
-    "id": "44001B",
+    "id": "44084B",
     "naam": "Bellem",
     "gemeente_niscode": "44084"
   },
   {
-    "id": "44001C",
+    "id": "44084C",
     "naam": "Lotenhulle",
     "gemeente_niscode": "44084"
   },
   {
-    "id": "44001D",
+    "id": "44084D",
     "naam": "Poeke",
     "gemeente_niscode": "44084"
   },
   {
-    "id": "44011A",
+    "id": "44084E",
+    "naam": "Knesselare",
+    "gemeente_niscode": "44084"
+  },
+  {
+    "id": "44084F",
+    "naam": "Ursel",
+    "gemeente_niscode": "44084"
+  },
+  {
+    "id": "44083A",
     "naam": "Deinze",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011B",
+    "id": "44083B",
     "naam": "Astene",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011C",
-    "naam": "Petegem-Leie",
+    "id": "44083C",
+    "naam": "Petegem-aan-de-Leie",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011D",
+    "id": "44083D",
     "naam": "Zeveren",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011E",
+    "id": "44083E",
     "naam": "Grammene",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011F",
+    "id": "44083F",
     "naam": "Gottem",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011G",
+    "id": "44083G",
     "naam": "Wontergem",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011H",
+    "id": "44083H",
     "naam": "Vinkt",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011J",
+    "id": "44083I",
     "naam": "Meigem",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011K",
+    "id": "44083J",
     "naam": "Bachte-Maria-Leerne",
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44011L",
+    "id": "44083K",
     "naam": "Sint-Martens-Leerne",
+    "gemeente_niscode": "44083"
+  },
+  {
+    "id": "44083L",
+    "naam": "Nevele",
+    "gemeente_niscode": "44083"
+  },
+  {
+    "id": "44083M",
+    "naam": "Poesele",
+    "gemeente_niscode": "44083"
+  },
+  {
+    "id": "44083N",
+    "naam": "Hansbeke",
+    "gemeente_niscode": "44083"
+  },
+  {
+    "id": "44083O",
+    "naam": "Merendree",
+    "gemeente_niscode": "44083"
+  },
+  {
+    "id": "44083P",
+    "naam": "Landegem",
+    "gemeente_niscode": "44083"
+  },
+  {
+    "id": "44083Q",
+    "naam": "Vosselare",
     "gemeente_niscode": "44083"
   },
   {
@@ -4716,7 +3881,7 @@
   },
   {
     "id": "44012B",
-    "naam": "Zevergem*+deel Melsen, Schelderode,vurste",
+    "naam": "Zevergem",
     "gemeente_niscode": "44012"
   },
   {
@@ -4745,18 +3910,23 @@
     "gemeente_niscode": "44019"
   },
   {
+    "id": "44019D",
+    "naam": "Kluizen",
+    "gemeente_niscode": "44019"
+  },
+  {
     "id": "44020A",
     "naam": "Gavere",
     "gemeente_niscode": "44020"
   },
   {
     "id": "44020B",
-    "naam": "Semmerzake*+deel Eke",
+    "naam": "Semmerzake",
     "gemeente_niscode": "44020"
   },
   {
     "id": "44020C",
-    "naam": "Vurste*",
+    "naam": "Vurste",
     "gemeente_niscode": "44020"
   },
   {
@@ -4766,7 +3936,7 @@
   },
   {
     "id": "44020E",
-    "naam": "Dikkelvenne*+deel Zingem",
+    "naam": "Dikkelvenne",
     "gemeente_niscode": "44020"
   },
   {
@@ -4776,17 +3946,12 @@
   },
   {
     "id": "44021A",
-    "naam": "Gent Centrum",
-    "gemeente_niscode": "44021"
-  },
-  {
-    "id": "44021B",
-    "naam": "Gent Zuid",
+    "naam": "Gent",
     "gemeente_niscode": "44021"
   },
   {
     "id": "44021C",
-    "naam": "Gent Muide-Sifferdok",
+    "naam": "Sint-Denijs-Westrem",
     "gemeente_niscode": "44021"
   },
   {
@@ -4811,12 +3976,12 @@
   },
   {
     "id": "44021H",
-    "naam": "Zwijnaarde*+deel Van Merelbeke",
+    "naam": "Zwijnaarde",
     "gemeente_niscode": "44021"
   },
   {
     "id": "44021J",
-    "naam": "Sint-Denijs-Westrem Afsnee-",
+    "naam": "Afsnee",
     "gemeente_niscode": "44021"
   },
   {
@@ -4835,14 +4000,19 @@
     "gemeente_niscode": "44021"
   },
   {
-    "id": "44029A",
-    "naam": "Knesselare",
-    "gemeente_niscode": "44084"
+    "id": "44021N",
+    "naam": "Desteldonk",
+    "gemeente_niscode": "44021"
   },
   {
-    "id": "44029B",
-    "naam": "Ursel",
-    "gemeente_niscode": "44084"
+    "id": "44021O",
+    "naam": "Mendonk",
+    "gemeente_niscode": "44021"
+  },
+  {
+    "id": "44021P",
+    "naam": "Sint-Kruis-Winkel",
+    "gemeente_niscode": "44021"
   },
   {
     "id": "44034A",
@@ -4865,16 +4035,6 @@
     "gemeente_niscode": "44034"
   },
   {
-    "id": "44036A",
-    "naam": "Lovendegem",
-    "gemeente_niscode": "44085"
-  },
-  {
-    "id": "44036B",
-    "naam": "Vinderhoute",
-    "gemeente_niscode": "44085"
-  },
-  {
     "id": "44040A",
     "naam": "Melle",
     "gemeente_niscode": "44040"
@@ -4886,7 +4046,7 @@
   },
   {
     "id": "44043A",
-    "naam": "Merelbeke*+deel Zwijnaarde",
+    "naam": "Merelbeke",
     "gemeente_niscode": "44043"
   },
   {
@@ -4901,12 +4061,17 @@
   },
   {
     "id": "44043D",
-    "naam": "Schelderode*+deel Van De Pinte",
+    "naam": "Schelderode",
     "gemeente_niscode": "44043"
   },
   {
     "id": "44043E",
-    "naam": "Melsen*+deel Van De Pinte En Vurste",
+    "naam": "Melsen",
+    "gemeente_niscode": "44043"
+  },
+  {
+    "id": "44043F",
+    "naam": "Lemberge",
     "gemeente_niscode": "44043"
   },
   {
@@ -4921,38 +4086,8 @@
   },
   {
     "id": "44048B",
-    "naam": "Eke*+deel Semmerzake",
+    "naam": "Eke",
     "gemeente_niscode": "44048"
-  },
-  {
-    "id": "44049A",
-    "naam": "Nevele",
-    "gemeente_niscode": "44083"
-  },
-  {
-    "id": "44049B",
-    "naam": "Poesele",
-    "gemeente_niscode": "44083"
-  },
-  {
-    "id": "44049C",
-    "naam": "Hansbeke",
-    "gemeente_niscode": "44083"
-  },
-  {
-    "id": "44049D",
-    "naam": "Merendree",
-    "gemeente_niscode": "44083"
-  },
-  {
-    "id": "44049E",
-    "naam": "Landegem",
-    "gemeente_niscode": "44083"
-  },
-  {
-    "id": "44049F",
-    "naam": "Vosselare",
-    "gemeente_niscode": "44083"
   },
   {
     "id": "44052A",
@@ -4995,27 +4130,37 @@
     "gemeente_niscode": "44064"
   },
   {
-    "id": "44072A",
-    "naam": "Waarschoot",
-    "gemeente_niscode": "44085"
-  },
-  {
     "id": "44073A",
     "naam": "Wachtebeke",
     "gemeente_niscode": "44073"
   },
   {
-    "id": "44080A",
+    "id": "44085A",
+    "naam": "Waarschoot",
+    "gemeente_niscode": "44085"
+  },
+  {
+    "id": "44085B",
+    "naam": "Lovendegem",
+    "gemeente_niscode": "44085"
+  },
+  {
+    "id": "44085C",
+    "naam": "Vinderhoute",
+    "gemeente_niscode": "44085"
+  },
+  {
+    "id": "44085D",
     "naam": "Zomergem",
     "gemeente_niscode": "44085"
   },
   {
-    "id": "44080B",
+    "id": "44085E",
     "naam": "Ronsele",
     "gemeente_niscode": "44085"
   },
   {
-    "id": "44080C",
+    "id": "44085F",
     "naam": "Oostwinkel",
     "gemeente_niscode": "44085"
   },
@@ -5035,28 +4180,38 @@
     "gemeente_niscode": "44081"
   },
   {
-    "id": "45017A",
+    "id": "45068A",
     "naam": "Kruishoutem",
     "gemeente_niscode": "45068"
   },
   {
-    "id": "45017B",
-    "naam": "Deel Huise*",
-    "gemeente_niscode": "45068"
-  },
-  {
-    "id": "45017C",
+    "id": "45068B",
     "naam": "Wannegem-Lede",
     "gemeente_niscode": "45068"
   },
   {
-    "id": "45017D",
+    "id": "45068C",
     "naam": "Nokere",
     "gemeente_niscode": "45068"
   },
   {
+    "id": "45068D",
+    "naam": "Zingem",
+    "gemeente_niscode": "45068"
+  },
+  {
+    "id": "45068E",
+    "naam": "Ouwegem",
+    "gemeente_niscode": "45068"
+  },
+  {
+    "id": "45068F",
+    "naam": "Huise",
+    "gemeente_niscode": "45068"
+  },
+  {
     "id": "45035A",
-    "naam": "Oudenaarde*+deel Ooike",
+    "naam": "Oudenaarde",
     "gemeente_niscode": "45035"
   },
   {
@@ -5066,7 +4221,7 @@
   },
   {
     "id": "45035C",
-    "naam": "Welden*",
+    "naam": "Welden",
     "gemeente_niscode": "45035"
   },
   {
@@ -5076,7 +4231,7 @@
   },
   {
     "id": "45035E",
-    "naam": "Melden*+deel Wortegem-Petegem",
+    "naam": "Melden",
     "gemeente_niscode": "45035"
   },
   {
@@ -5085,24 +4240,44 @@
     "gemeente_niscode": "45035"
   },
   {
+    "id": "45035G",
+    "naam": "Bevere",
+    "gemeente_niscode": "45035"
+  },
+  {
+    "id": "45035H",
+    "naam": "Edelare",
+    "gemeente_niscode": "45035"
+  },
+  {
+    "id": "45035I",
+    "naam": "Eine",
+    "gemeente_niscode": "45035"
+  },
+  {
+    "id": "45035J",
+    "naam": "Ename",
+    "gemeente_niscode": "45035"
+  },
+  {
+    "id": "45035K",
+    "naam": "Leupegem",
+    "gemeente_niscode": "45035"
+  },
+  {
+    "id": "45035L",
+    "naam": "Nederename",
+    "gemeente_niscode": "45035"
+  },
+  {
+    "id": "45035M",
+    "naam": "Volkegem",
+    "gemeente_niscode": "45035"
+  },
+  {
     "id": "45041A",
     "naam": "Ronse",
     "gemeente_niscode": "45041"
-  },
-  {
-    "id": "45057A",
-    "naam": "Zingem*+deel Dikkelvenne En Nederzwalm-Hermelgem",
-    "gemeente_niscode": "45068"
-  },
-  {
-    "id": "45057B",
-    "naam": "Ouwegem",
-    "gemeente_niscode": "45068"
-  },
-  {
-    "id": "45057C",
-    "naam": "Huise*",
-    "gemeente_niscode": "45068"
   },
   {
     "id": "45059A",
@@ -5126,7 +4301,7 @@
   },
   {
     "id": "45059E",
-    "naam": "Michelbeke + Deel Sint-Maria-Oudenhove",
+    "naam": "Michelbeke",
     "gemeente_niscode": "45059"
   },
   {
@@ -5140,13 +4315,18 @@
     "gemeente_niscode": "45059"
   },
   {
+    "id": "45059H",
+    "naam": "Sint-Maria-Oudenhove",
+    "gemeente_niscode": "45059"
+  },
+  {
     "id": "45060A",
-    "naam": "Ruien + Deel Van Avelgem En Waarmaarde",
+    "naam": "Ruien",
     "gemeente_niscode": "45060"
   },
   {
     "id": "45060B",
-    "naam": "Berchem*+ Deel Van Kerkove En Wortegem-Petegem",
+    "naam": "Berchem",
     "gemeente_niscode": "45060"
   },
   {
@@ -5156,27 +4336,32 @@
   },
   {
     "id": "45060D",
-    "naam": "Zulzeke*",
+    "naam": "Zulzeke",
     "gemeente_niscode": "45060"
   },
   {
     "id": "45061A",
-    "naam": "Petegem-Aan-De-Schelde* + Deel Van Oudenaarde",
+    "naam": "Petegem-aan-de-Schelde",
     "gemeente_niscode": "45061"
   },
   {
     "id": "45061B",
-    "naam": "Wortegem*",
+    "naam": "Wortegem",
     "gemeente_niscode": "45061"
   },
   {
     "id": "45061C",
-    "naam": "Moregem + Ooike*",
+    "naam": "Moregem",
     "gemeente_niscode": "45061"
   },
   {
     "id": "45061D",
-    "naam": "Elsegem*+deel Van Kluisbergen",
+    "naam": "Elsegem",
+    "gemeente_niscode": "45061"
+  },
+  {
+    "id": "45061E",
+    "naam": "Ooike",
     "gemeente_niscode": "45061"
   },
   {
@@ -5216,7 +4401,7 @@
   },
   {
     "id": "45064B",
-    "naam": "Nukerke*+deel Van Kluisbergen",
+    "naam": "Nukerke",
     "gemeente_niscode": "45064"
   },
   {
@@ -5286,7 +4471,7 @@
   },
   {
     "id": "45065M",
-    "naam": "Nederzwalm-Hermelgem* + Deel Oudenaarde En Zingem",
+    "naam": "Nederzwalm-Hermelgem",
     "gemeente_niscode": "45065"
   },
   {
@@ -5296,7 +4481,7 @@
   },
   {
     "id": "46003B",
-    "naam": "Vrasene*",
+    "naam": "Vrasene",
     "gemeente_niscode": "46003"
   },
   {
@@ -5326,7 +4511,7 @@
   },
   {
     "id": "46003H",
-    "naam": "Haasdonk*",
+    "naam": "Haasdonk",
     "gemeente_niscode": "46003"
   },
   {
@@ -5345,13 +4530,8 @@
     "gemeente_niscode": "46013"
   },
   {
-    "id": "460141",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "46014"
-  },
-  {
     "id": "46014A",
-    "naam": "Lokeren*+deel Overmere En Zele",
+    "naam": "Lokeren",
     "gemeente_niscode": "46014"
   },
   {
@@ -5366,7 +4546,7 @@
   },
   {
     "id": "46020A",
-    "naam": "Sint-Gillis-Waas*+deel Kemzeke",
+    "naam": "Sint-Gillis-Waas",
     "gemeente_niscode": "46020"
   },
   {
@@ -5381,32 +4561,17 @@
   },
   {
     "id": "46020D",
-    "naam": "Sint-Pauwels*",
+    "naam": "Sint-Pauwels",
     "gemeente_niscode": "46020"
-  },
-  {
-    "id": "46020E",
-    "naam": "Deel Vrasene",
-    "gemeente_niscode": "46020"
-  },
-  {
-    "id": "460211",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "46021"
-  },
-  {
-    "id": "460212",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "46021"
   },
   {
     "id": "46021A",
-    "naam": "Sint-Niklaas* + Deel Haasdonk, Deel Sint-Pauwels En Temse",
+    "naam": "Sint-Niklaas",
     "gemeente_niscode": "46021"
   },
   {
     "id": "46021B",
-    "naam": "Nieuwenkerken-Waas",
+    "naam": "Nieuwkerken-Waas",
     "gemeente_niscode": "46021"
   },
   {
@@ -5416,7 +4581,7 @@
   },
   {
     "id": "46021D",
-    "naam": "Sinaai*",
+    "naam": "Sinaai",
     "gemeente_niscode": "46021"
   },
   {
@@ -5426,22 +4591,12 @@
   },
   {
     "id": "46024B",
-    "naam": "Kemzeke*",
+    "naam": "Kemzeke",
     "gemeente_niscode": "46024"
-  },
-  {
-    "id": "46024C",
-    "naam": "Deel Sinaai",
-    "gemeente_niscode": "46024"
-  },
-  {
-    "id": "460251",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "46025"
   },
   {
     "id": "46025A",
-    "naam": "Temse*",
+    "naam": "Temse",
     "gemeente_niscode": "46025"
   },
   {
@@ -5460,4074 +4615,14 @@
     "gemeente_niscode": "46025"
   },
   {
-    "id": "510042",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "510044",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "510045",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004A",
-    "naam": "Ath",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004B",
-    "naam": "Lanquesaint",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004C",
-    "naam": "Rebaix",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004D",
-    "naam": "Isieres",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004E",
-    "naam": "Meslin L'eveque-",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004F",
-    "naam": "Ghislenghien",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004G",
-    "naam": "Gibecq",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004H",
-    "naam": "Arbre",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004J",
-    "naam": "Maffle",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004K",
-    "naam": "Irchonwelz",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004L",
-    "naam": "Ormeignies",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004M",
-    "naam": "Moulbaix",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004N",
-    "naam": "Villers Notre-Dame ",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004P",
-    "naam": "Villers-Saint-Amand",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004R",
-    "naam": "Ligne",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004S",
-    "naam": "Houtaing",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004T",
-    "naam": "Mainvault",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004U",
-    "naam": "Bouvignies",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51004V",
-    "naam": "Ostiches",
-    "gemeente_niscode": "51004"
-  },
-  {
-    "id": "51008A",
-    "naam": "Beloeil",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008B",
-    "naam": "Stambruges",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008C",
-    "naam": "Quevaucamps",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008D",
-    "naam": "Basecles",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008E",
-    "naam": "Thumaide",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008F",
-    "naam": "Ramegnies",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008G",
-    "naam": "Wadelincourt",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008H",
-    "naam": "Ellignies-Sainte-Anne",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51008J",
-    "naam": "Aubechies",
-    "gemeente_niscode": "51008"
-  },
-  {
-    "id": "51009A",
-    "naam": "Bernissart",
-    "gemeente_niscode": "51009"
-  },
-  {
-    "id": "51009B",
-    "naam": "Pommeroeul",
-    "gemeente_niscode": "51009"
-  },
-  {
-    "id": "51009C",
-    "naam": "Blaton",
-    "gemeente_niscode": "51009"
-  },
-  {
-    "id": "510121",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "51012"
-  },
-  {
-    "id": "51012A",
-    "naam": "Brugelette",
-    "gemeente_niscode": "51012"
-  },
-  {
-    "id": "51012B",
-    "naam": "Gages",
-    "gemeente_niscode": "51012"
-  },
-  {
-    "id": "51012C",
-    "naam": "Cambron Casteau-",
-    "gemeente_niscode": "51012"
-  },
-  {
-    "id": "51012D",
-    "naam": "Mevergnies-Lez-Lens",
-    "gemeente_niscode": "51012"
-  },
-  {
-    "id": "51012E",
-    "naam": "Attre",
-    "gemeente_niscode": "51012"
-  },
-  {
-    "id": "510141",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51014A",
-    "naam": "Chievres",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51014B",
-    "naam": "Tongre-Saint-Martin",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51014C",
-    "naam": "Ladeuze",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51014D",
-    "naam": "Grosage",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51014E",
-    "naam": "Huissignies",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51014F",
-    "naam": "Tongre-Notre-Dame",
-    "gemeente_niscode": "51014"
-  },
-  {
-    "id": "51017A",
-    "naam": "Ellezelles",
-    "gemeente_niscode": "51017"
-  },
-  {
-    "id": "51017B",
-    "naam": "Wodecq",
-    "gemeente_niscode": "51017"
-  },
-  {
-    "id": "51017C",
-    "naam": "Lahamaide",
-    "gemeente_niscode": "51017"
-  },
-  {
-    "id": "51019A",
-    "naam": "Flobecq",
-    "gemeente_niscode": "51019"
-  },
-  {
-    "id": "51065A",
-    "naam": "Frasnes Lez-Buissenal ",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065B",
-    "naam": "Oeudeghien",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065C",
-    "naam": "Buissenal",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065D",
-    "naam": "Moustier",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065E",
-    "naam": "Hacquegnies",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065F",
-    "naam": "Herquegies",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065G",
-    "naam": "Montroeul-Au-Bois",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065H",
-    "naam": "Forest",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065J",
-    "naam": "Anvaing",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065K",
-    "naam": "Cordes",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065L",
-    "naam": "Arc Ainieres-",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065M",
-    "naam": "Wattripont",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065N",
-    "naam": "Dergneau",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "51065P",
-    "naam": "Saint Sauveur-",
-    "gemeente_niscode": "51065"
-  },
-  {
-    "id": "52010A",
-    "naam": "Chapelle-Lez-Herlaimont",
-    "gemeente_niscode": "52010"
-  },
-  {
-    "id": "52010B",
-    "naam": "Godarville",
-    "gemeente_niscode": "52010"
-  },
-  {
-    "id": "52010C",
-    "naam": "Pieton",
-    "gemeente_niscode": "52010"
-  },
-  {
-    "id": "520111",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011A",
-    "naam": "Charleroi",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011B",
-    "naam": "Dampremy",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011C",
-    "naam": "Lodelinsart",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011D",
-    "naam": "Gilly",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011E",
-    "naam": "Montignies-Sur-Sambre",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011F",
-    "naam": "Couillet",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011G",
-    "naam": "Marcinelle",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011H",
-    "naam": "Mont-Sur-Marchienne",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011J",
-    "naam": "Marchienne-Au-Pont",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011K",
-    "naam": "Monceau-Sur-Sambre",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011L",
-    "naam": "Goutroux",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011M",
-    "naam": "Roux*",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011N",
-    "naam": "Jumet",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011P",
-    "naam": "Gosselies + Partie De Wayaux",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52011R",
-    "naam": "Ransart",
-    "gemeente_niscode": "52011"
-  },
-  {
-    "id": "52012A",
-    "naam": "Chatelet",
-    "gemeente_niscode": "52012"
-  },
-  {
-    "id": "52012B",
-    "naam": "Chatelineau",
-    "gemeente_niscode": "52012"
-  },
-  {
-    "id": "52012C",
-    "naam": "Bouffioulx",
-    "gemeente_niscode": "52012"
-  },
-  {
-    "id": "52015A",
-    "naam": "Courcelles + Partie De Roux",
-    "gemeente_niscode": "52015"
-  },
-  {
-    "id": "52015B",
-    "naam": "Souvret",
-    "gemeente_niscode": "52015"
-  },
-  {
-    "id": "52015C",
-    "naam": "Trazegnies",
-    "gemeente_niscode": "52015"
-  },
-  {
-    "id": "52015D",
-    "naam": "Gouy-Lez-Pieton",
-    "gemeente_niscode": "52015"
-  },
-  {
-    "id": "52018A",
-    "naam": "Farciennes",
-    "gemeente_niscode": "52018"
-  },
-  {
-    "id": "52018B",
-    "naam": "Pironchamps",
-    "gemeente_niscode": "52018"
-  },
-  {
-    "id": "52021A",
-    "naam": "Fleurus",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021B",
-    "naam": "Wanfercee Baulet-",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021C",
-    "naam": "Lambusart",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021D",
-    "naam": "Wangenies",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021E",
-    "naam": "Heppignies",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021F",
-    "naam": "Saint-Amand",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021G",
-    "naam": "Wagnelee",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52021H",
-    "naam": "Brye",
-    "gemeente_niscode": "52021"
-  },
-  {
-    "id": "52022A",
-    "naam": "Fontaine-L'eveque",
-    "gemeente_niscode": "52022"
-  },
-  {
-    "id": "52022B",
-    "naam": "Forchies-La-Marche",
-    "gemeente_niscode": "52022"
-  },
-  {
-    "id": "52022C",
-    "naam": "Leernes",
-    "gemeente_niscode": "52022"
-  },
-  {
-    "id": "52025A",
-    "naam": "Gerpinnes",
-    "gemeente_niscode": "52025"
-  },
-  {
-    "id": "52025B",
-    "naam": "Loverval",
-    "gemeente_niscode": "52025"
-  },
-  {
-    "id": "52025C",
-    "naam": "Joncret",
-    "gemeente_niscode": "52025"
-  },
-  {
-    "id": "52025D",
-    "naam": "Acoz",
-    "gemeente_niscode": "52025"
-  },
-  {
-    "id": "52025E",
-    "naam": "Villers-Poterie",
-    "gemeente_niscode": "52025"
-  },
-  {
-    "id": "52025F",
-    "naam": "Gougnies",
-    "gemeente_niscode": "52025"
-  },
-  {
-    "id": "520431",
-    "naam": "Modific. De Limite Communale",
-    "gemeente_niscode": "55086"
-  },
-  {
-    "id": "52043A",
-    "naam": "Manage",
-    "gemeente_niscode": "55086"
-  },
-  {
-    "id": "52043B",
-    "naam": "Bois-D'haine",
-    "gemeente_niscode": "55086"
-  },
-  {
-    "id": "52043C",
-    "naam": "Fayt-Lez-Manage",
-    "gemeente_niscode": "55086"
-  },
-  {
-    "id": "52043D",
-    "naam": "La Hestre",
-    "gemeente_niscode": "55086"
-  },
-  {
-    "id": "52043E",
-    "naam": "Bellecourt",
-    "gemeente_niscode": "55086"
-  },
-  {
-    "id": "52048A",
-    "naam": "Montigny-Le-Tilleul",
-    "gemeente_niscode": "52048"
-  },
-  {
-    "id": "52048B",
-    "naam": "Landelies",
-    "gemeente_niscode": "52048"
-  },
-  {
-    "id": "52055A",
-    "naam": "Pont-A-Celles",
-    "gemeente_niscode": "52055"
-  },
-  {
-    "id": "52055B",
-    "naam": "Obaix",
-    "gemeente_niscode": "52055"
-  },
-  {
-    "id": "52055C",
-    "naam": "Buzet",
-    "gemeente_niscode": "52055"
-  },
-  {
-    "id": "52055D",
-    "naam": "Luttre",
-    "gemeente_niscode": "52055"
-  },
-  {
-    "id": "52055E",
-    "naam": "Thimeon",
-    "gemeente_niscode": "52055"
-  },
-  {
-    "id": "52055F",
-    "naam": "Viesville",
-    "gemeente_niscode": "52055"
-  },
-  {
-    "id": "520631",
-    "naam": "Modific. De Limite Communale",
-    "gemeente_niscode": "55085"
-  },
-  {
-    "id": "52063A",
-    "naam": "Seneffe",
-    "gemeente_niscode": "55085"
-  },
-  {
-    "id": "52063B",
-    "naam": "Feluy",
-    "gemeente_niscode": "55085"
-  },
-  {
-    "id": "52063C",
-    "naam": "Arquennes",
-    "gemeente_niscode": "55085"
-  },
-  {
-    "id": "52063D",
-    "naam": "Petit-Roeulx-Les-Nivelles",
-    "gemeente_niscode": "55085"
-  },
-  {
-    "id": "52063E",
-    "naam": "Familleureux*",
-    "gemeente_niscode": "55085"
-  },
-  {
-    "id": "52074A",
-    "naam": "Aiseau",
-    "gemeente_niscode": "52074"
-  },
-  {
-    "id": "52074B",
-    "naam": "Presles",
-    "gemeente_niscode": "52074"
-  },
-  {
-    "id": "52074C",
-    "naam": "Pont De-Loup ",
-    "gemeente_niscode": "52074"
-  },
-  {
-    "id": "52074D",
-    "naam": "Roselies",
-    "gemeente_niscode": "52074"
-  },
-  {
-    "id": "52075A",
-    "naam": "Mellet",
-    "gemeente_niscode": "52075"
-  },
-  {
-    "id": "52075B",
-    "naam": "Wayaux*",
-    "gemeente_niscode": "52075"
-  },
-  {
-    "id": "52075C",
-    "naam": "Villers-Perwin",
-    "gemeente_niscode": "52075"
-  },
-  {
-    "id": "52075D",
-    "naam": "Frasnes-Lez-Gosselies",
-    "gemeente_niscode": "52075"
-  },
-  {
-    "id": "52075E",
-    "naam": "Reves",
-    "gemeente_niscode": "52075"
-  },
-  {
-    "id": "530141",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "53014"
-  },
-  {
-    "id": "53014A",
-    "naam": "Boussu",
-    "gemeente_niscode": "53014"
-  },
-  {
-    "id": "53014B",
-    "naam": "Hornu",
-    "gemeente_niscode": "53014"
-  },
-  {
-    "id": "53020A",
-    "naam": "Dour",
-    "gemeente_niscode": "53020"
-  },
-  {
-    "id": "53020B",
-    "naam": "Blaugies",
-    "gemeente_niscode": "53020"
-  },
-  {
-    "id": "53020C",
-    "naam": "Wiheries*",
-    "gemeente_niscode": "53020"
-  },
-  {
-    "id": "53020D",
-    "naam": "Elouges",
-    "gemeente_niscode": "53020"
-  },
-  {
-    "id": "53028A",
-    "naam": "Frameries",
-    "gemeente_niscode": "53028"
-  },
-  {
-    "id": "53028B",
-    "naam": "Noirchain",
-    "gemeente_niscode": "53028"
-  },
-  {
-    "id": "53028C",
-    "naam": "La Bouverie",
-    "gemeente_niscode": "53028"
-  },
-  {
-    "id": "53028D",
-    "naam": "Eugies* + Partie De Paturages",
-    "gemeente_niscode": "53028"
-  },
-  {
-    "id": "53028E",
-    "naam": "Sars-La-Bruyere",
-    "gemeente_niscode": "53028"
-  },
-  {
-    "id": "53039A",
-    "naam": "Hensies",
-    "gemeente_niscode": "53039"
-  },
-  {
-    "id": "53039B",
-    "naam": "Montroeul-Sur-Haine",
-    "gemeente_niscode": "53039"
-  },
-  {
-    "id": "53039C",
-    "naam": "Thulin",
-    "gemeente_niscode": "53039"
-  },
-  {
-    "id": "53039D",
-    "naam": "Hainin",
-    "gemeente_niscode": "53039"
-  },
-  {
-    "id": "53044A",
-    "naam": "Jurbise",
-    "gemeente_niscode": "53044"
-  },
-  {
-    "id": "53044B",
-    "naam": "Masnuy-Saint-Jean*",
-    "gemeente_niscode": "53044"
-  },
-  {
-    "id": "53044C",
-    "naam": "Masnuy-Saint-Pierre",
-    "gemeente_niscode": "53044"
-  },
-  {
-    "id": "53044D",
-    "naam": "Erbisoeul",
-    "gemeente_niscode": "53044"
-  },
-  {
-    "id": "53044E",
-    "naam": "Herchies",
-    "gemeente_niscode": "53044"
-  },
-  {
-    "id": "53044F",
-    "naam": "Erbaut",
-    "gemeente_niscode": "53044"
-  },
-  {
-    "id": "530461",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "53046"
-  },
-  {
-    "id": "53046A",
-    "naam": "Lens",
-    "gemeente_niscode": "53046"
-  },
-  {
-    "id": "53046B",
-    "naam": "Bauffe",
-    "gemeente_niscode": "53046"
-  },
-  {
-    "id": "53046C",
-    "naam": "Montignies-Lez-Lens",
-    "gemeente_niscode": "53046"
-  },
-  {
-    "id": "53046D",
-    "naam": "Cambron-Saint-Vincent",
-    "gemeente_niscode": "53046"
-  },
-  {
-    "id": "53046E",
-    "naam": "Lombise",
-    "gemeente_niscode": "53046"
-  },
-  {
-    "id": "530531",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053A",
-    "naam": "Mons",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053B",
-    "naam": "Hyon",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053C",
-    "naam": "Cuesmes",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053D",
-    "naam": "Ghlin (+part De Baudour 1971)",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053E",
-    "naam": "Nimy",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053F",
-    "naam": "Obourg",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053G",
-    "naam": "Maisieres + Partie De Casteau, De Masnuy Saint-Jean ",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053H",
-    "naam": "Havre+parie De Ville-Sur-Haine",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053J",
-    "naam": "Saint-Symphorien",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053K",
-    "naam": "Villers-Saint-Ghislain",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053L",
-    "naam": "Harmignies",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053M",
-    "naam": "Harveng",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053N",
-    "naam": "Nouvelles",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053P",
-    "naam": "Spiennes",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053R",
-    "naam": "Mesvin",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053S",
-    "naam": "Ciply",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053T",
-    "naam": "Jemappes",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53053U",
-    "naam": "Flenu",
-    "gemeente_niscode": "53053"
-  },
-  {
-    "id": "53065A",
-    "naam": "Quaregnon",
-    "gemeente_niscode": "53065"
-  },
-  {
-    "id": "53065B",
-    "naam": "Wasmuel",
-    "gemeente_niscode": "53065"
-  },
-  {
-    "id": "53068A",
-    "naam": "Quievrain",
-    "gemeente_niscode": "53068"
-  },
-  {
-    "id": "53068B",
-    "naam": "Baisieux",
-    "gemeente_niscode": "53068"
-  },
-  {
-    "id": "53068C",
-    "naam": "Audregnies*",
-    "gemeente_niscode": "53068"
-  },
-  {
-    "id": "530701",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070A",
-    "naam": "Saint-Ghislain",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070B",
-    "naam": "Baudour",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070C",
-    "naam": "Tertre",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070D",
-    "naam": "Villerot",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070E",
-    "naam": "Hautrage",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070F",
-    "naam": "Sirault",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53070G",
-    "naam": "Neufmaison",
-    "gemeente_niscode": "53070"
-  },
-  {
-    "id": "53082A",
-    "naam": "Wasmes",
-    "gemeente_niscode": "53082"
-  },
-  {
-    "id": "53082B",
-    "naam": "Paturages* + Parties De Eugies",
-    "gemeente_niscode": "53082"
-  },
-  {
-    "id": "53082C",
-    "naam": "Warquignies",
-    "gemeente_niscode": "53082"
-  },
-  {
-    "id": "53083A",
-    "naam": "Roisin",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083B",
-    "naam": "Angreau",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083C",
-    "naam": "Angre",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083D",
-    "naam": "Marchipont",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083E",
-    "naam": "Onnezies",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083F",
-    "naam": "Montignies-Sur-Roc+ Parties De Audregnies Et De Wiheries",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083G",
-    "naam": "Autreppe",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083H",
-    "naam": "Fayt-Le-Franc",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083J",
-    "naam": "Athis",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "53083K",
-    "naam": "Erquennes",
-    "gemeente_niscode": "53083"
-  },
-  {
-    "id": "530841",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084A",
-    "naam": "Quevy-Le-Petit",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084B",
-    "naam": "Quevy-Le-Grand",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084C",
-    "naam": "Havay",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084D",
-    "naam": "Givry",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084E",
-    "naam": "Goegnies-Chaussee",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084F",
-    "naam": "Aulnois",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084G",
-    "naam": "Blaregnies",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084H",
-    "naam": "Genly",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084J",
-    "naam": "Bougnies",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "53084K",
-    "naam": "Asquillies",
-    "gemeente_niscode": "53084"
-  },
-  {
-    "id": "54007A",
-    "naam": "Mouscron",
-    "gemeente_niscode": "57096"
-  },
-  {
-    "id": "54007B",
-    "naam": "Luingne",
-    "gemeente_niscode": "57096"
-  },
-  {
-    "id": "54007C",
-    "naam": "Herseaux",
-    "gemeente_niscode": "57096"
-  },
-  {
-    "id": "54007D",
-    "naam": "Dottignies",
-    "gemeente_niscode": "57096"
-  },
-  {
-    "id": "54010A",
-    "naam": "Comines",
-    "gemeente_niscode": "57097"
-  },
-  {
-    "id": "54010B",
-    "naam": "Bas-Warneton",
-    "gemeente_niscode": "57097"
-  },
-  {
-    "id": "54010C",
-    "naam": "Houthem",
-    "gemeente_niscode": "57097"
-  },
-  {
-    "id": "54010D",
-    "naam": "Warneton",
-    "gemeente_niscode": "57097"
-  },
-  {
-    "id": "54010E",
-    "naam": "Ploegsteert",
-    "gemeente_niscode": "57097"
-  },
-  {
-    "id": "55004A",
-    "naam": "Braine-Le-Comte",
-    "gemeente_niscode": "55004"
-  },
-  {
-    "id": "55004B",
-    "naam": "Hennuyeres",
-    "gemeente_niscode": "55004"
-  },
-  {
-    "id": "55004C",
-    "naam": "Ronquieres",
-    "gemeente_niscode": "55004"
-  },
-  {
-    "id": "55004D",
-    "naam": "Henripont",
-    "gemeente_niscode": "55004"
-  },
-  {
-    "id": "55004E",
-    "naam": "Petit-Roeulx-Lez-Braine",
-    "gemeente_niscode": "55004"
-  },
-  {
-    "id": "55004F",
-    "naam": "Steenkerque",
-    "gemeente_niscode": "55004"
-  },
-  {
-    "id": "55010A",
-    "naam": "Enghien",
-    "gemeente_niscode": "51067"
-  },
-  {
-    "id": "55010B",
-    "naam": "Marcq",
-    "gemeente_niscode": "51067"
-  },
-  {
-    "id": "55010C",
-    "naam": "Petit-Enghien",
-    "gemeente_niscode": "51067"
-  },
-  {
-    "id": "550221",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022A",
-    "naam": "La Louviere",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022B",
-    "naam": "Haine-Saint-Pierre",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022C",
-    "naam": "Haine-Saint-Paul",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022D",
-    "naam": "Saint-Vaast",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022E",
-    "naam": "Trivieres",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022F",
-    "naam": "Maurage",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022G",
-    "naam": "Boussoit",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022H",
-    "naam": "Strepy-Bracquegnies",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022J",
-    "naam": "Houdeng-Aimeries",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022K",
-    "naam": "Houdeng-Goegnies",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55022L",
-    "naam": "Partie De Familleureux",
-    "gemeente_niscode": "58001"
-  },
-  {
-    "id": "55023A",
-    "naam": "Lessines",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "55023B",
-    "naam": "Deux-Acren",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "55023C",
-    "naam": "Bois-De-Lessines",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "55023D",
-    "naam": "Ollignies",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "55023E",
-    "naam": "Papignies",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "55023F",
-    "naam": "Ogy",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "55023G",
-    "naam": "Ghoy",
-    "gemeente_niscode": "51069"
-  },
-  {
-    "id": "550351",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "55035"
-  },
-  {
-    "id": "55035A",
-    "naam": "Le Roeulx",
-    "gemeente_niscode": "55035"
-  },
-  {
-    "id": "55035B",
-    "naam": "Mignault",
-    "gemeente_niscode": "55035"
-  },
-  {
-    "id": "55035C",
-    "naam": "Thieu",
-    "gemeente_niscode": "55035"
-  },
-  {
-    "id": "55035D",
-    "naam": "Ville-Sur-Haine *",
-    "gemeente_niscode": "55035"
-  },
-  {
-    "id": "550391",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039A",
-    "naam": "Silly",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039B",
-    "naam": "Hellebecq",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039C",
-    "naam": "Bassilly",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039D",
-    "naam": "Hoves",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039E",
-    "naam": "Graty",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039F",
-    "naam": "Thoricourt",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039G",
-    "naam": "Fouleng",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55039H",
-    "naam": "Gondregnies",
-    "gemeente_niscode": "51068"
-  },
-  {
-    "id": "55040A",
-    "naam": "Soignies",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55040B",
-    "naam": "Naast",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55040C",
-    "naam": "Thieusies",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55040D",
-    "naam": "Casteau*",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55040E",
-    "naam": "Neufvilles",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55040F",
-    "naam": "Chaussee-Notre-Dame-Louvignies",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55040G",
-    "naam": "Horrues",
-    "gemeente_niscode": "55040"
-  },
-  {
-    "id": "55050A",
-    "naam": "Ecaussines-D'enghien",
-    "gemeente_niscode": "55050"
-  },
-  {
-    "id": "55050B",
-    "naam": "Ecaussines-Lalaing",
-    "gemeente_niscode": "55050"
-  },
-  {
-    "id": "55050C",
-    "naam": "Marche-Lez-Ecaussines",
-    "gemeente_niscode": "55050"
-  },
-  {
-    "id": "56001A",
-    "naam": "Anderlues",
-    "gemeente_niscode": "56001"
-  },
-  {
-    "id": "56005A",
-    "naam": "Beaumont",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005B",
-    "naam": "Barbencon*",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005C",
-    "naam": "Renlies",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005D",
-    "naam": "Solre-Saint-Gery*",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005E",
-    "naam": "Leugnies",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005F",
-    "naam": "Leval-Chaudeville",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005G",
-    "naam": "Thirimont",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56005H",
-    "naam": "Stree",
-    "gemeente_niscode": "56005"
-  },
-  {
-    "id": "56011A",
-    "naam": "Binche",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011B",
-    "naam": "Ressaix",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011C",
-    "naam": "Leval-Trahegnies",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011D",
-    "naam": "Epinois",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011E",
-    "naam": "Buvrinnes",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011F",
-    "naam": "Waudrez",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011G",
-    "naam": "Bray",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56011H",
-    "naam": "Peronnes-Lez-Binche",
-    "gemeente_niscode": "58002"
-  },
-  {
-    "id": "56016A",
-    "naam": "Chimay",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016B",
-    "naam": "Virelles",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016C",
-    "naam": "Vaulx",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016D",
-    "naam": "Lompret",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016E",
-    "naam": "Baileux",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016F",
-    "naam": "L'escaillere",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016G",
-    "naam": "Riezes",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016H",
-    "naam": "Bourlers",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016J",
-    "naam": "Forges",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016K",
-    "naam": "Saint-Remy",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016L",
-    "naam": "Villers-La-Tour",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016M",
-    "naam": "Salles",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016N",
-    "naam": "Bailievre",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56016P",
-    "naam": "Robechies",
-    "gemeente_niscode": "56016"
-  },
-  {
-    "id": "56022A",
-    "naam": "Erquelinnes",
-    "gemeente_niscode": "56022"
-  },
-  {
-    "id": "56022B",
-    "naam": "Solre-Sur-Sambre",
-    "gemeente_niscode": "56022"
-  },
-  {
-    "id": "56022C",
-    "naam": "Hantes-Wiheries",
-    "gemeente_niscode": "56022"
-  },
-  {
-    "id": "56022D",
-    "naam": "Montignies-Saint-Christophe",
-    "gemeente_niscode": "56022"
-  },
-  {
-    "id": "56022E",
-    "naam": "Bersillies L'abbaye-",
-    "gemeente_niscode": "56022"
-  },
-  {
-    "id": "56022F",
-    "naam": "Grand-Reng",
-    "gemeente_niscode": "56022"
-  },
-  {
-    "id": "56029A",
-    "naam": "Froidchapelle",
-    "gemeente_niscode": "56029"
-  },
-  {
-    "id": "56029B",
-    "naam": "Vergnies+partie De Barbencon",
-    "gemeente_niscode": "56029"
-  },
-  {
-    "id": "56029C",
-    "naam": "Erpion",
-    "gemeente_niscode": "56029"
-  },
-  {
-    "id": "56029D",
-    "naam": "Boussu-Lez-Walcourt",
-    "gemeente_niscode": "56029"
-  },
-  {
-    "id": "56044A",
-    "naam": "Lobbes",
-    "gemeente_niscode": "56044"
-  },
-  {
-    "id": "56044B",
-    "naam": "Sars-La-Buissiere",
-    "gemeente_niscode": "56044"
-  },
-  {
-    "id": "56044C",
-    "naam": "Bienne-Lez-Happart",
-    "gemeente_niscode": "56044"
-  },
-  {
-    "id": "56044D",
-    "naam": "Mont-Sainte-Genevieve",
-    "gemeente_niscode": "56044"
-  },
-  {
-    "id": "56049A",
-    "naam": "Merbes-Le-Chateau",
-    "gemeente_niscode": "56049"
-  },
-  {
-    "id": "56049B",
-    "naam": "Merbes-Sainte-Marie",
-    "gemeente_niscode": "56049"
-  },
-  {
-    "id": "56049C",
-    "naam": "Labuissiere",
-    "gemeente_niscode": "56049"
-  },
-  {
-    "id": "56049D",
-    "naam": "Fontaine-Valmont",
-    "gemeente_niscode": "56049"
-  },
-  {
-    "id": "56051A",
-    "naam": "Momignies",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56051B",
-    "naam": "Macon",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56051C",
-    "naam": "Monceau-Imbrechies",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56051D",
-    "naam": "Seloignes",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56051E",
-    "naam": "Forge-Philippe",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56051F",
-    "naam": "Macquenoise",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56051G",
-    "naam": "Beauwelz",
-    "gemeente_niscode": "56051"
-  },
-  {
-    "id": "56078A",
-    "naam": "Thuin",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078B",
-    "naam": "Gozee",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078C",
-    "naam": "Biesme-Sous-Thuin",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078D",
-    "naam": "Thuillies",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078E",
-    "naam": "Donstiennes",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078F",
-    "naam": "Ragnies",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078G",
-    "naam": "Leers-Et-Fosteau",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56078H",
-    "naam": "Biercee",
-    "gemeente_niscode": "56078"
-  },
-  {
-    "id": "56085A",
-    "naam": "Estinnes-Au-Mont",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085B",
-    "naam": "Estinnes-Au-Val",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085C",
-    "naam": "Vellereille-Les-Brayeux",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085D",
-    "naam": "Peissant",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085E",
-    "naam": "Fauroeulx",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085F",
-    "naam": "Croix-Lez-Rouveroy",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085G",
-    "naam": "Rouveroy",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085H",
-    "naam": "Haulchin",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56085J",
-    "naam": "Vellereille-Le-Sec",
-    "gemeente_niscode": "58003"
-  },
-  {
-    "id": "56086A",
-    "naam": "Ham-Sur-Heure",
-    "gemeente_niscode": "56086"
-  },
-  {
-    "id": "56086B",
-    "naam": "Nalinnes",
-    "gemeente_niscode": "56086"
-  },
-  {
-    "id": "56086C",
-    "naam": "Cour-Sur-Heure",
-    "gemeente_niscode": "56086"
-  },
-  {
-    "id": "56086D",
-    "naam": "Marbaix",
-    "gemeente_niscode": "56086"
-  },
-  {
-    "id": "56086E",
-    "naam": "Jamioulx",
-    "gemeente_niscode": "56086"
-  },
-  {
-    "id": "56087A",
-    "naam": "Morlanwelz-Mariemont",
-    "gemeente_niscode": "58004"
-  },
-  {
-    "id": "56087B",
-    "naam": "Carnieres",
-    "gemeente_niscode": "58004"
-  },
-  {
-    "id": "56087C",
-    "naam": "Mont-Sainte-Aldegonde",
-    "gemeente_niscode": "58004"
-  },
-  {
-    "id": "56088A",
-    "naam": "Sivry",
-    "gemeente_niscode": "56088"
-  },
-  {
-    "id": "56088B",
-    "naam": "Grandrieu",
-    "gemeente_niscode": "56088"
-  },
-  {
-    "id": "56088C",
-    "naam": "Sautin + Partie Solre-St-Gery",
-    "gemeente_niscode": "56088"
-  },
-  {
-    "id": "56088D",
-    "naam": "Rance",
-    "gemeente_niscode": "56088"
-  },
-  {
-    "id": "56088E",
-    "naam": "Montbliart",
-    "gemeente_niscode": "56088"
-  },
-  {
-    "id": "57003A",
-    "naam": "Antoing",
-    "gemeente_niscode": "57003"
-  },
-  {
-    "id": "57003B",
-    "naam": "Fontenoy",
-    "gemeente_niscode": "57003"
-  },
-  {
-    "id": "57003C",
-    "naam": "Maubray",
-    "gemeente_niscode": "57003"
-  },
-  {
-    "id": "57003D",
-    "naam": "Peronnes-Lez-Antoing",
-    "gemeente_niscode": "57003"
-  },
-  {
-    "id": "57003E",
-    "naam": "Bruyelle",
-    "gemeente_niscode": "57003"
-  },
-  {
-    "id": "57003F",
-    "naam": "Calonne",
-    "gemeente_niscode": "57003"
-  },
-  {
-    "id": "57018A",
-    "naam": "Celles",
-    "gemeente_niscode": "57018"
-  },
-  {
-    "id": "57018B",
-    "naam": "Molenbaix",
-    "gemeente_niscode": "57018"
-  },
-  {
-    "id": "57018C",
-    "naam": "Pottes",
-    "gemeente_niscode": "57018"
-  },
-  {
-    "id": "57018D",
-    "naam": "Escanaffles",
-    "gemeente_niscode": "57018"
-  },
-  {
-    "id": "57018E",
-    "naam": "Velaines",
-    "gemeente_niscode": "57018"
-  },
-  {
-    "id": "57018F",
-    "naam": "Popuelles",
-    "gemeente_niscode": "57018"
-  },
-  {
-    "id": "57027A",
-    "naam": "Estaimpuis",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57027B",
-    "naam": "Evregnies",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57027C",
-    "naam": "Saint-Leger",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57027D",
-    "naam": "Estaimbourg",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57027E",
-    "naam": "Bailleul",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57027F",
-    "naam": "Nechin",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57027G",
-    "naam": "Leers-Nord",
-    "gemeente_niscode": "57027"
-  },
-  {
-    "id": "57062A",
-    "naam": "Pecq",
-    "gemeente_niscode": "57062"
-  },
-  {
-    "id": "57062B",
-    "naam": "Warcoing",
-    "gemeente_niscode": "57062"
-  },
-  {
-    "id": "57062C",
-    "naam": "Herinnes",
-    "gemeente_niscode": "57062"
-  },
-  {
-    "id": "57062D",
-    "naam": "Obigies",
-    "gemeente_niscode": "57062"
-  },
-  {
-    "id": "57062E",
-    "naam": "Esquelmes",
-    "gemeente_niscode": "57062"
-  },
-  {
-    "id": "57064A",
-    "naam": "Peruwelz",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064B",
-    "naam": "Wiers",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064C",
-    "naam": "Callenelle",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064D",
-    "naam": "Brasmenil",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064E",
-    "naam": "Wasmes-Audemez-Briffoeil",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064F",
-    "naam": "Baugnies",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064G",
-    "naam": "Braffe",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064H",
-    "naam": "Bury",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064J",
-    "naam": "Roucourt",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57064K",
-    "naam": "Bon-Secours",
-    "gemeente_niscode": "57064"
-  },
-  {
-    "id": "57072A",
-    "naam": "Rumes",
-    "gemeente_niscode": "57072"
-  },
-  {
-    "id": "57072B",
-    "naam": "Taintignies",
-    "gemeente_niscode": "57072"
-  },
-  {
-    "id": "57072C",
-    "naam": "La Glanerie",
-    "gemeente_niscode": "57072"
-  },
-  {
-    "id": "57081A",
-    "naam": "Tournai",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081B",
-    "naam": "Warchin",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081C",
-    "naam": "Chercq",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081D",
-    "naam": "Havinnes",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081E",
-    "naam": "Melles Quartes-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081F",
-    "naam": "Beclers Thimougies-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081G",
-    "naam": "Barry Maulde-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081H",
-    "naam": "Vezon",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081J",
-    "naam": "Gaurain-Ramecroix",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081K",
-    "naam": "Vaulx",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081L",
-    "naam": "Saint-Maur Ere-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081M",
-    "naam": "Willemeau Froidmont-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081N",
-    "naam": "Esplechin",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081P",
-    "naam": "Orcq Marquain-Lamain ",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081R",
-    "naam": "Blandain Hertain-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081S",
-    "naam": "Templeuve",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081T",
-    "naam": "Ramegnies-Chin",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081U",
-    "naam": "Froyennes",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081V",
-    "naam": "Kain Mont-Saint Aubert-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57081W",
-    "naam": "Rumillies Mourcourt-",
-    "gemeente_niscode": "57081"
-  },
-  {
-    "id": "57093A",
-    "naam": "Bleharies",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093B",
-    "naam": "Rongy",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093C",
-    "naam": "Lesdain",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093D",
-    "naam": "Howardries",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093E",
-    "naam": "Guignies",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093F",
-    "naam": "Wez-Velvain",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093G",
-    "naam": "Jollain-Merlin",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093H",
-    "naam": "Hollain",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "57093J",
-    "naam": "Laplaigne",
-    "gemeente_niscode": "57093"
-  },
-  {
-    "id": "570941",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094A",
-    "naam": "Leuze",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094B",
-    "naam": "Grandmetz",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094C",
-    "naam": "Chapelle-A-Wattines",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094D",
-    "naam": "Chapelle-A-Oie",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094E",
-    "naam": "Blicquy",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094F",
-    "naam": "Tourpes",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094G",
-    "naam": "Willaupuis",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094H",
-    "naam": "Pipaix",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094J",
-    "naam": "Gallaix",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57094K",
-    "naam": "Thieulain",
-    "gemeente_niscode": "57094"
-  },
-  {
-    "id": "57095A",
-    "naam": "Amougies",
-    "gemeente_niscode": "57095"
-  },
-  {
-    "id": "57095B",
-    "naam": "Russeignies",
-    "gemeente_niscode": "57095"
-  },
-  {
-    "id": "57095C",
-    "naam": "Anseroeul",
-    "gemeente_niscode": "57095"
-  },
-  {
-    "id": "57095D",
-    "naam": "Orroir",
-    "gemeente_niscode": "57095"
-  },
-  {
-    "id": "61003A",
-    "naam": "Amay",
-    "gemeente_niscode": "61003"
-  },
-  {
-    "id": "61003B",
-    "naam": "Flone",
-    "gemeente_niscode": "61003"
-  },
-  {
-    "id": "61003C",
-    "naam": "Ombret-Rawsa*",
-    "gemeente_niscode": "61003"
-  },
-  {
-    "id": "61003D",
-    "naam": "Ampsin",
-    "gemeente_niscode": "61003"
-  },
-  {
-    "id": "61003E",
-    "naam": "Jehay-Bodegnee*",
-    "gemeente_niscode": "61003"
-  },
-  {
-    "id": "61010A",
-    "naam": "Burdinne",
-    "gemeente_niscode": "61010"
-  },
-  {
-    "id": "61010B",
-    "naam": "Hanneche",
-    "gemeente_niscode": "61010"
-  },
-  {
-    "id": "61010C",
-    "naam": "Lamontzee",
-    "gemeente_niscode": "61010"
-  },
-  {
-    "id": "61010D",
-    "naam": "Oteppe",
-    "gemeente_niscode": "61010"
-  },
-  {
-    "id": "61010E",
-    "naam": "Marneffe",
-    "gemeente_niscode": "61010"
-  },
-  {
-    "id": "61012A",
-    "naam": "Clavier",
-    "gemeente_niscode": "61012"
-  },
-  {
-    "id": "61012B",
-    "naam": "Ocquier",
-    "gemeente_niscode": "61012"
-  },
-  {
-    "id": "61012C",
-    "naam": "Bois Et-Borsu ",
-    "gemeente_niscode": "61012"
-  },
-  {
-    "id": "61012D",
-    "naam": "Les Avins",
-    "gemeente_niscode": "61012"
-  },
-  {
-    "id": "61012E",
-    "naam": "Pailhe",
-    "gemeente_niscode": "61012"
-  },
-  {
-    "id": "61012F",
-    "naam": "Terwagne",
-    "gemeente_niscode": "61012"
-  },
-  {
-    "id": "61019A",
-    "naam": "Ferrieres + Partie De Harre",
-    "gemeente_niscode": "61019"
-  },
-  {
-    "id": "61019B",
-    "naam": "Vieuxville",
-    "gemeente_niscode": "61019"
-  },
-  {
-    "id": "61019C",
-    "naam": "My",
-    "gemeente_niscode": "61019"
-  },
-  {
-    "id": "61019D",
-    "naam": "Xhoris",
-    "gemeente_niscode": "61019"
-  },
-  {
-    "id": "61019E",
-    "naam": "Werbomont",
-    "gemeente_niscode": "61019"
-  },
-  {
-    "id": "61024A",
-    "naam": "Hamoir",
-    "gemeente_niscode": "61024"
-  },
-  {
-    "id": "61024B",
-    "naam": "Comblain-Fairon",
-    "gemeente_niscode": "61024"
-  },
-  {
-    "id": "61024C",
-    "naam": "Filot",
-    "gemeente_niscode": "61024"
-  },
-  {
-    "id": "61028A",
-    "naam": "Heron*",
-    "gemeente_niscode": "61028"
-  },
-  {
-    "id": "61028B",
-    "naam": "Lavoir*",
-    "gemeente_niscode": "61028"
-  },
-  {
-    "id": "61028C",
-    "naam": "Couthuin*",
-    "gemeente_niscode": "61028"
-  },
-  {
-    "id": "61028D",
-    "naam": "Waret-L'eveque + Partie De Landenne",
-    "gemeente_niscode": "61028"
-  },
-  {
-    "id": "610313",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "61031"
-  },
-  {
-    "id": "61031A",
-    "naam": "Huy",
-    "gemeente_niscode": "61031"
-  },
-  {
-    "id": "61031B",
-    "naam": "Ben-Ahin + Partie De Marchin",
-    "gemeente_niscode": "61031"
-  },
-  {
-    "id": "61031C",
-    "naam": "Tihange + Partie De Stree Et De Vierset-Barse",
-    "gemeente_niscode": "61031"
-  },
-  {
-    "id": "610391",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "61039"
-  },
-  {
-    "id": "61039A",
-    "naam": "Marchin*",
-    "gemeente_niscode": "61039"
-  },
-  {
-    "id": "61039B",
-    "naam": "Vyle-Et-Tharoul",
-    "gemeente_niscode": "61039"
-  },
-  {
-    "id": "610411",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "61041"
-  },
-  {
-    "id": "61041A",
-    "naam": "Modave",
-    "gemeente_niscode": "61041"
-  },
-  {
-    "id": "61041B",
-    "naam": "Vierset-Barse*",
-    "gemeente_niscode": "61041"
-  },
-  {
-    "id": "61041C",
-    "naam": "Stree*",
-    "gemeente_niscode": "61041"
-  },
-  {
-    "id": "61041D",
-    "naam": "Outrelouxhe + Partie De Ombret-Rawsa",
-    "gemeente_niscode": "61041"
-  },
-  {
-    "id": "610431",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "61043"
-  },
-  {
-    "id": "61043A",
-    "naam": "Nandrin",
-    "gemeente_niscode": "61043"
-  },
-  {
-    "id": "61043B",
-    "naam": "Villers-Le-Temple",
-    "gemeente_niscode": "61043"
-  },
-  {
-    "id": "61043C",
-    "naam": "Yernee-Fraineux+partie De Abee",
-    "gemeente_niscode": "61043"
-  },
-  {
-    "id": "61043D",
-    "naam": "Saint-Severin",
-    "gemeente_niscode": "61043"
-  },
-  {
-    "id": "61048A",
-    "naam": "Ouffet",
-    "gemeente_niscode": "61048"
-  },
-  {
-    "id": "61048B",
-    "naam": "Warzee",
-    "gemeente_niscode": "61048"
-  },
-  {
-    "id": "61048C",
-    "naam": "Ellemelle*",
-    "gemeente_niscode": "61048"
-  },
-  {
-    "id": "61063A",
-    "naam": "Verlaine",
-    "gemeente_niscode": "61063"
-  },
-  {
-    "id": "61063B",
-    "naam": "Jehay-Bodegnee (partie)",
-    "gemeente_niscode": "61063"
-  },
-  {
-    "id": "61063C",
-    "naam": "Chapon-Seraing",
-    "gemeente_niscode": "61063"
-  },
-  {
-    "id": "61063D",
-    "naam": "Seraing-Le-Chateau",
-    "gemeente_niscode": "61063"
-  },
-  {
-    "id": "61068A",
-    "naam": "Villers-Le-Bouillet",
-    "gemeente_niscode": "61068"
-  },
-  {
-    "id": "61068B",
-    "naam": "Warnant-Dreye",
-    "gemeente_niscode": "61068"
-  },
-  {
-    "id": "61068C",
-    "naam": "Vieux-Waleffe",
-    "gemeente_niscode": "61068"
-  },
-  {
-    "id": "61068D",
-    "naam": "Vaux-Et-Borset",
-    "gemeente_niscode": "61068"
-  },
-  {
-    "id": "61068E",
-    "naam": "Fize-Fontaine",
-    "gemeente_niscode": "61068"
-  },
-  {
-    "id": "61072A",
-    "naam": "Wanze",
-    "gemeente_niscode": "61072"
-  },
-  {
-    "id": "61072B",
-    "naam": "Bas-Oha",
-    "gemeente_niscode": "61072"
-  },
-  {
-    "id": "61072C",
-    "naam": "Moha",
-    "gemeente_niscode": "61072"
-  },
-  {
-    "id": "61072D",
-    "naam": "Huccorgne + Partie De Couthuin Et De Lavoir",
-    "gemeente_niscode": "61072"
-  },
-  {
-    "id": "61072E",
-    "naam": "Vinalmont",
-    "gemeente_niscode": "61072"
-  },
-  {
-    "id": "61072F",
-    "naam": "Antheit",
-    "gemeente_niscode": "61072"
-  },
-  {
-    "id": "61079A",
-    "naam": "Anthisnes*",
-    "gemeente_niscode": "61079"
-  },
-  {
-    "id": "61079B",
-    "naam": "Hody",
-    "gemeente_niscode": "61079"
-  },
-  {
-    "id": "61079C",
-    "naam": "Tavier + Partie De Ellemelle",
-    "gemeente_niscode": "61079"
-  },
-  {
-    "id": "61079D",
-    "naam": "Villers-Aux-Tours + Partie De Esneux",
-    "gemeente_niscode": "61079"
-  },
-  {
-    "id": "61080A",
-    "naam": "Engis",
-    "gemeente_niscode": "61080"
-  },
-  {
-    "id": "61080B",
-    "naam": "Ehein (partie)",
-    "gemeente_niscode": "61080"
-  },
-  {
-    "id": "61080C",
-    "naam": "Clermont-Sous-Huy",
-    "gemeente_niscode": "61080"
-  },
-  {
-    "id": "61080D",
-    "naam": "Hermalle-Sous-Huy*",
-    "gemeente_niscode": "61080"
-  },
-  {
-    "id": "61081A",
-    "naam": "Soheit-Tinlot",
-    "gemeente_niscode": "61081"
-  },
-  {
-    "id": "61081B",
-    "naam": "Ramelot",
-    "gemeente_niscode": "61081"
-  },
-  {
-    "id": "61081C",
-    "naam": "Abee*",
-    "gemeente_niscode": "61081"
-  },
-  {
-    "id": "61081D",
-    "naam": "Fraiture",
-    "gemeente_niscode": "61081"
-  },
-  {
-    "id": "61081E",
-    "naam": "Seny",
-    "gemeente_niscode": "61081"
-  },
-  {
-    "id": "62003A",
-    "naam": "Ans*",
-    "gemeente_niscode": "62003"
-  },
-  {
-    "id": "62003B",
-    "naam": "Loncin* +  Partie De Grace-Hollogne",
-    "gemeente_niscode": "62003"
-  },
-  {
-    "id": "62003C",
-    "naam": "Alleur*",
-    "gemeente_niscode": "62003"
-  },
-  {
-    "id": "62003D",
-    "naam": "Xhendremael + Partie De Awans",
-    "gemeente_niscode": "62003"
-  },
-  {
-    "id": "62006A",
-    "naam": "Awans*+ Partie De Grace-Hollogne",
-    "gemeente_niscode": "62006"
-  },
-  {
-    "id": "62006B",
-    "naam": "Fooz + Partie De Bierset",
-    "gemeente_niscode": "62006"
-  },
-  {
-    "id": "62006C",
-    "naam": "Hognoul",
-    "gemeente_niscode": "62006"
-  },
-  {
-    "id": "62006D",
-    "naam": "Villers-L'eveque",
-    "gemeente_niscode": "62006"
-  },
-  {
-    "id": "62006E",
-    "naam": "Othee",
-    "gemeente_niscode": "62006"
-  },
-  {
-    "id": "62009A",
-    "naam": "Aywaille + Partie De Rouvreux",
-    "gemeente_niscode": "62009"
-  },
-  {
-    "id": "62009B",
-    "naam": "Sougne-Remouchamps + Partie De Louveigne",
-    "gemeente_niscode": "62009"
-  },
-  {
-    "id": "62009C",
-    "naam": "Harze",
-    "gemeente_niscode": "62009"
-  },
-  {
-    "id": "62009D",
-    "naam": "Ernonheid",
-    "gemeente_niscode": "62009"
-  },
-  {
-    "id": "620112",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "62011A",
-    "naam": "Bassenge",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "62011B",
-    "naam": "Roclenge-Sur-Geer",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "62011C",
-    "naam": "Boirs",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "62011D",
-    "naam": "Glons + Partie De Slins",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "62011E",
-    "naam": "Wonck",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "62011F",
-    "naam": "Eben-Emael",
-    "gemeente_niscode": "62011"
-  },
-  {
-    "id": "620151",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "62015"
-  },
-  {
-    "id": "62015A",
-    "naam": "Beyne-Heusay",
-    "gemeente_niscode": "62015"
-  },
-  {
-    "id": "62015B",
-    "naam": "Queue-Du-Bois+partie De Fleron",
-    "gemeente_niscode": "62015"
-  },
-  {
-    "id": "62015C",
-    "naam": "Bellaire",
-    "gemeente_niscode": "62015"
-  },
-  {
-    "id": "62022A",
-    "naam": "Chaudfontaine",
-    "gemeente_niscode": "62022"
-  },
-  {
-    "id": "62022B",
-    "naam": "Beaufays + Partie De Foret Et De Tilff",
-    "gemeente_niscode": "62022"
-  },
-  {
-    "id": "62022C",
-    "naam": "Embourg*",
-    "gemeente_niscode": "62022"
-  },
-  {
-    "id": "62022D",
-    "naam": "Vaux-Sous-Chevremont + Partie De Chenee",
-    "gemeente_niscode": "62022"
-  },
-  {
-    "id": "62026A",
-    "naam": "Comblain-Au-Pont*+ Partie De Anthisnes",
-    "gemeente_niscode": "62026"
-  },
-  {
-    "id": "62026B",
-    "naam": "Poulseur",
-    "gemeente_niscode": "62026"
-  },
-  {
-    "id": "62027A",
-    "naam": "Dalhem",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027B",
-    "naam": "Feneur",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027C",
-    "naam": "Bombaye*",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027D",
-    "naam": "Berneau",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027E",
-    "naam": "Warsage",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027F",
-    "naam": "Neufchateau",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027G",
-    "naam": "Mortroux",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "62027H",
-    "naam": "Saint-Andre*",
-    "gemeente_niscode": "62027"
-  },
-  {
-    "id": "620321",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "62032"
-  },
-  {
-    "id": "62032A",
-    "naam": "Esneux* + Partie De Dolembreux",
-    "gemeente_niscode": "62032"
-  },
-  {
-    "id": "62032B",
-    "naam": "Tilff*",
-    "gemeente_niscode": "62032"
-  },
-  {
-    "id": "62038A",
-    "naam": "Fleron*",
-    "gemeente_niscode": "62038"
-  },
-  {
-    "id": "62038B",
-    "naam": "Retinne",
-    "gemeente_niscode": "62038"
-  },
-  {
-    "id": "62038C",
-    "naam": "Magnee",
-    "gemeente_niscode": "62038"
-  },
-  {
-    "id": "62038D",
-    "naam": "Romsee",
-    "gemeente_niscode": "62038"
-  },
-  {
-    "id": "620511",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "62051"
-  },
-  {
-    "id": "62051A",
-    "naam": "Herstal*",
-    "gemeente_niscode": "62051"
-  },
-  {
-    "id": "62051B",
-    "naam": "Vottem*",
-    "gemeente_niscode": "62051"
-  },
-  {
-    "id": "62051C",
-    "naam": "Liers*",
-    "gemeente_niscode": "62051"
-  },
-  {
-    "id": "62051D",
-    "naam": "Milmort",
-    "gemeente_niscode": "62051"
-  },
-  {
-    "id": "620601",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060A",
-    "naam": "Juprelle + Partie De Alleur",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060B",
-    "naam": "Slins*",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060C",
-    "naam": "Fexhe-Slins + Partie De Liers",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060D",
-    "naam": "Villers-Saint-Simeon",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060E",
-    "naam": "Voroux-Lez-Liers*",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060F",
-    "naam": "Lantin",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060G",
-    "naam": "Wihogne",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62060H",
-    "naam": "Paifve",
-    "gemeente_niscode": "62060"
-  },
-  {
-    "id": "62063A",
-    "naam": "Liege(meuse Nord) + Partie De Herstal,saint-Nicolas,vottem",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063B",
-    "naam": "Liege(meuse Sud)",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063C",
-    "naam": "Wandre*",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063D",
-    "naam": "Jupille-Sur-Meuse",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063E",
-    "naam": "Bressoux",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063F",
-    "naam": "Grivegnee",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063G",
-    "naam": "Chenee*",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063H",
-    "naam": "Angleur + Partie De Ougree + Partie De Tilff Et De Embourg",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063J",
-    "naam": "Partie De Ougree",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063K",
-    "naam": "Glain & Partie Ans",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063L",
-    "naam": "Rocourt + Partie De Voroux-Lez-Liers",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62063M",
-    "naam": "Partie Ans",
-    "gemeente_niscode": "62063"
-  },
-  {
-    "id": "62079A",
-    "naam": "Oupeye*+partie De Cheratte, Herstal Et Wandre",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62079B",
-    "naam": "Haccourt*",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62079C",
-    "naam": "Hermalle-Sous-Argenteau*",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62079D",
-    "naam": "Vivegnis + Partie De Herstal, Wandre Et Cheratte",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62079E",
-    "naam": "Hermee",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62079F",
-    "naam": "Houtain-Saint-Simeon",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62079G",
-    "naam": "Heure-Le-Romain",
-    "gemeente_niscode": "62079"
-  },
-  {
-    "id": "62093A",
-    "naam": "Saint-Nicolas*",
-    "gemeente_niscode": "62093"
-  },
-  {
-    "id": "62093B",
-    "naam": "Tilleur",
-    "gemeente_niscode": "62093"
-  },
-  {
-    "id": "62093C",
-    "naam": "Montegnee",
-    "gemeente_niscode": "62093"
-  },
-  {
-    "id": "62096A",
-    "naam": "Seraing*",
-    "gemeente_niscode": "62096"
-  },
-  {
-    "id": "62096B",
-    "naam": "Jemeppe",
-    "gemeente_niscode": "62096"
-  },
-  {
-    "id": "62096C",
-    "naam": "Ougree*",
-    "gemeente_niscode": "62096"
-  },
-  {
-    "id": "62096D",
-    "naam": "Boncelles",
-    "gemeente_niscode": "62096"
-  },
-  {
-    "id": "62099A",
-    "naam": "Soumagne",
-    "gemeente_niscode": "62099"
-  },
-  {
-    "id": "62099B",
-    "naam": "Ayeneux",
-    "gemeente_niscode": "62099"
-  },
-  {
-    "id": "62099C",
-    "naam": "Micheroux",
-    "gemeente_niscode": "62099"
-  },
-  {
-    "id": "62099D",
-    "naam": "Melen",
-    "gemeente_niscode": "62099"
-  },
-  {
-    "id": "62099E",
-    "naam": "Cerexhe-Heuseux*",
-    "gemeente_niscode": "62099"
-  },
-  {
-    "id": "62099F",
-    "naam": "Evegnee-Tignee*",
-    "gemeente_niscode": "62099"
-  },
-  {
-    "id": "62100A",
-    "naam": "Sprimont + Partie De Comblain-Au-Pont",
-    "gemeente_niscode": "62100"
-  },
-  {
-    "id": "62100B",
-    "naam": "Louveigne*",
-    "gemeente_niscode": "62100"
-  },
-  {
-    "id": "62100C",
-    "naam": "Rouvreux*",
-    "gemeente_niscode": "62100"
-  },
-  {
-    "id": "62100D",
-    "naam": "Dolembreux*",
-    "gemeente_niscode": "62100"
-  },
-  {
-    "id": "62100E",
-    "naam": "Gomze-Andoumont",
-    "gemeente_niscode": "62100"
-  },
-  {
-    "id": "62108A",
-    "naam": "Vise + Partie De Bombaye,hac-Court, Hermalle Ss-Argenteau-",
-    "gemeente_niscode": "62108"
-  },
-  {
-    "id": "62108B",
-    "naam": "Richelle",
-    "gemeente_niscode": "62108"
-  },
-  {
-    "id": "62108C",
-    "naam": "Argenteau",
-    "gemeente_niscode": "62108"
-  },
-  {
-    "id": "62108D",
-    "naam": "Cheratte* + Partie De Herstal, Wandre",
-    "gemeente_niscode": "62108"
-  },
-  {
-    "id": "62108E",
-    "naam": "Lixhe",
-    "gemeente_niscode": "62108"
-  },
-  {
-    "id": "62108F",
-    "naam": "Lanaye",
-    "gemeente_niscode": "62108"
-  },
-  {
-    "id": "62118A",
-    "naam": "Grace-Berleur*+part. De Loncin",
-    "gemeente_niscode": "62118"
-  },
-  {
-    "id": "62118B",
-    "naam": "Hollogne-Aux-Pierres*",
-    "gemeente_niscode": "62118"
-  },
-  {
-    "id": "62118C",
-    "naam": "Mons-Lez-Liege (partie)",
-    "gemeente_niscode": "62118"
-  },
-  {
-    "id": "62118D",
-    "naam": "Horion-Hozemont*",
-    "gemeente_niscode": "62118"
-  },
-  {
-    "id": "62118E",
-    "naam": "Velroux + Partie De Fexhe-Le Haut-Clocher-",
-    "gemeente_niscode": "62118"
-  },
-  {
-    "id": "62118F",
-    "naam": "Bierset* + Partie De Awans",
-    "gemeente_niscode": "62118"
-  },
-  {
-    "id": "62119A",
-    "naam": "Trembleur",
-    "gemeente_niscode": "62119"
-  },
-  {
-    "id": "62119B",
-    "naam": "Mortier + Partie De St.-Andre",
-    "gemeente_niscode": "62119"
-  },
-  {
-    "id": "62119C",
-    "naam": "Barchon + Partie De Cerexhe Heuseux,-De Evegnee Tignee ",
-    "gemeente_niscode": "62119"
-  },
-  {
-    "id": "62119D",
-    "naam": "Saive + Partie De Wandre",
-    "gemeente_niscode": "62119"
-  },
-  {
-    "id": "62119E",
-    "naam": "Housse",
-    "gemeente_niscode": "62119"
-  },
-  {
-    "id": "62119F",
-    "naam": "Saint-Remy",
-    "gemeente_niscode": "62119"
-  },
-  {
-    "id": "62120A",
-    "naam": "Flemalle-Haute & Flemalle-Grande & Partie Awirs ",
-    "gemeente_niscode": "62120"
-  },
-  {
-    "id": "62120B",
-    "naam": "Ivoz-Ramet",
-    "gemeente_niscode": "62120"
-  },
-  {
-    "id": "62120C",
-    "naam": "Awirs & Partie Horion-Hozemont",
-    "gemeente_niscode": "62120"
-  },
-  {
-    "id": "62120D",
-    "naam": "Partie Mons* & Partie Horion-Hozemont & De Flemalle Haute-",
-    "gemeente_niscode": "62120"
-  },
-  {
-    "id": "62121A",
-    "naam": "Neuville-En-Condroz",
-    "gemeente_niscode": "62121"
-  },
-  {
-    "id": "62121B",
-    "naam": "Plainevaux+partie De Seraing",
-    "gemeente_niscode": "62121"
-  },
-  {
-    "id": "62121C",
-    "naam": "Rotheux-Rimiere",
-    "gemeente_niscode": "62121"
-  },
-  {
-    "id": "62121D",
-    "naam": "Ehein*",
-    "gemeente_niscode": "62121"
-  },
-  {
-    "id": "62122A",
-    "naam": "Foret*",
-    "gemeente_niscode": "62122"
-  },
-  {
-    "id": "62122B",
-    "naam": "Fraipont",
-    "gemeente_niscode": "62122"
-  },
-  {
-    "id": "62122C",
-    "naam": "Nessonvaux",
-    "gemeente_niscode": "62122"
-  },
-  {
-    "id": "63001A",
-    "naam": "Amel",
-    "gemeente_niscode": "63001"
-  },
-  {
-    "id": "63001B",
-    "naam": "Heppenbach",
-    "gemeente_niscode": "63001"
-  },
-  {
-    "id": "63001C",
-    "naam": "Meyerode*",
-    "gemeente_niscode": "63001"
-  },
-  {
-    "id": "63001D",
-    "naam": "Gebietsteil  Recht",
-    "gemeente_niscode": "63001"
-  },
-  {
-    "id": "63003A",
-    "naam": "Aubel + Partie De Charneux",
-    "gemeente_niscode": "63003"
-  },
-  {
-    "id": "63004A",
-    "naam": "Baelen*+ Partie De Welkenraedt",
-    "gemeente_niscode": "63004"
-  },
-  {
-    "id": "63004B",
-    "naam": "Membach",
-    "gemeente_niscode": "63004"
-  },
-  {
-    "id": "63012A",
-    "naam": "Bullingen",
-    "gemeente_niscode": "63012"
-  },
-  {
-    "id": "63012B",
-    "naam": "Rocherath",
-    "gemeente_niscode": "63012"
-  },
-  {
-    "id": "63012C",
-    "naam": "Manderfeld",
-    "gemeente_niscode": "63012"
-  },
-  {
-    "id": "63012D",
-    "naam": "Schoenberg (gebietsteil)",
-    "gemeente_niscode": "63012"
-  },
-  {
-    "id": "63013A",
-    "naam": "Butgenbach",
-    "gemeente_niscode": "63013"
-  },
-  {
-    "id": "63013B",
-    "naam": "Elsenborn",
-    "gemeente_niscode": "63013"
-  },
-  {
-    "id": "63020A",
-    "naam": "Dison",
-    "gemeente_niscode": "63020"
-  },
-  {
-    "id": "63020B",
-    "naam": "Andrimont",
-    "gemeente_niscode": "63020"
-  },
-  {
-    "id": "63023A",
-    "naam": "Eupen*+gebietsteil Raeren",
-    "gemeente_niscode": "63023"
-  },
-  {
-    "id": "63023B",
-    "naam": "Kettenis*",
-    "gemeente_niscode": "63023"
-  },
-  {
-    "id": "63035A",
-    "naam": "Herve",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035B",
-    "naam": "Charneux*",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035C",
-    "naam": "Battice",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035D",
-    "naam": "Chaineux",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035E",
-    "naam": "Grand-Rechain",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035F",
-    "naam": "Xhendelesse",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035G",
-    "naam": "Bolland",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63035H",
-    "naam": "Julemont",
-    "gemeente_niscode": "63035"
-  },
-  {
-    "id": "63038A",
-    "naam": "Jalhay",
-    "gemeente_niscode": "63038"
-  },
-  {
-    "id": "63038B",
-    "naam": "Sart*",
-    "gemeente_niscode": "63038"
-  },
-  {
-    "id": "63040A",
-    "naam": "Kelmis",
-    "gemeente_niscode": "63040"
-  },
-  {
-    "id": "63040B",
-    "naam": "Neu Moresnet",
-    "gemeente_niscode": "63040"
-  },
-  {
-    "id": "63040C",
-    "naam": "Hergenrath",
-    "gemeente_niscode": "63040"
-  },
-  {
-    "id": "630451",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "63045"
-  },
-  {
-    "id": "63045A",
-    "naam": "Lierneux*",
-    "gemeente_niscode": "63045"
-  },
-  {
-    "id": "63045B",
-    "naam": "Bra*",
-    "gemeente_niscode": "63045"
-  },
-  {
-    "id": "63045C",
-    "naam": "Arbrefontaine*",
-    "gemeente_niscode": "63045"
-  },
-  {
-    "id": "63046A",
-    "naam": "Limbourg",
-    "gemeente_niscode": "63046"
-  },
-  {
-    "id": "63046B",
-    "naam": "Bilstain",
-    "gemeente_niscode": "63046"
-  },
-  {
-    "id": "63046C",
-    "naam": "Goe",
-    "gemeente_niscode": "63046"
-  },
-  {
-    "id": "63048A",
-    "naam": "Lontzen Gebietsteil Kettenis",
-    "gemeente_niscode": "63048"
-  },
-  {
-    "id": "63048B",
-    "naam": "Walhorn*",
-    "gemeente_niscode": "63048"
-  },
-  {
-    "id": "63049A",
-    "naam": "Malmedy",
-    "gemeente_niscode": "63049"
-  },
-  {
-    "id": "63049B",
-    "naam": "Beverce",
-    "gemeente_niscode": "63049"
-  },
-  {
-    "id": "63049C",
-    "naam": "Bellevaux-Ligneuville",
-    "gemeente_niscode": "63049"
-  },
-  {
-    "id": "63057A",
-    "naam": "Olne",
-    "gemeente_niscode": "63057"
-  },
-  {
-    "id": "63058A",
-    "naam": "Pepinster",
-    "gemeente_niscode": "63058"
-  },
-  {
-    "id": "63058B",
-    "naam": "Soiron",
-    "gemeente_niscode": "63058"
-  },
-  {
-    "id": "63058C",
-    "naam": "Wegnez",
-    "gemeente_niscode": "63058"
-  },
-  {
-    "id": "63061A",
-    "naam": "Raeren*+enclave Walhorn + Gebietsteil Eupen",
-    "gemeente_niscode": "63061"
-  },
-  {
-    "id": "63061B",
-    "naam": "Eynatten",
-    "gemeente_niscode": "63061"
-  },
-  {
-    "id": "63061C",
-    "naam": "Hauset",
-    "gemeente_niscode": "63061"
-  },
-  {
-    "id": "63067A",
-    "naam": "Sankt-Vith",
-    "gemeente_niscode": "63067"
-  },
-  {
-    "id": "63067B",
-    "naam": "Meyerode (gebietsteil)",
-    "gemeente_niscode": "63067"
-  },
-  {
-    "id": "63067C",
-    "naam": "Schonberg*",
-    "gemeente_niscode": "63067"
-  },
-  {
-    "id": "63067D",
-    "naam": "Lommersweiler",
-    "gemeente_niscode": "63067"
-  },
-  {
-    "id": "63067E",
-    "naam": "Crombach",
-    "gemeente_niscode": "63067"
-  },
-  {
-    "id": "63067F",
-    "naam": "Recht*",
-    "gemeente_niscode": "63067"
-  },
-  {
-    "id": "63072A",
-    "naam": "Spa + Partie De Sart, De Theux",
-    "gemeente_niscode": "63072"
-  },
-  {
-    "id": "63073A",
-    "naam": "Stavelot*",
-    "gemeente_niscode": "63073"
-  },
-  {
-    "id": "63073B",
-    "naam": "Francorchamps",
-    "gemeente_niscode": "63073"
-  },
-  {
-    "id": "63075A",
-    "naam": "Stoumont",
-    "gemeente_niscode": "63075"
-  },
-  {
-    "id": "63075B",
-    "naam": "La Gleize",
-    "gemeente_niscode": "63075"
-  },
-  {
-    "id": "63075C",
-    "naam": "Rahier",
-    "gemeente_niscode": "63075"
-  },
-  {
-    "id": "63075D",
-    "naam": "Chevron",
-    "gemeente_niscode": "63075"
-  },
-  {
-    "id": "63075E",
-    "naam": "Lorce",
-    "gemeente_niscode": "63075"
-  },
-  {
-    "id": "63076A",
-    "naam": "Theux*",
-    "gemeente_niscode": "63076"
-  },
-  {
-    "id": "63076B",
-    "naam": "Polleur*",
-    "gemeente_niscode": "63076"
-  },
-  {
-    "id": "63076C",
-    "naam": "La Reid",
-    "gemeente_niscode": "63076"
-  },
-  {
-    "id": "63079A",
-    "naam": "Verviers",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63079B",
-    "naam": "Stembert",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63079C",
-    "naam": "Heusy",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63079D",
-    "naam": "Polleur (partie)+theux(partie)",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63079E",
-    "naam": "Ensival",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63079F",
-    "naam": "Lambermont",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63079G",
-    "naam": "Petit-Rechain",
-    "gemeente_niscode": "63079"
-  },
-  {
-    "id": "63080A",
-    "naam": "Waimes",
-    "gemeente_niscode": "63080"
-  },
-  {
-    "id": "63080B",
-    "naam": "Robertville",
-    "gemeente_niscode": "63080"
-  },
-  {
-    "id": "63080C",
-    "naam": "Faymonville",
-    "gemeente_niscode": "63080"
-  },
-  {
-    "id": "63084A",
-    "naam": "Welkenraedt*+ Partie De Baelen",
-    "gemeente_niscode": "63084"
-  },
-  {
-    "id": "63084B",
-    "naam": "Henri-Chapelle+part. De Baelen",
-    "gemeente_niscode": "63084"
-  },
-  {
-    "id": "63086A",
-    "naam": "Trois-Ponts Fosse",
-    "gemeente_niscode": "63086"
-  },
-  {
-    "id": "63086B",
-    "naam": "Trois-Ponts Wanne + Partie De Stavelot",
-    "gemeente_niscode": "63086"
-  },
-  {
-    "id": "63086C",
-    "naam": "Basse-Bodeux",
-    "gemeente_niscode": "63086"
-  },
-  {
-    "id": "63087A",
-    "naam": "Thommen",
-    "gemeente_niscode": "63087"
-  },
-  {
-    "id": "63087B",
-    "naam": "Reuland",
-    "gemeente_niscode": "63087"
-  },
-  {
-    "id": "63088A",
-    "naam": "Gemmenich",
-    "gemeente_niscode": "63088"
-  },
-  {
-    "id": "63088B",
-    "naam": "Moresnet",
-    "gemeente_niscode": "63088"
-  },
-  {
-    "id": "63088C",
-    "naam": "Montzen",
-    "gemeente_niscode": "63088"
-  },
-  {
-    "id": "63088D",
-    "naam": "Hombourg",
-    "gemeente_niscode": "63088"
-  },
-  {
-    "id": "63088E",
-    "naam": "Sippenaeken",
-    "gemeente_niscode": "63088"
-  },
-  {
-    "id": "63089A",
-    "naam": "Thimister",
-    "gemeente_niscode": "63089"
-  },
-  {
-    "id": "63089B",
-    "naam": "Clermont",
-    "gemeente_niscode": "63089"
-  },
-  {
-    "id": "64008A",
-    "naam": "Berloz",
-    "gemeente_niscode": "64008"
-  },
-  {
-    "id": "64008B",
-    "naam": "Rosoux-Crenwick",
-    "gemeente_niscode": "64008"
-  },
-  {
-    "id": "64008C",
-    "naam": "Corswarem",
-    "gemeente_niscode": "64008"
-  },
-  {
-    "id": "64015A",
-    "naam": "Braives",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015B",
-    "naam": "Tourinne",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015C",
-    "naam": "Latinne",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015D",
-    "naam": "Fallais",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015E",
-    "naam": "Fumal",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015F",
-    "naam": "Ville-En-Hesbaye",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015G",
-    "naam": "Ciplet",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64015H",
-    "naam": "Avennes",
-    "gemeente_niscode": "64015"
-  },
-  {
-    "id": "64021A",
-    "naam": "Crisnee",
-    "gemeente_niscode": "64021"
-  },
-  {
-    "id": "64023A",
-    "naam": "Donceel",
-    "gemeente_niscode": "64023"
-  },
-  {
-    "id": "64023B",
-    "naam": "Limont",
-    "gemeente_niscode": "64023"
-  },
-  {
-    "id": "64023C",
-    "naam": "Jeneffe",
-    "gemeente_niscode": "64023"
-  },
-  {
-    "id": "64023D",
-    "naam": "Haneffe",
-    "gemeente_niscode": "64023"
-  },
-  {
-    "id": "64025A",
-    "naam": "Fexhe-Le-Haut-Clocher* + Partie De Momalle",
-    "gemeente_niscode": "64025"
-  },
-  {
-    "id": "64029A",
-    "naam": "Geer",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64029B",
-    "naam": "Boelhe + Partie De Trognee",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64029C",
-    "naam": "Hollogne Sur-Geer ",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64029D",
-    "naam": "Darion",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64029E",
-    "naam": "Omal",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64029F",
-    "naam": "Ligney",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64029G",
-    "naam": "Lens-Saint-Servais",
-    "gemeente_niscode": "64029"
-  },
-  {
-    "id": "64034A",
-    "naam": "Hannut",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034B",
-    "naam": "Avernas-Le-Bauduin",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034C",
-    "naam": "Bertree",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034D",
-    "naam": "Cras-Avernas",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034E",
-    "naam": "Poucet",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034F",
-    "naam": "Abolens",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034G",
-    "naam": "Blehen",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034H",
-    "naam": "Lens-Saint-Remy",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034J",
-    "naam": "Villers-Le-Peuplier",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034K",
-    "naam": "Crehen",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034L",
-    "naam": "Trognee*",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034M",
-    "naam": "Avin",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034N",
-    "naam": "Moxhe",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034P",
-    "naam": "Thisnes",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034R",
-    "naam": "Merdorp",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64034S",
-    "naam": "Grand-Hallet",
-    "gemeente_niscode": "64034"
-  },
-  {
-    "id": "64047A",
-    "naam": "Lincent",
-    "gemeente_niscode": "64047"
-  },
-  {
-    "id": "64047B",
-    "naam": "Pellaines",
-    "gemeente_niscode": "64047"
-  },
-  {
-    "id": "64047C",
-    "naam": "Racour",
-    "gemeente_niscode": "64047"
-  },
-  {
-    "id": "64056A",
-    "naam": "Oreye",
-    "gemeente_niscode": "64056"
-  },
-  {
-    "id": "640631",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "640632",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "64063A",
-    "naam": "Remicourt",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "64063B",
-    "naam": "Lamine",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "64063C",
-    "naam": "Pousset",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "64063D",
-    "naam": "Hodeige",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "64063E",
-    "naam": "Momalle*",
-    "gemeente_niscode": "64063"
-  },
-  {
-    "id": "64065A",
-    "naam": "Saint-Georges-Sur-Meuse+partie De Hermalle-Sous-Huy",
-    "gemeente_niscode": "64065"
-  },
-  {
-    "id": "640741",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074A",
-    "naam": "Waremme",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074B",
-    "naam": "Oleye",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074C",
-    "naam": "Lantremange",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074D",
-    "naam": "Bleret",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074E",
-    "naam": "Bovenistier",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074F",
-    "naam": "Grand-Axhe",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64074G",
-    "naam": "Bettincourt",
-    "gemeente_niscode": "64074"
-  },
-  {
-    "id": "64075A",
-    "naam": "Wasseige",
-    "gemeente_niscode": "64075"
-  },
-  {
-    "id": "64075B",
-    "naam": "Ambresin",
-    "gemeente_niscode": "64075"
-  },
-  {
-    "id": "64075C",
-    "naam": "Meeffe",
-    "gemeente_niscode": "64075"
-  },
-  {
-    "id": "64075D",
-    "naam": "Acosse",
-    "gemeente_niscode": "64075"
-  },
-  {
-    "id": "64076A",
-    "naam": "Celles",
-    "gemeente_niscode": "64076"
-  },
-  {
-    "id": "64076B",
-    "naam": "Borlez",
-    "gemeente_niscode": "64076"
-  },
-  {
-    "id": "64076C",
-    "naam": "Les Waleffes",
-    "gemeente_niscode": "64076"
-  },
-  {
-    "id": "64076D",
-    "naam": "Viemme",
-    "gemeente_niscode": "64076"
-  },
-  {
-    "id": "64076E",
-    "naam": "Aineffe",
-    "gemeente_niscode": "64076"
-  },
-  {
     "id": "71002A",
     "naam": "As",
     "gemeente_niscode": "71002"
   },
   {
     "id": "71002B",
-    "naam": "Niel-Bij-As",
+    "naam": "Niel-bij-As",
     "gemeente_niscode": "71002"
-  },
-  {
-    "id": "710041",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "71004"
   },
   {
     "id": "71004A",
@@ -9560,18 +4655,13 @@
     "gemeente_niscode": "71016"
   },
   {
-    "id": "71016B",
-    "naam": "Waterschei Zwartberg-",
-    "gemeente_niscode": "71016"
-  },
-  {
     "id": "71017A",
     "naam": "Gingelom",
     "gemeente_niscode": "71017"
   },
   {
     "id": "71017B",
-    "naam": "Niel-Bij-Sint-Truiden",
+    "naam": "Niel-bij-Sint-Truiden",
     "gemeente_niscode": "71017"
   },
   {
@@ -9586,12 +4676,12 @@
   },
   {
     "id": "71017E",
-    "naam": "Borlo*",
+    "naam": "Borlo",
     "gemeente_niscode": "71017"
   },
   {
     "id": "71017F",
-    "naam": "Mielen-Boven-Aalst",
+    "naam": "Mielen-boven-Aalst",
     "gemeente_niscode": "71017"
   },
   {
@@ -9627,6 +4717,11 @@
   {
     "id": "71020B",
     "naam": "Zelem",
+    "gemeente_niscode": "71020"
+  },
+  {
+    "id": "71020C",
+    "naam": "Loksbergen",
     "gemeente_niscode": "71020"
   },
   {
@@ -9671,7 +4766,7 @@
   },
   {
     "id": "71024A",
-    "naam": "Herk-De-Stad",
+    "naam": "Herk-de-Stad",
     "gemeente_niscode": "71024"
   },
   {
@@ -9731,13 +4826,8 @@
   },
   {
     "id": "71045D",
-    "naam": "Kozen*",
+    "naam": "Kozen",
     "gemeente_niscode": "71045"
-  },
-  {
-    "id": "71047A",
-    "naam": "Opglabbeek",
-    "gemeente_niscode": "72042"
   },
   {
     "id": "71053A",
@@ -9771,7 +4861,7 @@
   },
   {
     "id": "71053G",
-    "naam": "Zepperen+ Deel Kozen",
+    "naam": "Zepperen",
     "gemeente_niscode": "71053"
   },
   {
@@ -9786,7 +4876,7 @@
   },
   {
     "id": "71053K",
-    "naam": "Groot-Gelmen*",
+    "naam": "Groot-Gelmen",
     "gemeente_niscode": "71053"
   },
   {
@@ -9806,12 +4896,17 @@
   },
   {
     "id": "71053P",
-    "naam": "Kerkom-Bij-Sint-Truiden + Deel Van Borlo",
+    "naam": "Kerkom-bij-Sint-Truiden",
     "gemeente_niscode": "71053"
   },
   {
     "id": "71053R",
     "naam": "Velm",
+    "gemeente_niscode": "71053"
+  },
+  {
+    "id": "71053S",
+    "naam": "Gelmen",
     "gemeente_niscode": "71053"
   },
   {
@@ -9821,12 +4916,7 @@
   },
   {
     "id": "71066A",
-    "naam": "Zonhoven*+ Deel Van Houthalen",
-    "gemeente_niscode": "71066"
-  },
-  {
-    "id": "71066B",
-    "naam": "Deel Van Zolder",
+    "naam": "Zonhoven",
     "gemeente_niscode": "71066"
   },
   {
@@ -9851,7 +4941,7 @@
   },
   {
     "id": "71070B",
-    "naam": "Zolder*+ Deel Van Zonhoven + Deel Van Houthalen",
+    "naam": "Zolder",
     "gemeente_niscode": "71070"
   },
   {
@@ -9870,11 +4960,6 @@
     "gemeente_niscode": "72003"
   },
   {
-    "id": "720041",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "72004"
-  },
-  {
     "id": "72004A",
     "naam": "Bree",
     "gemeente_niscode": "72004"
@@ -9887,6 +4972,16 @@
   {
     "id": "72004C",
     "naam": "Opitter",
+    "gemeente_niscode": "72004"
+  },
+  {
+    "id": "72004D",
+    "naam": "Beek",
+    "gemeente_niscode": "72004"
+  },
+  {
+    "id": "72004E",
+    "naam": "Gerdingen",
     "gemeente_niscode": "72004"
   },
   {
@@ -9930,21 +5025,6 @@
     "gemeente_niscode": "72021"
   },
   {
-    "id": "72025A",
-    "naam": "Neerpelt",
-    "gemeente_niscode": "72043"
-  },
-  {
-    "id": "72025B",
-    "naam": "Sint-Huibrechts-Lille",
-    "gemeente_niscode": "72043"
-  },
-  {
-    "id": "72029A",
-    "naam": "Overpelt*",
-    "gemeente_niscode": "72043"
-  },
-  {
     "id": "72030A",
     "naam": "Peer",
     "gemeente_niscode": "72030"
@@ -9976,47 +5056,52 @@
   },
   {
     "id": "72038A",
-    "naam": "Hechtel + Deel Helchteren",
+    "naam": "Hechtel",
     "gemeente_niscode": "72038"
   },
   {
     "id": "72038B",
-    "naam": "Eksel+ Deel Van Overpelt",
+    "naam": "Eksel",
     "gemeente_niscode": "72038"
   },
   {
     "id": "72039A",
-    "naam": "Houthalen*+ Deel Van Zonhoven En Zolder",
+    "naam": "Houthalen",
     "gemeente_niscode": "72039"
   },
   {
     "id": "72039B",
-    "naam": "Helchteren*",
+    "naam": "Helchteren",
     "gemeente_niscode": "72039"
   },
   {
-    "id": "72040A",
+    "id": "72042A",
     "naam": "Meeuwen",
     "gemeente_niscode": "72042"
   },
   {
-    "id": "72040B",
+    "id": "72042B",
     "naam": "Wijshagen",
     "gemeente_niscode": "72042"
   },
   {
-    "id": "72040C",
+    "id": "72042C",
     "naam": "Ellikom",
     "gemeente_niscode": "72042"
   },
   {
-    "id": "72040D",
+    "id": "72042D",
     "naam": "Gruitrode",
     "gemeente_niscode": "72042"
   },
   {
-    "id": "72040E",
+    "id": "72042E",
     "naam": "Neerglabbeek",
+    "gemeente_niscode": "72042"
+  },
+  {
+    "id": "72042F",
+    "naam": "Opglabbeek",
     "gemeente_niscode": "72042"
   },
   {
@@ -10043,6 +5128,21 @@
     "id": "72041E",
     "naam": "Lanklaar",
     "gemeente_niscode": "72041"
+  },
+  {
+    "id": "72043A",
+    "naam": "Neerpelt",
+    "gemeente_niscode": "72043"
+  },
+  {
+    "id": "72043B",
+    "naam": "Overpelt",
+    "gemeente_niscode": "72043"
+  },
+  {
+    "id": "72043C",
+    "naam": "Sint-Huibrechts-Lille",
+    "gemeente_niscode": "72043"
   },
   {
     "id": "73001A",
@@ -10096,7 +5196,7 @@
   },
   {
     "id": "73006K",
-    "naam": "Kleine-Spouwen",
+    "naam": "Kleine-spouwen",
     "gemeente_niscode": "73006"
   },
   {
@@ -10136,12 +5236,12 @@
   },
   {
     "id": "73009E",
-    "naam": "Jesseren+ Deel Van Haren",
+    "naam": "Jesseren",
     "gemeente_niscode": "73009"
   },
   {
     "id": "73009F",
-    "naam": "Bommershoven+ Deel Van Kolmont",
+    "naam": "Bommershoven",
     "gemeente_niscode": "73009"
   },
   {
@@ -10211,7 +5311,7 @@
   },
   {
     "id": "73022G",
-    "naam": "Klein-Gelmen+deel Van Gelmen",
+    "naam": "Klein-Gelmen",
     "gemeente_niscode": "73022"
   },
   {
@@ -10240,13 +5340,18 @@
     "gemeente_niscode": "73022"
   },
   {
+    "id": "73022N",
+    "naam": "Bovelingen",
+    "gemeente_niscode": "73022"
+  },
+  {
     "id": "73028A",
     "naam": "Herstappe",
     "gemeente_niscode": "73028"
   },
   {
     "id": "73032A",
-    "naam": "Hoeselt + Deel Van Tongeren",
+    "naam": "Hoeselt",
     "gemeente_niscode": "73032"
   },
   {
@@ -10261,7 +5366,7 @@
   },
   {
     "id": "73032D",
-    "naam": "Sint-Huibrechts-Hern + Deel Van Tongeren",
+    "naam": "Sint-Huibrechts-Hern",
     "gemeente_niscode": "73032"
   },
   {
@@ -10320,11 +5425,6 @@
     "gemeente_niscode": "73042"
   },
   {
-    "id": "730661",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "73066"
-  },
-  {
     "id": "73066A",
     "naam": "Riemst",
     "gemeente_niscode": "73066"
@@ -10366,7 +5466,7 @@
   },
   {
     "id": "73066J",
-    "naam": "Genoelselderen + Deel Van 's Herenelderen",
+    "naam": "Genoelselderen",
     "gemeente_niscode": "73066"
   },
   {
@@ -10375,13 +5475,8 @@
     "gemeente_niscode": "73066"
   },
   {
-    "id": "730831",
-    "naam": "Wijziging Van Gemeentegrens",
-    "gemeente_niscode": "73083"
-  },
-  {
     "id": "73083A",
-    "naam": "Tongeren*",
+    "naam": "Tongeren",
     "gemeente_niscode": "73083"
   },
   {
@@ -10456,7 +5551,22 @@
   },
   {
     "id": "73083S",
-    "naam": "'s Herenelderen*",
+    "naam": "'s Herenelderen",
+    "gemeente_niscode": "73083"
+  },
+  {
+    "id": "73083T",
+    "naam": "Haren",
+    "gemeente_niscode": "73083"
+  },
+  {
+    "id": "73083U",
+    "naam": "Kolmont",
+    "gemeente_niscode": "73083"
+  },
+  {
+    "id": "73083V",
+    "naam": "Diets-Heur",
     "gemeente_niscode": "73083"
   },
   {
@@ -10481,7 +5591,7 @@
   },
   {
     "id": "73107A",
-    "naam": "Mechelen-Aan-De-Maas",
+    "naam": "Mechelen-aan-de-Maas",
     "gemeente_niscode": "73107"
   },
   {
@@ -10548,2905 +5658,5 @@
     "id": "73109F",
     "naam": "Moelingen",
     "gemeente_niscode": "73109"
-  },
-  {
-    "id": "81001A",
-    "naam": "Arlon + Partie De Wolkrange",
-    "gemeente_niscode": "81001"
-  },
-  {
-    "id": "81001B",
-    "naam": "Autelbas",
-    "gemeente_niscode": "81001"
-  },
-  {
-    "id": "81001C",
-    "naam": "Heinsch + Partie De Hachy",
-    "gemeente_niscode": "81001"
-  },
-  {
-    "id": "81001D",
-    "naam": "Bonnert",
-    "gemeente_niscode": "81001"
-  },
-  {
-    "id": "81001E",
-    "naam": "Guirsch",
-    "gemeente_niscode": "81001"
-  },
-  {
-    "id": "81001F",
-    "naam": "Toernich",
-    "gemeente_niscode": "81001"
-  },
-  {
-    "id": "81003A",
-    "naam": "Attert",
-    "gemeente_niscode": "81003"
-  },
-  {
-    "id": "81003B",
-    "naam": "Tontelange",
-    "gemeente_niscode": "81003"
-  },
-  {
-    "id": "81003C",
-    "naam": "Thiaumont",
-    "gemeente_niscode": "81003"
-  },
-  {
-    "id": "81003D",
-    "naam": "Nobressart",
-    "gemeente_niscode": "81003"
-  },
-  {
-    "id": "81003E",
-    "naam": "Nothomb",
-    "gemeente_niscode": "81003"
-  },
-  {
-    "id": "81004A",
-    "naam": "Aubange",
-    "gemeente_niscode": "81004"
-  },
-  {
-    "id": "81004B",
-    "naam": "Athus + Partie De Messancy",
-    "gemeente_niscode": "81004"
-  },
-  {
-    "id": "81004C",
-    "naam": "Halanzy",
-    "gemeente_niscode": "81004"
-  },
-  {
-    "id": "81004D",
-    "naam": "Rachecourt",
-    "gemeente_niscode": "81004"
-  },
-  {
-    "id": "81013A",
-    "naam": "Martelange + Partie D'anlier",
-    "gemeente_niscode": "81013"
-  },
-  {
-    "id": "81015A",
-    "naam": "Messancy*",
-    "gemeente_niscode": "81015"
-  },
-  {
-    "id": "81015B",
-    "naam": "Selange",
-    "gemeente_niscode": "81015"
-  },
-  {
-    "id": "81015C",
-    "naam": "Habergy",
-    "gemeente_niscode": "81015"
-  },
-  {
-    "id": "81015D",
-    "naam": "Wolkrange*",
-    "gemeente_niscode": "81015"
-  },
-  {
-    "id": "81015E",
-    "naam": "Hondelange",
-    "gemeente_niscode": "81015"
-  },
-  {
-    "id": "82003A",
-    "naam": "Bastogne + Partie De Longchamps Et Sibret",
-    "gemeente_niscode": "82003"
-  },
-  {
-    "id": "82003B",
-    "naam": "Wardin",
-    "gemeente_niscode": "82003"
-  },
-  {
-    "id": "82003C",
-    "naam": "Villers-La-Bonne-Eau",
-    "gemeente_niscode": "82003"
-  },
-  {
-    "id": "82003D",
-    "naam": "Noville",
-    "gemeente_niscode": "82003"
-  },
-  {
-    "id": "82003E",
-    "naam": "Longvilly",
-    "gemeente_niscode": "82003"
-  },
-  {
-    "id": "82005A",
-    "naam": "Bertogne",
-    "gemeente_niscode": "82005"
-  },
-  {
-    "id": "82005B",
-    "naam": "Longchamps*",
-    "gemeente_niscode": "82005"
-  },
-  {
-    "id": "82005C",
-    "naam": "Flamierge*",
-    "gemeente_niscode": "82005"
-  },
-  {
-    "id": "82009A",
-    "naam": "Fauvillers",
-    "gemeente_niscode": "82009"
-  },
-  {
-    "id": "82009B",
-    "naam": "Tintange",
-    "gemeente_niscode": "82009"
-  },
-  {
-    "id": "82009C",
-    "naam": "Hollange",
-    "gemeente_niscode": "82009"
-  },
-  {
-    "id": "820141",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014A",
-    "naam": "Houffalize",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014B",
-    "naam": "Mabompre",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014C",
-    "naam": "Nadrin",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014D",
-    "naam": "Wibrin",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014E",
-    "naam": "Tailles",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014F",
-    "naam": "Mont",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82014G",
-    "naam": "Tavigny",
-    "gemeente_niscode": "82014"
-  },
-  {
-    "id": "82032A",
-    "naam": "Vielsalm+part D'arbrefontaine",
-    "gemeente_niscode": "82032"
-  },
-  {
-    "id": "82032B",
-    "naam": "Petit-Thier + Partie De Beho",
-    "gemeente_niscode": "82032"
-  },
-  {
-    "id": "82032C",
-    "naam": "Bihain + Partie De Lierneux",
-    "gemeente_niscode": "82032"
-  },
-  {
-    "id": "82032D",
-    "naam": "Grand-Halleux",
-    "gemeente_niscode": "82032"
-  },
-  {
-    "id": "820361",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82036A",
-    "naam": "Vaux-Lez-Rosieres",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82036B",
-    "naam": "Nives",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82036C",
-    "naam": "Morhet",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82036D",
-    "naam": "Hompre",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82036E",
-    "naam": "Sibret*",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82036F",
-    "naam": "Juseret",
-    "gemeente_niscode": "82036"
-  },
-  {
-    "id": "82037A",
-    "naam": "Bovigny",
-    "gemeente_niscode": "82037"
-  },
-  {
-    "id": "82037B",
-    "naam": "Beho*",
-    "gemeente_niscode": "82037"
-  },
-  {
-    "id": "82037C",
-    "naam": "Limerle",
-    "gemeente_niscode": "82037"
-  },
-  {
-    "id": "82037D",
-    "naam": "Cherain",
-    "gemeente_niscode": "82037"
-  },
-  {
-    "id": "82037E",
-    "naam": "Montleban",
-    "gemeente_niscode": "82037"
-  },
-  {
-    "id": "82038A",
-    "naam": "Tillet",
-    "gemeente_niscode": "82038"
-  },
-  {
-    "id": "82038B",
-    "naam": "Amberloup",
-    "gemeente_niscode": "82038"
-  },
-  {
-    "id": "82038C",
-    "naam": "Lavacherie+partie De Flamierge",
-    "gemeente_niscode": "82038"
-  },
-  {
-    "id": "83012A",
-    "naam": "Durbuy",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012B",
-    "naam": "Grandhan*",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012C",
-    "naam": "Septon",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012D",
-    "naam": "Tohogne",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012E",
-    "naam": "Barvaux",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012F",
-    "naam": "Borlon",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012G",
-    "naam": "Bende",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012H",
-    "naam": "Bomal",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012J",
-    "naam": "Izier",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012K",
-    "naam": "Villers-Sainte-Gertrude",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012L",
-    "naam": "Heyd",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83012M",
-    "naam": "Weris",
-    "gemeente_niscode": "83012"
-  },
-  {
-    "id": "83013A",
-    "naam": "Erezee",
-    "gemeente_niscode": "83013"
-  },
-  {
-    "id": "83013B",
-    "naam": "Amonines",
-    "gemeente_niscode": "83013"
-  },
-  {
-    "id": "83013C",
-    "naam": "Soy*",
-    "gemeente_niscode": "83013"
-  },
-  {
-    "id": "83013D",
-    "naam": "Mormont",
-    "gemeente_niscode": "83013"
-  },
-  {
-    "id": "83028A",
-    "naam": "Hotton + Partie De Soy",
-    "gemeente_niscode": "83028"
-  },
-  {
-    "id": "83028B",
-    "naam": "Hampteau",
-    "gemeente_niscode": "83028"
-  },
-  {
-    "id": "83028C",
-    "naam": "Marenne*",
-    "gemeente_niscode": "83028"
-  },
-  {
-    "id": "83028D",
-    "naam": "Fronville",
-    "gemeente_niscode": "83028"
-  },
-  {
-    "id": "83031A",
-    "naam": "La Roche-En-Ardenne + Partie De Marcourt",
-    "gemeente_niscode": "83031"
-  },
-  {
-    "id": "83031B",
-    "naam": "Samree",
-    "gemeente_niscode": "83031"
-  },
-  {
-    "id": "83031C",
-    "naam": "Ortho",
-    "gemeente_niscode": "83031"
-  },
-  {
-    "id": "83031D",
-    "naam": "Hives",
-    "gemeente_niscode": "83031"
-  },
-  {
-    "id": "83031E",
-    "naam": "Beausaint",
-    "gemeente_niscode": "83031"
-  },
-  {
-    "id": "83031F",
-    "naam": "Halleux",
-    "gemeente_niscode": "83031"
-  },
-  {
-    "id": "83034A",
-    "naam": "Marche-En-Famenne +partie De Baillonville Et Noiseux",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83034B",
-    "naam": "Waha + Partie De Marenne",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83034C",
-    "naam": "Aye",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83034D",
-    "naam": "Hargimont",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83034E",
-    "naam": "On",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83034F",
-    "naam": "Humain*",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83034G",
-    "naam": "Roy",
-    "gemeente_niscode": "83034"
-  },
-  {
-    "id": "83040A",
-    "naam": "Nassogne",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040B",
-    "naam": "Masbourg",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040C",
-    "naam": "Ambly",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040D",
-    "naam": "Harsin",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040E",
-    "naam": "Grune",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040F",
-    "naam": "Lesterny",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040G",
-    "naam": "Forrieres",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83040H",
-    "naam": "Bande",
-    "gemeente_niscode": "83040"
-  },
-  {
-    "id": "83044A",
-    "naam": "Rendeux",
-    "gemeente_niscode": "83044"
-  },
-  {
-    "id": "83044B",
-    "naam": "Beffe",
-    "gemeente_niscode": "83044"
-  },
-  {
-    "id": "83044C",
-    "naam": "Marcourt*",
-    "gemeente_niscode": "83044"
-  },
-  {
-    "id": "83044D",
-    "naam": "Hodister",
-    "gemeente_niscode": "83044"
-  },
-  {
-    "id": "83049A",
-    "naam": "Tenneville+partie De Flamierge",
-    "gemeente_niscode": "83049"
-  },
-  {
-    "id": "83049B",
-    "naam": "Champlon",
-    "gemeente_niscode": "83049"
-  },
-  {
-    "id": "83049C",
-    "naam": "Erneuville",
-    "gemeente_niscode": "83049"
-  },
-  {
-    "id": "830551",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "83055A",
-    "naam": "Grandmenil",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "83055B",
-    "naam": "Harre*",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "83055C",
-    "naam": "Vaux-Chavanne + Partie De Bra",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "83055D",
-    "naam": "Malempre",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "83055E",
-    "naam": "Odeigne",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "83055F",
-    "naam": "Dochamps",
-    "gemeente_niscode": "83055"
-  },
-  {
-    "id": "84009A",
-    "naam": "Bertrix + Partie D'offagne",
-    "gemeente_niscode": "84009"
-  },
-  {
-    "id": "84009B",
-    "naam": "Jehonville",
-    "gemeente_niscode": "84009"
-  },
-  {
-    "id": "84009C",
-    "naam": "Orgeo",
-    "gemeente_niscode": "84009"
-  },
-  {
-    "id": "84009D",
-    "naam": "Cugnon",
-    "gemeente_niscode": "84009"
-  },
-  {
-    "id": "84009E",
-    "naam": "Auby-Sur-Semois",
-    "gemeente_niscode": "84009"
-  },
-  {
-    "id": "84010A",
-    "naam": "Bouillon",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010B",
-    "naam": "Corbion + Partie D'alle",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010C",
-    "naam": "Sensenruth",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010D",
-    "naam": "Noirefontaine",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010E",
-    "naam": "Dohan",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010F",
-    "naam": "Rochehaut",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010G",
-    "naam": "Poupehan",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010H",
-    "naam": "Ucimont",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010J",
-    "naam": "Vivy",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010K",
-    "naam": "Bellevaux",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84010L",
-    "naam": "Les Hayons",
-    "gemeente_niscode": "84010"
-  },
-  {
-    "id": "84016A",
-    "naam": "Daverdisse",
-    "gemeente_niscode": "84016"
-  },
-  {
-    "id": "84016B",
-    "naam": "Porcheresse",
-    "gemeente_niscode": "84016"
-  },
-  {
-    "id": "84016C",
-    "naam": "Gembes",
-    "gemeente_niscode": "84016"
-  },
-  {
-    "id": "84016D",
-    "naam": "Haut-Fays",
-    "gemeente_niscode": "84016"
-  },
-  {
-    "id": "84029A",
-    "naam": "Herbeumont",
-    "gemeente_niscode": "84029"
-  },
-  {
-    "id": "84029B",
-    "naam": "Saint-Medard",
-    "gemeente_niscode": "84029"
-  },
-  {
-    "id": "84029C",
-    "naam": "Straimont",
-    "gemeente_niscode": "84029"
-  },
-  {
-    "id": "84033A",
-    "naam": "Leglise + Partie D'anlier",
-    "gemeente_niscode": "84033"
-  },
-  {
-    "id": "84033B",
-    "naam": "Ebly",
-    "gemeente_niscode": "84033"
-  },
-  {
-    "id": "84033C",
-    "naam": "Witry",
-    "gemeente_niscode": "84033"
-  },
-  {
-    "id": "84033D",
-    "naam": "Mellier",
-    "gemeente_niscode": "84033"
-  },
-  {
-    "id": "84033E",
-    "naam": "Assenois*",
-    "gemeente_niscode": "84033"
-  },
-  {
-    "id": "84035A",
-    "naam": "Libin*",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84035B",
-    "naam": "Villance",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84035C",
-    "naam": "Smuid*",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84035D",
-    "naam": "Ochamps",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84035E",
-    "naam": "Anloy",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84035F",
-    "naam": "Transinne",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84035G",
-    "naam": "Redu",
-    "gemeente_niscode": "84035"
-  },
-  {
-    "id": "84043A",
-    "naam": "Neufchateau",
-    "gemeente_niscode": "84043"
-  },
-  {
-    "id": "84043B",
-    "naam": "Longlier",
-    "gemeente_niscode": "84043"
-  },
-  {
-    "id": "84043C",
-    "naam": "Hamipre + Partie D'assenois",
-    "gemeente_niscode": "84043"
-  },
-  {
-    "id": "84043D",
-    "naam": "Grapfontaine",
-    "gemeente_niscode": "84043"
-  },
-  {
-    "id": "84043E",
-    "naam": "Tournay",
-    "gemeente_niscode": "84043"
-  },
-  {
-    "id": "84043F",
-    "naam": "Grandvoir",
-    "gemeente_niscode": "84043"
-  },
-  {
-    "id": "84050A",
-    "naam": "Paliseul",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050B",
-    "naam": "Opont",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050C",
-    "naam": "Framont",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050D",
-    "naam": "Offagne*",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050E",
-    "naam": "Fays-Les-Veneurs",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050F",
-    "naam": "Nollevaux",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050G",
-    "naam": "Carlsbourg",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84050H",
-    "naam": "Maissin",
-    "gemeente_niscode": "84050"
-  },
-  {
-    "id": "84059A",
-    "naam": "Saint-Hubert",
-    "gemeente_niscode": "84059"
-  },
-  {
-    "id": "84059B",
-    "naam": "Vesqueville",
-    "gemeente_niscode": "84059"
-  },
-  {
-    "id": "84059C",
-    "naam": "Hatrival + Partie De Libin Et Smuid",
-    "gemeente_niscode": "84059"
-  },
-  {
-    "id": "84059D",
-    "naam": "Arville",
-    "gemeente_niscode": "84059"
-  },
-  {
-    "id": "84059E",
-    "naam": "Awenne",
-    "gemeente_niscode": "84059"
-  },
-  {
-    "id": "84059F",
-    "naam": "Mirwart",
-    "gemeente_niscode": "84059"
-  },
-  {
-    "id": "84068A",
-    "naam": "Tellin",
-    "gemeente_niscode": "84068"
-  },
-  {
-    "id": "84068B",
-    "naam": "Bure",
-    "gemeente_niscode": "84068"
-  },
-  {
-    "id": "84068C",
-    "naam": "Resteigne*",
-    "gemeente_niscode": "84068"
-  },
-  {
-    "id": "84068D",
-    "naam": "Grupont",
-    "gemeente_niscode": "84068"
-  },
-  {
-    "id": "84075A",
-    "naam": "Wellin",
-    "gemeente_niscode": "84075"
-  },
-  {
-    "id": "84075B",
-    "naam": "Halma",
-    "gemeente_niscode": "84075"
-  },
-  {
-    "id": "84075C",
-    "naam": "Lomprez",
-    "gemeente_niscode": "84075"
-  },
-  {
-    "id": "84075D",
-    "naam": "Sohier",
-    "gemeente_niscode": "84075"
-  },
-  {
-    "id": "84075E",
-    "naam": "Chanly",
-    "gemeente_niscode": "84075"
-  },
-  {
-    "id": "84077A",
-    "naam": "Libramont",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077B",
-    "naam": "Bras",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077C",
-    "naam": "Saint-Pierre",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077D",
-    "naam": "Recogne",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077E",
-    "naam": "Freux",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077F",
-    "naam": "Sainte-Marie-Chevigny",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077G",
-    "naam": "Moircy",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "84077H",
-    "naam": "Remagne",
-    "gemeente_niscode": "84077"
-  },
-  {
-    "id": "85007A",
-    "naam": "Chiny",
-    "gemeente_niscode": "85007"
-  },
-  {
-    "id": "85007B",
-    "naam": "Suxy",
-    "gemeente_niscode": "85007"
-  },
-  {
-    "id": "85007C",
-    "naam": "Les Bulles",
-    "gemeente_niscode": "85007"
-  },
-  {
-    "id": "85007D",
-    "naam": "Izel",
-    "gemeente_niscode": "85007"
-  },
-  {
-    "id": "85007E",
-    "naam": "Jamoigne",
-    "gemeente_niscode": "85007"
-  },
-  {
-    "id": "85007F",
-    "naam": "Termes",
-    "gemeente_niscode": "85007"
-  },
-  {
-    "id": "85009A",
-    "naam": "Etalle",
-    "gemeente_niscode": "85009"
-  },
-  {
-    "id": "85009B",
-    "naam": "Vance",
-    "gemeente_niscode": "85009"
-  },
-  {
-    "id": "85009C",
-    "naam": "Chantemelle",
-    "gemeente_niscode": "85009"
-  },
-  {
-    "id": "85009D",
-    "naam": "Buzenol",
-    "gemeente_niscode": "85009"
-  },
-  {
-    "id": "85009E",
-    "naam": "Sainte-Marie",
-    "gemeente_niscode": "85009"
-  },
-  {
-    "id": "85009F",
-    "naam": "Villers-Sur-Semois*",
-    "gemeente_niscode": "85009"
-  },
-  {
-    "id": "85011A",
-    "naam": "Florenville",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85011B",
-    "naam": "Villers-Devant-Orval",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85011C",
-    "naam": "Chassepierre",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85011D",
-    "naam": "Lacuisine",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85011E",
-    "naam": "Fontenoille",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85011F",
-    "naam": "Sainte-Cecile",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85011G",
-    "naam": "Muno",
-    "gemeente_niscode": "85011"
-  },
-  {
-    "id": "85024A",
-    "naam": "Meix-Devant-Virton",
-    "gemeente_niscode": "85024"
-  },
-  {
-    "id": "85024B",
-    "naam": "Robelmont",
-    "gemeente_niscode": "85024"
-  },
-  {
-    "id": "85024C",
-    "naam": "Villers-La-Loue",
-    "gemeente_niscode": "85024"
-  },
-  {
-    "id": "85024D",
-    "naam": "Sommethonne",
-    "gemeente_niscode": "85024"
-  },
-  {
-    "id": "85024E",
-    "naam": "Gerouville",
-    "gemeente_niscode": "85024"
-  },
-  {
-    "id": "85026A",
-    "naam": "Musson",
-    "gemeente_niscode": "85026"
-  },
-  {
-    "id": "85026B",
-    "naam": "Mussy-La-Ville+partie De Bleid",
-    "gemeente_niscode": "85026"
-  },
-  {
-    "id": "85034A",
-    "naam": "Saint-Leger",
-    "gemeente_niscode": "85034"
-  },
-  {
-    "id": "85034B",
-    "naam": "Chatillon",
-    "gemeente_niscode": "85034"
-  },
-  {
-    "id": "85034C",
-    "naam": "Meix-Le-Tige",
-    "gemeente_niscode": "85034"
-  },
-  {
-    "id": "85039A",
-    "naam": "Tintigny",
-    "gemeente_niscode": "85039"
-  },
-  {
-    "id": "85039B",
-    "naam": "Bellefontaine",
-    "gemeente_niscode": "85039"
-  },
-  {
-    "id": "85039C",
-    "naam": "Saint-Vincent",
-    "gemeente_niscode": "85039"
-  },
-  {
-    "id": "85039D",
-    "naam": "Rossignol",
-    "gemeente_niscode": "85039"
-  },
-  {
-    "id": "85045A",
-    "naam": "Virton",
-    "gemeente_niscode": "85045"
-  },
-  {
-    "id": "85045B",
-    "naam": "Ethe",
-    "gemeente_niscode": "85045"
-  },
-  {
-    "id": "85045C",
-    "naam": "Latour",
-    "gemeente_niscode": "85045"
-  },
-  {
-    "id": "85045D",
-    "naam": "St-Mard + Partie De Dampicourt",
-    "gemeente_niscode": "85045"
-  },
-  {
-    "id": "85045E",
-    "naam": "Ruette",
-    "gemeente_niscode": "85045"
-  },
-  {
-    "id": "85045F",
-    "naam": "Bleid*",
-    "gemeente_niscode": "85045"
-  },
-  {
-    "id": "85046A",
-    "naam": "Habay-La-Neuve",
-    "gemeente_niscode": "85046"
-  },
-  {
-    "id": "85046B",
-    "naam": "Hachy*",
-    "gemeente_niscode": "85046"
-  },
-  {
-    "id": "85046C",
-    "naam": "Habay-La-Vieille",
-    "gemeente_niscode": "85046"
-  },
-  {
-    "id": "85046D",
-    "naam": "Houdemont",
-    "gemeente_niscode": "85046"
-  },
-  {
-    "id": "85046E",
-    "naam": "Rulles + Partie Villers-Sur Semois-",
-    "gemeente_niscode": "85046"
-  },
-  {
-    "id": "85046F",
-    "naam": "Anlier*",
-    "gemeente_niscode": "85046"
-  },
-  {
-    "id": "85047A",
-    "naam": "Dampicourt*",
-    "gemeente_niscode": "85047"
-  },
-  {
-    "id": "85047B",
-    "naam": "Harnoncourt",
-    "gemeente_niscode": "85047"
-  },
-  {
-    "id": "85047C",
-    "naam": "Lamorteau",
-    "gemeente_niscode": "85047"
-  },
-  {
-    "id": "85047D",
-    "naam": "Torgny",
-    "gemeente_niscode": "85047"
-  },
-  {
-    "id": "91005A",
-    "naam": "Anhee",
-    "gemeente_niscode": "91005"
-  },
-  {
-    "id": "91005B",
-    "naam": "Sosoye",
-    "gemeente_niscode": "91005"
-  },
-  {
-    "id": "91005C",
-    "naam": "Denee",
-    "gemeente_niscode": "91005"
-  },
-  {
-    "id": "91005D",
-    "naam": "Bioul",
-    "gemeente_niscode": "91005"
-  },
-  {
-    "id": "91005E",
-    "naam": "Annevoie-Rouillon",
-    "gemeente_niscode": "91005"
-  },
-  {
-    "id": "91013A",
-    "naam": "Beauraing",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013B",
-    "naam": "Javingue",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013C",
-    "naam": "Winenne",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013D",
-    "naam": "Felenne",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013E",
-    "naam": "Dion",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013F",
-    "naam": "Feschaux",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013G",
-    "naam": "Baronville",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013H",
-    "naam": "Wiesne",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013J",
-    "naam": "Martouzin-Neuville",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013K",
-    "naam": "Focant",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013L",
-    "naam": "Honnay",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013M",
-    "naam": "Froidfontaine",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013N",
-    "naam": "Voneche",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013P",
-    "naam": "Wancennes",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91013R",
-    "naam": "Pondrome",
-    "gemeente_niscode": "91013"
-  },
-  {
-    "id": "91015A",
-    "naam": "Bievre",
-    "gemeente_niscode": "91015"
-  },
-  {
-    "id": "91015B",
-    "naam": "Graide",
-    "gemeente_niscode": "91015"
-  },
-  {
-    "id": "91015C",
-    "naam": "Naome",
-    "gemeente_niscode": "91015"
-  },
-  {
-    "id": "91015D",
-    "naam": "Oizy",
-    "gemeente_niscode": "91015"
-  },
-  {
-    "id": "91015E",
-    "naam": "Monceau-En-Ardenne",
-    "gemeente_niscode": "91015"
-  },
-  {
-    "id": "91030A",
-    "naam": "Ciney",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030B",
-    "naam": "Pessoux",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030C",
-    "naam": "Serinchamps",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030D",
-    "naam": "Leignon",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030E",
-    "naam": "Chevetogne",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030F",
-    "naam": "Conneux",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030G",
-    "naam": "Achene*",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030H",
-    "naam": "Sovet",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91030J",
-    "naam": "Braibant",
-    "gemeente_niscode": "91030"
-  },
-  {
-    "id": "91034A",
-    "naam": "Dinant",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034B",
-    "naam": "Lisogne",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034C",
-    "naam": "Thynes",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034D",
-    "naam": "Sorinnes + Partie De Achene",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034E",
-    "naam": "Foy-Notre-Dame",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034F",
-    "naam": "Furfooz",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034G",
-    "naam": "Falmagne",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91034H",
-    "naam": "Falmignoul",
-    "gemeente_niscode": "91034"
-  },
-  {
-    "id": "91054A",
-    "naam": "Gedinne",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054B",
-    "naam": "Louette-Saint-Denis*",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054C",
-    "naam": "Houdremont",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054D",
-    "naam": "Louette-Saint-Pierre",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054E",
-    "naam": "Rienne",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054F",
-    "naam": "Willerzie",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054G",
-    "naam": "Bourseigne-Neuve",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054H",
-    "naam": "Bourseigne-Vieille",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054J",
-    "naam": "Vencimont",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054K",
-    "naam": "Sart-Custinne",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054L",
-    "naam": "Patignies",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91054M",
-    "naam": "Malvoisin",
-    "gemeente_niscode": "91054"
-  },
-  {
-    "id": "91059A",
-    "naam": "Hamois",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91059B",
-    "naam": "Achet",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91059C",
-    "naam": "Mohiville",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91059D",
-    "naam": "Scy",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91059E",
-    "naam": "Emptinne",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91059F",
-    "naam": "Natoye",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91059G",
-    "naam": "Schaltin",
-    "gemeente_niscode": "91059"
-  },
-  {
-    "id": "91064A",
-    "naam": "Havelange",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064B",
-    "naam": "Verlee",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064C",
-    "naam": "Maffe*",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064D",
-    "naam": "Mean",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064E",
-    "naam": "Barvaux-Condroz",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064F",
-    "naam": "Porcheresse",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064G",
-    "naam": "Jeneffe",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064H",
-    "naam": "Miecret",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91064J",
-    "naam": "Flostoy",
-    "gemeente_niscode": "91064"
-  },
-  {
-    "id": "91072A",
-    "naam": "Houyet",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072B",
-    "naam": "Hour",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072C",
-    "naam": "Mesnil-Eglise",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072D",
-    "naam": "Finnevaux",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072E",
-    "naam": "Mesnil-Saint-Blaise",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072F",
-    "naam": "Hulsonniaux",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072G",
-    "naam": "Celles",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072H",
-    "naam": "Custinne",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072J",
-    "naam": "Ciergnon",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91072K",
-    "naam": "Wanlin",
-    "gemeente_niscode": "91072"
-  },
-  {
-    "id": "91103A",
-    "naam": "Onhaye",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91103B",
-    "naam": "Gerin",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91103C",
-    "naam": "Anthee",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91103D",
-    "naam": "Serville",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91103E",
-    "naam": "Falaen",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91103F",
-    "naam": "Sommiere",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91103G",
-    "naam": "Weillen",
-    "gemeente_niscode": "91103"
-  },
-  {
-    "id": "91114A",
-    "naam": "Rochefort",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114B",
-    "naam": "Jemelle",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114C",
-    "naam": "Wavreille+partie De Resteigne",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114D",
-    "naam": "Han-Sur-Lesse",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114E",
-    "naam": "Eprave",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114F",
-    "naam": "Lessive",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114G",
-    "naam": "Ave-Et-Auffe",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114H",
-    "naam": "Lavaux-Sainte-Anne",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114J",
-    "naam": "Villers-Sur-Lesse",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114K",
-    "naam": "Mont-Gauthier",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91114L",
-    "naam": "Buissonville+partie De Humain",
-    "gemeente_niscode": "91114"
-  },
-  {
-    "id": "91120A",
-    "naam": "Somme-Leuze + Partie De Grandhan Et De Maffe",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120B",
-    "naam": "Noiseux*",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120C",
-    "naam": "Baillonville*",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120D",
-    "naam": "Waillet",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120E",
-    "naam": "Hogne",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120F",
-    "naam": "Sinsin",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120G",
-    "naam": "Nettinne",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120H",
-    "naam": "Heure",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91120J",
-    "naam": "Bonsin",
-    "gemeente_niscode": "91120"
-  },
-  {
-    "id": "91141A",
-    "naam": "Yvoir",
-    "gemeente_niscode": "91141"
-  },
-  {
-    "id": "91141B",
-    "naam": "Godinne",
-    "gemeente_niscode": "91141"
-  },
-  {
-    "id": "91141C",
-    "naam": "Durnal",
-    "gemeente_niscode": "91141"
-  },
-  {
-    "id": "91141D",
-    "naam": "Spontin",
-    "gemeente_niscode": "91141"
-  },
-  {
-    "id": "91141E",
-    "naam": "Dorinne",
-    "gemeente_niscode": "91141"
-  },
-  {
-    "id": "91141F",
-    "naam": "Purnode",
-    "gemeente_niscode": "91141"
-  },
-  {
-    "id": "91142A",
-    "naam": "Hastiere-Lavaux",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "91142B",
-    "naam": "Hastiere-Par-Dela",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "91142C",
-    "naam": "Waulsort",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "91142D",
-    "naam": "Blaimont",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "91142E",
-    "naam": "Heer",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "91142F",
-    "naam": "Agimont",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "91142G",
-    "naam": "Hermeton-Sur-Meuse",
-    "gemeente_niscode": "91142"
-  },
-  {
-    "id": "911431",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "91143A",
-    "naam": "Vresse",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "91143B",
-    "naam": "Alle*",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "91143C",
-    "naam": "Sugny",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "91143D",
-    "naam": "Bohan",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "91143E",
-    "naam": "Orchimont + Partie De De Louette-Saint-Denis",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "91143F",
-    "naam": "Nafraiture",
-    "gemeente_niscode": "91143"
-  },
-  {
-    "id": "92003A",
-    "naam": "Andenne",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003B",
-    "naam": "Coutisse",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003C",
-    "naam": "Bonneville",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003D",
-    "naam": "Thon",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003E",
-    "naam": "Maizeret",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003F",
-    "naam": "Nameche",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003G",
-    "naam": "Sclayn",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003H",
-    "naam": "Vezin",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003J",
-    "naam": "Landenne*+partie De Heron",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92003K",
-    "naam": "Seilles",
-    "gemeente_niscode": "92003"
-  },
-  {
-    "id": "92006A",
-    "naam": "Assesse",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92006B",
-    "naam": "Crupet",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92006C",
-    "naam": "Maillen",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92006D",
-    "naam": "Sart-Bernard",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92006E",
-    "naam": "Courriere",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92006F",
-    "naam": "Sorinne-La-Longue",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92006G",
-    "naam": "Floree",
-    "gemeente_niscode": "92006"
-  },
-  {
-    "id": "92035A",
-    "naam": "Eghezee",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035B",
-    "naam": "Longchamps",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035C",
-    "naam": "Upigny",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035D",
-    "naam": "Mehaigne",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035E",
-    "naam": "Noville-Sur-Mehaigne",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035F",
-    "naam": "Bolinne",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035G",
-    "naam": "Taviers",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035H",
-    "naam": "Boneffe",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035J",
-    "naam": "Branchon",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035K",
-    "naam": "Hanret",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035L",
-    "naam": "Leuze",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035M",
-    "naam": "Waret-La-Chaussee",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035N",
-    "naam": "Dhuy",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035P",
-    "naam": "Saint-Germain",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035R",
-    "naam": "Liernu",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92035S",
-    "naam": "Aische-En-Refail*",
-    "gemeente_niscode": "92035"
-  },
-  {
-    "id": "92045A",
-    "naam": "Floreffe*",
-    "gemeente_niscode": "92045"
-  },
-  {
-    "id": "92045B",
-    "naam": "Franiere",
-    "gemeente_niscode": "92045"
-  },
-  {
-    "id": "92045C",
-    "naam": "Soye",
-    "gemeente_niscode": "92045"
-  },
-  {
-    "id": "92045D",
-    "naam": "Floriffoux",
-    "gemeente_niscode": "92045"
-  },
-  {
-    "id": "920481",
-    "naam": "Modification De Limite Communale",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92048A",
-    "naam": "Fosses-La-Ville",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92048B",
-    "naam": "Vitrival",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92048C",
-    "naam": "Sart-Eustache",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92048D",
-    "naam": "Le Roux + Partie De Mettet",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92048E",
-    "naam": "Aisemont",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92048F",
-    "naam": "Sart-Saint-Laurent",
-    "gemeente_niscode": "92048"
-  },
-  {
-    "id": "92054A",
-    "naam": "Gesves",
-    "gemeente_niscode": "92054"
-  },
-  {
-    "id": "92054B",
-    "naam": "Faulx-Les-Tombes",
-    "gemeente_niscode": "92054"
-  },
-  {
-    "id": "92054C",
-    "naam": "Mozet",
-    "gemeente_niscode": "92054"
-  },
-  {
-    "id": "92054D",
-    "naam": "Haltinne",
-    "gemeente_niscode": "92054"
-  },
-  {
-    "id": "92054E",
-    "naam": "Soree",
-    "gemeente_niscode": "92054"
-  },
-  {
-    "id": "92087A",
-    "naam": "Mettet*",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087B",
-    "naam": "Saint-Gerard",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087C",
-    "naam": "Graux",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087D",
-    "naam": "Furnaux",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087E",
-    "naam": "Ermeton-Sur-Biert",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087F",
-    "naam": "Biesmeree",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087G",
-    "naam": "Stave",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087H",
-    "naam": "Oret*",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92087J",
-    "naam": "Biesme",
-    "gemeente_niscode": "92087"
-  },
-  {
-    "id": "92094A",
-    "naam": "Namur",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094B",
-    "naam": "Jambes",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094C",
-    "naam": "Wepion",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094D",
-    "naam": "Malonne",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094E",
-    "naam": "Flawinne",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094F",
-    "naam": "Temploux",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094G",
-    "naam": "Suarlee + Partie De Rhisnes",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094H",
-    "naam": "Belgrade",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094J",
-    "naam": "Saint-Servais",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094K",
-    "naam": "Bouge",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094L",
-    "naam": "Vedrin Daussoulx-",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094M",
-    "naam": "Saint-Marc",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094N",
-    "naam": "Champion Cognelee-",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094P",
-    "naam": "Boninne Gelbressee-",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094R",
-    "naam": "Beez",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094S",
-    "naam": "Marche-Les-Dames",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094T",
-    "naam": "Lives-Sur-Meuse",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094U",
-    "naam": "Loyers",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094V",
-    "naam": "Wierde",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094W",
-    "naam": "Naninne",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094X",
-    "naam": "Dave",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92094Y",
-    "naam": "Erpent",
-    "gemeente_niscode": "92094"
-  },
-  {
-    "id": "92097A",
-    "naam": "Ohey",
-    "gemeente_niscode": "92097"
-  },
-  {
-    "id": "92097B",
-    "naam": "Haillot",
-    "gemeente_niscode": "92097"
-  },
-  {
-    "id": "92097C",
-    "naam": "Perwez",
-    "gemeente_niscode": "92097"
-  },
-  {
-    "id": "92097D",
-    "naam": "Goesnes",
-    "gemeente_niscode": "92097"
-  },
-  {
-    "id": "92097E",
-    "naam": "Jallet",
-    "gemeente_niscode": "92097"
-  },
-  {
-    "id": "92097F",
-    "naam": "Evelette",
-    "gemeente_niscode": "92097"
-  },
-  {
-    "id": "92101A",
-    "naam": "Profondeville",
-    "gemeente_niscode": "92101"
-  },
-  {
-    "id": "92101B",
-    "naam": "Lustin",
-    "gemeente_niscode": "92101"
-  },
-  {
-    "id": "92101C",
-    "naam": "Riviere",
-    "gemeente_niscode": "92101"
-  },
-  {
-    "id": "92101D",
-    "naam": "Arbre",
-    "gemeente_niscode": "92101"
-  },
-  {
-    "id": "92101E",
-    "naam": "Lesve",
-    "gemeente_niscode": "92101"
-  },
-  {
-    "id": "92101F",
-    "naam": "Bois-De-Villers + Partie De Floreffe",
-    "gemeente_niscode": "92101"
-  },
-  {
-    "id": "92114A",
-    "naam": "Sombreffe",
-    "gemeente_niscode": "92114"
-  },
-  {
-    "id": "92114B",
-    "naam": "Tongrinne",
-    "gemeente_niscode": "92114"
-  },
-  {
-    "id": "92114C",
-    "naam": "Boignee*+ Partie De Keumiee Et De Velaine",
-    "gemeente_niscode": "92114"
-  },
-  {
-    "id": "92114D",
-    "naam": "Ligny",
-    "gemeente_niscode": "92114"
-  },
-  {
-    "id": "92137A",
-    "naam": "Auvelais",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92137B",
-    "naam": "Arsimont",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92137C",
-    "naam": "Falisolle",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92137D",
-    "naam": "Tamines",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92137E",
-    "naam": "Moignelee",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92137F",
-    "naam": "Velaine*+partie De Boignee",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92137G",
-    "naam": "Keumiee*",
-    "gemeente_niscode": "92137"
-  },
-  {
-    "id": "92138A",
-    "naam": "Forville",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138B",
-    "naam": "Bierwart",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138C",
-    "naam": "Pontillas",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138D",
-    "naam": "Hingeon",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138E",
-    "naam": "Noville-Les-Bois",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138F",
-    "naam": "Franc-Waret",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138G",
-    "naam": "Marchovelette",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138H",
-    "naam": "Tillier",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138J",
-    "naam": "Cortil-Wodon",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92138K",
-    "naam": "Hemptinne",
-    "gemeente_niscode": "92138"
-  },
-  {
-    "id": "92140A",
-    "naam": "Jemeppe",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140B",
-    "naam": "Balatre",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140C",
-    "naam": "Saint-Martin",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140D",
-    "naam": "Onoz",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140E",
-    "naam": "Spy",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140F",
-    "naam": "Moustier",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140G",
-    "naam": "Mornimont",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92140H",
-    "naam": "Ham-Sur-Sambre",
-    "gemeente_niscode": "92140"
-  },
-  {
-    "id": "92141A",
-    "naam": "Emines",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92141B",
-    "naam": "Rhisnes*",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92141C",
-    "naam": "Bovesse",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92141D",
-    "naam": "Saint-Denis",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92141E",
-    "naam": "Meux",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92141F",
-    "naam": "Villers-Lez-Heest",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92141G",
-    "naam": "Warisoulx",
-    "gemeente_niscode": "92141"
-  },
-  {
-    "id": "92142A",
-    "naam": "Gembloux",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142B",
-    "naam": "Grand-Leez + Partie D'aische-En-Refail",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142C",
-    "naam": "Beuzet",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142D",
-    "naam": "Isnes",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142E",
-    "naam": "Bossiere",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142F",
-    "naam": "Mazy",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142G",
-    "naam": "Bothey",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "92142H",
-    "naam": "Corroy-Le-Chateau",
-    "gemeente_niscode": "92142"
-  },
-  {
-    "id": "93010A",
-    "naam": "Cerfontaine",
-    "gemeente_niscode": "93010"
-  },
-  {
-    "id": "93010B",
-    "naam": "Soumoy",
-    "gemeente_niscode": "93010"
-  },
-  {
-    "id": "93010C",
-    "naam": "Silenrieux*",
-    "gemeente_niscode": "93010"
-  },
-  {
-    "id": "93010D",
-    "naam": "Daussois",
-    "gemeente_niscode": "93010"
-  },
-  {
-    "id": "93010E",
-    "naam": "Villers-Deux-Eglises",
-    "gemeente_niscode": "93010"
-  },
-  {
-    "id": "93010F",
-    "naam": "Senzeille",
-    "gemeente_niscode": "93010"
-  },
-  {
-    "id": "93014A",
-    "naam": "Couvin",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014B",
-    "naam": "Petigny",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014C",
-    "naam": "Bruly",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014D",
-    "naam": "Petite-Chapelle",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014E",
-    "naam": "Cul-Des-Sarts",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014F",
-    "naam": "Bruly-De-Pesche",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014G",
-    "naam": "Presgaux",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014H",
-    "naam": "Gonrieux",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014J",
-    "naam": "Pesche",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014K",
-    "naam": "Dailly",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014L",
-    "naam": "Aublain",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014M",
-    "naam": "Boussu-En-Fagne",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014N",
-    "naam": "Frasnes",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93014P",
-    "naam": "Mariembourg",
-    "gemeente_niscode": "93014"
-  },
-  {
-    "id": "93018A",
-    "naam": "Doische",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018B",
-    "naam": "Vaucelles",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018C",
-    "naam": "Niverlee",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018D",
-    "naam": "Matagne-La-Petite",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018E",
-    "naam": "Matagne-La-Grande",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018F",
-    "naam": "Romeree",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018G",
-    "naam": "Gimnee",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018H",
-    "naam": "Vodelee",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018J",
-    "naam": "Soulme",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93018K",
-    "naam": "Gochenee",
-    "gemeente_niscode": "93018"
-  },
-  {
-    "id": "93022A",
-    "naam": "Florennes",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022B",
-    "naam": "Corenne",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022C",
-    "naam": "Flavion",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022D",
-    "naam": "Morville",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022E",
-    "naam": "Rosee",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022F",
-    "naam": "Hemptinne",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022G",
-    "naam": "Saint-Aubin",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022H",
-    "naam": "Morialme + Partie D'oret",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022J",
-    "naam": "Thy-Le-Bauduin",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022K",
-    "naam": "Hanzinelle",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93022L",
-    "naam": "Hanzinne",
-    "gemeente_niscode": "93022"
-  },
-  {
-    "id": "93056A",
-    "naam": "Philippeville",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056B",
-    "naam": "Vodecee",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056C",
-    "naam": "Villers-Le-Gambon",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056D",
-    "naam": "Franchimont",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056E",
-    "naam": "Surice",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056F",
-    "naam": "Omezee",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056G",
-    "naam": "Romedenne",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056H",
-    "naam": "Merlemont",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056J",
-    "naam": "Sart-En-Fagne",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056K",
-    "naam": "Villers-En-Fagne",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056L",
-    "naam": "Fagnolle + Partie De Dourbes",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056M",
-    "naam": "Roly",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056N",
-    "naam": "Sautour",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056P",
-    "naam": "Samart",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056R",
-    "naam": "Neuville",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056S",
-    "naam": "Jamiolle",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93056T",
-    "naam": "Jamagne",
-    "gemeente_niscode": "93056"
-  },
-  {
-    "id": "93088A",
-    "naam": "Walcourt +partie De Silenrieux",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088B",
-    "naam": "Pry",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088C",
-    "naam": "Fontenelle",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088D",
-    "naam": "Castillon",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088E",
-    "naam": "Clermont",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088F",
-    "naam": "Rognee",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088G",
-    "naam": "Berzee",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088H",
-    "naam": "Thy-Le-Chateau",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088J",
-    "naam": "Gourdinne",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088K",
-    "naam": "Somzee",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088L",
-    "naam": "Tarcienne",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088M",
-    "naam": "Laneffe",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088N",
-    "naam": "Chastres",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088P",
-    "naam": "Fraire",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088R",
-    "naam": "Yves-Gomezee",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93088S",
-    "naam": "Vogenee",
-    "gemeente_niscode": "93088"
-  },
-  {
-    "id": "93090A",
-    "naam": "Olloy-Sur-Viroin",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090B",
-    "naam": "Vierves-Sur-Viroin",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090C",
-    "naam": "Treignes",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090D",
-    "naam": "Mazee",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090E",
-    "naam": "Le Mesnil",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090F",
-    "naam": "Oignies-En-Thierache",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090G",
-    "naam": "Nismes",
-    "gemeente_niscode": "93090"
-  },
-  {
-    "id": "93090H",
-    "naam": "Dourbes*",
-    "gemeente_niscode": "93090"
   }
 ]
