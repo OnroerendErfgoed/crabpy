@@ -380,7 +380,7 @@ class TestAdressenRegisterGateway:
 
     def test_list_deelgemeenten(self, gateway):
         res = gateway.list_deelgemeenten()
-        assert len(res) == 1299
+        assert len(res) == 1132
         assert res[0].naam == "Aartselaar"
         assert res[0].id == "11001A"
         assert res[0].gemeente_niscode == "11001"
