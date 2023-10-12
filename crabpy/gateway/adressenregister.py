@@ -19,7 +19,7 @@ LONG_CACHE = make_region()
 SHORT_CACHE = make_region()
 
 
-def setup_cache(cache_settings):
+def setup_cache(cache_settings, gateway):
     if cache_settings is None:
         if not LONG_CACHE.is_configured:
             LONG_CACHE.configure("dogpile.cache.null")
@@ -30,6 +30,37 @@ def setup_cache(cache_settings):
         LONG_CACHE.configure_from_config(cache_settings, "long.")
         cache_settings["short.replace_existing_backend"] = True
         SHORT_CACHE.configure_from_config(cache_settings, "short.")
+
+    original_serializer = LONG_CACHE.serializer
+    original_deserializer = LONG_CACHE.deserializer
+
+    def serializer(value):
+        """Remove the gateway object before serializing."""
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, GatewayObject):
+                    item.gateway = None
+        else:
+            if isinstance(value, GatewayObject):
+                value.gateway = None
+        return original_serializer(value)
+
+    def deserializer(value):
+        """Add the gateway object after deserializing."""
+        result = original_deserializer(value)
+        if isinstance(result, list):
+            for item in result:
+                if isinstance(item, GatewayObject):
+                    item.gateway = gateway
+        else:
+            if isinstance(result, GatewayObject):
+                result.gateway = gateway
+        return result
+
+    LONG_CACHE.serializer = serializer if original_serializer else None
+    LONG_CACHE.deserializer = deserializer if original_deserializer else None
+    SHORT_CACHE.serializer = serializer if original_serializer else None
+    SHORT_CACHE.deserializer = deserializer if original_deserializer else None
 
 
 def cache_on_attribute(attribute):
@@ -154,7 +185,7 @@ class Gateway:
         with open(os.path.join(data_dir, "gemeenten.json"), encoding="utf-8") as f:
             self.gemeenten = [gemeente_from_json_data(data) for data in json.load(f)]
 
-        setup_cache(cache_settings)
+        setup_cache(cache_settings, self)
 
     def list_gewesten(self):
         return self.gewesten
