@@ -53,9 +53,8 @@ def setup_cache(cache_settings, gateway):
                 if isinstance(value, GatewayObject):
                     item.gateway = gateway
         else:
-            if isinstance(value, GatewayObject):
-                value.gateway = gateway
-            result.gateway = gateway
+            if isinstance(result, GatewayObject):
+                result.gateway = gateway
         return result
 
     LONG_CACHE.serializer = serializer if original_serializer else None
