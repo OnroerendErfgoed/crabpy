@@ -9,7 +9,8 @@ config = configparser.ConfigParser()
 TEST_DIR = os.path.dirname(__file__)
 config.read(os.path.join(TEST_DIR, "test.ini"))
 adressenregister.setup_cache(
-    {"long.backend": "dogpile.cache.null", "short.backend": "dogpile.cache.null"}
+    {"long.backend": "dogpile.cache.null", "short.backend": "dogpile.cache.null"},
+    None
 )
 
 
@@ -34,10 +35,12 @@ def memory_cache():
             {
                 "long.backend": "dogpile.cache.memory",
                 "short.backend": "dogpile.cache.memory",
-            }
+            },
+            None
         )
         yield
     finally:
         adressenregister.setup_cache(
-            {"long.backend": "dogpile.cache.null", "short.backend": "dogpile.cache.null"}
+            {"long.backend": "dogpile.cache.null", "short.backend": "dogpile.cache.null"},
+            None
         )

@@ -58,10 +58,10 @@ def setup_cache(cache_settings, gateway):
             result.gateway = gateway
         return result
 
-    LONG_CACHE.serializer = serializer
-    LONG_CACHE.deserializer = deserializer
-    SHORT_CACHE.serializer = serializer
-    SHORT_CACHE.deserializer = deserializer
+    LONG_CACHE.serializer = serializer if original_serializer else None
+    LONG_CACHE.deserializer = deserializer if original_deserializer else None
+    SHORT_CACHE.serializer = serializer if original_serializer else None
+    SHORT_CACHE.deserializer = deserializer if original_deserializer else None
 
 
 def cache_on_attribute(attribute):
