@@ -50,7 +50,7 @@ def setup_cache(cache_settings, gateway):
         result = original_deserializer(value)
         if isinstance(result, list):
             for item in result:
-                if isinstance(value, GatewayObject):
+                if isinstance(item, GatewayObject):
                     item.gateway = gateway
         else:
             if isinstance(result, GatewayObject):
