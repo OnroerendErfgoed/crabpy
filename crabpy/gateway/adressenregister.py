@@ -20,6 +20,7 @@ SHORT_CACHE = make_region()
 
 
 def setup_cache(cache_settings, gateway):
+
     if cache_settings is None:
         if not LONG_CACHE.is_configured:
             LONG_CACHE.configure("dogpile.cache.null")
@@ -43,7 +44,20 @@ def setup_cache(cache_settings, gateway):
         else:
             if isinstance(value, GatewayObject):
                 value.gateway = None
-        return original_serializer(value)
+
+        # Create cached result without gateway
+        result = original_serializer(value)
+
+        # Set gateway back for the response of the cached method.
+        if isinstance(value, list):
+            for item in value:
+                if isinstance(item, GatewayObject):
+                    item.gateway = gateway
+        else:
+            if isinstance(value, GatewayObject):
+                value.gateway = gateway
+
+        return result
 
     def deserializer(value):
         """Add the gateway object after deserializing."""
