@@ -522,9 +522,12 @@ class Gateway:
         return Gebouw.from_get_response(self.client.get_gebouw(gebouw_id), self)
 
 
-class CallableString(str):
+class CallableString:
+    def __init__(self, s):
+        self.s = s
+
     def __call__(self, *args, **kwargs):
-        return self
+        return self.s
 
 
 class GatewayObject:
