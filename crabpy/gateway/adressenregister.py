@@ -739,7 +739,9 @@ class Straat(GatewayObject):
         homoniem = next(
             (
                 homoniemtoevoeging["spelling"]
-                for homoniemtoevoeging in self._source_json["homoniemToevoegingen"]
+                for homoniemtoevoeging in self._source_json.get(
+                    "homoniemToevoegingen", []
+                )
                 if homoniemtoevoeging["taal"] == taal
             ),
             None,
@@ -747,7 +749,11 @@ class Straat(GatewayObject):
         if homoniem:
             return homoniem
 
-        return self._source_json["homoniemToevoegingen"][0]["spelling"]
+        return (
+            self._source_json["homoniemToevoegingen"][0]["spelling"]
+            if self._source_json.get("homoniemToevoegingen")
+            else None
+        )
 
     @LazyProperty
     def uri(self):
