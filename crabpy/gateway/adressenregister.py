@@ -664,14 +664,23 @@ class Deelgemeente(GatewayObject):
         return f"Deelgemeente(id={self.id}"
 
 
-class Straat(GatewayObject):
+class homoniem(GatewayObject):
     """
     A street.
 
     A street object is always located in one and exactly one :class:`Gemeente`.
     """
 
-    def __init__(self, id_, gateway, gemeente=AUTO, status=AUTO, naam=AUTO, uri=AUTO):
+    def __init__(
+        self,
+        id_,
+        gateway,
+        gemeente=AUTO,
+        status=AUTO,
+        naam=AUTO,
+        uri=AUTO,
+        homoniem=AUTO,
+    ):
         super().__init__(gateway)
         self.id = id_
         if naam is not AUTO:
@@ -680,6 +689,12 @@ class Straat(GatewayObject):
             if not callable(naam):
                 raise ValueError("naam must be a callable")
             self.naam = naam
+        if homoniem is not AUTO:
+            if isinstance(homoniem, str):
+                homoniem = CallableString(homoniem)
+            if not callable(homoniem):
+                raise ValueError("homoniem must be a callable")
+            self.homoniem = homoniem
         if status is not AUTO:
             self.status = status
         if gemeente is not AUTO:
@@ -694,6 +709,9 @@ class Straat(GatewayObject):
             status=straat["straatnaamStatus"],
             naam=straat["straatnaam"]["geografischeNaam"]["spelling"],
             uri=straat["identificator"]["id"],
+            homoniem=straat["homoniemToevoeging"]["geografischeNaam"]["spelling"]
+            if straat.get("homoniemToevoeging")
+            else AUTO,
             gateway=gateway,
         )
 
@@ -716,6 +734,20 @@ class Straat(GatewayObject):
             return naam
 
         return self._source_json["straatnamen"][0]["spelling"]
+
+    def homoniem(self, taal="nl"):
+        homoniem = next(
+            (
+                homoniemtoevoeging["spelling"]
+                for homoniemtoevoeging in self._source_json["homoniemToevoegingen"]
+                if homoniemtoevoeging["taal"] == taal
+            ),
+            None,
+        )
+        if homoniem:
+            return homoniem
+
+        return self._source_json["homoniemToevoegingen"][0]["spelling"]
 
     @LazyProperty
     def uri(self):
@@ -828,6 +860,11 @@ class Adres(GatewayObject):
             naam=self._source_json["straatnaam"]["straatnaam"]["geografischeNaam"][
                 "spelling"
             ],
+            homoniem=self._source_json["homoniemToevoeging"]["geografischeNaam"][
+                "spelling"
+            ]
+            if self._source_json.get("homoniemToevoeging")
+            else AUTO,
             gateway=self.gateway,
         )
 
@@ -920,7 +957,9 @@ class Gebouw(GatewayObject):
     A building.
     """
 
-    def __init__(self, id_, gateway, status=AUTO, percelen=AUTO, geojson=AUTO, uri=AUTO):
+    def __init__(
+        self, id_, gateway, status=AUTO, percelen=AUTO, geojson=AUTO, uri=AUTO
+    ):
         super().__init__(gateway=gateway)
         self.id = id_
         if status is not AUTO:
