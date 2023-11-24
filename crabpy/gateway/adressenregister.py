@@ -664,7 +664,7 @@ class Deelgemeente(GatewayObject):
         return f"Deelgemeente(id={self.id}"
 
 
-class homoniem(GatewayObject):
+class Straat(GatewayObject):
     """
     A street.
 
