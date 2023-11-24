@@ -376,7 +376,7 @@ class Gateway:
         )
 
     @LONG_CACHE.cache_on_arguments()
-    def list_straten(self, gemeente):
+    def list_straten(self, gemeente, include_homoniem=False):
         """
         List all `straten` in a `Gemeente`.
 
@@ -389,7 +389,7 @@ class Gateway:
         if gemeente is None:
             return []
         return [
-            Straat.from_list_response(straat, self)
+            Straat.from_list_response(straat, self, include_homoniem)
             for straat in self.client.get_straatnamen(niscode=gemeente.niscode)
         ]
 
@@ -690,7 +690,7 @@ class Straat(GatewayObject):
                 raise ValueError("naam must be a callable")
             self.naam = naam
         if homoniem is not AUTO:
-            if isinstance(homoniem, str):
+            if isinstance(homoniem, (str, type(None))):
                 homoniem = CallableString(homoniem)
             if not callable(homoniem):
                 raise ValueError("homoniem must be a callable")
@@ -703,15 +703,19 @@ class Straat(GatewayObject):
             self.uri = uri
 
     @classmethod
-    def from_list_response(cls, straat, gateway):
+    def from_list_response(cls, straat, gateway, include_homoniem=False):
+        homoniem = (
+            straat["homoniemToevoeging"]["geografischeNaam"]["spelling"]
+            if straat.get("homoniemToevoeging")
+            else None
+        )
+        naam = straat["straatnaam"]["geografischeNaam"]["spelling"]
         return Straat(
             id_=straat["identificator"]["objectId"],
             status=straat["straatnaamStatus"],
-            naam=straat["straatnaam"]["geografischeNaam"]["spelling"],
+            naam=f"{naam} ({homoniem})" if (homoniem and include_homoniem) else naam,
             uri=straat["identificator"]["id"],
-            homoniem=straat["homoniemToevoeging"]["geografischeNaam"]["spelling"]
-            if straat.get("homoniemToevoeging")
-            else AUTO,
+            homoniem=homoniem,
             gateway=gateway,
         )
 
@@ -721,7 +725,7 @@ class Straat(GatewayObject):
         res._source_json = straat
         return res
 
-    def naam(self, taal="nl"):
+    def naam(self, taal="nl", include_homoniem=False):
         naam = next(
             (
                 straatnaam["spelling"]
@@ -730,10 +734,14 @@ class Straat(GatewayObject):
             ),
             None,
         )
-        if naam:
-            return naam
 
-        return self._source_json["straatnamen"][0]["spelling"]
+        naam = naam or self._source_json["straatnamen"][0]["spelling"]
+
+        return (
+            f"{naam} ({self.homoniem()})"
+            if (self.homoniem() and include_homoniem)
+            else naam
+        )
 
     def homoniem(self, taal="nl"):
         homoniem = next(
@@ -860,17 +868,19 @@ class Adres(GatewayObject):
         return self._source_json["adresStatus"]
 
     @LazyProperty
-    def straat(self):
+    def straat(self, include_homoniem=False):
+        homoniem = (
+            self._source_json["homoniemToevoeging"]["geografischeNaam"]["spelling"]
+            if self._source_json.get("homoniemToevoeging")
+            else None
+        )
+        naam = self._source_json["straatnaam"]["straatnaam"]["geografischeNaam"][
+            "spelling"
+        ]
         return Straat(
             id_=self._source_json["straatnaam"]["objectId"],
-            naam=self._source_json["straatnaam"]["straatnaam"]["geografischeNaam"][
-                "spelling"
-            ],
-            homoniem=self._source_json["homoniemToevoeging"]["geografischeNaam"][
-                "spelling"
-            ]
-            if self._source_json.get("homoniemToevoeging")
-            else AUTO,
+            naam=f"{naam} ({homoniem})" if (homoniem and include_homoniem) else naam,
+            homoniem=homoniem,
             gateway=self.gateway,
         )
 
