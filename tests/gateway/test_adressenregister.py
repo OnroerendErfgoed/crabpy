@@ -410,7 +410,7 @@ class TestAdressenRegisterGateway:
         )
         assert len(res) == 2
         assert res[0].id == "1"
-        assert res[0].naam == "Acacialaan"
+        assert res[0].naam() == "Acacialaan"
         assert res[0].status == "inGebruik"
 
     def test_get_straat_by_id(self, gateway, client):
