@@ -87,7 +87,11 @@ class AdressenRegisterClient:
 
     def _get(self, url, params=None):
         try:
-            response = self.session.get(f"{self.base_url}{url}", params=params)
+            response = self.session.get(
+                f"{self.base_url}{url}",
+                params=params,
+                headers=self.v2_header if "v2" in url else self.v1_header,
+            )
             response.raise_for_status()
             return response.json()
         except RequestException as e:
