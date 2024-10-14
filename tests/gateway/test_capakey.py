@@ -14,11 +14,11 @@ from crabpy.gateway.capakey import capakey_rest_gateway_request
 from tests.conftest import CAPAKEY_URL
 
 
-def connection_error(url, headers={}, params={}):
+def connection_error(url, headers=None, params=None):
     raise requests.exceptions.ConnectionError
 
 
-def request_exception(url, headers={}, params={}):
+def request_exception(url, headers=None, params=None):
     raise requests.exceptions.RequestException
 
 
@@ -193,10 +193,10 @@ class TestCapakeyRestGateway:
         with pytest.raises(GatewayRuntimeException) as cm:
             capakey_rest_gateway_request("url")
         exception = cm.value.message
-        assert (
-            exception
-            == "Could not execute request due to connection problems:\nConnectionError()"
+        expected = (
+            "Could not execute request due to connection problems:\nConnectionError()"
         )
+        assert exception == expected
 
     @patch("requests.get", MagicMock(side_effect=request_exception))
     def test_requests_request_exception(self):

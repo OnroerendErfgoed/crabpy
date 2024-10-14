@@ -13,10 +13,11 @@ from dogpile.cache import make_region
 from crabpy.gateway.exception import GatewayResourceNotFoundException
 from crabpy.gateway.exception import GatewayRuntimeException
 
+
 log = logging.getLogger(__name__)
 
 
-def capakey_rest_gateway_request(url, headers={}, params={}):
+def capakey_rest_gateway_request(url, headers=None, params=None):
     """
     Utility function that helps making requests to the CAPAKEY REST service.
 
@@ -25,6 +26,8 @@ def capakey_rest_gateway_request(url, headers={}, params={}):
     :param dict params: Parameters to send with the URL.
     :returns: Result of the call.
     """
+    headers = headers or {}
+    params = params or {}
     try:
         # calls to geoservices give a 403 if the user-agent is not set
         headers["user-agent"] = "*"
@@ -53,7 +56,9 @@ class CapakeyRestGateway:
     caches = {}
 
     def __init__(self, **kwargs):
-        self.base_url = kwargs.get("base_url", "https://geo.api.vlaanderen.be/capakey/v2")
+        self.base_url = kwargs.get(
+            "base_url", "https://geo.api.vlaanderen.be/capakey/v2"
+        )
         self.base_headers = {"Accept": "application/json"}
         cache_regions = ["permanent", "long", "short"]
         for cr in cache_regions:
@@ -80,7 +85,8 @@ class CapakeyRestGateway:
     @staticmethod
     def _parse_bounding_box(bounding_box):
         """
-        Parse response bounding box from the CapakeyRestGateway to (MinimumX, MinimumY, MaximumX, MaximumY)
+        Parse response bounding box from the CapakeyRestGateway to
+        (MinimumX, MinimumY, MaximumX, MaximumY)
 
         :param bounding_box: response bounding box from the CapakeyRestGateway
         :return: (MinimumX, MinimumY, MaximumX, MaximumY)
@@ -284,8 +290,10 @@ class CapakeyRestGateway:
 
         def creator():
             url = (
-                self.base_url
-                + f"/municipality/{afdeling.gemeente.id}/department/{afdeling.id}/section/{id}"
+                f"{self.base_url}"
+                f"/municipality/{afdeling.gemeente.id}"
+                f"/department/{afdeling.id}"
+                f"/section/{id}"
             )
             h = self.base_headers
             p = {"geometry": "full", "srs": "31370"}
@@ -310,7 +318,8 @@ class CapakeyRestGateway:
         import re
 
         match = re.match(
-            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$", capakey
+            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
+            capakey,
         )
         if match:
             percid = (
@@ -431,7 +440,8 @@ class CapakeyRestGateway:
 
         if self.caches["short"].is_configured:
             key = (
-                f"get_perceel_by_id_and_sectie_rest#{id}#{sectie.id}#{sectie.afdeling.id}"
+                f"get_perceel_by_id_and_sectie_rest#{id}"
+                f"#{sectie.id}#{sectie.afdeling.id}"
             )
             perceel = self.caches["short"].get_or_create(key, creator)
         else:
@@ -851,7 +861,8 @@ class Perceel(GatewayObject):
         import re
 
         match = re.match(
-            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$", capakey
+            r"^([0-9]{5})([A-Z]{1})([0-9]{4})\/([0-9]{2})([A-Z\_]{1})([0-9]{3})$",
+            capakey,
         )
         if match:
             percid = (

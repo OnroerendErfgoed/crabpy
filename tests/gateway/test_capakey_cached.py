@@ -1,6 +1,9 @@
 import pytest
 
-from crabpy.gateway.capakey import Gemeente, Afdeling, Sectie, Perceel
+from crabpy.gateway.capakey import Afdeling
+from crabpy.gateway.capakey import Gemeente
+from crabpy.gateway.capakey import Perceel
+from crabpy.gateway.capakey import Sectie
 
 
 @pytest.fixture(scope="function")
@@ -24,7 +27,9 @@ class TestCapakeyRestCachedGateway:
     def test_cache_is_configured(self, capakey_rest_gateway):
         from dogpile.cache.backends.memory import MemoryBackend
 
-        assert isinstance(capakey_rest_gateway.caches["permanent"].backend, MemoryBackend)
+        assert isinstance(
+            capakey_rest_gateway.caches["permanent"].backend, MemoryBackend
+        )
         assert capakey_rest_gateway.caches["permanent"].is_configured
 
     def test_list_gemeenten(self, capakey_rest_gateway, municipalities_response):
@@ -65,7 +70,9 @@ class TestCapakeyRestCachedGateway:
     ):
         res = capakey_rest_gateway.list_kadastrale_afdelingen()
         assert isinstance(res, list)
-        assert capakey_rest_gateway.caches["permanent"].get("list_afdelingen_rest") == res
+        assert (
+            capakey_rest_gateway.caches["permanent"].get("list_afdelingen_rest") == res
+        )
 
     def test_list_afdelingen_by_gemeente(
         self,
@@ -75,7 +82,8 @@ class TestCapakeyRestCachedGateway:
     ):
         g = capakey_rest_gateway.get_gemeente_by_id(44021)
         assert (
-            capakey_rest_gateway.caches["long"].get("get_gemeente_by_id_rest#44021") == g
+            capakey_rest_gateway.caches["long"].get("get_gemeente_by_id_rest#44021")
+            == g
         )
         res = capakey_rest_gateway.list_kadastrale_afdelingen_by_gemeente(g)
         assert isinstance(res, list)
@@ -108,7 +116,9 @@ class TestCapakeyRestCachedGateway:
         assert isinstance(res, list)
         assert len(res) == 1
         assert (
-            capakey_rest_gateway.caches["long"].get("list_secties_by_afdeling_rest#44021")
+            capakey_rest_gateway.caches["long"].get(
+                "list_secties_by_afdeling_rest#44021"
+            )
             == res
         )
 
