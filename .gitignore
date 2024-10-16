@@ -29,6 +29,7 @@ pip-log.txt
 .coverage
 .tox
 nosetests.xml
+.pytest_cache/
 
 
 # Cache files
@@ -39,3 +40,6 @@ dogpile_data
 
 # Pycharm
 .idea/
+
+# Environments
+.venv/

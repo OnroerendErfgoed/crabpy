@@ -1,0 +1,45 @@
+name: crabpy tests
+
+on:
+  push:
+    paths:
+      - crabpy/**
+      - tests/**
+      - .github/workflows/backend.yaml
+      - pyproject.toml
+      - requirements*.txt
+
+env:
+  CRABPY_INTEGRATION_TESTS: "true"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ "3.10", "3.11", "3.12" ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+
+      - name: Install python requirements
+        run: |
+          pip install pip-tools
+          pip-sync requirements-dev.txt
+          pip install -e .
+
+      - name: Python tests
+        run: |
+          flake8
+          coverage run --source=crabpy -m pytest tests --crab-integration --capakey-integration
+    
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2

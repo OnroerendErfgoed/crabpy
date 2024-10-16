@@ -84,7 +84,7 @@ def create_gemeenten_json(filename="gemeenten.json"):
         province_niscodes = [int(provincie["niscode"]) for provincie in provincies]
         provincie = None
     gemeenten = []
-    for index, row in df.where(pd.notnull(df), None).iterrows():
+    for _, row in df.where(pd.notnull(df), None).iterrows():
         if row["Code INS"] in province_niscodes:
             provincie = row["Code INS"]
             continue

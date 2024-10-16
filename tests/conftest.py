@@ -1,12 +1,13 @@
 import json
 import os
 import re
+from unittest.mock import Mock
 
 import pytest
 import responses
-from unittest.mock import Mock
 
 from crabpy.gateway.crab import CrabGateway
+
 
 CAPAKEY_URL = "https://geo.api.vlaanderen.be/capakey/v2"
 
@@ -96,7 +97,9 @@ def department_response(mocked_responses):
 @pytest.fixture(scope="function")
 def department_sections_response(mocked_responses):
     url = re.compile(
-        r"{capakey}/municipality/\d+/department/\d+/section$".format(capakey=CAPAKEY_URL)
+        r"{capakey}/municipality/\d+/department/\d+/section$".format(
+            capakey=CAPAKEY_URL
+        )
     )
     mocked_responses.add(
         method="GET", url=url, json=load_json("department_sections.json")
@@ -110,7 +113,9 @@ def department_section_response(mocked_responses):
             capakey=CAPAKEY_URL
         )
     )
-    mocked_responses.add(method="GET", url=url, json=load_json("department_section.json"))
+    mocked_responses.add(
+        method="GET", url=url, json=load_json("department_section.json")
+    )
 
 
 @pytest.fixture(scope="function")

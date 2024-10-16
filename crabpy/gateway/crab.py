@@ -16,6 +16,7 @@ from crabpy.client import crab_request
 from crabpy.gateway.exception import GatewayResourceNotFoundException
 from crabpy.gateway.exception import GatewayRuntimeException
 
+
 log = logging.getLogger(__name__)
 
 
@@ -431,7 +432,8 @@ class CrabGateway:
         def creator():
             res = crab_gateway_request(self.client, function, sort)
             return [
-                globals()[returnclass](r.Code, r.Naam, r.Definitie) for r in res.CodeItem
+                globals()[returnclass](r.Code, r.Naam, r.Definitie)
+                for r in res.CodeItem
             ]
 
         if self.caches["permanent"].is_configured:
@@ -502,7 +504,9 @@ class CrabGateway:
 
         :rtype: A :class:`list` of :class:`Aardterreinobject`
         """
-        return self._list_codeobject("ListAardTerreinobjecten", sort, "Aardterreinobject")
+        return self._list_codeobject(
+            "ListAardTerreinobjecten", sort, "Aardterreinobject"
+        )
 
     def list_statushuisnummers(self, sort=1):
         """
@@ -976,7 +980,9 @@ class CrabGateway:
             id = straat
 
         def creator():
-            res = crab_gateway_request(self.client, "ListWegsegmentenByStraatnaamId", id)
+            res = crab_gateway_request(
+                self.client, "ListWegsegmentenByStraatnaamId", id
+            )
             try:
                 return [
                     Wegsegment(r.IdentificatorWegsegment, r.StatusWegsegment)
@@ -1166,7 +1172,9 @@ class CrabGateway:
         """
 
         def creator():
-            res = crab_gateway_request(self.client, "GetGebouwByIdentificatorGebouw", id)
+            res = crab_gateway_request(
+                self.client, "GetGebouwByIdentificatorGebouw", id
+            )
             if res is None:
                 raise GatewayResourceNotFoundException()
             return Gebouw(
@@ -1287,7 +1295,9 @@ class CrabGateway:
             id = huisnummer
 
         def creator():
-            res = crab_gateway_request(self.client, "ListAdrespositiesByHuisnummerId", id)
+            res = crab_gateway_request(
+                self.client, "ListAdrespositiesByHuisnummerId", id
+            )
             try:
                 return [
                     Adrespositie(r.AdrespositieId, r.HerkomstAdrespositie)
@@ -1416,7 +1426,9 @@ class CrabGateway:
         """
 
         def creator():
-            res = crab_gateway_request(self.client, "GetAdrespositieByAdrespositieId", id)
+            res = crab_gateway_request(
+                self.client, "GetAdrespositieByAdrespositieId", id
+            )
             if res is None:
                 raise GatewayResourceNotFoundException()
             return Adrespositie(
@@ -1919,7 +1931,9 @@ class Geometriemethodewegsegment(Codelijst):
     """
 
     def __repr__(self):
-        return f"Geometriemethodewegsegment({self.id}, '{self.naam}', '{self.definitie}')"
+        return (
+            f"Geometriemethodewegsegment({self.id}, '{self.naam}', '{self.definitie}')"
+        )
 
 
 class Statusgebouw(Codelijst):
@@ -2061,7 +2075,9 @@ class Straat(GatewayObject):
         return f"{self.label} ({self.id})"
 
     def __repr__(self):
-        return f"Straat({self.id}, '{self.label}', {self.gemeente_id}, {self.status_id})"
+        return (
+            f"Straat({self.id}, '{self.label}', {self.gemeente_id}, {self.status_id})"
+        )
 
 
 def check_lazy_load_huisnummer(f):
@@ -2166,7 +2182,10 @@ class Huisnummer(GatewayObject):
         return f"{self.huisnummer} ({self.id})"
 
     def __repr__(self):
-        return f"Huisnummer({self.id}, {self.status_id}, '{self.huisnummer}', {self.straat_id})"
+        return (
+            f"Huisnummer({self.id}, {self.status_id}, "
+            f"'{self.huisnummer}', {self.straat_id})"
+        )
 
 
 class Postkanton(GatewayObject):
@@ -2281,7 +2300,9 @@ def check_lazy_load_wegsegment(f):
 
 
 class Wegsegment(GatewayObject):
-    def __init__(self, id, status, methode=None, geometrie=None, metadata=None, **kwargs):
+    def __init__(
+        self, id, status, methode=None, geometrie=None, metadata=None, **kwargs
+    ):
         self.id = id
         try:
             self.status_id = status.id
@@ -2620,7 +2641,14 @@ class Subadres(GatewayObject):
     """
 
     def __init__(
-        self, id, subadres, status, huisnummer_id=None, aard=None, metadata=None, **kwargs
+        self,
+        id,
+        subadres,
+        status,
+        huisnummer_id=None,
+        aard=None,
+        metadata=None,
+        **kwargs,
     ):
         self.id = int(id)
         self.subadres = subadres
@@ -2683,7 +2711,10 @@ class Subadres(GatewayObject):
         return f"{self.subadres} ({self.id})"
 
     def __repr__(self):
-        return f"Subadres({self.id}, {self.status_id}, '{self.subadres}', {self.huisnummer_id})"
+        return (
+            f"Subadres({self.id}, {self.status_id}, "
+            f"'{self.subadres}', {self.huisnummer_id})"
+        )
 
 
 def check_lazy_load_adrespositie(f):
@@ -2721,7 +2752,9 @@ class Adrespositie(GatewayObject):
     the `herkomst` and `aard` of each `Adrespositie` to know which one to pick.
     """
 
-    def __init__(self, id, herkomst, geometrie=None, aard=None, metadata=None, **kwargs):
+    def __init__(
+        self, id, herkomst, geometrie=None, aard=None, metadata=None, **kwargs
+    ):
         self.id = id
         try:
             self.herkomst_id = herkomst.id

@@ -81,7 +81,9 @@ def create_client_get_straatnaam_item():
         "gemeente": {
             "objectId": "11002",
             "detail": "https://api.basisregisters.vlaanderen.be/v1/gemeenten/11002",
-            "gemeentenaam": {"geografischeNaam": {"spelling": "Antwerpen", "taal": "nl"}},
+            "gemeentenaam": {
+                "geografischeNaam": {"spelling": "Antwerpen", "taal": "nl"}
+            },
         },
         "straatnamen": [{"spelling": "Edelvalklaan", "taal": "nl"}],
         "homoniemToevoegingen": [],
@@ -131,7 +133,9 @@ def create_client_get_adres_item():
         "straatnaam": {
             "objectId": "93",
             "detail": "https://api.basisregisters.vlaanderen.be/v1/straatnamen/93",
-            "straatnaam": {"geografischeNaam": {"spelling": "Oudestraat", "taal": "nl"}},
+            "straatnaam": {
+                "geografischeNaam": {"spelling": "Oudestraat", "taal": "nl"}
+            },
         },
         "huisnummer": "27",
         "busnummer": "A",
@@ -160,7 +164,9 @@ def create_client_get_perceel_list_item():
             "objectId": "13013C0384-02H003",
             "versieId": "2004-02-13T05:34:17+01:00",
         },
-        "detail": "https://api.basisregisters.vlaanderen.be/v2/percelen/13013C0384-02H003",
+        "detail": (
+            "https://api.basisregisters.vlaanderen.be/v2/percelen/13013C0384-02H003"
+        ),
         "perceelStatus": "gerealiseerd",
     }
 
@@ -539,14 +545,20 @@ class TestGemeente:
 
     def test_provincie(self, gateway):
         g = Gemeente(
-            niscode="1", provincie_niscode="10000", naam="test-gemeente", gateway=gateway
+            niscode="1",
+            provincie_niscode="10000",
+            naam="test-gemeente",
+            gateway=gateway,
         )
         provincie = g.provincie
         assert provincie.naam == "Antwerpen"
 
     def test_gewest(self, gateway):
         g = Gemeente(
-            niscode="1", provincie_niscode="10000", naam="test-gemeente", gateway=gateway
+            niscode="1",
+            provincie_niscode="10000",
+            naam="test-gemeente",
+            gateway=gateway,
         )
         gewest = g.gewest
         assert gewest.naam == "Vlaams Gewest"
