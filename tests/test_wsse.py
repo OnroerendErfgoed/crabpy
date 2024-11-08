@@ -1,12 +1,10 @@
 import unittest
-
-from crabpy.wsse import UsernameDigestToken
-
 from base64 import b64encode
 
+from suds.sax.element import Element
 from suds.wsse import wssens
 
-from suds.sax.element import Element
+from crabpy.wsse import UsernameDigestToken
 
 
 class UsernameDigestTokenTests(unittest.TestCase):

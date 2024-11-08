@@ -3,6 +3,7 @@ This module contains an opionated gateway for the adressen register.
 
 .. versionadded:: 0.14.0
 """
+
 import json
 import logging
 import os
@@ -376,7 +377,7 @@ class Gateway:
         )
 
     @LONG_CACHE.cache_on_arguments()
-    def list_straten(self, gemeente, include_homoniem=False):
+    def list_straten(self, gemeente, include_homoniem=False, status=None):
         """
         List all `straten` in a `Gemeente`.
 
@@ -390,7 +391,9 @@ class Gateway:
             return []
         return [
             Straat.from_list_response(straat, self, include_homoniem)
-            for straat in self.client.get_straatnamen(niscode=gemeente.niscode)
+            for straat in self.client.get_straatnamen(
+                niscode=gemeente.niscode, status=status
+            )
         ]
 
     @LONG_CACHE.cache_on_arguments()
