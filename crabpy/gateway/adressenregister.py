@@ -21,7 +21,6 @@ SHORT_CACHE = make_region()
 
 
 def setup_cache(cache_settings, gateway):
-
     if cache_settings is None:
         if not LONG_CACHE.is_configured:
             LONG_CACHE.configure("dogpile.cache.null")
@@ -169,6 +168,7 @@ class Gateway:
                 niscode=data["niscode"],
                 provincie_niscode=data["provincie"],
                 namen=data["namen"],
+                status=data["status"],
                 gateway=self,
             )
 
@@ -601,10 +601,20 @@ class Gemeente(GatewayObject):
     The smallest administrative unit in Belgium.
     """
 
-    def __init__(self, niscode, gateway, provincie_niscode=None, namen=None, naam=None):
+    def __init__(
+        self,
+        niscode,
+        gateway,
+        provincie_niscode=None,
+        namen=None,
+        naam=None,
+        status=None,
+    ):
         super().__init__(gateway)
         self.niscode = niscode
         self.provincie_niscode = provincie_niscode
+        if status is not None:
+            self.status = status
         if not (namen or naam):
             raise ValueError("Either namen or naam must be given")
         if namen is not None:

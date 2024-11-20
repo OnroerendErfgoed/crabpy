@@ -11,7 +11,8 @@
                 "taal": "nl",
                 "naam": "Anderlecht"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21002",
@@ -25,7 +26,8 @@
                 "taal": "nl",
                 "naam": "Oudergem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21003",
@@ -39,7 +41,8 @@
                 "taal": "nl",
                 "naam": "Sint-Agatha-Berchem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21004",
@@ -53,7 +56,8 @@
                 "taal": "nl",
                 "naam": "Brussel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21005",
@@ -67,7 +71,8 @@
                 "taal": "nl",
                 "naam": "Etterbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21006",
@@ -81,7 +86,8 @@
                 "taal": "nl",
                 "naam": "Evere"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21007",
@@ -95,7 +101,8 @@
                 "taal": "nl",
                 "naam": "Vorst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21008",
@@ -109,7 +116,8 @@
                 "taal": "nl",
                 "naam": "Ganshoren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21009",
@@ -123,7 +131,8 @@
                 "taal": "nl",
                 "naam": "Elsene"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21010",
@@ -137,7 +146,8 @@
                 "taal": "nl",
                 "naam": "Jette"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21011",
@@ -151,7 +161,8 @@
                 "taal": "nl",
                 "naam": "Koekelberg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21012",
@@ -165,7 +176,8 @@
                 "taal": "nl",
                 "naam": "Sint-Jans-Molenbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21013",
@@ -179,7 +191,8 @@
                 "taal": "nl",
                 "naam": "Sint-Gillis"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21014",
@@ -193,7 +206,8 @@
                 "taal": "nl",
                 "naam": "Sint-Joost-ten-Node"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21015",
@@ -207,7 +221,8 @@
                 "taal": "nl",
                 "naam": "Schaarbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21016",
@@ -221,7 +236,8 @@
                 "taal": "nl",
                 "naam": "Ukkel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21017",
@@ -235,7 +251,8 @@
                 "taal": "nl",
                 "naam": "Watermaal-Bosvoorde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21018",
@@ -249,7 +266,8 @@
                 "taal": "nl",
                 "naam": "Sint-Lambrechts-Woluwe"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "21019",
@@ -263,7 +281,8 @@
                 "taal": "nl",
                 "naam": "Sint-Pieters-Woluwe"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11001",
@@ -277,7 +296,8 @@
                 "taal": "nl",
                 "naam": "Aartselaar"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11002",
@@ -291,7 +311,8 @@
                 "taal": "nl",
                 "naam": "Antwerpen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11004",
@@ -305,7 +326,8 @@
                 "taal": "nl",
                 "naam": "Boechout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11005",
@@ -319,7 +341,8 @@
                 "taal": "nl",
                 "naam": "Boom"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11007",
@@ -333,7 +356,8 @@
                 "taal": "nl",
                 "naam": "Borsbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11008",
@@ -347,7 +371,8 @@
                 "taal": "nl",
                 "naam": "Brasschaat"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11009",
@@ -361,7 +386,8 @@
                 "taal": "nl",
                 "naam": "Brecht"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11013",
@@ -375,7 +401,8 @@
                 "taal": "nl",
                 "naam": "Edegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11016",
@@ -389,7 +416,8 @@
                 "taal": "nl",
                 "naam": "Essen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11018",
@@ -403,7 +431,8 @@
                 "taal": "nl",
                 "naam": "Hemiksem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11021",
@@ -417,7 +446,8 @@
                 "taal": "nl",
                 "naam": "Hove"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11022",
@@ -431,7 +461,8 @@
                 "taal": "nl",
                 "naam": "Kalmthout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11023",
@@ -445,7 +476,8 @@
                 "taal": "nl",
                 "naam": "Kapellen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11024",
@@ -459,7 +491,8 @@
                 "taal": "nl",
                 "naam": "Kontich"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11025",
@@ -473,7 +506,8 @@
                 "taal": "nl",
                 "naam": "Lint"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11057",
@@ -487,7 +521,8 @@
                 "taal": "nl",
                 "naam": "Malle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11029",
@@ -501,7 +536,8 @@
                 "taal": "nl",
                 "naam": "Mortsel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11030",
@@ -515,7 +551,8 @@
                 "taal": "nl",
                 "naam": "Niel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11035",
@@ -529,7 +566,8 @@
                 "taal": "nl",
                 "naam": "Ranst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11037",
@@ -543,7 +581,8 @@
                 "taal": "nl",
                 "naam": "Rumst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11038",
@@ -557,7 +596,8 @@
                 "taal": "nl",
                 "naam": "Schelle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11039",
@@ -571,7 +611,8 @@
                 "taal": "nl",
                 "naam": "Schilde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11040",
@@ -585,7 +626,8 @@
                 "taal": "nl",
                 "naam": "Schoten"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11044",
@@ -599,7 +641,8 @@
                 "taal": "nl",
                 "naam": "Stabroek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11050",
@@ -613,7 +656,8 @@
                 "taal": "nl",
                 "naam": "Wijnegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11052",
@@ -627,7 +671,8 @@
                 "taal": "nl",
                 "naam": "Wommelgem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11053",
@@ -641,7 +686,8 @@
                 "taal": "nl",
                 "naam": "Wuustwezel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11054",
@@ -655,7 +701,8 @@
                 "taal": "nl",
                 "naam": "Zandhoven"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11055",
@@ -669,7 +716,8 @@
                 "taal": "nl",
                 "naam": "Zoersel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "11056",
@@ -683,7 +731,8 @@
                 "taal": "nl",
                 "naam": "Zwijndrecht"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12002",
@@ -697,7 +746,8 @@
                 "taal": "nl",
                 "naam": "Berlaar"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12005",
@@ -711,7 +761,8 @@
                 "taal": "nl",
                 "naam": "Bonheiden"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12007",
@@ -725,7 +776,8 @@
                 "taal": "nl",
                 "naam": "Bornem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12009",
@@ -739,7 +791,8 @@
                 "taal": "nl",
                 "naam": "Duffel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12014",
@@ -753,7 +806,8 @@
                 "taal": "nl",
                 "naam": "Heist-op-den-Berg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12021",
@@ -767,7 +821,8 @@
                 "taal": "nl",
                 "naam": "Lier"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12025",
@@ -781,7 +836,8 @@
                 "taal": "nl",
                 "naam": "Mechelen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12026",
@@ -795,7 +851,8 @@
                 "taal": "nl",
                 "naam": "Nijlen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12029",
@@ -809,7 +866,8 @@
                 "taal": "nl",
                 "naam": "Putte"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12041",
@@ -823,7 +881,8 @@
                 "taal": "nl",
                 "naam": "Puurs-Sint-Amands"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12035",
@@ -837,7 +896,8 @@
                 "taal": "nl",
                 "naam": "Sint-Katelijne-Waver"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "12040",
@@ -851,7 +911,8 @@
                 "taal": "nl",
                 "naam": "Willebroek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13001",
@@ -865,7 +926,8 @@
                 "taal": "nl",
                 "naam": "Arendonk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13002",
@@ -879,7 +941,8 @@
                 "taal": "nl",
                 "naam": "Baarle-Hertog"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13003",
@@ -893,7 +956,8 @@
                 "taal": "nl",
                 "naam": "Balen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13004",
@@ -907,7 +971,8 @@
                 "taal": "nl",
                 "naam": "Beerse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13006",
@@ -921,7 +986,8 @@
                 "taal": "nl",
                 "naam": "Dessel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13008",
@@ -935,7 +1001,8 @@
                 "taal": "nl",
                 "naam": "Geel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13010",
@@ -949,7 +1016,8 @@
                 "taal": "nl",
                 "naam": "Grobbendonk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13011",
@@ -963,7 +1031,8 @@
                 "taal": "nl",
                 "naam": "Herentals"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13012",
@@ -977,7 +1046,8 @@
                 "taal": "nl",
                 "naam": "Herenthout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13013",
@@ -991,7 +1061,8 @@
                 "taal": "nl",
                 "naam": "Herselt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13014",
@@ -1005,7 +1076,8 @@
                 "taal": "nl",
                 "naam": "Hoogstraten"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13016",
@@ -1019,7 +1091,8 @@
                 "taal": "nl",
                 "naam": "Hulshout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13017",
@@ -1033,7 +1106,8 @@
                 "taal": "nl",
                 "naam": "Kasterlee"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13053",
@@ -1047,7 +1121,8 @@
                 "taal": "nl",
                 "naam": "Laakdal"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13019",
@@ -1061,7 +1136,8 @@
                 "taal": "nl",
                 "naam": "Lille"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13021",
@@ -1075,7 +1151,8 @@
                 "taal": "nl",
                 "naam": "Meerhout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13023",
@@ -1089,7 +1166,8 @@
                 "taal": "nl",
                 "naam": "Merksplas"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13025",
@@ -1103,7 +1181,8 @@
                 "taal": "nl",
                 "naam": "Mol"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13029",
@@ -1117,7 +1196,8 @@
                 "taal": "nl",
                 "naam": "Olen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13031",
@@ -1131,7 +1211,8 @@
                 "taal": "nl",
                 "naam": "Oud-Turnhout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13035",
@@ -1145,7 +1226,8 @@
                 "taal": "nl",
                 "naam": "Ravels"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13036",
@@ -1159,7 +1241,8 @@
                 "taal": "nl",
                 "naam": "Retie"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13037",
@@ -1173,7 +1256,8 @@
                 "taal": "nl",
                 "naam": "Rijkevorsel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13040",
@@ -1187,7 +1271,8 @@
                 "taal": "nl",
                 "naam": "Turnhout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13044",
@@ -1201,7 +1286,8 @@
                 "taal": "nl",
                 "naam": "Vorselaar"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13046",
@@ -1215,7 +1301,8 @@
                 "taal": "nl",
                 "naam": "Vosselaar"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "13049",
@@ -1229,7 +1316,8 @@
                 "taal": "nl",
                 "naam": "Westerlo"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23105",
@@ -1243,7 +1331,8 @@
                 "taal": "nl",
                 "naam": "Affligem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23002",
@@ -1257,7 +1346,8 @@
                 "taal": "nl",
                 "naam": "Asse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23003",
@@ -1271,7 +1361,8 @@
                 "taal": "nl",
                 "naam": "Beersel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23009",
@@ -1279,13 +1370,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Biévène"
+                "naam": "Bi\u00e9v\u00e8ne"
             },
             {
                 "taal": "nl",
                 "naam": "Bever"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23016",
@@ -1299,7 +1391,8 @@
                 "taal": "nl",
                 "naam": "Dilbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23098",
@@ -1313,7 +1406,8 @@
                 "taal": "nl",
                 "naam": "Drogenbos"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23023",
@@ -1327,7 +1421,8 @@
                 "taal": "nl",
                 "naam": "Galmaarden"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23024",
@@ -1341,7 +1436,8 @@
                 "taal": "nl",
                 "naam": "Gooik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23025",
@@ -1355,7 +1451,8 @@
                 "taal": "nl",
                 "naam": "Grimbergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23027",
@@ -1369,7 +1466,8 @@
                 "taal": "nl",
                 "naam": "Halle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23032",
@@ -1383,7 +1481,8 @@
                 "taal": "nl",
                 "naam": "Herne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23033",
@@ -1397,7 +1496,8 @@
                 "taal": "nl",
                 "naam": "Hoeilaart"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23038",
@@ -1411,7 +1511,8 @@
                 "taal": "nl",
                 "naam": "Kampenhout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23039",
@@ -1425,7 +1526,8 @@
                 "taal": "nl",
                 "naam": "Kapelle-op-den-Bos"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23099",
@@ -1439,7 +1541,8 @@
                 "taal": "nl",
                 "naam": "Kraainem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23104",
@@ -1453,7 +1556,8 @@
                 "taal": "nl",
                 "naam": "Lennik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23044",
@@ -1467,7 +1571,8 @@
                 "taal": "nl",
                 "naam": "Liedekerke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23100",
@@ -1481,7 +1586,8 @@
                 "taal": "nl",
                 "naam": "Linkebeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23045",
@@ -1495,7 +1601,8 @@
                 "taal": "nl",
                 "naam": "Londerzeel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23047",
@@ -1509,7 +1616,8 @@
                 "taal": "nl",
                 "naam": "Machelen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23050",
@@ -1523,7 +1631,8 @@
                 "taal": "nl",
                 "naam": "Meise"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23052",
@@ -1537,7 +1646,8 @@
                 "taal": "nl",
                 "naam": "Merchtem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23060",
@@ -1551,7 +1661,8 @@
                 "taal": "nl",
                 "naam": "Opwijk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23062",
@@ -1565,7 +1676,8 @@
                 "taal": "nl",
                 "naam": "Overijse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23064",
@@ -1579,7 +1691,8 @@
                 "taal": "nl",
                 "naam": "Pepingen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23101",
@@ -1587,13 +1700,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Rhode-Saint-Genèse"
+                "naam": "Rhode-Saint-Gen\u00e8se"
             },
             {
                 "taal": "nl",
                 "naam": "Sint-Genesius-Rode"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23097",
@@ -1607,7 +1721,8 @@
                 "taal": "nl",
                 "naam": "Roosdaal"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23077",
@@ -1621,7 +1736,8 @@
                 "taal": "nl",
                 "naam": "Sint-Pieters-Leeuw"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23081",
@@ -1635,7 +1751,8 @@
                 "taal": "nl",
                 "naam": "Steenokkerzeel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23086",
@@ -1649,7 +1766,8 @@
                 "taal": "nl",
                 "naam": "Ternat"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23088",
@@ -1663,7 +1781,8 @@
                 "taal": "nl",
                 "naam": "Vilvoorde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23102",
@@ -1677,7 +1796,8 @@
                 "taal": "nl",
                 "naam": "Wemmel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23103",
@@ -1691,7 +1811,8 @@
                 "taal": "nl",
                 "naam": "Wezembeek-Oppem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23094",
@@ -1705,7 +1826,8 @@
                 "taal": "nl",
                 "naam": "Zaventem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "23096",
@@ -1719,7 +1841,8 @@
                 "taal": "nl",
                 "naam": "Zemst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24001",
@@ -1733,7 +1856,8 @@
                 "taal": "nl",
                 "naam": "Aarschot"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24007",
@@ -1747,7 +1871,8 @@
                 "taal": "nl",
                 "naam": "Begijnendijk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24008",
@@ -1761,7 +1886,8 @@
                 "taal": "nl",
                 "naam": "Bekkevoort"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24009",
@@ -1775,7 +1901,8 @@
                 "taal": "nl",
                 "naam": "Bertem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24011",
@@ -1789,7 +1916,8 @@
                 "taal": "nl",
                 "naam": "Bierbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24014",
@@ -1803,7 +1931,8 @@
                 "taal": "nl",
                 "naam": "Boortmeerbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24016",
@@ -1817,7 +1946,8 @@
                 "taal": "nl",
                 "naam": "Boutersem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24020",
@@ -1831,7 +1961,8 @@
                 "taal": "nl",
                 "naam": "Diest"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24028",
@@ -1845,7 +1976,8 @@
                 "taal": "nl",
                 "naam": "Geetbets"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24137",
@@ -1859,7 +1991,8 @@
                 "taal": "nl",
                 "naam": "Glabbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24033",
@@ -1873,7 +2006,8 @@
                 "taal": "nl",
                 "naam": "Haacht"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24038",
@@ -1887,7 +2021,8 @@
                 "taal": "nl",
                 "naam": "Herent"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24041",
@@ -1901,7 +2036,8 @@
                 "taal": "nl",
                 "naam": "Hoegaarden"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24043",
@@ -1915,7 +2051,8 @@
                 "taal": "nl",
                 "naam": "Holsbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24045",
@@ -1929,7 +2066,8 @@
                 "taal": "nl",
                 "naam": "Huldenberg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24048",
@@ -1943,7 +2081,8 @@
                 "taal": "nl",
                 "naam": "Keerbergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24054",
@@ -1957,7 +2096,8 @@
                 "taal": "nl",
                 "naam": "Kortenaken"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24055",
@@ -1971,7 +2111,8 @@
                 "taal": "nl",
                 "naam": "Kortenberg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24059",
@@ -1985,7 +2126,8 @@
                 "taal": "nl",
                 "naam": "Landen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24130",
@@ -1993,13 +2135,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Léau"
+                "naam": "L\u00e9au"
             },
             {
                 "taal": "nl",
                 "naam": "Zoutleeuw"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24133",
@@ -2013,7 +2156,8 @@
                 "taal": "nl",
                 "naam": "Linter"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24062",
@@ -2027,7 +2171,8 @@
                 "taal": "nl",
                 "naam": "Leuven"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24066",
@@ -2041,7 +2186,8 @@
                 "taal": "nl",
                 "naam": "Lubbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24134",
@@ -2055,7 +2201,8 @@
                 "taal": "nl",
                 "naam": "Scherpenheuvel-Zichem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24086",
@@ -2069,7 +2216,8 @@
                 "taal": "nl",
                 "naam": "Oud-Heverlee"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24094",
@@ -2083,7 +2231,8 @@
                 "taal": "nl",
                 "naam": "Rotselaar"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24104",
@@ -2097,7 +2246,8 @@
                 "taal": "nl",
                 "naam": "Tervuren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24135",
@@ -2111,7 +2261,8 @@
                 "taal": "nl",
                 "naam": "Tielt-Winge"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24107",
@@ -2125,7 +2276,8 @@
                 "taal": "nl",
                 "naam": "Tienen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "24109",
@@ -2139,7 +2291,8 @@
                 "taal": "nl",
                 "naam": "Tremelo"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31003",
@@ -2153,7 +2306,8 @@
                 "taal": "nl",
                 "naam": "Beernem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31004",
@@ -2167,7 +2321,8 @@
                 "taal": "nl",
                 "naam": "Blankenberge"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31005",
@@ -2181,7 +2336,8 @@
                 "taal": "nl",
                 "naam": "Brugge"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31006",
@@ -2195,7 +2351,8 @@
                 "taal": "nl",
                 "naam": "Damme"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31012",
@@ -2209,7 +2366,8 @@
                 "taal": "nl",
                 "naam": "Jabbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31043",
@@ -2223,7 +2381,8 @@
                 "taal": "nl",
                 "naam": "Knokke-Heist"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31022",
@@ -2237,7 +2396,8 @@
                 "taal": "nl",
                 "naam": "Oostkamp"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31033",
@@ -2251,7 +2411,8 @@
                 "taal": "nl",
                 "naam": "Torhout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31040",
@@ -2265,7 +2426,8 @@
                 "taal": "nl",
                 "naam": "Zedelgem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "31042",
@@ -2279,7 +2441,8 @@
                 "taal": "nl",
                 "naam": "Zuienkerke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34002",
@@ -2293,7 +2456,8 @@
                 "taal": "nl",
                 "naam": "Anzegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34003",
@@ -2307,7 +2471,8 @@
                 "taal": "nl",
                 "naam": "Avelgem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34022",
@@ -2321,7 +2486,8 @@
                 "taal": "nl",
                 "naam": "Kortrijk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34009",
@@ -2335,7 +2501,8 @@
                 "taal": "nl",
                 "naam": "Deerlijk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34043",
@@ -2349,7 +2516,8 @@
                 "taal": "nl",
                 "naam": "Spiere-Helkijn"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34013",
@@ -2363,7 +2531,8 @@
                 "taal": "nl",
                 "naam": "Harelbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34023",
@@ -2377,7 +2546,8 @@
                 "taal": "nl",
                 "naam": "Kuurne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34025",
@@ -2391,7 +2561,8 @@
                 "taal": "nl",
                 "naam": "Lendelede"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34027",
@@ -2405,7 +2576,8 @@
                 "taal": "nl",
                 "naam": "Menen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34040",
@@ -2419,7 +2591,8 @@
                 "taal": "nl",
                 "naam": "Waregem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34041",
@@ -2433,7 +2606,8 @@
                 "taal": "nl",
                 "naam": "Wevelgem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "34042",
@@ -2447,7 +2621,8 @@
                 "taal": "nl",
                 "naam": "Zwevegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "32003",
@@ -2461,7 +2636,8 @@
                 "taal": "nl",
                 "naam": "Diksmuide"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "32006",
@@ -2475,7 +2651,8 @@
                 "taal": "nl",
                 "naam": "Houthulst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "32010",
@@ -2489,7 +2666,8 @@
                 "taal": "nl",
                 "naam": "Koekelare"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "32011",
@@ -2503,7 +2681,8 @@
                 "taal": "nl",
                 "naam": "Kortemark"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "32030",
@@ -2517,7 +2696,8 @@
                 "taal": "nl",
                 "naam": "Lo-Reninge"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "38002",
@@ -2531,7 +2711,8 @@
                 "taal": "nl",
                 "naam": "Alveringem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "38025",
@@ -2545,7 +2726,8 @@
                 "taal": "nl",
                 "naam": "Veurne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "38014",
@@ -2559,7 +2741,8 @@
                 "taal": "nl",
                 "naam": "Koksijde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "38008",
@@ -2573,7 +2756,8 @@
                 "taal": "nl",
                 "naam": "De Panne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "38016",
@@ -2587,7 +2771,8 @@
                 "taal": "nl",
                 "naam": "Nieuwpoort"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35002",
@@ -2601,7 +2786,8 @@
                 "taal": "nl",
                 "naam": "Bredene"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35029",
@@ -2615,7 +2801,8 @@
                 "taal": "nl",
                 "naam": "De Haan"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35005",
@@ -2629,7 +2816,8 @@
                 "taal": "nl",
                 "naam": "Gistel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35006",
@@ -2643,7 +2831,8 @@
                 "taal": "nl",
                 "naam": "Ichtegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35011",
@@ -2657,7 +2846,8 @@
                 "taal": "nl",
                 "naam": "Middelkerke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35013",
@@ -2671,7 +2861,8 @@
                 "taal": "nl",
                 "naam": "Oostende"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "35014",
@@ -2685,7 +2876,8 @@
                 "taal": "nl",
                 "naam": "Oudenburg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36006",
@@ -2699,7 +2891,8 @@
                 "taal": "nl",
                 "naam": "Hooglede"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36007",
@@ -2713,7 +2906,8 @@
                 "taal": "nl",
                 "naam": "Ingelmunster"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36008",
@@ -2727,7 +2921,8 @@
                 "taal": "nl",
                 "naam": "Izegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36010",
@@ -2741,7 +2936,8 @@
                 "taal": "nl",
                 "naam": "Ledegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36011",
@@ -2755,7 +2951,8 @@
                 "taal": "nl",
                 "naam": "Lichtervelde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36012",
@@ -2769,7 +2966,8 @@
                 "taal": "nl",
                 "naam": "Moorslede"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36015",
@@ -2783,7 +2981,8 @@
                 "taal": "nl",
                 "naam": "Roeselare"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "36019",
@@ -2797,7 +2996,8 @@
                 "taal": "nl",
                 "naam": "Staden"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37020",
@@ -2811,7 +3011,8 @@
                 "taal": "nl",
                 "naam": "Ardooie"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37002",
@@ -2825,7 +3026,8 @@
                 "taal": "nl",
                 "naam": "Dentergem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37007",
@@ -2839,7 +3041,8 @@
                 "taal": "nl",
                 "naam": "Meulebeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37010",
@@ -2853,7 +3056,8 @@
                 "taal": "nl",
                 "naam": "Oostrozebeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37011",
@@ -2867,7 +3071,8 @@
                 "taal": "nl",
                 "naam": "Pittem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37012",
@@ -2881,7 +3086,8 @@
                 "taal": "nl",
                 "naam": "Ruiselede"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37015",
@@ -2895,7 +3101,8 @@
                 "taal": "nl",
                 "naam": "Tielt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37017",
@@ -2909,7 +3116,8 @@
                 "taal": "nl",
                 "naam": "Wielsbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "37018",
@@ -2923,7 +3131,8 @@
                 "taal": "nl",
                 "naam": "Wingene"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33039",
@@ -2937,7 +3146,8 @@
                 "taal": "nl",
                 "naam": "Heuvelland"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33040",
@@ -2951,7 +3161,8 @@
                 "taal": "nl",
                 "naam": "Langemark-Poelkapelle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33016",
@@ -2965,7 +3176,8 @@
                 "taal": "nl",
                 "naam": "Mesen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33021",
@@ -2979,7 +3191,8 @@
                 "taal": "nl",
                 "naam": "Poperinge"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33041",
@@ -2993,7 +3206,8 @@
                 "taal": "nl",
                 "naam": "Vleteren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33029",
@@ -3007,7 +3221,8 @@
                 "taal": "nl",
                 "naam": "Wervik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33011",
@@ -3021,7 +3236,8 @@
                 "taal": "nl",
                 "naam": "Ieper"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "33037",
@@ -3035,7 +3251,8 @@
                 "taal": "nl",
                 "naam": "Zonnebeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41002",
@@ -3049,7 +3266,8 @@
                 "taal": "nl",
                 "naam": "Aalst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41011",
@@ -3063,7 +3281,8 @@
                 "taal": "nl",
                 "naam": "Denderleeuw"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41082",
@@ -3077,7 +3296,8 @@
                 "taal": "nl",
                 "naam": "Erpe-Mere"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41018",
@@ -3091,7 +3311,8 @@
                 "taal": "nl",
                 "naam": "Geraardsbergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41024",
@@ -3105,7 +3326,8 @@
                 "taal": "nl",
                 "naam": "Haaltert"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41027",
@@ -3119,7 +3341,8 @@
                 "taal": "nl",
                 "naam": "Herzele"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41034",
@@ -3133,7 +3356,8 @@
                 "taal": "nl",
                 "naam": "Lede"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41048",
@@ -3147,7 +3371,8 @@
                 "taal": "nl",
                 "naam": "Ninove"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41063",
@@ -3161,7 +3386,8 @@
                 "taal": "nl",
                 "naam": "Sint-Lievens-Houtem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "41081",
@@ -3175,7 +3401,8 @@
                 "taal": "nl",
                 "naam": "Zottegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45035",
@@ -3189,7 +3416,8 @@
                 "taal": "nl",
                 "naam": "Oudenaarde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45059",
@@ -3203,7 +3431,8 @@
                 "taal": "nl",
                 "naam": "Brakel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45062",
@@ -3217,7 +3446,8 @@
                 "taal": "nl",
                 "naam": "Horebeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45060",
@@ -3231,7 +3461,8 @@
                 "taal": "nl",
                 "naam": "Kluisbergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45068",
@@ -3245,7 +3476,8 @@
                 "taal": "nl",
                 "naam": "Kruisem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45063",
@@ -3259,7 +3491,8 @@
                 "taal": "nl",
                 "naam": "Lierde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45064",
@@ -3273,7 +3506,8 @@
                 "taal": "nl",
                 "naam": "Maarkedal"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45041",
@@ -3287,7 +3521,8 @@
                 "taal": "nl",
                 "naam": "Ronse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45061",
@@ -3301,7 +3536,8 @@
                 "taal": "nl",
                 "naam": "Wortegem-Petegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "45065",
@@ -3315,7 +3551,8 @@
                 "taal": "nl",
                 "naam": "Zwalm"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "43002",
@@ -3329,7 +3566,8 @@
                 "taal": "nl",
                 "naam": "Assenede"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "43005",
@@ -3343,7 +3581,8 @@
                 "taal": "nl",
                 "naam": "Eeklo"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "43007",
@@ -3357,7 +3596,8 @@
                 "taal": "nl",
                 "naam": "Kaprijke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "43010",
@@ -3371,7 +3611,8 @@
                 "taal": "nl",
                 "naam": "Maldegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "43014",
@@ -3385,7 +3626,8 @@
                 "taal": "nl",
                 "naam": "Sint-Laureins"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "43018",
@@ -3399,7 +3641,8 @@
                 "taal": "nl",
                 "naam": "Zelzate"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44084",
@@ -3413,7 +3656,8 @@
                 "taal": "nl",
                 "naam": "Aalter"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44012",
@@ -3427,7 +3671,8 @@
                 "taal": "nl",
                 "naam": "De Pinte"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44083",
@@ -3441,7 +3686,8 @@
                 "taal": "nl",
                 "naam": "Deinze"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44013",
@@ -3455,7 +3701,8 @@
                 "taal": "nl",
                 "naam": "Destelbergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44019",
@@ -3469,7 +3716,8 @@
                 "taal": "nl",
                 "naam": "Evergem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44021",
@@ -3483,7 +3731,8 @@
                 "taal": "nl",
                 "naam": "Gent"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44020",
@@ -3497,7 +3746,8 @@
                 "taal": "nl",
                 "naam": "Gavere"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44085",
@@ -3511,7 +3761,8 @@
                 "taal": "nl",
                 "naam": "Lievegem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44034",
@@ -3525,7 +3776,8 @@
                 "taal": "nl",
                 "naam": "Lochristi"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44040",
@@ -3539,7 +3791,8 @@
                 "taal": "nl",
                 "naam": "Melle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44043",
@@ -3553,7 +3806,8 @@
                 "taal": "nl",
                 "naam": "Merelbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44045",
@@ -3567,7 +3821,8 @@
                 "taal": "nl",
                 "naam": "Moerbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44048",
@@ -3581,7 +3836,8 @@
                 "taal": "nl",
                 "naam": "Nazareth"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44052",
@@ -3595,7 +3851,8 @@
                 "taal": "nl",
                 "naam": "Oosterzele"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44064",
@@ -3609,7 +3866,8 @@
                 "taal": "nl",
                 "naam": "Sint-Martens-Latem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44073",
@@ -3623,7 +3881,8 @@
                 "taal": "nl",
                 "naam": "Wachtebeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "44081",
@@ -3637,7 +3896,8 @@
                 "taal": "nl",
                 "naam": "Zulte"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46003",
@@ -3651,7 +3911,8 @@
                 "taal": "nl",
                 "naam": "Beveren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46013",
@@ -3665,7 +3926,8 @@
                 "taal": "nl",
                 "naam": "Kruibeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46014",
@@ -3679,7 +3941,8 @@
                 "taal": "nl",
                 "naam": "Lokeren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46021",
@@ -3693,7 +3956,8 @@
                 "taal": "nl",
                 "naam": "Sint-Niklaas"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46020",
@@ -3707,7 +3971,8 @@
                 "taal": "nl",
                 "naam": "Sint-Gillis-Waas"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46024",
@@ -3721,7 +3986,8 @@
                 "taal": "nl",
                 "naam": "Stekene"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "46025",
@@ -3735,7 +4001,8 @@
                 "taal": "nl",
                 "naam": "Temse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42003",
@@ -3749,7 +4016,8 @@
                 "taal": "nl",
                 "naam": "Berlare"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42004",
@@ -3763,7 +4031,8 @@
                 "taal": "nl",
                 "naam": "Buggenhout"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42008",
@@ -3777,7 +4046,8 @@
                 "taal": "nl",
                 "naam": "Hamme"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42010",
@@ -3791,7 +4061,8 @@
                 "taal": "nl",
                 "naam": "Laarne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42011",
@@ -3805,7 +4076,8 @@
                 "taal": "nl",
                 "naam": "Lebbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42006",
@@ -3819,7 +4091,8 @@
                 "taal": "nl",
                 "naam": "Dendermonde"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42023",
@@ -3833,7 +4106,8 @@
                 "taal": "nl",
                 "naam": "Waasmunster"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42025",
@@ -3847,7 +4121,8 @@
                 "taal": "nl",
                 "naam": "Wetteren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42026",
@@ -3861,7 +4136,8 @@
                 "taal": "nl",
                 "naam": "Wichelen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "42028",
@@ -3875,7 +4151,8 @@
                 "taal": "nl",
                 "naam": "Zele"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71002",
@@ -3889,7 +4166,8 @@
                 "taal": "nl",
                 "naam": "As"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71004",
@@ -3903,7 +4181,8 @@
                 "taal": "nl",
                 "naam": "Beringen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71034",
@@ -3911,13 +4190,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Bourg-Léopold"
+                "naam": "Bourg-L\u00e9opold"
             },
             {
                 "taal": "nl",
                 "naam": "Leopoldsburg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71011",
@@ -3931,7 +4211,8 @@
                 "taal": "nl",
                 "naam": "Diepenbeek"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71016",
@@ -3945,7 +4226,8 @@
                 "taal": "nl",
                 "naam": "Genk"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71017",
@@ -3959,7 +4241,8 @@
                 "taal": "nl",
                 "naam": "Gingelom"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71020",
@@ -3973,7 +4256,8 @@
                 "taal": "nl",
                 "naam": "Halen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71069",
@@ -3987,7 +4271,8 @@
                 "taal": "nl",
                 "naam": "Ham"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71022",
@@ -4001,7 +4286,8 @@
                 "taal": "nl",
                 "naam": "Hasselt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71024",
@@ -4015,7 +4301,8 @@
                 "taal": "nl",
                 "naam": "Herk-de-Stad"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71070",
@@ -4029,7 +4316,8 @@
                 "taal": "nl",
                 "naam": "Heusden-Zolder"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71037",
@@ -4043,7 +4331,8 @@
                 "taal": "nl",
                 "naam": "Lummen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71045",
@@ -4057,7 +4346,8 @@
                 "taal": "nl",
                 "naam": "Nieuwerkerken"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71053",
@@ -4071,7 +4361,8 @@
                 "taal": "nl",
                 "naam": "Sint-Truiden"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71057",
@@ -4085,7 +4376,8 @@
                 "taal": "nl",
                 "naam": "Tessenderlo"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71066",
@@ -4099,7 +4391,8 @@
                 "taal": "nl",
                 "naam": "Zonhoven"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "71067",
@@ -4113,7 +4406,8 @@
                 "taal": "nl",
                 "naam": "Zutendaal"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72003",
@@ -4127,7 +4421,8 @@
                 "taal": "nl",
                 "naam": "Bocholt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72004",
@@ -4141,7 +4436,8 @@
                 "taal": "nl",
                 "naam": "Bree"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72041",
@@ -4155,7 +4451,8 @@
                 "taal": "nl",
                 "naam": "Dilsen-Stokkem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72037",
@@ -4169,7 +4466,8 @@
                 "taal": "nl",
                 "naam": "Hamont-Achel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72038",
@@ -4183,7 +4481,8 @@
                 "taal": "nl",
                 "naam": "Hechtel-Eksel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72039",
@@ -4197,7 +4496,8 @@
                 "taal": "nl",
                 "naam": "Houthalen-Helchteren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72018",
@@ -4211,7 +4511,8 @@
                 "taal": "nl",
                 "naam": "Kinrooi"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72020",
@@ -4225,7 +4526,8 @@
                 "taal": "nl",
                 "naam": "Lommel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72021",
@@ -4239,7 +4541,8 @@
                 "taal": "nl",
                 "naam": "Maaseik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72042",
@@ -4253,7 +4556,8 @@
                 "taal": "nl",
                 "naam": "Oudsbergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72030",
@@ -4267,7 +4571,8 @@
                 "taal": "nl",
                 "naam": "Peer"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "72043",
@@ -4281,7 +4586,8 @@
                 "taal": "nl",
                 "naam": "Pelt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73001",
@@ -4295,7 +4601,8 @@
                 "taal": "nl",
                 "naam": "Alken"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73006",
@@ -4309,7 +4616,8 @@
                 "taal": "nl",
                 "naam": "Bilzen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73109",
@@ -4323,7 +4631,8 @@
                 "taal": "nl",
                 "naam": "Voeren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73022",
@@ -4337,7 +4646,8 @@
                 "taal": "nl",
                 "naam": "Heers"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73028",
@@ -4351,7 +4661,8 @@
                 "taal": "nl",
                 "naam": "Herstappe"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73032",
@@ -4365,7 +4676,8 @@
                 "taal": "nl",
                 "naam": "Hoeselt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73040",
@@ -4379,7 +4691,8 @@
                 "taal": "nl",
                 "naam": "Kortessem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73042",
@@ -4393,7 +4706,8 @@
                 "taal": "nl",
                 "naam": "Lanaken"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73009",
@@ -4407,7 +4721,8 @@
                 "taal": "nl",
                 "naam": "Borgloon"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73107",
@@ -4421,7 +4736,8 @@
                 "taal": "nl",
                 "naam": "Maasmechelen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73066",
@@ -4435,7 +4751,8 @@
                 "taal": "nl",
                 "naam": "Riemst"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73083",
@@ -4449,7 +4766,8 @@
                 "taal": "nl",
                 "naam": "Tongeren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "73098",
@@ -4463,7 +4781,8 @@
                 "taal": "nl",
                 "naam": "Wellen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25005",
@@ -4477,7 +4796,8 @@
                 "taal": "nl",
                 "naam": "Bevekom"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25014",
@@ -4491,7 +4811,8 @@
                 "taal": "nl",
                 "naam": "Eigenbrakel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25015",
@@ -4499,13 +4820,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Braine-le-Château"
+                "naam": "Braine-le-Ch\u00e2teau"
             },
             {
                 "taal": "nl",
                 "naam": "Kasteelbrakel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25117",
@@ -4519,7 +4841,8 @@
                 "taal": "nl",
                 "naam": "Chastre"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25018",
@@ -4533,7 +4856,8 @@
                 "taal": "nl",
                 "naam": "Chaumont-Gistoux"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25023",
@@ -4547,7 +4871,8 @@
                 "taal": "nl",
                 "naam": "Court-Saint-Etienne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25031",
@@ -4561,7 +4886,8 @@
                 "taal": "nl",
                 "naam": "Genepien"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25037",
@@ -4575,7 +4901,8 @@
                 "taal": "nl",
                 "naam": "Graven"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25118",
@@ -4583,13 +4910,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Hélécine"
+                "naam": "H\u00e9l\u00e9cine"
             },
             {
                 "taal": "nl",
-                "naam": "Hélécine"
+                "naam": "H\u00e9l\u00e9cine"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25043",
@@ -4603,7 +4931,8 @@
                 "taal": "nl",
                 "naam": "Incourt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25044",
@@ -4617,7 +4946,8 @@
                 "taal": "nl",
                 "naam": "Itter"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25048",
@@ -4631,7 +4961,8 @@
                 "taal": "nl",
                 "naam": "Geldenaken"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25050",
@@ -4645,7 +4976,8 @@
                 "taal": "nl",
                 "naam": "Terhulpen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25119",
@@ -4659,7 +4991,8 @@
                 "taal": "nl",
                 "naam": "Lasne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25068",
@@ -4673,7 +5006,8 @@
                 "taal": "nl",
                 "naam": "Mont-Saint-Guibert"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25072",
@@ -4687,7 +5021,8 @@
                 "taal": "nl",
                 "naam": "Nijvel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25120",
@@ -4701,7 +5036,8 @@
                 "taal": "nl",
                 "naam": "Orp-Jauche"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25121",
@@ -4715,7 +5051,8 @@
                 "taal": "nl",
                 "naam": "Ottignies-Louvain-la-Neuve"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25084",
@@ -4729,7 +5066,8 @@
                 "taal": "nl",
                 "naam": "Perwijs"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25122",
@@ -4743,7 +5081,8 @@
                 "taal": "nl",
                 "naam": "Ramillies"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25123",
@@ -4757,7 +5096,8 @@
                 "taal": "nl",
                 "naam": "Rebecq"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25091",
@@ -4771,7 +5111,8 @@
                 "taal": "nl",
                 "naam": "Rixensart"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25105",
@@ -4785,7 +5126,8 @@
                 "taal": "nl",
                 "naam": "Tubeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25107",
@@ -4799,7 +5141,8 @@
                 "taal": "nl",
                 "naam": "Villers-la-Ville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25124",
@@ -4813,7 +5156,8 @@
                 "taal": "nl",
                 "naam": "Walhain"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25110",
@@ -4827,7 +5171,8 @@
                 "taal": "nl",
                 "naam": "Waterloo"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "25112",
@@ -4841,7 +5186,8 @@
                 "taal": "nl",
                 "naam": "Waver"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51004",
@@ -4855,7 +5201,8 @@
                 "taal": "nl",
                 "naam": "Aat"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51008",
@@ -4869,7 +5216,8 @@
                 "taal": "nl",
                 "naam": "Beloeil"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51009",
@@ -4883,7 +5231,8 @@
                 "taal": "nl",
                 "naam": "Bernissart"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51012",
@@ -4897,7 +5246,8 @@
                 "taal": "nl",
                 "naam": "Brugelette"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51014",
@@ -4905,13 +5255,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Chièvres"
+                "naam": "Chi\u00e8vres"
             },
             {
                 "taal": "nl",
-                "naam": "Chièvres"
+                "naam": "Chi\u00e8vres"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51017",
@@ -4925,7 +5276,8 @@
                 "taal": "nl",
                 "naam": "Elzele"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51067",
@@ -4939,7 +5291,8 @@
                 "taal": "nl",
                 "naam": "Edingen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51019",
@@ -4953,7 +5306,8 @@
                 "taal": "nl",
                 "naam": "Vloesberg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51065",
@@ -4967,7 +5321,8 @@
                 "taal": "nl",
                 "naam": "Frasnes-lez-Anvaing"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51069",
@@ -4981,7 +5336,8 @@
                 "taal": "nl",
                 "naam": "Lessen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "51068",
@@ -4995,7 +5351,8 @@
                 "taal": "nl",
                 "naam": "Opzullik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52074",
@@ -5009,7 +5366,8 @@
                 "taal": "nl",
                 "naam": "Aiseau-Presles"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52010",
@@ -5023,7 +5381,8 @@
                 "taal": "nl",
                 "naam": "Chapelle-lez-Herlaimont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52011",
@@ -5037,7 +5396,8 @@
                 "taal": "nl",
                 "naam": "Charleroi"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52012",
@@ -5045,13 +5405,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Châtelet"
+                "naam": "Ch\u00e2telet"
             },
             {
                 "taal": "nl",
-                "naam": "Châtelet"
+                "naam": "Ch\u00e2telet"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52015",
@@ -5065,7 +5426,8 @@
                 "taal": "nl",
                 "naam": "Courcelles"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52018",
@@ -5079,7 +5441,8 @@
                 "taal": "nl",
                 "naam": "Farciennes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52021",
@@ -5093,7 +5456,8 @@
                 "taal": "nl",
                 "naam": "Fleurus"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52022",
@@ -5101,13 +5465,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Fontaine-l'Evêque"
+                "naam": "Fontaine-l'Ev\u00eaque"
             },
             {
                 "taal": "nl",
-                "naam": "Fontaine-l'Evêque"
+                "naam": "Fontaine-l'Ev\u00eaque"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52025",
@@ -5121,7 +5486,8 @@
                 "taal": "nl",
                 "naam": "Gerpinnes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52075",
@@ -5135,7 +5501,8 @@
                 "taal": "nl",
                 "naam": "Les Bons Villers"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52048",
@@ -5149,7 +5516,8 @@
                 "taal": "nl",
                 "naam": "Montigny-le-Tilleul"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "52055",
@@ -5157,13 +5525,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Pont-à-Celles"
+                "naam": "Pont-\u00e0-Celles"
             },
             {
                 "taal": "nl",
-                "naam": "Pont-à-Celles"
+                "naam": "Pont-\u00e0-Celles"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53014",
@@ -5177,7 +5546,8 @@
                 "taal": "nl",
                 "naam": "Boussu"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53082",
@@ -5191,7 +5561,8 @@
                 "taal": "nl",
                 "naam": "Colfontaine"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53020",
@@ -5205,7 +5576,8 @@
                 "taal": "nl",
                 "naam": "Dour"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53028",
@@ -5219,7 +5591,8 @@
                 "taal": "nl",
                 "naam": "Frameries"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53039",
@@ -5233,7 +5606,8 @@
                 "taal": "nl",
                 "naam": "Hensies"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53083",
@@ -5247,7 +5621,8 @@
                 "taal": "nl",
                 "naam": "Honnelles"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53044",
@@ -5261,7 +5636,8 @@
                 "taal": "nl",
                 "naam": "Jurbeke"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53046",
@@ -5275,7 +5651,8 @@
                 "taal": "nl",
                 "naam": "Lens"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53053",
@@ -5289,7 +5666,8 @@
                 "taal": "nl",
                 "naam": "Bergen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53065",
@@ -5303,7 +5681,8 @@
                 "taal": "nl",
                 "naam": "Quaregnon"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53084",
@@ -5311,13 +5690,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Quévy"
+                "naam": "Qu\u00e9vy"
             },
             {
                 "taal": "nl",
-                "naam": "Quévy"
+                "naam": "Qu\u00e9vy"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53068",
@@ -5325,13 +5705,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Quiévrain"
+                "naam": "Qui\u00e9vrain"
             },
             {
                 "taal": "nl",
-                "naam": "Quiévrain"
+                "naam": "Qui\u00e9vrain"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "53070",
@@ -5345,7 +5726,8 @@
                 "taal": "nl",
                 "naam": "Saint-Ghislain"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "55004",
@@ -5359,7 +5741,8 @@
                 "taal": "nl",
                 "naam": "'s Gravenbrakel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "55050",
@@ -5373,7 +5756,8 @@
                 "taal": "nl",
                 "naam": "Ecaussinnes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "55035",
@@ -5387,7 +5771,8 @@
                 "taal": "nl",
                 "naam": "Le Roeulx"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "55086",
@@ -5401,7 +5786,8 @@
                 "taal": "nl",
                 "naam": "Manage"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "55085",
@@ -5415,7 +5801,8 @@
                 "taal": "nl",
                 "naam": "Seneffe"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "55040",
@@ -5429,7 +5816,8 @@
                 "taal": "nl",
                 "naam": "Zinnik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56001",
@@ -5443,7 +5831,8 @@
                 "taal": "nl",
                 "naam": "Anderlues"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56005",
@@ -5457,7 +5846,8 @@
                 "taal": "nl",
                 "naam": "Beaumont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56016",
@@ -5471,7 +5861,8 @@
                 "taal": "nl",
                 "naam": "Chimay"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56022",
@@ -5485,7 +5876,8 @@
                 "taal": "nl",
                 "naam": "Erquelinnes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56029",
@@ -5499,7 +5891,8 @@
                 "taal": "nl",
                 "naam": "Froidchapelle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56086",
@@ -5513,7 +5906,8 @@
                 "taal": "nl",
                 "naam": "Ham-sur-Heure-Nalinnes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56044",
@@ -5527,7 +5921,8 @@
                 "taal": "nl",
                 "naam": "Lobbes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56049",
@@ -5535,13 +5930,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Merbes-le-Château"
+                "naam": "Merbes-le-Ch\u00e2teau"
             },
             {
                 "taal": "nl",
-                "naam": "Merbes-le-Château"
+                "naam": "Merbes-le-Ch\u00e2teau"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56051",
@@ -5555,7 +5951,8 @@
                 "taal": "nl",
                 "naam": "Momignies"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56088",
@@ -5569,7 +5966,8 @@
                 "taal": "nl",
                 "naam": "Sivry-Rance"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "56078",
@@ -5583,7 +5981,8 @@
                 "taal": "nl",
                 "naam": "Thuin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57003",
@@ -5597,7 +5996,8 @@
                 "taal": "nl",
                 "naam": "Antoing"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57093",
@@ -5611,7 +6011,8 @@
                 "taal": "nl",
                 "naam": "Brunehaut"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57018",
@@ -5625,7 +6026,8 @@
                 "taal": "nl",
                 "naam": "Celles"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57097",
@@ -5639,7 +6041,8 @@
                 "taal": "nl",
                 "naam": "Komen-Waasten"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57027",
@@ -5653,7 +6056,8 @@
                 "taal": "nl",
                 "naam": "Estaimpuis"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57094",
@@ -5667,7 +6071,8 @@
                 "taal": "nl",
                 "naam": "Leuze-en-Hainaut"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57095",
@@ -5681,7 +6086,8 @@
                 "taal": "nl",
                 "naam": "Mont-de-l'Enclus"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57096",
@@ -5695,7 +6101,8 @@
                 "taal": "nl",
                 "naam": "Moeskroen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57062",
@@ -5709,7 +6116,8 @@
                 "taal": "nl",
                 "naam": "Pecq"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57064",
@@ -5717,13 +6125,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Péruwelz"
+                "naam": "P\u00e9ruwelz"
             },
             {
                 "taal": "nl",
-                "naam": "Péruwelz"
+                "naam": "P\u00e9ruwelz"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57072",
@@ -5737,7 +6146,8 @@
                 "taal": "nl",
                 "naam": "Rumes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "57081",
@@ -5751,7 +6161,8 @@
                 "taal": "nl",
                 "naam": "Doornik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "58001",
@@ -5759,13 +6170,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "La Louvière"
+                "naam": "La Louvi\u00e8re"
             },
             {
                 "taal": "nl",
-                "naam": "La Louvière"
+                "naam": "La Louvi\u00e8re"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "58002",
@@ -5779,7 +6191,8 @@
                 "taal": "nl",
                 "naam": "Binche"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "58003",
@@ -5793,7 +6206,8 @@
                 "taal": "nl",
                 "naam": "Estinnes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "58004",
@@ -5807,7 +6221,8 @@
                 "taal": "nl",
                 "naam": "Morlanwelz"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61003",
@@ -5821,7 +6236,8 @@
                 "taal": "nl",
                 "naam": "Amay"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61079",
@@ -5835,7 +6251,8 @@
                 "taal": "nl",
                 "naam": "Anthisnes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61010",
@@ -5849,7 +6266,8 @@
                 "taal": "nl",
                 "naam": "Burdinne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61012",
@@ -5863,7 +6281,8 @@
                 "taal": "nl",
                 "naam": "Clavier"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61080",
@@ -5877,7 +6296,8 @@
                 "taal": "nl",
                 "naam": "Engis"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61019",
@@ -5885,13 +6305,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Ferrières"
+                "naam": "Ferri\u00e8res"
             },
             {
                 "taal": "nl",
-                "naam": "Ferrières"
+                "naam": "Ferri\u00e8res"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61024",
@@ -5905,7 +6326,8 @@
                 "taal": "nl",
                 "naam": "Hamoir"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61028",
@@ -5913,13 +6335,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Héron"
+                "naam": "H\u00e9ron"
             },
             {
                 "taal": "nl",
-                "naam": "Héron"
+                "naam": "H\u00e9ron"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61031",
@@ -5933,7 +6356,8 @@
                 "taal": "nl",
                 "naam": "Hoei"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61039",
@@ -5947,7 +6371,8 @@
                 "taal": "nl",
                 "naam": "Marchin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61041",
@@ -5961,7 +6386,8 @@
                 "taal": "nl",
                 "naam": "Modave"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61043",
@@ -5975,7 +6401,8 @@
                 "taal": "nl",
                 "naam": "Nandrin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61048",
@@ -5989,7 +6416,8 @@
                 "taal": "nl",
                 "naam": "Ouffet"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61081",
@@ -6003,7 +6431,8 @@
                 "taal": "nl",
                 "naam": "Tinlot"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61063",
@@ -6017,7 +6446,8 @@
                 "taal": "nl",
                 "naam": "Verlaine"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61068",
@@ -6031,7 +6461,8 @@
                 "taal": "nl",
                 "naam": "Villers-le-Bouillet"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "61072",
@@ -6045,7 +6476,8 @@
                 "taal": "nl",
                 "naam": "Wanze"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62003",
@@ -6059,7 +6491,8 @@
                 "taal": "nl",
                 "naam": "Ans"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62006",
@@ -6073,7 +6506,8 @@
                 "taal": "nl",
                 "naam": "Awans"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62009",
@@ -6087,7 +6521,8 @@
                 "taal": "nl",
                 "naam": "Aywaille"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62011",
@@ -6101,7 +6536,8 @@
                 "taal": "nl",
                 "naam": "Bitsingen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62015",
@@ -6115,7 +6551,8 @@
                 "taal": "nl",
                 "naam": "Beyne-Heusay"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62119",
@@ -6123,13 +6560,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Blégny"
+                "naam": "Bl\u00e9gny"
             },
             {
                 "taal": "nl",
-                "naam": "Blégny"
+                "naam": "Bl\u00e9gny"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62022",
@@ -6143,7 +6581,8 @@
                 "taal": "nl",
                 "naam": "Chaudfontaine"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62026",
@@ -6157,7 +6596,8 @@
                 "taal": "nl",
                 "naam": "Comblain-au-Pont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62027",
@@ -6171,7 +6611,8 @@
                 "taal": "nl",
                 "naam": "Dalhem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62032",
@@ -6185,7 +6626,8 @@
                 "taal": "nl",
                 "naam": "Esneux"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62120",
@@ -6193,13 +6635,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Flémalle"
+                "naam": "Fl\u00e9malle"
             },
             {
                 "taal": "nl",
-                "naam": "Flémalle"
+                "naam": "Fl\u00e9malle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62038",
@@ -6207,13 +6650,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Fléron"
+                "naam": "Fl\u00e9ron"
             },
             {
                 "taal": "nl",
-                "naam": "Fléron"
+                "naam": "Fl\u00e9ron"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62118",
@@ -6221,13 +6665,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Grâce-Hollogne"
+                "naam": "Gr\u00e2ce-Hollogne"
             },
             {
                 "taal": "nl",
-                "naam": "Grâce-Hollogne"
+                "naam": "Gr\u00e2ce-Hollogne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62051",
@@ -6241,7 +6686,8 @@
                 "taal": "nl",
                 "naam": "Herstal"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62060",
@@ -6255,7 +6701,8 @@
                 "taal": "nl",
                 "naam": "Juprelle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62063",
@@ -6263,13 +6710,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Liège"
+                "naam": "Li\u00e8ge"
             },
             {
                 "taal": "nl",
                 "naam": "Luik"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62121",
@@ -6277,13 +6725,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Neupré"
+                "naam": "Neupr\u00e9"
             },
             {
                 "taal": "nl",
-                "naam": "Neupré"
+                "naam": "Neupr\u00e9"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62079",
@@ -6297,7 +6746,8 @@
                 "taal": "nl",
                 "naam": "Oupeye"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62093",
@@ -6311,7 +6761,8 @@
                 "taal": "nl",
                 "naam": "Saint-Nicolas"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62096",
@@ -6325,7 +6776,8 @@
                 "taal": "nl",
                 "naam": "Seraing"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62099",
@@ -6339,7 +6791,8 @@
                 "taal": "nl",
                 "naam": "Soumagne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62100",
@@ -6353,7 +6806,8 @@
                 "taal": "nl",
                 "naam": "Sprimont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62122",
@@ -6367,7 +6821,8 @@
                 "taal": "nl",
                 "naam": "Trooz"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "62108",
@@ -6375,13 +6830,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Visé"
+                "naam": "Vis\u00e9"
             },
             {
                 "taal": "nl",
                 "naam": "Wezet"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63001",
@@ -6389,13 +6845,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Amblève"
+                "naam": "Ambl\u00e8ve"
             },
             {
                 "taal": "nl",
                 "naam": "Amel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63003",
@@ -6409,7 +6866,8 @@
                 "taal": "nl",
                 "naam": "Aubel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63004",
@@ -6423,7 +6881,8 @@
                 "taal": "nl",
                 "naam": "Baelen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63012",
@@ -6435,9 +6894,10 @@
             },
             {
                 "taal": "nl",
-                "naam": "Büllingen"
+                "naam": "B\u00fcllingen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63087",
@@ -6451,7 +6911,8 @@
                 "taal": "nl",
                 "naam": "Burg-Reuland"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63013",
@@ -6463,9 +6924,10 @@
             },
             {
                 "taal": "nl",
-                "naam": "Bütgenbach"
+                "naam": "B\u00fctgenbach"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63020",
@@ -6479,7 +6941,8 @@
                 "taal": "nl",
                 "naam": "Dison"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63023",
@@ -6493,7 +6956,8 @@
                 "taal": "nl",
                 "naam": "Eupen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63035",
@@ -6507,7 +6971,8 @@
                 "taal": "nl",
                 "naam": "Herve"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63038",
@@ -6521,7 +6986,8 @@
                 "taal": "nl",
                 "naam": "Jalhay"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63040",
@@ -6535,7 +7001,8 @@
                 "taal": "nl",
                 "naam": "Kelmis"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63045",
@@ -6549,7 +7016,8 @@
                 "taal": "nl",
                 "naam": "Lierneux"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63046",
@@ -6563,7 +7031,8 @@
                 "taal": "nl",
                 "naam": "Limburg"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63048",
@@ -6577,7 +7046,8 @@
                 "taal": "nl",
                 "naam": "Lontzen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63049",
@@ -6591,7 +7061,8 @@
                 "taal": "nl",
                 "naam": "Malmedy"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63057",
@@ -6605,7 +7076,8 @@
                 "taal": "nl",
                 "naam": "Olne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63058",
@@ -6619,7 +7091,8 @@
                 "taal": "nl",
                 "naam": "Pepinster"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63088",
@@ -6627,13 +7100,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Plombières"
+                "naam": "Plombi\u00e8res"
             },
             {
                 "taal": "nl",
-                "naam": "Plombières"
+                "naam": "Plombi\u00e8res"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63061",
@@ -6647,7 +7121,8 @@
                 "taal": "nl",
                 "naam": "Raeren"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63067",
@@ -6661,7 +7136,8 @@
                 "taal": "nl",
                 "naam": "Sankt Vith"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63072",
@@ -6675,7 +7151,8 @@
                 "taal": "nl",
                 "naam": "Spa"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63073",
@@ -6689,7 +7166,8 @@
                 "taal": "nl",
                 "naam": "Stavelot"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63075",
@@ -6703,7 +7181,8 @@
                 "taal": "nl",
                 "naam": "Stoumont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63076",
@@ -6717,7 +7196,8 @@
                 "taal": "nl",
                 "naam": "Theux"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63089",
@@ -6731,7 +7211,8 @@
                 "taal": "nl",
                 "naam": "Thimister-Clermont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63086",
@@ -6745,7 +7226,8 @@
                 "taal": "nl",
                 "naam": "Trois-Ponts"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63079",
@@ -6759,7 +7241,8 @@
                 "taal": "nl",
                 "naam": "Verviers"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63080",
@@ -6773,7 +7256,8 @@
                 "taal": "nl",
                 "naam": "Weismes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "63084",
@@ -6787,7 +7271,8 @@
                 "taal": "nl",
                 "naam": "Welkenraedt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64008",
@@ -6801,7 +7286,8 @@
                 "taal": "nl",
                 "naam": "Berloz"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64015",
@@ -6815,7 +7301,8 @@
                 "taal": "nl",
                 "naam": "Braives"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64021",
@@ -6823,13 +7310,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Crisnée"
+                "naam": "Crisn\u00e9e"
             },
             {
                 "taal": "nl",
-                "naam": "Crisnée"
+                "naam": "Crisn\u00e9e"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64023",
@@ -6843,7 +7331,8 @@
                 "taal": "nl",
                 "naam": "Donceel"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64076",
@@ -6857,7 +7346,8 @@
                 "taal": "nl",
                 "naam": "Faimes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64025",
@@ -6871,7 +7361,8 @@
                 "taal": "nl",
                 "naam": "Fexhe-le-Haut-Clocher"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64029",
@@ -6885,7 +7376,8 @@
                 "taal": "nl",
                 "naam": "Geer"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64034",
@@ -6899,7 +7391,8 @@
                 "taal": "nl",
                 "naam": "Hannuit"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64047",
@@ -6913,7 +7406,8 @@
                 "taal": "nl",
                 "naam": "Lijsem"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64056",
@@ -6927,7 +7421,8 @@
                 "taal": "nl",
                 "naam": "Oerle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64063",
@@ -6941,7 +7436,8 @@
                 "taal": "nl",
                 "naam": "Remicourt"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64065",
@@ -6955,7 +7451,8 @@
                 "taal": "nl",
                 "naam": "Saint-Georges-sur-Meuse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64074",
@@ -6969,7 +7466,8 @@
                 "taal": "nl",
                 "naam": "Borgworm"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "64075",
@@ -6983,7 +7481,8 @@
                 "taal": "nl",
                 "naam": "Wasseiges"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "81001",
@@ -6997,7 +7496,8 @@
                 "taal": "nl",
                 "naam": "Aarlen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "81003",
@@ -7011,7 +7511,8 @@
                 "taal": "nl",
                 "naam": "Attert"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "81004",
@@ -7025,7 +7526,8 @@
                 "taal": "nl",
                 "naam": "Aubange"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "81013",
@@ -7039,7 +7541,8 @@
                 "taal": "nl",
                 "naam": "Martelange"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "81015",
@@ -7053,7 +7556,23 @@
                 "taal": "nl",
                 "naam": "Messancy"
             }
-        ]
+        ],
+        "status": "inGebruik"
+    },
+    {
+        "niscode": "82039",
+        "provincie": "80000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bastogne"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bastenaken"
+            }
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "82003",
@@ -7067,7 +7586,8 @@
                 "taal": "nl",
                 "naam": "Bastenaken"
             }
-        ]
+        ],
+        "status": "gehistoreerd"
     },
     {
         "niscode": "82005",
@@ -7081,7 +7601,8 @@
                 "taal": "nl",
                 "naam": "Bertogne"
             }
-        ]
+        ],
+        "status": "gehistoreerd"
     },
     {
         "niscode": "82009",
@@ -7095,7 +7616,8 @@
                 "taal": "nl",
                 "naam": "Fauvillers"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "82037",
@@ -7109,7 +7631,8 @@
                 "taal": "nl",
                 "naam": "Gouvy"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "82014",
@@ -7123,7 +7646,8 @@
                 "taal": "nl",
                 "naam": "Houffalize"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "82038",
@@ -7137,7 +7661,8 @@
                 "taal": "nl",
                 "naam": "Sainte-Ode"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "82036",
@@ -7145,13 +7670,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Vaux-sur-Sûre"
+                "naam": "Vaux-sur-S\u00fbre"
             },
             {
                 "taal": "nl",
-                "naam": "Vaux-sur-Sûre"
+                "naam": "Vaux-sur-S\u00fbre"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "82032",
@@ -7165,7 +7691,8 @@
                 "taal": "nl",
                 "naam": "Vielsalm"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83012",
@@ -7179,7 +7706,8 @@
                 "taal": "nl",
                 "naam": "Durbuy"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83013",
@@ -7187,13 +7715,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Erezée"
+                "naam": "Erez\u00e9e"
             },
             {
                 "taal": "nl",
-                "naam": "Erezée"
+                "naam": "Erez\u00e9e"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83028",
@@ -7207,7 +7736,8 @@
                 "taal": "nl",
                 "naam": "Hotton"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83031",
@@ -7221,7 +7751,8 @@
                 "taal": "nl",
                 "naam": "La Roche-en-Ardenne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83055",
@@ -7235,7 +7766,8 @@
                 "taal": "nl",
                 "naam": "Manhay"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83034",
@@ -7249,7 +7781,8 @@
                 "taal": "nl",
                 "naam": "Marche-en-Famenne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83040",
@@ -7263,7 +7796,8 @@
                 "taal": "nl",
                 "naam": "Nassogne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83044",
@@ -7277,7 +7811,8 @@
                 "taal": "nl",
                 "naam": "Rendeux"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "83049",
@@ -7291,7 +7826,8 @@
                 "taal": "nl",
                 "naam": "Tenneville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84009",
@@ -7305,7 +7841,8 @@
                 "taal": "nl",
                 "naam": "Bertrix"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84010",
@@ -7319,7 +7856,8 @@
                 "taal": "nl",
                 "naam": "Bouillon"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84016",
@@ -7333,7 +7871,8 @@
                 "taal": "nl",
                 "naam": "Daverdisse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84029",
@@ -7347,7 +7886,8 @@
                 "taal": "nl",
                 "naam": "Herbeumont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84033",
@@ -7355,13 +7895,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Léglise"
+                "naam": "L\u00e9glise"
             },
             {
                 "taal": "nl",
-                "naam": "Léglise"
+                "naam": "L\u00e9glise"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84035",
@@ -7375,7 +7916,8 @@
                 "taal": "nl",
                 "naam": "Libin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84077",
@@ -7389,7 +7931,8 @@
                 "taal": "nl",
                 "naam": "Libramont-Chevigny"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84043",
@@ -7397,13 +7940,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Neufchâteau"
+                "naam": "Neufch\u00e2teau"
             },
             {
                 "taal": "nl",
-                "naam": "Neufchâteau"
+                "naam": "Neufch\u00e2teau"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84050",
@@ -7417,7 +7961,8 @@
                 "taal": "nl",
                 "naam": "Paliseul"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84059",
@@ -7431,7 +7976,8 @@
                 "taal": "nl",
                 "naam": "Saint-Hubert"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84068",
@@ -7445,7 +7991,8 @@
                 "taal": "nl",
                 "naam": "Tellin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "84075",
@@ -7459,7 +8006,8 @@
                 "taal": "nl",
                 "naam": "Wellin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85007",
@@ -7473,7 +8021,8 @@
                 "taal": "nl",
                 "naam": "Chiny"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85009",
@@ -7487,7 +8036,8 @@
                 "taal": "nl",
                 "naam": "Etalle"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85011",
@@ -7501,7 +8051,8 @@
                 "taal": "nl",
                 "naam": "Florenville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85046",
@@ -7515,7 +8066,8 @@
                 "taal": "nl",
                 "naam": "Habay"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85024",
@@ -7529,7 +8081,8 @@
                 "taal": "nl",
                 "naam": "Meix-devant-Virton"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85026",
@@ -7543,7 +8096,8 @@
                 "taal": "nl",
                 "naam": "Musson"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85047",
@@ -7557,7 +8111,8 @@
                 "taal": "nl",
                 "naam": "Rouvroy"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85034",
@@ -7565,13 +8120,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Saint-Léger"
+                "naam": "Saint-L\u00e9ger"
             },
             {
                 "taal": "nl",
-                "naam": "Saint-Léger"
+                "naam": "Saint-L\u00e9ger"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85039",
@@ -7585,7 +8141,8 @@
                 "taal": "nl",
                 "naam": "Tintigny"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "85045",
@@ -7599,7 +8156,8 @@
                 "taal": "nl",
                 "naam": "Virton"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91005",
@@ -7607,13 +8165,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Anhée"
+                "naam": "Anh\u00e9e"
             },
             {
                 "taal": "nl",
-                "naam": "Anhée"
+                "naam": "Anh\u00e9e"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91013",
@@ -7627,7 +8186,8 @@
                 "taal": "nl",
                 "naam": "Beauraing"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91015",
@@ -7635,13 +8195,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Bièvre"
+                "naam": "Bi\u00e8vre"
             },
             {
                 "taal": "nl",
-                "naam": "Bièvre"
+                "naam": "Bi\u00e8vre"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91030",
@@ -7655,7 +8216,8 @@
                 "taal": "nl",
                 "naam": "Ciney"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91034",
@@ -7669,7 +8231,8 @@
                 "taal": "nl",
                 "naam": "Dinant"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91054",
@@ -7683,7 +8246,8 @@
                 "taal": "nl",
                 "naam": "Gedinne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91059",
@@ -7697,7 +8261,8 @@
                 "taal": "nl",
                 "naam": "Hamois"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91142",
@@ -7705,13 +8270,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Hastière"
+                "naam": "Hasti\u00e8re"
             },
             {
                 "taal": "nl",
-                "naam": "Hastière"
+                "naam": "Hasti\u00e8re"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91064",
@@ -7725,7 +8291,8 @@
                 "taal": "nl",
                 "naam": "Havelange"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91072",
@@ -7739,7 +8306,8 @@
                 "taal": "nl",
                 "naam": "Houyet"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91103",
@@ -7753,7 +8321,8 @@
                 "taal": "nl",
                 "naam": "Onhaye"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91114",
@@ -7767,7 +8336,8 @@
                 "taal": "nl",
                 "naam": "Rochefort"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91120",
@@ -7781,7 +8351,8 @@
                 "taal": "nl",
                 "naam": "Somme-Leuze"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91143",
@@ -7795,7 +8366,8 @@
                 "taal": "nl",
                 "naam": "Vresse-sur-Semois"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "91141",
@@ -7809,7 +8381,8 @@
                 "taal": "nl",
                 "naam": "Yvoir"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92003",
@@ -7823,7 +8396,8 @@
                 "taal": "nl",
                 "naam": "Andenne"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92006",
@@ -7837,7 +8411,8 @@
                 "taal": "nl",
                 "naam": "Assesse"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92035",
@@ -7845,13 +8420,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "Eghezée"
+                "naam": "Eghez\u00e9e"
             },
             {
                 "taal": "nl",
-                "naam": "Eghezée"
+                "naam": "Eghez\u00e9e"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92138",
@@ -7865,7 +8441,8 @@
                 "taal": "nl",
                 "naam": "Fernelmont"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92045",
@@ -7879,7 +8456,8 @@
                 "taal": "nl",
                 "naam": "Floreffe"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92048",
@@ -7893,7 +8471,8 @@
                 "taal": "nl",
                 "naam": "Fosses-la-Ville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92142",
@@ -7907,7 +8486,8 @@
                 "taal": "nl",
                 "naam": "Gembloux"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92054",
@@ -7921,7 +8501,8 @@
                 "taal": "nl",
                 "naam": "Gesves"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92140",
@@ -7935,7 +8516,8 @@
                 "taal": "nl",
                 "naam": "Jemeppe-sur-Sambre"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92141",
@@ -7943,13 +8525,14 @@
         "namen": [
             {
                 "taal": "fr",
-                "naam": "La Bruyère"
+                "naam": "La Bruy\u00e8re"
             },
             {
                 "taal": "nl",
-                "naam": "La Bruyère"
+                "naam": "La Bruy\u00e8re"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92087",
@@ -7963,7 +8546,8 @@
                 "taal": "nl",
                 "naam": "Mettet"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92094",
@@ -7977,7 +8561,8 @@
                 "taal": "nl",
                 "naam": "Namen"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92097",
@@ -7991,7 +8576,8 @@
                 "taal": "nl",
                 "naam": "Ohey"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92101",
@@ -8005,7 +8591,8 @@
                 "taal": "nl",
                 "naam": "Profondeville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92137",
@@ -8019,7 +8606,8 @@
                 "taal": "nl",
                 "naam": "Sambreville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "92114",
@@ -8033,7 +8621,8 @@
                 "taal": "nl",
                 "naam": "Sombreffe"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93010",
@@ -8047,7 +8636,8 @@
                 "taal": "nl",
                 "naam": "Cerfontaine"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93014",
@@ -8061,7 +8651,8 @@
                 "taal": "nl",
                 "naam": "Couvin"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93018",
@@ -8075,7 +8666,8 @@
                 "taal": "nl",
                 "naam": "Doische"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93022",
@@ -8089,7 +8681,8 @@
                 "taal": "nl",
                 "naam": "Florennes"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93056",
@@ -8103,7 +8696,8 @@
                 "taal": "nl",
                 "naam": "Philippeville"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93090",
@@ -8117,7 +8711,8 @@
                 "taal": "nl",
                 "naam": "Viroinval"
             }
-        ]
+        ],
+        "status": "inGebruik"
     },
     {
         "niscode": "93088",
@@ -8131,6 +8726,187 @@
                 "taal": "nl",
                 "naam": "Walcourt"
             }
-        ]
+        ],
+        "status": "inGebruik"
+    },
+    {
+        "niscode": "46030",
+        "provincie": "10000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Beveren-Kruibeke-Zwijndrecht"
+            },
+            {
+                "taal": "nl",
+                "naam": "Beveren-Kruibeke-Zwijndrecht"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "73110",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Bilzen-Hoeselt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Bilzen-Hoeselt"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "73111",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tongres-Looz"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tongeren-Borgloon"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "44086",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Nazareth-De Pinte"
+            },
+            {
+                "taal": "nl",
+                "naam": "Nazareth-De Pinte"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "71072",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Hasselt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Hasselt"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "71071",
+        "provincie": "70000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tessenderlo-Ham"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tessenderlo-Ham"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "37022",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Tielt"
+            },
+            {
+                "taal": "nl",
+                "naam": "Tielt"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "44087",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lochristi"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lochristi"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "37021",
+        "provincie": "30000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Wingene"
+            },
+            {
+                "taal": "nl",
+                "naam": "Wingene"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "44088",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Merelbeke-Melle"
+            },
+            {
+                "taal": "nl",
+                "naam": "Merelbeke-Melle"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "46029",
+        "provincie": "40000",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Lokeren"
+            },
+            {
+                "taal": "nl",
+                "naam": "Lokeren"
+            }
+        ],
+        "status": "voorgesteld"
+    },
+    {
+        "niscode": "23106",
+        "provincie": "20001",
+        "namen": [
+            {
+                "taal": "fr",
+                "naam": "Pajottegem"
+            },
+            {
+                "taal": "nl",
+                "naam": "Pajottegem"
+            }
+        ],
+        "status": "voorgesteld"
     }
 ]
