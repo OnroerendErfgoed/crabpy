@@ -243,7 +243,19 @@ class Gateway:
                 return provincie
         return None
 
-    def list_gemeenten_by_provincie(self, provincie):
+    def gemeente_by_status(self, status):
+        """
+        Filter gemeenten by status.
+
+        :param status: The status for which the `gemeenten` are wanted.
+        :rtype: A :class:`list` of :class:`Gemeente`.
+        """
+        return (
+            [gemeente for gemeente in self.gemeenten if gemeente.status == status]
+            if status else self.gemeenten
+        )
+
+    def list_gemeenten_by_provincie(self, provincie, gemeente_status=None):
         """
         List all `gemeenten` in a `provincie`.
 
@@ -258,11 +270,11 @@ class Gateway:
         provincie_niscode = provincie.niscode
         return [
             gemeente
-            for gemeente in self.gemeenten
+            for gemeente in self.gemeente_by_status(gemeente_status)
             if gemeente.provincie_niscode == provincie_niscode
         ]
 
-    def list_gemeenten(self, gewest_niscode="2000"):
+    def list_gemeenten(self, gewest_niscode="2000", gemeente_status=None):
         """
         List all `gemeenten` in a `gewest`.
 
@@ -274,7 +286,7 @@ class Gateway:
         if gewest_niscode == "4000":
             return [
                 gemeente
-                for gemeente in self.gemeenten
+                for gemeente in self.gemeente_by_status(gemeente_status)
                 if gemeente.niscode.startswith("21")
             ]
         provincie_niscodes = [
