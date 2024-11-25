@@ -296,7 +296,7 @@ class Gateway:
         ]
         return [
             gemeente
-            for gemeente in self.gemeenten
+            for gemeente in self.gemeente_by_status(gemeente_status)
             if gemeente.provincie_niscode in provincie_niscodes
         ]
 
