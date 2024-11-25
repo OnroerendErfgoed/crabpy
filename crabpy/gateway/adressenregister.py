@@ -21,7 +21,6 @@ SHORT_CACHE = make_region()
 
 
 def setup_cache(cache_settings, gateway):
-
     if cache_settings is None:
         if not LONG_CACHE.is_configured:
             LONG_CACHE.configure("dogpile.cache.null")
@@ -169,6 +168,7 @@ class Gateway:
                 niscode=data["niscode"],
                 provincie_niscode=data["provincie"],
                 namen=data["namen"],
+                status=data["status"],
                 gateway=self,
             )
 
@@ -243,7 +243,19 @@ class Gateway:
                 return provincie
         return None
 
-    def list_gemeenten_by_provincie(self, provincie):
+    def gemeente_by_status(self, status):
+        """
+        Filter gemeenten by status.
+
+        :param status: The status for which the `gemeenten` are wanted.
+        :rtype: A :class:`list` of :class:`Gemeente`.
+        """
+        return (
+            [gemeente for gemeente in self.gemeenten if gemeente.status == status]
+            if status else self.gemeenten
+        )
+
+    def list_gemeenten_by_provincie(self, provincie, gemeente_status=None):
         """
         List all `gemeenten` in a `provincie`.
 
@@ -258,11 +270,11 @@ class Gateway:
         provincie_niscode = provincie.niscode
         return [
             gemeente
-            for gemeente in self.gemeenten
+            for gemeente in self.gemeente_by_status(gemeente_status)
             if gemeente.provincie_niscode == provincie_niscode
         ]
 
-    def list_gemeenten(self, gewest_niscode="2000"):
+    def list_gemeenten(self, gewest_niscode="2000", gemeente_status=None):
         """
         List all `gemeenten` in a `gewest`.
 
@@ -274,7 +286,7 @@ class Gateway:
         if gewest_niscode == "4000":
             return [
                 gemeente
-                for gemeente in self.gemeenten
+                for gemeente in self.gemeente_by_status(gemeente_status)
                 if gemeente.niscode.startswith("21")
             ]
         provincie_niscodes = [
@@ -284,7 +296,7 @@ class Gateway:
         ]
         return [
             gemeente
-            for gemeente in self.gemeenten
+            for gemeente in self.gemeente_by_status(gemeente_status)
             if gemeente.provincie_niscode in provincie_niscodes
         ]
 
@@ -601,10 +613,20 @@ class Gemeente(GatewayObject):
     The smallest administrative unit in Belgium.
     """
 
-    def __init__(self, niscode, gateway, provincie_niscode=None, namen=None, naam=None):
+    def __init__(
+        self,
+        niscode,
+        gateway,
+        provincie_niscode=None,
+        namen=None,
+        naam=None,
+        status=None,
+    ):
         super().__init__(gateway)
         self.niscode = niscode
         self.provincie_niscode = provincie_niscode
+        if status is not None:
+            self.status = status
         if not (namen or naam):
             raise ValueError("Either namen or naam must be given")
         if namen is not None:
