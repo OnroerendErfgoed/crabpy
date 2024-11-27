@@ -255,7 +255,7 @@ class Gateway:
             if status else self.gemeenten
         )
 
-    def list_gemeenten_by_provincie(self, provincie, gemeente_status=None):
+    def list_gemeenten_by_provincie(self, provincie, status=None):
         """
         List all `gemeenten` in a `provincie`.
 
@@ -270,11 +270,11 @@ class Gateway:
         provincie_niscode = provincie.niscode
         return [
             gemeente
-            for gemeente in self.gemeente_by_status(gemeente_status)
+            for gemeente in self.gemeente_by_status(status)
             if gemeente.provincie_niscode == provincie_niscode
         ]
 
-    def list_gemeenten(self, gewest_niscode="2000", gemeente_status=None):
+    def list_gemeenten(self, gewest_niscode="2000", status=None):
         """
         List all `gemeenten` in a `gewest`.
 
@@ -286,7 +286,7 @@ class Gateway:
         if gewest_niscode == "4000":
             return [
                 gemeente
-                for gemeente in self.gemeente_by_status(gemeente_status)
+                for gemeente in self.gemeente_by_status(status)
                 if gemeente.niscode.startswith("21")
             ]
         provincie_niscodes = [
@@ -296,7 +296,7 @@ class Gateway:
         ]
         return [
             gemeente
-            for gemeente in self.gemeente_by_status(gemeente_status)
+            for gemeente in self.gemeente_by_status(status)
             if gemeente.provincie_niscode in provincie_niscodes
         ]
 
