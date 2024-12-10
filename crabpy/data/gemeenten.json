@@ -357,7 +357,7 @@
                 "naam": "Borsbeek"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "11008",
@@ -732,7 +732,7 @@
                 "naam": "Zwijndrecht"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "12002",
@@ -1422,7 +1422,7 @@
                 "naam": "Galmaarden"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "23024",
@@ -1437,7 +1437,7 @@
                 "naam": "Gooik"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "23025",
@@ -1482,7 +1482,7 @@
                 "naam": "Herne"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "23033",
@@ -3042,7 +3042,7 @@
                 "naam": "Meulebeke"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "37010",
@@ -3087,7 +3087,7 @@
                 "naam": "Ruiselede"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "37015",
@@ -3102,7 +3102,7 @@
                 "naam": "Tielt"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "37017",
@@ -3132,7 +3132,7 @@
                 "naam": "Wingene"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "33039",
@@ -3672,7 +3672,7 @@
                 "naam": "De Pinte"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44083",
@@ -3777,7 +3777,7 @@
                 "naam": "Lochristi"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44040",
@@ -3792,7 +3792,7 @@
                 "naam": "Melle"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44043",
@@ -3807,7 +3807,7 @@
                 "naam": "Merelbeke"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44045",
@@ -3822,7 +3822,7 @@
                 "naam": "Moerbeke"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44048",
@@ -3837,7 +3837,7 @@
                 "naam": "Nazareth"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44052",
@@ -3882,7 +3882,7 @@
                 "naam": "Wachtebeke"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "44081",
@@ -3912,7 +3912,7 @@
                 "naam": "Beveren"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "46013",
@@ -3927,7 +3927,7 @@
                 "naam": "Kruibeke"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "46014",
@@ -3942,7 +3942,7 @@
                 "naam": "Lokeren"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "46021",
@@ -4272,7 +4272,7 @@
                 "naam": "Ham"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "71022",
@@ -4287,7 +4287,7 @@
                 "naam": "Hasselt"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "71024",
@@ -4377,7 +4377,7 @@
                 "naam": "Tessenderlo"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "71066",
@@ -4617,7 +4617,7 @@
                 "naam": "Bilzen"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "73109",
@@ -4677,7 +4677,7 @@
                 "naam": "Hoeselt"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "73040",
@@ -4692,7 +4692,7 @@
                 "naam": "Kortessem"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "73042",
@@ -4722,7 +4722,7 @@
                 "naam": "Borgloon"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "73107",
@@ -4767,7 +4767,7 @@
                 "naam": "Tongeren"
             }
         ],
-        "status": "inGebruik"
+        "status": "gehistoreerd"
     },
     {
         "niscode": "73098",
@@ -8742,7 +8742,7 @@
                 "naam": "Beveren-Kruibeke-Zwijndrecht"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "73110",
@@ -8757,7 +8757,7 @@
                 "naam": "Bilzen-Hoeselt"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "73111",
@@ -8772,7 +8772,7 @@
                 "naam": "Tongeren-Borgloon"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "44086",
@@ -8787,7 +8787,7 @@
                 "naam": "Nazareth-De Pinte"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "71072",
@@ -8802,7 +8802,7 @@
                 "naam": "Hasselt"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "71071",
@@ -8817,7 +8817,7 @@
                 "naam": "Tessenderlo-Ham"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "37022",
@@ -8832,7 +8832,7 @@
                 "naam": "Tielt"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "44087",
@@ -8847,7 +8847,7 @@
                 "naam": "Lochristi"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "37021",
@@ -8862,7 +8862,7 @@
                 "naam": "Wingene"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "44088",
@@ -8877,7 +8877,7 @@
                 "naam": "Merelbeke-Melle"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "46029",
@@ -8892,7 +8892,7 @@
                 "naam": "Lokeren"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     },
     {
         "niscode": "23106",
@@ -8907,6 +8907,6 @@
                 "naam": "Pajottegem"
             }
         ],
-        "status": "voorgesteld"
+        "status": "inGebruik"
     }
 ]
