@@ -60,6 +60,11 @@
     "gemeente_niscode": "11002"
   },
   {
+    "id": "11002W",
+    "naam": "Borsbeek",
+    "gemeente_niscode": "11002"
+  },
+  {
     "id": "11004A",
     "naam": "Boechout",
     "gemeente_niscode": "11004"
@@ -73,11 +78,6 @@
     "id": "11005A",
     "naam": "Boom",
     "gemeente_niscode": "11005"
-  },
-  {
-    "id": "11007A",
-    "naam": "Borsbeek",
-    "gemeente_niscode": "11007"
   },
   {
     "id": "11008A",
@@ -273,16 +273,6 @@
     "id": "11055B",
     "naam": "Halle",
     "gemeente_niscode": "11055"
-  },
-  {
-    "id": "11056A",
-    "naam": "Zwijndrecht",
-    "gemeente_niscode": "11056"
-  },
-  {
-    "id": "11056B",
-    "naam": "Burcht",
-    "gemeente_niscode": "11056"
   },
   {
     "id": "11057A",
@@ -845,39 +835,54 @@
     "gemeente_niscode": "23016"
   },
   {
-    "id": "23023A",
+    "id": "23106A",
     "naam": "Galmaarden",
-    "gemeente_niscode": "23023"
+    "gemeente_niscode": "23106"
   },
   {
-    "id": "23023B",
+    "id": "23106B",
     "naam": "Vollezele",
-    "gemeente_niscode": "23023"
+    "gemeente_niscode": "23106"
   },
   {
-    "id": "23023C",
+    "id": "23106C",
     "naam": "Tollembeek",
-    "gemeente_niscode": "23023"
+    "gemeente_niscode": "23106"
   },
   {
-    "id": "23024A",
+    "id": "23106D",
     "naam": "Gooik",
-    "gemeente_niscode": "23024"
+    "gemeente_niscode": "23106"
   },
   {
-    "id": "23024B",
+    "id": "23106E",
     "naam": "Leerbeek",
-    "gemeente_niscode": "23024"
+    "gemeente_niscode": "23106"
   },
   {
-    "id": "23024C",
+    "id": "23106F",
     "naam": "Oetingen",
-    "gemeente_niscode": "23024"
+    "gemeente_niscode": "23106"
   },
   {
-    "id": "23024D",
+    "id": "23106G",
     "naam": "Kester",
-    "gemeente_niscode": "23024"
+    "gemeente_niscode": "23106"
+  },
+  {
+    "id": "23106H",
+    "naam": "Herne",
+    "gemeente_niscode": "23106"
+  },
+  {
+    "id": "23106I",
+    "naam": "Herfelingen",
+    "gemeente_niscode": "23106"
+  },
+  {
+    "id": "23106J",
+    "naam": "Sint-Pieters-Kapelle",
+    "gemeente_niscode": "23106"
   },
   {
     "id": "23025A",
@@ -913,21 +918,6 @@
     "id": "23027C",
     "naam": "Lembeek",
     "gemeente_niscode": "23027"
-  },
-  {
-    "id": "23032A",
-    "naam": "Herne",
-    "gemeente_niscode": "23032"
-  },
-  {
-    "id": "23032B",
-    "naam": "Herfelingen",
-    "gemeente_niscode": "23032"
-  },
-  {
-    "id": "23032C",
-    "naam": "Sint-Pieters-Kapelle",
-    "gemeente_niscode": "23032"
   },
   {
     "id": "23033A",
@@ -2915,9 +2905,29 @@
     "gemeente_niscode": "37002"
   },
   {
-    "id": "37007A",
+    "id": "37022A",
     "naam": "Meulebeke",
-    "gemeente_niscode": "37007"
+    "gemeente_niscode": "37022"
+  },
+  {
+    "id": "37022B",
+    "naam": "Tielt",
+    "gemeente_niscode": "37022"
+  },
+  {
+    "id": "37022C",
+    "naam": "Schuiferskapelle",
+    "gemeente_niscode": "37022"
+  },
+  {
+    "id": "37022D",
+    "naam": "Kanegem",
+    "gemeente_niscode": "37022"
+  },
+  {
+    "id": "37022E",
+    "naam": "Aarsele",
+    "gemeente_niscode": "37022"
   },
   {
     "id": "37010A",
@@ -2935,31 +2945,6 @@
     "gemeente_niscode": "37011"
   },
   {
-    "id": "37012A",
-    "naam": "Ruiselede",
-    "gemeente_niscode": "37012"
-  },
-  {
-    "id": "37015A",
-    "naam": "Tielt",
-    "gemeente_niscode": "37015"
-  },
-  {
-    "id": "37015B",
-    "naam": "Schuiferskapelle",
-    "gemeente_niscode": "37015"
-  },
-  {
-    "id": "37015C",
-    "naam": "Kanegem",
-    "gemeente_niscode": "37015"
-  },
-  {
-    "id": "37015D",
-    "naam": "Aarsele",
-    "gemeente_niscode": "37015"
-  },
-  {
     "id": "37017A",
     "naam": "Wielsbeke",
     "gemeente_niscode": "37017"
@@ -2975,14 +2960,19 @@
     "gemeente_niscode": "37017"
   },
   {
-    "id": "37018A",
+    "id": "37021A",
     "naam": "Wingene",
-    "gemeente_niscode": "37018"
+    "gemeente_niscode": "37021"
   },
   {
-    "id": "37018B",
+    "id": "37021B",
     "naam": "Zwevezele",
-    "gemeente_niscode": "37018"
+    "gemeente_niscode": "37021"
+  },
+  {
+    "id": "37021C",
+    "naam": "Ruiselede",
+    "gemeente_niscode": "37021"
   },
   {
     "id": "37020A",
@@ -3875,16 +3865,6 @@
     "gemeente_niscode": "44083"
   },
   {
-    "id": "44012A",
-    "naam": "De Pinte",
-    "gemeente_niscode": "44012"
-  },
-  {
-    "id": "44012B",
-    "naam": "Zevergem",
-    "gemeente_niscode": "44012"
-  },
-  {
     "id": "44013A",
     "naam": "Destelbergen",
     "gemeente_niscode": "44013"
@@ -4015,79 +3995,89 @@
     "gemeente_niscode": "44021"
   },
   {
-    "id": "44034A",
+    "id": "44087A",
     "naam": "Lochristi",
-    "gemeente_niscode": "44034"
+    "gemeente_niscode": "44087"
   },
   {
-    "id": "44034B",
+    "id": "44087B",
     "naam": "Zaffelare",
-    "gemeente_niscode": "44034"
+    "gemeente_niscode": "44087"
   },
   {
-    "id": "44034C",
+    "id": "44087C",
     "naam": "Zeveneken",
-    "gemeente_niscode": "44034"
+    "gemeente_niscode": "44087"
   },
   {
-    "id": "44034D",
+    "id": "44087D",
     "naam": "Beervelde",
-    "gemeente_niscode": "44034"
+    "gemeente_niscode": "44087"
   },
   {
-    "id": "44040A",
+    "id": "44087E",
+    "naam": "Wachtebeke",
+    "gemeente_niscode": "44087"
+  },
+  {
+    "id": "44088A",
     "naam": "Melle",
-    "gemeente_niscode": "44040"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44040B",
+    "id": "44088B",
     "naam": "Gontrode",
-    "gemeente_niscode": "44040"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44043A",
+    "id": "44088C",
     "naam": "Merelbeke",
-    "gemeente_niscode": "44043"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44043B",
+    "id": "44088D",
     "naam": "Bottelare",
-    "gemeente_niscode": "44043"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44043C",
+    "id": "44088E",
     "naam": "Munte",
-    "gemeente_niscode": "44043"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44043D",
+    "id": "44088F",
     "naam": "Schelderode",
-    "gemeente_niscode": "44043"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44043E",
+    "id": "44088G",
     "naam": "Melsen",
-    "gemeente_niscode": "44043"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44043F",
+    "id": "44088H",
     "naam": "Lemberge",
-    "gemeente_niscode": "44043"
+    "gemeente_niscode": "44088"
   },
   {
-    "id": "44045A",
-    "naam": "Moerbeke",
-    "gemeente_niscode": "44045"
-  },
-  {
-    "id": "44048A",
+    "id": "44086A",
     "naam": "Nazareth",
-    "gemeente_niscode": "44048"
+    "gemeente_niscode": "44086"
   },
   {
-    "id": "44048B",
+    "id": "44086B",
     "naam": "Eke",
-    "gemeente_niscode": "44048"
+    "gemeente_niscode": "44086"
+  },
+  {
+    "id": "44086C",
+    "naam": "De Pinte",
+    "gemeente_niscode": "44086"
+  },
+  {
+    "id": "44086D",
+    "naam": "Zevergem",
+    "gemeente_niscode": "44086"
   },
   {
     "id": "44052A",
@@ -4128,11 +4118,6 @@
     "id": "44064B",
     "naam": "Deurle",
     "gemeente_niscode": "44064"
-  },
-  {
-    "id": "44073A",
-    "naam": "Wachtebeke",
-    "gemeente_niscode": "44073"
   },
   {
     "id": "44085A",
@@ -4475,74 +4460,89 @@
     "gemeente_niscode": "45065"
   },
   {
-    "id": "46003A",
+    "id": "46030A",
     "naam": "Beveren",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003B",
+    "id": "46030B",
     "naam": "Vrasene",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003C",
+    "id": "46030C",
     "naam": "Verrebroek",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003D",
+    "id": "46030D",
     "naam": "Kieldrecht",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003E",
+    "id": "46030E",
     "naam": "Doel",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003F",
+    "id": "46030F",
     "naam": "Kallo",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003G",
+    "id": "46030G",
     "naam": "Melsele",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46003H",
+    "id": "46030H",
     "naam": "Haasdonk",
-    "gemeente_niscode": "46003"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46013A",
+    "id": "46030I",
     "naam": "Kruibeke",
-    "gemeente_niscode": "46013"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46013B",
+    "id": "46030J",
     "naam": "Bazel",
-    "gemeente_niscode": "46013"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46013C",
+    "id": "46030K",
     "naam": "Rupelmonde",
-    "gemeente_niscode": "46013"
+    "gemeente_niscode": "46030"
   },
   {
-    "id": "46014A",
+    "id": "46030L",
+    "naam": "Zwijndrecht",
+    "gemeente_niscode": "46030"
+  },
+  {
+    "id": "46030M",
+    "naam": "Burcht",
+    "gemeente_niscode": "46030"
+  },
+  {
+    "id": "46029A",
     "naam": "Lokeren",
-    "gemeente_niscode": "46014"
+    "gemeente_niscode": "46029"
   },
   {
-    "id": "46014B",
+    "id": "46029B",
     "naam": "Eksaarde",
-    "gemeente_niscode": "46014"
+    "gemeente_niscode": "46029"
   },
   {
-    "id": "46014C",
+    "id": "46029C",
     "naam": "Daknam",
-    "gemeente_niscode": "46014"
+    "gemeente_niscode": "46029"
+  },
+  {
+    "id": "46029D",
+    "naam": "Moerbeke",
+    "gemeente_niscode": "46029"
   },
   {
     "id": "46020A",
@@ -4725,44 +4725,69 @@
     "gemeente_niscode": "71020"
   },
   {
-    "id": "71022A",
+    "id": "71072A",
     "naam": "Hasselt",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022B",
+    "id": "71072B",
     "naam": "Wimmertingen",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022C",
+    "id": "71072C",
     "naam": "Sint-Lambrechts-Herk",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022D",
+    "id": "71072D",
     "naam": "Kuringen",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022E",
+    "id": "71072E",
     "naam": "Stokrooie",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022F",
+    "id": "71072F",
     "naam": "Kermt",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022G",
+    "id": "71072G",
     "naam": "Spalbeek",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
   },
   {
-    "id": "71022H",
+    "id": "71072H",
     "naam": "Stevoort",
-    "gemeente_niscode": "71022"
+    "gemeente_niscode": "71072"
+  },
+  {
+    "id": "71072I",
+    "naam": "Kortessem",
+    "gemeente_niscode": "71072"
+  },
+  {
+    "id": "71072J",
+    "naam": "Wintershoven",
+    "gemeente_niscode": "71072"
+  },
+  {
+    "id": "71072K",
+    "naam": "Vliermaalroot",
+    "gemeente_niscode": "71072"
+  },
+  {
+    "id": "71072L",
+    "naam": "Vliermaal",
+    "gemeente_niscode": "71072"
+  },
+  {
+    "id": "71072M",
+    "naam": "Guigoven",
+    "gemeente_niscode": "71072"
   },
   {
     "id": "71024A",
@@ -4910,11 +4935,6 @@
     "gemeente_niscode": "71053"
   },
   {
-    "id": "71057A",
-    "naam": "Tessenderlo",
-    "gemeente_niscode": "71057"
-  },
-  {
     "id": "71066A",
     "naam": "Zonhoven",
     "gemeente_niscode": "71066"
@@ -4925,14 +4945,19 @@
     "gemeente_niscode": "71067"
   },
   {
-    "id": "71069A",
+    "id": "71071A",
     "naam": "Oostham",
-    "gemeente_niscode": "71069"
+    "gemeente_niscode": "71071"
   },
   {
-    "id": "71069B",
+    "id": "71071B",
     "naam": "Kwaadmechelen",
-    "gemeente_niscode": "71069"
+    "gemeente_niscode": "71071"
+  },
+  {
+    "id": "71071C",
+    "naam": "Tessenderlo",
+    "gemeente_niscode": "71071"
   },
   {
     "id": "71070A",
@@ -5150,134 +5175,254 @@
     "gemeente_niscode": "73001"
   },
   {
-    "id": "73006A",
+    "id": "73110A",
     "naam": "Bilzen",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006B",
+    "id": "73110B",
     "naam": "Beverst",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006C",
+    "id": "73110C",
     "naam": "Munsterbilzen",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006D",
+    "id": "73110D",
     "naam": "Waltwilder",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006E",
+    "id": "73110E",
     "naam": "Hoelbeek",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006F",
+    "id": "73110F",
     "naam": "Eigenbilzen",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006G",
+    "id": "73110G",
     "naam": "Mopertingen",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006H",
+    "id": "73110H",
     "naam": "Hees",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006J",
+    "id": "73110J",
     "naam": "Rosmeer",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006K",
+    "id": "73110K",
     "naam": "Kleine-spouwen",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006L",
+    "id": "73110L",
     "naam": "Grote-Spouwen",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006M",
+    "id": "73110M",
     "naam": "Rijkhoven",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73006N",
+    "id": "73110N",
     "naam": "Martenslinde",
-    "gemeente_niscode": "73006"
+    "gemeente_niscode": "73110"
   },
   {
-    "id": "73009A",
+    "id": "73110O",
+    "naam": "Hoeselt",
+    "gemeente_niscode": "73110"
+  },
+  {
+    "id": "73110P",
+    "naam": "Werm",
+    "gemeente_niscode": "73110"
+  },
+  {
+    "id": "73110Q",
+    "naam": "Romershoven",
+    "gemeente_niscode": "73110"
+  },
+  {
+    "id": "73110R",
+    "naam": "Sint-Huibrechts-Hern",
+    "gemeente_niscode": "73110"
+  },
+  {
+    "id": "73110S",
+    "naam": "Schalkhoven",
+    "gemeente_niscode": "73110"
+  },
+  {
+    "id": "73111A",
+    "naam": "Tongeren",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111B",
+    "naam": "Koninksem",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111C",
+    "naam": "Neerrepen",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111D",
+    "naam": "Riksingen",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111E",
+    "naam": "Henis",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111F",
+    "naam": "Berg",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111G",
+    "naam": "Mal",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111H",
+    "naam": "Sluizen",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111J",
+    "naam": "Nerem",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111K",
+    "naam": "Vreren",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111L",
+    "naam": "Rutten",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111M",
+    "naam": "Lauw",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111N",
+    "naam": "Widooie",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111P",
+    "naam": "Piringen",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111R",
+    "naam": "Overrepen",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111S",
+    "naam": "'s Herenelderen",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111T",
+    "naam": "Haren",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111U",
+    "naam": "Kolmont",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111V",
+    "naam": "Diets-Heur",
+    "gemeente_niscode": "73111"
+  },
+  {
+    "id": "73111W",
     "naam": "Borgloon",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009B",
+    "id": "73111X",
     "naam": "Kuttekoven",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009C",
+    "id": "73111Y",
     "naam": "Kerniel",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009D",
+    "id": "73111Z",
     "naam": "Gors-Opleeuw",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009E",
+    "id": "73111I",
     "naam": "Jesseren",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009F",
+    "id": "73111O",
     "naam": "Bommershoven",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009G",
+    "id": "73111Q",
     "naam": "Groot-Loon",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009H",
+    "id": "73111AA",
     "naam": "Broekom",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009J",
+    "id": "73111AB",
     "naam": "Hendrieken",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009K",
+    "id": "73111AC",
     "naam": "Voort",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009L",
+    "id": "73111AD",
     "naam": "Gotem",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009M",
+    "id": "73111AE",
     "naam": "Hoepertingen",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
-    "id": "73009N",
+    "id": "73111AF",
     "naam": "Rijkel",
-    "gemeente_niscode": "73009"
+    "gemeente_niscode": "73111"
   },
   {
     "id": "73022A",
@@ -5348,56 +5493,6 @@
     "id": "73028A",
     "naam": "Herstappe",
     "gemeente_niscode": "73028"
-  },
-  {
-    "id": "73032A",
-    "naam": "Hoeselt",
-    "gemeente_niscode": "73032"
-  },
-  {
-    "id": "73032B",
-    "naam": "Werm",
-    "gemeente_niscode": "73032"
-  },
-  {
-    "id": "73032C",
-    "naam": "Romershoven",
-    "gemeente_niscode": "73032"
-  },
-  {
-    "id": "73032D",
-    "naam": "Sint-Huibrechts-Hern",
-    "gemeente_niscode": "73032"
-  },
-  {
-    "id": "73032E",
-    "naam": "Schalkhoven",
-    "gemeente_niscode": "73032"
-  },
-  {
-    "id": "73040A",
-    "naam": "Kortessem",
-    "gemeente_niscode": "73040"
-  },
-  {
-    "id": "73040B",
-    "naam": "Wintershoven",
-    "gemeente_niscode": "73040"
-  },
-  {
-    "id": "73040C",
-    "naam": "Vliermaalroot",
-    "gemeente_niscode": "73040"
-  },
-  {
-    "id": "73040D",
-    "naam": "Vliermaal",
-    "gemeente_niscode": "73040"
-  },
-  {
-    "id": "73040E",
-    "naam": "Guigoven",
-    "gemeente_niscode": "73040"
   },
   {
     "id": "73042A",
@@ -5473,101 +5568,6 @@
     "id": "73066K",
     "naam": "Membruggen",
     "gemeente_niscode": "73066"
-  },
-  {
-    "id": "73083A",
-    "naam": "Tongeren",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083B",
-    "naam": "Koninksem",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083C",
-    "naam": "Neerrepen",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083D",
-    "naam": "Riksingen",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083E",
-    "naam": "Henis",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083F",
-    "naam": "Berg",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083G",
-    "naam": "Mal",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083H",
-    "naam": "Sluizen",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083J",
-    "naam": "Nerem",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083K",
-    "naam": "Vreren",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083L",
-    "naam": "Rutten",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083M",
-    "naam": "Lauw",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083N",
-    "naam": "Widooie",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083P",
-    "naam": "Piringen",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083R",
-    "naam": "Overrepen",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083S",
-    "naam": "'s Herenelderen",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083T",
-    "naam": "Haren",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083U",
-    "naam": "Kolmont",
-    "gemeente_niscode": "73083"
-  },
-  {
-    "id": "73083V",
-    "naam": "Diets-Heur",
-    "gemeente_niscode": "73083"
   },
   {
     "id": "73098A",
