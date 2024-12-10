@@ -1,3 +1,9 @@
+1.6.0 (10-12-2024)
+------------------
+
+- Update deelgemeenten na gemeentefusies 2025 (#260)
+- Nieuwe gemeenten activeren (#264)
+
 1.5.1 (25-11-2024)
 ------------------
 
