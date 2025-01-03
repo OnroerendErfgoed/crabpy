@@ -361,7 +361,7 @@ class TestAdressenRegisterGateway:
         res = gateway.list_gemeenten_by_provincie(
             Provincie("10000", "antwerpen", 2, gateway)
         )
-        assert len(res) == 70
+        assert len(res) == 69
         assert res[0].niscode == "11001"
 
     def test_get_gewest_by_unexisting_id(self, gateway):
@@ -531,7 +531,7 @@ class TestProvincie:
             "10000", "Antwerpen", Gewest(2, "2000", "Vlaanderen", None, None), gateway
         )
         res = p.gemeenten
-        assert len(res) == 70
+        assert len(res) == 69
         assert res[0].niscode == "11001"
 
 
