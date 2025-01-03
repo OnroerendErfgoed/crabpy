@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-version = "1.6.0"
+version = "1.6.1"
 name = "crabpy"
 readme = "README.md"
 authors = [

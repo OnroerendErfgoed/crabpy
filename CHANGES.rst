@@ -1,3 +1,8 @@
+1.6.1 (03-01-2025)
+------------------
+
+- Beveren-Kruibeke-Zwijndrecht provincie nis foutief (#268)
+
 1.6.0 (10-12-2024)
 ------------------
 
