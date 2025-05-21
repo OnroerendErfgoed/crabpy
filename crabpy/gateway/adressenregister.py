@@ -318,7 +318,7 @@ class Gateway:
         Retrieve a `gemeente` by naam.
 
         :param string naam: The naam of the gemeente.
-        :param list talen: The talen of the gemeentenaam.
+        :param list talen: A list of language codes (e.g., `["nl", "fr", "de"]`) to filter the gemeentenaam by language.
         :rtype: :class:`Gemeente`
         """
         talen = talen or ["nl", "fr", "de"]
@@ -328,7 +328,7 @@ class Gateway:
                 for gemeente in self.gemeenten
                 if any(
                     n["naam"] == naam and n["taal"] in talen
-                    for n in gemeente.get("namen", [])
+                    for n in gemeente.namen
                 )
             ),
             None,
