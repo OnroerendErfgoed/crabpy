@@ -318,7 +318,8 @@ class Gateway:
         Retrieve a `gemeente` by naam.
 
         :param string naam: The naam of the gemeente.
-        :param list talen: A list of language codes (e.g., `["nl", "fr", "de"]`) to filter the gemeentenaam by language.
+        :param list talen: A list of language codes
+        (e.g., `["nl", "fr", "de"]`) to filter the gemeentenaam by language.
         :rtype: :class:`Gemeente`
         """
         talen = talen or ["nl", "fr", "de"]
