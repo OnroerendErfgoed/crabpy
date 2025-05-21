@@ -395,7 +395,7 @@ class TestAdressenRegisterGateway:
         assert res is None
         res = gateway.get_gemeente_by_naam("Mouscron", talen=["fr"])
         assert res.niscode == "57096"
-        assert res.naam() == "Mouscron"
+        assert res.naam(taal="fr") == "Mouscron"
         assert res.provincie.niscode == "50000"
 
     def test_list_deelgemeenten(self, gateway):
