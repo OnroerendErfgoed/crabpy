@@ -384,6 +384,20 @@ class TestAdressenRegisterGateway:
         assert res.naam() == "Moeskroen"
         assert res.provincie.niscode == "50000"
 
+    def test_get_gemeente_by_naam(self, gateway, client):
+        res = gateway.get_gemeente_by_naam("Moeskroen")
+        assert res.niscode == "57096"
+        assert res.naam() == "Moeskroen"
+        assert res.provincie.niscode == "50000"
+
+    def test_get_gemeente_by_naam_filter_talen(self, gateway, client):
+        res = gateway.get_gemeente_by_naam("Mouscron", talen=["nl"])
+        assert res is None
+        res = gateway.get_gemeente_by_naam("Mouscron", talen=["fr"])
+        assert res.niscode == "57096"
+        assert res.naam(taal="fr") == "Mouscron"
+        assert res.provincie.niscode == "50000"
+
     def test_list_deelgemeenten(self, gateway):
         res = gateway.list_deelgemeenten()
         assert len(res) == 1132
