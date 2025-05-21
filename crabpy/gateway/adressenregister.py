@@ -313,7 +313,7 @@ class Gateway:
             None,
         )
 
-    def get_gemeente_by_naam(self, naam, talen=["nl", "fr", "de"]):
+    def get_gemeente_by_naam(self, naam, talen=None):
         """
         Retrieve a `gemeente` by naam.
 
@@ -321,6 +321,7 @@ class Gateway:
         :param list talen: The talen of the gemeentenaam.
         :rtype: :class:`Gemeente`
         """
+        talen = talen or ["nl", "fr", "de"]
         return next(
             (
                 gemeente
