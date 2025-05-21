@@ -252,7 +252,8 @@ class Gateway:
         """
         return (
             [gemeente for gemeente in self.gemeenten if gemeente.status == status]
-            if status else self.gemeenten
+            if status
+            else self.gemeenten
         )
 
     def list_gemeenten_by_provincie(self, provincie, status=None):
@@ -309,6 +310,28 @@ class Gateway:
         """
         return next(
             (gemeente for gemeente in self.gemeenten if gemeente.niscode == niscode),
+            None,
+        )
+
+    def get_gemeente_by_naam(self, naam, talen=None):
+        """
+        Retrieve a `gemeente` by naam.
+
+        :param string naam: The naam of the gemeente.
+        :param list talen: A list of language codes
+        (e.g., `["nl", "fr", "de"]`) to filter the gemeentenaam by language.
+        :rtype: :class:`Gemeente`
+        """
+        talen = talen or ["nl", "fr", "de"]
+        return next(
+            (
+                gemeente
+                for gemeente in self.gemeenten
+                if any(
+                    n["naam"] == naam and n["taal"] in talen
+                    for n in gemeente.namen
+                )
+            ),
             None,
         )
 
