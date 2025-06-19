@@ -83,7 +83,7 @@ stevedore==5.3.0
     # via dogpile-cache
 suds-py3==1.4.5.0
     # via crabpy (pyproject.toml)
-urllib3==2.2.3
+urllib3==2.5.0
     # via
     #   requests
     #   responses
