@@ -87,7 +87,7 @@ urllib3==2.2.3
     # via
     #   requests
     #   responses
-uv==0.4.20
+uv==0.9.6
     # via crabpy (pyproject.toml)
 virtualenv==20.26.6
     # via pre-commit
