@@ -63,7 +63,6 @@ pre-commit==4.0.1
 pycodestyle==2.12.1
     # via
     #   flake8
-    #   flake8-import-order
 pyflakes==3.2.0
     # via flake8
 pytest==8.3.3
