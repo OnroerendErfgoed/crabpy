@@ -629,6 +629,10 @@ class TestStraat:
         s = Straat(id_=1, gateway=gateway)
         assert s.status == "inGebruik"
 
+    def test_str(self, gateway):
+        straat = Straat(id_=1, naam="Acacialaan", gateway=gateway)
+        assert str(straat) == "Acacialaan (1)"
+
 
 class TestAdres:
     def test_adres(self, gateway, client):
@@ -716,3 +720,61 @@ class TestPostinfo:
         assert postinfo.namen("nl") == ["EDINGEN", "Lettelingen", "Mark"]
         assert postinfo.id == "7850"
         assert postinfo.status == "gerealiseerd"
+
+
+class TestCaching:
+    @pytest.fixture()
+    def cached_gateway(self, client):
+        cache_settings = {
+            "long.backend": "dogpile.cache.memory",
+            "short.backend": "dogpile.cache.memory",
+        }
+        return adressenregister.Gateway(client, cache_settings=cache_settings)
+
+    def test_list_adressen_by_straat_cache_hit(self, cached_gateway, client):
+        """Two different Straat instances with the same id and naam should
+        result in only one HTTP call thanks to caching."""
+        client.get_adressen.return_value = [create_client_list_adressen_item()]
+
+        straat1 = Straat("1", cached_gateway, naam="Acacialaan")
+        straat2 = Straat("1", cached_gateway, naam="Acacialaan")
+
+        cached_gateway.list_adressen_by_straat(straat1)
+        cached_gateway.list_adressen_by_straat(straat2)
+
+        client.get_adressen.assert_called_once()
+
+    def test_list_adressen_by_different_straat_no_cache_hit(
+        self, cached_gateway, client
+    ):
+        """Two Straat instances with different ids should result in two calls."""
+        client.get_adressen.return_value = [create_client_list_adressen_item()]
+
+        straat1 = Straat("1", cached_gateway, naam="Acacialaan")
+        straat2 = Straat("2", cached_gateway, naam="Kapelstraat")
+
+        cached_gateway.list_adressen_by_straat(straat1)
+        cached_gateway.list_adressen_by_straat(straat2)
+
+        assert client.get_adressen.call_count == 2
+
+    def test_list_straten_then_adressen_cache_hit(self, cached_gateway, client):
+        """Calling list_straten twice and then accessing adressen on straat
+        objects with the same id should only call get_adressen once per straat,
+        not once per Straat instance."""
+        client.get_straatnamen.return_value = [
+            create_client_list_straatnamen_item(),
+        ]
+        client.get_adressen.return_value = [create_client_list_adressen_item()]
+
+        gemeente = Gemeente(niscode="11001", naam="Aartselaar", gateway=cached_gateway)
+
+        straten_call_1 = cached_gateway.list_straten(gemeente)
+        straten_call_2 = cached_gateway.list_straten(gemeente)
+
+        # Access adressen on straat objects from both calls
+        # These are different Straat instances but represent the same straat
+        straten_call_1[0].adressen
+        straten_call_2[0].adressen
+
+        client.get_adressen.assert_called_once()
