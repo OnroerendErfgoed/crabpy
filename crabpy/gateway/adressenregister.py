@@ -662,7 +662,7 @@ class Gemeente(GatewayObject):
         return self.gateway.get_gewest_by_niscode(self.provincie.gewest_niscode)
 
     def __str__(self):
-        return f"{self.naam} ({self.niscode})"
+        return f"{self.naam()} ({self.niscode})"
 
     def __repr__(self):
         return f"Gemeente(niscode={self.niscode})"
@@ -814,7 +814,7 @@ class Straat(GatewayObject):
         return self.gateway.client.get_straatnaam(self.id)
 
     def __str__(self):
-        return f"{self.naam} ({self.id})"
+        return f"{self.naam()} ({self.id})"
 
     def __repr__(self):
         return f"Straat(id={self.id})"
