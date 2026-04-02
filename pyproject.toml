@@ -39,7 +39,7 @@ dev = [
     "flake8-import-order==0.18.2",
     "setuptools<82",
     "black==24.10.0",
-    "uv==0.4.20",
+    "uv==0.9.6",
     "coveralls==4.0.1",
     "pre-commit==4.0.1",
 ]
