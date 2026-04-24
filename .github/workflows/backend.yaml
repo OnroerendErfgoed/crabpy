@@ -1,7 +1,7 @@
 name: crabpy tests
 
 on:
-  push:
+  pull_request:
     paths:
       - crabpy/**
       - tests/**
@@ -39,7 +39,13 @@ jobs:
       - name: Python tests
         run: |
           flake8
-          coverage run --source=crabpy -m pytest tests --crab-integration --capakey-integration
-    
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
+          pytest --cov=crabpy --cov-report=xml tests --crab-integration --capakey-integration
+
+      - name: Code Coverage Report
+        if: matrix.python-version == '3.11'
+        uses: orgoro/coverage@v3.2
+        with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          thresholdAll: 0.8
+          thresholdModified: 0.8
