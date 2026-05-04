@@ -8,6 +8,9 @@ on:
       - .github/workflows/backend.yaml
       - pyproject.toml
       - requirements*.txt
+  push:
+    branches:
+      - main
 
 env:
   CRABPY_INTEGRATION_TESTS: "true"
