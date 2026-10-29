@@ -8,47 +8,22 @@ on:
       - .github/workflows/backend.yaml
       - pyproject.toml
       - requirements*.txt
+
   push:
     branches:
-      - main
+      - master
 
-env:
-  CRABPY_INTEGRATION_TESTS: "true"
+permissions: {}
 
 jobs:
   test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [ "3.10", "3.11", "3.12" ]
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-
-      - name: Install python requirements
-        run: |
-          pip install pip-tools
-          pip-sync requirements-dev.txt
-          pip install -e .
-
-      - name: Python tests
-        run: |
-          flake8
-          pytest --cov=crabpy --cov-report=xml tests --crab-integration --capakey-integration
-
-      - name: Code Coverage Report
-        if: matrix.python-version == '3.11'
-        uses: orgoro/coverage@v3.2
-        with:
-          coverageFile: coverage.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          thresholdAll: 0.8
-          thresholdModified: 0.8
+    uses: OnroerendErfgoed/shared-workflows/.github/workflows/python-tests.yml@v1
+    permissions:
+      contents: read
+      pull-requests: write # coverage comment
+    with:
+      runs-on: ubuntu-latest # public repo: no self-hosted runners
+      python-versions: '["3.10", "3.11", "3.12"]'
+      requirements-file: requirements-dev.txt
+      test-command: pytest --cov=crabpy --cov-report=xml:"$COVERAGE_XML" tests --crab-integration --capakey-integration
+      coverage-threshold-new: 0 # the old workflow didn't set it
