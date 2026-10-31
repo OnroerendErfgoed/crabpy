@@ -493,3 +493,17 @@ class TestPerceel:
             Perceel.get_capakey_from_percid("46013A1154/02C000")
         with pytest.raises(ValueError):
             Perceel.get_percid_from_capakey("46013_A_1154_C_000_02")
+
+
+@pytest.mark.parametrize(
+    "percid, capakey",
+    [
+        ("46013_A_1154_C_000_02", "46013A1154/02C000"),
+        ("11001_B_0123_D_456_78", "11001B0123/78D456"),
+        ("11001_B_0123___000_00", "11001B0123/00_000"),
+    ],
+)
+def test_gateway_percid_conversion(capakey_rest_gateway, percid, capakey):
+    converted = capakey_rest_gateway.parse_capakey(percid)
+    assert converted == capakey
+    assert capakey_rest_gateway.parse_percid(converted) == percid
