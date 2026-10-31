@@ -352,11 +352,9 @@ class CapakeyRestGateway:
                 + match.group(2)
                 + match.group(3)
                 + "/"
-                + match.group(5)
-                + "_"
                 + match.group(6)
-                + "_"
                 + match.group(4)
+                + match.group(5)
             )
             return capakey
         else:
